@@ -5,3 +5,4 @@ Enhance your health and equity initiatives with our toolkit. You will be able to
 
 ## Team
 - Marynia Kolak, PI
+- Catherine Discenza, GRA
