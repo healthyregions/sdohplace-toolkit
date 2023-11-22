@@ -7,5 +7,5 @@ Enhance your health and equity initiatives with our toolkit. You will be able to
 - Marynia Kolak, PI
 - Catherine Discenza, GRA
 - Kamaria Barronville, Instructional Designer 
-Laila Ismail RA
+-Laila Ismail RA
 - Shubham Kumar, Desinger
