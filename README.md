@@ -10,3 +10,4 @@ Enhance your health and equity initiatives with our toolkit. You will be able to
 - Laila Ismail RA
 - Shubham Kumar, Designer
 - Jose Alavez, postdoc
+- Marc Astacio-Palmer, Research Coordinator
