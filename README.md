@@ -8,5 +8,5 @@ Enhance your health and equity initiatives with our toolkit. You will be able to
 - Catherine Discenza, GRA
 - Kamaria Barronville, Instructional Designer 
 - Laila Ismail RA
-- Shubham Kumar, Desinger
+- Shubham Kumar, Designer
 - Jose Alavez, postdoc
