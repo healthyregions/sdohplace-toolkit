@@ -23,7 +23,8 @@ The team is based out of the Department of Geography & GIScience at the Universi
 
 When we talk about the factors that shape our health, it's not just about biology or lifestyle—it's about where we live and the complex tapestry of history, society, and economy that frames our lives. The [social determinants of health (SDOH)](https://www.cdc.gov/about/sdoh/index.html) encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These social determinants of health (SDOH) aren't just statistics; they're stories of communities and the places we call home, varying from one street to the next. They're about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.
 
-Social Determinants of Health, (Created by Kamaria Barronnville)
+![Social Determinants of Health](images/preface-sdoh.png)
+Social Determinants of Health, graphic created by Kamaria Barronnville
 
 Academics, activists, government agents, and policymakers have employed data visualizations to examine the connections between places and the social determinants of health (SDOH). For example, they have utilized dashboards to study the impact of COVID-19 on vulnerable communities. They implemented [participatory mapping](https://www.cdc.gov/pcd/issues/2020/20_0123.htm) to advocate for policy-based interventions, and deployed [story maps](https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html) to promote health initiatives. To produce these data visualizations, health researchers and advocates mobilize a wide array of conceptual frameworks and diverse technical skill sets. Moreover, data visualizations in public health do not only analyze the relationship between places and SDOH. They promote health equity: "a state in which everyone has a fair and equitable opportunity to achieve their highest level of health" (CDC's Office of Health Equity, 2022).
 
@@ -31,10 +32,13 @@ Academics, activists, government agents, and policymakers have employed data vis
 
 Visualizing public health data isn't just about the 'what'—it's about the 'so what?' It's about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. [Data visualizations](https://www.ahrq.gov/data/visualizations/index.html#:~:text=AHRQ's%20interactive%20data%20visualization%20tools,coverage%2C%20and%20emergency%20department%20visits.) in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.
 
+![The data dashboard, for example, was a commonly used tool during the COVID-19 pandemic to communicate community spread](images/preface-dashboard.png)
 The data dashboard, for example, was a commonly used tool during the COVID-19 pandemic to communicate community spread (source: https://geodacenter.github.io/covid/)
 
 Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize social determinants of health (SDOH) data and advance [health equity](https://www.cdc.gov/healthequity/whatis/index.html).
 Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.
+
+![The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives](images/preface-storymap.png)
 
 The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives (source: https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html)
 
@@ -72,6 +76,7 @@ These components include:
 - Distributive Equity: Distributive equity concerns how social welfare and resources are distributed to meet the needs of different populations. It aims to allocate resources in a way that reduces health disparities and provides equitable access to healthcare and other essential services.
 - Contextual Equity: This aspect acknowledges that pre-existing social conditions (such as poverty, discrimination, and access to resources) influence equity. An equity-oriented data system considers these contextual factors when designing interventions to address health disparities effectively.
 
+![Centering Equity](images/preface-centeringequity.png)
 Centering Equity (source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/, graphic created by Kamaria Barronville).
 
 ### III. Our Approach
