@@ -19,7 +19,7 @@ The team is based out of the Department of Geography & GIScience at the Universi
 
 ## Preface
 
-### I. SDOH & Place
+### SDOH & Place
 
 When we talk about the factors that shape our health, it's not just about biology or lifestyle—it's about where we live and the complex tapestry of history, society, and economy that frames our lives. The [social determinants of health (SDOH)](https://www.cdc.gov/about/sdoh/index.html) encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These social determinants of health (SDOH) aren't just statistics; they're stories of communities and the places we call home, varying from one street to the next. They're about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.
 
@@ -28,7 +28,7 @@ Social Determinants of Health, graphic created by Kamaria Barronnville
 
 Academics, activists, government agents, and policymakers have employed data visualizations to examine the connections between places and the social determinants of health (SDOH). For example, they have utilized dashboards to study the impact of COVID-19 on vulnerable communities. They implemented [participatory mapping](https://www.cdc.gov/pcd/issues/2020/20_0123.htm) to advocate for policy-based interventions, and deployed [story maps](https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html) to promote health initiatives. To produce these data visualizations, health researchers and advocates mobilize a wide array of conceptual frameworks and diverse technical skill sets. Moreover, data visualizations in public health do not only analyze the relationship between places and SDOH. They promote health equity: "a state in which everyone has a fair and equitable opportunity to achieve their highest level of health" (CDC's Office of Health Equity, 2022).
 
-### II.  Public Health, Equity, and Spatial Data Visualizations 
+### Public Health, Equity, and Spatial Data Visualizations 
 
 Visualizing public health data isn't just about the 'what'—it's about the 'so what?' It's about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. [Data visualizations](https://www.ahrq.gov/data/visualizations/index.html#:~:text=AHRQ's%20interactive%20data%20visualization%20tools,coverage%2C%20and%20emergency%20department%20visits.) in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.
 
@@ -79,7 +79,7 @@ These components include:
 ![Centering Equity](images/preface-centeringequity.png)
 Centering Equity (source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/, graphic created by Kamaria Barronville).
 
-### III. Our Approach
+### Our Approach
 
 The Place Project Community Toolkit connects equity principles with analysis and design of spatial visualizations for SDOH spatial data. This toolkit draws inspiration from the Robert Wood Johnson Foundation (RWJF) Commission’s findings, which assessed [how communities’s health and life expectancy are affected by the places where they live](https://www.rwjf.org/en/insights/our-research/interactives/whereyouliveaffectshowlongyoulive.html). To address this issue, RWJF has previously created resources to [promote health equity](https://www.rwjf.org/en/building-a-culture-of-health/focus-areas/Features/achieving-health-equity.html).
 
