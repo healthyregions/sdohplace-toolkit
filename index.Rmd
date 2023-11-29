@@ -31,6 +31,8 @@ Visualizing public health data isn't just about the 'what'—it's about the 'so 
 Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize social determinants of health (SDOH) data and advance [health equity](https://www.cdc.gov/healthequity/whatis/index.html).
 Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.
 
+![The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives](images/preface-storymap.png)
+
 The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives (source: https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html)
 
 #### Project Tip:
@@ -67,6 +69,7 @@ These components include:
 - Distributive Equity: Distributive equity concerns how social welfare and resources are distributed to meet the needs of different populations. It aims to allocate resources in a way that reduces health disparities and provides equitable access to healthcare and other essential services.
 - Contextual Equity: This aspect acknowledges that pre-existing social conditions (such as poverty, discrimination, and access to resources) influence equity. An equity-oriented data system considers these contextual factors when designing interventions to address health disparities effectively.
 
+![Centering Equity](images/preface-centeringequity.png)
 Centering Equity (source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/, graphic created by Kamaria Barronville).
 
 ### Our Approach {-}
