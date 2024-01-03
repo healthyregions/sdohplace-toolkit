@@ -49,144 +49,140 @@ Think of the start of your project as setting out on a road trip. First, you nee
 - Community Engagement: Story maps or collaborative mapping projects may facilitate community engagement by providing social experience insights. These representations allow community members to participate in decision-making, voice their concerns, and collaborate with public health officials to design interventions that address their unique needs and concerns.
 - Monitoring and Evaluation: Spatio-temporal dashboards are effective tools to monitor the effectiveness of interventions over time. By comparing health outcomes before and after implementing interventions, public health officials can assess whether disparities are decreasing and health equity is improving.
 
-Goal
-Description
-Identifying Health Disparities
-Map health outcomes and demographics to identify disparities.
-Targeting Interventions
-Use spatial analysis to direct resources effectively.
-Assessing Access to Healthcare
-Map service accessibility to pinpoint healthcare gaps.
-Modeling SDOH at Different Scales
-Analyze SDOH impact across scales for insight into health influences.
-Environmental Health
-Create dashboards to monitor environmental health risks.
-Health Planning and Policy Interventions
-Inform policy with visualizations to address health challenges.
-Community Engagement
-Use story maps to involve communities in decision-making.
-Monitoring and Evaluation
-Track interventions over time with spatio-temporal dashboards.
 
+![Goals, (graphic created by Kamaria Barronville)](images/intro-table.png){width=80%} 
 
-#### Activity 1.1: 
+#### Activity 1.1: {-}
 Take a look at these three real-world projects. In your own words, sketch out their goals. Do they align with any of the goals we've mapped above?
 
-Data and Stats | Tulsa Health Department
-United States of Health Dashboard | Public Sector | McKinsey & Company
-Heart Disease Death Rates Aged 35 and older, Total Population | cdc.gov
+[Data and Stats | Tulsa Health Department] (https://www.tulsa-health.org/community-health/data-stats/north-tulsa-medical-provider-and-pharmacy-asset-map)
+[United States of Health Dashboard | Public Sector | McKinsey & Company] (https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard)
+[Heart Disease Death Rates Aged 35 and older, Total Population | cdc.gov] (https://www.cdc.gov/dhdsp/maps/national_maps/hd_all.htm)
 
 
 
-
-1.2 Stakeholders
+#### 1.2 Stakeholders {-}
 Once you've got your project's goals on the horizon, it's time to look at who's journeying with you. Collaboration and stakeholder identification are vital components of any project that aims to achieve equity. Whether it's a non-governmental organization, a research group within a university, or a government agency, stakeholders bring diverse perspectives and expertise to the table. Similarly, communities, activists, and advocates can also play a significant role in your project's success. Early identification of stakeholders is key to building trust and solidarity, which is a time-consuming but necessary process. By working together with your stakeholders, you can produce an impactful SDOH project. 
-Here’s how this alliance can shape your journey:
-Understanding Diverse Perspectives: Stakeholders come from various backgrounds and sectors, each bringing unique insights that can challenge and enrich your project's approach to health. A government official might understand policy implications, while a local activist might provide a grassroots perspective on community health challenges.
-Data Gathering and Validation: Collaborators are crucial in both collecting and validating SDOH data. They ensure that the information reflects real-world conditions and is relevant to the communities affected. Researchers can provide rigorous methodologies, while community members can offer qualitative insights that ground the data in lived experiences.
-Expanding the Network: Engaging with stakeholders allows for the expansion of your network. Each stakeholder may introduce you to other relevant parties, broadening the reach and potential impact of your project. This can lead to discovering untapped resources or finding new avenues for support and advocacy.
+
+#### Here’s how this alliance can shape your journey: {-}
+- Understanding Diverse Perspectives: Stakeholders come from various backgrounds and sectors, each bringing unique insights that can challenge and enrich your project's approach to health. A government official might understand policy implications, while a local activist might provide a grassroots perspective on community health challenges.
+- Data Gathering and Validation: Collaborators are crucial in both collecting and validating SDOH data. They ensure that the information reflects real-world conditions and is relevant to the communities affected. Researchers can provide rigorous methodologies, while community members can offer qualitative insights that ground the data in lived experiences.
+- Expanding the Network: Engaging with stakeholders allows for the expansion of your network. Each stakeholder may introduce you to other relevant parties, broadening the reach and potential impact of your project. This can lead to discovering untapped resources or finding new avenues for support and advocacy.
 Exploring New Contexts: Stakeholders can act as guides through unfamiliar territories, both metaphorically in the project domain and literally in the community spaces. They help navigate the cultural, social, and political landscapes that shape health outcomes.
-Innovative Co-Design: Utilizing User-Centered Design principles, stakeholders become co-creators in developing spatial visualizations that represent SDOH. Their input ensures that the end products are not only technically sound but also culturally sensitive and user-friendly.
-Forging Partnerships: Collaboration can lead to long-term partnerships that extend beyond the life of a single project. These relationships can build a foundation for future initiatives, creating a sustainable impact on public health.
+- Innovative Co-Design: Utilizing User-Centered Design principles, stakeholders become co-creators in developing spatial visualizations that represent SDOH. Their input ensures that the end products are not only technically sound but also culturally sensitive and user-friendly.
+- Forging Partnerships: Collaboration can lead to long-term partnerships that extend beyond the life of a single project. These relationships can build a foundation for future initiatives, creating a sustainable impact on public health.
 Revising Project Goals: Stakeholders often provide new insights that can lead to a reframing of project goals. What begins as a narrow focus on a particular health issue might evolve into a more holistic approach that considers a wider range of social factors.
-Ensuring Equity: By involving a diverse group of stakeholders, the project is more likely to address equity in a meaningful way. Equity is not just about equal access, it's also about designing interventions that acknowledge and address power imbalances and historical contexts that contribute to health disparities.
+- Ensuring Equity: By involving a diverse group of stakeholders, the project is more likely to address equity in a meaningful way. Equity is not just about equal access, it's also about designing interventions that acknowledge and address power imbalances and historical contexts that contribute to health disparities.
+
 In Module 2, we will delve deeper into employing User-Centered Design to engage stakeholders effectively. The aim will be to ensure that every step of the project, from conception to implementation, is done in collaboration with those who have a vested interest in the outcomes, guaranteeing that the resulting initiatives are equitable, impactful, and sustainable.
-Activity 1.2: 
+
+#### Activity 1.2: {-}
 
 Review these two projects and identify their stakeholders. Explain what is their role in each project.
 
-Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH
-Food assets for whom? Community perspectives on food asset mapping in Canada
+[Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH] (https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351)
+[Food assets for whom? Community perspectives on food asset mapping in Canada] (https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
 
-
-1.3 Spatial Data
+##### 1.3 Spatial Data {-}
 After understanding the significance of refining objectives and finding stakeholders, it is crucial to take into account one of the essential elements in your project--the spatial component. This toolkit underscores the fact that social determinants of health encompass more than personal genetics or healthy habits. According to the World Health Organization, social determinants of health refer to the conditions in which people are born, grow, live, work, and age (https://health.gov/healthypeople, accessed 11 October, 2023 ). By adopting a spatial view of SDOH, we can research how communities are affected by the places they inhabit. For instance, we can evaluate their access to health care, transportation, recreation, and green areas. On the other hand, some communities may be exposed in their neighborhoods to crime, racism, and pollution. By mobilizing spatial visualizations, we can identify and address these inequalities.
 The spatial data we need for our visualizations can be quite different. While censuses and databases can provide a starting point, it's important to understand their nature - what they include and what they leave out, who generates them (whether it's the public or private sector), and what their intended purpose is. Scrutinizing spatial data is critical to start conceiving your spatial visualization.
 Think of spatial data as your high-powered lens zooming in on a community's heartbeat. It lets you see beyond the surface to the underlying structures—like healthcare reach, parks, and transport. And yes, it also uncovers the shadows of crime, discrimination, and pollution. In your SDOH project, you can typically use three types of spatial data: primary, secondary, and tertiary. In the following section, we will provide a brief description of each of these types of data.
-Primary Spatial Data: Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.
-Secondary Spatial Data:  You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.
-Tertiary Spatial Data: In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it's worth inquiring whether they possess any spatial layers that could prove beneficial for your project. 
+
+![Types of data, (graphic created by Kamaria Barronville)](images/intro-data.png){width=80%} 
+
+- Primary Spatial Data: Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.
+- Secondary Spatial Data:  You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.
+- Tertiary Spatial Data: In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it's worth inquiring whether they possess any spatial layers that could prove beneficial for your project. 
+
+
 It is key to emphasize that data can often be tainted by biases and errors. As a result, the methods used to gather, aggregate, or model spatial data can have adverse effects on the quality of our data visualizations. It is of utmost importance to meticulously scrutinize various forms of data, whether they are qualitative (e..g, interviews or questionnaires), quantitative (e.g., databases), or mixed (e.g., surveys). A valuable starting point for data analysis involves assessing metadata within databases or interview questions. Further insights into this subject will be explored in subsequent sections of this toolkit.
-Project Tip: 
+
+#### Project Tip: {-}
 In your project, there's no need to limit yourself to just one kind of data. In fact, it's not only possible but often necessary to mix and match different sources and types of spatial data to craft compelling SDOH spatial visualizations.
 
 
-Activity 1.3: 
+#### Activity 1.3: {-}
 Review these projects below and identify what type of data they use. In your opinion, what other types of data could they use to enrich their visualizations? 
 
-Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia
-US Social Determinants of Health Atlas - Map of the Month
+[Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia] (https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1396&context=uresposters)
+[US Social Determinants of Health Atlas - Map of the Month] (https://carto.com/blog/visualizing-health-data-social-factors)
 
 
 
-
-1.4 Data visualizations that consider spatial data 
+#### 1.4 Data visualizations that consider spatial data {-}
 Throughout this module, we've concentrated on exploring your objectives, recognizing prospective stakeholders, and delving into the spatial data at your disposal for your research. As we progress, we will now examine how these three features converge when it comes to choosing an appropriate spatial visualization. To facilitate this, we will introduce four distinct types of visualizations for investigating social determinants of health: Asset maps, dashboards, thematic maps, and story maps. 
 Alright, you’ve got your goals and your team – now, let's talk about bringing it all to life with the right kind of map. It’s like choosing the perfect outfit for the right occasion; each type of spatial visualization has its moment to shine when exploring the social determinants of health. Let's browse through the wardrobe: Asset maps, dashboards, thematic maps, and story maps – each has its own flair.
 
-Asset Maps: 
+#### Asset Maps: {-}
 These are like your community's highlight reel, showcasing everything from the vibrant parks and schools to the people who make your area tick. They're about celebrating what's there, not just what's missing, and sparking conversations about building on those strengths.
 
-Find Food IL - Community Food Map by University of Illinois (Source: https://eat-move-save.extension.illinois.edu/#food-finder)
-Asset mapping involves engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. The assets included in an asset map can be diverse and encompass various categories, such as:
-Physical Assets: These include tangible resources like parks, schools, hospitals, community centers, libraries, public transportation, and other infrastructure elements.
-Human Assets: Human resources within the community, such as skilled individuals, volunteers, community leaders, and organizations' staff, are valuable assets.
-Social Assets: Social assets refer to the networks, relationships, and social capital present in the community, including support systems, cultural groups, and community organizations.
-Economic Assets: These include businesses, local enterprises, job opportunities, and other economic resources that contribute to the community's well-being.
-Cultural Assets: The cultural assets encompass the traditions, heritage, arts, and cultural events that enrich the community's identity and cohesion.
-Environmental Assets: Natural resources, green spaces, environmental initiatives, and sustainable practices are considered environmental assets.
+![Community Food Map, (Source: University of Illinois https://eat-move-save.extension.illinois.edu/#food-finder)](images/intro-food.png){width=80%} 
+
+[Asset mapping] (https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351 involves engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. The assets included in an asset map can be diverse and encompass various categories, such as:
+- Physical Assets: These include tangible resources like parks, schools, hospitals, community centers, libraries, public transportation, and other infrastructure elements.
+- Human Assets: Human resources within the community, such as skilled individuals, volunteers, community leaders, and organizations' staff, are valuable assets.
+- Social Assets: Social assets refer to the networks, relationships, and social capital present in the community, including support systems, cultural groups, and community organizations.
+- Economic Assets: These include businesses, local enterprises, job opportunities, and other economic resources that contribute to the community's well-being.
+- Cultural Assets: The cultural assets encompass the traditions, heritage, arts, and cultural events that enrich the community's identity and cohesion.
+- Environmental Assets: Natural resources, green spaces, environmental initiatives, and sustainable practices are considered environmental assets.
 
 Asset Maps empower communities, steer strategic planning, and guide resource allocation. They're about networking and flipping the script to a more positive community narrative.
 
 
-Data Dashboards: 
+#### Data Dashboards: {-}
 Imagine your health community's stats brought to life in real-time – a dashboard that's part control panel, part story, helping everyone from officials to neighbors make sense of the numbers.
-In public health, data dashboards are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, New Video Series: Moving from Data to Action | City Health Dashboard. These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health. 
+In public health, [data dashboards] (https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf) are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, [New Video Series: Moving from Data to Action | City Health Dashboard] (https://www.cityhealthdashboard.com/blog-media/1501. These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health. 
 
-United States of Health (Source: https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard) 
+![United States of Health, (Source: https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard)](images/intro-health.png){width=80%}  
+
 Data dashboards in public health typically include the following features:
-Health Indicators: Dashboards display a variety of health indicators, such as disease rates, mortality rates, vaccination coverage, hospitalization rates, environmental health data, and other relevant metrics.
-Geospatial Data: Many public health dashboards utilize spatial data to present geostatistical analysis in real-time, allowing users to understand health patterns and disparities across different geographic regions.
-Time Series Data: Dashboards often provide data over time, allowing users to observe trends, track changes, and identify seasonal patterns in health outcomes.
-Demographic Disaggregation: Public health data dashboards may disaggregate data by demographic characteristics, such as age, gender, race, ethnicity, and socioeconomic status. This helps identify disparities and understand how health outcomes vary among different population groups.
-Comparisons and Benchmarks: Dashboards may include the ability to compare health outcomes across regions, states, or countries, as well as against national or global benchmarks.
-Data Sources and References: Transparent dashboards typically provide information about the sources of data, data collection methods, and references to ensure data credibility.
-Interactivity: Interactive elements allow users to customize the dashboard, apply filters, and explore data based on their specific interests and questions.
-Alerts and Notifications: Some dashboards include alerting features to notify users about significant changes in health indicators or emerging health threats.
-Data Dashboards keep a pulse on public health, from tracking diseases to zooming in on health equity. They're transparent, interactive, and always on the lookout with alerts.
+- Health Indicators: Dashboards display a variety of health indicators, such as disease rates, mortality rates, vaccination coverage, hospitalization rates, environmental health data, and other relevant metrics.
+- Geospatial Data: Many public health dashboards utilize spatial data to present geostatistical analysis in real-time, allowing users to understand health patterns and disparities across different geographic regions.
+- Time Series Data: Dashboards often provide data over time, allowing users to observe trends, track changes, and identify seasonal patterns in health outcomes.
+- Demographic Disaggregation: Public health data dashboards may disaggregate data by demographic characteristics, such as age, gender, race, ethnicity, and socioeconomic status. This helps identify disparities and understand how health outcomes vary among different population groups.
+- Comparisons and Benchmarks: Dashboards may include the ability to compare health outcomes across regions, states, or countries, as well as against national or global benchmarks.
+- Data Sources and References: Transparent dashboards typically provide information about the sources of data, data collection methods, and references to ensure data credibility.
+- Interactivity: Interactive elements allow users to customize the dashboard, apply filters, and explore data based on their specific interests and questions.
+- Alerts and Notifications: Some dashboards include alerting features to notify users about significant changes in health indicators or emerging health threats.
+- Data Dashboards keep a pulse on public health, from tracking diseases to zooming in on health equity. They're transparent, interactive, and always on the lookout with alerts.
 
 
-Story Maps: 
-A story map in public health is a powerful and interactive tool that combines maps, text, images, and multimedia elements to tell a compelling narrative about health-related issues, initiatives, or research. These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter. 
+#### Story Maps: {-} 
+A [story map] (https://ica-abs.copernicus.org/articles/3/245/2021/ica-abs-3-245-2021.pdf) in public health is a powerful and interactive tool that combines maps, text, images, and multimedia elements to tell a compelling narrative about health-related issues, initiatives, or research. These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter. 
 
-The Mapping of Race in America (Source: https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c) 
+![The Mapping of Race in America (Source: https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c)](images/intro-race.png){width=80%}  
+
+
 Key features and uses of story maps in public health include:
-Data Visualization: Story maps use maps and data visualizations to illustrate health-related trends, patterns, and disparities across geographic regions. This can include disease prevalence, access to healthcare, environmental health risks, and other relevant data.
-Narrative Communication: Story maps are structured to present information in a storytelling format. Public health professionals can use narrative elements to explain the context, significance, and implications of the data, helping the audience grasp the larger story behind the statistics.
-Health Education and Promotion: Story maps are an effective educational tool to raise awareness about public health issues, promote healthy behaviors, and disseminate health-related information to the public.
-Community Engagement: Story maps can engage communities in public health initiatives by presenting data and insights in a way that is relevant and relatable to specific geographic areas or demographics.
-Policy Advocacy: Public health professionals can use story maps to advocate for specific policy changes by visualizing the impact of current policies and proposing evidence-based solutions.
-Environmental Health: Story maps can be used to communicate information about environmental health hazards, pollution, and their impact on public health. They can also showcase initiatives aimed at improving environmental conditions and public health outcomes.
-Outbreak Response and Preparedness: Story maps can be utilized during disease outbreaks to track the spread of infections, identify hotspots, and inform response efforts.
-Health Equity and Disparities: Story maps can highlight health disparities and inequities across different communities and populations, drawing attention to areas with the most significant health challenges and the need for targeted interventions.
+- Data Visualization: Story maps use maps and data visualizations to illustrate health-related trends, patterns, and disparities across geographic regions. This can include disease prevalence, access to healthcare, environmental health risks, and other relevant data.
+- Narrative Communication: Story maps are structured to present information in a storytelling format. Public health professionals can use narrative elements to explain the context, significance, and implications of the data, helping the audience grasp the larger story behind the statistics.
+- Health Education and Promotion: Story maps are an effective educational tool to raise awareness about public health issues, promote healthy behaviors, and disseminate health-related information to the public.
+- Community Engagement: Story maps can engage communities in public health initiatives by presenting data and insights in a way that is relevant and relatable to specific geographic areas or demographics.
+- Policy Advocacy: Public health professionals can use story maps to advocate for specific policy changes by visualizing the impact of current policies and proposing evidence-based solutions.
+- Environmental Health: Story maps can be used to communicate information about environmental health hazards, pollution, and their impact on public health. They can also showcase initiatives aimed at improving environmental conditions and public health outcomes.
+- Outbreak Response and Preparedness: Story maps can be utilized during disease outbreaks to track the spread of infections, identify hotspots, and inform response efforts.
+- Health Equity and Disparities: Story maps can highlight health disparities and inequities across different communities and populations, drawing attention to areas with the most significant health challenges and the need for targeted interventions.
+
 Story Maps turn data into engaging tales, educate, and rally communities. They're advocates, educators, and responders all in one.
 
 
-Thematic Maps: 
-Here's where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. Thematic maps in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data.
-Thematic maps in public health are used for a variety of purposes, including:
-Visualizing disease prevalence and distribution
-Identifying health disparities across different regions or demographic groups
-Monitoring disease outbreaks and patterns
-Assessing access to healthcare services and resources
-Evaluating the impact of public health interventions and policies
-Communicating public health information to the general public and stakeholders
+#### Thematic Maps: {-}
+Here's where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. [Thematic maps] (https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html) in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data.
 
-US Covid Atlas (Source: https://uscovidatlas.org/map) 
+Thematic maps in public health are used for a variety of purposes, including:
+- Visualizing disease prevalence and distribution
+- Identifying health disparities across different regions or demographic groups
+- Monitoring disease outbreaks and patterns
+- Assessing access to healthcare services and resources
+- Evaluating the impact of public health interventions and policies
+- Communicating public health information to the general public and stakeholders
+
+![US Covid Atlas (Source: https://uscovidatlas.org/map)](images/intro-covid.png){width=80%}  
+
 Thematic Maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
 
 
-Activity 1.4: 
+#### Activity 1.4: {-}
 
 After exploring the four spatial visualizations (e.g., story maps, thematic maps, dashboards, and asset maps), it is essential to reflect on their advantages and limitations. Create a list of three advantages and three limitations for each of the four visualizations that we reviewed in this module.
 
@@ -201,7 +197,7 @@ Module 1 is just the beginning of a process. To keep progressing, it's essential
 
 
 
-Module 1 Activity: 
+#### Module 1 Activity: {-}
 
 Think of a problem you want to solve. Write down your purpose and objectives by clearly stating why you want to solve this problem and what you hope to achieve. Who is your target audience? 
 
@@ -214,25 +210,31 @@ The primary aim of this task is to develop a foundation to begin exploring spati
 
 
 
-Summary of Module 1
+#### Summary of Module 1 {-}
+
 In Module 1, the focus is on goal setting for a spatial visualization project related to social determinants of health (SDOH) in public health. Here's a summary of the key points:
+
 Objectives (1.1):
-Clarifying project goals is the initial step.
-The choice of visualization techniques is closely tied to project objectives.
-General goals include identifying health disparities, targeting interventions, assessing access to healthcare, modeling SDOH at different scales, evaluating environmental health, informing health planning and policy, engaging the community, and monitoring and evaluating interventions.
+- Clarifying project goals is the initial step.
+- The choice of visualization techniques is closely tied to project objectives.
+- General goals include identifying health disparities, targeting interventions, assessing access to healthcare, modeling SDOH at different scales, evaluating environmental health, informing health planning and policy, engaging the community, and monitoring and evaluating interventions.
+
 Stakeholders (1.2):
 
-Collaboration and stakeholder identification are essential for achieving equity.
-Stakeholders can be organizations, researchers, government agencies, communities, activists, and advocates.
-Early identification of stakeholders builds trust and solidarity.
+- Collaboration and stakeholder identification are essential for achieving equity.
+- Stakeholders can be organizations, researchers, government agencies, communities, activists, and advocates.
+- Early identification of stakeholders builds trust and solidarity.
+
 Spatial Data (1.3):
-Social determinants of health encompass conditions in which people are born, grow, live, work, and age.
-Spatial data is crucial for understanding how communities are affected by their environments.
-Three types of spatial data are primary (collected personally), secondary (from databases and census records), and tertiary (previously used in other maps).
+- Social determinants of health encompass conditions in which people are born, grow, live, work, and age.
+- Spatial data is crucial for understanding how communities are affected by their environments.
+- Three types of spatial data are primary (collected personally), secondary (from databases and census records), and tertiary (previously used in other maps).
+
 Data Visualizations (1.4):
-Four types of spatial visualizations are discussed: asset maps, data dashboards, story maps, and thematic maps.
-Asset maps focus on community strengths and resources.
-Data dashboards present health-related data in a user-friendly format.
-Story maps combine maps, text, images, and multimedia for storytelling.
-Thematic maps use visual symbols to represent specific health-related data or themes within a geographic area.
+- Four types of spatial visualizations are discussed: asset maps, data dashboards, story maps, and thematic maps.
+- Asset maps focus on community strengths and resources.
+- Data dashboards present health-related data in a user-friendly format.
+- Story maps combine maps, text, images, and multimedia for storytelling.
+- Thematic maps use visual symbols to represent specific health-related data or themes within a geographic area.
+
 The module also encourages exploring external resources and encourages participants to think about their own project's purpose, objectives, target audience, and potential stakeholders. It emphasizes that Module 1 is the beginning of a dynamic process in the journey of using spatial data for SDOH visualizations in public health.
