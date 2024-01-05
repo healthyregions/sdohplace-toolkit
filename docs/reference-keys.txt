@@ -8,3 +8,10 @@ applications
 example-one
 example-two
 final-words
+project-tip
+what-does-it-mean-to-center-equity-in-your-work
+setting-parameters-of-equity
+focus-on-equity
+subject-of-equity
+content-of-equity
+id_1-open
