@@ -2,22 +2,24 @@
 
 By the end of this module, you will: 
 
-Analyze spatial data visualizations in public health
-Identify your stakeholders’ needs
-Select the best spatial visualization type for your project
+- Analyze spatial data visualizations in public health
+- Identify your stakeholders’ needs
+- Select the best spatial visualization type for your project
 
 Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, the primary objective of this module is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits. 
 Annotations, sketches, and meeting summaries can be handwritten in a notebook or digitally generated on a computer.  We recommend creating a journal for this toolkit to annotate and store your notes. Your toolkit journal will assist you in organizing your thoughts, creating new content, making sketches, saving code, writing notes from meetings, and reflecting on your mapping process. Indeed, the production of relevant visualizations related to SDOH is a lengthy and complex process that requires creativity, organization, and technological skills. Your journal can be an invaluable companion on your journey.
 
-#### Tools for this module (Your toolkit journal): {-}
-Notebook and writing utensil or
-Note-taking or sketching app (if you prefer digital annotations) 
+### Tools for this module (Your toolkit journal):
+
+- Notebook and writing utensil or
+- Note-taking or sketching app (if you prefer digital annotations) 
 
 
-### 1.1 Objectives {-}
+## Objectives 
 Think of the start of your project as setting out on a road trip. First, you need to map out where you want to go. What do you hope to discover along the way? Your visualization techniques are like choosing the right vehicle for the journey—each has its strengths for different terrains. Your goals will evolve as you travel, finding new paths to explore. But it all starts with a clear destination in mind.
 
-#### Let's consider these common goals as your potential roadmaps: {-}
+### Let's consider these common goals as your potential roadmaps: 
+
 - Identifying Health Disparities: You can employ spatial visualizations to identify areas with disproportionate health burdens and disparities. For example, by mapping health outcomes and demographic data from the census, it could become evident which communities or populations experience higher rates of diseases or poor health, shedding light on potential health inequities.
 - Targeting Interventions:  Another option is performing spatial analyses to target interventions and resources to areas with the greatest need. By creating asset maps, you could aid public health advocates to direct their efforts, and allocate resources to address health disparities and promote equity.
 - Assessing Access to Healthcare:  You can produce maps to evaluate the accessibility of healthcare services across different regions. These cartographies identify areas with limited access to medical facilities or services, which is crucial in understanding barriers to healthcare for marginalized populations and addressing health disparities.

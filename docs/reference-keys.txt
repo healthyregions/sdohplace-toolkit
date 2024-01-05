@@ -15,3 +15,6 @@ focus-on-equity
 subject-of-equity
 content-of-equity
 id_1-open
+tools-for-this-module-your-toolkit-journal
+objectives
+lets-consider-these-common-goals-as-your-potential-roadmaps
