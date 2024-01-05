@@ -18,3 +18,13 @@ id_1-open
 tools-for-this-module-your-toolkit-journal
 objectives
 lets-consider-these-common-goals-as-your-potential-roadmaps
+stakeholders
+spatial-data
+data-visualizations-that-consider-spatial-data
+a-spatial-perspective
+overview
+roadmap
+defining-goals
+defining-stakeholders
+refining-goals
+environment-setup
