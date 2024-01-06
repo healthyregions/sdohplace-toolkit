@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Nunito:ital,wght@0,300;0,600;1,200;1,300;1,600&family=Roboto+Slab:wght@400;500&display=swap');
+
 p.caption {
   color: #777;
-  margin-top: 10px;
 }
 p code {
-  white-space: inherit;
+  white-space: inhesrit;
 }
 pre {
   word-break: normal;
@@ -11,4 +12,58 @@ pre {
 }
 pre code {
   white-space: inherit;
+}
+h1 {
+  font-family: 'Fredoka', sans-serif;
+  color: #7e1dc4;
+  font-weight: 500;
+  size: 50px;
+}
+
+h2 {
+  font-family: 'Fredoka', sans-serif;
+  color: #1e1e1e;
+  font-weight: 400;
+  size: 28px;
+}
+
+h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: #ff9c77;
+  font-weight: 500;
+  size: 24px;
+}
+
+h4 {
+  font-family: 'Fredoka', sans-serif;
+  color: #ff9c77;
+  font-weight: 500;
+  size: 28px;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+  color: #373a3c;
+  font-weight: 400;
+  size: 18px;
+}
+
+ul {
+  font-family: 'Nunito', sans-serif;
+  color: #373a3c;
+  font-weight: 400;
+  size: 18px;
+}
+
+ol {
+  font-family: 'Nunito', sans-serif;
+  color: #373a3c;
+  font-weight: 400;
+  size: 18px;
+}
+a:hover {
+  font-family: 'Nunito', sans-serif;
+  color: #ff9c77;
+  font-weight: 400;
+  size: 18px;
 }

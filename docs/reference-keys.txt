@@ -23,7 +23,7 @@ establish-process
 rule-of-3
 project-manage
 agile-processes
-project-tip-1
+project-tip
 data-wrangling
 research-design-analysis
 app-development

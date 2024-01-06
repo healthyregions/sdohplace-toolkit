@@ -3,7 +3,7 @@ bookdown::gitbook:
   highlight : tango
   split_by: rmd
   config :
-      toc:
+      toc: 
         collapse : section
 
   
