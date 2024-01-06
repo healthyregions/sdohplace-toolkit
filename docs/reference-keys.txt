@@ -24,6 +24,8 @@ rule-of-3
 project-manage
 agile-processes
 project-tip
+human-centered-design
 data-wrangling
 research-design-analysis
 app-development
+dissemination
