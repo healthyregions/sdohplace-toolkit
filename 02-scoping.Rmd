@@ -122,6 +122,9 @@ Take a look at these three real-world projects. In your own words, sketch out th
 
 Next, update your own goal statement based on ideas in this section. What are your SDOH and Equity goals?
 
+### Project Tip 
+
+Module 1 is just the beginning of a process. To keep progressing, it's essential to always look for inspiration and stakeholders. Take some time to explore various web maps, dashboards, atlases, magazines, and academic articles. Then, list the ones you find appealing in your journal. Even if they are spatial visualizations that have nothing to do with health, try to imagine how you can use their design to study SDOH.
 
 ## Defining Stakeholders 
 Once you've got your project's goals on the horizon, it's time to look at who's journeying with you. Collaboration and stakeholder identification are vital components of any project that aims to achieve equity. Whether it's a non-governmental organization, a research group within a university, or a government agency, stakeholders bring diverse perspectives and expertise to the table. Similarly, communities, activists, and advocates can also play a significant role in your project's success. 
@@ -142,6 +145,7 @@ my.data <- "  Responsibilities        | Description
   Set Strategy, Priorities, & Standards     | Core Team, Leadership
   Allocate Resources (Time and $)     | Leadership
   Manage Processes | Core Team, Project Manager 
+  Design, Research Use Cases | Core Team, Designer
   Develop, Deploy, & Monitor Project | Core Team, Engineer
   Use the application in way that was expected | Expected Users
   Use the application in way that was uexpected  | Unexpected Users
@@ -174,8 +178,10 @@ Exploring New Contexts: Stakeholders can act as guides through unfamiliar territ
 Revising Project Goals:** Stakeholders often provide new insights that can lead to a reframing of project goals. What begins as a narrow focus on a particular health issue might evolve into a more holistic approach that considers a wider range of social factors.
 - **Ensuring Equity:** By involving a diverse group of stakeholders, the project is more likely to address equity in a meaningful way. Equity is not just about equal access, it's also about designing interventions that acknowledge and address power imbalances and historical contexts that contribute to health disparities.
 
-### Finding Mentors
-Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, friends, and mentors in your network. We love this [**Mentor Map**](https://www.insidehighered.com/sites/default/files/files/Mentoring%20Map%5B1%5D(1).pdf) exercise by the National Center for Faculty Development & Diversity -- not just for academic folks, but anyone who has a beating heart and is working on a project. Try out the exercise yourself to identify persons in your network who you may be reach out to connect for feedback, accountability, intellectual discussions, and emotional support as you work through the project. 
+### Finding a Community of Practice
+Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](#) and [**GitHub**](#) pages to introduce yourself and expand your network.
+
+Not sure where to start looking for mentors? We love this [**Mentor Map**](https://www.insidehighered.com/sites/default/files/files/Mentoring%20Map%5B1%5D(1).pdf) exercise by the *National Center for Faculty Development & Diversity* -- not just for academic folks, but anyone who has a beating heart and is working on a project. Try out the exercise yourself to identify persons in your network who you may be reach out to connect for feedback, accountability, intellectual discussions, and emotional support as you work through the project. 
 
 ### Activity
 
@@ -183,10 +189,6 @@ Review these two projects and identify their stakeholders. Explain what is their
 
 - [Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351)
 - [Food assets for whom? Community perspectives on food asset mapping in Canada](https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
-
-#### Project Tip: 
-
-Module 1 is just the beginning of a process. To keep progressing, it's essential to always look for inspiration and stakeholders. Take some time to explore various web maps, dashboards, atlases, magazines, and academic articles. Then, list the ones you find appealing in your journal. Even if they are spatial visualizations that have nothing to do with health, try to imagine how you can use their design to study SDOH.
 
 
 ## Project Assessment

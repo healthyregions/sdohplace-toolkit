@@ -16,12 +16,12 @@ whats-the-point
 refining-goals-for-sdoh
 integrate-equity-directly
 activity
+project-tip
 defining-stakeholders
 assess-your-team
 motivations
-finding-mentors
+finding-a-community-of-practice
 activity-1
-project-tip
 project-assessment
 assess-your-strengths
 assess-project-needs
