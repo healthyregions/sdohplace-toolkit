@@ -4,6 +4,8 @@ bookdown::gitbook:
   split_by: rmd
   config :
       toc: 
+        float : true
         collapse : section
+
 
   

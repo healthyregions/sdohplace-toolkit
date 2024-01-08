@@ -29,7 +29,7 @@ h2 {
 
 h3 {
   font-family: 'Fredoka', sans-serif;
-  color: #ff9c77;
+  color: #7e1dc4;
   font-weight: 500;
   size: 24px;
 }
@@ -61,7 +61,7 @@ ol {
   font-weight: 400;
   size: 18px;
 }
-a:hover {
+a {
   font-family: 'Nunito', sans-serif;
   color: #ff9c77;
   font-weight: 400;
