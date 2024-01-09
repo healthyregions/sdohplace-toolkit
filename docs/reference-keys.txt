@@ -35,5 +35,6 @@ human-centered-design
 data-wrangling
 research-design-analysis
 app-development
+asset-map-development
 story-map-development
 dissemination
