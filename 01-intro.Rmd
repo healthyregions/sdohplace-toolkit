@@ -68,12 +68,17 @@ Throughout this module, we've concentrated on exploring your objectives, recogni
 
 Alright, you’ve got your goals and your team – now, let's talk about bringing it all to life with the right kind of map. It’s like choosing the perfect outfit for the right occasion; each type of spatial visualization has its moment to shine when exploring the social determinants of health. Let's browse through the wardrobe: Asset maps, dashboards, thematic maps, and story maps – each has its own flair.
 
+
+## Testing Knitbook
+
+blah blah
+
 ### Asset Maps 
 These are like your community's highlight reel, showcasing everything from the vibrant parks and schools to the people who make your area tick. They're about celebrating what's there, not just what's missing, and sparking conversations about building on those strengths.
 
 ![Community Food Map, (Source: University of Illinois https://eat-move-save.extension.illinois.edu/#food-finder)](images/intro-food.png){width=80%} 
 
-[Asset mapping] (https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351 involves engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. The assets included in an asset map can be diverse and encompass various categories, such as:
+[Asset mapping](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351) involves engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. The assets included in an asset map can be diverse and encompass various categories, such as:
 - Physical Assets: These include tangible resources like parks, schools, hospitals, community centers, libraries, public transportation, and other infrastructure elements.
 - Human Assets: Human resources within the community, such as skilled individuals, volunteers, community leaders, and organizations' staff, are valuable assets.
 - Social Assets: Social assets refer to the networks, relationships, and social capital present in the community, including support systems, cultural groups, and community organizations.
