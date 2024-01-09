@@ -37,3 +37,4 @@ research-design-analysis
 app-development
 story-map-development
 dissemination
+asset-map-development
