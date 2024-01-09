@@ -17,4 +17,4 @@ The team is based out of the Department of Geography & GIScience at the Universi
 - Jose Alavez, Postdoc
 - Marc Astacio-Palmer, Research Coordinator
 
-2024 :)
+Made in 2023 & 2024 :)
