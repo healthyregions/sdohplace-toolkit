@@ -13,6 +13,7 @@ pre {
 pre code {
   white-space: inherit;
 }
+
 h1 {
   font-family: 'Fredoka', sans-serif;
   color: #7e1dc4;
@@ -48,6 +49,12 @@ p {
   size: 18px;
 }
 
+summary {
+  font-family: 'Nunito', sans-serif;
+  color: #373a3c;
+  font-weight: 400;
+  size: 18px;
+}
 ul {
   font-family: 'Nunito', sans-serif;
   color: #373a3c;
@@ -61,6 +68,7 @@ ol {
   font-weight: 400;
   size: 18px;
 }
+
 a {
   font-family: 'Nunito', sans-serif;
   color: #ff9c77;
