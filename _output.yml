@@ -2,6 +2,7 @@ bookdown::gitbook:
   css: style.css
   includes:
       before_body: banner.html
+      after_body: footer-banner.html
   highlight : tango
   split_by: rmd
   config :
