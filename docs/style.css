@@ -33,9 +33,9 @@ pre code {
 .hero-image-container {
   position: absolute;
   top: -20px;
-  left: -2px;
+  left: 0;
   right: 0;
-  width: 102%;
+  width: 100%;
   height: 125px;
   background-image: url("images/banner.png");
 }
@@ -283,6 +283,44 @@ div.design {
 div.hat {
   background-image: url("../images/hat.png");
 }
+
+/* .book .book-body .page-wrapper .page-inner section.normal is needed
+   to override the styles produced by gitbook, which are ridiculously
+   overspecified. Goal of the selectors is to ensure internal "margins"
+   controlled only by padding of container 
+
+.book .book-body .page-wrapper .page-inner section.normal div.rstudio-tip > :first-child,
+.book .book-body .page-wrapper .page-inner section.normal div.tip > :first-child {
+  margin-top: 0;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal div.rstudio-tip > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.tip > :last-child {
+  margin-bottom: 0;
+}
+
+iframe { 
+   -moz-transform-origin: top left; 
+   -webkit-transform-origin: top left; 
+   -o-transform-origin: top left; 
+   -ms-transform-origin: top left; 
+   transform-origin: top left; 
+}
+
+.iframe-container {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border: #ddd 2px solid;
+  box-shadow: #888 0px 5px 8px;
+  margin-bottom: 1em;
+}
+
+.iframe-container > iframe {
+  border: none;
+}
+
+*/
+
 
 /*-------------------------------------------*/
 /*-------------------------------------------*/
