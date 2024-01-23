@@ -8,11 +8,14 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
+favicon: images/logo.png
 github-repo: healthyregions/sdhoplace-toolkit
 description: "This is the beginning of the SDOH & Place Toolkit."
 ---
 
 ## Preface {-}
+
+![](images/homepage-illustration.png)
 
 The Place Project Community Toolkit aims to increase the capacity for community and civic organizations in health to:
 
