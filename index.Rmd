@@ -18,14 +18,14 @@ description: "This is the beginning of the SDOH & Place Toolkit."
 ## Preface {-}
 
 
-The SDOH & Place Project Community Toolkit aims to increase the capacity for community and civic organizations in health to:
+The [SDOH & Place Project Community Toolkit](https://sdohplace.org/) aims to increase the capacity for community and civic organizations in health to:
 
- - Access and work with SDOH data (i.e., place/spatial data)
+ - Access and work with social determinants of health (SDOH) data (i.e., place/spatial data)
  - Use place data for social good and to further health equity
  - Develop engaging and compelling apps to inspire, activate, and retain users
  - Work within an open ecosystem infrastructure
 
-In order to identify and engage with the necessities of different social actors, the community toolkit is based on the principles of Human-Centered Design (HCD). HCD is a well-researched framework that ensures the potential users’ desires, abilities, and contexts are at the core of interactive systems and applications. HCD consists of four main steps: identifying users’ needs, designing for those needs, evaluating, and iterating. Inspired by HCD, the Place toolkit is built upon an ongoing co-creation and evaluation process that leverages the collaborative efforts of various stakeholders, such as researchers, policymakers, and analysts.
+In order to identify and engage with the necessities of different social actors, the community toolkit is based on the principles of Human-Centered Design (HCD). HCD is a well-researched framework that ensures the potential users’ desires, abilities, and contexts are at the core of interactive systems and applications. HCD consists of four main steps: identifying users’ needs, designing for those needs, evaluating, and iterating. Inspired by HCD, the community toolkit is built upon an ongoing co-creation and evaluation process that leverages the collaborative efforts of various stakeholders, such as researchers, policymakers, and analysts.
 
 The SDOH & Place Project Community Toolkit connects equity principles with analysis and design of spatial visualizations for SDOH spatial data. This toolkit draws inspiration from the Robert Wood Johnson Foundation (RWJF) Commission’s findings, which assessed [how communities’s health and life expectancy are affected by the places where they live](https://www.rwjf.org/en/insights/our-research/interactives/whereyouliveaffectshowlongyoulive.html). To address this issue, RWJF has previously created resources to [promote health equity](https://www.rwjf.org/en/building-a-culture-of-health/focus-areas/Features/achieving-health-equity.html).
 
@@ -38,7 +38,29 @@ Currently, the community toolkit contains six modules. Depending on your project
  - **Module 5** introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards.
  - **Module 6** addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement.
 
+### The Team {-}
 
+**Marynia Kolak** *Principal Investigator*
+
+**ChengXiang Zhai** *Co-Investigator*
+
+**Kamaria Barronville** *Instructional Designer*
+
+**José Alavez** *Postdoctoral Scholar*
+
+**Shubham Kumar** *Product Designer*
+
+**Adam Cox** *Software Engineer*
+
+**Mukesh Chugani** *Software Engineer*
+
+**Marc Astacio-Palmer** *Research Coordinator*
+
+**Catherine Discenza** *Graduate Scholar*
+
+**Andre Vines** *Graphic Designer*
+
+**Ashwin Patil** *Research Designer*
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
