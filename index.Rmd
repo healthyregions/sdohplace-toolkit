@@ -38,7 +38,7 @@ Currently, the community toolkit contains six modules. Depending on your project
  - **Module 5** introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards.
  - **Module 6** addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement.
 
-### The Team {-}
+### The Core Team {-}
 
 **Marynia Kolak** *Principal Investigator*
 
