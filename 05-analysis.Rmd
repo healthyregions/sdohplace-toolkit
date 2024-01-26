@@ -3,8 +3,9 @@
 
 # Research Design & Analysis
 
--Visualize Data as EDA method
--Data Classification ~ Box Plots, Choropleth Maps
--Rate Maps
--Overlays
--Calculate new spatial variables (buffers, distance)
+- Visualize Data as EDA method
+- Data Classification ~ Box Plots, Choropleth Maps
+- Rate Maps
+- Overlays
+- Calculate new spatial variables (buffers, distance)
+- Testing 
