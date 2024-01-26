@@ -1,5 +1,25 @@
 # Introduction
 
+
+:::objective
+**Objectives**
+
+In this module, you will:
+
+* Explore social determinants of health, equity, and data visualizations
+* Begin to consider what type of visualization you want to use
+
+*Required Tools*
+
+For this toolkit, you need your **toolkit journal**: 
+
+- Notebook and writing utensil or
+- Note-taking or sketching app (if you prefer digital annotations) 
+
+Some of our team members prefer drawing on post-it notes, tablets, digital apps, or wall-sized pieces of paper. Take your pick and go with it!
+:::
+
+
 ## SDOH & Place 
 
 When we talk about the factors that shape our health, it's not just about biology or lifestyle—it's about where we live and the complex tapestry of history, society, and economy that frames our lives. The [social determinants of health (SDOH)](https://www.cdc.gov/about/sdoh/index.html) encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren't just statistics; they're stories of communities and the places we call home, varying from one street to the next. They're about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.
@@ -17,11 +37,9 @@ Visualizing public health data isn't just about the "what"—it's about the "so 
 Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize SDOH data and advance [health equity](https://www.cdc.gov/healthequity/whatis/index.html).
 Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.
 
-![The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives](images/preface-storymap.png)
+![The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives](images/preface-storymap.png) *The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives* (source: https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html)
 
-The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives (source: https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html)
-
-### Is there app for that?
+### Is there app for that? {-}
 
 In the ever-evolving landscape of data visualization and technology, it's essential to explore existing tools and applications before embarking on a new project. This not only saves time and resources but also allows you to benefit from the wealth of solutions that may already address your needs. Here are some ideas to help you determine if there's an app or web visualization that aligns with your SDOH data visualization project:
 
@@ -60,7 +78,7 @@ Imagine a dashboard that not only shows you the trends but also tells you the st
 
 However, we've got to acknowledge that sometimes, our public health systems fall short. They miss the mark on painting the full picture of health disparities. That’s why, when we're talking about Place & SDOH, we need to put equity at the heart of our work—from the word go, right through to the final pixel of the design. It's not just a 'nice-to-have'; it's a must-do for visualizations that truly resonate with and serve all communities.
 
-### Equity Orientation 
+### Equity Orientation {-}
 
 The [equity orientation in a public health data system](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/) involves several key components that must be outlined to address health disparities and promote equitable outcomes effectively. 
 
@@ -86,9 +104,9 @@ These components include:
 ![Centering Equity](images/preface-centeringequity.png)
 Centering Equity (source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/, graphic created by Kamaria Barronville).
 
-## Embracing a Trauma-Informed Mindset in Decision-Making
+### Embracing a Trauma-Informed Mindset in Decision-Making {-}
 
-In the realm of social determinants of health (SDOH) data visualization, adopting a trauma-informed mindset is crucial for creating solutions that are sensitive, empathetic, and inclusive. Trauma-informed decision-making ensures that your project respects the experiences and well-being of individuals whose data is being visualized. Here are key considerations to guide your decision-making process with a trauma-informed approach:
+In the realm of social determinants of health (SDOH) data visualization, adopting a [trauma-informed mindset](https://ncsacw.acf.hhs.gov/userfiles/files/SAMHSA_Trauma.pdf) is crucial for creating solutions that are sensitive, empathetic, and inclusive. Trauma-informed decision-making ensures that your project respects the experiences and well-being of individuals whose data is being visualized. Here are key considerations to guide your decision-making process with a trauma-informed approach:
 
 - **Understand the Impact of Trauma:**
 Recognize that individuals within your data may have experienced trauma, whether it's related to health disparities, socioeconomic challenges, or other adverse life events. Understanding the potential impact of trauma allows you to approach your project with empathy and compassion.
@@ -115,6 +133,17 @@ Establish continuous feedback loops to gather insights from users and stakeholde
 Uphold ethical standards in data use and privacy protection. Clearly communicate how data will be used, ensuring transparency and obtaining informed consent when necessary. Respect privacy rights and prioritize the responsible and ethical handling of sensitive information.
 
 By embracing a trauma-informed mindset in decision-making, your SDOH data visualization project can contribute to a more compassionate and understanding approach to public health. This mindset not only enhances the user experience but also promotes a positive impact on the well-being of the individuals and communities represented in the data.
+
+
+:::tip
+**Tip**
+
+Consider your audience or who your project will impact. How can you involve them in the entire process of developing and disseminating your project?
+
+* Start by creating a list of people you know that can be included, think about who they can connect you to.
+* Ask if they're willing to contribute some of their time and expertise to help you develop this project.
+* View the people your working with as co-creators. 
+:::
 
 ## Types of Applications 
 
@@ -152,7 +181,7 @@ Imagine your health community's stats brought to life in real-time – a dashboa
 
 In public health, [data dashboards](https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf) are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, [New Video Series: Moving from Data to Action | City Health Dashboard](https://www.cityhealthdashboard.com/blog-media/1501). These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health. 
 
-![United States of Health, (Source: https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard)](images/intro-health.png){width=80%}  
+![United States of Health (Source: https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard)](images/intro-health.png){width=80%}  
 
 Data dashboards in public health typically include the following features:
 
@@ -224,10 +253,11 @@ Thematic maps in public health are used for a variety of purposes, including:
 
 Thematic Maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
 
-
-#### Activity 1.4: {-}
+:::activity
+**Activity**
 
 After exploring the four spatial visualizations (e.g., story maps, thematic maps, dashboards, and asset maps), it is essential to reflect on their advantages and limitations. Create a list of three advantages and three limitations for each of the four visualizations that we reviewed in this module.
 
 For example, you could focus on which visualization is better suited for displaying a place's historical health trends, analyzing the impact of a pandemic, or explaining the results of a public policy? Which visualization requires some experience with statistics and coding, and which one requires experience with the humanities and storytelling?
 
+:::

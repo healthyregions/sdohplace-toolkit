@@ -3,28 +3,20 @@
 
 # Project Scoping 
 
-## Overview
+:::objective
+**Objectives**
+In this module, you will:
 
-By the end of this module, you will: 
-
-- X spatial data visualizations in public health
-- X your stakeholders’ needs
-- Select the best spatial visualization type for your project 
+* Start planning your project
+* Consider who your stakeholders will be
+:::
 
 Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, the primary objective of this module is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits. 
 
 Annotations, sketches, and meeting summaries can be handwritten in a notebook or digitally generated on a computer. We recommend creating a journal for this toolkit to annotate and store your notes. Your toolkit journal will assist you in organizing your thoughts, creating new content, making sketches, saving code, writing notes from meetings, and reflecting on your mapping process. Indeed, the production of relevant visualizations related to SDOH is a lengthy and complex process that requires creativity, organization, and technological skills. Your journal can be an invaluable companion on your journey.
 
-### Required Tools {-}
 
-For this module, you need your toolkit journal: 
-
-- Notebook and writing utensil or
-- Note-taking or sketching app (if you prefer digital annotations) 
-
-Some of our team members prefer drawing on post-it notes, tablets, digital apps, or wall-sized pieces of paper. Take your pick and go with it!
-
-## What's the Point?
+## What's the Point? 
 
 The goal of this project will be to develop some place-based data viz/app/decision support that will integrate social determinants of health and an equity framework.
 
@@ -52,7 +44,7 @@ But, what will you, do, specifically — and why? Let's run through some core qu
 
 - It is common to start with too ambitious a goal, that will slowly get refined over the project's course of implementation. Try to be realistic and honest when assessing what your final project could do.
 
-**Why** is it important? **Why** should people care?
+**Why** should people care?
 
 - This is often the most important question, and the one least formulated in early stages of the process. Something may be interesting and meaningful to you, but may not be important to others. Or it may be very obvious to you and your peers, but the thought hasn't occurred to others in a different discipline or domain. Be specific and intentional in setting this objective, and do the research. 
 
@@ -106,7 +98,7 @@ pander(df, style = 'rmarkdown')
 ```
 </br>
 
-### Integrate Equity Directly
+### Integrate Equity Directly {-}
 
 Think back to the equity framework introduced in the first module. While each component is critical to any application built to understand and communicate SDOH, the [**Content of Equity**](https://maps.healthyregions.org/sdhoplace-toolkit/01-intro.html#content-of-equity) component can be a useful consideration when building into your goals. Consider how your application may address equity by focusing on one or more of these aspects. Some examples include:
 
@@ -114,7 +106,9 @@ Think back to the equity framework introduced in the first module. While each co
 - Developing an asset map of local health and social services to maximize networking and connection in your city. *(Distributive Equity)*
 - Curating a story map that invites users to "walk" through a neighborhood over time as it becomes segregated from highway construction. *(Contextual Equity)*
  
-### Activity
+:::activity
+**Activity**
+
 Take a look at these three real-world projects. In your own words, sketch out their goals. Do they align with any of the SDOH application goals we've mapped above? What content of equity (procedural, distributive, or contextual) do they address?
 
 - [Data and Stats | Tulsa Health Department](https://www.tulsa-health.org/community-health/data-stats/north-tulsa-medical-provider-and-pharmacy-asset-map)
@@ -124,10 +118,13 @@ Take a look at these three real-world projects. In your own words, sketch out th
 - [Heart Disease Death Rates Aged 35 and older, Total Population | cdc.gov](https://www.cdc.gov/dhdsp/maps/national_maps/hd_all.htm)
 
 Next, update your own goal statement based on ideas in this section. What are your SDOH and Equity goals?
+:::
 
-### Project Tip 
+:::tip
+**Tip**
 
-Module 1 is just the beginning of a process. To keep progressing, it's essential to always look for inspiration and stakeholders. Take some time to explore various web maps, dashboards, atlases, magazines, and academic articles. Then, list the ones you find appealing in your journal. Even if they are spatial visualizations that have nothing to do with health, try to imagine how you can use their design to study SDOH.
+This is just the beginning of a process. To keep progressing, it's essential to always look for inspiration and stakeholders. Take some time to explore various web maps, dashboards, atlases, magazines, and academic articles. Then, list the ones you find appealing in your journal. Even if they are spatial visualizations that have nothing to do with health, try to imagine how you can use their design to study SDOH.
+:::
 
 ## Defining Stakeholders 
 Once you've got your project's goals on the horizon, it's time to look at who's journeying with you. Collaboration and stakeholder identification are vital components of any project that aims to achieve equity. Whether it's a non-governmental organization, a research group within a university, or a government agency, stakeholders bring diverse perspectives and expertise to the table. Similarly, communities, activists, and advocates can also play a significant role in your project's success. 
@@ -137,9 +134,11 @@ Once you've got your project's goals on the horizon, it's time to look at who's 
 In Module 2, we will delve deeper into employing User-Centered Design to engage stakeholders effectively. The aim will be to ensure that every step of the project, from conception to implementation, is done in collaboration with those who have a vested interest in the outcomes, guaranteeing that the resulting initiatives are equitable, impactful, and sustainable. For now, let's assess your team.
 
 
-### Assess Your Team
+### Assess Your Team {-}
 
-Take an inventory of who makes up your team, and define each person's role. If you are embedded within a larger organization or corporation, there may be expansive stakeholders involved, with multiple stages of review, implementation, and iteration. If you're in a smaller group or you're on your own, you may be taking on several roles at the same time. Your core team may include community members directly, or may have a different leadership structure. Here are some critical roles to consider:
+Take an inventory of who makes up your team, and define each person's role. If you are embedded within a larger organization or corporation, there may be expansive stakeholders involved, with multiple stages of review, implementation, and iteration. If you're in a smaller group or you're on your own, you may be taking on several roles at the same time. 
+
+Your core team may include community members directly, or may have a different leadership structure. Here are some critical roles to consider:
 
 ```{r table-simple2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 require(pander)
@@ -160,39 +159,56 @@ row.names(df)<-NULL
 pander(df, style = 'rmarkdown')
 ```
 
-There are two additional stakeholders every application developer should consider -- the Champion, and the Curmudgeon. Yes, these are actual roles that have been used in *Health Informatics* teaching for some time... Considering them will be essential for your success:
+There are two additional stakeholders every application developer should consider -- the Champion, and the Curmudgeon, which are actual roles that have been used in *Health Informatics* 
+
+Considering them will be essential for your success:
 
 - **The Champion** - They love your idea, sing its praises, and are ready to share your work with everyone they know. They may not get the "tech stuff" completely, and won't have time to learn it if they wanted to, but are your biggest cheerleader. They may help you get funding.
+
 - **The Curmudgeon** - They prefer to do things the way they have always been doing it. It's generally something they do themselves, and probably manually. They are not interested in your work, and may challenge it with a sigh, eye-roll, or outright lament. May prefer technology the way it "used" to be.
 
 We caution that you not shift your work too much in either direction to please/antagonize either of these stakeholders, but rather understand their role in the process at this stage. 
 
-### Motivations
+### Motivations {-}
 If you find yourself to be a "curmudgeon" at the idea of working with others to support your journey, we also encourage you to take a moment to consider all the benefits of engaging more stakeholders.
 
 Here’s how a wider stakeholder alliance can shape your journey:
 
 - **Understanding Diverse Perspectives:** Stakeholders come from various backgrounds and sectors, each bringing unique insights that can challenge and enrich your project's approach to health. A government official might understand policy implications, while a local activist might provide a grassroots perspective on community health challenges.
+
 - **Data Gathering and Validation:** Collaborators are crucial in both collecting and validating SDOH data. They ensure that the information reflects real-world conditions and is relevant to the communities affected. Researchers can provide rigorous methodologies, while community members can offer qualitative insights that ground the data in lived experiences.
+
 - **Expanding the Network:** Engaging with stakeholders allows for the expansion of your network. Each stakeholder may introduce you to other relevant parties, broadening the reach and potential impact of your project. This can lead to discovering untapped resources or finding new avenues for support and advocacy.
-Exploring New Contexts: Stakeholders can act as guides through unfamiliar territories, both metaphorically in the project domain and literally in the community spaces. They help navigate the cultural, social, and political landscapes that shape health outcomes.
+
+- **Exploring New Contexts:** Stakeholders can act as guides through unfamiliar territories, both metaphorically in the project domain and literally in the community spaces. They help navigate the cultural, social, and political landscapes that shape health outcomes.
+
 - **Innovative Co-Design:** Utilizing User-Centered Design principles, stakeholders become co-creators in developing spatial visualizations that represent SDOH. Their input ensures that the end products are not only technically sound but also culturally sensitive and user-friendly.
+
 - **Forging Partnerships:** Collaboration can lead to long-term partnerships that extend beyond the life of a single project. These relationships can build a foundation for future initiatives, creating a sustainable impact on public health.
-Revising Project Goals:** Stakeholders often provide new insights that can lead to a reframing of project goals. What begins as a narrow focus on a particular health issue might evolve into a more holistic approach that considers a wider range of social factors.
+
+- **Revising Project Goals:** Stakeholders often provide new insights that can lead to a reframing of project goals. What begins as a narrow focus on a particular health issue might evolve into a more holistic approach that considers a wider range of social factors.
+
 - **Ensuring Equity:** By involving a diverse group of stakeholders, the project is more likely to address equity in a meaningful way. Equity is not just about equal access, it's also about designing interventions that acknowledge and address power imbalances and historical contexts that contribute to health disparities.
 
-### Finding a Community of Practice
+### Finding a Community of Practice {-}
+
 Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](#) and [**GitHub**](#) pages to introduce yourself and expand your network.
 
-Not sure where to start looking for mentors? We love this [**Mentor Map**](https://www.insidehighered.com/sites/default/files/files/Mentoring%20Map%5B1%5D(1).pdf) exercise by the *National Center for Faculty Development & Diversity* -- not just for academic folks, but anyone who has a beating heart and is working on a project. Try out the exercise yourself to identify persons in your network who you may be reach out to connect for feedback, accountability, intellectual discussions, and emotional support as you work through the project. 
+:::tip
+**Tip**
 
-### Activity
+Not sure where to start looking for mentors? We love this [**Mentor Map**](https://www.insidehighered.com/sites/default/files/files/Mentoring%20Map%5B1%5D(1).pdf) exercise by the *National Center for Faculty Development & Diversity* -- not just for academic folks, but anyone who has a beating heart and is working on a project. Try out the exercise yourself to identify persons in your network who you may be reach out to connect for feedback, accountability, intellectual discussions, and emotional support as you work through the project. 
+:::
+
+:::activity
+**Activity**
 
 Review these two projects and identify their stakeholders. Explain what is their role in each project.
 
 - [Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351)
-- [Food assets for whom? Community perspectives on food asset mapping in Canada](https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
 
+- [Food assets for whom? Community perspectives on food asset mapping in Canada](https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
+:::
 
 ## Project Assessment
 
@@ -217,71 +233,96 @@ After assessing your strengths, go back to your list of stakeholders and update 
 ### Assess Project Needs
 Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and paint points, as well as technical, financial, people, and time resources. Consider sustainability at this stage… 
 
-### Establish Deliverables
+### **Establish Deliverables** {-}
 
-Technial requirements
+### Application Action Goals {-}
 
-++ application action goals:
-- Access to information (ex. Drop-down selection, click for pop-up window, scrollytelling)
-- User-prompted input (ex. Slider, number entry)
+#### Access to Information {-}
 
-++ SMART goals/similar? 
+Implement a user-friendly interface with features like drop-down selection, click for pop-up windows, and storytelling to enhance access to information.
 
-### Establish Process
+Ensure that users can easily explore relevant data points and insights related to social determinants of health (SDOH) within their specified areas.
+
+### User-Prompted Input {-}
+
+Incorporate interactive elements such as sliders and number entry fields to allow users to input specific parameters, enabling a more personalized and focused exploration of the data.
+Design the application to respond dynamically to user inputs, providing real-time visualizations and insights based on the selected criteria.
+
+### SMART Goals {-}
+
+Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals or similar criteria for the project to ensure clarity and effectiveness:
+
+**Specific:** Clearly define the objectives and outcomes of the project.
+
+**Measurable:** Set quantifiable metrics to assess progress and success.
+
+**Achievable:** Ensure that goals are realistic and feasible within the project scope.
+
+**Relevant:** Align project goals with the overall purpose and objectives.
+
+**Time-Bound:** Define specific timelines for the completion of key milestones and the entire project.
 
 
+### **Establish Process** {-}
 
-++ data preparation, analysis, application development (recommend that just 1 is intensive)
+### Project Management {-}
 
-Project Manage
+To successfully navigate the complexities of the project, effective project management strategies must be implemented. This involves:
 
-- Generate a timeline, and break out tasks
-- How will you manage & document your process?
-- Communications plan between team members & stakeholders?
+#### Timeline and Task Breakdown {-}
 
-Agile Processes
+**Generate a Timeline**
 
+- Develop a detailed timeline outlining the various stages of the project, from data preparation and analysis to application development and deployment.
 
+- Clearly define milestones and deadlines to track progress effectively.
 
+**Task Breakdown**
 
-### Module 1 Activity: {-}
+- Break down the project into manageable tasks and subtasks, assigning responsibilities to team members based on their expertise.
 
-Think of a problem you want to solve. Write down your purpose and objectives by clearly stating why you want to solve this problem and what you hope to achieve. Who is your target audience? 
+- Prioritize tasks based on dependencies and critical paths to ensure a smooth workflow.
+
+#### Documentation {-}
+
+**Process Documentation**
+
+- Establish a systematic approach to document the entire process, including data preparation steps, analysis methodologies, and application development strategies.
+
+- Maintain a comprehensive record of decisions made, challenges encountered, and solutions implemented throughout the project.
+
+**Communication Plan**
+
+- Develop a communication plan that outlines how team members and stakeholders will stay informed about project progress.
+
+- Define regular check-ins, status updates, and channels for effective communication within the team.
+
+### Agile Processes {-}
+
+Embrace agile methodologies to foster flexibility and adaptability in project execution:
+
+#### Iterative Development {-}
+
+- Implement an iterative development approach, allowing for continuous refinement and improvement based on feedback and evolving requirements.
+
+- Conduct regular sprint cycles to review and adjust project goals, ensuring alignment with stakeholder expectations.
+
+#### User-Centered Design{-}
+
+- Prioritize user feedback and engagement throughout the development process, incorporating user-centered design principles.
+
+- Conduct usability testing to gather insights into user preferences and refine the application interface accordingly.
+
+By establishing clear deliverables and defining an agile and well-documented process, the project can proceed systematically and effectively, addressing the identified objectives and stakeholder needs.
+
+:::activity
+**Activity**
+
+Write down your purpose and objectives by clearly stating why you want to solve this problem and what you hope to achieve. Who is your target audience? 
 
 Next, make a list of your potential stakeholders. How would you contact your stakeholders and why would they be interested in collaborating with you? Would you be part of an ongoing project or propose a new one?
 
 The format for this exercise is flexible and exploratory. You can opt to create lists of objectives, draw diagrams, write a structured plan, or engage in a free-writing exercise.
 
 The primary aim of this task is to develop a foundation to begin exploring spatial data for your project.It's important to note that your final prototype might diverge significantly from what you record in this entry, and that's perfectly acceptable. Remember, the process of using SDOH spatial data for visualizations is a dynamic process.
-
-
-
-
-#### Summary of Module 1 {-}
-
-In Module 1, the focus is on goal setting for a spatial visualization project related to social determinants of health (SDOH) in public health. Here's a summary of the key points:
-
-Objectives (1.1):
-- Clarifying project goals is the initial step.
-- The choice of visualization techniques is closely tied to project objectives.
-- General goals include identifying health disparities, targeting interventions, assessing access to healthcare, modeling SDOH at different scales, evaluating environmental health, informing health planning and policy, engaging the community, and monitoring and evaluating interventions.
-
-Stakeholders (1.2):
-
-- Collaboration and stakeholder identification are essential for achieving equity.
-- Stakeholders can be organizations, researchers, government agencies, communities, activists, and advocates.
-- Early identification of stakeholders builds trust and solidarity.
-
-Spatial Data (1.3):
-- Social determinants of health encompass conditions in which people are born, grow, live, work, and age.
-- Spatial data is crucial for understanding how communities are affected by their environments.
-- Three types of spatial data are primary (collected personally), secondary (from databases and census records), and tertiary (previously used in other maps).
-
-Data Visualizations (1.4):
-- Four types of spatial visualizations are discussed: asset maps, data dashboards, story maps, and thematic maps.
-- Asset maps focus on community strengths and resources.
-- Data dashboards present health-related data in a user-friendly format.
-- Story maps combine maps, text, images, and multimedia for storytelling.
-- Thematic maps use visual symbols to represent specific health-related data or themes within a geographic area.
-
-The module also encourages exploring external resources and encourages participants to think about their own project's purpose, objectives, target audience, and potential stakeholders. It emphasizes that Module 1 is the beginning of a dynamic process in the journey of using spatial data for SDOH visualizations in public health.
+:::
