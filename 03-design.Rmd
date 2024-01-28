@@ -38,3 +38,12 @@ Name your GitHub repository whatever you want to name your data package. It will
 * Start with a letter
 * Optionally, consider the naming tips **[here](https://r-pkgs.org/package-structure.html)**
 :::
+
+:::tools
+**Tools**
+Name your GitHub repository whatever you want to name your data package. It will make things less confusing. As such, the name you choose must:
+
+* Include only letters, numbers
+* Start with a letter
+* Optionally, consider the naming tips **[here](https://r-pkgs.org/package-structure.html)**
+:::

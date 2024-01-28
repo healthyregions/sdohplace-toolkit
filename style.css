@@ -156,7 +156,7 @@ ol {
 /*---------------------------------------------*/
 /*--------------- Footer Line -----------------*/
 
-.footer-line 
+.footer-line
 {
   background: #FFE5C4 !important;
   height: 2px !important;
@@ -187,7 +187,7 @@ table tbody {
 /*------------ Table of Contents --------------*/
 
 /* all TOC list items, basically */
-.book .book-summary ul.summary li a, 
+.book .book-summary ul.summary li a,
 .book .book-summary ul.summary li span {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -245,7 +245,7 @@ li.appendix span, li.part span { /* for TOC part names */
 }
 
 .summary > li:first-child {
-  height: auto !important; 
+  height: auto !important;
 }
 
 /*
@@ -257,15 +257,15 @@ li.appendix span, li.part span { /* for TOC part names */
 /*-------------------------------------------*/
 /*--------------- Boxes ---------------------*/
 
-div.tip, div.pitfall, div.objective, div.activity {
+div.tip, div.pitfall, div.objective, div.activity, div.tools {
   border: 4px #FF9C77;
   border-style: dashed solid;
-  padding: 1em;
+  padding: 3rem 1rem 2rem;
   margin: 1em 0;
   padding-left: 100px;
   background-size: 70px;
   background-repeat: no-repeat;
-  background-position: 15px center;
+  background-position: 15px 15px;
   min-height: 120px;
   color: #7E1CC4;
   background-color: #FFE5C4;
@@ -281,10 +281,15 @@ div.pitfall {
 
 div.objective {
   background-image: url("./images/objective.png");
+  background-color: #;
 }
 
 div.activity {
   background-image: url("./images/activity.png");
+}
+
+div.tools {
+  background-image: url("./images/tools.png");
 }
 
 /*-------------------------------------------*/
@@ -293,7 +298,7 @@ div.activity {
 /* .book .book-body .page-wrapper .page-inner section.normal is needed
    to override the styles produced by gitbook, which are ridiculously
    overspecified. Goal of the selectors is to ensure internal "margins"
-   controlled only by padding of container 
+   controlled only by padding of container
 
 .book .book-body .page-wrapper .page-inner section.normal div.rstudio-tip > :first-child,
 .book .book-body .page-wrapper .page-inner section.normal div.tip > :first-child {
@@ -305,12 +310,12 @@ div.activity {
   margin-bottom: 0;
 }
 
-iframe { 
-   -moz-transform-origin: top left; 
-   -webkit-transform-origin: top left; 
-   -o-transform-origin: top left; 
-   -ms-transform-origin: top left; 
-   transform-origin: top left; 
+iframe {
+   -moz-transform-origin: top left;
+   -webkit-transform-origin: top left;
+   -o-transform-origin: top left;
+   -ms-transform-origin: top left;
+   transform-origin: top left;
 }
 
 .iframe-container {
