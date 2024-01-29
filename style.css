@@ -66,6 +66,9 @@ h2 {
   color: #1E1E1E;
   font-weight: 400;
   size: 36px;
+  border-left: solid 4px;
+  border-color: #FF9C77;
+  padding-left: 11px !important;
 }
 
 h3 {
