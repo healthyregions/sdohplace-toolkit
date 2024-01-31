@@ -18,9 +18,9 @@ Annotations, sketches, and meeting summaries can be handwritten in a notebook or
 
 ## What's the Point? 
 
-The goal of this project will be to develop some place-based data viz/app/decision support that will integrate social determinants of health and an equity framework.
+The goal of this project will be to develop some place-based data visualization or application support that will integrate social determinants of health and an equity framework.
 
-But, what will you, do, specifically — and why? Let's run through some core questions.
+But, what will you *do*, specifically — and *why*? Let's run through some core questions.
 
 **Where** is your application? Is it within a city, neighborhood, or across an entire country? 
 
@@ -30,13 +30,18 @@ But, what will you, do, specifically — and why? Let's run through some core qu
 
 **Who** is your application *about* — a specific population, defined by their residence and/or some social, economic, or other characteristic? And, **Who** is your application *for*? Who will actually be using your application? How and why are they different?
 
-- Data may not be available for all places and populations. For example, COVID-19 data by race and ethnicity is still not disaggregated below the state-level for all counties in the U.S (!). You may need to start with your ideal, and then work towards what's actually doable.
+:::pitfall
+**Pitfall**
 
-- As this toolkit will encourage more than once, it is helpful to work with persons who will actually use the application, to increase its meaning and utility. At the same time, it is also helpful to work with persons who the data is about, as lived experiences will provide invaluable understanding, depth, and insight into the project of interest. 
+Data may not be available for all places and populations. For example, COVID-19 data by race and ethnicity is still not disaggregated below the state-level for all counties in the U.S (!). You may need to start with your ideal, and then work towards what's actually doable.
 
-**When** is your application — are you focused on the most recent datasets you can find, or are you interested in data over many time periods? And, how will the application itself be changed or updated over time? 
+:::
 
-- Consider the sustainability and long-term maintenance needs of your project. Where will it be in five years? Would it be okay for the application to exist as a time capsule for a project completed, or do you prefer it to have data updated regularly?
+- As this toolkit will highlight more than once--it is helpful to work with persons who will actually use the application, *to increase its meaning and utility*. At the same time, it is also helpful to work with persons **who the data is about**, as lived experiences will provide invaluable understanding, depth, and insight into the project of interest. 
+
+**When** is your application being used? Are you focused on the most recent datasets you can find, or are you interested in data over many time periods? And, how will the application itself be changed or updated over time? 
+
+- Consider the *sustainability and long-term maintenance* needs of your project. Where will it be in five years? Would it be okay for the application to exist as a time capsule for a project completed, or do you prefer it to have data updated regularly?
 
 **What** actions should/could result from your application? Are they reasonable, feasible, and time-bound? 
 
@@ -48,7 +53,7 @@ But, what will you, do, specifically — and why? Let's run through some core qu
 
 - This is often the most important question, and the one least formulated in early stages of the process. Something may be interesting and meaningful to you, but may not be important to others. Or it may be very obvious to you and your peers, but the thought hasn't occurred to others in a different discipline or domain. Be specific and intentional in setting this objective, and do the research. 
 
-Put these together to generate an overview goal statement for your project. Include the primary question you’re trying to answer. This may change throughout the process, but should be changed to be refined further, rather than expanded in scope.  
+Put these together to generate an overview *goal statement* for your project. Include the primary question you’re trying to answer. This may change throughout the process, but should be changed to be refined further, rather than expanded in scope.  
 
 Think of the start of your project as setting out on a road trip. First, you need to map out where you want to go. What do you hope to discover along the way? Your visualization techniques are like choosing the right vehicle for the journey—each has its strengths for different terrains. Your goals will evolve as you travel, finding new paths to explore. But it all starts with a clear destination in mind.
 
@@ -127,6 +132,7 @@ This is just the beginning of a process. To keep progressing, it's essential to 
 :::
 
 ## Defining Stakeholders 
+
 Once you've got your project's goals on the horizon, it's time to look at who's journeying with you. Collaboration and stakeholder identification are vital components of any project that aims to achieve equity. Whether it's a non-governmental organization, a research group within a university, or a government agency, stakeholders bring diverse perspectives and expertise to the table. Similarly, communities, activists, and advocates can also play a significant role in your project's success. 
 
 <blockquote>Early identification of stakeholders is key to building trust and solidarity, which is a time-consuming but necessary process. </blockquote>
@@ -159,7 +165,7 @@ row.names(df)<-NULL
 pander(df, style = 'rmarkdown')
 ```
 
-There are two additional stakeholders every application developer should consider -- the Champion, and the Curmudgeon, which are actual roles that have been used in *Health Informatics* 
+There are two additional stakeholders every application developer should consider -- the Champion, and the Curmudgeon, which are actual roles that have been used in *Health Informatics*. 
 
 Considering them will be essential for your success:
 
@@ -216,22 +222,30 @@ You now know what you want to do, and who you want to do it with. You've gathere
 
 Let's finish scoping this project.
 
-### Assess Your Strengths
+### Assess Your Strengths {-}
 
-Each project will require **domain expertise** and **technical capacity**. Domain expertise means knowledge ... Technical capacity will refer to ...
+Each project will require **domain expertise** and **technical capacity**. Domain expertise means they are subject matter experts (SME). For example, someone who has been a 6th grade English teacher for 5 years, can be considered a SME of teaching 6th grade English. Technical capacity will refer to those people who know how to code from the back end (what only the core team sees) to the front end (what your users see).
 
 Which is your strength, and which will you need to skill up to further support for project implementation? 
 
 For example: 
 
-- If your project is about building an asset map to support populations experiencing food insecurity, you may be a food bank volunteer who has worked directly with populations impacted, live in the community, and also would be using the application with collaboration from the regional food pantry network. In this case, you have extensive domain expertise and knowledge that will be more enriched than most web app developers, assuming you are not a developer for your day job. For this project, your goal will be to scale up your technical capacity within the constraints of your setting. 
+- If your project is about building an asset map to support populations experiencing food insecurity, you may be a food bank volunteer who has worked directly with populations impacted, live in the community, and also would be using the application with collaboration from the regional food pantry network. In this case, you have extensive domain expertise and knowledge that will be more enriched than most web app developers, assuming you are not a developer for your day job. For this project, you will be the SME and need to find someone who has the technical capacity needed for the project *or* your goal will be to scale up your technical capacity within the constraints of your setting. 
 
-- On the other hand, perhaps you are a graduate student who has been coding statistical models for your work, and are interested in adding more social impact to your work. You’re used to learning new programming languages for new projects, and have a high technical capacity, but are not embedded within the community you want to build an asset map for. For this project, your goal will be to scale up your understanding of equity based frameworks, learning more about community experiences, as well as researching the topic further to build your domain expertise. 
+- On the other hand, perhaps you are a graduate student who has been coding statistical models for your work, and are interested in adding more social impact to your work. You’re used to learning new programming languages for new projects, and have a high technical capacity, but are not embedded within the community you want to build an asset map for. For this project, you would be the technical expert and need to find a SME *or* your goal will be to scale up your understanding of equity based frameworks, learning more about community experiences, as well as researching the topic further to build your domain expertise. 
 
-After assessing your strengths, go back to your list of stakeholders and update as needed. Note that as your expand your stakeholder team, your project may update according to shared goals and visions of team members. As a result, your team will work through the assessment process more than once. This iterative process is expected.
+After assessing your strengths, go back to your list of stakeholders and update as needed. 
 
-### Assess Project Needs
-Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and paint points, as well as technical, financial, people, and time resources. Consider sustainability at this stage… 
+:::tip
+**Tip**
+
+As you expand your stakeholder team, your project may update according to shared goals and visions of team members. As a result, your team will work through the assessment process more than once. This iterative process is expected.
+
+:::
+
+### Assess Project Needs {-}
+
+Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and paint points, as well as technical, financial, people, and time resources. Consider sustainability at this stage. 
 
 ### **Establish Deliverables** {-}
 

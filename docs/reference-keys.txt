@@ -8,9 +8,9 @@ whats-the-point
 refining-goals-for-sdoh
 defining-stakeholders
 project-assessment
-assess-your-strengths
-assess-project-needs
 human-centered-design
+brief-discussion-of-design-methods
+human-centered-design-1
 data-wrangling
 research-design-analysis
 app-development

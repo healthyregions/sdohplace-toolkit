@@ -9,7 +9,10 @@ In this module, you will:
 * Explore social determinants of health, equity, and data visualizations
 * Begin to consider what type of visualization you want to use
 
-*Required Tools*
+:::
+
+:::tools
+**Tools**
 
 For this toolkit, you need your **toolkit journal**: 
 

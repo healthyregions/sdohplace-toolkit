@@ -47,3 +47,147 @@ Name your GitHub repository whatever you want to name your data package. It will
 * Start with a letter
 * Optionally, consider the naming tips **[here](https://r-pkgs.org/package-structure.html)**
 :::
+
+
+
+:::objective
+**Objectives**
+
+In this module, you will: 
+
+- Describe the fundamental concepts of Human-Centered Design
+
+- Analyze various design elements (e.g., graphic icons, layout, text fonts)
+
+- Create a user interface prototype
+
+:::
+
+Picture yourself not just as a creator, advocate, policymaker or researcher but also as a storyteller and a listener. In this module, you're going to learn the ropes of Human-Centered Design (HCD)—it's all about making sure our designs click with the very people they're meant for. We're talking about a real connection. *The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.* This entails understanding their objectives in using web applications, their situations, and their familiarity levels. It's essential to determine the design approaches that would most effectively cater to these requirements. Not planning appropriately can lead to revising the design which would eventually slow you down from releasing the application you have in mind. Therefore, a crucial first step of any data visualization planning process is to identify the users and understand what they want out of the visualization. 
+
+## Brief Discussion of Design Methods
+
+Let's dive into the world of design methodologies, where each approach brings something special to the table. Our star player here is Human-Centered Design (HCD), a method that puts people at the heart of the design process. HCD is all about getting into the users' shoes, understanding what they need and want, and then crafting solutions that hit the mark. But that's not the whole story. We're also going to peek into some other relevant and overlapping design methods, each with its flavor. 
+
+</br>
+
+
+```{r table-simple, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+require(pander)
+panderOptions('table.split.table', Inf)
+my.data <- " Type          | Description 
+ Human-Centered Design (User-Focused Design Approach)          | An approach to problem-solving that starts with people and ends with innovative solutions tailored to suit their needs. It involves understanding the perspective of the users for whom you're designing, generating a range of ideas, and iteratively testing and refining solutions 
+ Participatory Design (Collaborative Design Approach)          | A process that involves all stakeholders, especially users, in the design process. The aim is to ensure that the designed product meets the needs and expectations of the users. It often involves workshops, user interviews, and collaborative sessions where users actively contribute ideas and feedback. 
+ Design Thinking (Problem-Solving Framework)          | A non-linear, iterative process used to understand users, challenge assumptions, redefine problems, and create innovative solutions to prototype and test. It comprises five phases: Empathize, Define, Ideate, Prototype, and Test. This approach encourages questioning, experimentation, observation, and innovation. 
+ Universal Design (Accessibility-Focused Design Approach)          | Involves creating products and environments that are accessible and usable by all people, to the greatest extent possible, without the need for adaptation or specialized design. It emphasizes simplicity, intuitiveness, and accommodating a wide range of individual preferences and abilities. 
+ Experience Design ([XD] User Experience Focused Design Approach)          | Focused on the quality of the user experience and culturally relevant solutions. It goes beyond the product itself to include all aspects of the user's interaction with a company, its services, and its products. "
+set.caption("Design Methods")
+df <- read.delim(textConnection(my.data),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df) <- unname(as.list(df[1,])) # put headers on
+df <- df[-1,] # remove first row
+row.names(df)<-NULL
+pander(df, style = 'rmarkdown')
+```
+</br>
+
+## Human-Centered Design
+
+Human-Centered Design (HCD) is a well-researched framework that provides a set of guidelines and processes to ensure that designs cater to the desires, abilities, and contexts of their potential end users. HCD guides developers to empathize with users, understand their needs, wants, and experiences, and create designs that engage users and adapt to the context of their real lives. Employing HCD can improve accessibility, reduce the risk of negative outcomes, and enhance user well-being. Applications of HCD principles have generated a design process that tends to share the following four steps: 1) identifying user needs, 2) designing to those needs, 3) evaluating the design and iterating until users are satisfied. Throughout these steps, the developer will constantly “diverge” their ideas to think wide and open while “converge” their scope and prototype with focus.
+
+### Step 1: Identifying User Needs {-}
+The first step of the HCD process is to understand what a user hopes to accomplish and the conditions that will allow them to do so. 
+
+To determine user needs, inclusive workshops are an effective way of bringing users into the design process and empowering them to share their goals for the tool as well as their particular concerns and contexts that might shape their use of the application. The success of these workshops depends on how well the participants represent a potentially diverse end-user group: to best understand the true breadth of needs to be considered, users of all different backgrounds, experience levels, and goals must be given equal opportunity to provide insight.
+
+Virtual meetings (over Zoom, for example) are an effective way to hold these workshops. Virtual meetings allow for a broader spectrum of users to participate. In these meetings, it is recommended to include multimodal communication, such as a mix of presentations, live discussions, polling, and a chat function. This ensures that participants with varying levels and preferences of engagement get an opportunity to speak their minds.  It is also important to establish common terminology with workshop participants as they may not be familiar with application design or data discovery. Therefore, efforts should be made to explain certain functionalities with examples to allow participants to articulate what sorts of features they may benefit from.
+
+Free online platforms are available to enable a virtual, collaborative brainstorming session to determine user needs. FigJam and Miro, for example, are free online collaboration tools that allow users to brainstorm and organize ideas, allowing for real-time interactive sessions between team members. Alternatively, if you’re lucky that all your users are available for an in-person workshop, then using a whiteboard, sticky notes, and other stationery is just fine as well.
+
+:::activity
+**Activity**
+One of the most effective ways to get started with identifying user needs is to create details around each user persona. This way, you can not only test the assumptions that you make about your personas but also see how far you can ideate on their potential needs. The primary object is to understand the personas by gaining a deep understanding of their needs, preferences, behaviors, and goals. This understanding is crucial for developing the application in the direction that resonates with their needs. During the exercise, personas are looked at from a more humanized lens that helps build empathy as it is easier to relate to a fictional character representing a real user than to an abstract persona. We recommend using the User Persona FigJam template to collaborate and build a meaningful set of user personas.
+
+:::
+
+### Step 2: Designing to User Needs {-}
+
+The next step of the HCD process is to determine a web application design that will meet user needs. An application's user interface is a key element of design for developers to consider. To involve users in this process, card sorting is one effective method of participatory design, in which users are given note cards representing application functions and are asked to arrange them in ways they would find most easily to navigate on a web page. Creating a full list of functions that will help users meet their goals, such as the ability to query a dataset using keywords, or zoom in on particular locations in a map, is a helpful first step of this process. During the card sorting activity, don't hesitate to create, remove, or edit cards that may be suggested by the users. This technique often serves as a guidance for taking the next step, but you should feel free to adapt and improvise as needed. Developers should also consider how data will be organized into meaningful categories. For health equity applications, for example, it is often useful to divide data by demographics.
+
+The design of graphic icons, buttons, window layouts, symbols, text fonts, and color schemes is also crucial to this step. Researchers have identified certain principles of design that seem to be broadly visually appealing and successful. These include:
+
+- Navigation tools should be highly visible, intuitive, & consistently placed
+
+- Writing should be presented in readable blocks
+
+- Text should be easy to read and appropriate size, color, and font
+
+- Elements should be organized in an understandable structure denoted by meaningful headings
+
+- Images should be relevant, clear, and properly sized
+
+Overall layout should be minimalist, uncluttered, and balance color with an effective use of white space.
+
+There exists a variety of open-source tools freely available on the internet to collaboratively design user interface prototypes. Several options include:
+
+- FigJam: A collaborative design tool often used for user interface design. FigJam is entirely browser-based and includes many helpful design tools, adaptable templates, and allows for real-time collaboration.
+
+- Wondershare Mockitt: Similar to Figma, Mockitt includes a wide variety of design tools, but may be an easier platform to use for design beginners.
+
+- Quant-UX: Quant-UX includes design tools similar to the above platforms, but includes features that allow for usability testing and analysis.
+
+:::activity
+**Activity**
+
+Choose one of the above platforms and create a free account. Walk through their getting-started steps to learn how to use the platform. If you find the platform confusing or limiting, try out another and compare. Also, visit design mockup websites such as Dribbble and Behance to search for creative inspiration on user interface design.
+:::
+
+
+### Step 3: Evaluation and Iteration {-}
+
+The next step of the HCD process is to evaluate how usable, accessible, and satisfying the initial web application design is for users. To do so, it is crucial to solicit user feedback through user testing and evaluation. An effective method of evaluation is to have users test out a prototype of the design and give feedback on their experience, a process that can be facilitated through a variety of means, including focus groups and online surveys. More about this in Module 6.
+
+The questions users are asked should allow developers to evaluate the extent to which the application meets established user needs and the extent to which the application is usable.
+
+Components of usability include:
+
+- Useful: It must be original and meet a specific need.
+
+- Usable: The site should be straightforward to navigate.
+
+- Desirable: The use of images, branding, and other design elements should create an emotional connection.
+
+- Findable: Content should be easy to find, both within the site and from external sources.
+
+- Accessible: The content must be accessible to individuals with disabilities.
+
+- Credible: The information provided should be trustworthy and believable to the user.
+
+There are a variety of ways to test for usability. These evaluations can be conducted virtually through surveys, or conducted live by bringing a group of users together for in-person interviews or having them think aloud as they navigate through the web application. Across evaluations, it is important to administer a set of background questions to understand users' demographics, their roles or occupations, and their overall goals to understand how individuals across different contexts differ in how usable they find the web application. 
+
+Surveys are generally the least resource-intensive method of evaluation. When designing a usability survey, it is crucial to ask questions that will shed light on how usable, enjoyable, and effective individuals find the tool. These surveys can include a mix of multiple-choice, ratings, and open-response questions. Examples include:
+
+- What are your main objectives when using this tool? Were you able to meet those goals?
+
+- What features do you use most?
+
+- How easily navigable did you find the interface? Was it visually appealing?
+
+- What would you like to see change (or stay the same) about the tool?
+
+There exist many online platforms to create surveys.
+
+- Google Forms is a free, easy-to-use tool that allows for unlimited questions and offers a full range of question types. Google Forms will not analyze the data collected.
+
+- Qualtrics is a more powerful tool for survey design and can generate a quantitative analysis of the data. Qualtrics includes a free option, however, there is a steeper learning curve to creating these surveys than a tool like Google Forms.
+
+- Using printed sheets with survey questions can also work if the setup is in-person.
+Based on the survey respondents and their level of comfort, their responses may need to be recorded anonymously.
+
+Following evaluation, developers should revise the application accordingly, and re-evaluate and redesign until user needs are sufficiently satisfied. Constantly keeping in touch with stakeholders and users make it easier to design for them. Lastly, try accommodating as much feedback but don't let it come in the way of you from moving forward to the next steps.
+
+:::activity
+**Activity**
+User personas ...
+:::
+
+
