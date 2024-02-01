@@ -2,7 +2,19 @@
 ---
 
 # Data Wrangling
+- What is Spatial Data
 
+- Inspection - viewing tables & data itself
+
+- Projections & Coordinate Reference Systems
+
+- CSV to Spatial Points
+
+- Merging spatial data (area-level)
+
+- Reshaping data
+
+- Calc new spatial variables?
 
 
 [[ likely pare this down, move some to data assessment above, and some of the rest to later module? ]]
