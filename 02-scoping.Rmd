@@ -82,7 +82,7 @@ Take a moment to consider which goal(s) you have for your project. We recommend 
 </br>
 
 
-```{r table-simple, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+```{r table-healthdisparities, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 require(pander)
 panderOptions('table.split.table', Inf)
 my.data <- "  Goal        | Description
@@ -146,7 +146,7 @@ Take an inventory of who makes up your team, and define each person's role. If y
 
 Your core team may include community members directly, or may have a different leadership structure. Here are some critical roles to consider:
 
-```{r table-simple2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+```{r table-setstrategy, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 require(pander)
 panderOptions('table.split.table', Inf)
 my.data <- "  Responsibilities        | Description
