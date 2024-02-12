@@ -234,11 +234,11 @@ Key features and uses of story maps in public health include:
 Story Maps turn data into engaging tales, educate, and rally communities. They're advocates, educators, and responders all in one.
 
 
-### Thematic Maps {-}
+### Simple Thematic Maps {-}
 
 Here's where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. [Thematic maps](https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html) in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data.
 
-Thematic maps in public health are used for a variety of purposes, including:
+Simple thematic maps in public health are used for a variety of purposes, including:
 
 - Visualizing disease prevalence and distribution
 
@@ -254,7 +254,7 @@ Thematic maps in public health are used for a variety of purposes, including:
 
 ![US Covid Atlas (Source: https://uscovidatlas.org/map)](images/intro-covid.png){width=80%}  
 
-Thematic Maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
+Simple thematic Maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
 
 :::activity
 **Activity**
