@@ -254,7 +254,7 @@ Simple thematic maps in public health are used for a variety of purposes, includ
 
 ![US Covid Atlas (Source: https://uscovidatlas.org/map)](images/intro-covid.png){width=80%}  
 
-Simple thematic Maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
+Simple thematic maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
 
 :::activity
 **Activity**
