@@ -25,17 +25,21 @@ Some of our team members prefer drawing on post-it notes, tablets, digital apps,
 
 ## SDOH & Place 
 
-When we talk about the factors that shape our health, it's not just about biology or lifestyle—it's about where we live and the complex tapestry of history, society, and economy that frames our lives. The [social determinants of health (SDOH)](https://www.cdc.gov/about/sdoh/index.html) encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren't just statistics; they're stories of communities and the places we call home, varying from one street to the next. They're about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.
+When we talk about the factors that shape our health, it's not just about biology or lifestyle — it's about where we live and the complex tapestry of history, society, and economy that frames our lives. The [social determinants of health (SDOH)](https://www.cdc.gov/about/sdoh/index.html) encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren't just statistics; they're stories of communities and the places we call home, varying from one street to the next. They're about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.
 
-![Social Determinants of Health (graphic created by Kamaria Barronville)](images/preface-SDOH1.png){width=80%} 
+![Social Determinants of Health](images/preface-SDOH1.png){width=80%} 
+
+The social determinants of health are complex and exist at many different scales — the individual, interpersonal, community, and regional levels. In this toolkit, we focus on how the SDOH emerge at community and regional levels. For example, neighborhoods will have differing availability of fresh produce, community clinics, and job opportunities, impacting how residents are able to successfully eat healthy, visit health providers, and be able to afford housing essentials When working with measures at neighborhood-levels, a spatial view is essential to enable us to work with the data, from data wrangling to visualization and analysis. A [neighborhood-view of SDOH](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2759757) is multidimensional, and can predict over 60% of premature deaths. 
 
 Academics, activists, government agents, and policymakers have employed data visualizations to examine the connections between places and SDOH. For example, they have utilized dashboards to study the impact of COVID-19 on vulnerable communities. They implemented [participatory mapping](https://www.cdc.gov/pcd/issues/2020/20_0123.htm) to advocate for policy-based interventions, and deployed [story maps](https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html) to promote health initiatives. To produce these data visualizations, health researchers and advocates mobilize a wide array of conceptual frameworks and diverse technical skill sets. Moreover, data visualizations in public health do not only analyze the relationship between places and SDOH. They promote health equity: "a state in which everyone has a fair and equitable opportunity to achieve their highest level of health" (CDC's Office of Health Equity, 2022).
 
-## Dynamic Data Visualizations 
+## Dynamic (Spatial) Data Visualizations 
 
-Visualizing public health data isn't just about the "what"—it's about the "so what?" It's about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. [Data visualizations](https://www.ahrq.gov/data/visualizations/index.html#:~:text=AHRQ's%20interactive%20data%20visualization%20tools,coverage%2C%20and%20emergency%20department%20visits.) in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.
+Visualizing public health data isn't just about the "what"—it's about the "so what?" It's about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action.  [Data visualizations](https://www.ahrq.gov/data/visualizations/index.html) in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.
 
-![The data dashboard, for example, was a commonly used tool during the COVID-19 pandemic to communicate community spread](images/preface-dashboard.png)
+Because of our focus on SDOH & Place at neighborhood and regional levels, we'll focus on spatial data visualizations. Spatial data visualizations incorporate not just the "regular" data, but *in addition*, how that data is linked to places. This new dimension of data can be visualized as a map. But another important aspect emerges; with spatial data, we are given the ability to link any data by location. This enables us to integrate the many facets of SDOH and health, converging on place.
+
+![In this dashboard, clicking on a location launches an interactive infographic of detailed health outcomes. Source: [Appsilon](https://connect.appsilon.com/air-quality/)](images/preface-airquality.png)
 
 Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize SDOH data and advance [health equity](https://www.cdc.gov/healthequity/whatis/index.html).
 Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.
@@ -148,20 +152,22 @@ Consider your audience or who your project will impact. How can you involve them
 * View the people your working with as co-creators. 
 :::
 
-## Types of Applications 
+## Types of (Spatial) Applications 
 
-Throughout this module, we've concentrated on exploring your objectives, recognizing prospective stakeholders, and delving into the spatial data at your disposal for your research. As we progress, we will now examine how these three features converge when it comes to choosing an appropriate spatial visualization. To facilitate this, we will introduce four distinct types of visualizations for investigating social determinants of health: Asset maps, dashboards, thematic maps, and story maps. 
+Throughout this module, we've concentrated on orienting you to how we talk about SDOH and Place, given you a change to brainstorm ideas, recognize prospective stakeholders, and consider potential data at your disposal for your project As we progress, we will now examine how these three features converge when it comes to choosing an appropriate spatial visualization. To facilitate this, we will introduce four distinct types of spatial visualizations for communicating about and investigating the social determinants of health: asset maps, thematic maps, story maps, and dashboards. 
 
-Alright, you’ve got your goals and your team – now, let's talk about bringing it all to life with the right kind of map. It’s like choosing the perfect outfit for the right occasion; each type of spatial visualization has its moment to shine when exploring the social determinants of health. Let's browse through the wardrobe: Asset maps, dashboards, thematic maps, and story maps – each has its own flair.
+When comparing spatial visualization options, we'll focus on two dimensions: 1) map type, and 2) level of data & interaction complexity. For map type, visualizations may be more of a **reference** or **thematic** map. A reference map is meant to emphasize *information* about locations, whereas a thematic map will focus on *geographic patterns* of a specific topic. Interaction complexity refers to the intensity and variability of user interaction with the visualization. The interactions may involve a click to open an information window, or may require extensive decision-making and careful parameter selection to generate a updated visualization. Data complexity my refer to how many types of data you are incorporating, from different forms of spatial data (e.g. address-level locations, community boundaries) as well as different types of input data (e.g. photos, videos, tabular data). As applications get more complex, you can also have lines blurred across both dimensions. 
 
+![Spatial Data Visualization Options](images/preface-map.png)
 
 ### Asset Maps {-}
-These are like your community's highlight reel, showcasing everything from the vibrant parks and schools to the people who make your area tick. They're about celebrating what's there, not just what's missing, and sparking conversations about building on those strengths.
+These are like your community's highlight reel, showcasing everything from the vibrant parks and schools to the people who make your area tick. They're about celebrating what's there, not just what's missing, and sparking conversations about building on those strengths. 
 
-![Community Food Map, (Source: University of Illinois https://eat-move-save.extension.illinois.edu/#food-finder)](images/intro-food.png){width=80%} 
+Asset maps act as reference maps and tend towards straightforward interactions, like clicking on an icon to access details about an address. Data-wise, asset maps will start with address-level locations, that will get converted to **point** data.
 
-[Asset mapping](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351) involves engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. 
+![Community Food Map, Source: [University of Illinois](https://eat-move-save.extension.illinois.edu/#food-finder)](images/intro-food.png){width=80%} 
 
+[Asset mapping](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351) may involve engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. Alternatively, you may link existing data about resources into a newly integrated platform. The resulting asset map is a visual tool that provides a comprehensive view of the community's strengths, potential partnerships, and areas where support and resources are available. 
 The assets included in an asset map can be diverse and encompass various categories, such as:
 
 - **Physical Assets:** These include tangible resources like parks, schools, hospitals, community centers, libraries, public transportation, and other infrastructure elements.
@@ -178,40 +184,35 @@ The assets included in an asset map can be diverse and encompass various categor
 
 Asset Maps empower communities, steer strategic planning, and guide resource allocation. They're about networking and flipping the script to a more positive community narrative.
 
+### Simple Thematic Maps {-}
+Here's where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. [Thematic maps](https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html) in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. 
 
-### Data Dashboards {-}
-Imagine your health community's stats brought to life in real-time – a dashboard that's part control panel, part story, helping everyone from officials to neighbors make sense of the numbers.
+Data-wise, thematic maps use area boundaries, like census tracts or counties, referred to as **polygon** data. Statistical data in CSV formats are merged to spatial data boundaries. Data & interaction complexity remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window.
 
-In public health, [data dashboards](https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf) are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, [New Video Series: Moving from Data to Action | City Health Dashboard](https://www.cityhealthdashboard.com/blog-media/1501). These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health. 
+Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data. Simple thematic maps in public health are used for a variety of purposes, including:
 
-![United States of Health (Source: https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard)](images/intro-health.png){width=80%}  
+- Visualizing disease prevalence and distribution
 
-Data dashboards in public health typically include the following features:
+- Identifying health disparities across different regions or demographic groups
 
-- **Health Indicators:** Dashboards display a variety of health indicators, such as disease rates, mortality rates, vaccination coverage, hospitalization rates, environmental health data, and other relevant metrics.
+- Monitoring disease outbreaks and patterns
 
-- **Geospatial Data:** Many public health dashboards utilize spatial data to present geostatistical analysis in real-time, allowing users to understand health patterns and disparities across different geographic regions.
+- Assessing access to healthcare services and resources
 
-- **Time Series Data:** Dashboards often provide data over time, allowing users to observe trends, track changes, and identify seasonal patterns in health outcomes.
+- Evaluating the impact of public health interventions and policies
 
-- **Demographic Disaggregation:** Public health data dashboards may disaggregate data by demographic characteristics, such as age, gender, race, ethnicity, and socioeconomic status. This helps identify disparities and understand how health outcomes vary among different population groups.
+- Communicating public health information to the general public and stakeholders
 
-- **Comparisons and Benchmarks:** Dashboards may include the ability to compare health outcomes across regions, states, or countries, as well as against national or global benchmarks.
+![Climate Risk by County (Source: American Communities Project](images/preface-thematic.png){width=100%}  
 
-- **Data Sources and References:** Transparent dashboards typically provide information about the sources of data, data collection methods, and references to ensure data credibility.
-
-- **Interactivity:** Interactive elements allow users to customize the dashboard, apply filters, and explore data based on their specific interests and questions.
-
-- **Alerts and Notifications:** Some dashboards include alerting features to notify users about significant changes in health indicators or emerging health threats.
-
-Data Dashboards keep a pulse on public health, from tracking diseases to zooming in on health equity. They're transparent, interactive, and always on the lookout with alerts.
-
+Simple thematic maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively. 
 
 ### Story Maps {-} 
-A [story map](https://ica-abs.copernicus.org/articles/3/245/2021/ica-abs-3-245-2021.pdf) in public health is a powerful and interactive tool that combines maps, text, images, and multimedia elements to tell a compelling narrative about health-related issues, initiatives, or research. These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter. 
+A [story map](https://ica-abs.copernicus.org/articles/3/245/2021/ica-abs-3-245-2021.pdf) in public health is a powerful and interactive tool that combines maps, text, images, and multimedia elements to tell a compelling narrative about health-related issues, initiatives, or research. Data and interactions may be gorgeously complex, encouraging users to fully imbibe. Different types of spatial data may be used, from point-based locations to regional views. 
 
-![The Mapping of Race in America (Source: https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c)](images/intro-race.png){width=80%}  
+These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter. 
 
+![The Mapping of Race in America ([Hessler et al 2023](https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c))](images/preface-storymap.png){width=90%}  
 
 Key features and uses of story maps in public health include:
 
@@ -234,27 +235,32 @@ Key features and uses of story maps in public health include:
 Story Maps turn data into engaging tales, educate, and rally communities. They're advocates, educators, and responders all in one.
 
 
-### Simple Thematic Maps {-}
+### Multivariate Data Dashboards {-}
+Imagine your health community's stats brought to life in real-time – a dashboard that's part control panel, part story, helping everyone from officials to neighbors make sense of the numbers. Multiple variables will be integrated across different views, enabling a multivariate experience. Interactions can be complex, requiring user input to change figures or update sliders. Data may also be complex, although will mainly focus on statistical tabular data (rather than multimedia formats).
 
-Here's where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. [Thematic maps](https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html) in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data.
+In public health, [data dashboards](https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf) are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, [New Video Series: Moving from Data to Action | City Health Dashboard](https://www.cityhealthdashboard.com/blog-media/1501). These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health. 
 
-Simple thematic maps in public health are used for a variety of purposes, including:
+![The data dashboard, for example, was a commonly used tool during the COVID-19 pandemic to communicate community spread](images/preface-dashboard.png)
 
-- Visualizing disease prevalence and distribution
+Data dashboards in public health typically include the following features:
 
-- Identifying health disparities across different regions or demographic groups
+- **Health Indicators:** Dashboards display a variety of health indicators, such as disease rates, mortality rates, vaccination coverage, hospitalization rates, environmental health data, and other relevant metrics.
 
-- Monitoring disease outbreaks and patterns
+- **Geospatial Data:** Many public health dashboards utilize spatial data to present geostatistical analysis in real-time, allowing users to understand health patterns and disparities across different geographic regions.
 
-- Assessing access to healthcare services and resources
+- **Time Series Data:** Dashboards often provide data over time, allowing users to observe trends, track changes, and identify seasonal patterns in health outcomes.
 
-- Evaluating the impact of public health interventions and policies
+- **Demographic Disaggregation:** Public health data dashboards may disaggregate data by demographic characteristics, such as age, gender, race, ethnicity, and socioeconomic status. This helps identify disparities and understand how health outcomes vary among different population groups.
 
-- Communicating public health information to the general public and stakeholders
+- **Comparisons and Benchmarks:** Dashboards may include the ability to compare health outcomes across regions, states, or countries, as well as against national or global benchmarks.
 
-![US Covid Atlas (Source: https://uscovidatlas.org/map)](images/intro-covid.png){width=80%}  
+- **Data Sources and References:** Transparent dashboards typically provide information about the sources of data, data collection methods, and references to ensure data credibility.
 
-Simple thematic maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.
+- **Interactivity:** Interactive elements allow users to customize the dashboard, apply filters, and explore data based on their specific interests and questions.
+
+- **Alerts and Notifications:** Some dashboards include alerting features to notify users about significant changes in health indicators or emerging health threats.
+
+Spatial Data Dashboards keep a pulse on public health, from tracking diseases to zooming in on health equity. They're transparent, interactive, and always on the lookout with alerts.
 
 :::activity
 **Activity**

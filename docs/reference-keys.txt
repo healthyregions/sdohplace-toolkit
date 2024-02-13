@@ -17,3 +17,5 @@ app-development
 asset-map-development
 story-map-development
 dissemination
+dynamic-spatial-data-visualizations
+types-of-spatial-applications
