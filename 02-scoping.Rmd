@@ -1,14 +1,14 @@
 --- 
 ---
 
-# Project Scoping 
+# Project Planning 
 
 :::objective
 **Objectives**
 In this module, you will:
 
 * Start planning your project
-* Consider who your stakeholders will be
+* Consider who your stakeholders
 :::
 
 Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, the primary objective of this module is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits. 
@@ -246,6 +246,33 @@ As you expand your stakeholder team, your project may update according to shared
 ### Assess Project Needs {-}
 
 Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and paint points, as well as technical, financial, people, and time resources. Consider sustainability at this stage. 
+### Is there app for that? {-}
+
+In the ever-evolving landscape of data visualization and technology, it's essential to explore existing tools and applications before embarking on a new project. This not only saves time and resources but also allows you to benefit from the wealth of solutions that may already address your needs. Here are some ideas to help you determine if there's an app or web visualization that aligns with your SDOH data visualization project:
+
+- **Research Existing Solutions**
+Start by conducting thorough research on existing data visualization tools and applications. Look for platforms that specialize in healthcare, public health, or social determinants of health. Consider both general-purpose visualization tools and those specifically designed for SDOH.
+
+- **Collaborate and Network**
+Connect with professionals in the field of public health and data visualization. Attend conferences, webinars, or join online forums where experts discuss SDOH projects. Networking can provide valuable insights into tools that have been successfully used in similar projects.
+
+- **Evaluate Open Source Solutions**
+Consider open-source visualization tools and frameworks. Open-source projects often have active communities and can be tailored to specific needs. GitHub and other repositories are great places to explore such solutions.
+
+- **Consult with Peers and Stakeholders**
+Reach out to colleagues, peers, and stakeholders involved in similar projects. They might have insights into tools that have proven effective in their work. Collaboration can lead to shared resources and knowledge.
+
+- **Check for Integration Capabilities**
+If your project involves integration with existing systems or databases, ensure that the identified tools have the necessary integration capabilities. Compatibility with data sources is crucial for a seamless visualization experience.
+
+- **Consider Customization and Scalability**
+Assess whether the existing tools can be customized to meet the specific requirements of your SDOH data visualization project. Additionally, evaluate their scalability to accommodate potential future expansions or changes in data sources.
+
+- **Evaluate Cost and Licensing**
+Analyze the cost implications and licensing requirements of using existing tools. Some applications may be free, while others might have subscription fees or licensing agreements. Factor in your budget constraints when making a decision.
+
+By thoroughly exploring existing solutions, you can make informed decisions about whether to build from scratch or leverage the capabilities of existing apps and web visualizations for your SDOH project. Remember, a well-researched approach can lead to more efficient and impactful data visualization outcomes.
+
 
 ### **Establish Deliverables** {-}
 

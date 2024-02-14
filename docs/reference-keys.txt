@@ -19,3 +19,5 @@ story-map-development
 dissemination
 dynamic-spatial-data-visualizations
 types-of-spatial-applications
+project-planning
+dynamic-spatial-visualizations

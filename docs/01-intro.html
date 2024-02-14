@@ -79,15 +79,12 @@
 <li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
-<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-data-visualizations"><i class="fa fa-check"></i><b>1.2</b> Dynamic (Spatial) Data Visualizations</a>
-<ul>
-<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#is-there-app-for-that"><i class="fa fa-check"></i>Is there app for that?</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.3</b> Centering Equity</a>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
 <ul>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
 <li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
 <ul>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
@@ -96,7 +93,7 @@
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Scoping</a>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
 <li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
@@ -113,6 +110,7 @@
 <ul>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-app-for-that"><i class="fa fa-check"></i>Is there app for that?</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#establish-deliverables"><i class="fa fa-check"></i><strong>Establish Deliverables</strong></a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#application-action-goals"><i class="fa fa-check"></i>Application Action Goals</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#user-prompted-input"><i class="fa fa-check"></i>User-Prompted Input</a></li>
@@ -177,9 +175,12 @@
 <p><strong>Objectives</strong></p>
 <p>In this module, you will:</p>
 <ul>
-<li>Explore social determinants of health, equity, and data visualizations</li>
-<li>Begin to consider what type of visualization you want to use</li>
+<li>Expand your understanding of the social determinants of health and equity</li>
+<li>Learn how spatial data visualizations are used in public health<br />
+</li>
+<li>Define four main types of web mapping applications</li>
 </ul>
+<p>By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.</p>
 </div>
 <div class="tools">
 <p><strong>Tools</strong></p>
@@ -192,51 +193,16 @@
 </div>
 <div id="sdoh-place" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> SDOH &amp; Place<a href="01-intro.html#sdoh-place" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>When we talk about the factors that shape our health, it’s not just about biology or lifestyle — it’s about where we live and the complex tapestry of history, society, and economy that frames our lives. The <a href="https://www.cdc.gov/about/sdoh/index.html">social determinants of health (SDOH)</a> encompass a range of historical, social, cultural, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren’t just statistics; they’re stories of communities and the places we call home, varying from one street to the next. They’re about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.</p>
+<p>When we talk about the factors that shape our health, it’s not just about biology or lifestyle — it’s about where we live and the complex tapestry of history, society, and economy that frames our lives. The <a href="https://www.cdc.gov/about/sdoh/index.html">social determinants of health (SDOH)</a> encompass a range of historical, social, cultural, political, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren’t just statistics; they’re stories of communities and the places we call home, varying from one street to the next. They’re about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.</p>
 <div class="figure">
 <img src="images/preface-SDOH1.png" style="width:80.0%" alt="" />
-<p class="caption">Social Determinants of Health</p>
+<p class="caption">Figure 1.1 - Classic representations of the SDOH. Source: K. Baronville</p>
 </div>
-<p>The social determinants of health are complex and exist at many different scales — the individual, interpersonal, community, and regional levels. In this toolkit, we focus on how the SDOH emerge at community and regional levels. For example, neighborhoods will have differing availability of fresh produce, community clinics, and job opportunities, impacting how residents are able to successfully eat healthy, visit health providers, and be able to afford housing essentials When working with measures at neighborhood-levels, a spatial view is essential to enable us to work with the data, from data wrangling to visualization and analysis. A <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2759757">neighborhood-view of SDOH</a> is multidimensional, and can predict over 60% of premature deaths.</p>
+<p>The social determinants of health are complex and exist at many different scales — the individual, interpersonal, community, and regional levels. In this toolkit, we focus on how the <strong>SDOH emerge at community and regional levels</strong>. For example, neighborhoods will have differing availability of fresh produce, community clinics, and job opportunities, impacting how residents are able to successfully eat healthy, visit health providers, and afford housing essentials. By using neighborhood or regional scales of data to approximate SDOH, we can begin to get a deeper sense of the complex environment in which people live, work, and play. When working with measures at neighborhood-levels, a spatial view is essential to enable us to work with the data, from data wrangling to visualization and analysis. A <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2759757">neighborhood-view of SDOH</a> is multidimensional, and can predict over 60% of premature deaths.</p>
 <p>Academics, activists, government agents, and policymakers have employed data visualizations to examine the connections between places and SDOH. For example, they have utilized dashboards to study the impact of COVID-19 on vulnerable communities. They implemented <a href="https://www.cdc.gov/pcd/issues/2020/20_0123.htm">participatory mapping</a> to advocate for policy-based interventions, and deployed <a href="https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html">story maps</a> to promote health initiatives. To produce these data visualizations, health researchers and advocates mobilize a wide array of conceptual frameworks and diverse technical skill sets. Moreover, data visualizations in public health do not only analyze the relationship between places and SDOH. They promote health equity: “a state in which everyone has a fair and equitable opportunity to achieve their highest level of health” (CDC’s Office of Health Equity, 2022).</p>
 </div>
-<div id="dynamic-spatial-data-visualizations" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Dynamic (Spatial) Data Visualizations<a href="01-intro.html#dynamic-spatial-data-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Visualizing public health data isn’t just about the “what”—it’s about the “so what?” It’s about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. <a href="https://www.ahrq.gov/data/visualizations/index.html">Data visualizations</a> in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.</p>
-<p>Because of our focus on SDOH &amp; Place at neighborhood and regional levels, we’ll focus on spatial data visualizations. Spatial data visualizations incorporate not just the “regular” data, but <em>in addition</em>, how that data is linked to places. This new dimension of data can be visualized as a map. But another important aspect emerges; with spatial data, we are given the ability to link any data by location. This enables us to integrate the many facets of SDOH and health, converging on place.</p>
-<div class="figure">
-<img src="images/preface-airquality.png" alt="" />
-<p class="caption">In this dashboard, clicking on a location launches an interactive infographic of detailed health outcomes. Source: <a href="https://connect.appsilon.com/air-quality/">Appsilon</a></p>
-</div>
-<p>Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize SDOH data and advance <a href="https://www.cdc.gov/healthequity/whatis/index.html">health equity</a>.
-Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.</p>
-<p><img src="images/preface-storymap.png" alt="The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives" /> <em>The Stavros Niarchos Foundation from Greece produced a storymap to present their current health initiatives</em> (source: <a href="https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html" class="uri">https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html</a>)</p>
-<div id="is-there-app-for-that" class="section level3 unnumbered hasAnchor">
-<h3>Is there app for that?<a href="01-intro.html#is-there-app-for-that" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the ever-evolving landscape of data visualization and technology, it’s essential to explore existing tools and applications before embarking on a new project. This not only saves time and resources but also allows you to benefit from the wealth of solutions that may already address your needs. Here are some ideas to help you determine if there’s an app or web visualization that aligns with your SDOH data visualization project:</p>
-<ul>
-<li><p><strong>Research Existing Solutions</strong>
-Start by conducting thorough research on existing data visualization tools and applications. Look for platforms that specialize in healthcare, public health, or social determinants of health. Consider both general-purpose visualization tools and those specifically designed for SDOH.</p></li>
-<li><p><strong>Explore App Marketplaces</strong>
-Check popular app marketplaces such as the Apple App Store, Google Play Store, and web-based platforms for healthcare applications. Look for user reviews, ratings, and feedback to gauge the effectiveness and user satisfaction of existing tools.</p></li>
-<li><p><strong>Collaborate and Network</strong>
-Connect with professionals in the field of public health and data visualization. Attend conferences, webinars, or join online forums where experts discuss SDOH projects. Networking can provide valuable insights into tools that have been successfully used in similar projects.</p></li>
-<li><p><strong>Evaluate Open Source Solutions</strong>
-Consider open-source visualization tools and frameworks. Open-source projects often have active communities and can be tailored to specific needs. GitHub and other repositories are great places to explore such solutions.</p></li>
-<li><p><strong>Consult with Peers and Stakeholders</strong>
-Reach out to colleagues, peers, and stakeholders involved in similar projects. They might have insights into tools that have proven effective in their work. Collaboration can lead to shared resources and knowledge.</p></li>
-<li><p><strong>Check for Integration Capabilities</strong>
-If your project involves integration with existing systems or databases, ensure that the identified tools have the necessary integration capabilities. Compatibility with data sources is crucial for a seamless visualization experience.</p></li>
-<li><p><strong>Consider Customization and Scalability</strong>
-Assess whether the existing tools can be customized to meet the specific requirements of your SDOH data visualization project. Additionally, evaluate their scalability to accommodate potential future expansions or changes in data sources.</p></li>
-<li><p><strong>Evaluate Cost and Licensing</strong>
-Analyze the cost implications and licensing requirements of using existing tools. Some applications may be free, while others might have subscription fees or licensing agreements. Factor in your budget constraints when making a decision.</p></li>
-</ul>
-<p>By thoroughly exploring existing solutions, you can make informed decisions about whether to build from scratch or leverage the capabilities of existing apps and web visualizations for your SDOH project. Remember, a well-researched approach can lead to more efficient and impactful data visualization outcomes.</p>
-</div>
-</div>
-<div id="centering-equity" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Centering Equity<a href="01-intro.html#centering-equity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="centering-equity" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Centering Equity<a href="01-intro.html#centering-equity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The concept of equity in public health data visualizations goes beyond mere stylistic enhancements to aid in comprehension or research. It extends to encompass connections to pertinent resources and diverse language options, for example, empowering communities with information, processes, and agency to transform, advocate for, and influence residents, neighborhoods, and broader political, economic, and social structures towards healthier systems.</p>
 <p>Let’s dive deeper into how we can make data visualizations not just informative, but also inclusive and impactful. You see, it’s not all about graphs and numbers. By weaving in stories and multimedia—like videos and interactive media streams—we open up a world where data talks to everyone, not just to those who love statistics.</p>
 <p>Imagine a dashboard that not only shows you the trends but also tells you the stories behind the numbers. It’s designed with real people in mind, adapting to a variety of preferences—whether you’re someone who loves a good narrative or someone who digs deep into the data.</p>
@@ -273,13 +239,15 @@ Analyze the cost implications and licensing requirements of using existing tools
 <li><strong>Distributive Equity:</strong> Distributive equity concerns how social welfare and resources are distributed to meet the needs of different populations. It aims to allocate resources in a way that reduces health disparities and provides equitable access to healthcare and other essential services.</li>
 <li><strong>Contextual Equity:</strong> This aspect acknowledges that pre-existing social conditions (such as poverty, discrimination, and access to resources) influence equity. An equity-oriented data system considers these contextual factors when designing interventions to address health disparities effectively.</li>
 </ul>
-<p><img src="images/preface-centeringequity1.png" alt="Centering Equity" />
-Centering Equity (source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/</a>, graphic created by Kamaria Barronville).</p>
+<div class="figure">
+<img src="images/preface-centeringequity1.png" alt="" />
+<p class="caption">Figure 1.4 - A framework for centering equity in public health data systems. Source: K. Barronville, as adpated from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/">Chandra et al 2022</a>.</p>
+</div>
 </div>
 </div>
 <div id="embracing-a-trauma-informed-mindset-in-decision-making" class="section level3 unnumbered hasAnchor">
 <h3>Embracing a Trauma-Informed Mindset in Decision-Making<a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the realm of social determinants of health (SDOH) data visualization, adopting a <a href="https://ncsacw.acf.hhs.gov/userfiles/files/SAMHSA_Trauma.pdf">trauma-informed mindset</a> is crucial for creating solutions that are sensitive, empathetic, and inclusive. Trauma-informed decision-making ensures that your project respects the experiences and well-being of individuals whose data is being visualized. Here are key considerations to guide your decision-making process with a trauma-informed approach:</p>
+<p>Adopting a <a href="https://ncsacw.acf.hhs.gov/userfiles/files/SAMHSA_Trauma.pdf">trauma-informed mindset</a> is crucial for creating solutions that are sensitive, empathetic, and inclusive when working in the space of communicating, understanding, and analyzing. Trauma-informed decision-making ensures that your project respects the experiences and well-being of individuals whose data is being visualized. Here are key considerations to guide your decision-making process with a trauma-informed approach:</p>
 <ul>
 <li><p><strong>Understand the Impact of Trauma:</strong>
 Recognize that individuals within your data may have experienced trauma, whether it’s related to health disparities, socioeconomic challenges, or other adverse life events. Understanding the potential impact of trauma allows you to approach your project with empathy and compassion.</p></li>
@@ -310,13 +278,38 @@ Uphold ethical standards in data use and privacy protection. Clearly communicate
 </div>
 </div>
 </div>
+<div id="dynamic-spatial-visualizations" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Dynamic Spatial Visualizations<a href="01-intro.html#dynamic-spatial-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualizing public health data isn’t just about the “what”—it’s about the “so what?” It’s about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. <a href="https://www.ahrq.gov/data/visualizations/index.html">Data visualizations</a> in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.</p>
+<p>Because of our focus on SDOH &amp; Place at neighborhood and regional levels, we’ll focus on spatial data visualizations. Spatial data visualizations incorporate not just the “regular” data, but <em>in addition</em>, how that data is linked to places. This new dimension of data can be visualized as a map. But another important aspect emerges; with spatial data, we are given the ability to link any data by location. This enables us to integrate the many facets of SDOH and health, converging on place.</p>
+<div class="figure">
+<img src="images/preface-airquality.png" alt="" />
+<p class="caption">Figure 1.2 - In this dashboard, clicking on a location launches an interactive infographic of detailed health outcomes. Source: <a href="https://connect.appsilon.com/air-quality/">Appsilon</a></p>
+</div>
+<p>Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize SDOH data and advance <a href="https://www.cdc.gov/healthequity/whatis/index.html">health equity</a>.
+Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.</p>
+<div class="figure">
+<img src="images/preface-storymap1.png" alt="" />
+<p class="caption">Figure 1.3 - Health initiatives across Greece are shared as an interactive storymap. Source: <a href="https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html">The Stavros Niarchos Foundation</a></p>
+</div>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>We use the term <em>spatial data visualizations</em> throughout the toolkit. We are focusing on web-based applications that will have some interactions. (In other words, they’re not just pictures.) There are many other names for what we’re talking about, like:</p>
+<ul>
+<li>Web Applications</li>
+<li>Mapping Applications</li>
+<li>Spatial Decision Support Systems</li>
+</ul>
+<p>We’re not covering all types of spatial data visualizations, or all web apps, but will focus on common types of web mapping applications.</p>
+</div>
+</div>
 <div id="types-of-spatial-applications" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Types of (Spatial) Applications<a href="01-intro.html#types-of-spatial-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Throughout this module, we’ve concentrated on orienting you to how we talk about SDOH and Place, given you a change to brainstorm ideas, recognize prospective stakeholders, and consider potential data at your disposal for your project As we progress, we will now examine how these three features converge when it comes to choosing an appropriate spatial visualization. To facilitate this, we will introduce four distinct types of spatial visualizations for communicating about and investigating the social determinants of health: asset maps, thematic maps, story maps, and dashboards.</p>
 <p>When comparing spatial visualization options, we’ll focus on two dimensions: 1) map type, and 2) level of data &amp; interaction complexity. For map type, visualizations may be more of a <strong>reference</strong> or <strong>thematic</strong> map. A reference map is meant to emphasize <em>information</em> about locations, whereas a thematic map will focus on <em>geographic patterns</em> of a specific topic. Interaction complexity refers to the intensity and variability of user interaction with the visualization. The interactions may involve a click to open an information window, or may require extensive decision-making and careful parameter selection to generate a updated visualization. Data complexity my refer to how many types of data you are incorporating, from different forms of spatial data (e.g. address-level locations, community boundaries) as well as different types of input data (e.g. photos, videos, tabular data). As applications get more complex, you can also have lines blurred across both dimensions.</p>
 <div class="figure">
 <img src="images/preface-map.png" alt="" />
-<p class="caption">Spatial Data Visualization Options</p>
+<p class="caption">Figure 1.5 - Types of Spatial Data Visualizations an Web Mapping Applications. Source: HEROP Lab Team</p>
 </div>
 <div id="asset-maps" class="section level3 unnumbered hasAnchor">
 <h3>Asset Maps<a href="01-intro.html#asset-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -324,7 +317,7 @@ Uphold ethical standards in data use and privacy protection. Clearly communicate
 <p>Asset maps act as reference maps and tend towards straightforward interactions, like clicking on an icon to access details about an address. Data-wise, asset maps will start with address-level locations, that will get converted to <strong>point</strong> data.</p>
 <div class="figure">
 <img src="images/intro-food.png" style="width:80.0%" alt="" />
-<p class="caption">Community Food Map, Source: <a href="https://eat-move-save.extension.illinois.edu/#food-finder">University of Illinois</a></p>
+<p class="caption">Figure 1.6 Community Food Map as an Asset Map, Source: <a href="https://eat-move-save.extension.illinois.edu/#food-finder">University of Illinois</a></p>
 </div>
 <p><a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351">Asset mapping</a> may involve engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. Alternatively, you may link existing data about resources into a newly integrated platform. The resulting asset map is a visual tool that provides a comprehensive view of the community’s strengths, potential partnerships, and areas where support and resources are available.
 The assets included in an asset map can be diverse and encompass various categories, such as:</p>
@@ -342,6 +335,10 @@ The assets included in an asset map can be diverse and encompass various categor
 <h3>Simple Thematic Maps<a href="01-intro.html#simple-thematic-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here’s where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. <a href="https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html">Thematic maps</a> in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area.</p>
 <p>Data-wise, thematic maps use area boundaries, like census tracts or counties, referred to as <strong>polygon</strong> data. Statistical data in CSV formats are merged to spatial data boundaries. Data &amp; interaction complexity remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window.</p>
+<div class="figure">
+<img src="images/preface-thematic.png" style="width:100.0%" alt="" />
+<p class="caption">Figure 1.7 - Mapping Climate Risks by County and Community (Source: <a href="https://www.americancommunities.org/mapping-climate-risks-by-county-and-community/">Pinkus 2021, via the American Communities Project</a>)</p>
+</div>
 <p>Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data. Simple thematic maps in public health are used for a variety of purposes, including:</p>
 <ul>
 <li><p>Visualizing disease prevalence and distribution</p></li>
@@ -351,10 +348,6 @@ The assets included in an asset map can be diverse and encompass various categor
 <li><p>Evaluating the impact of public health interventions and policies</p></li>
 <li><p>Communicating public health information to the general public and stakeholders</p></li>
 </ul>
-<div class="figure">
-<img src="images/preface-thematic.png" style="width:100.0%" alt="" />
-<p class="caption">Climate Risk by County (Source: American Communities Project</p>
-</div>
 <p>Simple thematic maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.</p>
 </div>
 <div id="story-maps" class="section level3 unnumbered hasAnchor">
@@ -363,7 +356,7 @@ The assets included in an asset map can be diverse and encompass various categor
 <p>These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter.</p>
 <div class="figure">
 <img src="images/preface-storymap.png" style="width:90.0%" alt="" />
-<p class="caption">The Mapping of Race in America (<a href="https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c">Hessler et al 2023</a>)</p>
+<p class="caption">Figure 1.8 - The Mapping of Race in America (<a href="https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c">Hessler et al 2023</a>)</p>
 </div>
 <p>Key features and uses of story maps in public health include:</p>
 <ul>
@@ -384,7 +377,7 @@ The assets included in an asset map can be diverse and encompass various categor
 <p>In public health, <a href="https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf">data dashboards</a> are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, <a href="https://www.cityhealthdashboard.com/blog-media/1501">New Video Series: Moving from Data to Action | City Health Dashboard</a>. These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health.</p>
 <div class="figure">
 <img src="images/preface-dashboard.png" alt="" />
-<p class="caption">The data dashboard, for example, was a commonly used tool during the COVID-19 pandemic to communicate community spread</p>
+<p class="caption">Figure 1.8 - The data dashboard was a commonly used tool during the COVID-19 pandemic to communicate community spread and different dimensions of vulnerability. Source: <a href="https://uscovidatlas.org/map">The US Covid Atlas</a></p>
 </div>
 <p>Data dashboards in public health typically include the following features:</p>
 <ul>
