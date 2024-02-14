@@ -60,6 +60,9 @@ Currently, the community toolkit contains six modules. Depending on your project
 
 **Andre Vines** *Illustrator*
 
+### Feedback {-}
+We welcome your input to make this toolkit better. Please submit via our [contact form](https://sdohplace.org/contact), or post an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) directly on the toolkit Github repository page.
+
 ### Acknowledgements {-}
 Support for this toolkit was provided in part by the Robert Wood Johnson Foundation. The views expressed here do not necessarily reflect the views of the Foundation.
 
