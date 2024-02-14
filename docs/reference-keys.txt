@@ -21,3 +21,7 @@ dynamic-spatial-data-visualizations
 types-of-spatial-applications
 project-planning
 dynamic-spatial-visualizations
+establish-deliverables
+break-down-details
+break-down-details--
+enable-agile-processes

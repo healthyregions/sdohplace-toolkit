@@ -13,6 +13,10 @@ In this module, you will:
 By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.
 :::
 
+Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, a objective of this toolkit is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits. 
+
+Annotations, sketches, and meeting summaries can be handwritten in a notebook or digitally generated on a computer. We recommend creating a journal for this toolkit to annotate and store your notes. Your toolkit journal will assist you in organizing your thoughts, creating new content, making sketches, saving code, writing notes from meetings, and reflecting on your mapping process. Indeed, the production of relevant visualizations related to SDOH is a lengthy and complex process that requires creativity, organization, and technological skills. Your journal can be an invaluable companion on your journey.
+
 :::tools
 
 **Tools**

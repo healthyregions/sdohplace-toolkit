@@ -1,13 +1,8 @@
 book_filename: "SDOH & Place Toolkit"
 output_dir: "docs"
-rmd_files: ["index.Rmd", 
-"01-intro.Rmd", 
-"02-scoping.Rmd", 
-"03-design.Rmd",
-"04-data.Rmd", 
-"05-analysis.Rmd",
-"06-appdev.Rmd",
-"07-dissem.Rmd",
+rmd_files: ["index.Rmd",
+"01-intro.Rmd",
+"02-scoping.Rmd",
 "08-references.Rmd"
 ]
 delete_merged_file: TRUE

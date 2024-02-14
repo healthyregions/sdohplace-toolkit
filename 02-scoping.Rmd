@@ -7,14 +7,21 @@
 **Objectives**
 In this module, you will:
 
-* Start planning your project
-* Consider who your stakeholders
+* Refine your project goals and objectives
+* Identify your project team & stakeholders
+* Assess strengths, needs, and make a plan
 :::
 
-Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, the primary objective of this module is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits. 
+:::tools
 
-Annotations, sketches, and meeting summaries can be handwritten in a notebook or digitally generated on a computer. We recommend creating a journal for this toolkit to annotate and store your notes. Your toolkit journal will assist you in organizing your thoughts, creating new content, making sketches, saving code, writing notes from meetings, and reflecting on your mapping process. Indeed, the production of relevant visualizations related to SDOH is a lengthy and complex process that requires creativity, organization, and technological skills. Your journal can be an invaluable companion on your journey.
+**Tools**
 
+For this module, you need:  
+
+- Your **toolkit journal**
+- You may also want to generate a series of digital documents for final **Project Requirements** developed in this module. That may be a series of documents, spreadsheets, or templates identified across online resources.
+
+:::
 
 ## What's the Point? 
 
@@ -175,6 +182,16 @@ Considering them will be essential for your success:
 
 We caution that you not shift your work too much in either direction to please/antagonize either of these stakeholders, but rather understand their role in the process at this stage. 
 
+:::activity
+**Activity**
+
+Review these two projects and identify their stakeholders. Explain what is their role in each project.
+
+- [Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351)
+
+- [Food assets for whom? Community perspectives on food asset mapping in Canada](https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
+:::
+
 ### Motivations {-}
 If you find yourself to be a "curmudgeon" at the idea of working with others to support your journey, we also encourage you to take a moment to consider all the benefits of engaging more stakeholders.
 
@@ -206,16 +223,6 @@ Even if you think you're getting into this solo or with a smaller team, you may 
 Not sure where to start looking for mentors? We love this [**Mentor Map**](https://www.insidehighered.com/sites/default/files/files/Mentoring%20Map%5B1%5D(1).pdf) exercise by the *National Center for Faculty Development & Diversity* -- not just for academic folks, but anyone who has a beating heart and is working on a project. Try out the exercise yourself to identify persons in your network who you may be reach out to connect for feedback, accountability, intellectual discussions, and emotional support as you work through the project. 
 :::
 
-:::activity
-**Activity**
-
-Review these two projects and identify their stakeholders. Explain what is their role in each project.
-
-- [Urban Youths Go 3000 Miles: Engaging and Supporting Young Residents to Conduct Neighborhood Asset Mapping | AJPH](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351)
-
-- [Food assets for whom? Community perspectives on food asset mapping in Canada](https://www.tandfonline.com/doi/full/10.1080/17549175.2021.1918750)
-:::
-
 ## Project Assessment
 
 You now know what you want to do, and who you want to do it with. You've gathered your team and had a few good discussions. If you're on your own, you've made a list of mentors and additional resources to connect with so you can ensure feedback throughout the process.
@@ -240,12 +247,35 @@ After assessing your strengths, go back to your list of stakeholders and update 
 **Tip**
 
 As you expand your stakeholder team, your project may update according to shared goals and visions of team members. As a result, your team will work through the assessment process more than once. This iterative process is expected.
+:::
 
+:::activity
+**Activity**
+
+Write down your purpose and objectives by clearly stating why you want to solve this problem and what you hope to achieve. Who is your target audience? 
+
+Next, make a list of your potential stakeholders. How would you contact your stakeholders and why would they be interested in collaborating with you? Would you be part of an ongoing project or propose a new one?
+
+The format for this exercise is flexible and exploratory. You can opt to create lists of objectives, draw diagrams, write a structured plan, or engage in a free-writing exercise.
+
+The primary aim of this task is to develop a foundation to begin exploring spatial data for your project.It's important to note that your final prototype might diverge significantly from what you record in this entry, and that's perfectly acceptable. Remember, the process of using SDOH spatial data for visualizations is a dynamic process.
 :::
 
 ### Assess Project Needs {-}
 
-Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and paint points, as well as technical, financial, people, and time resources. Consider sustainability at this stage. 
+Project Needs will include data, computer services, time, and attitude. To assess this, you will need to survey your motivation and pain points, as well as technical, financial, people, and time resources. 
+
+- **Data**: What data do you have, and what will you need to find? How comfortable are you working with data, and what is the state of data where you are now? Do you curate community resources on post-it notes, PDFs, spreadsheets, or databases? Consider taking a [data maturity assessment](https://data.org/dma/) to better understand your data strategy along dimensions of purpose, practice, and people. Take your data skills a notch or two to the next level, progressing with patience, rather than jumping into a complex warehousing project that could be overkill.
+
+- **Computing Resources**: Do you have expansive computing resources and software available to you (e.g. large university of industry environment), or are you seeking free and/or low cost computing solutions? If you're developing a project for a team member at a different institution, can they access the technical resources needed, or would they need to purchase a costly subscription? Knowing what resources are available to you is essential for selecting the best approach for app development.
+
+- **Community**: Are you working within an isolated environment, or do you have multiple colleagues who are ready to help? Perhaps you're surrounded by people, but everyone is already overstretched with their work. At the same time, who will take over the project when you've moved on — are there interns, analysts, or volunteers interested in learning from your findings? Identify your needs.
+
+- **Attitude**: This facet is also crucial, and can help you decide which adventure to choose in later modules. If troubleshooting coding bugs like tasty puzzles sounds fun, take the coding route, even if you've never seen yourself as a coder. If you just want to get through the application building process as fast as possible to move on to a different project, go for a software-based option instead. You may find yourself to be a *prototyper*, enjoying the process of building a project; or an *optimizer*, instead wanting to refine pieces until they are perfect. The best teams have both! 
+
+Consider **sustainability** at this stage. What will your project look like in five years? 
+
+
 ### Is there app for that? {-}
 
 In the ever-evolving landscape of data visualization and technology, it's essential to explore existing tools and applications before embarking on a new project. This not only saves time and resources but also allows you to benefit from the wealth of solutions that may already address your needs. Here are some ideas to help you determine if there's an app or web visualization that aligns with your SDOH data visualization project:
@@ -273,23 +303,11 @@ Analyze the cost implications and licensing requirements of using existing tools
 
 By thoroughly exploring existing solutions, you can make informed decisions about whether to build from scratch or leverage the capabilities of existing apps and web visualizations for your SDOH project. Remember, a well-researched approach can lead to more efficient and impactful data visualization outcomes.
 
+## Establish Deliverables
 
-### **Establish Deliverables** {-}
+The field of project management is vast, interdisciplinary, and always growing. Here are some highlights that can go a long way in scoping your project effectively. 
 
-### Application Action Goals {-}
-
-#### Access to Information {-}
-
-Implement a user-friendly interface with features like drop-down selection, click for pop-up windows, and storytelling to enhance access to information.
-
-Ensure that users can easily explore relevant data points and insights related to social determinants of health (SDOH) within their specified areas.
-
-### User-Prompted Input {-}
-
-Incorporate interactive elements such as sliders and number entry fields to allow users to input specific parameters, enabling a more personalized and focused exploration of the data.
-Design the application to respond dynamically to user inputs, providing real-time visualizations and insights based on the selected criteria.
-
-### SMART Goals {-}
+### Define SMART Goals {-}
 
 Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals or similar criteria for the project to ensure clarity and effectiveness:
 
@@ -303,14 +321,18 @@ Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals o
 
 **Time-Bound:** Define specific timelines for the completion of key milestones and the entire project.
 
+### Define Requirements. {-}
 
-### **Establish Process** {-}
+**System Requirements** Based on the inventory of your project assessment above, you're ready to generate a list of system requirements. Identify major system capabilities (e.g. must be available on Internet),  system assumptions or constraints (e.g. must visualize spatial data as a thematic map; must use free or opensource technologies), user characteristics, and any other requirements. You may find multiple templates online for ideas.
 
-### Project Management {-}
+**User Requirements** Identify the goals for your intended audience. Be specific about the types of interaction you have in mind. Following are a number of potential options, with increasing complexity:
 
-To successfully navigate the complexities of the project, effective project management strategies must be implemented. This involves:
+- Implement a user-friendly interface with features like drop-down selection, click for pop-up windows, and storytelling to enhance access to information. 
+- Ensure that users can easily explore relevant data points and insights related to social determinants of health (SDOH) within their specified areas. 
+- Incorporate interactive elements such as sliders and number entry fields to allow users to input specific parameters, enabling a more personalized and focused exploration of the data.
+- Design the application to respond dynamically to user inputs, providing real-time visualizations and insights based on the selected criteria.
 
-#### Timeline and Task Breakdown {-}
+### Break Down Details {-}
 
 **Generate a Timeline**
 
@@ -324,8 +346,6 @@ To successfully navigate the complexities of the project, effective project mana
 
 - Prioritize tasks based on dependencies and critical paths to ensure a smooth workflow.
 
-#### Documentation {-}
-
 **Process Documentation**
 
 - Establish a systematic approach to document the entire process, including data preparation steps, analysis methodologies, and application development strategies.
@@ -338,9 +358,11 @@ To successfully navigate the complexities of the project, effective project mana
 
 - Define regular check-ins, status updates, and channels for effective communication within the team.
 
-### Agile Processes {-}
+### Enable Agile Processes {-}
 
-Embrace agile methodologies to foster flexibility and adaptability in project execution:
+While there are many project management styles out there, we recommend approaches that allow for regular updates and revisions. The traditional "waterfall" method of developing a project on your own and delivering it one go is not realistic for complex spatial data visualization work about SDOH & Place, as you'll miss crucial engagements and opportunities for improvement along the way. 
+
+We recommend embracing "agile" methodologies to foster flexibility and adaptability in project execution, especially the processes of iterative development and user-centered design.
 
 #### Iterative Development {-}
 
@@ -359,11 +381,20 @@ By establishing clear deliverables and defining an agile and well-documented pro
 :::activity
 **Activity**
 
-Write down your purpose and objectives by clearly stating why you want to solve this problem and what you hope to achieve. Who is your target audience? 
+Establish your final Project Requirements, based on the assessment completed in this module. They should include:
 
-Next, make a list of your potential stakeholders. How would you contact your stakeholders and why would they be interested in collaborating with you? Would you be part of an ongoing project or propose a new one?
+- Your project overview
+- Your project goals & objectives
+- System Requirements 
+- User Requirements
+- Timeline
 
-The format for this exercise is flexible and exploratory. You can opt to create lists of objectives, draw diagrams, write a structured plan, or engage in a free-writing exercise.
-
-The primary aim of this task is to develop a foundation to begin exploring spatial data for your project.It's important to note that your final prototype might diverge significantly from what you record in this entry, and that's perfectly acceptable. Remember, the process of using SDOH spatial data for visualizations is a dynamic process.
+Indicate which project management approach you'll be adopting. Include a few sentences to describe your process and communications plan. This will be a work in progress, so feel free to update as you go!
 :::
+
+## Resources {-}
+For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
+
+- add option here
+- and here
+- and here
