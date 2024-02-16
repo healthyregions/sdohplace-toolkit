@@ -144,7 +144,7 @@ Once you've got your project's goals on the horizon, it's time to look at who's 
 
 <blockquote>Early identification of stakeholders is key to building trust and solidarity, which is a time-consuming but necessary process. </blockquote>
 
-In Module 2, we will delve deeper into employing User-Centered Design to engage stakeholders effectively. The aim will be to ensure that every step of the project, from conception to implementation, is done in collaboration with those who have a vested interest in the outcomes, guaranteeing that the resulting initiatives are equitable, impactful, and sustainable. For now, let's assess your team.
+In Module 3, we will delve deeper into employing User-Centered Design to engage stakeholders effectively. The aim will be to ensure that every step of the project, from conception to implementation, is done in collaboration with those who have a vested interest in the outcomes, guaranteeing that the resulting initiatives are equitable, impactful, and sustainable. For now, let's assess your team.
 
 
 ### Assess Your Team {-}
@@ -215,7 +215,7 @@ Here’s how a wider stakeholder alliance can shape your journey:
 
 ### Finding a Community of Practice {-}
 
-Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](#) and [**GitHub**](#) pages to introduce yourself and expand your network.
+Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](#) and [**GitHub**](#) pages to introduce yourself and expand your network. Additionally, consider sharing your ideas with people in your community, whether that be your neighborhood, school, or work.
 
 :::tip
 **Tip**
@@ -258,7 +258,7 @@ Next, make a list of your potential stakeholders. How would you contact your sta
 
 The format for this exercise is flexible and exploratory. You can opt to create lists of objectives, draw diagrams, write a structured plan, or engage in a free-writing exercise.
 
-The primary aim of this task is to develop a foundation to begin exploring spatial data for your project.It's important to note that your final prototype might diverge significantly from what you record in this entry, and that's perfectly acceptable. Remember, the process of using SDOH spatial data for visualizations is a dynamic process.
+The primary aim of this task is to develop a foundation to begin exploring spatial data for your project. It's important to note that your final prototype might diverge significantly from what you record in this entry, and that's perfectly acceptable. Remember, the process of using SDOH spatial data for visualizations is a dynamic process.
 :::
 
 ### Assess Project Needs {-}
