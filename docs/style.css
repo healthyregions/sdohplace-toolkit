@@ -240,7 +240,6 @@ li.appendix span, li.part span { /* for TOC part names */
 /*--------------- Logo -----------------------*/
 
 .toc-logo {
-  width: 130px !important;
   object-fit: contain;
   margin: 0 auto;
 }
