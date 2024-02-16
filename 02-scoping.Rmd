@@ -112,7 +112,7 @@ pander(df, style = 'rmarkdown')
 
 ### Integrate Equity Directly {-}
 
-Think back to the equity framework introduced in the first module. While each component is critical to any application built to understand and communicate SDOH, the [**Content of Equity**](https://maps.healthyregions.org/sdhoplace-toolkit/01-intro.html#content-of-equity) component can be a useful consideration when building into your goals. Consider how your application may address equity by focusing on one or more of these aspects. Some examples include:
+Think back to the equity framework introduced in the first module. While each component is critical to any application built to understand and communicate SDOH, the [**Content of Equity**](https://toolkit.sdohplace.org/01-intro.html#content-of-equity) component can be a useful consideration when building into your goals. Consider how your application may address equity by focusing on one or more of these aspects. Some examples include:
 
 - Integrating community stakeholders directly to the decision-making processes, planning, and implementation of your web application. *(Procedural Equity)*
 - Developing an asset map of local health and social services to maximize networking and connection in your city. *(Distributive Equity)*
@@ -215,7 +215,7 @@ Here’s how a wider stakeholder alliance can shape your journey:
 
 ### Finding a Community of Practice {-}
 
-Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](#) and [**GitHub**](#) pages to introduce yourself and expand your network. Additionally, consider sharing your ideas with people in your community, whether that be your neighborhood, school, or work.
+Even if you think you're getting into this solo or with a smaller team, you may be surprised at the number of people available to connect with you as invaluable colleagues, future friends, and mentors in your network. You've found this project -- that already means you're a part of a wider community of practice. Join our [**LinkedIn**](https://www.linkedin.com/groups/14406296/) and [**GitHub**](#) pages to introduce yourself and expand your network. Additionally, consider sharing your ideas with people in your community, whether that be your neighborhood, school, or work.
 
 :::tip
 **Tip**
@@ -303,13 +303,13 @@ Analyze the cost implications and licensing requirements of using existing tools
 
 By thoroughly exploring existing solutions, you can make informed decisions about whether to build from scratch or leverage the capabilities of existing apps and web visualizations for your SDOH project. Remember, a well-researched approach can lead to more efficient and impactful data visualization outcomes.
 
-## Establish Deliverables
+## Finalize Approach
 
-The field of project management is vast, interdisciplinary, and always growing. Here are some highlights that can go a long way in scoping your project effectively. 
+The field of project management is vast, interdisciplinary, and always growing. Here are some highlights that can go a long way in scoping your project effectively and finalizing goals In these steps, you'll move from ideas to a concrete plan.
 
 ### Define SMART Goals {-}
 
-Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals or similar criteria for the project to ensure clarity and effectiveness:
+You've already sketched out a few goals for your project, including an overview and SDOH-specific plans. Now let's get specific. Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals or similar criteria for the project to ensure clarity and effectiveness:
 
 **Specific:** Clearly define the objectives and outcomes of the project.
 
@@ -321,9 +321,13 @@ Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals o
 
 **Time-Bound:** Define specific timelines for the completion of key milestones and the entire project.
 
-### Define Requirements. {-}
+Check out resources at the end of this module for more examples of SMART goals & resources.
 
-**System Requirements** Based on the inventory of your project assessment above, you're ready to generate a list of system requirements. Identify major system capabilities (e.g. must be available on Internet),  system assumptions or constraints (e.g. must visualize spatial data as a thematic map; must use free or opensource technologies), user characteristics, and any other requirements. You may find multiple templates online for ideas.
+### Define Requirements {-}
+
+**System Requirements** Based on the inventory of your project assessment above, you're ready to generate a list of system requirements. Identify major *system capabilities* (e.g. must use free or opensource technologies; must integrate new data contributed with approval), *system assumptions or constraints* (e.g. you will have access to colleagues for support; you have a limited budget and time to accomplish goals), *user characteristics*, and any other requirements. 
+
+Review your project needs, your own strengths, and stakeholder needs defined earlier in this module. You may find multiple templates online for ideas.
 
 **User Requirements** Identify the goals for your intended audience. Be specific about the types of interaction you have in mind. Following are a number of potential options, with increasing complexity:
 
@@ -331,6 +335,15 @@ Establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals o
 - Ensure that users can easily explore relevant data points and insights related to social determinants of health (SDOH) within their specified areas. 
 - Incorporate interactive elements such as sliders and number entry fields to allow users to input specific parameters, enabling a more personalized and focused exploration of the data.
 - Design the application to respond dynamically to user inputs, providing real-time visualizations and insights based on the selected criteria.
+
+:::tip
+**Word of the Day: *Affordances* **
+
+These user behaviors, like anticipated clicks or zooming to view, are called *affordances* in the design space. Affordances are clues that an object can be used to perform some action. If you see what looks like a button on the internet, you may want to click it. If you see a slider, you may want to slide it.
+
+Designing products well take *affordances* into account. In this stage of planning, you're engineering things so that your audience will know what to do intuitively, based on these visual cues. A deeper dive into the topic can be found at [Smashing Magazine](https://www.smashingmagazine.com/2014/06/affordance-most-underrated-word-in-web-design/).
+
+:::
 
 ### Break Down Details {-}
 
@@ -395,6 +408,7 @@ Indicate which project management approach you'll be adopting. Include a few sen
 ## Resources {-}
 For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
 
-- add option here
-- and here
-- and here
+- [Data Maturity Assessment](https://data.org/dma/) - The Data Foundation
+- [Stakeholder Responsibilities and Role Descriptions](https://www.healthit.gov/sites/default/files/cds/3_5_14_stakeholder_responsibilities_and_role_descriptions.pdf) - HealthIT.gov
+- [Objectives and goals: Writing meaningful goals and SMART objectives](https://www.health.state.mn.us/communities/practice/resources/phqitoolbox/objectives.html) - Minnesota Department of Health
+- [Design, Development, Testing, and Deployment of GIS Applications](https://gistbok.ucgis.org/bok-topics/design-development-testing-and-deployment-gis-applications) - The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.)
