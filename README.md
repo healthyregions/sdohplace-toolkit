@@ -1,6 +1,6 @@
 # The SDOH & Place Toolkit
 
-Website: https://sdohplace.org/
+Website: https://toolkit.sdohplace.org/
 
 ## Overview
 
