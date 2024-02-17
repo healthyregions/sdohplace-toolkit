@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   includes:
+      in_header: head-extra.html
       before_body: banner.html
       after_body: footer-banner.html
   highlight : tango
