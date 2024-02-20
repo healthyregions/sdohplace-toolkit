@@ -187,7 +187,68 @@ Following evaluation, developers should revise the application accordingly, and 
 
 :::activity
 **Activity**
-User personas ...
+**User Personas**
+
+One of the most effective ways to get started with identifying user needs is to create details around each *user persona*. This way, you can not only test the assumptions that you make about your personas but also see how far you can ideate on their potential needs. **The primary object is to understand the personas by gaining a deep understanding of their needs, preferences, behaviors, and goals.** This understanding is crucial for developing the application in the direction that resonates with their needs. 
+
+During the exercise, personas are looked at from a more humanized lens that helps build empathy as it is easier to relate to a fictional character representing a real user than to an abstract persona. We recommend using the **User Persona FigJam template** to collaborate and build a meaningful set of user personas.
+
+Step 1: Accessing FigJam and load the User Persona FigJam template
+
+1. Go to the Figma website (https://www.figma.com/) and sign in or create a new account. - If you don't have an account, click on "Sign Up" to create a new account. Follow the on-screen instructions to complete the registration process. You can choose a free account, but if you have the chance, pick the academic account since it provides more perks. 
+
+2. Once you sign up, Figma will lead you to your personal workspace. Under Teams (left part of the screen), select “Create new team.” Name your new team as you like, we will name it “Place Project.” You can skip adding your collaborators and choose the starter option.  
+
+![Figure 3.1.2](images/hcd-1.2.png){width=90%} 
+
+3. Once you have your new team, Click on this [link](https://www.figma.com/community/file/1027357893837345723/user-persona) to access the User Persona FigJam template webpage and click on the "open in Figjam" button.  This action will lead you to your new user persona template.
+
+Step 2: Edit the User Persona Template
+
+1. Once the template is open, you'll see a canvas with predefined sections for different aspects of a user persona (e.g., demographics, goals, frustrations). Take a few minutes to explore this template. You can zoom into specific sections. 
+
+![Figure 3.2.1](images/hcd-2.1.png){width=90%} 
+
+
+2. You will see the name of the file on the top of the canvas. The default name is "User persona (community)" Click on the arrow and choose “rename.” You may name your new file "Place Project - User Personas," but you can pick your own name. Click on the arrow once again and pick “move to project” and move your file under the team you created on Step 1.2 of this guide. 
+   
+![Figure 3.2.2](images/hcd-2.2.png){width=90%} 
+
+3. Now that your file is in the correct project, click on each section on the canvas to edit the text and add details relevant to your potential user personas. You may change the image of your personas, change their personality traits by moving the sliders, and write on the sticky notes their interests, motivations, goals, pain points and frustrations etc. 
+
+![Figure 3.2.3](images/hcd-2.3.png){width=90%} 
+
+4. You can also use the drawing tools, sticky notes, and connectors (below of the screen) to enhance the visual representation of your user personas.
+
+5. You can also copy and paste different elements of this template. For example, right click on the "Basic Information Section," paste it on the canvas and move this section just below your first persona. Do the same with the "More about'' section. Now, you can have multiple personas with different skills, motivations, and personalities. 
+
+![Figure 3.2.5](images/hcd-2.5.png){width=90%} 
+
+6.  FigJam automatically saves your work, but it's a good practice to save manually the version history as well. Perhaps you may want to come back to a previous version of your template. Click on the main menu icon in the top-left corner and choose "file" then select "Save to version history" and follow the instructions. 
+
+Step 3: Collaborate with Others
+
+1. FigJam is designed for collaboration. Click on the "Share" button in the top-right corner to invite some of your colleagues of the Place Project Fellowship to provide you feedback in real-time. You can use their emails or provide them with a link to your canvas. 
+
+2. You may use sticky notes to communicate and work together in order to refine your user personas. However, another way to do it is by clicking on the "Add comment" (e.g., speech globe) icon at the top of the canvas, selecting where you want to add the comment on the canvas and writing it. 
+
+![Figure 3.3.2](images/hcd-3.2.png){width=90%} 
+
+Step 4: Save and Export
+
+1. If you need to share the user personas outside of FigJam, you can export the file by clicking on the “Main Menu" icon, selecting "File" and "Export as" to choose your desired format (PDF, JPG. PNG etc).
+
+Step 5: Iterate and Refine
+
+1. User personas are dynamic, and your project may evolve. Use FigJam to iterate and refine your user personas as needed.
+
+2. Collaborate with your team at the Place Project  to gather feedback and make improvements to ensure the personas accurately reflect your target audience.
+
+3. On your own try to create at least three potential User Personas for your project and share it with your Place Project colleagues. Also do not forget to provide some feedback to them.
+
+Congratulations! You've successfully used a FigJam template to create user personas for your project. Feel free to explore other FigJam features to enhance your collaborative design process.
+
+
 :::
 
 
