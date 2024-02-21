@@ -63,7 +63,11 @@ In this module, you will:
 
 :::
 
-Picture yourself not just as a creator, advocate, policymaker or researcher but also as a storyteller and a listener. In this module, you're going to learn the ropes of Human-Centered Design (HCD)—it's all about making sure our designs click with the very people they're meant for. We're talking about a real connection. *The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.* This entails understanding their objectives in using web applications, their situations, and their familiarity levels. It's essential to determine the design approaches that would most effectively cater to these requirements. Not planning appropriately can lead to revising the design which would eventually slow you down from releasing the application you have in mind. Therefore, a crucial first step of any data visualization planning process is to identify the users and understand what they want out of the visualization. 
+Picture yourself not just as a creator, advocate, policymaker or researcher but also as a storyteller and a listener. In this module, you're going to learn the ropes of Human-Centered Design (HCD)—it's all about making sure our designs click with the very people they're meant for. We're talking about a real connection.
+
+*The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.* 
+
+This entails understanding their objectives in using web applications, their situations, and their familiarity levels. It's essential to determine the design approaches that would most effectively cater to these requirements. Not planning appropriately can lead to revising the design which would eventually slow you down from releasing the application you have in mind. Therefore, a crucial first step of any data visualization planning process is to identify the users and understand what they want out of the visualization. 
 
 ## Brief Discussion of Design Methods
 
