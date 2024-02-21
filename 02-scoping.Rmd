@@ -276,7 +276,7 @@ Project Needs will include data, computer services, time, and attitude. To asses
 Consider **sustainability** at this stage. What will your project look like in five years? 
 
 
-### Is there app for that? {-}
+### Is there an app for that? {-}
 
 In the ever-evolving landscape of data visualization and technology, it's essential to explore existing tools and applications before embarking on a new project. This not only saves time and resources but also allows you to benefit from the wealth of solutions that may already address your needs. Here are some ideas to help you determine if there's an app or web visualization that aligns with your SDOH data visualization project:
 
