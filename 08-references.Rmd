@@ -2,14 +2,15 @@
 ---
 
 `r if (knitr:::is_html_output()) '
-# References {-}
-'`
+# References {-} 
 
 ## Module 1 {-}
 
-- Agency for Healthcare Research and Quality. (n.d.).  Data Visualizations https://www.ahrq.gov/data/data-visualization/index.htmlhttps://www.ahrq.gov/data/data-visualization/index.html
+- Agency for Healthcare Research and Quality. (n.d.).  Data Visualizations https://www.ahrq.gov/data/data-visualization/index.html
 
 - Appsilon. (n.d.). Air Quality vs Respiratory Disease. https://connect.appsilon.com/air-quality/
+
+- Babinski, G. (2021).  GIS&T for Equity and Social Justice.  The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2021.2.2
 
 - Centers for Disease Control and Prevention’s Division for Heart Disease and Stroke Prevention. (2017, August). Types of thematic maps. Tips for Creating Maps for Public Health. https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html
 
@@ -23,14 +24,21 @@
 
 - Douglas JA, Subica AM, Franks L, Johnson G, Leon C, Villanueva S, et al. Using Participatory Mapping to Diagnose Upstream Determinants of Health and Prescribe Downstream Policy-Based Interventions. Prev Chronic Dis 2020;17:200123. DOI: http://dx.doi.org/10.5888/pcd17.200123
 
+- Golebiowska, I., Korycka-Skorupa, J., and Slomska-Przech, K. (2021). Common Thematic Map Types.  The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2021.2.7
+
 - Hessler J, Discenza C, Fenn Gilman A,.(2023).The Mapping of Race in America. https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c 
+
+- Leadership Conference Education Fund (2023). Data for Equity: A Review of Federal Agency Equity Action Plans. https://civilrights.org/wp-content/uploads/2023/04/Data-For-Equity-Report.pdf 
+
+- Kelly, M. (2022). Narrative and Storytelling. The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2022 Edition), John P. Wilson (Ed.). DOI: 10.22224/gistbok/2022.2.12.
 
 - Kolak M, Bhatt J, Park YH, Padrón NA, Molefe A. (2020) Quantification of Neighborhood-Level  Social Determinants of Health in the Continental United States. JAMA Network Open.;3(1):e1919928. doi:10.1001/jamanetworkopen.2019.19928
 
-- Kolak, M., Li, X., Lin, Q., Wang, R., Menghaney, M., Yang, S., & Anguiano Jr, V. (2021). The US COVID   Atlas: A dynamic cyberinfrastructure surveillance system for interactive exploration of the pandemic. 
+- Kolak, M., Li, X., Lin, Q., Wang, R., Menghaney, M., Yang, S., & Anguiano Jr, V. (2021). The US COVID   Atlas: A dynamic cyberinfrastructure surveillance system for interactive exploration of the pandemic. Transactions in GIS, 25(4), 1741-1765.
 
-- Transactions in GIS, 25(4), 1741-1765.
-SAMHSA’s Trauma and Justice Strategic Initiative (2014, July) SAMHSA’s Concept of Trauma and Guidance for a Trauma-Informed Approach.
+- Robert Wood Johnson Foundation (2023). Achieving Health Equity. https://www.rwjf.org/en/building-a-culture-of-health/focus-areas/Features/achieving-health-equity.html
+
+- SAMHSA’s Trauma and Justice Strategic Initiative (2014, July) SAMHSA’s Concept of Trauma and Guidance for a Trauma-Informed Approach.
 
 - The Stavros Niarchos Foundation (2021, April) Health initiative progress update. https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html
 
@@ -42,12 +50,22 @@ SAMHSA’s Trauma and Justice Strategic Initiative (2014, July) SAMHSA’s Conce
 
 - University of Illinois. (2023). Eat. Move. Save. https://eat-move-save.extension.illinois.edu/#food-finder
 
+- The Urban Institute. (2024). Do No Harm Guide: Crafting Equitable Data Narratives https://www.urban.org/projects/do-no-harm-project 
+
 
 ## Module 2 {-}
 
 - Centers for Disease Control and Prevention. (2022) Heart Disease Death Rates, Total Population Ages 35+
 
+- Chiang, Y-Y. and Lin, Y. (2020). Design, Development, Testing, and Deployment of GIS Applications.  The Geographic Information Science & Technology Body of Knowledge (4th Quarter 2020 Edition), John P. Wilson (Ed.). DOI: 10.22224/gistbok/2020.4.2 
+
+- The Data Foundation. (n.d.) Data Maturity Assessment. https://data.org/dma/ 
+
+- HealthIT.gov (n.d.) Stakeholder Responsibilities and Role Descriptions.  https://www.healthit.gov/sites/default/files/cds/3_5_14_stakeholder_responsibilities_and_role_descriptions.pdf 
+
 - McKinsey & Company (2019) United States of Health Dashboard. https://www.mckinsey.com/industries/public-sector/our-insights/us-public-health-dashboard
+
+- Minnesota Department of Health. (2023). Objectives and goals: Writing meaningful goals and SMART objectives. https://www.health.state.mn.us/communities/practice/resources/phqitoolbox/objectives.html 
 
 - NCFDD. (n.d.). The NCFDD Mentor Map. https://www.ncfdd.org/ncfddmentormap
 
