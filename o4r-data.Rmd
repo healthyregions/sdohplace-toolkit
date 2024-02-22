@@ -2,3 +2,13 @@
 ---
 
 # Data Wrangling in R {-}
+
+
+:::objective
+**Objectives**
+
+In this module, you will:
+
+* Learn how to work in R
+
+:::
