@@ -29,7 +29,7 @@
   
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 <link rel="prev" href="02-scoping.html"/>
-<link rel="next" href="08-references.html"/>
+<link rel="next" href="04-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -132,12 +132,18 @@
 <li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#brief-discussion-of-design-methods"><i class="fa fa-check"></i><b>3.1</b> Brief Discussion of Design Methods</a></li>
 <li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
 <ul>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-1-identifying-user-needs"><i class="fa fa-check"></i>Step 1: Identifying User Needs</a></li>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-2-designing-to-user-needs"><i class="fa fa-check"></i>Step 2: Designing to User Needs</a></li>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-3-evaluation-and-iteration"><i class="fa fa-check"></i>Step 3: Evaluation and Iteration</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#project-tip"><i class="fa fa-check"></i>Project Tip:</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#activity-1.3"><i class="fa fa-check"></i>Activity 1.3:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="o4r-data.html"><a href="o4r-data.html"><i class="fa fa-check"></i>Data Wrangling in R</a></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
 <ul>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
@@ -177,7 +183,9 @@ bookdown::render_book(“index.Rmd”, “bookdown::gitbook”)</p>
 </ul>
 </div>
 <p>Picture yourself not just as a creator, advocate, policymaker or researcher but also as a storyteller and a listener. In this module, you’re going to learn the ropes of Human-Centered Design (HCD)—it’s all about making sure our designs click with the very people they’re meant for. We’re talking about a real connection.</p>
-<p><em>The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.</em></p>
+<blockquote>
+<p>The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.</p>
+</blockquote>
 <p>This entails understanding their objectives in using web applications, their situations, and their familiarity levels. It’s essential to determine the design approaches that would most effectively cater to these requirements. Not planning appropriately can lead to revising the design which would eventually slow you down from releasing the application you have in mind. Therefore, a crucial first step of any data visualization planning process is to identify the users and understand what they want out of the visualization.</p>
 <div id="brief-discussion-of-design-methods" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Brief Discussion of Design Methods<a href="03-design.html#brief-discussion-of-design-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -223,8 +231,8 @@ bookdown::render_book(“index.Rmd”, “bookdown::gitbook”)</p>
 <div id="human-centered-design-1" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Human-Centered Design<a href="03-design.html#human-centered-design-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Human-Centered Design (HCD) is a well-researched framework that provides a set of guidelines and processes to ensure that designs cater to the desires, abilities, and contexts of their potential end users. HCD guides developers to empathize with users, understand their needs, wants, and experiences, and create designs that engage users and adapt to the context of their real lives. Employing HCD can improve accessibility, reduce the risk of negative outcomes, and enhance user well-being. Applications of HCD principles have generated a design process that tends to share the following four steps: 1) identifying user needs, 2) designing to those needs, 3) evaluating the design and iterating until users are satisfied. Throughout these steps, the developer will constantly “diverge” their ideas to think wide and open while “converge” their scope and prototype with focus.</p>
-<div id="step-1-identifying-user-needs" class="section level3 unnumbered hasAnchor">
-<h3>Step 1: Identifying User Needs<a href="03-design.html#step-1-identifying-user-needs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="identifying-user-needs" class="section level3 unnumbered hasAnchor">
+<h3>Identifying User Needs<a href="03-design.html#identifying-user-needs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first step of the HCD process is to understand what a user hopes to accomplish and the conditions that will allow them to do so.</p>
 <p>To determine user needs, inclusive workshops are an effective way of bringing users into the design process and empowering them to share their goals for the tool as well as their particular concerns and contexts that might shape their use of the application. The success of these workshops depends on how well the participants represent a potentially diverse end-user group: to best understand the true breadth of needs to be considered, users of all different backgrounds, experience levels, and goals must be given equal opportunity to provide insight.</p>
 <p>Virtual meetings (over Zoom, for example) are an effective way to hold these workshops. Virtual meetings allow for a broader spectrum of users to participate. In these meetings, it is recommended to include multimodal communication, such as a mix of presentations, live discussions, polling, and a chat function. This ensures that participants with varying levels and preferences of engagement get an opportunity to speak their minds. It is also important to establish common terminology with workshop participants as they may not be familiar with application design or data discovery. Therefore, efforts should be made to explain certain functionalities with examples to allow participants to articulate what sorts of features they may benefit from.</p>
@@ -234,8 +242,8 @@ bookdown::render_book(“index.Rmd”, “bookdown::gitbook”)</p>
 One of the most effective ways to get started with identifying user needs is to create details around each user persona. This way, you can not only test the assumptions that you make about your personas but also see how far you can ideate on their potential needs. The primary object is to understand the personas by gaining a deep understanding of their needs, preferences, behaviors, and goals. This understanding is crucial for developing the application in the direction that resonates with their needs. During the exercise, personas are looked at from a more humanized lens that helps build empathy as it is easier to relate to a fictional character representing a real user than to an abstract persona. We recommend using the User Persona FigJam template to collaborate and build a meaningful set of user personas.</p>
 </div>
 </div>
-<div id="step-2-designing-to-user-needs" class="section level3 unnumbered hasAnchor">
-<h3>Step 2: Designing to User Needs<a href="03-design.html#step-2-designing-to-user-needs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="designing-to-user-needs" class="section level3 unnumbered hasAnchor">
+<h3>Designing to User Needs<a href="03-design.html#designing-to-user-needs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step of the HCD process is to determine a web application design that will meet user needs. An application’s user interface is a key element of design for developers to consider. To involve users in this process, card sorting is one effective method of participatory design, in which users are given note cards representing application functions and are asked to arrange them in ways they would find most easily to navigate on a web page. Creating a full list of functions that will help users meet their goals, such as the ability to query a dataset using keywords, or zoom in on particular locations in a map, is a helpful first step of this process. During the card sorting activity, don’t hesitate to create, remove, or edit cards that may be suggested by the users. This technique often serves as a guidance for taking the next step, but you should feel free to adapt and improvise as needed. Developers should also consider how data will be organized into meaningful categories. For health equity applications, for example, it is often useful to divide data by demographics.</p>
 <p>The design of graphic icons, buttons, window layouts, symbols, text fonts, and color schemes is also crucial to this step. Researchers have identified certain principles of design that seem to be broadly visually appealing and successful. These include:</p>
 <ul>
@@ -257,8 +265,8 @@ One of the most effective ways to get started with identifying user needs is to 
 <p>Choose one of the above platforms and create a free account. Walk through their getting-started steps to learn how to use the platform. If you find the platform confusing or limiting, try out another and compare. Also, visit design mockup websites such as Dribbble and Behance to search for creative inspiration on user interface design.</p>
 </div>
 </div>
-<div id="step-3-evaluation-and-iteration" class="section level3 unnumbered hasAnchor">
-<h3>Step 3: Evaluation and Iteration<a href="03-design.html#step-3-evaluation-and-iteration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="evaluation-and-iteration" class="section level3 unnumbered hasAnchor">
+<h3>Evaluation and Iteration<a href="03-design.html#evaluation-and-iteration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step of the HCD process is to evaluate how usable, accessible, and satisfying the initial web application design is for users. To do so, it is crucial to solicit user feedback through user testing and evaluation. An effective method of evaluation is to have users test out a prototype of the design and give feedback on their experience, a process that can be facilitated through a variety of means, including focus groups and online surveys. More about this in Module 6.</p>
 <p>The questions users are asked should allow developers to evaluate the extent to which the application meets established user needs and the extent to which the application is usable.</p>
 <p>Components of usability include:</p>
@@ -296,9 +304,9 @@ Based on the survey respondents and their level of comfort, their responses may 
 <li><p>Go to the Figma website (<a href="https://www.figma.com/" class="uri">https://www.figma.com/</a>) and sign in or create a new account. - If you don’t have an account, click on “Sign Up” to create a new account. Follow the on-screen instructions to complete the registration process. You can choose a free account, but if you have the chance, pick the academic account since it provides more perks.</p></li>
 <li><p>Once you sign up, Figma will lead you to your personal workspace. Under Teams (left part of the screen), select “Create new team.” Name your new team as you like, we will name it “Place Project.” You can skip adding your collaborators and choose the starter option.</p></li>
 </ol>
-<div class="figure">
-<img src="images/hcd-1.2.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.1.2</p>
+<div class="float">
+<img src="images/hcd-1.2.png" style="width:90.0%" alt="Figure 3.1.2" />
+<div class="figcaption">Figure 3.1.2</div>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li>Once you have your new team, Click on this <a href="https://www.figma.com/community/file/1027357893837345723/user-persona">link</a> to access the User Persona FigJam template webpage and click on the “open in Figjam” button. This action will lead you to your new user persona template.</li>
@@ -307,31 +315,31 @@ Based on the survey respondents and their level of comfort, their responses may 
 <ol style="list-style-type: decimal">
 <li>Once the template is open, you’ll see a canvas with predefined sections for different aspects of a user persona (e.g., demographics, goals, frustrations). Take a few minutes to explore this template. You can zoom into specific sections.</li>
 </ol>
-<div class="figure">
-<img src="images/hcd-2.1.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.2.1</p>
+<div class="float">
+<img src="images/hcd-2.1.png" style="width:90.0%" alt="Figure 3.2.1" />
+<div class="figcaption">Figure 3.2.1</div>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li>You will see the name of the file on the top of the canvas. The default name is “User persona (community)” Click on the arrow and choose “rename.” You may name your new file “Place Project - User Personas,” but you can pick your own name. Click on the arrow once again and pick “move to project” and move your file under the team you created on Step 1.2 of this guide.</li>
 </ol>
-<div class="figure">
-<img src="images/hcd-2.2.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.2.2</p>
+<div class="float">
+<img src="images/hcd-2.2.png" style="width:90.0%" alt="Figure 3.2.2" />
+<div class="figcaption">Figure 3.2.2</div>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li>Now that your file is in the correct project, click on each section on the canvas to edit the text and add details relevant to your potential user personas. You may change the image of your personas, change their personality traits by moving the sliders, and write on the sticky notes their interests, motivations, goals, pain points and frustrations etc.</li>
 </ol>
-<div class="figure">
-<img src="images/hcd-2.3.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.2.3</p>
+<div class="float">
+<img src="images/hcd-2.3.png" style="width:90.0%" alt="Figure 3.2.3" />
+<div class="figcaption">Figure 3.2.3</div>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li><p>You can also use the drawing tools, sticky notes, and connectors (below of the screen) to enhance the visual representation of your user personas.</p></li>
 <li><p>You can also copy and paste different elements of this template. For example, right click on the “Basic Information Section,” paste it on the canvas and move this section just below your first persona. Do the same with the “More about’’ section. Now, you can have multiple personas with different skills, motivations, and personalities.</p></li>
 </ol>
-<div class="figure">
-<img src="images/hcd-2.5.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.2.5</p>
+<div class="float">
+<img src="images/hcd-2.5.png" style="width:90.0%" alt="Figure 3.2.5" />
+<div class="figcaption">Figure 3.2.5</div>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li>FigJam automatically saves your work, but it’s a good practice to save manually the version history as well. Perhaps you may want to come back to a previous version of your template. Click on the main menu icon in the top-left corner and choose “file” then select “Save to version history” and follow the instructions.</li>
@@ -341,9 +349,9 @@ Based on the survey respondents and their level of comfort, their responses may 
 <li><p>FigJam is designed for collaboration. Click on the “Share” button in the top-right corner to invite some of your colleagues of the Place Project Fellowship to provide you feedback in real-time. You can use their emails or provide them with a link to your canvas.</p></li>
 <li><p>You may use sticky notes to communicate and work together in order to refine your user personas. However, another way to do it is by clicking on the “Add comment” (e.g., speech globe) icon at the top of the canvas, selecting where you want to add the comment on the canvas and writing it.</p></li>
 </ol>
-<div class="figure">
-<img src="images/hcd-3.2.png" style="width:90.0%" alt="" />
-<p class="caption">Figure 3.3.2</p>
+<div class="float">
+<img src="images/hcd-3.2.png" style="width:90.0%" alt="Figure 3.3.2" />
+<div class="figcaption">Figure 3.3.2</div>
 </div>
 <p>Step 4: Save and Export</p>
 <ol style="list-style-type: decimal">
@@ -374,7 +382,7 @@ Based on the survey respondents and their level of comfort, their responses may 
         </div>
       </div>
 <a href="02-scoping.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="08-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="04-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

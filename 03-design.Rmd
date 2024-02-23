@@ -21,7 +21,7 @@ In this module, you will:
 
 Picture yourself not just as a creator, advocate, policymaker or researcher but also as a storyteller and a listener. In this module, you're going to learn the ropes of Human-Centered Design (HCD)—it's all about making sure our designs click with the very people they're meant for. We're talking about a real connection.
 
-*The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.* 
+> The primary objective of a successful data visualization method should be to meet the needs of the individuals who will be using it.
 
 This entails understanding their objectives in using web applications, their situations, and their familiarity levels. It's essential to determine the design approaches that would most effectively cater to these requirements. Not planning appropriately can lead to revising the design which would eventually slow you down from releasing the application you have in mind. Therefore, a crucial first step of any data visualization planning process is to identify the users and understand what they want out of the visualization. 
 
@@ -54,7 +54,7 @@ pander(df, style = 'rmarkdown')
 
 Human-Centered Design (HCD) is a well-researched framework that provides a set of guidelines and processes to ensure that designs cater to the desires, abilities, and contexts of their potential end users. HCD guides developers to empathize with users, understand their needs, wants, and experiences, and create designs that engage users and adapt to the context of their real lives. Employing HCD can improve accessibility, reduce the risk of negative outcomes, and enhance user well-being. Applications of HCD principles have generated a design process that tends to share the following four steps: 1) identifying user needs, 2) designing to those needs, 3) evaluating the design and iterating until users are satisfied. Throughout these steps, the developer will constantly “diverge” their ideas to think wide and open while “converge” their scope and prototype with focus.
 
-### Step 1: Identifying User Needs {-}
+### Identifying User Needs {-}
 The first step of the HCD process is to understand what a user hopes to accomplish and the conditions that will allow them to do so. 
 
 To determine user needs, inclusive workshops are an effective way of bringing users into the design process and empowering them to share their goals for the tool as well as their particular concerns and contexts that might shape their use of the application. The success of these workshops depends on how well the participants represent a potentially diverse end-user group: to best understand the true breadth of needs to be considered, users of all different backgrounds, experience levels, and goals must be given equal opportunity to provide insight.
@@ -69,7 +69,7 @@ One of the most effective ways to get started with identifying user needs is to 
 
 :::
 
-### Step 2: Designing to User Needs {-}
+### Designing to User Needs {-}
 
 The next step of the HCD process is to determine a web application design that will meet user needs. An application's user interface is a key element of design for developers to consider. To involve users in this process, card sorting is one effective method of participatory design, in which users are given note cards representing application functions and are asked to arrange them in ways they would find most easily to navigate on a web page. Creating a full list of functions that will help users meet their goals, such as the ability to query a dataset using keywords, or zoom in on particular locations in a map, is a helpful first step of this process. During the card sorting activity, don't hesitate to create, remove, or edit cards that may be suggested by the users. This technique often serves as a guidance for taking the next step, but you should feel free to adapt and improvise as needed. Developers should also consider how data will be organized into meaningful categories. For health equity applications, for example, it is often useful to divide data by demographics.
 
@@ -102,7 +102,7 @@ Choose one of the above platforms and create a free account. Walk through their 
 :::
 
 
-### Step 3: Evaluation and Iteration {-}
+### Evaluation and Iteration {-}
 
 The next step of the HCD process is to evaluate how usable, accessible, and satisfying the initial web application design is for users. To do so, it is crucial to solicit user feedback through user testing and evaluation. An effective method of evaluation is to have users test out a prototype of the design and give feedback on their experience, a process that can be facilitated through a variety of means, including focus groups and online surveys. More about this in Module 6.
 

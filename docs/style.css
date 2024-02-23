@@ -42,7 +42,7 @@ pre code {
 
 .hero-image {
   width: 100%;
-  max-height: 115px;
+  max-height: 125px;
   height: auto;
   object-fit: cover;
 }
@@ -243,6 +243,9 @@ li.appendix span, li.part span { /* for TOC part names */
 .toc-logo {
   object-fit: contain;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toc-logo img {
@@ -252,6 +255,7 @@ li.appendix span, li.part span { /* for TOC part names */
 
 .summary > li:first-child {
   height: auto !important;
+  padding-top: 40px;
 }
 
 /*
