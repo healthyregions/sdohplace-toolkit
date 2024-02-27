@@ -5,6 +5,7 @@
 
 :::objective
 **Objectives**
+
 In this module, you will:
 
 * Refine your project goals and objectives

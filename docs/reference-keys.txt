@@ -10,7 +10,13 @@ defining-stakeholders
 project-assessment
 finalize-approach
 human-centered-design
-brief-discussion-of-design-methods
+design-methods
 human-centered-design-1
+organize-functions
+design-aesthetics
+design-tools
+heuristic-evaluation
+interviews-surveys
+iteration
+good-design
 data-wrangling
-data-wrangling-in-r

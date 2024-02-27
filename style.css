@@ -133,7 +133,7 @@ ol {
   margin: 0 0 0.85em;
   padding: 0 15px;
   opacity: 0.75;
-  border-left: 4px solid #FF9C77;
+  border-left: 2px solid #FF9C77;
   color: #333333;
   font-family: 'Nunito', sans-serif;
 }
@@ -188,6 +188,10 @@ table tbody {
 
 td:first-child {
   min-width: 200px !important;
+}
+
+td {
+  text-align: left;
 }
 
 /*---------------------------------------------*/
