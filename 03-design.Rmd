@@ -66,7 +66,7 @@ Involves creating products and environments that are accessible and usable by al
 
 <details markdown='1'><summary>**Experience Design**</summary>
 Type: User experience-focused design approach
-Focused on the quality of the user experience and culturally relevant solutions. It goes beyond the product itself to include all aspects of the user's interaction with a company, its services, and its products.
+Focused on the quality of the user experience and culturally relevant solutions. It goes beyond the product itself to include all aspects of the user's interaction with an organization, its services, and its products.
 <br/><br/></details>
 
 
@@ -370,4 +370,5 @@ pander(df, style = 'rmarkdown')
 - [How to create a persona](https://www.figma.com/resource-library/how-to-create-a-persona/) - Figma
 - [Card Sorting: The Ultimate Guide](https://www.interaction-design.org/literature/article/the-pros-and-cons-of-card-sorting-in-ux-research) - Interaction Design Foundation
 - [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) - Nielsen Norman Group
+- [Design-Pattern Guidelines: Study Guide](https://www.nngroup.com/articles/design-pattern-guidelines/) - Nielsen Norman Group
 - [How to Conduct Focus Groups](https://www.interaction-design.org/literature/article/how-to-conduct-focus-groups) - Interaction Design Foundation
