@@ -364,7 +364,7 @@ row.names(df)<-NULL
 pander(df, style = 'rmarkdown')
 ```
 
-## References {-}
+## Resources {-}
 
 - [Stakeholder Engagement Toolkit for Evidence Building](https://www.datafoundation.org/stakeholder-engagement-toolkit-for-evidence-building-introduction) - The Data Foundation
 - [How to create a persona](https://www.figma.com/resource-library/how-to-create-a-persona/) - Figma

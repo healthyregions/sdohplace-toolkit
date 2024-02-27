@@ -19,4 +19,3 @@ heuristic-evaluation
 interviews-surveys
 iteration
 good-design
-data-wrangling
