@@ -50,22 +50,22 @@ An approach to problem-solving that starts with people and ends with solutions t
 <br/><br/></details>
 
 <details markdown='1'><summary>**Participatory Design**</summary>
-Type: Collaborative design approach
+Type: Collaborative design approach<br/>
 A process that involves all stakeholders, especially users, in the design process. The aim is to ensure that the designed product meets the needs and expectations of the users. It often involves workshops, user interviews, and collaborative sessions where users actively contribute ideas and feedback.
 <br/><br/></details>
 
 <details markdown='1'><summary>**Design Thinking**</summary>
-Type: Problem-solving framework
+Type: Problem-solving framework<br/>
 A non-linear, iterative process used to understand users, challenge assumptions, redefine problems, and create innovative solutions to prototype and test. It comprises five phases: Empathize, Define, Ideate, Prototype, and Test. This approach encourages questioning, experimentation, observation, and innovation.
 <br/><br/></details>
 
 <details markdown='1'><summary>**Universal Design**</summary>
-Type: Accessibility-focused design approach
+Type: Accessibility-focused design approach<br/>
 Involves creating products and environments that are accessible and usable by all people, to the greatest extent possible, without the need for adaptation or specialized design. It emphasizes simplicity, intuitiveness, and accommodating a wide range of individual preferences and abilities.
 <br/><br/></details>
 
 <details markdown='1'><summary>**Experience Design**</summary>
-Type: User experience-focused design approach
+Type: User experience-focused design approach<br/>
 Focused on the quality of the user experience and culturally relevant solutions. It goes beyond the product itself to include all aspects of the user's interaction with an organization, its services, and its products.
 <br/><br/></details>
 
@@ -204,7 +204,18 @@ The design of graphic icons, buttons, window layouts, symbols, text fonts, and c
 Overall layout should be minimalist, uncluttered, and balance color with an effective use of white space.
 
 #### Design Tools
-There exists a variety of tools freely available on the internet to collaboratively design user interface prototypes. Several options include:
+
+Starting with design tools, using a pen and paper for making paper prototypes offers a great starting point. This allows for rapidly translating ideas into tangible and shareable prototypes, helping make quick iterations.
+
+Alternatively or additionally, you could opt to make low or mid-fidelity prototypes. Low-fidelity prototypes are rudimentary representations of design concepts, helping explore and communicate ideas without delving into specifics. On the other hand, mid-fidelity prototypes offer a more refined depiction of the final product. Here are some simple to use low-fidelity design tools:
+
+- [MockFlow](https://mockflow.com/): MockFlow is a versatile web tool ideal for creating wireframes, user flows, and prototypes with its intuitive drag-and-drop interface, facilitating seamless collaboration among team members.
+
+- [Wireframe.cc](https://wireframe.cc/): Wireframe.cc offers a minimalist approach to wireframing, allowing users to quickly sketch out ideas and concepts in a clean and straightforward manner, making it perfect for rapid ideation and iteration.
+
+![](images/prototypes.png){width=100%}
+
+Moving further, high-fidelity prototypes mirror the end product closely in terms of design, interactions, and functionality. Making these require more time and resources to develop. There are a variety of tools freely available on the internet to collaboratively design high-fidelity user interface prototypes. Several options include:
 
 - [Figma](https://www.figma.com/): A collaborative design tool often used for user interface design. Figma is entirely browser-based and includes many helpful design tools, adaptable templates, and allows for real-time collaboration.
 
