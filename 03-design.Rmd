@@ -180,7 +180,7 @@ Congratulations! You've successfully used a FigJam template to create user perso
 
 The next step of the HCD process is to determine a web application design that will meet user needs. An application's user interface is a key element of design for developers to consider.
 
-#### Organize Functions
+#### Organize Functions {-}
 To involve users in the process of creating the application interface, **card sorting** is one effective method of participatory design, in which users are given note cards representing application functions and are asked to arrange them in ways they would find most easily to navigate on a web page. Creating a full list of functions that will help users meet their goals, such as the ability to query a dataset using keywords, or zoom in on particular locations in a map, is a helpful first step of this process.
 
 ![Card sorting for a food access project](images/cardsorting.png){width=90%} 
@@ -188,7 +188,7 @@ To involve users in the process of creating the application interface, **card so
 During the card sorting activity, don't hesitate to create, remove, or edit cards that may be suggested by the users. This technique often serves as a guidance for taking the next step, but you should feel free to adapt and improvise as needed. Application developers should also consider how data will be organized into meaningful categories. For health equity applications, for example, it is often useful to divide data by demographics.
 
 
-#### Design Aesthetics
+#### Design Aesthetics {-}
 The design of graphic icons, buttons, window layouts, symbols, text fonts, and color schemes is also crucial to this step. Researchers have identified certain principles of design that seem to be broadly visually appealing and successful. These include:
 
 - Navigation tools should be highly visible, intuitive, & consistently placed
@@ -203,7 +203,7 @@ The design of graphic icons, buttons, window layouts, symbols, text fonts, and c
 
 Overall layout should be minimalist, uncluttered, and balance color with an effective use of white space.
 
-#### Design Tools
+#### Design Tools {-}
 
 Starting with design tools, using a pen and paper for making paper prototypes offers a great starting point. This allows for rapidly translating ideas into tangible and shareable prototypes, helping make quick iterations.
 
@@ -236,7 +236,7 @@ Choose one of the above design tool platforms and create a free account. Walk th
 
 The next step of the HCD process is to evaluate how usable, accessible, and satisfying the initial web application design is for users. To do so, it is crucial to solicit feedback through user testing and evaluation. An effective method of evaluation is to have users test out a prototype of the design and give feedback on their experience.
 
-#### Heuristic Evaluation
+#### Heuristic Evaluation {-}
 
 Before bringing the users back in the loop, there is plenty of testing you can do yourself to ensure usability of your application. Heuristic evaluation is often considered as a fast and inexpensive method to highlight usability issues early on. The analysis can also be optionally done with users that may involve observing and taking more granular feedback. Following are 10 usability heuristics that can help you to quickly evaluate your application:
 
@@ -280,10 +280,12 @@ pander(df, style = 'rmarkdown')
 
 Rapid-fire Heuristics Evaluation
 
-Spend a quick 5 minutes conducting a usability heuristics analysis on your preferred website or application, utilizing the provided heuristics. Pay attention to the details. Then, expand this exercise to another website, repeating the evaluation process. Look for similarities or differences between the two. For a deeper understanding, focus on applications similar to those you're interested in creating. This activity offers valuable insights into heuristic application and user experience, aiding in the enhancement of your own application design.
+Spend 5 minutes conducting a usability heuristics analysis on your preferred website or application, utilizing the provided heuristics. **Pay attention to the details.** Then, expand this exercise to another website, repeating the evaluation process. Look for similarities or differences between the two. For a deeper understanding, focus on applications similar to those you're interested in creating. 
+
+This activity offers valuable insights into heuristic application and user experience, aiding in the enhancement of your own application design.
 :::
 
-#### Interviews & Surveys
+#### Interviews & Surveys {-}
 
 The best form of feedback is the one coming straight from your users. Evaluations can be conducted live by bringing a group of users together for in-person or remote interviews by having them think aloud as they navigate through your application. They could also share their qualitative feedback using a focus group setting. On the other hand, conducting online surveys can help gather quantitative feedback.
 
@@ -340,7 +342,7 @@ Neglecting IRB Guidelines
 Beware of potential pitfalls when gathering feedback. Ensure that your chosen method aligns with IRB or institutional approval guidelines for research involving human subjects. Neglecting this could lead to privacy breaches or ethical concerns. Additional measures like encryption and secure data storage may be necessary to safeguard sensitive information. It's always good to check before proceeding.
 :::
 
-#### Iteration
+#### Iteration {-}
 
 Following evaluation, you should revise the application accordingly, and re-evaluate and redesign until user needs are sufficiently satisfied. Constantly keeping in touch with stakeholders and users make it easier to design for them. Lastly, try accommodating as much feedback but don't let it come in the way of you from moving forward to the next steps.
 
