@@ -16,5 +16,6 @@ The team is based out of the Department of Geography & GIScience at the Universi
 - Shubham Kumar, Designer
 - Jose Alavez, Postdoc
 - Marc Astacio-Palmer, Research Coordinator
+- Yilin Lyu, RA
 
 Made in 2023 & 2024 :)
