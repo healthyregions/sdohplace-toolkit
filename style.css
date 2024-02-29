@@ -42,7 +42,7 @@ pre code {
 
 .hero-image {
   width: 100%;
-  max-height: 115px;
+  max-height: 125px;
   height: auto;
   object-fit: cover;
 }
@@ -133,7 +133,7 @@ ol {
   margin: 0 0 0.85em;
   padding: 0 15px;
   opacity: 0.75;
-  border-left: 4px solid #FF9C77;
+  border-left: 2px solid #FF9C77;
   color: #333333;
   font-family: 'Nunito', sans-serif;
 }
@@ -190,6 +190,10 @@ td:first-child {
   min-width: 200px !important;
 }
 
+td {
+  text-align: left;
+}
+
 /*---------------------------------------------*/
 /*------------ Table of Contents --------------*/
 
@@ -243,6 +247,9 @@ li.appendix span, li.part span { /* for TOC part names */
 .toc-logo {
   object-fit: contain;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toc-logo img {
@@ -252,6 +259,7 @@ li.appendix span, li.part span { /* for TOC part names */
 
 .summary > li:first-child {
   height: auto !important;
+  padding-top: 40px;
 }
 
 /*

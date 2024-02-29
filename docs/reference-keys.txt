@@ -9,3 +9,7 @@ refining-goals-for-sdoh
 defining-stakeholders
 project-assessment
 finalize-approach
+human-centered-design
+design-methods
+human-centered-design-1
+good-design
