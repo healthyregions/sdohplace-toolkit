@@ -73,15 +73,15 @@
 
 ## Module 3 {-}
 
-Data Foundation (2023) Stakeholder Engagement Toolkit for Evidence Building. https://www.datafoundation.org/stakeholder-engagement-toolkit-for-evidence-building-introduction
+- Data Foundation (2023) Stakeholder Engagement Toolkit for Evidence Building. https://www.datafoundation.org/stakeholder-engagement-toolkit-for-evidence-building-introduction
 
-Figma (n.d.) How to create a persona. https://www.figma.com/resource-library/how-to-create-a-persona/
+- Figma (n.d.) How to create a persona. https://www.figma.com/resource-library/how-to-create-a-persona/
 
-Interaction Design Foundation (2021) How to Conduct Focus Groups. https://www.interaction-design.org/literature/article/how-to-conduct-focus-groups
+- Interaction Design Foundation (2021) How to Conduct Focus Groups. https://www.interaction-design.org/literature/article/how-to-conduct-focus-groups
 
-Interaction Design Foundation (2024) Card Sorting: The Ultimate Guide. https://www.interaction-design.org/literature/article/the-pros-and-cons-of-card-sorting-in-ux-research
+- Interaction Design Foundation (2024) Card Sorting: The Ultimate Guide. https://www.interaction-design.org/literature/article/the-pros-and-cons-of-card-sorting-in-ux-research
 
-Nielsen Norman Group (2024) 10 Usability Heuristics for User Interface Design. https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen Norman Group (2024) 10 Usability Heuristics for User Interface Design. https://www.nngroup.com/articles/ten-usability-heuristics/
 
 
 
