@@ -11,3 +11,16 @@ In this module, you will:
 * Learn how to work in R
 
 :::
+
+## Intro to Spatial Data
+
+### How and why to change projections/CRS
+
+Convert CSV lat/long to points
+* Geocode addresses to points
+* Bring in a boundary dataset
+* Overlay points and boundary dataset
+* Merge SDOH data to boundary dataset
+* Clean health data (from long to wide format)
+* Merge health data to SDOH/boundary master datset
+* Inspect as a choropleth map (simple version)
