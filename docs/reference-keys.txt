@@ -12,10 +12,4 @@ finalize-approach
 human-centered-design
 design-methods
 human-centered-design-1
-organize-functions
-design-aesthetics
-design-tools
-heuristic-evaluation
-interviews-surveys
-iteration
 good-design
