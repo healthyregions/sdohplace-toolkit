@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Data Wrangling | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Data Wrangling | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -50,9 +50,82 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -72,7 +145,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="https://toolkit.sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
@@ -150,6 +223,29 @@
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="o4r-data.html"><a href="o4r-data.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="o4r-data.html"><a href="o4r-data.html#intro-to-spatial-data-concept"><i class="fa fa-check"></i><b>A.1</b> Intro to Spatial Data Concept</a></li>
+<li class="chapter" data-level="A.2" data-path="o4r-data.html"><a href="o4r-data.html#environmental-setup"><i class="fa fa-check"></i><b>A.2</b> Environmental Setup</a></li>
+<li class="chapter" data-level="A.3" data-path="o4r-data.html"><a href="o4r-data.html#convert-csv-latlong-to-points"><i class="fa fa-check"></i><b>A.3</b> Convert CSV Lat/Long to Points</a></li>
+<li class="chapter" data-level="A.4" data-path="o4r-data.html"><a href="o4r-data.html#prepare-spatial-data"><i class="fa fa-check"></i><b>A.4</b> Prepare Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="o4r-data.html"><a href="o4r-data.html#load-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Load Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="o4r-data.html"><a href="o4r-data.html#change-projectionscrs"><i class="fa fa-check"></i><b>A.4.2</b> Change Projections/CRS</a></li>
+<li class="chapter" data-level="A.4.3" data-path="o4r-data.html"><a href="o4r-data.html#refine-basic-map"><i class="fa fa-check"></i><b>A.4.3</b> Refine Basic Map</a></li>
+<li class="chapter" data-level="A.4.4" data-path="o4r-data.html"><a href="o4r-data.html#overlay-zip-code-boundaries"><i class="fa fa-check"></i><b>A.4.4</b> Overlay Zip Code Boundaries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="o4r-data.html"><a href="o4r-data.html#geocode-addresses-to-points"><i class="fa fa-check"></i><b>A.5</b> Geocode Addresses to Points</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="o4r-data.html"><a href="o4r-data.html#prepare-address-data"><i class="fa fa-check"></i><b>A.5.1</b> Prepare Address Data</a></li>
+<li class="chapter" data-level="A.5.2" data-path="o4r-data.html"><a href="o4r-data.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5.2</b> Convert to Spatial Data</a></li>
+<li class="chapter" data-level="A.5.3" data-path="o4r-data.html"><a href="o4r-data.html#basic-map-of-points"><i class="fa fa-check"></i><b>A.5.3</b> Basic Map of Points</a></li>
+<li class="chapter" data-level="A.5.4" data-path="o4r-data.html"><a href="o4r-data.html#overlay-points-style"><i class="fa fa-check"></i><b>A.5.4</b> Overlay Points &amp; Style</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="o4r-data.html"><a href="o4r-data.html#merge-sdoh-data-to-boundary-dataset"><i class="fa fa-check"></i><b>A.6</b> Merge SDOH Data to Boundary Dataset</a></li>
+<li class="chapter" data-level="A.7" data-path="o4r-data.html"><a href="o4r-data.html#graduated-symbology-choropleth-map"><i class="fa fa-check"></i><b>A.7</b> Graduated Symbology &amp; Choropleth Map</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -186,9 +282,9 @@
 <p>After understanding the significance of refining objectives and finding stakeholders, it is crucial to take into account one of the essential elements in your project–the spatial component. This toolkit underscores the fact that social determinants of health encompass more than personal genetics or healthy habits. According to the World Health Organization, social determinants of health refer to the conditions in which people are born, grow, live, work, and age (<a href="https://health.gov/healthypeople" class="uri">https://health.gov/healthypeople</a>, accessed 11 October, 2023 ). By adopting a spatial view of SDOH, we can research how communities are affected by the places they inhabit. For instance, we can evaluate their access to health care, transportation, recreation, and green areas. On the other hand, some communities may be exposed in their neighborhoods to crime, racism, and pollution. By mobilizing spatial visualizations, we can identify and address these inequalities.</p>
 <p>The spatial data we need for our visualizations can be quite different. While censuses and databases can provide a starting point, it’s important to understand their nature - what they include and what they leave out, who generates them (whether it’s the public or private sector), and what their intended purpose is. Scrutinizing spatial data is critical to start conceiving your spatial visualization.
 Think of spatial data as your high-powered lens zooming in on a community’s heartbeat. It lets you see beyond the surface to the underlying structures—like healthcare reach, parks, and transport. And yes, it also uncovers the shadows of crime, discrimination, and pollution. In your SDOH project, you can typically use three types of spatial data: primary, secondary, and tertiary. In the following section, we will provide a brief description of each of these types of data.</p>
-<div class="float">
-<img src="images/preface-spatial%20data.png" style="width:80.0%" alt="Types of data, (graphic created by Kamaria Barronville based on Krygier and Wood, 2016)" />
-<div class="figcaption">Types of data, (graphic created by Kamaria Barronville based on Krygier and Wood, 2016)</div>
+<div class="figure">
+<img src="images/preface-spatial%20data.png" style="width:80.0%" alt="" />
+<p class="caption">Types of data, (graphic created by Kamaria Barronville based on Krygier and Wood, 2016)</p>
 </div>
 <ul>
 <li><p>Primary Spatial Data: Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.</p></li>
