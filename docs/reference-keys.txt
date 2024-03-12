@@ -30,3 +30,13 @@ basic-map-of-points
 overlay-points-style
 merge-sdoh-data-to-boundary-dataset
 graduated-symbology-choropleth-map
+intro-to-spatial-data
+projections
+stuff
+convert-csv-to-geojson
+geocode-addresses
+clean-data-long-to-wide-format
+merge-datasets
+inspect-data-as-choropleth-map
+overlay-points-and-boundary-data
+add-a-spatial-join
