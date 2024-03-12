@@ -31,11 +31,11 @@ In order to identify and engage with the necessities of different social actors,
 ### Table of Contents {-}
 Currently, the community toolkit contains six modules. Depending on your project's objectives, you can opt to undertake either one module or several of them. We recommend starting with Modules 1-3 regardless, and choosing your own adventure in subsequent chapters.
 
- - [**Module 1**]() explores SDOH, equity, and types of visualizations. (*Led by Kamaria Barronville, José Alavez, and Marynia Kolak*)
- - [**Module 2**]() guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (*Led by Kamaria Barronville, José Alavez, and Marynia Kolak*)
- - **Module 3** emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (*Led by Shubham Kumar and José Alavez*)
- - **Module 4** focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (*Led by José Alavez and Marynia Kolak*) 
- - **Module 5** delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (*Led by José Alavez, Kamaria Barronville, and Marynia Kolak* )
+ - [**Module 1**](https://toolkit.sdohplace.org/01-intro.html) explores SDOH, equity, and types of visualizations. (*Led by Kamaria Barronville, José Alavez, & Marynia Kolak*)
+ - [**Module 2**](https://toolkit.sdohplace.org/02-scoping.html) guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (*Led by Kamaria Barronville, José Alavez, & Marynia Kolak*)
+ - [**Module 3**](https://toolkit.sdohplace.org/03-design.html) emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (*Led by Shubham Kumar &  José Alavez*)
+ - **Module 4** focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (*Led by Catherine Discenza, Yilin Lyu, & Marynia Kolak*) 
+ - **Module 5** delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (*Led by José Alavez & Kamaria Barronville* )
  - **Module 6** introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. (*Led by Catherine Discenza*)
  - **Module 7** addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. (*Led by Marc Astacio-Palmer*)
  

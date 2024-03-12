@@ -50,9 +50,82 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.1/leaflet-providers-plugin.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -72,7 +145,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="https://toolkit.sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
@@ -139,6 +212,28 @@
 <li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
 <li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="o4r-data.html"><a href="o4r-data.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="o4r-data.html"><a href="o4r-data.html#intro-to-spatial-data-concept"><i class="fa fa-check"></i><b>4.1</b> Intro to Spatial Data Concept</a></li>
+<li class="chapter" data-level="4.2" data-path="o4r-data.html"><a href="o4r-data.html#environmental-setup"><i class="fa fa-check"></i><b>4.2</b> Environmental Setup</a></li>
+<li class="chapter" data-level="4.3" data-path="o4r-data.html"><a href="o4r-data.html#convert-csv-latlong-to-points"><i class="fa fa-check"></i><b>4.3</b> Convert CSV Lat/Long to Points</a></li>
+<li class="chapter" data-level="4.4" data-path="o4r-data.html"><a href="o4r-data.html#prepare-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Prepare Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="o4r-data.html"><a href="o4r-data.html#load-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> Load Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="o4r-data.html"><a href="o4r-data.html#change-projectionscrs"><i class="fa fa-check"></i><b>4.4.2</b> Change Projections/CRS</a></li>
+<li class="chapter" data-level="4.4.3" data-path="o4r-data.html"><a href="o4r-data.html#refine-basic-map"><i class="fa fa-check"></i><b>4.4.3</b> Refine Basic Map</a></li>
+<li class="chapter" data-level="4.4.4" data-path="o4r-data.html"><a href="o4r-data.html#overlay-zip-code-boundaries"><i class="fa fa-check"></i><b>4.4.4</b> Overlay Zip Code Boundaries</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="o4r-data.html"><a href="o4r-data.html#geocode-addresses-to-points"><i class="fa fa-check"></i><b>4.5</b> Geocode Addresses to Points</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="o4r-data.html"><a href="o4r-data.html#prepare-address-data"><i class="fa fa-check"></i><b>4.5.1</b> Prepare Address Data</a></li>
+<li class="chapter" data-level="4.5.2" data-path="o4r-data.html"><a href="o4r-data.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>4.5.2</b> Convert to Spatial Data</a></li>
+<li class="chapter" data-level="4.5.3" data-path="o4r-data.html"><a href="o4r-data.html#basic-map-of-points"><i class="fa fa-check"></i><b>4.5.3</b> Basic Map of Points</a></li>
+<li class="chapter" data-level="4.5.4" data-path="o4r-data.html"><a href="o4r-data.html#overlay-points-style"><i class="fa fa-check"></i><b>4.5.4</b> Overlay Points &amp; Style</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="o4r-data.html"><a href="o4r-data.html#merge-sdoh-data-to-boundary-dataset"><i class="fa fa-check"></i><b>4.6</b> Merge SDOH Data to Boundary Dataset</a></li>
+<li class="chapter" data-level="4.7" data-path="o4r-data.html"><a href="o4r-data.html#graduated-symbology-choropleth-map"><i class="fa fa-check"></i><b>4.7</b> Graduated Symbology &amp; Choropleth Map</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
 <ul>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
@@ -184,11 +279,11 @@
 <h3>Table of Contents<a href="index.html#table-of-contents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Currently, the community toolkit contains six modules. Depending on your project’s objectives, you can opt to undertake either one module or several of them. We recommend starting with Modules 1-3 regardless, and choosing your own adventure in subsequent chapters.</p>
 <ul>
-<li><a href=""><strong>Module 1</strong></a> explores SDOH, equity, and types of visualizations. (<em>Led by Kamaria Barronville, José Alavez, and Marynia Kolak</em>)</li>
-<li><a href=""><strong>Module 2</strong></a> guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (<em>Led by Kamaria Barronville, José Alavez, and Marynia Kolak</em>)</li>
-<li><strong>Module 3</strong> emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (<em>Led by Shubham Kumar and José Alavez</em>)</li>
-<li><strong>Module 4</strong> focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (<em>Led by José Alavez and Marynia Kolak</em>)</li>
-<li><strong>Module 5</strong> delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (<em>Led by José Alavez, Kamaria Barronville, and Marynia Kolak</em> )</li>
+<li><a href="https://toolkit.sdohplace.org/01-intro.html"><strong>Module 1</strong></a> explores SDOH, equity, and types of visualizations. (<em>Led by Kamaria Barronville, José Alavez, &amp; Marynia Kolak</em>)</li>
+<li><a href="https://toolkit.sdohplace.org/02-scoping.html"><strong>Module 2</strong></a> guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (<em>Led by Kamaria Barronville, José Alavez, &amp; Marynia Kolak</em>)</li>
+<li><a href="https://toolkit.sdohplace.org/03-design.html"><strong>Module 3</strong></a> emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (<em>Led by Shubham Kumar &amp; José Alavez</em>)</li>
+<li><strong>Module 4</strong> focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (<em>Led by Catherine Discenza, Yilin Lyu, &amp; Marynia Kolak</em>)</li>
+<li><strong>Module 5</strong> delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (<em>Led by José Alavez &amp; Kamaria Barronville</em> )</li>
 <li><strong>Module 6</strong> introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. (<em>Led by Catherine Discenza</em>)</li>
 <li><strong>Module 7</strong> addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. (<em>Led by Marc Astacio-Palmer</em>)</li>
 </ul>
