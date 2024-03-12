@@ -1,22 +1,47 @@
 ---
 ---
 
-# Data Wrangling
+# Data Wrangling 
 
 :::objective
 **Objectives**
 
 In this module, you will:
 
-* Expand your understanding of the social determinants of health and equity
-* Learn how spatial data visualizations are used in public health   
-* Define four main types of web mapping applications
+* Introduction to spatial data concepts and operations
+* Convert CSV lat/long to spatial points and geocode address
+* Overlay points with boundary data, merge SDOH data, visualize as choropleth
 
 By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.
 :::
 
+## Environmental Setup
 
-## Intro to Spatial Data
+Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* 
+
+:::tools
+
+**Tools**
+
+For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you'll need to learn to update, manage, and troubleshoot as you go. 
+
+- QGIS 
+- Excel
+- GeoDa
+
+:::
+
+If you prefer to code, or want to practice coding, go to the Appendix to learn the same materials using the R Programming Language. 
+
+Throughout, you'll learn the tool you're using isn't as important as your ideas, concepts, and goals. You can do merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn & discover as you go.
+
+## Intro to Spatial Data {-}
+
+Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a map that can guide decisions or provide insights.
+
+An important concept within spatial data is "simple features," which is an international standard for how we represent real-world objects and their shapes on computers. This standard is the backbone of many Geographic Information Systems (GIS) technologies, making it easier for us to map and analyze spatial data. For example, in the R programming environment, spatial objects can be stored in a way that's easy to work with, integrating seamlessly with other data analysis processes.
+
+Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
 
 ## Projections
 
@@ -28,8 +53,16 @@ In addition to projections that optimize for global accuracy, there are many reg
 
 Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
 
-For this exercise we’ll use QGIS to change the projection of a spatial dataset. 
-*Note: Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.* 
+For this exercise we’ll use **QGIS** to change the projection of a spatial dataset. 
+
+:::tip
+**Tip**
+
+Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
+
+If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
+:::
+
 
 Once you have opened QGIS, open a new project. QGIS will default new projects to the projection EPSG 4326. Open the file boundaries_chicago.geojson as a new layer by navigating through the Browser on the left hand side of QGIS. Double click or drag and drop the file into Layers. Inspect the current projection. In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago dataset, let’s change the projection to EPSG:26916. 
 

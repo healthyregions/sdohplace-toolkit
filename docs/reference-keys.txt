@@ -14,6 +14,9 @@ design-methods
 human-centered-design-1
 good-design
 data-wrangling
+intro-to-spatial-data
+projections
+stuff
 data-wrangling-in-r
 intro-to-spatial-data-concept
 environmental-setup
@@ -30,6 +33,7 @@ basic-map-of-points
 overlay-points-style
 merge-sdoh-data-to-boundary-dataset
 graduated-symbology-choropleth-map
+<<<<<<< Updated upstream
 intro-to-spatial-data
 projections
 stuff
@@ -40,3 +44,8 @@ merge-datasets
 inspect-data-as-choropleth-map
 overlay-points-and-boundary-data
 add-a-spatial-join
+=======
+intro-to-spatial-data-1
+projections-1
+environmental-setup-1
+>>>>>>> Stashed changes

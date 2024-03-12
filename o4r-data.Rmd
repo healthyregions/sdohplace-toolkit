@@ -26,13 +26,25 @@ In this module, you will:
 - Overlay points with boundary data, merge SDOH data, visualize as choropleth
 :::
 
-## Intro to Spatial Data Concept
+## Intro to Spatial Data
 
 Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a map that can guide decisions or provide insights.
 
 An important concept within spatial data is "simple features," which is an international standard for how we represent real-world objects and their shapes on computers. This standard is the backbone of many Geographic Information Systems (GIS) technologies, making it easier for us to map and analyze spatial data. For example, in the R programming environment, spatial objects can be stored in a way that's easy to work with, integrating seamlessly with other data analysis processes.
 
 Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
+
+## Projections
+
+The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
+
+pic from slide 13 intro2spatialmed
+
+In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a dataset of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
+
+Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
+
+For this exercise we’ll use QGIS to change the projection of a spatial dataset. 
 
 ## Environmental Setup
 
