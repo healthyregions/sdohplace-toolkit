@@ -2,6 +2,54 @@
 ---
 
 # Data Wrangling
+
+:::objective
+**Objectives**
+
+In this module, you will:
+
+* Expand your understanding of the social determinants of health and equity
+* Learn how spatial data visualizations are used in public health   
+* Define four main types of web mapping applications
+
+By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.
+:::
+
+
+## Intro to Spatial Data
+
+## Projections
+
+The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
+
+pic from slide 13 intro2spatialmed
+
+In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a dataset of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
+
+Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
+
+For this exercise we’ll use QGIS to change the projection of a spatial dataset. 
+*Note: Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## stuff
 testing
 - What is Spatial Data
 
