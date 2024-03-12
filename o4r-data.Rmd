@@ -4,6 +4,18 @@
 
 # Data Wrangling in R
 
+
+:::tools
+
+**Tools**
+
+For this module, you need:  
+
+- Your **toolkit journal**
+- You may also want to generate a series of digital documents for final **Project Requirements** developed in this module. That may be a series of documents, spreadsheets, or templates identified across online resources.
+
+:::
+
 :::objective
 **Objectives**
 
