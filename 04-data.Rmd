@@ -23,7 +23,7 @@ Which computing environment should you work with spatial data? It's up to you �
 For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you'll need to learn to update, manage, and troubleshoot as you go. 
 
 - **QGIS**: QGIS is a free, opensource geographic information system that can be used to create, map, and analyze geospatial data. Download QGIS [here](https://qgis.org/en/site/).
-- **Excel**: Excel is a spreadsheet software that can store, organize, and analyze datasets. Use a free online version [here](https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits).
+- **Excel**: Excel is a spreadsheet software that can store, organize, and analyze data sets. Use a free online version [here](https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits).
 - **GeoDa**: GeoDa is a free, opensource GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa [here](https://geodacenter.github.io/).
 :::
 
@@ -126,9 +126,9 @@ The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, 
 
 *pic from slide 13 intro2spatialmed*
 
-In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a dataset of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
+In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a data set of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
 
-Many datasets available online, and GeoJSON files as a general rule, default to the projection `EPSG:4326`, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
+Many data sets available online, and GeoJSON files as a general rule, default to the projection `EPSG:4326`, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
 
 ** explain why EPSG 4326 sucks, distance in degrees, why we have to change often **
 
@@ -136,7 +136,7 @@ Many datasets available online, and GeoJSON files as a general rule, default to 
 **Change Projections in QGIS**
 
  Inspect the current projection. 
-- In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago dataset, let’s change the projection to EPSG:26916. 
+- In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago data set, let’s change the projection to EPSG:26916. 
 
 *screencap available: 1projection*
 
@@ -158,7 +158,7 @@ Locations, when measured as points, can include things like:
 
 Points can also represent people, like individual patients residing in an area. Because individual locations for persons is protected health information, we’ll focus on point data as resources in the chapter. However, you can reuse the approach in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.
 
-Let's start with an example where the spatial coordinate information has already been embedded within the dataset as latitude and longitude information.
+Let's start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.
 
 ### Convert CSVs to Spatial Data 
 
@@ -210,7 +210,7 @@ Addresses are not spatial data. They are real-world representations of spatial d
 
 **Geocode with QGIS**
 
-For this exercise, download `chicago_methadone_nogeometry.csv`, a dataset of methadone centers in Chicago that only includes center names and addresses.
+For this exercise, download `chicago_methadone_nogeometry.csv`, a data set of methadone centers in Chicago that only includes center names and addresses.
 
 To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -> Manage and Install Plugins. Search MMQGIS, and install it. 
 
@@ -224,7 +224,7 @@ Upload your CSV file. Confirm the correct fields are being read, choose your web
 
 *screencap available: 6geocodeparameters*
 
-Once all your addresses are appearing, investigate them to ensure that everything has geocoded properly. For small datasets, this can be done by investigating the layer attribute table. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have added a few more pieces of information, including the full address and lat/long. Take a look at this information to ensure everything has in fact appeared at the correct address. If you have a dataset confined to a single city, this can be done very quickly by checking the lat/long data for any outliers. However, this method is not suitable for larger datasets. For datasets of all sizes, adding a basemap will contextualize your data and allow for a quick visual inspection. 
+Once all your addresses are appearing, investigate them to ensure that everything has geocoded properly. For small data sets, this can be done by investigating the layer attribute table. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have added a few more pieces of information, including the full address and lat/long. Take a look at this information to ensure everything has in fact appeared at the correct address. If you have a data set confined to a single city, this can be done very quickly by checking the lat/long data for any outliers. However, this method is not suitable for larger data sets. For data sets of all sizes, adding a basemap will contextualize your data and allow for a quick visual inspection. 
 
 Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue. The point data may have defaulted to a style that is difficult to see against this base map. Right click your geocoded spatial data file and select Styles to edit the size, color, and shape of your data points.
 
@@ -232,13 +232,13 @@ Once everything has geocoded properly, you’ll have a spatial data file ready t
 :::
 
 
-## Merge Datasets
+## Merge data sets
 
-Merging datasets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate datasets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of datasets together using that scale is important to the ease of performing analysis with your data.
+Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.
 
 ### Reshape Data {-} 
 
-Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
+data sets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
 
 Long data formats have repeating values in the first column, compared to wide data formats which do not. Long formats are preferred in epidemiology work, but wide formats are needed for spatial data, making conversions between the two especially important in the realm of health geography.
 
@@ -254,7 +254,7 @@ Long data formats have repeating values in the first column, compared to wide da
 
 File: COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv 
 
-To create a wide dataset with the cumulative cases for each week for each zip code, create a pivot table in Excel. 
+To create a wide data set with the cumulative cases for each week for each zip code, create a pivot table in Excel. 
 
 - Open the CSV as an excel file, and open a new sheet. 
 - Go to Insert -> Pivot Table. Select the data you wish to include; in this case, we want the cumulative case data. Choose the icon on the right of the Table/Range selection box, and select columns A-F from the original excel sheet. Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
@@ -273,9 +273,11 @@ Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
 ### Join by Attribute {-}
 
+You will come across data with various different boundaries, such as county, zip code, and census tracts. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
+
 ** explain about different boundaries, warning in usage of zip code
 
-** explain about finding a Key between datasets to merge; note on how to ensure data types are similar between
+** explain about finding a Key between data sets to merge; note on how to ensure data types are similar between
 
 ** explain how data needs to have a 1:1 merge to be succesful, and what to do if that's off
 
@@ -283,13 +285,13 @@ Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
 ** Merge SDOH data to Zip Codes in GeoDa
 
-Here, we’ll merge datasets with a common variable using GeoDa. Merging the cumulative case dataset you created in the last section to zip code spatial data will allow you to map the case data. First, open the Chicago zip code GeoJSON file in GeoDa. Open the table and identify the column name that contains zip code information. You’ll be merging the case data and spatial data using zip codes. 
+Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. First, open the Chicago zip code GeoJSON file in GeoDa. Open the table and identify the column name that contains zip code information. You’ll be merging the case data and spatial data using zip codes. 
 
-First, however, you’ll notice that the zip codes are repeated. This is a quirk of the dataset, and this data needs to be cleaned before we can continue with merging the data. Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned. You’ll notice that two zip codes (60643 and 60707) have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes. Your selection should come to 58 zip codes.
+First, however, you’ll notice that the zip codes are repeated. This is a quirk of the data set, and this data needs to be cleaned before we can continue with merging the data. Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned. You’ll notice that two zip codes (60643 and 60707) have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes. Your selection should come to 58 zip codes.
 
-Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dataset. Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. Move over all data columns you want to see in this merged dataset.
+Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case data set. Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. Move over all data columns you want to see in this merged data set.
 
-*Note: you do not need to include Zip Code since this field is being used to merge the two datasets, including it will only duplicate zip codes in the resulting dataset.
+*Note: you do not need to include Zip Code since this field is being used to merge the two data sets, including it will only duplicate zip codes in the resulting data set.
 
 *screencap available: 9mergeparameters*
 
@@ -302,10 +304,10 @@ Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dat
 
 ** A spatial join is defined as ...
 
-Add spatial joins to data to analyze the relationships datasets may have with each other. This tool allows you to merge certain aspects of datasets, such as joining descriptive statistics about one datasets relation to the other.
+Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
 
 :::activity
-We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code dataset.
+We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
 
 Go to Processing -> Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:
 
@@ -340,7 +342,7 @@ To inspect data from a spatial perspective, create a series of choropleth maps. 
 
 ### Map Overlay {-}
 
-Overlay multiple datasets to investigate how they correspond to one another. Open the datasets you are interested in and order your layers appropriately to get an initial view of potential relationships between datasets.
+Overlay multiple data sets to investigate how they correspond to one another. Open the data sets you are interested in and order your layers appropriately to get an initial view of potential relationships between data sets.
 
 :::activity
 
@@ -348,7 +350,7 @@ From the Map option on the toolbar, you can select a variety of choropleth map o
 
 *Screencap available: 10choroplethmaps*
 
-GeoDa: With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv. From the map view, select Add Map Layer (third from left). Select the affordable housing dataset and set the lat/long fields so it will map properly, then hit OK. If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first, as it will not be visible below the zip code data layer. This point data set can be added to any map you create using the zip code data. Once you add it to one map, you should be able to find it as a layer in each subsequent map that can be turned on rather than reuploading every time.  Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing dataset. If you have this problem, try removing this row from the CSV.
+GeoDa: With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv. From the map view, select Add Map Layer (third from left). Select the affordable housing data set and set the lat/long fields so it will map properly, then hit OK. If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first, as it will not be visible below the zip code data layer. This point data set can be added to any map you create using the zip code data. Once you add it to one map, you should be able to find it as a layer in each subsequent map that can be turned on rather than reuploading every time.  Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing data set. If you have this problem, try removing this row from the CSV.
 
 *Screencap available: 11overlaymap*
 
@@ -356,7 +358,7 @@ QGIS: Load Chicago zip code data in QGIS by adding ChiZipCleaned.geojson into a 
 
 *screencap available: 12qgisoverlay*
 
-Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -> Edit Symbol. The affordable housing data can also be saved as a spatial dataset at this point, by right clicking on the layer and navigating to Save Features As. 
+Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -> Edit Symbol. The affordable housing data can also be saved as a spatial data set at this point, by right clicking on the layer and navigating to Save Features As. 
 :::
 
 ## Finding Data
