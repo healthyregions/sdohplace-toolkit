@@ -34,9 +34,6 @@ overlay-points-style
 merge-sdoh-data-to-boundary-dataset
 graduated-symbology-choropleth-map
 <<<<<<< Updated upstream
-intro-to-spatial-data
-projections
-stuff
 convert-csv-to-geojson
 geocode-addresses
 clean-data-long-to-wide-format
