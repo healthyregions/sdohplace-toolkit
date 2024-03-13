@@ -203,14 +203,14 @@ Addresses are not spatial data. They are real-world representations of spatial d
 
 ** After determining the service, plan for data cleaning/preparation stage, matching goals
 
-** redo following section as tool-neutral tips : QGIS may be having an issue reading some specific addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause QGIS to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Edit your CSV to be properly formatted, and upload it again. *Note: you may need to close and reopen QGIS if you add columns to your CSV as part of this editing process.* Many cities have addresses that are duplicates or are very similar. Providing QGIS the most information you can is the best way to resolve this issue. QGIS can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
+** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
 
 
 :::activity
 
 **Geocode with QGIS**
 
-For this exercise, download `chicago_methadone_nogeometry.csv`, explain what this is....
+For this exercise, download `chicago_methadone_nogeometry.csv`, a dataset of methadone centers in Chicago that only includes center names and addresses.
 
 To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -> Manage and Install Plugins. Search MMQGIS, and install it. 
 
@@ -220,7 +220,7 @@ Once installed, the plugin should be visible on the toolbar across the top. Sele
 
 *screencap available: 5geocodepathway*
 
-Upload your CSV file. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), and name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
+Upload your CSV file. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
 
 *screencap available: 6geocodeparameters*
 
@@ -240,6 +240,8 @@ Merging datasets is a vital skill for analyzing health data from an SDOH perspec
 
 Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
 
+Long data formats have repeating values in the first column, compared to wide data formats which do not. Long formats are preferred in epidemiology work, but wide formats are needed for spatial data, making conversions between the two especially important in the realm of health geography.
+
 -- explain long vs wide data formats
 
 -- long preferred in epi work
@@ -248,7 +250,7 @@ Datasets often don’t come in GIS-friendly formats. Data may be separated verti
 
 :::activity
 
-**Wide to Long with Excel**
+**Long to Wide with Excel**
 
 File: COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv 
 
@@ -257,9 +259,9 @@ To create a wide dataset with the cumulative cases for each week for each zip co
 - Open the CSV as an excel file, and open a new sheet. 
 - Go to Insert -> Pivot Table. Select the data you wish to include; in this case, we want the cumulative case data. Choose the icon on the right of the Table/Range selection box, and select columns A-F from the original excel sheet. Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
 
-The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters. In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows. We want our columns to be organized by week, so drag any of the Week Number, Week Start, or Week End into the Columns. You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category to hide the Months and Days, leaving you with just the original variable. Finally, drag Cases - Cumulative into the Values to fill out the table. 
+The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters. In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows. We want our columns to be organized by week, so drag any of the Week Number, Week Start, or Week End into the Columns. You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category to hide the Months and Days, leaving you with just the original variable. Finally, drag Cases - Cumulative into the Values to fill out the table.
 
-Use the drop down menu for Row Labels or Column Labels to remove any unwanted rows or columns. You’ll notice a Grand Total for each column and row has also been created, which can be removed. Also remove the first row that includes Sum of Cases and Column Labels, and rename the column containing zip codes, from Row Labels to Zip Code. These extra columns and rows could make it difficult for other software to read your CSV later. Your completed pivot table (and its fields creator*) will look something like this:
+Use the drop down menu for Row Labels or Column Labels to remove any unwanted rows or columns. You’ll notice a Grand Total for each column and row has also been created, which can be removed. Also remove the first row that includes Sum of Cases and Column Labels, and rename the column containing zip codes, from Row Labels to Zip Code. These extra columns and rows could make it difficult for other software to read your CSV later. Your completed pivot table will look something like this:
 
 *screencap available: 8pivotresult*
 
@@ -303,7 +305,7 @@ Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dat
 Add spatial joins to data to analyze the relationships datasets may have with each other. This tool allows you to merge certain aspects of datasets, such as joining descriptive statistics about one datasets relation to the other.
 
 :::activity
-Continuing from the project we created in the previous section (affordable housing development data and ChiZipCleaned.geojson), we’ll create a spatial join, which means adding information about attributes of one dataset to the other. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code dataset.
+We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code dataset.
 
 Go to Processing -> Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:
 
