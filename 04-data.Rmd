@@ -1,7 +1,7 @@
 ---
 ---
 
-# Data Wrangling 
+# Spatial Data Wrangling 
 
 :::objective
 **Objectives**
@@ -14,6 +14,8 @@ In this module, you will:
 
 By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.
 :::
+
+You've spent some time visioning your project goals, breaking down specific needs, and connecting with potential users of the application. Once you've done these things, you're ready to take on the data at hand, and start wrangling. Because we're working with place-based SDOH data, that means learning how to handle *spatial data.* Working with spatial data is like working with regular data, plus entirely new dimensions. The data formats are different, and you'll need different tools to work with it. 
 
 ## Environmental Setup
 
@@ -33,17 +35,15 @@ For this module, you need the following installed on your machine. A recent, sta
 
 If you prefer to code, or want to practice coding, go to the Appendix to learn the same materials using the R Programming Language. 
 
-Throughout, you'll learn the tool you're using isn't as important as your ideas, concepts, and goals. You can do merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn & discover as you go.
+Throughout, you'll learn the tool you're using isn't as important as your ideas, concepts, and goals. You can merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn & discover as you go.
 
 ## Intro to Spatial Data {-}
 
-Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a map that can guide decisions or provide insights.
+Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a spatial analysis or map that can guide decisions or provide insights.
 
-An important concept within spatial data is "simple features," which is an international standard for how we represent real-world objects and their shapes on computers. This standard is the backbone of many Geographic Information Systems (GIS) technologies, making it easier for us to map and analyze spatial data. For example, in the R programming environment, spatial objects can be stored in a way that's easy to work with, integrating seamlessly with other data analysis processes.
+Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a `shapefile` or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
 
-Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
-
-## Projections
+### Projections
 
 The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
 
@@ -51,7 +51,7 @@ The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, 
 
 In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a dataset of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
 
-Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
+Many datasets available online, and GeoJSON files as a general rule, default to the projection `EPSG:4326`, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
 
 For this exercise we’ll use **QGIS** to change the projection of a spatial dataset. 
 
@@ -63,30 +63,43 @@ Mac users will need to override a security setting to download QGIS. Once you ha
 If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
 :::
 
+#### *How to* Change Projections in QGIS {-}
 
-Once you have opened QGIS, open a new project. QGIS will default new projects to the projection EPSG 4326. Open the file boundaries_chicago.geojson as a new layer by navigating through the Browser on the left hand side of QGIS. Double click or drag and drop the file into Layers. Inspect the current projection. In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago dataset, let’s change the projection to EPSG:26916. 
+Once you have opened QGIS, open a new project. QGIS will default new projects to the projection `EPSG 4326`. 
+
+- Open the file `boundaries_chicago.geojson` as a new layer by navigating through the Browser on the left hand side of QGIS. 
+- Double click or drag and drop the file into Layers. Inspect the current projection. 
+- In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago dataset, let’s change the projection to EPSG:26916. 
 
 *screencap available: 1projection*
 
 Notice how the shape of the city boundary changed, now that the projections are not in agreement. Inspect the projection for the boundary layer by right clicking on the layer and going to Layer CRS. The current projection should be EPSG:4326. Since the project is now in EPSG:26916, you should see the option Set to EPSG:26916. This may cause the layer to move enough that it is no longer visible on your screen. If this ever happens, use Zoom to Layer(s) to return to your layer. Now you can see the boundary shape has changed again with the projections being back in agreement. 
 
-## Convert CSV to GeoJSON
+## From Addresses to Spatial Points
 
-CSV files are not spatial data; they may contain spatial data, but to be used for mapping they will need to be converted to a spatial data format, such as a GeoJSON or shapefile. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
+A common goal in SDOH research is to work address-level data, known as *points* or *events* in spatial analysis research. This could refer to resources in the community, that we may want to calculate access metrics for. Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
 
-Here, we’ll convert CSV files to GeoJSON files without code using GeoDa.
+Let's start with an example where the spatial coordinate information has already been embedded within the dataset as latitude and longitude information.
 
-For this type of conversion, you’ll want a CSV file with latitude and longitude information in separate fields. If you are starting with address information, see the section “Geocode Addresses.” Once you have installed GeoDa, select Open and open your CSV file. We’ll use Affordable_Rental_Housing_Developments.csv for this exercise. You will be prompted to indicate which fields in your CSV contain longitude and latitude. Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
+### *How to* Convert CSV to GeoJSON in GeoDa
+
+Comma separated (CSV) files are not spatial data; they may *contain* spatial data, but to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
+
+Here, we’ll convert CSV files to `GeoJSON` files without code using *GeoDa* For this type of conversion, you’ll want a CSV file with coordinate information (e.g. latitude and longitude) in separate fields. In *GeoDa*:
+
+- Select Open and open your CSV file. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
+- You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system). Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
 
 *screencap available: 2csvtojson*
 
 A map of your data will be generated. Within the map view, you can add a base map by selecting Base Map (second from right in the toolbar). 
 
-To save your data in a spatial data format, go to File -> Save As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file.
+To save your data in a spatial data format, go to File -> Save As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!
 
 *screencap available: 3csvtojsonsave*
 
-## Geocode Addresses
+
+### Geocode Addresses
 
 Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (latitude, longitude) to spatially enable data. Here, we’ll turn addresses into spatial data points without coding using QGIS, an open source GIS software.
 
@@ -98,17 +111,16 @@ Once installed, the plugin should be visible on the toolbar across the top. Sele
 
 *screencap available: 5geocodepathway*
 
-Upload your CSV file, for this exercise we’ll use chicago_methadone_nogeometry.csv. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), and name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
+Upload your CSV file, for this exercise we’ll use `chicago_methadone_nogeometry.csv`. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), and name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
 
 *screencap available: 6geocodeparameters*
 
 :::pitfall
 **Pitfall**
 
-Not all my addresses geocoded!
+*Not all my addresses geocoded!*
 
 QGIS may be having an issue reading some specific addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause QGIS to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Edit your CSV to be properly formatted, and upload it again. *Note: you may need to close and reopen QGIS if you add columns to your CSV as part of this editing process.*
-
 
 :::
 
@@ -132,9 +144,12 @@ Many cities have addresses that are duplicates or are very similar. Providing QG
 
 Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.
 
-## Clean Data (Long to Wide Format)
+
+## Reshaping Data 
 
 Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. 
+
+-- explain long vs wide data formats
 
 Open COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv in GeoDa, leaving the latitude and longitude options open since that information is not contained in this dataset. If a table does not automatically open, open it through the toolbar. You’ll notice zip codes repeat as they are separated by week, rather than weeks each being columns within one row for each zip code. This is considered a long data format, the latter being a wide data format. 
 
@@ -247,6 +262,7 @@ testing
 After understanding the significance of refining objectives and finding stakeholders, it is crucial to take into account one of the essential elements in your project--the spatial component. This toolkit underscores the fact that social determinants of health encompass more than personal genetics or healthy habits. According to the World Health Organization, social determinants of health refer to the conditions in which people are born, grow, live, work, and age (https://health.gov/healthypeople, accessed 11 October, 2023 ). By adopting a spatial view of SDOH, we can research how communities are affected by the places they inhabit. For instance, we can evaluate their access to health care, transportation, recreation, and green areas. On the other hand, some communities may be exposed in their neighborhoods to crime, racism, and pollution. By mobilizing spatial visualizations, we can identify and address these inequalities.
 
 The spatial data we need for our visualizations can be quite different. While censuses and databases can provide a starting point, it's important to understand their nature - what they include and what they leave out, who generates them (whether it's the public or private sector), and what their intended purpose is. Scrutinizing spatial data is critical to start conceiving your spatial visualization.
+
 Think of spatial data as your high-powered lens zooming in on a community's heartbeat. It lets you see beyond the surface to the underlying structures—like healthcare reach, parks, and transport. And yes, it also uncovers the shadows of crime, discrimination, and pollution. In your SDOH project, you can typically use three types of spatial data: primary, secondary, and tertiary. In the following section, we will provide a brief description of each of these types of data.
 
 ![Types of data, (graphic created by Kamaria Barronville based on Krygier and Wood, 2016)](images/preface-spatial data.png){width=80%} 

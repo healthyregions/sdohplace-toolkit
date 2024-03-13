@@ -46,3 +46,10 @@ intro-to-spatial-data-1
 projections-1
 environmental-setup-1
 >>>>>>> Stashed changes
+spatial-data-wrangling
+convert-addresses-to-points
+from-addresses-to-spatial-points
+how-to-convert-csv-to-geojson-in-geoda
+cleaning-data
+from-long-to-wide-format
+reshaping-data
