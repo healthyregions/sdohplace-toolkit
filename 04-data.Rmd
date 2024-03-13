@@ -22,9 +22,9 @@ Which computing environment should you work with spatial data? It's up to you â€
 :::tools
 For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you'll need to learn to update, manage, and troubleshoot as you go. 
 
-- **QGIS**: explain, link
-- **Excel**: explain, link
-- **GeoDa**: explain, link
+- **QGIS**: QGIS is a free, opensource geographic information system that can be used to create, map, and analyze geospatial data. Download QGIS [here](https://qgis.org/en/site/).
+- **Excel**: Excel is a spreadsheet software that can store, organize, and analyze datasets. Use a free online version [here](https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits).
+- **GeoDa**: GeoDa is a free, opensource GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa [here](https://geodacenter.github.io/).
 :::
 
 If you prefer to code, or want to practice coding, go to the Appendix to learn the same materials using the R Programming Language. 
@@ -34,6 +34,11 @@ Throughout, you'll learn the tool you're using isn't as important as your ideas,
 That being said, data wrangling takes up **at least 80%** of a traditional GIS/spatial analysis project. Don't underestimate the time needed to resolve challenges, and practice patience.
 
 ### Installing & Working with Software {-}
+
+All three software that you'll be introduced to have extensive documentation to help users understand the tools available to them and troubleshoot issues they come across. This documention can be found [here](https://www.qgis.org/en/docs/index.html) for QGIS, [here](https://support.microsoft.com/en-us/excel) for Excel, and [here](https://geodacenter.github.io/documentation.html) for GeoDa. In addition to these official documentation sources, search engines are your best friend. There are forums dedicated to troubleshooting software issues, and someone else will have likely experienced your problem before. Searching the issue you run into or the error message that you receive is likely to bring up a forum thread of people who worked to resolve the same issue.
+
+Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Some GIS software use directories, rather than storing data locally, meaning that the software needs to know where to access files. If a file gets moved mid-project, the software will be unable to access the data, and you'll have to re-add it to the project. Some file formats, like shapefiles, must also stay in the same folder as their associated files in order to be read correctly. A robust file management approach will save you time and frustration in the long run.
+
 
 ** add some background tips/advice on how to use documentation to figure stuff out.
 
