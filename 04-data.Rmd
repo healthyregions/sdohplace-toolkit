@@ -11,39 +11,112 @@ In this module, you will:
 * Introduction to spatial data concepts and operations
 * Convert CSV lat/long to spatial points and geocode address
 * Overlay points with boundary data, merge SDOH data, visualize as choropleth
-
-By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.
 :::
 
 You've spent some time visioning your project goals, breaking down specific needs, and connecting with potential users of the application. Once you've done these things, you're ready to take on the data at hand, and start wrangling. Because we're working with place-based SDOH data, that means learning how to handle *spatial data.* Working with spatial data is like working with regular data, plus entirely new dimensions. The data formats are different, and you'll need different tools to work with it. 
 
-## Environmental Setup
+## Environment Setup
 
 Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* 
 
 :::tools
-
-**Tools**
-
 For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you'll need to learn to update, manage, and troubleshoot as you go. 
 
-- QGIS 
-- Excel
-- GeoDa
-
+- **QGIS**: explain, link
+- **Excel**: explain, link
+- **GeoDa**: explain, link
 :::
 
 If you prefer to code, or want to practice coding, go to the Appendix to learn the same materials using the R Programming Language. 
 
 Throughout, you'll learn the tool you're using isn't as important as your ideas, concepts, and goals. You can merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn & discover as you go.
 
-## Intro to Spatial Data {-}
+That being said, data wrangling takes up **at least 80%** of a traditional GIS/spatial analysis project. Don't underestimate the time needed to resolve challenges, and practice patience.
+
+### Installing & Working with Software {-}
+
+** add some background tips/advice on how to use documentation to figure stuff out.
+
+** something about file management structures, installing your software here
+
+** Tell ppl where the data for this workshop can be accessed (!!)
+
+:::tip
+**Installation Tip**
+
+Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
+
+If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
+:::
+
+### Troubleshooting {-}
+
+Need to figure stuff out on your own, explain tips like using Google search (not Bing etc), link some primary resources
+
+## Intro to Spatial Data 
 
 Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a spatial analysis or map that can guide decisions or provide insights.
 
-Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a `shapefile` or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
+Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
 
-### Projections
+### Spatial Data Types {-}
+
+*from our opioid toolkit below -- change up language a bit **
+
+Two common formats of spatial data are vector and raster data. Vector data represents the world surface using points, lines, and polygons whereas raster data can be satellite imagery or other pixelated surface. The figure below demonstrates how vector and raster data models represent geographic space differently, where points, lines, and polygons consist of the essential basis of the vector data model.
+
+** add cool drawing of points/lines/polygons
+
+We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data types include the basic attributes in addition to their spatial information. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more. 
+
+For example, a park can represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.
+
+### More Types of Data {-}
+
+While we focus on tabular spatial data in this introductory module, you may work with multiple types of data in your SDOH project that is linked to place. Another of thinking about this is considering spatial data as primary, secondary, or tertiary. In the following section, we will provide a brief description of each of these types of data.
+
+<details markdown='1'><summary>**Primary Spatial Data**</summary>Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.</br></br></details>
+
+<details markdown='1'><summary>**Secondary Spatial Data**</summary>You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.</br></br></details>
+
+<details markdown='1'><summary>**Tertiary Spatial Data**</summary>In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it's worth inquiring whether they possess any spatial layers that could prove beneficial for your project. </br></br></details>
+
+It is key to emphasize that data can often be tainted by biases and errors. As a result, the methods used to gather, aggregate, or model spatial data can have adverse effects on the quality of our data visualizations. It is of utmost importance to meticulously scrutinize various forms of data, whether they are qualitative (e..g, interviews or questionnaires), quantitative (e.g., databases), or mixed (e.g., surveys). A valuable starting point for data analysis involves assessing metadata within databases or interview questions. Further insights into this subject will be explored in subsequent sections of this toolkit.
+
+In your project, there's no need to limit yourself to just one kind of data. In fact, it's not only possible but often necessary to mix and match different sources and types of spatial data to craft compelling SDOH spatial visualizations.
+
+:::activity
+Review these projects below and identify what type of data they use. In your opinion, what other types of data could they use to enrich their visualizations? 
+
+[Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia](https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1396&context=uresposters)
+[US Social Determinants of Health Atlas - Map of the Month](https://carto.com/blog/visualizing-health-data-social-factors)
+:::
+
+
+### Spatial Data Formats {-}
+
+*from our opioid toolkit below -- change up language a bit **
+
+Spatial data can be stored in a text file like comma-separated value (CSV) files. However, the text file needs to have essential location columns with latitude and longitude to represent the coordinate location of a spatial object. Furthermore, a CSV file with lat/long columns is only a flat/non-spatial file, until the spatial location context is enabled as a new spatial data format.
+
+A common spatial data format is the shapefile, which comes from ESRI/ArcGIS proprietary software. The shapefile file format (`.shp` for short) includes a minimum of 4 files, with a common prefix and different filename extensions `.shp`, `.shx`, `.dbf`, and `.prj`. In order to work with the spatial data, we need all these four components of the shapefile stored in the same directory, so that the software or coding platform being used can know how to project spatial objects onto a geographic or coordinate space. Other common spatial data formats include the GeoJSON (or `.geojson`)or geopackage (or `.gpkg`). We'll work with shapefiles and GeoJSONs in this toolkit.
+
+:::activity 
+**Open a Spatial Vector File**
+
+- Open up QGIS, and start a new project.
+- Open the file `boundaries_chicago.geojson` as a new vector layer by navigating through the Browser on the left hand side of QGIS.  ** make this part more clear; diff versions may be different)
+- Double click or drag and drop the file into Layers.
+- **Add a basemap
+
+-- you’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
+
+- ** update stylings using Properties
+
+**Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
+:::
+
+### Coordinate Reference Systems {-}
 
 The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
 
@@ -53,39 +126,50 @@ In addition to projections that optimize for global accuracy, there are many reg
 
 Many datasets available online, and GeoJSON files as a general rule, default to the projection `EPSG:4326`, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
 
-For this exercise we’ll use **QGIS** to change the projection of a spatial dataset. 
+** explain why EPSG 4326 sucks, distance in degrees, why we have to change often **
 
-:::tip
-**Tip**
+:::activity 
+**Change Projections in QGIS**
 
-Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
-
-If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
-:::
-
-#### *How to* Change Projections in QGIS {-}
-
-Once you have opened QGIS, open a new project. QGIS will default new projects to the projection `EPSG 4326`. 
-
-- Open the file `boundaries_chicago.geojson` as a new layer by navigating through the Browser on the left hand side of QGIS. 
-- Double click or drag and drop the file into Layers. Inspect the current projection. 
+ Inspect the current projection. 
 - In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago dataset, let’s change the projection to EPSG:26916. 
 
 *screencap available: 1projection*
 
 Notice how the shape of the city boundary changed, now that the projections are not in agreement. Inspect the projection for the boundary layer by right clicking on the layer and going to Layer CRS. The current projection should be EPSG:4326. Since the project is now in EPSG:26916, you should see the option Set to EPSG:26916. This may cause the layer to move enough that it is no longer visible on your screen. If this ever happens, use Zoom to Layer(s) to return to your layer. Now you can see the boundary shape has changed again with the projections being back in agreement. 
+:::
 
-## From Addresses to Spatial Points
+** Need to explain why we are changing projection, and tips on how to do that**
 
-A common goal in SDOH research is to work address-level data, known as *points* or *events* in spatial analysis research. This could refer to resources in the community, that we may want to calculate access metrics for. Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
+
+## Converting to Spatial Data
+
+A common goal in SDOH research is to work address-level data, known as *points* or *events* (when considering time) in spatial analysis research. This could refer to resources in a community, . Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
+
+Locations, when measured as points, can include things like:
+
+- **Health providers**: Hospitals, Clinics, Pharmacies, Mental health providers, Medication for opioid use disorder providers
+- **Area resources**: Grocery stores & Supermarkets, Playgrounds, Daycare centers, Schools, Community centers
+- **Area challenges**: Crime, Superfund sites, Pollution-emitting facilities
+
+Points can also represent people, like individual patients residing in an area. Because individual locations for persons is protected health information, we’ll focus on point data as resources in the chapter. However, you can reuse the approach in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.
 
 Let's start with an example where the spatial coordinate information has already been embedded within the dataset as latitude and longitude information.
 
-### *How to* Convert CSV to GeoJSON in GeoDa
+### Convert CSVs to Spatial Data 
+
+** redo below using QGIS since we're already using it??
 
 Comma separated (CSV) files are not spatial data; they may *contain* spatial data, but to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
 
-Here, we’ll convert CSV files to `GeoJSON` files without code using *GeoDa* For this type of conversion, you’ll want a CSV file with coordinate information (e.g. latitude and longitude) in separate fields. In *GeoDa*:
+There are multiple options for converting CSV files to spatial data without code using opensource software like QGIS or GeoDa.For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. 
+
+** long/lat = x/y, not the other way
+
+** need to know the CRS -- if you don't, try 4326, but keep in mind in may not be correct
+
+:::activity
+**Convert CSV to GeoJSON in QGIS**
 
 - Select Open and open your CSV file. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
 - You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system). Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
@@ -98,10 +182,31 @@ To save your data in a spatial data format, go to File -> Save As. When you sele
 
 *screencap available: 3csvtojsonsave*
 
+** Challenge: Open a CSV as a spatial data file in GeoDa, then save as a shapefile.
+
+:::
+
+** Always be sure to inspect your data after conversion. If it's not plotting correctly (check with base map), you may have gotten coordinate order wrong, or used the wrong CRS. 
+
 
 ### Geocode Addresses
 
-Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (latitude, longitude) to spatially enable data. Here, we’ll turn addresses into spatial data points without coding using QGIS, an open source GIS software.
+If you start with only addresses, you’ll need to geocode!
+
+Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (ex. longitude, latitude) to spatially enable data. 
+
+** Explain that there are multiple geocoding services available, with varying quality. How precise does your measure need to be? Do you want to reject matches with <90% uncertainty? If you're at a university or public sector setting, you may have access to ESRI geocoding services... Also note how you should NEVER geocode sensitive data as it's not HIPPA protected unless on a compliant server... 
+
+** After determining the service, plan for data cleaning/preparation stage, matching goals
+
+** redo following section as tool-neutral tips : QGIS may be having an issue reading some specific addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause QGIS to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Edit your CSV to be properly formatted, and upload it again. *Note: you may need to close and reopen QGIS if you add columns to your CSV as part of this editing process.* Many cities have addresses that are duplicates or are very similar. Providing QGIS the most information you can is the best way to resolve this issue. QGIS can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
+
+
+:::activity
+
+**Geocode with QGIS**
+
+For this exercise, download `chicago_methadone_nogeometry.csv`, explain what this is....
 
 To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -> Manage and Install Plugins. Search MMQGIS, and install it. 
 
@@ -111,53 +216,42 @@ Once installed, the plugin should be visible on the toolbar across the top. Sele
 
 *screencap available: 5geocodepathway*
 
-Upload your CSV file, for this exercise we’ll use `chicago_methadone_nogeometry.csv`. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), and name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
+Upload your CSV file. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), and name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.
 
 *screencap available: 6geocodeparameters*
 
-:::pitfall
-**Pitfall**
-
-*Not all my addresses geocoded!*
-
-QGIS may be having an issue reading some specific addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause QGIS to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Edit your CSV to be properly formatted, and upload it again. *Note: you may need to close and reopen QGIS if you add columns to your CSV as part of this editing process.*
-
-:::
-
 Once all your addresses are appearing, investigate them to ensure that everything has geocoded properly. For small datasets, this can be done by investigating the layer attribute table. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have added a few more pieces of information, including the full address and lat/long. Take a look at this information to ensure everything has in fact appeared at the correct address. If you have a dataset confined to a single city, this can be done very quickly by checking the lat/long data for any outliers. However, this method is not suitable for larger datasets. For datasets of all sizes, adding a basemap will contextualize your data and allow for a quick visual inspection. 
 
-To add a basemap, you’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
-
-*screencap available: 7osmbasemappathway*
-
-With a basemap now added, you can quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue. The point data may have defaulted to a style that is difficult to see against this base map. Right click your geocoded spatial data file and select Styles to edit the size, color, and shape of your data points.
-
-:::pitfall
-**Pitfall**
-
-An address geocoded incorrectly!
-
-Many cities have addresses that are duplicates or are very similar. Providing QGIS the most information you can is the best way to resolve this issue. QGIS can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
-
-
-:::
+Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue. The point data may have defaulted to a style that is difficult to see against this base map. Right click your geocoded spatial data file and select Styles to edit the size, color, and shape of your data points.
 
 Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.
+:::
 
 
-## Reshaping Data 
+## Merge Datasets
 
-Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. 
+Merging datasets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate datasets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of datasets together using that scale is important to the ease of performing analysis with your data.
+
+### Reshape Data {-} 
+
+Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
 
 -- explain long vs wide data formats
 
-Open COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv in GeoDa, leaving the latitude and longitude options open since that information is not contained in this dataset. If a table does not automatically open, open it through the toolbar. You’ll notice zip codes repeat as they are separated by week, rather than weeks each being columns within one row for each zip code. This is considered a long data format, the latter being a wide data format. 
+-- long preferred in epi work
 
-This data can be cleaned in a number of ways in GeoDa, but let’s try pulling just the last week  of the dataset. Columns can be sorted from lowest to highest (or vice versa) by double clicking the column name. Double click the Week Number column until it displays highest to lowest to find the last week in the dataset. You can select this data through two ways: 1) click the first row you want, then shift+click the last row you want, which should select everything between the two rows, or 2) go to Table -> Selection Tool, set Week Number as the Selection Variable, and set both the upper and lower bound of the range to 40 (the last week in the data set), then select Select All in Range. Once a selection is made and includes all the data you want, go to File -> Save Selected As to save it as its own dataset. 
+-- wide formats needed to spatial data
 
-Further clean this new dataset by opening it in GeoDa, then choose Table -> Delete Variable(s). Remove any variables that are not relevant to your study. For instance, we were only interested in cumulative case rates for this dataset, we would remove all variables except Zip Code and Cases - Cumulative. You can also change variable names if you want to specify the week in question. 
+:::activity
 
-Excel can also be useful in this type of data cleaning. To create a wide dataset with the cumulative cases for each week for each zip code, create a pivot table in excel. Open the CSV as an excel file, and open a new sheet. In that new sheet, go to Insert -> Pivot Table. Select the data you wish to include, in this case we want the cumulative case data. Choose the icon on the right of the Table/Range selection box, and select columns A-F from the original excel sheet. Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
+**Wide to Long with Excel**
+
+File: COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv 
+
+To create a wide dataset with the cumulative cases for each week for each zip code, create a pivot table in Excel. 
+
+- Open the CSV as an excel file, and open a new sheet. 
+- Go to Insert -> Pivot Table. Select the data you wish to include; in this case, we want the cumulative case data. Choose the icon on the right of the Table/Range selection box, and select columns A-F from the original excel sheet. Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
 
 The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters. In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows. We want our columns to be organized by week, so drag any of the Week Number, Week Start, or Week End into the Columns. You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category to hide the Months and Days, leaving you with just the original variable. Finally, drag Cases - Cumulative into the Values to fill out the table. 
 
@@ -165,31 +259,88 @@ Use the drop down menu for Row Labels or Column Labels to remove any unwanted ro
 
 *screencap available: 8pivotresult*
 
-Save the sheet as a new CSV by going to File -> Save As. 
+Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
-## Merge Datasets
+**Note**: You can also select variables of interest as a subset of the data using QGIS or GeoDa.
+:::
 
-Merging datasets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate datasets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of datasets together using that scale is important to the ease of performing analysis with your data.
+
+### Join by Attribute {-}
+
+** explain about different boundaries, warning in usage of zip code
+
+** explain about finding a Key between datasets to merge; note on how to ensure data types are similar between
+
+** explain how data needs to have a 1:1 merge to be succesful, and what to do if that's off
+
+:::activity
+
+** Merge SDOH data to Zip Codes in GeoDa
 
 Here, we’ll merge datasets with a common variable using GeoDa. Merging the cumulative case dataset you created in the last section to zip code spatial data will allow you to map the case data. First, open the Chicago zip code GeoJSON file in GeoDa. Open the table and identify the column name that contains zip code information. You’ll be merging the case data and spatial data using zip codes. 
 
 First, however, you’ll notice that the zip codes are repeated. This is a quirk of the dataset, and this data needs to be cleaned before we can continue with merging the data. Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned. You’ll notice that two zip codes (60643 and 60707) have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes. Your selection should come to 58 zip codes.
 
-Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dataset. Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. Move over all data columns you want to see in this merged dataset. *Note: you do not need to include Zip Code since this field is being used to merge the two datasets, including it will only duplicate zip codes in the resulting dataset.*
+Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dataset. Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. Move over all data columns you want to see in this merged dataset.
+
+*Note: you do not need to include Zip Code since this field is being used to merge the two datasets, including it will only duplicate zip codes in the resulting dataset.
 
 *screencap available: 9mergeparameters*
 
-## Inspect Data as Choropleth Map
+** Challenge: Do the same process using QGIS.
+:::
 
-Inspect data, both through spatial and non-spatial means, when starting a new project. This helps verify that all data wrangling to this point has occurred properly. 
+### Join by Location {-}
 
-To inspect data from a spatial perspective, create a series of choropleth maps. From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data. Upon selecting a mapping option, you will be prompted to select a variable to map. Inspect your data by comparing how different data breaks present the same variables, and how the spatial patterns of different variables compare. 
+** Sometimes, you won't have a boundary key.. 
 
-*Screencap available: 10choroplethmaps*
+** A spatial join is defined as ...
 
-## Overlay Points and Boundary Data
+Add spatial joins to data to analyze the relationships datasets may have with each other. This tool allows you to merge certain aspects of datasets, such as joining descriptive statistics about one datasets relation to the other.
+
+:::activity
+Continuing from the project we created in the previous section (affordable housing development data and ChiZipCleaned.geojson), we’ll create a spatial join, which means adding information about attributes of one dataset to the other. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code dataset.
+
+Go to Processing -> Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:
+
+*screencap available: 13joinparameters*
+
+These parameters are set on the premise that we want a count of the affordable housing developments contained within each zip code. A joined layer will be mapped on top of your current layers. 
+
+Change the symbology by right clicking and going to Properties -> Symbology. Change the symbology from Single Symbol to Graduated with the value Community Area Name_count. Try changing the color ramp, mode, and number of classes. The resulting joined layer may look similar to the one below.
+
+*screencap available: 14joinmap*
+
+*Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.* 
+:::
+
+:::pitfall
+**Pitfall**
+
+Invalid Geometries
+
+Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.
+:::
+
+## Inspect Data 
+
+** Once you've merged data, you'll want to inspect and visualize with simple views.
+
+Inspect data, both through spatial and non-spatial means, when starting a new project. This helps verify that all data wrangling to this point has occurred properly. In the next module, we'll dive into the details of this further, moving past inspection to data analytics.
+
+### Thematic Maps {-}
+
+To inspect data from a spatial perspective, create a series of choropleth maps. ** Briefly exlain this without too much detail **
+
+### Map Overlay {-}
 
 Overlay multiple datasets to investigate how they correspond to one another. Open the datasets you are interested in and order your layers appropriately to get an initial view of potential relationships between datasets.
+
+:::activity
+
+From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data. Upon selecting a mapping option, you will be prompted to select a variable to map. Inspect your data by comparing how different data breaks present the same variables, and how the spatial patterns of different variables compare. 
+
+*Screencap available: 10choroplethmaps*
 
 GeoDa: With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv. From the map view, select Add Map Layer (third from left). Select the affordable housing dataset and set the lat/long fields so it will map properly, then hit OK. If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first, as it will not be visible below the zip code data layer. This point data set can be added to any map you create using the zip code data. Once you add it to one map, you should be able to find it as a layer in each subsequent map that can be turned on rather than reuploading every time.  Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing dataset. If you have this problem, try removing this row from the CSV.
 
@@ -200,87 +351,18 @@ QGIS: Load Chicago zip code data in QGIS by adding ChiZipCleaned.geojson into a 
 *screencap available: 12qgisoverlay*
 
 Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -> Edit Symbol. The affordable housing data can also be saved as a spatial dataset at this point, by right clicking on the layer and navigating to Save Features As. 
-
-## Add a Spatial Join
-
-Add spatial joins to data to analyze the relationships datasets may have with each other. This tool allows you to merge certain aspects of datasets, such as joining descriptive statistics about one datasets relation to the other.
-
-Continuing from the project we created in the previous section (affordable housing development data and ChiZipCleaned.geojson), we’ll create a spatial join, which means adding information about attributes of one dataset to the other. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code dataset.
-
-Go to Processing -> Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:
-
-*screencap available: 13joinparameters*
-
-These parameters are set on the premise that we want a count of the affordable housing developments contained within each zip code. A joined layer will be mapped on top of your current layers. 
-
-:::pitfall
-**Pitfall**
-
-Invalid Geometries
-
-Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.
-
-
 :::
 
-Change the symbology by right clicking and going to Properties -> Symbology. Change the symbology from Single Symbol to Graduated with the value Community Area Name_count. Try changing the color ramp, mode, and number of classes. The resulting joined layer may look similar to the one below.
+## Finding Data
 
-*screencap available: 14joinmap*
+In this module, we provided sample data to work with. When you're looking for your own data, ....
 
-*Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.* 
+** Determine your spatial boundary - get boundary data. Use that as your master file to merge in more.
 
+** Use a conceptual model to guide your variable selection.
 
+** Use existing resources that have aggregated cleaned data to access; or, extract from the Census directly
 
+** OSM data for international work
 
-
-
-
-
-
-
-
-
-## stuff
-testing
-- What is Spatial Data
-
-- Inspection - viewing tables & data itself
-
-- Projections & Coordinate Reference Systems
-
-- CSV to Spatial Points
-
-- Merging spatial data (area-level)
-
-- Reshaping data
-
-- Calc new spatial variables?
-
-
-[[ likely pare this down, move some to data assessment above, and some of the rest to later module? ]]
-
-After understanding the significance of refining objectives and finding stakeholders, it is crucial to take into account one of the essential elements in your project--the spatial component. This toolkit underscores the fact that social determinants of health encompass more than personal genetics or healthy habits. According to the World Health Organization, social determinants of health refer to the conditions in which people are born, grow, live, work, and age (https://health.gov/healthypeople, accessed 11 October, 2023 ). By adopting a spatial view of SDOH, we can research how communities are affected by the places they inhabit. For instance, we can evaluate their access to health care, transportation, recreation, and green areas. On the other hand, some communities may be exposed in their neighborhoods to crime, racism, and pollution. By mobilizing spatial visualizations, we can identify and address these inequalities.
-
-The spatial data we need for our visualizations can be quite different. While censuses and databases can provide a starting point, it's important to understand their nature - what they include and what they leave out, who generates them (whether it's the public or private sector), and what their intended purpose is. Scrutinizing spatial data is critical to start conceiving your spatial visualization.
-
-Think of spatial data as your high-powered lens zooming in on a community's heartbeat. It lets you see beyond the surface to the underlying structures—like healthcare reach, parks, and transport. And yes, it also uncovers the shadows of crime, discrimination, and pollution. In your SDOH project, you can typically use three types of spatial data: primary, secondary, and tertiary. In the following section, we will provide a brief description of each of these types of data.
-
-![Types of data, (graphic created by Kamaria Barronville based on Krygier and Wood, 2016)](images/preface-spatial data.png){width=80%} 
-
-- Primary Spatial Data: Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.
-
-- Secondary Spatial Data:  You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.
-
-- Tertiary Spatial Data: In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it's worth inquiring whether they possess any spatial layers that could prove beneficial for your project. 
-
-It is key to emphasize that data can often be tainted by biases and errors. As a result, the methods used to gather, aggregate, or model spatial data can have adverse effects on the quality of our data visualizations. It is of utmost importance to meticulously scrutinize various forms of data, whether they are qualitative (e..g, interviews or questionnaires), quantitative (e.g., databases), or mixed (e.g., surveys). A valuable starting point for data analysis involves assessing metadata within databases or interview questions. Further insights into this subject will be explored in subsequent sections of this toolkit.
-
-### Project Tip: {-}
-In your project, there's no need to limit yourself to just one kind of data. In fact, it's not only possible but often necessary to mix and match different sources and types of spatial data to craft compelling SDOH spatial visualizations.
-
-
-### Activity 1.3: {-}
-Review these projects below and identify what type of data they use. In your opinion, what other types of data could they use to enrich their visualizations? 
-
-[Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia] (https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1396&context=uresposters)
-[US Social Determinants of Health Atlas - Map of the Month] (https://carto.com/blog/visualizing-health-data-social-factors)
+## Resources {-}
