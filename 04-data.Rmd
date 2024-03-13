@@ -39,7 +39,6 @@ All three software that you'll be introduced to have extensive documentation to 
 
 Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Some GIS software use directories, rather than storing data locally, meaning that the software needs to know where to access files. If a file gets moved mid-project, the software will be unable to access the data, and you'll have to re-add it to the project. Some file formats, like shapefiles, must also stay in the same folder as their associated files in order to be read correctly. A robust file management approach will save you time and frustration in the long run.
 
-
 ** add some background tips/advice on how to use documentation to figure stuff out.
 
 ** something about file management structures, installing your software here
@@ -110,11 +109,11 @@ A common spatial data format is the shapefile, which comes from ESRI/ArcGIS prop
 **Open a Spatial Vector File**
 
 - Open up QGIS, and start a new project.
-- Open the file `boundaries_chicago.geojson` as a new vector layer by navigating through the Browser on the left hand side of QGIS.  ** make this part more clear; diff versions may be different)
+- Open the file `boundaries_chicago.geojson` as a new vector layer by navigating to Layer -> Add Layer -> Add Vector Layer, or through your local or network drives in the Browser panel.  ** make this part more clear; diff versions may be different)
 - Double click or drag and drop the file into Layers.
 - **Add a basemap
 
--- you’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
+-- You’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
 
 - ** update stylings using Properties
 
@@ -176,14 +175,14 @@ There are multiple options for converting CSV files to spatial data without code
 :::activity
 **Convert CSV to GeoJSON in QGIS**
 
-- Select Open and open your CSV file. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
-- You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system). Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
+- Select Open and open your CSV file via Layer -> Add Layer -> Add Delimited Text Layer. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
+- You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system), as well as the CRS, which will likely (although not always!) be EPSG:4326 if not otherwise noted. Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
 
 *screencap available: 2csvtojson*
 
-A map of your data will be generated. Within the map view, you can add a base map by selecting Base Map (second from right in the toolbar). 
+A map of your data will be generated. Add a basemap. 
 
-To save your data in a spatial data format, go to File -> Save As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!
+Right click the layer and go to Export -> Save Features As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!
 
 *screencap available: 3csvtojsonsave*
 
