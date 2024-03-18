@@ -39,3 +39,5 @@ basic-map-of-points
 overlay-points-style
 merge-sdoh-data-to-boundary-dataset
 graduated-symbology-choropleth-map
+merge-data-sets
+reshape-data-from-long-to-wide-format

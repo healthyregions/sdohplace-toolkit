@@ -367,3 +367,23 @@ Save any data you need from this session.
 ```{r eval=FALSE}
 st_write(methadoneSf, dsn = "o4rtestdata/methadoneMOUD.geojson")
 ```
+
+
+## Reshape Data (From Long to Wide Format)
+
+Here, we are trying to use the COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv dataset to practice how to convert long data to a wide data format.
+
+```{r}
+covid = read.csv("o4rtestdata/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
+covid_clean = covid[,c(1:2, 6)]
+head(covid_clean, 3) 
+```
+
+Now, we are trying to create a wide data set with the cumulative cases for each week for each zip code. Enter the code and you will see the new wide data format.
+
+```{r}
+covid_wide <- reshape(covid_clean, direction = "wide",
+                      idvar = "ZIP.Code", timevar = "Week.Number") 
+head(covid_wide, 3)
+```
+
