@@ -41,3 +41,4 @@ merge-sdoh-data-to-boundary-dataset
 graduated-symbology-choropleth-map
 merge-data-sets
 reshape-data-from-long-to-wide-format
+spatial-join-join-by-location

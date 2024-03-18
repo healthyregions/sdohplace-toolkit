@@ -42,7 +42,7 @@ For this exercise we’ll use QGIS to change the projection of a spatial dataset
 Before starting operations related to spatial data, we need to complete an environmental setup. A basic understanding of R is assumed. This workshop requires several packages, which can be installed from CRAN:
 
 ```{r eval=FALSE}
-install.packages("sf", "tmap", "tidygeocoder", "dplyr")
+install.packages("sf", "tmap", "tidygeocoder", "dplyr", "ggplot2")
 ```
 
 For Mac users, check out https://github.com/r-spatial/sf for additional tips if you run into errors when installing the **sf** package. Using homebrew to install **gdal** usually fixes any remaining issues.
@@ -52,6 +52,7 @@ Now, loading the libraries:
 ```{r load-libraries, warning=FALSE}
 library(sf)
 library(dplyr)
+library(ggplot2)
 ```
 
 ## Convert CSV Lat/Long to Points
@@ -387,3 +388,38 @@ covid_wide <- reshape(covid_clean, direction = "wide",
 head(covid_wide, 3)
 ```
 
+
+## Spatial Join (Join by Location)
+
+We’ll create a spatial join with affordable housing development data and ChiZipMaster1.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
+
+```{r}
+housing = read.csv("o4rtestdata/Affordable_Rental_Housing_Developments.csv")
+zipcode <- st_read("o4rtestdata/ChiZipMaster1.geojson")
+
+housing <- na.omit(housing)
+housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
+
+# Perform spatial join
+joined_data <- st_join(zipcode, housing, join = st_intersects)
+
+# Count the number of housing developments per ZIP code
+housing_count <- joined_data %>% 
+  group_by(zip) %>%
+  summarise(Count = n())
+
+# Drop the geometry column from housing_count
+housing_count_nonspatial <- as.data.frame(housing_count)
+
+# Perform the join
+zipcode_with_housing_count <- left_join(zipcode, housing_count_nonspatial, by = "zip")
+
+plot <- ggplot(data = zipcode_with_housing_count) +
+  geom_sf(aes(fill = Count), color = NA) +
+  scale_fill_viridis_c() +
+  labs(title = "Number of Affordable Housing Developments per Zip Code",
+       fill = "# Developments") +
+  theme_minimal()
+
+print(plot)
+```
