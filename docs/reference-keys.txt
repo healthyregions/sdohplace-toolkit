@@ -42,3 +42,12 @@ graduated-symbology-choropleth-map
 merge-data-sets
 reshape-data-from-long-to-wide-format
 spatial-join-join-by-location
+coordinate-reference-systems-1
+converting-to-spatial-data-1
+csv-latlong-to-points
+convert-csvs-to-spatial-data-1
+geocode-addresses-1
+inspect-data-1
+finding-data-1
+thematic-maps-1
+map-overlay-1
