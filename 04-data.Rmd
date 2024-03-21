@@ -111,11 +111,13 @@ A common spatial data format is the shapefile, which comes from ESRI/ArcGIS prop
 - Open up QGIS, and start a new project.
 - Open the file `boundaries_chicago.geojson` as a new vector layer by navigating to Layer -> Add Layer -> Add Vector Layer, or through your local or network drives in the Browser panel.  ** make this part more clear; diff versions may be different)
 - Double click or drag and drop the file into Layers.
-- **Add a basemap
+<details markdown='1'><summary>**Add a Basemap**</summary>
 
--- You’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
+You’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
 
-- ** update stylings using Properties
+<br/></details>
+
+- Update stylings using Properties
 
 **Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
 :::
@@ -140,7 +142,7 @@ Many data sets available online, and GeoJSON files as a general rule, default to
 
 *screencap available: 1projection*
 
-Notice how the shape of the city boundary changed, now that the projections are not in agreement. Inspect the projection for the boundary layer by right clicking on the layer and going to Layer CRS. The current projection should be EPSG:4326. Since the project is now in EPSG:26916, you should see the option Set to EPSG:26916. This may cause the layer to move enough that it is no longer visible on your screen. If this ever happens, use Zoom to Layer(s) to return to your layer. Now you can see the boundary shape has changed again with the projections being back in agreement. 
+Notice how the shape of the city boundary changed, now that the projections are not in agreement. Inspect the projection for the boundary layer by right clicking on the layer and going to Layer CRS. The current projection should be EPSG:4326. Since the project is now in EPSG:26916, you should see the option Set to EPSG:26916. Now you can see the boundary shape has changed again with the projections being back in agreement. 
 :::
 
 ** Need to explain why we are changing projection, and tips on how to do that**
@@ -162,8 +164,6 @@ Let's start with an example where the spatial coordinate information has already
 
 ### Convert CSVs to Spatial Data 
 
-** redo below using QGIS since we're already using it??
-
 Comma separated (CSV) files are not spatial data; they may *contain* spatial data, but to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
 
 There are multiple options for converting CSV files to spatial data without code using opensource software like QGIS or GeoDa.For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. 
@@ -175,16 +175,29 @@ There are multiple options for converting CSV files to spatial data without code
 :::activity
 **Convert CSV to GeoJSON in QGIS**
 
-- Select Open and open your CSV file via Layer -> Add Layer -> Add Delimited Text Layer. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
-- You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system), as well as the CRS, which will likely (although not always!) be EPSG:4326 if not otherwise noted. Select the appropriate fields, then hit OK. Note: use excel to split and reformat fields for files where latitude and longitude are in a single field.
+<details markdown='1'><summary>**Step 1: Open a CSV File**</summary>
+- Open your CSV file via Layer -> Add Layer -> Add Delimited Text Layer. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
+- You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system), as well as the CRS, which will likely (although not always!) be EPSG:4326 if not otherwise noted. Select the appropriate fields, then hit OK. 
 
 *screencap available: 2csvtojson*
 
-A map of your data will be generated. Add a basemap. 
+- A map of your data will be generated. 
+
+<br/></details>
+
+<details markdown='1'><summary>**Step 2: Add a Basemap**</summary>
+
+Add a basemap to inspect that your data has loaded properly. If you've mixed up longitude and latitude, your data points may be on the other side of the world!
+
+<br/></details>
+
+<details markdown='1'><summary>**Step 3: Save in a Spatial Data Format**</summary>
 
 Right click the layer and go to Export -> Save Features As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!
 
 *screencap available: 3csvtojsonsave*
+
+<br/></details>
 
 ** Challenge: Open a CSV as a spatial data file in GeoDa, then save as a shapefile.
 
@@ -203,7 +216,7 @@ Addresses are not spatial data. They are real-world representations of spatial d
 
 ** After determining the service, plan for data cleaning/preparation stage, matching goals
 
-** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. An address may also be miswritten in your CSV file, even something as small as an extra apostrophe will prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
+** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file. Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
 
 
 :::activity
@@ -211,6 +224,8 @@ Addresses are not spatial data. They are real-world representations of spatial d
 **Geocode with QGIS**
 
 For this exercise, download `chicago_methadone_nogeometry.csv`, a data set of methadone centers in Chicago that only includes center names and addresses.
+
+<details markdown='1'><summary>**Step 1: Geocode with MMQGIS**</summary>
 
 To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -> Manage and Install Plugins. Search MMQGIS, and install it. 
 
@@ -224,9 +239,15 @@ Upload your CSV file. Confirm the correct fields are being read, choose your web
 
 *screencap available: 6geocodeparameters*
 
-Once all your addresses are appearing, investigate them to ensure that everything has geocoded properly. For small data sets, this can be done by investigating the layer attribute table. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have added a few more pieces of information, including the full address and lat/long. Take a look at this information to ensure everything has in fact appeared at the correct address. If you have a data set confined to a single city, this can be done very quickly by checking the lat/long data for any outliers. However, this method is not suitable for larger data sets. For data sets of all sizes, adding a basemap will contextualize your data and allow for a quick visual inspection. 
+<br/></details>
 
-Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue. The point data may have defaulted to a style that is difficult to see against this base map. Right click your geocoded spatial data file and select Styles to edit the size, color, and shape of your data points.
+<details markdown='1'><summary>**Step 2: Inspect your Data**</summary>
+
+Once all your addresses are appearing, inspect them to ensure that everything has geocoded properly. Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue. 
+
+Inspect the layer attribute table to determine the source of any issues. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have generated a few more pieces of information, including the full address and lat/long. Taking a look at this information for any points that did not properly geocode can help you discover where the issue may be in your original CSV. 
+
+<br/></details>
 
 Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.
 :::
@@ -256,12 +277,35 @@ File: COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv
 
 To create a wide data set with the cumulative cases for each week for each zip code, create a pivot table in Excel. 
 
+<details markdown='1'><summary>**Step 1: Create a Pivot Table**</summary>
+
 - Open the CSV as an excel file, and open a new sheet. 
-- Go to Insert -> Pivot Table. Select the data you wish to include; in this case, we want the cumulative case data. Choose the icon on the right of the Table/Range selection box, and select columns A-F from the original excel sheet. Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
+- Go to Insert -> Pivot Table. 
+- Select the data you wish to include; in this case, we want the cumulative case data, so select columns A-F from the original excel sheet. 
+- Make sure the pivot table will be placed in the new excel sheet, and hit OK. 
 
-The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters. In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows. We want our columns to be organized by week, so drag any of the Week Number, Week Start, or Week End into the Columns. You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category to hide the Months and Days, leaving you with just the original variable. Finally, drag Cases - Cumulative into the Values to fill out the table.
+<br/></details>
 
-Use the drop down menu for Row Labels or Column Labels to remove any unwanted rows or columns. You’ll notice a Grand Total for each column and row has also been created, which can be removed. Also remove the first row that includes Sum of Cases and Column Labels, and rename the column containing zip codes, from Row Labels to Zip Code. These extra columns and rows could make it difficult for other software to read your CSV later. Your completed pivot table will look something like this:
+<details markdown='1'><summary>**Step 2: Add Your Data**</summary>
+
+The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters. 
+- In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows. 
+- We want our columns to be organized by week, so drag either Week Number, Week Start, or Week End into the Columns. 
+- You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category unwanted information. 
+- Finally, drag Cases - Cumulative into the Values to fill out the table.
+
+<br/></details>
+
+<details markdown='1'><summary>**Step 3: Clean Up Your Table**</summary>
+
+Pivot tables often generate columns and rows that are unnecessary for our purposes. These extra columns and rows could make it difficult for spatial software to read your CSV later.
+
+- Use the drop down menu for Row Labels or Column Labels to remove any unwanted rows or columns, such as Grand totals and the first row that includes Sum of Cases and Column Labels.  
+- Rename the column containing zip codes. 
+
+<br/></details>
+
+Your completed pivot table will look something like this:
 
 *screencap available: 8pivotresult*
 
@@ -283,17 +327,33 @@ You will come across data with various different boundaries, such as county, zip
 
 :::activity
 
-** Merge SDOH data to Zip Codes in GeoDa
+** Merge SDOH data to Zip Codes in GeoDa **
 
-Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. First, open the Chicago zip code GeoJSON file in GeoDa. Open the table and identify the column name that contains zip code information. You’ll be merging the case data and spatial data using zip codes. 
+Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset. 
 
-First, however, you’ll notice that the zip codes are repeated. This is a quirk of the data set, and this data needs to be cleaned before we can continue with merging the data. Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned. You’ll notice that two zip codes (60643 and 60707) have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes. Your selection should come to 58 zip codes.
+<details markdown='1'><summary>**Step 1: Clean Zip Code Data**</summary>
 
-Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case data set. Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. Move over all data columns you want to see in this merged data set.
+We've cleaned our covid case data already, but you’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data. 
 
-*Note: you do not need to include Zip Code since this field is being used to merge the two data sets, including it will only duplicate zip codes in the resulting data set.
+- Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned. 
+
+You’ll notice that two zip codes have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes.
+
+<br/></details>
+
+<details markdown='1'><summary>**Step 2: Merge Data**</summary>
+
+- Open ChiZipCleaned.geojson. 
+- Go to Table -> Merge. 
+- Select the cumulative case data set. 
+- Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key. 
+- Move over all data columns you want to see in this merged data set.
+
+Tip: you do not need to include Zip Code since this field is being used to merge the two data sets, including it will only duplicate zip codes in the resulting data set.
 
 *screencap available: 9mergeparameters*
+
+<br/></details>
 
 ** Challenge: Do the same process using QGIS.
 :::
@@ -307,19 +367,34 @@ Open ChiZipCleaned.geojson. Go to Table -> Merge. Select the cumulative case dat
 Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
 
 :::activity
+** Add a Spatial Join **
+
 We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
+
+<details markdown='1'><summary>**Step 1: Join Attributes**</summary>
 
 Go to Processing -> Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:
 
 *screencap available: 13joinparameters*
 
-These parameters are set on the premise that we want a count of the affordable housing developments contained within each zip code. A joined layer will be mapped on top of your current layers. 
+These parameters are set on the premise that we want a count of the affordable housing developments contained within each zip code. A new joined layer will be mapped on top of your current layers. 
 
-Change the symbology by right clicking and going to Properties -> Symbology. Change the symbology from Single Symbol to Graduated with the value Community Area Name_count. Try changing the color ramp, mode, and number of classes. The resulting joined layer may look similar to the one below.
+<br/></details>
+
+<details markdown='1'><summary>**Step 2: Map the Joined Data**</summary>
+
+The new layer generated by the spatial join will default to a single symbol map, not providing any useful visual information about the spatial join.
+
+- Change the symbology by right clicking and going to Properties -> Symbology.
+- Change the symbology from Single Symbol to Graduated with the value Community Area Name_count. 
+
+Try changing the color ramp, mode, and number of classes. The resulting joined layer may look similar to the one below.
 
 *screencap available: 14joinmap*
 
 *Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.* 
+
+<br/></details>
 :::
 
 :::pitfall
@@ -345,20 +420,47 @@ To inspect data from a spatial perspective, create a series of choropleth maps. 
 Overlay multiple data sets to investigate how they correspond to one another. Open the data sets you are interested in and order your layers appropriately to get an initial view of potential relationships between data sets.
 
 :::activity
+** Inspect Data with Different Methods **
 
-From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data. Upon selecting a mapping option, you will be prompted to select a variable to map. Inspect your data by comparing how different data breaks present the same variables, and how the spatial patterns of different variables compare. 
+<details markdown='1'><summary>**Generate Choropleth Maps in GeoDa**</summary>
+
+Open ChiZipCleaned.geojson. From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data. 
+
+Select a mapping method and a variable to map. Inspect your data by comparing how different data break methods present the same variables, and how the spatial patterns of different variables compare. 
 
 *Screencap available: 10choroplethmaps*
 
-GeoDa: With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv. From the map view, select Add Map Layer (third from left). Select the affordable housing data set and set the lat/long fields so it will map properly, then hit OK. If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first, as it will not be visible below the zip code data layer. This point data set can be added to any map you create using the zip code data. Once you add it to one map, you should be able to find it as a layer in each subsequent map that can be turned on rather than reuploading every time.  Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing data set. If you have this problem, try removing this row from the CSV.
+<br/></details>
+
+<details markdown='1'><summary>**Overlay Data in GeoDa**</summary>
+
+With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv. 
+
+- From the map view, select Add Map Layer. 
+- Select the affordable housing data set, set the lat/long fields, and hit OK. 
+- If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first.
+
+Once you add it to one map, you should be able to find it as a layer in each subsequent map you make with these data sets for the duration of your mapping session.
+
+Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing data set. If you have this problem, try removing this row from the CSV.
 
 *Screencap available: 11overlaymap*
 
-QGIS: Load Chicago zip code data in QGIS by adding ChiZipCleaned.geojson into a new project. Let’s overlay this boundary data with affordable housing point data. Since Affordable_Rental_Housing _Development.csv is not a spatial data file, it cannot be added directly from Browser in order to appear on the map. Instead, go to Layer -> Add Layer-> Delimited Text Layer. Navigate to the file, and ensure all fields indicate the correct data source in order to display the data properly.
+<br/></details>
+
+<details markdown='1'><summary>**Overlay Data in QGIS**</summary>
+
+Let’s overlay zip code boundary data with affordable housing point data.
+
+- Load ChiZipCleaned.geojson into QGIS. 
+- Add Affordable_Rental_Housing _Development.csv by going to Layer -> Add Layer-> Delimited Text Layer.
+- Navigate to the file, and ensure all fields indicate the correct data source in order to display the data properly.
 
 *screencap available: 12qgisoverlay*
 
 Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -> Edit Symbol. The affordable housing data can also be saved as a spatial data set at this point, by right clicking on the layer and navigating to Save Features As. 
+
+<br/></details>
 :::
 
 ## Finding Data
