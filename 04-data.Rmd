@@ -327,7 +327,7 @@ You will come across data with various different boundaries, such as county, zip
 
 :::activity
 
-** Merge SDOH data to Zip Codes in GeoDa **
+**Merge SDOH data to Zip Codes in GeoDa**
 
 Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset. 
 
@@ -367,7 +367,7 @@ Tip: you do not need to include Zip Code since this field is being used to merge
 Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
 
 :::activity
-** Add a Spatial Join **
+**Add a Spatial Join**
 
 We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
 
@@ -420,7 +420,7 @@ To inspect data from a spatial perspective, create a series of choropleth maps. 
 Overlay multiple data sets to investigate how they correspond to one another. Open the data sets you are interested in and order your layers appropriately to get an initial view of potential relationships between data sets.
 
 :::activity
-** Inspect Data with Different Methods **
+**Inspect Data with Different Methods**
 
 <details markdown='1'><summary>**Generate Choropleth Maps in GeoDa**</summary>
 
