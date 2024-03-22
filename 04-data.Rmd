@@ -109,7 +109,7 @@ A common spatial data format is the shapefile, which comes from ESRI/ArcGIS prop
 **Open a Spatial Vector File**
 
 - Open up QGIS, and start a new project.
-- Open the file `boundaries_chicago.geojson` as a new vector layer by navigating to Layer -> Add Layer -> Add Vector Layer, or through your local or network drives in the Browser panel.  ** make this part more clear; diff versions may be different)
+- Open the file `chicagotracts.shp` as a new vector layer by navigating to Layer -> Add Layer -> Add Vector Layer, or through your local or network drives in the Browser panel.  ** make this part more clear; diff versions may be different)
 - Double click or drag and drop the file into Layers.
 <details markdown='1'><summary>**Add a Basemap**</summary>
 
@@ -137,12 +137,12 @@ Many data sets available online, and GeoJSON files as a general rule, default to
 :::activity 
 **Change Projections in QGIS**
 
- Inspect the current projection. 
+ Using the same Chicago census tract shapefile as before, inspect the current projection. 
 - In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago data set, let’s change the projection to EPSG:26916. 
 
 *screencap available: 1projection*
 
-Notice how the shape of the city boundary changed, now that the projections are not in agreement. Inspect the projection for the boundary layer by right clicking on the layer and going to Layer CRS. The current projection should be EPSG:4326. Since the project is now in EPSG:26916, you should see the option Set to EPSG:26916. Now you can see the boundary shape has changed again with the projections being back in agreement. 
+Notice how the shape of the city changed, now that the projections are not in agreement. Inspect the projection for the census tract layer by right clicking on the layer and going to Layer CRS. The layer is not projected, instead using the CRS WGS84. Since the project is now in EPSG:26916, however, you should see the option Set to EPSG:26916. Now you can see the city's shape has changed again with the projections being back in agreement. 
 :::
 
 ** Need to explain why we are changing projection, and tips on how to do that**
