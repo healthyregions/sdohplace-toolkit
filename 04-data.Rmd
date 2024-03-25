@@ -17,6 +17,12 @@ You've spent some time visioning your project goals, breaking down specific need
 
 ## Environment Setup
 
+:::tools
+**Download the Activity Datasets**
+
+Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
+:::
+
 Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* 
 
 :::tools
@@ -122,31 +128,90 @@ You’ll need to download a plugin. The simplest basemap system is a part of the
 **Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
 :::
 
-### Coordinate Reference Systems {-}
+## Coordinate Reference Systems
 
-The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
+The “spatial” part of spatial data is coordinates. For example, you may have a dataset of hospitals: the location of each feature will be represented by a latitude/longitude coordinate pair. If you have a dataset of county boundaries, each corner, or "vertex" of every shape will be represented by a coordinate as well. The fact that spatial data stores coordinates is the only thing that makes it "special."
 
-*pic from slide 13 intro2spatialmed*
+However, there are many different ways of storing coordinates (not only latitude/longitude as you may assume) which is what brings us to the concept of a “coordinate reference system” (CRS), which is exactly what it sounds like: a reference system for interpreting coordinates.
 
-In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a data set of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
+![](images/crs-image.png){width=95%}
 
-Many data sets available online, and GeoJSON files as a general rule, default to the projection `EPSG:4326`, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
-
-** explain why EPSG 4326 sucks, distance in degrees, why we have to change often **
-
-:::activity 
-**Change Projections in QGIS**
-
- Using the same Chicago census tract shapefile as before, inspect the current projection. 
-- In the bottom right corner of QGIS, the projection for the project as a whole will be listed as the EPSG code. Select this to change the projection. Since we’re working with a Chicago data set, let’s change the projection to EPSG:26916. 
-
-*screencap available: 1projection*
-
-Notice how the shape of the city changed, now that the projections are not in agreement. Inspect the projection for the census tract layer by right clicking on the layer and going to Layer CRS. The layer is not projected, instead using the CRS WGS84. Since the project is now in EPSG:26916, however, you should see the option Set to EPSG:26916. Now you can see the city's shape has changed again with the projections being back in agreement. 
+:::tip
+**EPSG Codes**
+In the 1980s the European Petroleum Survey Group began a registry of coordinate reference systems, and this database is now a standard registry: All common coordinate reference systems have their own EPSG code.
 :::
 
-** Need to explain why we are changing projection, and tips on how to do that**
+There are two basic categories of coordinate reference systems: **Geographic (GCS)** and **Projected (PCS)**.
 
+A **GCS** is fairly straightforward, because its coordinates are latitude/longitude "decimal degrees" that look like `44.0208693`, `-92.4841652`. There are just a few common geographic coordinate systems, and the only thing that differentiates them is a slightly different mathematical model of the globe, called a "datum". The most common one is **WGS84** (EPSG: 4326), though you may also see **NAD83** (EPSG: 4269), which is slightly more accurate for North America. For our purposes, we don't need to worry much about the difference between these two.
+
+GeoJSON datasets should only store data in WGS84.
+
+A **PCS** on other hand is “projected,” meaning that it is not only based on a datum, but on top of that it uses a **map projection**. Map projections are different methods for flattening the globe (or portions of it) so it can be displayed on a 2-dimensional plane (in other words, a map!). When a geospatial dataset is stored in a projected CRS, it doesn’t actually use latitude/longitude coordinates at all–it uses X/Y coordinates based on the flattened plane that the projection defines.
+
+Robust spatial data formats, like Shapefiles and GeoPackages, are able to store data in any CRS, either geographic or projected.
+
+:::tip
+**Summary of Geographic vs. Projected CRS**
+
+- A Geographic Coordinate Reference System interprets coordinates as latitude/longitude positions on the globe.
+    - Units: degrees
+    - Examples: **WGS84** (EPSG: 4326), **NAD83** (EPSG:4269)
+- A Projected Coordinate Reference System interprets coordinates as x, y positions within a given map projection.
+    - Units: feet or meters (defined by CRS)
+    - Examples: **Web Mercator** (EPSG:3857), **NAD83 / UTM Zone 16** (EPSG: 26916), **NAD83 / Illinois East (ftUS)** (EPSG:3435)
+
+**Always use a projected coordinate system if you are making any distance-related calculations on your spatial data.**
+:::
+
+#### Why use Projected Coordinate Reference Systems for Spatial Data?
+
+You may be wondering: Why isn’t all spatial data just stored as latitude/longitude coordinates? The short answer is simply “measurement.” In order to perform any geographic calculations--length of roads, area of districts, distance from hospitals, etc.--you will need to use a projected CRS.
+
+This is because every CRS is defined by the units that its coordinates are stored in, meaning that if your CRS uses latitude/longitude coordinates (like WGS84) your units are degrees. However, degrees are terrible for distance measurements because, for example, one degree of longitude along the equator is 69 miles, but around Chicago it’s just 51.
+
+A projected CRS, having flattened the Earth (or a portion of it) represents a grid system that is not based on degrees but on feet or meters. Therefore, the X/Y coordinates that a projected dataset stores are just the number of feet (or meters) away from the origin of the projection (like a Cartesian coordinate system in algebra). With your data in the appropriate projected CRS for your region, you are ready to make meaningful calculations.
+
+:::tip
+**Coordinate Reference Systems in QGIS**
+
+QGIS applies coordinate reference systems at two different levels, and it is important to understand the difference between these levels.
+
+- At the **individual layer level**, QGIS says: *What CRS should be used to interpret this particular dataset?*
+Generally, a dataset will properly reports its CRS and no action is needed. However, you can right-click on a layer and use **Layer CRS >** to assign a different CRS to it. This does not change the underlying data, just how it is interpreted.
+    - If a layer has no CRS assigned to it, a `?` symbol will appear next to its name and QGIS will default to interpreting is through the project-level CRS.
+- At the **project level**, QGIS says: *What CRS should be used to display the layers in this project?* By default, QGIS will choose the CRS of the first layer that you add to a project.
+    - You can change the project’s CRS in Project > Properties… > CRS, or through the small button in the bottom right that displays the current CRS.
+
+As long as each layer’s CRS is correctly assigned, GIS software will properly align datasets with different coordinate reference systems, and even allow you to display those datasets in a different projection altogether.
+
+**One of the most common problems people have with spatial data is not knowing what CRS to use with their data!**
+:::
+
+#### Common Projected Coordinate Reference Systems
+
+One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called **Web Mercator** (EPSG:3857). Every interactive web map--Google, Apple, Uber, Lyft, etc.--uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.
+
+Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicagoe. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within **NAD83 / Illinois East (ftUS)** (EPSG:3435).
+
+:::activity 
+**Reproject Data in QGIS**
+
+If you have spatial data that uses a geographic CRS, like a GeoJSON file, then you will need to transform or reproject that data to a projected CRS in order to use it for any distance-related spatial analysis. Try the following in QGIS:
+
+1. Load the `chicagotracts` dataset by dragging and dropping the `chicagotracts.shp` file into a new blank document.
+2. Right-click on the layer in the **Layers** panel.
+    - Observe: In **Layer CRS**, QGIS has properly chosen EPSG:4326 (WGS84) to interpret this dataset.
+    - Note: By clicking **Set to...** or **Set Layer CRS...** you can tell QGIS to use a different CRS for this layer. *No need to do this in this case!*
+    - Choose: Click **Export > Save Features As...** to open the data save dialog box.
+3. Pick ESRI Shapefile as the output format.
+4. Browse to an appropriate folder and name your export `chicagotracts-3435`.
+5. Use the CRS dropdown to select `NAD83 / Illinois East (ftUS)`.
+    - If this CRS is not in the dropdown, use Select CRS button to open a more detailed dialog box.
+    - Filter for `NAD83 / Illinois East (ftUS)` and find the appropriate CRS in Projected > Universal Transverse Mercator...
+6. Leave all other settings as they are, click **Ok** to save the dataset.
+    - The new dataset will be in your selected CRS.
+:::
 
 ## Converting to Spatial Data
 
