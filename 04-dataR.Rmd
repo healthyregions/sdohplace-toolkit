@@ -4,11 +4,12 @@
 
 # Data Wrangling in R
 
+In this part of our toolkit, we're going to learn how to do the same things we did with Chapter 4 - Spatial Data Wrangling, but this time, we'll use R code to handle our spatial data. 
 
 :::objective
 **Objectives**
 
-In this part of our toolkit, we're going to learn how to do the same things we did with Chapter 4 - Spatial Data Wrangling, but this time, we'll use R code to handle our spatial data. In this module, you will:
+In this module, you will:
 
 - Practice basic operations of spatial data with R
 - Convert CSV lat/long to spatial points and geocode address
@@ -30,21 +31,37 @@ You can also visit the [RStudio Education](https://education.rstudio.com/learn/)
 
 ## Environmental Setup
 
-We will work with following libraries, so please be sure to install:
+Getting started with data analysis in R involves a few preliminary steps, including downloading datasets and setting up a working directory. This introduction will guide you through these essential steps to ensure a smooth start to your data analysis journey in R.
 
-sf
-tmap
-tidyverse
-tidycensus
-There are differing spatial ecosystems in R. We use the sf ecosystem that is compatible with the tidyverse. If you need to work between these two R spatial ecosystems, see this guide for a translation of sp to sf commands.
+:::tools
+**Download the Activity Datasets**
 
-Before starting operations related to spatial data, we need to complete an environmental setup. A basic understanding of R is assumed. This workshop requires several packages, which can be installed from CRAN:
+Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
+:::
+
+### Setting Up the Working Directory {-}
+
+Setting up a working directory in R is crucial as it defines the location on your computer where your files and scripts will be saved and accessed. You can set the working directory to any folder on your system where you plan to store your datasets and R scripts. To set your working directory, use the `setwd("/path/to/your/directory")` and specify the path to your desired directory. 
+
+### Installing & Working with R Libraries {-}
+
+Before starting operations related to spatial data, we need to complete an environmental setup. This workshop requires several packages, which can be installed from CRAN:
+
+- `sf`: simplifies spatial data manipulation
+- `tmap`: streamlines thematic map creation
+- `dplyr`: facilitates data manipulation
+- `ggplot2`: enables advanced data visualization
+- `tidygeocoder`: converts addresses to coordinates easily
 
 ```{r eval=FALSE}
 install.packages("sf", "tmap", "tidygeocoder", "dplyr", "ggplot2")
 ```
 
-For Mac users, check out https://github.com/r-spatial/sf for additional tips if you run into errors when installing the **sf** package. Using homebrew to install **gdal** usually fixes any remaining issues.
+:::tip
+**Installation Tip**
+
+For Mac users, check out https://github.com/r-spatial/sf for additional tips if you run into errors when installing the `sf` package. Using homebrew to install `gdal` usually fixes any remaining issues.
+:::
 
 Now, loading the required libraries for further steps:
 
@@ -57,32 +74,22 @@ library(ggplot2)
 
 ## Intro to Spatial Data
 
-Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a map that can guide decisions or provide insights.
-
-An important concept within spatial data is "simple features," which is an international standard for how we represent real-world objects and their shapes on computers. This standard is the backbone of many Geographic Information Systems (GIS) technologies, making it easier for us to map and analyze spatial data. For example, in the R programming environment, spatial objects can be stored in a way that's easy to work with, integrating seamlessly with other data analysis processes.
-
-Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it's navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.
+Spatial data analysis in R provides a robust framework for understanding geographical information, enabling users to explore, visualize, and model spatial relationships directly within their data. Through the integration of specialized packages like sf for spatial data manipulation, ggplot2 and tmap for advanced mapping, and tidygeocoder for geocoding, R becomes a powerful tool for geographic data science. This ecosystem allows researchers and analysts to uncover spatial patterns, analyze geographic trends, and produce detailed maps that convey complex information intuitively.
 
 ### Load Spatial Data {-}
 
-We need to load the spatial data (shapefile). All the data used for this one assignment can be found here [here](https://github.com/Makosak/Intro2RSpatialMed/tree/main/data). Remember, this type of data is actually comprised of multiple files. All need to be present in order to read correctly.
+We need to load the spatial data (shapefile). Remember, this type of data is actually comprised of multiple files. All need to be present in order to read correctly. Let's use **chicagotracts.shp** for practice, which includes the census tracts boundary in Chicago.
+
+First, we need to read the shapefile data from where you save it.
 
 ```{r load-spatial-data}
-Chi_tracts = st_read("o4rtestdata/geo_export_aae47441-adab-4aca-8cb0-2e0c0114096e.shp")
+Chi_tracts = st_read("SDOHPlace-DataWrangling/chicagotracts.shp")
 ```
 
-Always inspect data when loading in. First we look at a non-spatial view.
+Always inspect data when loading in. Let's look at a non-spatial view.
 
 ```{r non-spatial-view}
 head(Chi_tracts)
-```
-
-Note the last column -- this is a spatially enabled column. The data is no longer a 'shapefile' but an `sf' object, comprised of polygons.
-
-We can use a baseR function to view the spatial dimension. The `sf` framework enables previews of each attribute in our spatial file. 
-
-```{r spatial-view}
-plot(Chi_tracts)
 ```
 
 Check out the data structure of this file.
@@ -92,25 +99,36 @@ str(Chi_tracts)
 
 ```
 
-### Coordinate Reference Systems {-}
+The data is no longer a shapefile but an `sf` object, comprised of polygons. The `plot()` command in R help to quickly visualizes the geometric shapes of Chicago's census tracts. The output includes multiple maps because the `sf` framework enables previews of each attribute in our spatial file. 
 
-The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. For example, the following are some world maps using different projections:
+```{r spatial-view}
+plot(Chi_tracts)
+```
 
-pic from slide 13 intro2spatialmed
+Then, we can use `ggplot2` to create a base map. It plots the spatial data from Chi_tracts, applies a minimal theme for clarity, and labels the map with a title and a caption, offering a straightforward visualization of the area's census tracts.
 
-In addition to projections that optimize for global accuracy, there are many regional projections. For instance, NAD83 (North American Datum 1983) is divided into several UTM (universal transverse mercator) zones across the continent. So when projecting a dataset of Illinois, for example, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Projection names have also been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.
+```{r}
+ggplot(data = Chi_tracts) +
+  geom_sf() +
+  theme_minimal() +
+  labs(title = "Census Tract Map of Chicago",
+       caption = "Chi_tracts")
+```
 
-Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
 
-For this exercise we will explore how to change the projection of a spatial dataset in R. 
+## Coordinate Reference Systems
 
-First, check out the coordinate reference system.
+The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. 
+
+Projection names have been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
+
+For this exercise we will use **chicagotracts.shp** to explore how to change the projection of a spatial dataset in R. First, let's check out the current coordinate reference system.
 
 ```{r }
 st_crs(Chi_tracts)
 ```
 
-To transform our CRS, we use the `st_transform` function. Let's choose a projection that is focused on Illinois, and uses distance as feet or meters, to make it a bit more accessible for our work. EPSG:3435 is a good fit:
+We can use the `st_transform` function to transform CRS. When projecting a dataset of Illinois, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). After change the projection, we can plot the map.
 
 ```{r }
 Chi_tracts.3435 <- st_transform(Chi_tracts, "EPSG:3435")
@@ -122,7 +140,7 @@ plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Ill
 
 ### Refine Basic Map {-}
 
-Now we'll switch to a more extensive cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specifications, so take your time in exploring `tmap` and the options.
+Now we'll switch to a more extensive cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specification.
 
 Here we style the tracts with some semi-transparent borders.
 ```{r }
@@ -139,7 +157,7 @@ tm_shape(Chi_tracts) + tm_fill(col = "gray90") + tm_borders(alpha=0.2, col = "gr
   tm_layout(frame = F)
 ```
 
-Check out https://rdrr.io/cran/tmap/man/tm_polygons.html for more ideas!
+Check out https://rdrr.io/cran/tmap/man/tm_polygons.html for more ideas.
 
 
 ## Converting to Spatial Data
@@ -160,23 +178,23 @@ Let's start with an example where the spatial coordinate information has already
 
 Converting CSV latitude and longitude data to points in R is a straightforward yet powerful method for spatial analysis. This process involves using the `sf` package to transform geographic coordinates into spatial points, allowing for easy mapping and analysis. It's an essential step for anyone working with geospatial data, enabling the visualization of locations and the application of geographic information systems (GIS) techniques. By assigning a Coordinate Reference System (CRS), these points become ready for spatial operations.
 
-We are using the "Affordable_Rental_Housing_Developments.csv" in the dataset to show how to convert a csv Lat/Long data to points. First, we need to load the CSV data:
+We are using the **Affordable_Rental_Housing_Developments.csv** in the dataset to show how to convert a csv Lat/Long data to points. First, we need to load the CSV data.
 
 ```{r load-csv-data}
-housing = read.csv("o4rtestdata/Affordable_Rental_Housing_Developments.csv")
+housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
 ```
 
-Then, we need to ensure that no column (intended to be used as a coordinate) is entirely empty or filled with NA values:
+Then, we need to ensure that no column (intended to be used as a coordinate) is entirely empty or filled with NA values.
 ```{r }
 cleaned_housing <- na.omit(housing)
 ```
 
-Finally, we start to convert it to points:
+Finally, we start to convert it to points.
 ```{r }
 points_housing <- st_as_sf(cleaned_housing, coords = c("Longitude", "Latitude"), crs = 3435)
 ```
 
-If you want, you can view the resulting sf object:
+If you want, you can view the resulting sf object.
 ```{r }
 print(points_housing)
 ```
@@ -193,7 +211,7 @@ After determining the service, plan for data cleaning/preparation stage, matchin
 
 ** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file. Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again. 
 
-First we load the `tidygeocoder` to get our geocoding done. Note, this uses the interent to process, so is not suitable for HIPPA protected data like individual, living person addresses. For offline geocoders, check out `Pelias` or `ESRI`.
+Here, we will use **chicago_methadone_nogeometry.csv** for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` to get our geocoding done. Note, this uses the interent to process, so is not suitable for HIPPA protected data like individual, living person addresses. For offline geocoders, check out `Pelias` or `ESRI`.
 
 ```{r warning=FALSE}
 library(tidygeocoder)
@@ -202,7 +220,7 @@ library(tidygeocoder)
 Let's read in and inspect data for methadone maintenance providers. Note, these addresses were made available by SAMSHA, and are known as publicly available information. An additional analysis could call each service to check on access to medication during COVID in Septmber 2020, and the list would be updated further.
 
 ```{r}
-methadoneClinics <- read.csv("o4rtestdata/chicago_methadone_nogeometry.csv")
+methadoneClinics <- read.csv("SDOHPlace-DataWrangling/chicago_methadone_nogeometry.csv")
 head(methadoneClinics)
 ```
 
@@ -275,7 +293,7 @@ If your points didn't plot correctly:
 Those two issues are the most common errors.
 
 
-## Merge Datasets
+## Merge Data sets
 
 Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.
 
