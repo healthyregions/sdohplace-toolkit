@@ -506,7 +506,7 @@ Inspect data, both through spatial and non-spatial means, when starting a new pr
 
 ### Thematic Maps {-}
 
-To inspect data from a spatial perspective, create a series of choropleth maps. ** Briefly exlain this without too much detail **
+To inspect data from a spatial perspective, create a series of choropleth maps. A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method.
 
 ### Map Overlay {-}
 
