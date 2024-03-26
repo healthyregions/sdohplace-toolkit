@@ -71,15 +71,13 @@ Understanding these aspects of spatial data is crucial, especially as we delve i
 
 ### Spatial Data Types {-}
 
-*from our opioid toolkit below -- change up language a bit **
+Spatial data is generally divided into two broad categories: vector data and raster data. Vector data holds "features" using points, lines, or polygons whereas raster data can be satellite imagery or other pixelated surfaces.
 
-Two common formats of spatial data are vector and raster data. Vector data represents the world surface using points, lines, and polygons whereas raster data can be satellite imagery or other pixelated surface. The figure below demonstrates how vector and raster data models represent geographic space differently, where points, lines, and polygons consist of the essential basis of the vector data model.
+We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data is not just locations and shapes, but also attributes. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more. 
 
-** add cool drawing of points/lines/polygons
+For example, a park can be represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.
 
-We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data types include the basic attributes in addition to their spatial information. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more. 
-
-For example, a park can represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.
+![](images/data-diagram.png){width=95%}
 
 ### More Types of Data {-}
 
@@ -105,25 +103,53 @@ Review these projects below and identify what type of data they use. In your opi
 
 ### Spatial Data Formats {-}
 
-*from our opioid toolkit below -- change up language a bit **
+Just like you may store text in an MS Word document or a PDF, there are many different formats used to store vector spatial data. Keep in mind that file extensions are very important--it is often how people refer to different file formats.
 
-Spatial data can be stored in a text file like comma-separated value (CSV) files. However, the text file needs to have essential location columns with latitude and longitude to represent the coordinate location of a spatial object. Furthermore, a CSV file with lat/long columns is only a flat/non-spatial file, until the spatial location context is enabled as a new spatial data format.
+Perhaps the simplest format is a comma-separated value, or **CSV**, file. This is a plain text format for table storage that can be opened and exported from MS Excel, or even just a simple text editor. What can make a CSV a "spatial" data format is the presence of columns that represent coordinate locations for each row in the table. These columns could be latitude, longitude coordinates, or a single column could hold a different coordinate format like Well-Known Text (WKT). A CSV file name will end in `.csv`, though you may also see `.tsv`, for "tab-separated values".
 
-A common spatial data format is the shapefile, which comes from ESRI/ArcGIS proprietary software. The shapefile file format (`.shp` for short) includes a minimum of 4 files, with a common prefix and different filename extensions `.shp`, `.shx`, `.dbf`, and `.prj`. In order to work with the spatial data, we need all these four components of the shapefile stored in the same directory, so that the software or coding platform being used can know how to project spatial objects onto a geographic or coordinate space. Other common spatial data formats include the GeoJSON (or `.geojson`)or geopackage (or `.gpkg`). We'll work with shapefiles and GeoJSONs in this toolkit.
+Another common spatial data format is the **shapefile**. A shapefile is actually a suite of multiple files, all with the same name but each with a different extension. There must be three files present at a minimum, `.shp`, `.shx`, `.dbf`, though typically you will have 4-7 files, other common extensions being `.prj`, `.cpg`, etc. These files must always be kept together, so make sure you zip up a shapefile if you are sending it to someone else!
+
+We will also use a format called **GeoJSON**, `.geojson` or sometimes just `.json`, and you may also hear about GeoPackages, `.gpkg`, though we won't be using that format in this module.
+
+|Format|Extension|Pros|Cons|
+|---|---|---|---|
+|CSV|`.csv`|Human-readable data<br/>Edit in MS Excel or text editor|Inefficient for large datasets|
+|Shapefile|`.shp`<br/>`.shx`<br/>`.dbf`<br/>etc.|Robust and performant<br/>Can use any CRS|10-character attribute name limit<br/>Sidecar files can be confusing!|
+|GeoJSON|`.geojson`|Human-readable data<br/>Edit in text editor|Inefficient for large datasets|
 
 :::activity 
-**Open a Spatial Vector File**
+**Open a Vector Data File in QGIS**
 
-- Open up QGIS, and start a new project.
-- Open the file `chicagotracts.shp` as a new vector layer by navigating to Layer -> Add Layer -> Add Vector Layer, or through your local or network drives in the Browser panel.  ** make this part more clear; diff versions may be different)
-- Double click or drag and drop the file into Layers.
-<details markdown='1'><summary>**Add a Basemap**</summary>
+There are multiple ways to add a vector dataset to a QGIS project. First, open QGIS and create a blank document. Next, use one of these methods:
+- Navigate to **Layer** > **Add Layer** > **Add Vector Layer**, and then find the `chicagotracts.shp` file in your file system.
+- Use the Browser panel to navigate your file system, and drag `chicagotracts.shp` into the map view.
+- In your standard file explorer, navigate to the `chicagotracts.shp` file, then drag and drop it directly into your QGIS project.
+    - In your file system you will see all shapefile sidecar files, be sure to use the `.shp` file when you drag it into QGIS.
 
-You’ll need to download a plugin. The simplest basemap system is a part of the QuickMapServices plugin. Go to Plugins -> Manage and Install Plugins. Search QuickMapServices, and install it. Once installed, select Web -> QuickMapServices. Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map. Alternatively, the OpenLayer plugin will also provide base map options.
+You will now see a new layer in your **Layers** panel. To "style" the layer (change the colors and symbols that are used to represent it), you can either:
 
-<br/></details>
+- Right-click on the layer and choose **Properties...**, then go to the **Symbology** tab.
+- Go to **View** > **Toolbars** and enable the **Layer Styling** toolbar.
+    - This toolbar provides direct access to the symbology for the currently selected layer, no need to open the Properties window!
 
-- Update stylings using Properties
+**Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
+:::
+
+:::activity 
+**Add a Basemap in QGIS**
+
+The easiest way to add a basemap to your QGIS project is through the **QuickMapServices** plugin. To install this plugin:
+
+1. Go to **Plugins** > **Install and Manage Plugins...**
+2. Search for and select `QuickMapServices`
+3. Click **Install**
+
+Once installed, it's best to add the extra "contributed pack" to this plugin, in order to get more basemap options.
+
+1. Go to **Web** > **QuickMapServices** > **Settings...**
+2. Go to the **More services** tab, and click **Get contributed pack**
+
+Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map.
 
 **Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
 :::
