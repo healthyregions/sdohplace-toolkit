@@ -8,17 +8,35 @@
 :::objective
 **Objectives**
 
-In this module, you will: 
+In this part of our toolkit, we're going to learn how to do the same things we did with Chapter 4 - Spatial Data Wrangling, but this time, we'll use R code to handle our spatial data. In this module, you will:
 
-- Introduction to spatial data concepts and operations
+- Practice basic operations of spatial data with R
 - Convert CSV lat/long to spatial points and geocode address
 - Overlay points with boundary data, merge SDOH data, visualize as choropleth
 :::
 
-** Add intro to R tips, resources (a short paragraph)
+### Getting Started {-}
+
+R is a great choice for starting in data science because it's built for it. It's not just a programming language, it is a whole system with tools and libraries made to help you think and work like a data scientist easily.
+
+We assume a basic knowledge of R and coding languages for these toolkits. For most of the tutorials in this toolkit, you’ll need to have R and RStudio downloaded and installed on your system. You should be able to install packages, know how to find the address to a folder on your computer system, and have very basic familiarity with R.
+
+### Turotials for R {-}
+
+If you are new to R, we recommend the following [intro-level tutorials](https://learn.datacamp.com/courses/free-introduction-to-r) provided through [installation guides](https://rspatial.org/intr/1-introduction.html). You can also refer to this [R for Social Scientists](https://datacarpentry.org/r-socialsci/) tutorial developed by Data Carpentry for a refresher.
+
+You can also visit the [RStudio Education](https://education.rstudio.com/learn/) page to select a learning path tailored to your experience level ([Beginners](https://education.rstudio.com/learn/beginner/), [Intermediates](https://education.rstudio.com/learn/intermediate/), [Experts](https://education.rstudio.com/learn/expert/)). They offer detailed instructions to learners at different stages of their R journey.
 
 
 ## Environmental Setup
+
+We will work with following libraries, so please be sure to install:
+
+sf
+tmap
+tidyverse
+tidycensus
+There are differing spatial ecosystems in R. We use the sf ecosystem that is compatible with the tidyverse. If you need to work between these two R spatial ecosystems, see this guide for a translation of sp to sf commands.
 
 Before starting operations related to spatial data, we need to complete an environmental setup. A basic understanding of R is assumed. This workshop requires several packages, which can be installed from CRAN:
 
