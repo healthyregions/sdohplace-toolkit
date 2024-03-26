@@ -151,6 +151,8 @@ Once installed, it's best to add the extra "contributed pack" to this plugin, in
 
 Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map.
 
+**Warning**: Do not use Google or Bing basemaps in published work, it is generally against their terms of service.
+
 **Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
 :::
 
@@ -218,7 +220,7 @@ As long as each layer’s CRS is correctly assigned, GIS software will properly 
 
 One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called **Web Mercator** (EPSG:3857). Every interactive web map--Google, Apple, Uber, Lyft, etc.--uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.
 
-Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicagoe. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within **NAD83 / Illinois East (ftUS)** (EPSG:3435).
+Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicago. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435).
 
 :::activity 
 **Reproject Data in QGIS**
@@ -233,7 +235,7 @@ If you have spatial data that uses a geographic CRS, like a GeoJSON file, then y
 3. Pick ESRI Shapefile as the output format.
 4. Browse to an appropriate folder and name your export `chicagotracts-3435`.
 5. Use the CRS dropdown to select `NAD83 / Illinois East (ftUS)`.
-    - If this CRS is not in the dropdown, use Select CRS button to open a more detailed dialog box.
+    - If this CRS is not in the dropdown, use the Select CRS button to open a more detailed dialog box.
     - Filter for `NAD83 / Illinois East (ftUS)` and find the appropriate CRS in Projected > Universal Transverse Mercator...
 6. Leave all other settings as they are, click **Ok** to save the dataset.
     - The new dataset will be in your selected CRS.
@@ -255,7 +257,7 @@ Let's start with an example where the spatial coordinate information has already
 
 ### Convert CSVs to Spatial Data 
 
-Comma separated (CSV) files are not spatial data; they may *contain* spatial data, but to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
+Comma separated (CSV) files are not an efficient spatial data format; to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
 
 There are multiple options for converting CSV files to spatial data without code using opensource software like QGIS or GeoDa.For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. 
 
