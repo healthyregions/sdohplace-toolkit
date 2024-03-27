@@ -297,7 +297,7 @@ Those two issues are the most common errors.
 
 Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.
 
-### Reshape Data {-}
+### Reshape Data
 
 Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
 
@@ -325,9 +325,9 @@ covid_wide <- reshape(covid_clean, direction = "wide",
 head(covid_wide, 3)
 ```
 
-### Join by Attribute {-}
+### Join by Attribute
 
-** Merge SDOH Data to Boundary Dataset
+You will come across data with various different boundaries, such as county, zip code, and census tracts. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
 
 Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (**ChiZipMaster1.geojson**) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
 
@@ -362,9 +362,11 @@ joined_data <- zipcode %>%
   left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
 ```
 
-### Join by Location {-}
+### Join by Location
 
-We’ll create a spatial join with affordable housing development data and ChiZipMaster1.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
+Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
+
+We’ll create a spatial join with **ffordable_Rental_Housing_Developments.csv** and **ChiZipMaster1.geojson**. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
 
 ```{r}
 housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
@@ -388,46 +390,6 @@ zipcode_with_housing_count <- left_join(zipcode, housing_count_nonspatial, by = 
 ```
 
 
-
-For this example, we'll think about this dataset as access to secure and affordable housing. Persons with lower incomes residing in places with fewer developments may be more vulnerable to housing insecurity -> impacts health.
-
-```{r, warning=FALSE}
-AffHousing <- read.csv("o4rtestdata/Affordable_Rental_Housing_Developments.csv")
-
-head(AffHousing)
-```
-
-There were a few data points with odd inputs and null values. Remember, we can't convert any null values to spatial coordinates. Again, in an ideal context, you would explore and understand what is happening, systematically. In our experiment, we'll omit nulls.
-
-```{r, warning=FALSE}
-AffHousing <- na.omit(AffHousing)
-```
-
-Look at the structure of the object. 
-
-```{r, warning=FALSE}
-str(AffHousing)
-```
-
-In this dataset, we can see coordinate information is already included -- twice! You're looking at 2 different types of coordinate systems. We'll use "Longitude" and "Latitude" to represent X,Y and an ESPG of 4326. We're guessing, and hopeful.
-
-```{r, warning=FALSE}
-AffHousingSf <- st_as_sf(AffHousing, 
-                        coords = c("Longitude", "Latitude"),
-                        crs = 4326)
-```
-
-We can the size of the point, according to some attribute of the data. In this dataset, we see an attribute field that gives us the total number of units per housing site. Let's use a graduated symbology, with the `tm_bubbles()` function, to map these points. That way points with more units will be bigger, and not all places are weighted the same visually.
-
-We can now map the data for a quick view -- does this look like Chicago, hopefully?
-
-```{r, warning=FALSE}
-tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple", style = "sd")  
-```
-
-
-
-
 ## Inspect Data
 
 ** Once you've merged data, you'll want to inspect and visualize with simple views.
@@ -436,11 +398,9 @@ Inspect data, both through spatial and non-spatial means, when starting a new pr
 
 ### Thematic Maps
 
-To inspect data from a spatial perspective, create a series of choropleth maps. ** Briefly exlain this without too much detail **
+To inspect data from a spatial perspective, we can create a series of choropleth maps.
 
 #### Example 1: Number of Affordable Housing Developments per Zip Code {-}
-
-Based on the previous spatial join (join by location) in A.4 with affordable housing development data and ChiZipMaster1.geojson, we can start to generate a choropleth map.
 
 ```{r}
 plot <- ggplot(data = zipcode_with_housing_count) +
@@ -456,7 +416,7 @@ print(plot)
 #### Example 2: Number of COVID-19 Cases per Zip Code {-}
 
 ```{r}
-Chi_Zipsf <- st_read("o4rtestdata/ChiZipMaster1.geojson")
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
 ```
 
 ```{r}
@@ -470,12 +430,41 @@ tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative",
 
 ### Map Overlay
 
-#### Example 1: COVID-19 & Methadone {-}
+
+#### Example 1: Afforfable Housing Developments & Zipcode Boundaries {-}
+
+Let's review the steps we load and convert the **Affordable_Rental_Housing_Developments.csv** to spatial points. We will first use a graduated symbology to visualize the it. Points with more units will be bigger, and not all places are weighted the same visually. 
+
+```{r}
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+
+AffHousing <- read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+
+AffHousing <- na.omit(AffHousing)
+
+AffHousingSf <- st_as_sf(AffHousing, 
+                        coords = c("Longitude", "Latitude"),
+                        crs = 4326)
+
+tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple", style = "sd") 
+```
+
+Then, let's overlay that layer to the zipcode boundary.
+
+```{r}
+
+tm_shape(Chi_Zipsf) + tm_polygons(col = "gray80") +
+  tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple") 
+
+```
+
+
+#### Example 2: COVID-19 & Methadone {-}
 
 In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
 
 ```{r}
-Chi_Zipsf <- st_read("o4rtestdata/ChiZipMaster1.geojson")
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
 ```
 
 With this overlay, we'll add a "hack" to include the methadone clinic points in a legend.
@@ -495,68 +484,6 @@ tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative",
   
   ## Cartographic Styling
   tm_layout(legend.outside = TRUE, legend.outside.position = "right")
-```
-
-#### Example 2: Afforfable Housing Developments & Zipcode Boundaries   {-}
-
-Previously in A.4, we used a graduated symbology. Points with more units will be bigger, and not all places are weighted the same visually. Now, let's overlay that layer to the zipcode boundary.
-
-```{r}
-tm_shape(Chi_Zipsf) + tm_polygons(col = "gray80") +
-  tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple") 
-```
-
-Then, let's map everything at once, and explore which zip codes are the most vulnerable to persons with OUD during the pandemic in September 2020, based on the information we have here?
-
-```{r}
-## Zip Codes with Labels
-tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
-      style="jenks", pal="BuPu", n=4, title = "COVID Rt")  +
-
-  ## Affordable Housing Units
-  tm_shape(AffHousingSf) + tm_bubbles("Units") + 
-  
-  ## Methadone MOUD
-  tm_shape(methadoneSf) + tm_dots(size = 0.2, col = "gray20") +
-  
-  ## Cartographic Styling
-  tm_add_legend("symbol", col = "gray20", size = .2, labels = "Methadone MOUD") + tm_layout(legend.outside = TRUE, legend.outside.position = "right")
-```
-
-In RStudio, you could zoom into the plot you created to get a better view. Save as an image, or save as a webpage!
-
-Save any data you need from this session.
-
-```{r eval=FALSE}
-st_write(methadoneSf, dsn = "o4rtestdata/methadoneMOUD.geojson")
-```
-
-#### Example 3: Zipcode Boundaries & Census Tracts  {-}
-
-Here is a final example for the overlay. How do census tract areas correspond to zip codes? While tracts better represent neighborhoods, often times we are stuck with zip code level scale in healh research. Here we will practice how to overlay zipcode boundaries, by making a reference map to highlight tract distribution across each zip code.
-
-First, we read in zip code boundaries. This data was downloaded directly from the *City of Chicago Data Portal* as a shapefile.
-
-```{r }
-Chi_Zips = st_read("o4rtestdata/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp")
-
-```
-
-Next, we layer the new shape in -- on top of the tracts. We use a thicker border, and try out a new color. Experiment!
-
-```{r }
-
-## FIRST LAYER: CENSUS TRACT BOUNADRIES
-tm_shape(Chi_tracts.3435) + tm_fill(col = "gray90") +
-  tm_borders(alpha=0.2, col = "gray10") + 
-
-## SECOND LAYER: ZIP CODE BOUNDARIES WITH LABEL
-tm_shape(Chi_Zips) + tm_borders(lwd = 2, col = "#0099CC") +
-  tm_text("zip", size = 0.7) +
-  
-## MORE CARTOGRAPHIC STYLE
-  tm_scale_bar(position = ("left"), lwd = 0.8) +
-  tm_layout(frame = F)
 ```
 
 

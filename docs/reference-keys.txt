@@ -38,3 +38,7 @@ map-overlay-1
 finding-data-1
 coordinate-reference-systems-1
 merge-data-sets-1
+include-or-not
+reshape-data-1
+join-by-attribute-1
+join-by-location-1
