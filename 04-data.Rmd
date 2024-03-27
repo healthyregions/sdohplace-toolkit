@@ -41,20 +41,21 @@ That being said, data wrangling takes up **at least 80%** of a traditional GIS/s
 
 ### Installing & Working with Software {-}
 
-All three software that you'll be introduced to have extensive documentation to help users understand the tools available to them and troubleshoot issues they come across. This documention can be found [here](https://www.qgis.org/en/docs/index.html) for QGIS, [here](https://support.microsoft.com/en-us/excel) for Excel, and [here](https://geodacenter.github.io/documentation.html) for GeoDa. In addition to these official documentation sources, search engines are your best friend. There are forums dedicated to troubleshooting software issues, and someone else will have likely experienced your problem before. Searching the issue you run into or the error message that you receive is likely to bring up a forum thread of people who worked to resolve the same issue.
+All three software that you'll be introduced to have extensive documentation to help users understand the tools available to them and troubleshoot issues they come across. This documentation can be found [here](https://www.qgis.org/en/docs/index.html) for QGIS, [here](https://support.microsoft.com/en-us/excel) for Excel, and [here](https://geodacenter.github.io/documentation.html) for GeoDa.
 
-Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Some GIS software use directories, rather than storing data locally, meaning that the software needs to know where to access files. If a file gets moved mid-project, the software will be unable to access the data, and you'll have to re-add it to the project. Some file formats, like shapefiles, must also stay in the same folder as their associated files in order to be read correctly. A robust file management approach will save you time and frustration in the long run.
+In addition to these official documentation sources, search engines are your best friend. Gravitate toward answers on community-driven forums like [Stack Overflow](https://stackoverflow.com/) or [GIS Stack Exchange](https://gis.stackexchange.com/), because someone else will have likely experienced your problem before. Searching the issue you run into or the error message that you receive is likely to bring up a forum thread of people who worked to resolve the same issue.
 
-** add some background tips/advice on how to use documentation to figure stuff out.
+:::tip
+- If possible, it's best to copy/paste specific error messages (or "stack traces") from your software into search engines to find the most relevant result.
+- Sometimes information like local file paths or user names can be printed into error messages. Be sure to keep these out of content that you post to forums!
+:::
 
-** something about file management structures, installing your software here
-
-** Tell ppl where the data for this workshop can be accessed (!!)
+Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Generally when you open a dataset in GIS software, you are only creating a pointer to the locally stored files, not copying the data into the project. This means that if a file gets moved mid-project, the software will be unable to access the data, and you'll have to re-add it to the project. Some file formats, like shapefiles, consist of multiple files that must always be kept in the same folder together. **A robust file management approach will save you time and frustration in the long run.**
 
 :::tip
 **Installation Tip**
 
-Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GADL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
+Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GDAL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
 
 If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
 :::
