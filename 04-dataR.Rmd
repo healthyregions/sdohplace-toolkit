@@ -309,10 +309,10 @@ Long data formats have repeating values in the first column, compared to wide da
 
 -- wide formats needed to spatial data
 
-Here, we are trying to use the COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv dataset to practice how to convert long data to a wide data format.
+Here, we are trying to use the **COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv** dataset to practice how to convert long data to a wide data format.
 
 ```{r}
-covid = read.csv("o4rtestdata/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
+covid = read.csv("SDOHPlace-DataWrangling/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
 covid_clean = covid[,c(1:2, 6)]
 head(covid_clean, 3) 
 ```
@@ -329,7 +329,65 @@ head(covid_wide, 3)
 
 ** Merge SDOH Data to Boundary Dataset
 
-From here, we can integrate more data. Let's try a different point dataset -- Affordable Rental Housing Developments, as made available by the *City of Chicago Data Portal*. This could be interesting for a number of different reasons -- maybe we hypothesize better outcomes are associated with better access to affordable housing options? Or, we hypothesize the opposite, that mean distance to more population dense housing locations is vulnerable to airborne disease?
+Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (**ChiZipMaster1.geojson**) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
+
+We've cleaned our covid case data already, but not all values under the zipcode column are valid. There is a row has a value of "unkown", so let's remove that.
+
+```{r}
+covid_wide_clean <- covid_wide %>%
+  filter(ZIP.Code != "unknown" & !is.na(ZIP.Code))
+```
+
+Then, we need to load the zipcode data.
+
+```{r}
+zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+```
+
+You’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.
+
+```{r}
+zipcode_unique <- distinct(zipcode)
+
+zipcode_unique <- zipcode %>%
+  group_by(zip) %>%
+  slice(1) %>%
+  ungroup()
+```
+
+Now, the two datasets are ready to join together by the zipcode. Make sure to check they have been joined successully.
+
+```{r}
+joined_data <- zipcode %>%
+  left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
+```
+
+### Join by Location {-}
+
+We’ll create a spatial join with affordable housing development data and ChiZipMaster1.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
+
+```{r}
+housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+
+housing <- na.omit(housing)
+housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
+
+# Perform spatial join
+joined_data <- st_join(zipcode_unique, housing, join = st_intersects)
+
+# Count the number of housing developments per ZIP code
+housing_count <- joined_data %>% 
+  group_by(zip) %>%
+  summarise(Count = n())
+
+# Drop the geometry column from housing_count
+housing_count_nonspatial <- as.data.frame(housing_count)
+
+# Perform the join
+zipcode_with_housing_count <- left_join(zipcode, housing_count_nonspatial, by = "zip")
+```
+
+
 
 For this example, we'll think about this dataset as access to secure and affordable housing. Persons with lower incomes residing in places with fewer developments may be more vulnerable to housing insecurity -> impacts health.
 
@@ -367,31 +425,7 @@ We can now map the data for a quick view -- does this look like Chicago, hopeful
 tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple", style = "sd")  
 ```
 
-### Join by Location {-}
 
-We’ll create a spatial join with affordable housing development data and ChiZipMaster1.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
-
-```{r}
-housing = read.csv("o4rtestdata/Affordable_Rental_Housing_Developments.csv")
-zipcode <- st_read("o4rtestdata/ChiZipMaster1.geojson")
-
-housing <- na.omit(housing)
-housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
-
-# Perform spatial join
-joined_data <- st_join(zipcode, housing, join = st_intersects)
-
-# Count the number of housing developments per ZIP code
-housing_count <- joined_data %>% 
-  group_by(zip) %>%
-  summarise(Count = n())
-
-# Drop the geometry column from housing_count
-housing_count_nonspatial <- as.data.frame(housing_count)
-
-# Perform the join
-zipcode_with_housing_count <- left_join(zipcode, housing_count_nonspatial, by = "zip")
-```
 
 
 ## Inspect Data
