@@ -185,6 +185,8 @@ A **GCS** is fairly straightforward, because its coordinates are latitude/longit
 
 GeoJSON datasets should only store data in WGS84.
 
+If you're not sure what CRS a latitude/longitude coordinate value is in a dataset you pulled from a data portal, there is a good chance it will be EPSG:4326! Once challenge with this CRS is that the distance is in degrees, not miles or kilometers. To use spatial data for distance or geometric calculations, you'll need to transform to a different CRS that that uses different unit of distance...
+
 A **PCS** on other hand is “projected,” meaning that it is not only based on a datum, but on top of that it uses a **map projection**. Map projections are different methods for flattening the globe (or portions of it) so it can be displayed on a 2-dimensional plane (in other words, a map!). When a geospatial dataset is stored in a projected CRS, it doesn’t actually use latitude/longitude coordinates at all–it uses X/Y coordinates based on the flattened plane that the projection defines.
 
 Robust spatial data formats, like Shapefiles and GeoPackages, are able to store data in any CRS, either geographic or projected.
@@ -229,8 +231,6 @@ As long as each layer’s CRS is correctly assigned, GIS software will properly 
 #### Common Projected Coordinate Reference Systems
 
 One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called **Web Mercator** (EPSG:3857). Every interactive web map--Google, Apple, Uber, Lyft, etc.--uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.
-
-Another common CRS used in data is **EPSG:4326**. If you're not sure what CRS a latitude/longitude coordinate value is in a dataset you pulled from a data portal, there is a good chance it will be EPSG:4326! Once challenge with this CRS is that the distance is in degrees, not miles or kilometers. To use spatial data for distance or geometric calculations, you'll need to transform to a different CRS that that uses different unit of distance. 
 
 Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicago. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). 
 
