@@ -10,10 +10,21 @@ In this module, you will:
 
 * Introduction to spatial data concepts and operations
 * Convert CSV lat/long to spatial points and geocode address
-* Overlay points with boundary data, merge SDOH data, visualize as choropleth
+* Overlay points with boundary data, merge SDOH data, visualize as thematic map
+* Gain insight into SDOH data resources
 :::
 
-You've spent some time visioning your project goals, breaking down specific needs, and connecting with potential users of the application. Once you've done these things, you're ready to take on the data at hand, and start wrangling. Because we're working with place-based SDOH data, that means learning how to handle *spatial data.* Working with spatial data is like working with regular data, plus entirely new dimensions. The data formats are different, and you'll need different tools to work with it. 
+You've spent some time visioning your project goals, breaking down specific needs, and connecting with potential users of the application. Once you've done these things, you're ready to take on the data at hand, and start wrangling.
+
+What sort of data will you be working with? Some examples could include:
+
+- **Resource or asset data**: This could be a spreadsheet of locations including their names, description, category, and address. For data wrangling, you'll want to set this dataset up as a .CSV format to start. This may be used as a primary dataset for an asset map.
+
+- **Tabular, statisical, or "flat-file" data**: This could be a CSV, TXT, or XLSX format dataset filled with details on income, education, or housing estimates by county. It could be data on health outcomes, with each row corresponding to a different time point. You may have downloaded it directly from a data portal, or extracted from the Census. You may use this data for thematic maps, dashboards, and more.
+
+- **Multi-media data**: This could be photographs, videos, or stories that you have geo-tagged to specific locations. It can be used for story maps, and more.
+
+Because we're working with place-based SDOH data, that means learning how to handle *spatial data.* (This may involve converting non-spatial data to spatial data.) Working with spatial data is like working with regular data, plus entirely new dimensions. The data formats are different, and you'll need different tools to work with it. 
 
 ## Environment Setup
 
@@ -60,10 +71,6 @@ Mac users will need to override a security setting to download QGIS. Once you ha
 If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.
 :::
 
-### Troubleshooting {-}
-
-Need to figure stuff out on your own, explain tips like using Google search (not Bing etc), link some primary resources
-
 ## Intro to Spatial Data 
 
 Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we're left with just a list, not a spatial analysis or map that can guide decisions or provide insights.
@@ -73,6 +80,8 @@ Understanding these aspects of spatial data is crucial, especially as we delve i
 ### Spatial Data Types {-}
 
 Spatial data is generally divided into two broad categories: vector data and raster data. Vector data holds "features" using points, lines, or polygons whereas raster data can be satellite imagery or other pixelated surfaces.
+
+![Vector and raster data model in geographic space (Jukil & Al-Hadad, 2017)](images/data-types.pbm){width=80%}
 
 We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data is not just locations and shapes, but also attributes. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more. 
 
@@ -221,7 +230,11 @@ As long as each layer’s CRS is correctly assigned, GIS software will properly 
 
 One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called **Web Mercator** (EPSG:3857). Every interactive web map--Google, Apple, Uber, Lyft, etc.--uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.
 
-Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicago. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435).
+Another common CRS used in data is **EPSG:4326**. If you're not sure what CRS a latitude/longitude coordinate value is in a dataset you pulled from a data portal, there is a good chance it will be EPSG:4326! Once challenge with this CRS is that the distance is in degrees, not miles or kilometers. To use spatial data for distance or geometric calculations, you'll need to transform to a different CRS that that uses different unit of distance. 
+
+Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example **NAD83 / UTM Zone 16** (EPSG: 26916) covers Chicago. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). 
+
+To find a CRS, we recommend using **Google** -- seriously! Google "EPSG Illinois ft" if you want to identify a CRS that is appropriate for the Chicago region as an example, and using an appropriate distance metric for further analysis. Doing this, you'll find that EPSG:3435 emerges as a top choice. 
 
 :::activity 
 **Reproject Data in QGIS**
