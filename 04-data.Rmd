@@ -29,22 +29,28 @@ Because we're working with place-based SDOH data, that means learning how to han
 ## Environment Setup
 
 :::tools
-**Download the Activity Datasets**
+**Tools**
 
-Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
+*Download the Activity Datasets*
+
+While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
 :::
 
-Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* 
+Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* In the Appendix, you'll find the same activities using *R programming* scripts.
 
 :::tools
+
+**Tools**
+
 For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you'll need to learn to update, manage, and troubleshoot as you go. 
 
 - **QGIS**: QGIS is a free, opensource geographic information system that can be used to create, map, and analyze geospatial data. Download QGIS [here](https://qgis.org/en/site/).
 - **Excel**: Excel is a spreadsheet software that can store, organize, and analyze data sets. Use a free online version [here](https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits).
 - **GeoDa**: GeoDa is a free, opensource GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa [here](https://geodacenter.github.io/).
+
+If you prefer to code, or want to practice coding, go to the [Appendix]() to learn the same materials using the R Programming Language. 
 :::
 
-If you prefer to code, or want to practice coding, go to the Appendix to learn the same materials using the R Programming Language. 
 
 Throughout, you'll learn the tool you're using isn't as important as your ideas, concepts, and goals. You can merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn & discover as you go.
 
@@ -57,14 +63,18 @@ All three software that you'll be introduced to have extensive documentation to 
 In addition to these official documentation sources, search engines are your best friend. Gravitate toward answers on community-driven forums like [Stack Overflow](https://stackoverflow.com/) or [GIS Stack Exchange](https://gis.stackexchange.com/), because someone else will have likely experienced your problem before. Searching the issue you run into or the error message that you receive is likely to bring up a forum thread of people who worked to resolve the same issue.
 
 :::tip
+
+**Tip**
+
 - If possible, it's best to copy/paste specific error messages (or "stack traces") from your software into search engines to find the most relevant result.
+- *Google* tends to be the most common search engine used by developers, so may be most likely to give you the result you need.
 - Sometimes information like local file paths or user names can be printed into error messages. Be sure to keep these out of content that you post to forums!
 :::
 
 Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Generally when you open a dataset in GIS software, you are only creating a pointer to the locally stored files, not copying the data into the project. This means that if a file gets moved mid-project, the software will be unable to access the data, and you'll have to re-add it to the project. Some file formats, like shapefiles, consist of multiple files that must always be kept in the same folder together. **A robust file management approach will save you time and frustration in the long run.**
 
 :::tip
-**Installation Tip**
+**Tip**
 
 Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GDAL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download. 
 
@@ -79,9 +89,9 @@ Understanding these aspects of spatial data is crucial, especially as we delve i
 
 ### Spatial Data Types {-}
 
-Spatial data is generally divided into two broad categories: vector data and raster data. Vector data holds "features" using points, lines, or polygons whereas raster data can be satellite imagery or other pixelated surfaces.
+Spatial data is generally divided into two broad categories: **vector** and **raster** data. Vector data holds "features" using points, lines, or polygons whereas raster data can be satellite imagery or other pixelated surfaces.
 
-![Vector and raster data model in geographic space (Jukil & Al-Hadad, 2017)](images/data-types.pbm){width=80%}
+![Vector and raster data model in geographic space (Jukil & Al-Hadad, 2017)](images/data-types.pbm){width=70%}
 
 We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data is not just locations and shapes, but also attributes. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more. 
 
@@ -104,6 +114,9 @@ It is key to emphasize that data can often be tainted by biases and errors. As a
 In your project, there's no need to limit yourself to just one kind of data. In fact, it's not only possible but often necessary to mix and match different sources and types of spatial data to craft compelling SDOH spatial visualizations.
 
 :::activity
+
+**Activity** 
+
 Review these projects below and identify what type of data they use. In your opinion, what other types of data could they use to enrich their visualizations? 
 
 [Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia](https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1396&context=uresposters)
@@ -113,7 +126,7 @@ Review these projects below and identify what type of data they use. In your opi
 
 ### Spatial Data Formats {-}
 
-Just like you may store text in an MS Word document or a PDF, there are many different formats used to store vector spatial data. Keep in mind that file extensions are very important--it is often how people refer to different file formats.
+Just like you may store text in an MS Word document or a PDF, there are many different formats used to store vector spatial data. Keep in mind that file extensions are very important -- it is often how people refer to different file formats.
 
 Perhaps the simplest format is a comma-separated value, or **CSV**, file. This is a plain text format for table storage that can be opened and exported from MS Excel, or even just a simple text editor. What can make a CSV a "spatial" data format is the presence of columns that represent coordinate locations for each row in the table. These columns could be latitude, longitude coordinates, or a single column could hold a different coordinate format like Well-Known Text (WKT). A CSV file name will end in `.csv`, though you may also see `.tsv`, for "tab-separated values".
 
@@ -128,7 +141,10 @@ We will also use a format called **GeoJSON**, `.geojson` or sometimes just `.jso
 |GeoJSON|`.geojson`|Human-readable data<br/>Edit in text editor|Inefficient for large datasets|
 
 :::activity 
-**Open a Vector Data File in QGIS**
+
+**Activity** 
+
+*Open a Vector Data File in QGIS*
 
 There are multiple ways to add a vector dataset to a QGIS project. First, open QGIS and create a blank document. Next, use one of these methods:
 - Navigate to **Layer** > **Add Layer** > **Add Vector Layer**, and then find the `chicagotracts.shp` file in your file system.
@@ -146,7 +162,9 @@ You will now see a new layer in your **Layers** panel. To "style" the layer (cha
 :::
 
 :::activity 
-**Add a Basemap in QGIS**
+**Activity** 
+
+*Add a Basemap in QGIS*
 
 The easiest way to add a basemap to your QGIS project is through the **QuickMapServices** plugin. To install this plugin:
 
@@ -175,7 +193,9 @@ However, there are many different ways of storing coordinates (not only latitude
 ![](images/crs-image.png){width=95%}
 
 :::tip
-**EPSG Codes**
+**Tip**
+
+*EPSG Codes*
 In the 1980s the European Petroleum Survey Group began a registry of coordinate reference systems, and this database is now a standard registry: All common coordinate reference systems have their own EPSG code.
 :::
 
@@ -192,7 +212,10 @@ A **PCS** on other hand is “projected,” meaning that it is not only based on
 Robust spatial data formats, like Shapefiles and GeoPackages, are able to store data in any CRS, either geographic or projected.
 
 :::tip
-**Summary of Geographic vs. Projected CRS**
+
+**Tip**
+
+*Summary of Geographic vs. Projected CRS*
 
 - A Geographic Coordinate Reference System interprets coordinates as latitude/longitude positions on the globe.
     - Units: degrees
@@ -204,7 +227,7 @@ Robust spatial data formats, like Shapefiles and GeoPackages, are able to store 
 **Always use a projected coordinate system if you are making any distance-related calculations on your spatial data.**
 :::
 
-#### Why use Projected Coordinate Reference Systems for Spatial Data?
+#### Why use Projected Coordinate Reference Systems for Spatial Data? {-}
 
 You may be wondering: Why isn’t all spatial data just stored as latitude/longitude coordinates? The short answer is simply “measurement.” In order to perform any geographic calculations--length of roads, area of districts, distance from hospitals, etc.--you will need to use a projected CRS.
 
@@ -213,7 +236,9 @@ This is because every CRS is defined by the units that its coordinates are store
 A projected CRS, having flattened the Earth (or a portion of it) represents a grid system that is not based on degrees but on feet or meters. Therefore, the X/Y coordinates that a projected dataset stores are just the number of feet (or meters) away from the origin of the projection (like a Cartesian coordinate system in algebra). With your data in the appropriate projected CRS for your region, you are ready to make meaningful calculations.
 
 :::tip
-**Coordinate Reference Systems in QGIS**
+**Tip**
+
+*Coordinate Reference Systems in QGIS*
 
 QGIS applies coordinate reference systems at two different levels, and it is important to understand the difference between these levels.
 
@@ -228,7 +253,7 @@ As long as each layer’s CRS is correctly assigned, GIS software will properly 
 **One of the most common problems people have with spatial data is not knowing what CRS to use with their data!**
 :::
 
-#### Common Projected Coordinate Reference Systems
+#### Common Projected Coordinate Reference Systems {-}
 
 One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called **Web Mercator** (EPSG:3857). Every interactive web map--Google, Apple, Uber, Lyft, etc.--uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.
 
@@ -237,7 +262,10 @@ Instead, we need to use a projected CRS that is designed for a smaller region wi
 To find a CRS, we recommend using **Google** -- seriously! Google "EPSG Illinois ft" if you want to identify a CRS that is appropriate for the Chicago region as an example, and using an appropriate distance metric for further analysis. Doing this, you'll find that EPSG:3435 emerges as a top choice. 
 
 :::activity 
-**Reproject Data in QGIS**
+
+**Activity** 
+
+*Reproject Data in QGIS*
 
 If you have spatial data that uses a geographic CRS, like a GeoJSON file, then you will need to transform or reproject that data to a projected CRS in order to use it for any distance-related spatial analysis. Try the following in QGIS:
 
@@ -269,18 +297,25 @@ Points can also represent people, like individual patients residing in an area. 
 
 Let's start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.
 
-### Convert CSVs to Spatial Data 
+### Convert CSVs to Spatial Data
 
-Comma separated (CSV) files are not an efficient spatial data format; to be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data, GIS software should allow you to save CSV data as a new spatial data file. 
+Comma separated (CSV) files are not a spatial data format. To be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data like coordinates, GIS software should allow you to save CSV data as a new spatial data file. 
 
-There are multiple options for converting CSV files to spatial data without code using opensource software like QGIS or GeoDa.For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. 
+There are multiple options for converting CSV files to spatial data. For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. It's possible that coordinates recorded using a different CRS that is not long/lat, though we'll use a classical example here.
 
-** long/lat = x/y, not the other way
+Your CSV may have:
 
-** need to know the CRS -- if you don't, try 4326, but keep in mind in may not be correct
+- One field for **longitude** (which will be read as the **x** coordinate)
+- One field for **latitude** ( which will be read as the **y** coordinate)
+
+Using a GIS or coding platform, you'll assign the coordinate values and indicate the CRS being used. If you're not sure what the CRS is and it's a long/lat value, try EPSG:4326 as the most commont. You made need to troubleshoot if this is not the correct CRS for your dataset by inspecting documentation for the data. 
+
+Always open a CSV to inspect it before trying to convert it. Verify longitude and latitude are in separate fields, and those fields are correctly labeled. Then, inspect afterwards! Make sure the points are plotting where you expect them. Common errors during this step is mixing up the long/lat, or assigning the wrong CRS.
 
 :::activity
-**Convert CSV to GeoJSON in QGIS**
+**Activity**
+
+*Convert CSV to Spatial Data Format in QGIS*
 
 <details markdown='1'><summary>**Step 1: Open a CSV File**</summary>
 - Open your CSV file via Layer -> Add Layer -> Add Delimited Text Layer. We’ll use `Affordable_Rental_Housing_Developments.csv` for this exercise. 
@@ -306,29 +341,42 @@ Right click the layer and go to Export -> Save Features As. When you select a fi
 
 <br/></details>
 
-** Challenge: Open a CSV as a spatial data file in GeoDa, then save as a shapefile.
+**Challenge:** Open a CSV as a spatial data file in GeoDa, then save as a shapefile.
 
 :::
 
-** Always be sure to inspect your data after conversion. If it's not plotting correctly (check with base map), you may have gotten coordinate order wrong, or used the wrong CRS. 
-
-
 ### Geocode Addresses
 
-If you start with only addresses, you’ll need to geocode!
+What if your original dataset only has addresses? In that case, you'll need to geocode your data to identify coordinates for spatial data transformation.
 
 Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (ex. longitude, latitude) to spatially enable data. 
 
-** Explain that there are multiple geocoding services available, with varying quality. How precise does your measure need to be? Do you want to reject matches with <90% uncertainty? If you're at a university or public sector setting, you may have access to ESRI geocoding services... Also note how you should NEVER geocode sensitive data as it's not HIPPA protected unless on a compliant server... 
+#### Using Topologies {-}
 
-** After determining the service, plan for data cleaning/preparation stage, matching goals
+Geocoding services use [topologies](https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding) to assign street addresses along streets. Different services have differing degrees of topology quality; some are updated regularly, and others may have fewer updates, so precision may not be the same. Many services will give you a match score to let you know how closely the address matched their information. 
 
-** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file. Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
+How precise does your measure need to be? Do you want to reject matches with <90% uncertainty? Some services will not have this option available. If you're at a university or institutional setting, you may have access to geocoding services with more precise topologies, like ESRI or Google proprietary geocoding products. The examples used in this textbook use an open topology that will provide reasonable accuracy for many areas. 
+
+:::tip
+**Tip**
+
+If you are geocoding [protected health information (PHI)](https://cphs.berkeley.edu/hipaa/hipaa18.html), you may not use web-based geocoding service. Check with your instution to access a server-based, offline, HIPPA-compliant geocoding service.  
+:::
+
+#### Data Preparation for Geocoding {-}
+
+After determining the geocoding service you'll use, plan for an intensive data cleaning and preparation stage. Read the service documentatioon to understand how data must be formatted. You will likely need to split your address field as different address, city, state, and zip code values. 
+
+Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file. 
+
+Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.
 
 
 :::activity
 
-**Geocode with QGIS**
+**Activity**
+
+*Geocode with QGIS*
 
 For this exercise, download `chicago_methadone_nogeometry.csv`, a data set of methadone centers in Chicago that only includes center names and addresses.
 
@@ -364,23 +412,25 @@ Once everything has geocoded properly, you’ll have a spatial data file ready t
 
 Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.
 
+You will likely be merging data in flat files, like statistical datasets and Census records, to a spatial boundary corresponding to some administrative boundary. The new spatial dataset, a shapefile or GeoJson, is your master dataset that retains all of the original data, spatial boundaries, and new data you're merging in. 
+
+Place literally serves as your "key" to join the data together.
+
 ### Reshape Data {-} 
 
-data sets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
+Data sets often don’t come in GIS-friendly formats. Flat files may be separated vertically among multiple variables (long format) rather than horizontally along a single identifying variable (wide format). While long format is considered a standard for "tidy" data and the standard in epidemiological research, it's not efficient for GIS purposes. To merge data to boundaries for mapping and some spatial analysis, we'll have to reshape from long to wide format. Knowing how to reshape data efficiently will make you a master data wrangler.
 
-Long data formats have repeating values in the first column, compared to wide data formats which do not. Long formats are preferred in epidemiology work, but wide formats are needed for spatial data, making conversions between the two especially important in the realm of health geography.
+![](images/04-pivot.png)
 
--- explain long vs wide data formats
-
--- long preferred in epi work
-
--- wide formats needed to spatial data
+You can use pivot tables in Excel to reshape your data, or your favorite coding approach. Reshaping data is a pain, but important for subsequent research! 
 
 :::activity
 
-**Long to Wide with Excel**
+**Activity**
 
-File: COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv 
+*Long to Wide with Excel*
+
+**File:** `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` 
 
 To create a wide data set with the cumulative cases for each week for each zip code, create a pivot table in Excel. 
 
@@ -412,9 +462,11 @@ Pivot tables often generate columns and rows that are unnecessary for our purpos
 
 <br/></details>
 
-Your completed pivot table will look something like this:
+Your nearly completed pivot table will look something like this:
 
 ![pivotresult](images/04-8pivotresult.png)
+
+Update the column names to include the variable and date together for bonus points (ex. "Cases_050320"). Note that if you will later merge to a shapefile, you'll need to stick under 10 characters for variable names.
 
 Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
@@ -424,13 +476,30 @@ Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
 ### Join by Attribute {-}
 
-You will come across data with various different boundaries, such as county, zip code, and census tracts. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
+One of the most common spatial data tasks is merging. First, we merge by attribute, meaning the "key" to join two datasets exists as an exising column name. That may be a zip code, neighborhood, or county ID. For this step, you want to ensure you have a 1:1 match, meaning that your flat file data includes data for each geographic area only once. If not, go back to the "reshape data" section, rinse, and repeat!
 
-** explain about different boundaries, warning in usage of zip code
 
-** explain about finding a Key between data sets to merge; note on how to ensure data types are similar between
+#### Geographic Identifiers {-}
 
-** explain how data needs to have a 1:1 merge to be succesful, and what to do if that's off
+You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a  Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of **Geographic Idnetifiers**, also known as GEOID's for short. 
+
+Some of the most common administrative/legal and statistical geographic entities with unique GEOIDs include states, counties, congressional districts, core based statistical areas (metropolitan and micropolitan areas), census tracts, block groups and census blocks. Sometimes a census tract may be identified by its full 11-digit FIPS code, and other times, the data provider may only include the last 6 digits.  Learn more about [GEOIDs at the U.S. Census](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) for tips. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. 
+
+
+#### Merging to Spatial Data {-}
+
+To merge your data to a geographic area, you'll need to find the geographic spatial boundary or spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. "Illinois tracts in 2010"). You could also search using carefully selected keywords in your town's Data Portal (ex. "Chicago tract boundaries"), or using Google as a search engine (ex. "Milwaukee census tract .shp").
+
+After inspecting your spatial dataset, ensure you know the GEOID of the variable that will be your key. Inspect the dataset you are joining, and identify the corresponding key. We recommend joining to the spatial dataset, not the other way around, to preserve data quality. Inspect any rows that were lost after joining during merges.
+
+
+:::tip
+**Tip**
+
+*Using Zip Codes* 
+Find  Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
+:::
+
 
 :::activity
 
@@ -462,7 +531,7 @@ Tip: you do not need to include Zip Code since this field is being used to merge
 
 <br/></details>
 
-** Challenge: Do the same process using QGIS.
+**Challenge:** Do the same process using QGIS.
 :::
 
 ### Join by Location {-}
@@ -583,3 +652,5 @@ In this module, we provided sample data to work with. When you're looking for yo
 ** OSM data for international work
 
 ## Resources {-}
+
+- https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding 
