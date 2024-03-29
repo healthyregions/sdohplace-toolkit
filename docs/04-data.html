@@ -227,7 +227,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
 <li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
 <li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
@@ -270,7 +270,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
 <ul>
-<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
 <li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
 </ul></li>
 <li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
@@ -474,6 +474,7 @@ In the realm of SDOH spatial visualizations, there exists a third option–your 
 </ul></li>
 </ul>
 <p><strong>Challenge</strong>: Repeat the same activity using GeoDa, a spatial statistical software.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#intro-to-spatial-data-1"><em>Open a Vector Data File in R</em></a></p>
 </div>
 <div class="activity">
 <p><strong>Activity</strong></p>
@@ -581,6 +582,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <li>The new dataset will be in your selected CRS.</li>
 </ul></li>
 </ol>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#coordinate-reference-systems-1"><em>Reproject Data in R</em></a></p>
 </div>
 </div>
 </div>
@@ -595,8 +597,8 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </ul>
 <p>Points can also represent people, like individual patients residing in an area. Because individual locations for persons is protected health information, we’ll focus on point data as resources in the chapter. However, you can reuse the approach in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.</p>
 <p>Let’s start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.</p>
-<div id="convert-csvs-to-spatial-data" class="section level3 hasAnchor" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Convert CSVs to Spatial Data<a href="04-data.html#convert-csvs-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="csv-to-spatial-data" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> CSV to Spatial Data<a href="04-data.html#csv-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Comma separated (CSV) files are not a spatial data format. To be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a <code>GeoJSON</code> or <code>shapefile</code> data format. As long as a CSV contains spatial data like coordinates, GIS software should allow you to save CSV data as a new spatial data file.</p>
 <p>There are multiple options for converting CSV files to spatial data. For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. It’s possible that coordinates recorded using a different CRS that is not long/lat, though we’ll use a classical example here.</p>
 <p>Your CSV may have:</p>
@@ -645,6 +647,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <br/>
 </details>
 <p><strong>Challenge:</strong> Open a CSV as a spatial data file in GeoDa, then save as a shapefile.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#convert-csvs-to-spatial-data-1"><em>Convert CSV to Spatial Data Format in R</em></a></p>
 </div>
 </div>
 <div id="geocode-addresses" class="section level3 hasAnchor" number="4.4.2">
@@ -699,6 +702,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <br/>
 </details>
 <p>Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#geocode-addresses-1"><em>Geocoding in R</em></a></p>
 </div>
 </div>
 </div>
@@ -761,6 +765,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>Update the column names to include the variable and date together for bonus points (ex. “Cases_050320”). Note that if you will later merge to a shapefile, you’ll need to stick under 10 characters for variable names.</p>
 <p>Save the sheet as a new CSV by going to File -&gt; Save As. It’s ready for merging!</p>
 <p><strong>Note</strong>: You can also select variables of interest as a subset of the data using QGIS or GeoDa.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#reshape-data-1"><em>Reshaping Data in R</em></a></p>
 </div>
 </div>
 <div id="join-by-attribute" class="section level3 unnumbered hasAnchor">
@@ -809,6 +814,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <br/>
 </details>
 <p><strong>Challenge:</strong> Do the same process using QGIS.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#join-by-attribute-1"><em>Merge by Attribute in R</em></a></p>
 </div>
 <div class="tip">
 <p><strong>Tip</strong></p>
@@ -856,6 +862,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p><em>Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.</em></p>
 <br/>
 </details>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#join-by-location-1"><em>Merge by Location in R</em></a></p>
 </div>
 <div class="pitfall">
 <p><strong>Pitfall</strong></p>
@@ -924,16 +931,21 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -&gt; Edit Symbol. The affordable housing data can also be saved as a spatial data set at this point, by right clicking on the layer and navigating to Save Features As.</p>
 <br/>
 </details>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#inspect-data-1"><em>Inspection in R</em></a></p>
 </div>
 </div>
 </div>
 <div id="finding-data" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Finding Data<a href="04-data.html#finding-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this module, we provided sample data to work with. When you’re looking for your own data, ….</p>
-<p>** Determine your spatial boundary - get boundary data. Use that as your master file to merge in more.</p>
-<p>** Use a conceptual model to guide your variable selection.</p>
-<p>** Use existing resources that have aggregated cleaned data to access; or, extract from the Census directly</p>
-<p>** OSM data for international work</p>
+<p>In this module, we provided sample data to work with. When you’re looking for your own data to integrate, you’ll need to do some research to find what you need. Here are some tips of places to search:</p>
+<ul>
+<li><p>City, County, and State Data Portals. Look for your area of interest using search terms like “tracts” or “zip code” to find aggregate data ready for joining.</p></li>
+<li><p>The Social Vulnerability Index dataset by CDC includes cleaned American Community Survey that is easy to extract and merge with your spatial data.</p></li>
+<li><p>While U.S. Census data is available at Census.gov, finding data may be more efficient using third party platforms like IPUMS/NHGIS or Social Explorer. We also recommend the tidycensus package in R (see Appendix Resources for details).</p></li>
+<li><p>Additional aggregated products to check out include: EJScreen, the City Health Dashboard, County Health Rankings, the Opportunity Atlas, the Neighborhood Atlas, and more.</p></li>
+<li><p>Learning how to use the “turbo-pass” Open Street Map plugin in QGIS, or R corresponding library, will give you access to a public version of digitized infrastructure (e.g. streets, parks) and resources (e.g. supermarkets, schools) across the globe. Some areas have better coverage than others.</p></li>
+</ul>
+<p>When determining which data to include, consider using a conceptual model to guide your variable selection. The socio-ecological model of health or risk environment models, for example, identify specific indicators that you may want to fold in.</p>
 </div>
 <div id="resources-3" class="section level2 unnumbered hasAnchor">
 <h2>Resources<a href="04-data.html#resources-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>

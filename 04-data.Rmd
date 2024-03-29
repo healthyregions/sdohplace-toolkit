@@ -159,6 +159,8 @@ You will now see a new layer in your **Layers** panel. To "style" the layer (cha
     - This toolbar provides direct access to the symbology for the currently selected layer, no need to open the Properties window!
 
 **Challenge**: Repeat the same activity using GeoDa, a spatial statistical software.
+
+[*Open a Vector Data File in R*](https://toolkit.sdohplace.org//04-dataR.html#intro-to-spatial-data-1)
 :::
 
 :::activity 
@@ -281,6 +283,8 @@ If you have spatial data that uses a geographic CRS, like a GeoJSON file, then y
     - Filter for `NAD83 / Illinois East (ftUS)` and find the appropriate CRS in Projected > Universal Transverse Mercator...
 6. Leave all other settings as they are, click **Ok** to save the dataset.
     - The new dataset will be in your selected CRS.
+    
+[*Reproject Data in R*](https://toolkit.sdohplace.org//04-dataR.html#coordinate-reference-systems-1)
 :::
 
 ## Converting to Spatial Data
@@ -297,7 +301,7 @@ Points can also represent people, like individual patients residing in an area. 
 
 Let's start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.
 
-### Convert CSVs to Spatial Data
+### CSV to Spatial Data
 
 Comma separated (CSV) files are not a spatial data format. To be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a `GeoJSON` or `shapefile` data format. As long as a CSV contains spatial data like coordinates, GIS software should allow you to save CSV data as a new spatial data file. 
 
@@ -342,6 +346,8 @@ Right click the layer and go to Export -> Save Features As. When you select a fi
 <br/></details>
 
 **Challenge:** Open a CSV as a spatial data file in GeoDa, then save as a shapefile.
+
+[*Convert CSV to Spatial Data Format in R*](https://toolkit.sdohplace.org//04-dataR.html#convert-csvs-to-spatial-data-1)
 
 :::
 
@@ -405,6 +411,9 @@ Inspect the layer attribute table to determine the source of any issues. Right c
 <br/></details>
 
 Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.
+
+[*Geocoding in R*](https://toolkit.sdohplace.org//04-dataR.html#geocode-addresses-1)
+
 :::
 
 
@@ -471,6 +480,8 @@ Update the column names to include the variable and date together for bonus poin
 Save the sheet as a new CSV by going to File -> Save As. It's ready for merging!
 
 **Note**: You can also select variables of interest as a subset of the data using QGIS or GeoDa.
+
+[*Reshaping Data in R*](https://toolkit.sdohplace.org//04-dataR.html#reshape-data-1)
 :::
 
 
@@ -524,6 +535,8 @@ Tip: you do not need to include Zip Code since this field is being used to merge
 <br/></details>
 
 **Challenge:** Do the same process using QGIS.
+
+[*Merge by Attribute in R*](https://toolkit.sdohplace.org//04-dataR.html#join-by-attribute-1)
 :::
 
 
@@ -578,6 +591,8 @@ Try changing the color ramp, mode, and number of classes. The resulting joined l
 *Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.* 
 
 <br/></details>
+
+[*Merge by Location in R*](https://toolkit.sdohplace.org//04-dataR.html#join-by-location-1)
 :::
 
 :::pitfall
@@ -644,19 +659,26 @@ Let’s overlay zip code boundary data with affordable housing point data.
 Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -> Edit Symbol. The affordable housing data can also be saved as a spatial data set at this point, by right clicking on the layer and navigating to Save Features As. 
 
 <br/></details>
+
+[*Inspection in R*](https://toolkit.sdohplace.org//04-dataR.html#inspect-data-1)
+
 :::
 
 ## Finding Data
 
-In this module, we provided sample data to work with. When you're looking for your own data, ....
+In this module, we provided sample data to work with. When you're looking for your own data to integrate, you'll need to do some research to find what you need. Here are some tips of places to search:
 
-** Determine your spatial boundary - get boundary data. Use that as your master file to merge in more.
+- City, County, and State Data Portals. Look for your area of interest using search terms like "tracts" or "zip code" to find aggregate data ready for joining.
 
-** Use a conceptual model to guide your variable selection.
+- The Social Vulnerability Index dataset by CDC includes cleaned American Community Survey that is easy to extract and merge with your spatial data.
 
-** Use existing resources that have aggregated cleaned data to access; or, extract from the Census directly
+- While U.S. Census data is available at Census.gov, finding data may be more efficient using third party platforms like IPUMS/NHGIS or Social Explorer. We also recommend the tidycensus package in R (see Appendix Resources for details).
 
-** OSM data for international work
+- Additional aggregated products to check out include: EJScreen, the City Health Dashboard, County Health Rankings, the Opportunity Atlas, the Neighborhood Atlas, and more.
+
+- Learning how to use the "turbo-pass" Open Street Map plugin in QGIS, or R corresponding library, will give you access to a public version of digitized infrastructure (e.g. streets, parks) and resources (e.g. supermarkets, schools) across the globe. Some areas have better coverage than others.
+
+When determining which data to include, consider using a conceptual model to guide your variable selection. The socio-ecological model of health or risk environment models, for example, identify specific indicators that you may want to fold in.
 
 ## Resources {-}
 

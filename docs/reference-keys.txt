@@ -18,7 +18,7 @@ environment-setup
 intro-to-spatial-data
 coordinate-reference-systems
 converting-to-spatial-data
-convert-csvs-to-spatial-data
+csv-to-spatial-data
 geocode-addresses
 merge-data-sets
 inspect-data
@@ -28,7 +28,7 @@ environmental-setup
 intro-to-spatial-data-1
 coordinate-reference-systems-1
 converting-to-spatial-data-1
-convert-csvs-to-spatial-data-1
+convert-csvs-to-spatial-data
 geocode-addresses-1
 convert-to-spatial-data
 merge-data-sets-1
