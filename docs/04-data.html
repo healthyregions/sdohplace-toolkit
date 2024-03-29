@@ -691,20 +691,16 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>One of the most common spatial data tasks is merging. First, we merge by attribute, meaning the “key” to join two datasets exists as an exising column name. That may be a zip code, neighborhood, or county ID. For this step, you want to ensure you have a 1:1 match, meaning that your flat file data includes data for each geographic area only once. If not, go back to the “reshape data” section, rinse, and repeat!</p>
 <div id="geographic-identifiers" class="section level4 unnumbered hasAnchor">
 <h4>Geographic Identifiers<a href="04-data.html#geographic-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of <strong>Geographic Idnetifiers</strong>, also known as GEOID’s for short.</p>
+<p>You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of <strong>Geographic Identifiers</strong>, also known as GEOID’s for short.</p>
 <p>Some of the most common administrative/legal and statistical geographic entities with unique GEOIDs include states, counties, congressional districts, core based statistical areas (metropolitan and micropolitan areas), census tracts, block groups and census blocks. Sometimes a census tract may be identified by its full 11-digit FIPS code, and other times, the data provider may only include the last 6 digits. Learn more about <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html">GEOIDs at the U.S. Census</a> for tips. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts.</p>
 </div>
 <div id="merging-to-spatial-data" class="section level4 unnumbered hasAnchor">
 <h4>Merging to Spatial Data<a href="04-data.html#merging-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>To merge your data to a geographic area, you’ll need to find the geographic spatial boundary or spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. “Illinois tracts in 2010”). You could also search using carefully selected keywords in your town’s Data Portal (ex. “Chicago tract boundaries”), or using Google as a search engine (ex. “Milwaukee census tract .shp”).</p>
+<p>To merge your data to a geographic area, you’ll need to find the geographic spatial boundary or corresponding spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. “Illinois tracts in 2010”). You could also search using carefully selected keywords in your town’s Data Portal (ex. “Chicago tract boundaries”), or using Google as a search engine (ex. “Milwaukee census tract .shp”). Note that tract boundaries changed in 2020 (and generally every decade), so learning how to work with a Census crosswalk may take more time and learning in your journey.</p>
 <p>After inspecting your spatial dataset, ensure you know the GEOID of the variable that will be your key. Inspect the dataset you are joining, and identify the corresponding key. We recommend joining to the spatial dataset, not the other way around, to preserve data quality. Inspect any rows that were lost after joining during merges.</p>
-<div class="tip">
-<p><strong>Tip</strong></p>
-<p><em>Using Zip Codes</em>
-Find Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information.</p>
-</div>
 <div class="activity">
-<p><strong>Merge SDOH data to Zip Codes in GeoDa</strong></p>
+<p><strong>Activity</strong></p>
+<p><em>Merge SDOH data to Zip Codes in GeoDa</em></p>
 <p>Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.</p>
 <details>
 <summary>
@@ -737,15 +733,22 @@ Find Zip codes are particularly common for health data despite SDOH data typical
 </details>
 <p><strong>Challenge:</strong> Do the same process using QGIS.</p>
 </div>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p><em>Using Zip Codes</em></p>
+<p>Zip codes are often the smallest area resolution available for many health researchers, due to privacy concerns. However, zip codes correspond to postal service routes, are not meaningful administrqtive units, and can mask data insights at the neighborhood level as a result. Associations that may appear if using tract-level data could be hidden at the zip code level. Be careful, and understand your limitations!</p>
+<p>The Census provides Zip Code Tabulation Areas (ZCTAs), which are similar to but not exactly the 5-digit Zip Codes people think of when referencing their postal address. Furthermore, full 9-digit Zip Codes change regularly. For precision, consider using the <a href="https://www.huduser.gov/portal/datasets/usps_crosswalk.html">HUD Crosswalk</a> to transform your zip code year to a census tract.</p>
+</div>
 </div>
 </div>
 <div id="join-by-location" class="section level3 unnumbered hasAnchor">
 <h3>Join by Location<a href="04-data.html#join-by-location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>** Sometimes, you won’t have a boundary key..</p>
-<p>** A spatial join is defined as …</p>
+<p>Sometimes, you won’t have a boundary key! How will you know which parks fall into which census tract? Or what about selecting neighborhoods with commuter train infrastructure?</p>
+<p>A spatial join is defined as merging data based on location. Both datasets are spatially enabled, and likely overlap each other. The data from one dataset (that you’re joining) gets “stuck” to the dataset you’re merging to. Both data should be in the same CRS.</p>
 <p>Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.</p>
 <div class="activity">
-<p><strong>Add a Spatial Join</strong></p>
+<p><strong>Activity</strong></p>
+<p><em>Add a Spatial Join</em></p>
 <p>We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.</p>
 <details>
 <summary>
@@ -779,15 +782,15 @@ Find Zip codes are particularly common for health data despite SDOH data typical
 </div>
 <div class="pitfall">
 <p><strong>Pitfall</strong></p>
-<p>Invalid Geometries</p>
-<p>Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.</p>
+<p><em>Invalid Geometries</em></p>
+<p>In the example above, Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.</p>
 </div>
 </div>
 </div>
 <div id="inspect-data" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Inspect Data<a href="04-data.html#inspect-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>** Once you’ve merged data, you’ll want to inspect and visualize with simple views.</p>
-<p>Inspect data, both through spatial and non-spatial means, when starting a new project. This helps verify that all data wrangling to this point has occurred properly. In the next module, we’ll dive into the details of this further, moving past inspection to data analytics.</p>
+<p>Inspect data, both through spatial and non-spatial means, when starting a new project, after each step of data processing, and when complete. That means all the time! This helps verify that all data wrangling to this point has occurred properly.</p>
+<p>In the next module, we’ll dive into the details of this further, moving past inspection to cartography and data analytics.</p>
 <div id="thematic-maps" class="section level3 unnumbered hasAnchor">
 <h3>Thematic Maps<a href="04-data.html#thematic-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To inspect data from a spatial perspective, create a series of choropleth maps. A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method.</p>

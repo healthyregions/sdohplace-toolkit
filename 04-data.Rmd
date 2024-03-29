@@ -481,29 +481,21 @@ One of the most common spatial data tasks is merging. First, we merge by attribu
 
 #### Geographic Identifiers {-}
 
-You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a  Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of **Geographic Idnetifiers**, also known as GEOID's for short. 
+You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a  Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of **Geographic Identifiers**, also known as GEOID's for short. 
 
 Some of the most common administrative/legal and statistical geographic entities with unique GEOIDs include states, counties, congressional districts, core based statistical areas (metropolitan and micropolitan areas), census tracts, block groups and census blocks. Sometimes a census tract may be identified by its full 11-digit FIPS code, and other times, the data provider may only include the last 6 digits.  Learn more about [GEOIDs at the U.S. Census](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) for tips. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. 
 
 
 #### Merging to Spatial Data {-}
 
-To merge your data to a geographic area, you'll need to find the geographic spatial boundary or spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. "Illinois tracts in 2010"). You could also search using carefully selected keywords in your town's Data Portal (ex. "Chicago tract boundaries"), or using Google as a search engine (ex. "Milwaukee census tract .shp").
+To merge your data to a geographic area, you'll need to find the geographic spatial boundary or corresponding spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. "Illinois tracts in 2010"). You could also search using carefully selected keywords in your town's Data Portal (ex. "Chicago tract boundaries"), or using Google as a search engine (ex. "Milwaukee census tract .shp"). Note that tract boundaries changed in 2020 (and generally every decade), so learning how to work with a Census crosswalk may take more time and learning in your journey.
 
 After inspecting your spatial dataset, ensure you know the GEOID of the variable that will be your key. Inspect the dataset you are joining, and identify the corresponding key. We recommend joining to the spatial dataset, not the other way around, to preserve data quality. Inspect any rows that were lost after joining during merges.
 
-
-:::tip
-**Tip**
-
-*Using Zip Codes* 
-Find  Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
-:::
-
-
 :::activity
+**Activity**
 
-**Merge SDOH data to Zip Codes in GeoDa**
+*Merge SDOH data to Zip Codes in GeoDa*
 
 Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset. 
 
@@ -534,16 +526,31 @@ Tip: you do not need to include Zip Code since this field is being used to merge
 **Challenge:** Do the same process using QGIS.
 :::
 
+
+:::tip
+**Tip**
+
+*Using Zip Codes* 
+
+Zip codes are often the smallest area resolution available for many health researchers, due to privacy concerns. However, zip codes correspond to postal service routes, are not meaningful administrqtive units, and can mask data insights at the neighborhood level as a result. Associations that may appear if using tract-level data could be hidden at the zip code level. Be careful, and understand your limitations!
+
+The Census provides Zip Code Tabulation Areas (ZCTAs), which are similar to but not exactly the 5-digit Zip Codes people think of when referencing their postal address. Furthermore, full 9-digit Zip Codes change regularly. For precision, consider using the [HUD Crosswalk](https://www.huduser.gov/portal/datasets/usps_crosswalk.html) to transform your zip code year to a census tract. 
+:::
+
+
+
 ### Join by Location {-}
 
-** Sometimes, you won't have a boundary key.. 
+Sometimes, you won't have a boundary key! How will you know which parks fall into which census tract? Or what about selecting neighborhoods with commuter train infrastructure?
 
-** A spatial join is defined as ...
+A spatial join is defined as merging data based on location. Both datasets are spatially enabled, and likely overlap each other. The data from one dataset (that you're joining) gets "stuck" to the dataset you're merging to. Both data should be in the same CRS.
 
 Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
 
 :::activity
-**Add a Spatial Join**
+**Activity**
+
+*Add a Spatial Join*
 
 We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
 
@@ -576,16 +583,16 @@ Try changing the color ramp, mode, and number of classes. The resulting joined l
 :::pitfall
 **Pitfall**
 
-Invalid Geometries
+*Invalid Geometries*
 
-Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.
+In the example above, Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.
 :::
 
 ## Inspect Data 
 
-** Once you've merged data, you'll want to inspect and visualize with simple views.
+Inspect data, both through spatial and non-spatial means, when starting a new project, after each step of data processing, and when complete. That means all the time! This helps verify that all data wrangling to this point has occurred properly. 
 
-Inspect data, both through spatial and non-spatial means, when starting a new project. This helps verify that all data wrangling to this point has occurred properly. In the next module, we'll dive into the details of this further, moving past inspection to data analytics.
+In the next module, we'll dive into the details of this further, moving past inspection to cartography and data analytics.
 
 ### Thematic Maps {-}
 
