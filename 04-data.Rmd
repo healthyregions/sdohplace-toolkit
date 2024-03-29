@@ -592,7 +592,7 @@ In the example above, Zip code 60655 has an enclave not included in the Chicago 
 
 Inspect data, both through spatial and non-spatial means, when starting a new project, after each step of data processing, and when complete. That means all the time! This helps verify that all data wrangling to this point has occurred properly. 
 
-In the next module, we'll dive into the details of this further, moving past inspection to cartography and data analytics.
+In the next module, we'll dive into the details of this further, moving past inspection to cartography anddata analytics.
 
 ### Thematic Maps {-}
 

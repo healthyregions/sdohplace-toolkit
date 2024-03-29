@@ -6,16 +6,6 @@
 
 In this part of our toolkit, we're going to learn how to do the same things we did with Chapter 4 - Spatial Data Wrangling, but this time, we'll use R code to handle our spatial data. 
 
-:::objective
-**Objectives**
-
-In this module, you will:
-
-- Practice basic operations of spatial data with R
-- Convert CSV lat/long to spatial points and geocode address
-- Overlay points with boundary data, merge SDOH data, visualize as choropleth
-:::
-
 ### Getting Started {-}
 
 R is a great choice for starting in data science because it's built for it. It's not just a programming language, it is a whole system with tools and libraries made to help you think and work like a data scientist easily.
@@ -65,7 +55,7 @@ For Mac users, check out https://github.com/r-spatial/sf for additional tips if 
 
 Now, loading the required libraries for further steps:
 
-```{r load-libraries, warning=FALSE}
+```{r load-libraries, warning=FALSE, message=FALSE}
 library(sf)
 library(dplyr)
 library(ggplot2)
@@ -118,11 +108,7 @@ ggplot(data = Chi_tracts) +
 
 ## Coordinate Reference Systems
 
-The Earth is an irregular ellipsoid, rather than a perfect sphere. As a result, many ways of visualizing the Earth, in whole or in part, have been developed. A Coordinate Reference System (CRS) communicates what method should be used to flatten or project the Earth’s surface onto a 2-dimensional map. Different CRS imply different ways of projections and can generate substantially different visualizations. 
-
-Projection names have been standardized to EPSG codes. The projection NAD83 UTM zone 16N is EPSG:26916.Many datasets available online, and GeoJSON files as a general rule, default to the projection EPSG:4326, a global projection used by GPS. Changing projections can be critical for improving accuracy for your project, and making sure your layers are being displayed using the same information. Always search the internet to determine what projection is most appropriate for your project, and to find the corresponding EPSG code.
-
-For this exercise we will use **chicagotracts.shp** to explore how to change the projection of a spatial dataset in R. First, let's check out the current coordinate reference system.
+For this exercise we will use `chicagotracts.shp` to explore how to change the projection of a spatial dataset in R. First, let's check out the current coordinate reference system.
 
 ```{r }
 st_crs(Chi_tracts)
@@ -135,7 +121,7 @@ Chi_tracts.3435 <- st_transform(Chi_tracts, "EPSG:3435")
 # Chi_tracts.3435 <- st_transform(Chi_tracts, 3435)
 st_crs(Chi_tracts.3435)
 
-plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Illinois East (ftUS)", sub="topo mapping & survey use")
+plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Illinois East (ftUS)", sub="simple plot")
 ```
 
 ### Refine Basic Map {-}
@@ -143,6 +129,7 @@ plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Ill
 Now we'll switch to a more extensive cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specification.
 
 Here we style the tracts with some semi-transparent borders.
+
 ```{r }
 library(tmap)
 
@@ -159,26 +146,12 @@ tm_shape(Chi_tracts) + tm_fill(col = "gray90") + tm_borders(alpha=0.2, col = "gr
 
 Check out https://rdrr.io/cran/tmap/man/tm_polygons.html for more ideas.
 
-
 ## Converting to Spatial Data
 
-A common goal in SDOH research is to work address-level data, known as *points* or *events* (when considering time) in spatial analysis research. This could refer to resources in a community, . Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
-
-Locations, when measured as points, can include things like:
-
-- **Health providers**: Hospitals, Clinics, Pharmacies, Mental health providers, Medication for opioid use disorder providers
-- **Area resources**: Grocery stores & Supermarkets, Playgrounds, Daycare centers, Schools, Community centers
-- **Area challenges**: Crime, Superfund sites, Pollution-emitting facilities
-
-Points can also represent people, like individual patients residing in an area. Because individual locations for persons is protected health information, we’ll focus on point data as resources in the chapter. However, you can reuse the approach in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.
-
-Let's start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.
 
 ### Convert CSVs to Spatial Data
 
-Converting CSV latitude and longitude data to points in R is a straightforward yet powerful method for spatial analysis. This process involves using the `sf` package to transform geographic coordinates into spatial points, allowing for easy mapping and analysis. It's an essential step for anyone working with geospatial data, enabling the visualization of locations and the application of geographic information systems (GIS) techniques. By assigning a Coordinate Reference System (CRS), these points become ready for spatial operations.
-
-We are using the **Affordable_Rental_Housing_Developments.csv** in the dataset to show how to convert a csv Lat/Long data to points. First, we need to load the CSV data.
+We are using the `Affordable_Rental_Housing_Developments.csv` in the dataset to show how to convert a csv Lat/Long data to points. First, we need to load the CSV data.
 
 ```{r load-csv-data}
 housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
@@ -196,22 +169,12 @@ points_housing <- st_as_sf(cleaned_housing, coords = c("Longitude", "Latitude"),
 
 If you want, you can view the resulting sf object.
 ```{r }
-print(points_housing)
+head(points_housing)
 ```
 
 ### Geocode Addresses
 
-If you start with only addresses, you’ll need to geocode!
-
-Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (ex. longitude, latitude) to spatially enable data. 
-
-Explain that there are multiple geocoding services available, with varying quality. How precise does your measure need to be? Do you want to reject matches with <90% uncertainty? If you're at a university or public sector setting, you may have access to ESRI geocoding services... Also note how you should NEVER geocode sensitive data as it's not HIPPA protected unless on a compliant server... 
-
-After determining the service, plan for data cleaning/preparation stage, matching goals
-
-** redo following section as tool-neutral tips : Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file. Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing  the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again. 
-
-Here, we will use **chicago_methadone_nogeometry.csv** for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` to get our geocoding done. Note, this uses the interent to process, so is not suitable for HIPPA protected data like individual, living person addresses. For offline geocoders, check out `Pelias` or `ESRI`.
+Here, we will use `chicago_methadone_nogeometry.csv` for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` to get our geocoding done. 
 
 ```{r warning=FALSE}
 library(tidygeocoder)
@@ -261,7 +224,7 @@ There were two that didn't geocode correctly. You can inspect further. This coul
 geoCodedClinics2 <- na.omit(geoCodedClinics)
 ```
 
-#### Convert to Spatial Data {-}
+## Convert to Spatial Data
 
 This is not spatial data yet! To convert a static file to spatial data, we use the powerful `st_as_sf` function from `sf`. Indicate the x,y parameters (=longitude, latitude) and the coordinate reference system used. Our geocoding service used the standard **EPSG:4326**, so we input that here.
 
@@ -273,7 +236,7 @@ methadoneSf <- st_as_sf(geoCodedClinics2,
                         crs = 4326)
 ```
 
-#### Basic Map of Points {-}
+### Basic Map of Points {-}
 
 For a really simple map of points -- to ensure they were geocoded and converted to spatial data correctly, we use `tmap`. We'll use the interactive version to view.
 
@@ -295,21 +258,9 @@ Those two issues are the most common errors.
 
 ## Merge Data sets
 
-Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.
+### Reshape Data {-}
 
-### Reshape Data
-
-Datasets often don’t come in GIS-friendly formats. Data may be separated vertically among multiple variables rather than horizontally along a single identifying variable. To merge data to boundaries, we'll have to reshape from long to wide format.
-
-Long data formats have repeating values in the first column, compared to wide data formats which do not. Long formats are preferred in epidemiology work, but wide formats are needed for spatial data, making conversions between the two especially important in the realm of health geography.
-
--- explain long vs wide data formats
-
--- long preferred in epi work
-
--- wide formats needed to spatial data
-
-Here, we are trying to use the **COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv** dataset to practice how to convert long data to a wide data format.
+Here, we are trying to use the `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` dataset to practice how to convert long data to a wide data format.
 
 ```{r}
 covid = read.csv("SDOHPlace-DataWrangling/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
@@ -325,11 +276,9 @@ covid_wide <- reshape(covid_clean, direction = "wide",
 head(covid_wide, 3)
 ```
 
-### Join by Attribute
+### Join by Attribute {-}
 
-You will come across data with various different boundaries, such as county, zip code, and census tracts. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts. Zip codes are particularly common for health data despite SDOH data typically being available at the tract level. This is to protect privacy, but it is something to be cautious of because these larger scale boundaries tend to contain a lot more variation in SDOH measures than finer scale boundaries. Associations that may appear if using tract-level data could be hidden at the zip code level. Data sets will need to use the same boundaries in order to be merged using that information. 
-
-Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (**ChiZipMaster1.geojson**) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
+Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (`ChiZipMaster1.geojson`) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
 
 We've cleaned our covid case data already, but not all values under the zipcode column are valid. There is a row has a value of "unkown", so let's remove that.
 
@@ -362,49 +311,56 @@ joined_data <- zipcode %>%
   left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
 ```
 
-### Join by Location
+### Join by Location {-}
 
-Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.
+We’ll create a spatial join with `affordable_Rental_Housing_Developments.csv` and `ChiZipMaster1.geojson`. 
 
-We’ll create a spatial join with **ffordable_Rental_Housing_Developments.csv** and **ChiZipMaster1.geojson**. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.
+In this example, we want to join tract-level data to the Rental Housing Developments, so we can identify which tract they are within.
 
+First, read in the point data
 ```{r}
 housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+head(housing)
+```
 
+We'll omit null data as a pre-processing step in this example, then read in as a spatial data format.
+
+```{r}
 housing <- na.omit(housing)
 housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
+```
 
-# Perform spatial join
-joined_data <- st_join(zipcode_unique, housing, join = st_intersects)
+Now, we spatially join, intersecting zip codes with housing developments.
+```{r}
+joined_data1 <- st_join(housing, zipcode, join = st_intersects)
+```
+Don't forget to inspect the data.
+```{r}
+head(joined_data1)
+```
 
-# Count the number of housing developments per ZIP code
-housing_count <- joined_data %>% 
-  group_by(zip) %>%
-  summarise(Count = n())
+We could also flip things around, and try to count how many developments intersect each tract. We can use lengths() to find out how many items are present in a vector. Here,
 
-# Drop the geometry column from housing_count
-housing_count_nonspatial <- as.data.frame(housing_count)
+```{r}
+zipcode$TotHousing <- lengths(st_intersects(zipcode, housing))
 
-# Perform the join
-zipcode_with_housing_count <- left_join(zipcode, housing_count_nonspatial, by = "zip")
+head(zipcode)
+
 ```
 
 
 ## Inspect Data
 
-** Once you've merged data, you'll want to inspect and visualize with simple views.
-
-Inspect data, both through spatial and non-spatial means, when starting a new project. This helps verify that all data wrangling to this point has occurred properly. In the next module, we'll dive into the details of this further, moving past inspection to data analytics.
 
 ### Thematic Maps
 
 To inspect data from a spatial perspective, we can create a series of choropleth maps.
 
-#### Example 1: Number of Affordable Housing Developments per Zip Code {-}
+**Example 1** Number of Affordable Housing Developments per Zip Code {-}
 
-```{r}
-plot <- ggplot(data = zipcode_with_housing_count) +
-  geom_sf(aes(fill = Count), color = NA) +
+```{r, message=FALSE, warning=FALSE}
+plot <- ggplot(data = zipcode) +
+  geom_sf(aes(fill = TotHousing), color = NA) +
   scale_fill_viridis_c() +
   labs(title = "Number of Affordable Housing Developments per Zip Code",
        fill = "# Developments") +
@@ -413,13 +369,13 @@ plot <- ggplot(data = zipcode_with_housing_count) +
 print(plot)
 ```
 
-#### Example 2: Number of COVID-19 Cases per Zip Code {-}
+**Example 2** Number of COVID-19 Cases per Zip Code {-}
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 tmap_mode("plot")
 
 tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
@@ -430,8 +386,7 @@ tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative",
 
 ### Map Overlay
 
-
-#### Example 1: Afforfable Housing Developments & Zipcode Boundaries {-}
+**Example 1**  Afforfable Housing Developments & Zipcode Boundaries {-}
 
 Let's review the steps we load and convert the **Affordable_Rental_Housing_Developments.csv** to spatial points. We will first use a graduated symbology to visualize the it. Points with more units will be bigger, and not all places are weighted the same visually. 
 
@@ -459,7 +414,7 @@ tm_shape(Chi_Zipsf) + tm_polygons(col = "gray80") +
 ```
 
 
-#### Example 2: COVID-19 & Methadone {-}
+**Example 2**  COVID-19 & Methadone {-}
 
 In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
 
@@ -487,17 +442,10 @@ tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative",
 ```
 
 
-## Finding Data
-
-In this module, we provided sample data to work with. When you're looking for your own data, ....
-
-** Determine your spatial boundary - get boundary data. Use that as your master file to merge in more.
-
-** Use a conceptual model to guide your variable selection.
-
-** Use existing resources that have aggregated cleaned data to access; or, extract from the Census directly
-
-** OSM data for international work
-
-
 ## Resources {-}
+
+- We highlight recommend Chapters 3-5 as mandatory reading in this classic, [Geocomputation with R](https://r.geocompx.org/). Perfecting selections and filters in the *Attribute Data Operations* chapter will help you become a data wrangling master. Perfect distance metrics and essential GIS operations in subsequent chapters.
+
+- The Appendix in [Gimond's Intro to GIS](https://mgimond.github.io/Spatial/introGIS.html) online book has a super overview of R examples, not to be missed.
+
+- Another superb resource is [Analyzing US Census Data](https://walker-data.com/census-r/index.html) by Kyle Walker, with some of our favorite examples of extracing & reshaping data directly from the Census using code. Highly recommended!
