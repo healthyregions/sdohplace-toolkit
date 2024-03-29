@@ -4,6 +4,8 @@ rmd_files: ["index.Rmd",
 "01-intro.Rmd",
 "02-scoping.Rmd",
 "03-design.Rmd",
-"08-references.Rmd"
+"04-data.Rmd",
+"08-references.Rmd",
+"04-dataR.Rmd",
 ]
 delete_merged_file: TRUE

@@ -1,0 +1,451 @@
+---
+---
+# (APPENDIX) Appendix {-} 
+
+# Data Wrangling in R
+
+In this part of our toolkit, we're going to learn how to do the same things we did with Chapter 4 - Spatial Data Wrangling, but this time, we'll use R code to handle our spatial data. 
+
+### Getting Started {-}
+
+R is a great choice for starting in data science because it's built for it. It's not just a programming language, it is a whole system with tools and libraries made to help you think and work like a data scientist easily.
+
+We assume a basic knowledge of R and coding languages for these toolkits. For most of the tutorials in this toolkit, you’ll need to have R and RStudio downloaded and installed on your system. You should be able to install packages, know how to find the address to a folder on your computer system, and have very basic familiarity with R.
+
+### Tutorials for R {-}
+
+If you are new to R, we recommend the following [intro-level tutorials](https://learn.datacamp.com/courses/free-introduction-to-r) provided through [installation guides](https://rspatial.org/intr/1-introduction.html). You can also refer to this [R for Social Scientists](https://datacarpentry.org/r-socialsci/) tutorial developed by Data Carpentry for a refresher.
+
+You can also visit the [RStudio Education](https://education.rstudio.com/learn/) page to select a learning path tailored to your experience level ([Beginners](https://education.rstudio.com/learn/beginner/), [Intermediates](https://education.rstudio.com/learn/intermediate/), [Experts](https://education.rstudio.com/learn/expert/)). They offer detailed instructions to learners at different stages of their R journey.
+
+
+## Environmental Setup
+
+Getting started with data analysis in R involves a few preliminary steps, including downloading datasets and setting up a working directory. This introduction will guide you through these essential steps to ensure a smooth start to your data analysis journey in R.
+
+:::tools
+**Download the Activity Datasets**
+
+Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
+:::
+
+### Setting Up the Working Directory {-}
+
+Setting up a working directory in R is crucial as it defines the location on your computer where your files and scripts will be saved and accessed. You can set the working directory to any folder on your system where you plan to store your datasets and R scripts. To set your working directory, use the `setwd("/path/to/your/directory")` and specify the path to your desired directory. 
+
+### Installing & Working with R Libraries {-}
+
+Before starting operations related to spatial data, we need to complete an environmental setup. This workshop requires several packages, which can be installed from CRAN:
+
+- `sf`: simplifies spatial data manipulation
+- `tmap`: streamlines thematic map creation
+- `dplyr`: facilitates data manipulation
+- `ggplot2`: enables advanced data visualization
+- `tidygeocoder`: converts addresses to coordinates easily
+
+```{r eval=FALSE}
+install.packages("sf", "tmap", "tidygeocoder", "dplyr", "ggplot2")
+```
+
+:::tip
+**Installation Tip**
+
+For Mac users, check out https://github.com/r-spatial/sf for additional tips if you run into errors when installing the `sf` package. Using homebrew to install `gdal` usually fixes any remaining issues.
+:::
+
+Now, loading the required libraries for further steps:
+
+```{r load-libraries, warning=FALSE, message=FALSE}
+library(sf)
+library(dplyr)
+library(ggplot2)
+```
+
+
+## Intro to Spatial Data
+
+Spatial data analysis in R provides a robust framework for understanding geographical information, enabling users to explore, visualize, and model spatial relationships directly within their data. Through the integration of specialized packages like sf for spatial data manipulation, ggplot2 and tmap for advanced mapping, and tidygeocoder for geocoding, R becomes a powerful tool for geographic data science. This ecosystem allows researchers and analysts to uncover spatial patterns, analyze geographic trends, and produce detailed maps that convey complex information intuitively.
+
+### Load Spatial Data {-}
+
+We need to load the spatial data (shapefile). Remember, this type of data is actually comprised of multiple files. All need to be present in order to read correctly. Let's use **chicagotracts.shp** for practice, which includes the census tracts boundary in Chicago.
+
+First, we need to read the shapefile data from where you save it.
+
+```{r load-spatial-data}
+Chi_tracts = st_read("SDOHPlace-DataWrangling/chicagotracts.shp")
+```
+
+Always inspect data when loading in. Let's look at a non-spatial view.
+
+```{r non-spatial-view}
+head(Chi_tracts)
+```
+
+Check out the data structure of this file.
+
+```{r data-structure}
+str(Chi_tracts)
+
+```
+
+The data is no longer a shapefile but an `sf` object, comprised of polygons. The `plot()` command in R help to quickly visualizes the geometric shapes of Chicago's census tracts. The output includes multiple maps because the `sf` framework enables previews of each attribute in our spatial file. 
+
+```{r spatial-view}
+plot(Chi_tracts)
+```
+
+Then, we can use `ggplot2` to create a base map. It plots the spatial data from Chi_tracts, applies a minimal theme for clarity, and labels the map with a title and a caption, offering a straightforward visualization of the area's census tracts.
+
+```{r}
+ggplot(data = Chi_tracts) +
+  geom_sf() +
+  theme_minimal() +
+  labs(title = "Census Tract Map of Chicago",
+       caption = "Chi_tracts")
+```
+
+
+## Coordinate Reference Systems
+
+For this exercise we will use `chicagotracts.shp` to explore how to change the projection of a spatial dataset in R. First, let's check out the current coordinate reference system.
+
+```{r }
+st_crs(Chi_tracts)
+```
+
+We can use the `st_transform` function to transform CRS. When projecting a dataset of Illinois, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). After change the projection, we can plot the map.
+
+```{r }
+Chi_tracts.3435 <- st_transform(Chi_tracts, "EPSG:3435")
+# Chi_tracts.3435 <- st_transform(Chi_tracts, 3435)
+st_crs(Chi_tracts.3435)
+
+plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Illinois East (ftUS)", sub="simple plot")
+```
+
+### Refine Basic Map {-}
+
+Now we'll switch to a more extensive cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specification.
+
+Here we style the tracts with some semi-transparent borders.
+
+```{r }
+library(tmap)
+
+tm_shape(Chi_tracts) + tm_borders(alpha=0.5) 
+```
+
+Next we fill the tracts with a light gray, and adjust the color and transparency of borders. We also add a scale bar, positioning it to the left and having a thickness of 0.8 units, and turn off the frame.
+
+```{r }
+tm_shape(Chi_tracts) + tm_fill(col = "gray90") + tm_borders(alpha=0.2, col = "gray10") +
+  tm_scale_bar(position = ("left"), lwd = 0.8) +
+  tm_layout(frame = F)
+```
+
+Check out https://rdrr.io/cran/tmap/man/tm_polygons.html for more ideas.
+
+## Converting to Spatial Data
+
+
+### Convert CSVs to Spatial Data
+
+We are using the `Affordable_Rental_Housing_Developments.csv` in the dataset to show how to convert a csv Lat/Long data to points. First, we need to load the CSV data.
+
+```{r load-csv-data}
+housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+```
+
+Then, we need to ensure that no column (intended to be used as a coordinate) is entirely empty or filled with NA values.
+```{r }
+cleaned_housing <- na.omit(housing)
+```
+
+Finally, we start to convert it to points.
+```{r }
+points_housing <- st_as_sf(cleaned_housing, coords = c("Longitude", "Latitude"), crs = 3435)
+```
+
+If you want, you can view the resulting sf object.
+```{r }
+head(points_housing)
+```
+
+### Geocode Addresses
+
+Here, we will use `chicago_methadone_nogeometry.csv` for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` to get our geocoding done. 
+
+```{r warning=FALSE}
+library(tidygeocoder)
+```
+
+Let's read in and inspect data for methadone maintenance providers. Note, these addresses were made available by SAMSHA, and are known as publicly available information. An additional analysis could call each service to check on access to medication during COVID in Septmber 2020, and the list would be updated further.
+
+```{r}
+methadoneClinics <- read.csv("SDOHPlace-DataWrangling/chicago_methadone_nogeometry.csv")
+head(methadoneClinics)
+```
+
+Let's geocode one address first, just to make sure our system is working. We'll use the "cascade" method which use the US Census and OpenStreetMap geocoders. These two services are the main options with `tidygeocoder`.
+
+```{r}
+sample <- geo("2260 N. Elston Ave. Chicago, IL", lat = latitude, long = longitude, method = 'cascade')
+head(sample)
+```
+
+As we prepare for geocoding, check out the structure of the dataset. The data should be a character to be read properly. 
+
+```{r}
+str(methadoneClinics)
+```
+
+We need to clean the data a bit. We'll add a new column for a full address, as required by the geocoding service. When you use a geocoding service, be sure to read the documentation and understand how the data needs to be formatted for input.
+
+```{r}
+methadoneClinics$fullAdd <- paste(as.character(methadoneClinics$Address), 
+                                  as.character(methadoneClinics$City),
+                                  as.character(methadoneClinics$State), 
+                                  as.character(methadoneClinics$Zip))
+```
+
+We're ready to go! Batch geocode with one function, and inspect:
+
+```{r}
+geoCodedClinics <-  geocode(methadoneClinics,
+address = 'fullAdd', lat = latitude, long = longitude, method = 'cascade')
+
+head(geoCodedClinics)
+```
+
+There were two that didn't geocode correctly. You can inspect further. This could involve a quick check for spelling issues; or, searching the address and pulling the lat/long using Google Maps and inputting manually. Or, if we are concerned it's a human or unknown error, we could omit. For this exercise we'll just omit the two clinics that didn't geocode correctly.
+
+```{r}
+geoCodedClinics2 <- na.omit(geoCodedClinics)
+```
+
+## Convert to Spatial Data
+
+This is not spatial data yet! To convert a static file to spatial data, we use the powerful `st_as_sf` function from `sf`. Indicate the x,y parameters (=longitude, latitude) and the coordinate reference system used. Our geocoding service used the standard **EPSG:4326**, so we input that here.
+
+```{r warning = FALSE}
+library(sf)
+
+methadoneSf <- st_as_sf(geoCodedClinics2, 
+                        coords = c( "longitude", "latitude"),
+                        crs = 4326)
+```
+
+### Basic Map of Points {-}
+
+For a really simple map of points -- to ensure they were geocoded and converted to spatial data correctly, we use `tmap`. We'll use the interactive version to view.
+
+```{r warning = FALSE, message=FALSE}
+library(tmap)
+
+tmap_mode("view")
+
+tm_shape(methadoneSf) + tm_dots() 
+```
+
+If your points didn't plot correctly:
+
+- Did you flip the longitude/latitude values?
+- Did you input the correct CRS?
+
+Those two issues are the most common errors.
+
+
+## Merge Data sets
+
+### Reshape Data {-}
+
+Here, we are trying to use the `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` dataset to practice how to convert long data to a wide data format.
+
+```{r}
+covid = read.csv("SDOHPlace-DataWrangling/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
+covid_clean = covid[,c(1:2, 6)]
+head(covid_clean, 3) 
+```
+
+Now, we are trying to create a wide data set with the cumulative cases for each week for each zip code. Enter the code and you will see the new wide data format.
+
+```{r}
+covid_wide <- reshape(covid_clean, direction = "wide",
+                      idvar = "ZIP.Code", timevar = "Week.Number") 
+head(covid_wide, 3)
+```
+
+### Join by Attribute {-}
+
+Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (`ChiZipMaster1.geojson`) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
+
+We've cleaned our covid case data already, but not all values under the zipcode column are valid. There is a row has a value of "unkown", so let's remove that.
+
+```{r}
+covid_wide_clean <- covid_wide %>%
+  filter(ZIP.Code != "unknown" & !is.na(ZIP.Code))
+```
+
+Then, we need to load the zipcode data.
+
+```{r}
+zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+```
+
+You’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.
+
+```{r}
+zipcode_unique <- distinct(zipcode)
+
+zipcode_unique <- zipcode %>%
+  group_by(zip) %>%
+  slice(1) %>%
+  ungroup()
+```
+
+Now, the two datasets are ready to join together by the zipcode. Make sure to check they have been joined successully.
+
+```{r}
+joined_data <- zipcode %>%
+  left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
+```
+
+### Join by Location {-}
+
+We’ll create a spatial join with `affordable_Rental_Housing_Developments.csv` and `ChiZipMaster1.geojson`. 
+
+In this example, we want to join tract-level data to the Rental Housing Developments, so we can identify which tract they are within.
+
+First, read in the point data
+```{r}
+housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+head(housing)
+```
+
+We'll omit null data as a pre-processing step in this example, then read in as a spatial data format.
+
+```{r}
+housing <- na.omit(housing)
+housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
+```
+
+Now, we spatially join, intersecting zip codes with housing developments.
+```{r}
+joined_data1 <- st_join(housing, zipcode, join = st_intersects)
+```
+Don't forget to inspect the data.
+```{r}
+head(joined_data1)
+```
+
+We could also flip things around, and try to count how many developments intersect each tract. We can use lengths() to find out how many items are present in a vector. Here,
+
+```{r}
+zipcode$TotHousing <- lengths(st_intersects(zipcode, housing))
+
+head(zipcode)
+
+```
+
+
+## Inspect Data
+
+
+### Thematic Maps
+
+To inspect data from a spatial perspective, we can create a series of choropleth maps.
+
+**Example 1** Number of Affordable Housing Developments per Zip Code {-}
+
+```{r, message=FALSE, warning=FALSE}
+plot <- ggplot(data = zipcode) +
+  geom_sf(aes(fill = TotHousing), color = NA) +
+  scale_fill_viridis_c() +
+  labs(title = "Number of Affordable Housing Developments per Zip Code",
+       fill = "# Developments") +
+  theme_minimal()
+
+print(plot)
+```
+
+**Example 2** Number of COVID-19 Cases per Zip Code {-}
+
+```{r, message=FALSE, warning=FALSE}
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+```
+
+```{r, message=FALSE, warning=FALSE}
+tmap_mode("plot")
+
+tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
+              style="jenks", pal="BuPu", n=4, title = "COVID Rt") + 
+
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+```
+
+### Map Overlay
+
+**Example 1**  Afforfable Housing Developments & Zipcode Boundaries {-}
+
+Let's review the steps we load and convert the **Affordable_Rental_Housing_Developments.csv** to spatial points. We will first use a graduated symbology to visualize the it. Points with more units will be bigger, and not all places are weighted the same visually. 
+
+```{r}
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+
+AffHousing <- read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
+
+AffHousing <- na.omit(AffHousing)
+
+AffHousingSf <- st_as_sf(AffHousing, 
+                        coords = c("Longitude", "Latitude"),
+                        crs = 4326)
+
+tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple", style = "sd") 
+```
+
+Then, let's overlay that layer to the zipcode boundary.
+
+```{r}
+
+tm_shape(Chi_Zipsf) + tm_polygons(col = "gray80") +
+  tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple") 
+
+```
+
+
+**Example 2**  COVID-19 & Methadone {-}
+
+In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
+
+```{r}
+Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+```
+
+With this overlay, we'll add a "hack" to include the methadone clinic points in a legend.
+
+```{r}
+tmap_mode("plot")
+
+## 1st layer (gets plotted first)
+tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
+              style="jenks", pal="BuPu", n=4, title = "COVID Rt") + 
+  
+  ## 2nd layer (overlay)
+  tm_shape(methadoneSf) + tm_dots(size = 0.2, col = "gray20") +
+  
+  ## "Hack" a manual symbology for dots in the legend
+  tm_add_legend("symbol", col = "gray20", size = .2, labels = "Methadone MOUD") +
+  
+  ## Cartographic Styling
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+```
+
+
+## Resources {-}
+
+- We highlight recommend Chapters 3-5 as mandatory reading in this classic, [Geocomputation with R](https://r.geocompx.org/). Perfecting selections and filters in the *Attribute Data Operations* chapter will help you become a data wrangling master. Perfect distance metrics and essential GIS operations in subsequent chapters.
+
+- The Appendix in [Gimond's Intro to GIS](https://mgimond.github.io/Spatial/introGIS.html) online book has a super overview of R examples, not to be missed.
+
+- Another superb resource is [Analyzing US Census Data](https://walker-data.com/census-r/index.html) by Kyle Walker, with some of our favorite examples of extracing & reshaping data directly from the Census using code. Highly recommended!
