@@ -26,9 +26,11 @@ finding-data
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
+adding-a-basemap
 coordinate-reference-systems-1
 converting-to-spatial-data-1
 convert-csvs-to-spatial-data
+write-spatial-data
 geocode-addresses-1
 convert-to-spatial-data
 merge-data-sets-1
