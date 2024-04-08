@@ -40,11 +40,12 @@ Before starting operations related to spatial data, we need to complete an envir
 - `sf`: simplifies spatial data manipulation
 - `tmap`: streamlines thematic map creation
 - `dplyr`: facilitates data manipulation
-- `ggplot2`: enables advanced data visualization
 - `tidygeocoder`: converts addresses to coordinates easily
 
+Uncomment to install packages with code snippet below. You only need to install packages once in an R environment.
+
 ```{r eval=FALSE}
-install.packages("sf", "tmap", "tidygeocoder", "dplyr", "ggplot2")
+#install.packages("sf", "tmap", "tidygeocoder", "dplyr")
 ```
 
 :::tip
@@ -58,7 +59,7 @@ Now, loading the required libraries for further steps:
 ```{r load-libraries, warning=FALSE, message=FALSE}
 library(sf)
 library(dplyr)
-library(ggplot2)
+library(tmap)
 ```
 
 
@@ -95,38 +96,96 @@ The data is no longer a shapefile but an `sf` object, comprised of polygons. The
 plot(Chi_tracts)
 ```
 
-Then, we can use `ggplot2` to create a base map. It plots the spatial data from Chi_tracts, applies a minimal theme for clarity, and labels the map with a title and a caption, offering a straightforward visualization of the area's census tracts.
 
-```{r}
-ggplot(data = Chi_tracts) +
-  geom_sf() +
-  theme_minimal() +
-  labs(title = "Census Tract Map of Chicago",
-       caption = "Chi_tracts")
+### Adding a Basemap
+
+Then, we can use `tmap`, a mapping library, in interactive mode to add a basemap layer. It plots the spatial data from `Chi_tracts`, applies a minimal theme for clarity, and labels the map with a title, offering a straightforward visualization of the area's census tracts. 
+
+We stylize the borders of the tract boundaries by making it transparent at 50% (which is equal to an alpha level of 0.5). 
+
+```{r tmap-view}
+library(tmap)
+
+tmap_mode("view")
+
+tm_shape(Chi_tracts) + tm_borders(alpha=0.5) +
+  tm_layout(title = "Census Tract Map of Chicago")
 ```
+
+Still in the interactive mode (`view'), we can switch to a different basemap. Here we bring in a "Voyager" style map from Carto, a cartographic firm. We'll make the borders less transparent by adjusting the alpha level.
+
+
+```{r add-basemap}
+
+tmap_mode("view")
+
+tm_basemap("CartoDB.Voyager") + 
+  tm_shape(Chi_tracts) + tm_borders(alpha=0.8, col = "gray40") +
+  tm_layout(title = "Census Tract Map of Chicago")
+```
+
+::: tip
+
+**Tip**
+
+For additional options, you can preview basemaps at the [Leaflet Providers Demo](https://leaflet-extras.github.io/leaflet-providers/preview/). Some basemaps we recommend that work consistently are by:
+
+- CartoDB (Carto)
+- Open Street Map
+- ESRI
+
+Not all basemaps are available anymore, and some require keys that you'd need to add on your own.
+
+:::
 
 
 ## Coordinate Reference Systems
 
 For this exercise we will use `chicagotracts.shp` to explore how to change the projection of a spatial dataset in R. First, let's check out the current coordinate reference system.
 
-```{r }
+```{r inspect-crs}
 st_crs(Chi_tracts)
 ```
 
-We can use the `st_transform` function to transform CRS. When projecting a dataset of Illinois, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). After change the projection, we can plot the map.
+We can use the `st_transform` function to transform CRS. When projecting a dataset of Illinois, the most appropriate NAD83 projection would be NAD83 UTM zone 16N. Chicago sits within the area best covered by **NAD83 / Illinois East (ftUS)** (EPSG:3435). 
 
 ```{r }
 Chi_tracts.3435 <- st_transform(Chi_tracts, "EPSG:3435")
 # Chi_tracts.3435 <- st_transform(Chi_tracts, 3435)
 st_crs(Chi_tracts.3435)
-
-plot(st_geometry(Chi_tracts.3435), border = "gray", lwd = 2, main = "NAD83 / Illinois East (ftUS)", sub="simple plot")
 ```
+
+After change the projection, we can plot the map. We'll swith to the static version of tmap, using the `plot` mode.
+
+```{r}
+
+tmap_mode("plot")
+
+tm_shape(Chi_tracts.3435) + tm_borders(alpha=0.5) + 
+  tm_layout(main.title ="EPSG:3435 (ft)",
+             main.title.position = "center")
+ 
+```
+
+What if we had used the wrong EPSG code, referencing the wrong projection? Here we'll transform and plot EPSG Code 3561, a coordinate reference system in Haw'aii. 
+
+
+```{r transform-3561}
+
+Chi_tracts.3561 <- st_transform(Chi_tracts, "EPSG:3561")
+
+
+tm_shape(Chi_tracts.3561) + tm_borders(alpha=0.5) + 
+  tm_layout(main.title ="EPSG:3561 (ft)",
+             main.title.position = "center")
+ 
+```
+
+It's obviously not correct -- the wrong CRS can cause a load of trouble. Make sure you specify carefully!
 
 ### Refine Basic Map {-}
 
-Now we'll switch to a more extensive cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specification.
+Let's take a deeper look at the cartographic mapping package, `tmap`. We approach mapping with one layer at a time. Always start with the object you want to map by calling it with the `tm_shape` function. Then, at least one descriptive/styling function follows. There are hundreds of variations and paramater specification.
 
 Here we style the tracts with some semi-transparent borders.
 
@@ -158,19 +217,78 @@ housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developmen
 ```
 
 Then, we need to ensure that no column (intended to be used as a coordinate) is entirely empty or filled with NA values.
+
 ```{r }
 cleaned_housing <- na.omit(housing)
 ```
 
-Finally, we start to convert it to points.
+Inspect the data to confirm it's doing what you expect it to be doing. What columns will you use to specify the coordinates? In this dataset, we have multiple coordinate options. We'll use latitude and longitude, or rather, longitude as our X value, and latitude as our Y value.
+In the data, it's specified as "Longitude" and "Latitude." 
+
 ```{r }
-points_housing <- st_as_sf(cleaned_housing, coords = c("Longitude", "Latitude"), crs = 3435)
+head(cleaned_housing)
 ```
 
-If you want, you can view the resulting sf object.
+Finally, we start to convert it to points. Be sure you use the CRS of the original coordinates recorded. In this case we weren't sure what CRS that was, so we use `EPSG:4326` to test.
+
 ```{r }
-head(points_housing)
+points_housing <- st_as_sf(cleaned_housing, coords = c("Longitude", "Latitude"), crs = 4326)
 ```
+
+View the resulting sf object with a basemap to confirm they are in the right place. Overlay them on top of the tract data, to confirm they are plotting correctly.
+
+```{r }
+
+### First Layer
+tm_shape(Chi_tracts) + tm_borders(lwd = 0.5) + 
+  
+  ### Second Layer
+  tm_shape(points_housing) + tm_dots(size = 0.1 )
+
+```
+
+You can change the `tmap_mode` to "view" to add a basemap in an interactive setting, and then switch back to "plot" when complete. Because we'e plotting dots using *tmap*, we'll use the `tm_dots` parameter for styling.
+
+```{r }
+
+tmap_mode("view")
+
+tm_shape(Chi_tracts) + tm_borders(lwd = 0.5) + 
+  tm_shape(points_housing) + tm_dots(size = 0.01)
+
+tmap_mode("plot")
+
+```
+
+We'll reproject to `EPSG:3435`, our system standard
+
+```{r }
+housing.3435 <- st_transform(points_housing, "EPSG:3435")
+
+```
+
+#### Write Spatial Data
+
+Finally, we can save our points as a spatial dataset. Use 'st_write' to write your spatial object in R to a data format of your choice. Here, we'll write to a geojson file. 
+
+Uncomment to run this line.
+
+```{r }
+
+#st_write(housing.3435, "housing.geojson", driver = "GeoJSON")
+
+```
+
+You could also save as a "housing.shapefile" to get a shapefile format, however you'll get an error noting that some column names are too long and must be shortened. Shapefile formats have a limit of 10 characters for field names. 
+
+```{r }
+
+#st_write(housing.3435, "housing.shp", driver = "ESRI Shapefile")
+
+```
+The file may still write, but the column names that were too long may be shortened automatically. 
+
+To change column or field names in R objects, there are dozens of options. Try searching and "googling" different search terms to identify solutions on your own. 
 
 ### Geocode Addresses
 
@@ -184,6 +302,7 @@ Let's read in and inspect data for methadone maintenance providers. Note, these 
 
 ```{r}
 methadoneClinics <- read.csv("SDOHPlace-DataWrangling/chicago_methadone_nogeometry.csv")
+
 head(methadoneClinics)
 ```
 
@@ -229,7 +348,6 @@ geoCodedClinics2 <- na.omit(geoCodedClinics)
 This is not spatial data yet! To convert a static file to spatial data, we use the powerful `st_as_sf` function from `sf`. Indicate the x,y parameters (=longitude, latitude) and the coordinate reference system used. Our geocoding service used the standard **EPSG:4326**, so we input that here.
 
 ```{r warning = FALSE}
-library(sf)
 
 methadoneSf <- st_as_sf(geoCodedClinics2, 
                         coords = c( "longitude", "latitude"),
@@ -241,7 +359,6 @@ methadoneSf <- st_as_sf(geoCodedClinics2,
 For a really simple map of points -- to ensure they were geocoded and converted to spatial data correctly, we use `tmap`. We'll use the interactive version to view.
 
 ```{r warning = FALSE, message=FALSE}
-library(tmap)
 
 tmap_mode("view")
 
@@ -262,10 +379,15 @@ Those two issues are the most common errors.
 
 Here, we are trying to use the `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` dataset to practice how to convert long data to a wide data format.
 
+We subset to the first two columns, and the sixth column. That gives us the zip code, the reporting week, and cumalative cases of Covid-19. We want each zip code to be a unique row, with cases by week as a columns Choose whatever subset functioon you prefer best!
+
 ```{r}
+
 covid = read.csv("SDOHPlace-DataWrangling/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv")
+
 covid_clean = covid[,c(1:2, 6)]
-head(covid_clean, 3) 
+
+head(covid_clean) 
 ```
 
 Now, we are trying to create a wide data set with the cumulative cases for each week for each zip code. Enter the code and you will see the new wide data format.
@@ -273,7 +395,7 @@ Now, we are trying to create a wide data set with the cumulative cases for each 
 ```{r}
 covid_wide <- reshape(covid_clean, direction = "wide",
                       idvar = "ZIP.Code", timevar = "Week.Number") 
-head(covid_wide, 3)
+head(covid_wide)
 ```
 
 ### Join by Attribute {-}
@@ -296,6 +418,7 @@ zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
 You’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.
 
 ```{r}
+
 zipcode_unique <- distinct(zipcode)
 
 zipcode_unique <- zipcode %>%
@@ -306,45 +429,48 @@ zipcode_unique <- zipcode %>%
 
 Now, the two datasets are ready to join together by the zipcode. Make sure to check they have been joined successully.
 
+We'll have these joined datasets be called Chi_Zipsf, to denote a final zip code master dataset.
+
 ```{r}
-joined_data <- zipcode %>%
+Chi_Zipsf <- zipcode_unique %>%
   left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
+```
+
+We'll reproject to EPSG:3435, the standard used in our study area.
+
+```{r}
+Chi_Zipsf.3435 <- st_transform(Chi_Zipsf, 3435)
 ```
 
 ### Join by Location {-}
 
-We’ll create a spatial join with `affordable_Rental_Housing_Developments.csv` and `ChiZipMaster1.geojson`. 
+We’ll create a spatial join with the housing and zip code data we've brought in.
 
-In this example, we want to join tract-level data to the Rental Housing Developments, so we can identify which tract they are within.
+In this example, we want to join zip-level data to the Rental Housing Developments, so we can identify which zips they are within.
 
-First, read in the point data
+First, let's try "sticking" all the zip code data too the housing points, intersecting zip codes with housing developments.
+
+To do this, both datasets will need to be in the same CRS. We have already standardized both using EPSG:3435.
+
 ```{r}
-housing = read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
-head(housing)
+
+Housing.f <- st_join(housing.3435, Chi_Zipsf.3435, join = st_intersects)
 ```
 
-We'll omit null data as a pre-processing step in this example, then read in as a spatial data format.
+Don't forget to inspect the data. Uncomment to explore!
 
 ```{r}
-housing <- na.omit(housing)
-housing <- st_as_sf(housing, coords = c("Longitude", "Latitude"), crs = 4326)
+#head(Housing.f)
 ```
 
-Now, we spatially join, intersecting zip codes with housing developments.
-```{r}
-joined_data1 <- st_join(housing, zipcode, join = st_intersects)
-```
-Don't forget to inspect the data.
-```{r}
-head(joined_data1)
-```
-
-We could also flip things around, and try to count how many developments intersect each tract. We can use lengths() to find out how many items are present in a vector. Here,
+We could also flip things around, and try to count how many developments intersect each zip code We can use lengths() to find out how many items are present in a vector. Here,
 
 ```{r}
-zipcode$TotHousing <- lengths(st_intersects(zipcode, housing))
 
-head(zipcode)
+Chi_Zipsf.3435$TotHousing <- lengths(st_intersects(Chi_Zipsf.3435, housing.3435))
+
+head(Chi_Zipsf.3435)
+
 
 ```
 
@@ -356,95 +482,105 @@ head(zipcode)
 
 To inspect data from a spatial perspective, we can create a series of choropleth maps.
 
-**Example 1** Number of Affordable Housing Developments per Zip Code {-}
+
+#### Example 1. Number of Affordable Housing Developments per Zip Code {-}
+
+Choose the variable "TotHousing" to map total developments per zip coode, as we calculated previously. Here we'll map using Jenks data breaks, with a Blue to Purple palette, and four bins (or groups of data to be plotted). A histogram of the data is plotted, visualizing where breaks occured in the data to generate the map.
 
 ```{r, message=FALSE, warning=FALSE}
-plot <- ggplot(data = zipcode) +
-  geom_sf(aes(fill = TotHousing), color = NA) +
-  scale_fill_viridis_c() +
-  labs(title = "Number of Affordable Housing Developments per Zip Code",
-       fill = "# Developments") +
-  theme_minimal()
 
-print(plot)
-```
-
-**Example 2** Number of COVID-19 Cases per Zip Code {-}
-
-```{r, message=FALSE, warning=FALSE}
-Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
-```
-
-```{r, message=FALSE, warning=FALSE}
 tmap_mode("plot")
 
-tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
-              style="jenks", pal="BuPu", n=4, title = "COVID Rt") + 
+tm_shape(Chi_Zipsf.3435) + tm_polygons("TotHousing", legend.hist = TRUE, style="jenks", pal="BuPu", n=4, title = "Housing Dev.") + 
+
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+```
+
+#### Example 2. Number of COVID-19 Cases per Zip Code {-}
+
+Let's do the same, but plut a different variable. Select a different variable name as your parameter in the 'tm_fill' parameter.
+
+```{r, message=FALSE, warning=FALSE}
+
+tm_shape(Chi_Zipsf.3435) + tm_polygons("Case.Rate...Cumulative",
+              legend.hist = TRUE, style="jenks", 
+              pal="BuPu", n=4, title = "COVID Case Rate") + 
 
   tm_layout(legend.outside = TRUE, legend.outside.position = "right")
 ```
 
 ### Map Overlay
 
-**Example 1**  Afforfable Housing Developments & Zipcode Boundaries {-}
+#### Example 1. Afforfable Housing Developments & Zipcode Boundaries {-}
 
-Let's review the steps we load and convert the **Affordable_Rental_Housing_Developments.csv** to spatial points. We will first use a graduated symbology to visualize the it. Points with more units will be bigger, and not all places are weighted the same visually. 
+We previously translated the housing dataset from a CSV to a spatial object. Let's take an attribute connect with each point, the total number of units per housing development, and visualize as a graduated symbology. Points with more units will be bigger, and not all places are weighted the same visually. 
+
+We use the "style" parameter to aadd a standard deviation data classification break. Check out tmap documentation for more options, like quantiles, natural jenks, or other options.
+
 
 ```{r}
-Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
-
-AffHousing <- read.csv("SDOHPlace-DataWrangling/Affordable_Rental_Housing_Developments.csv")
-
-AffHousing <- na.omit(AffHousing)
-
-AffHousingSf <- st_as_sf(AffHousing, 
-                        coords = c("Longitude", "Latitude"),
-                        crs = 4326)
-
-tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple", style = "sd") 
+tm_shape(housing.3435) + tm_bubbles("Units", col = "purple", style = "sd") 
 ```
 
 Then, let's overlay that layer to the zipcode boundary.
 
 ```{r}
-
-tm_shape(Chi_Zipsf) + tm_polygons(col = "gray80") +
-  tm_shape(AffHousingSf) + tm_bubbles("Units", col = "purple") 
+tm_shape(Chi_Zipsf.3435) + tm_polygons(col = "gray80") +
+  
+  tm_shape(housing.3435) + tm_bubbles("Units", col = "purple") 
 
 ```
 
-
-**Example 2**  COVID-19 & Methadone {-}
-
-In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
+You can also color-code according to the total number of units. Here, we'll add a palette using a "viridis" color scheme, as a graduate color point map. For extra style, we'll add labels to each zip code, update with a new basemap, and make the whole map interactive.
 
 ```{r}
-Chi_Zipsf <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+tmap_mode("view")
+
+#Add Basemap
+tm_basemap("Esri.WorldGrayCanvas") + 
+  
+  #Add First Layer, Style
+  tm_shape(Chi_Zipsf.3435) +  tm_borders(col = "gray10") + 
+    tm_text("zip", size = 0.7) +
+
+  #Add Second Layer, Style
+  tm_shape(housing.3435) + 
+    tm_bubbles( col = "Units", style = "quantile", 
+                pal = "viridis", size = 0.1) 
+  
 ```
+
+#### Example 2. COVID-19 & Methadone {-}
+
+In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
 
 With this overlay, we'll add a "hack" to include the methadone clinic points in a legend.
 
 ```{r}
 tmap_mode("plot")
 
-## 1st layer (gets plotted first)
-tm_shape(Chi_Zipsf) + tm_fill("Case.Rate...Cumulative", 
+##Add and style First Layer
+tm_shape(Chi_Zipsf) + tm_polygons("Case.Rate...Cumulative", 
               style="jenks", pal="BuPu", n=4, title = "COVID Rt") + 
   
-  ## 2nd layer (overlay)
+  ##Add Second Layer
   tm_shape(methadoneSf) + tm_dots(size = 0.2, col = "gray20") +
   
-  ## "Hack" a manual symbology for dots in the legend
+  ##"Hack" a manual symbology for dots in the legend
   tm_add_legend("symbol", col = "gray20", size = .2, labels = "Methadone MOUD") +
   
-  ## Cartographic Styling
+  ##Final Cartographic Styling
   tm_layout(legend.outside = TRUE, legend.outside.position = "right")
 ```
 
 
 ## Resources {-}
 
-- We highlight recommend Chapters 3-5 as mandatory reading in this classic, [Geocomputation with R](https://r.geocompx.org/). Perfecting selections and filters in the *Attribute Data Operations* chapter will help you become a data wrangling master. Perfect distance metrics and essential GIS operations in subsequent chapters.
+- For tips on using `tmap`, check out the online text, [Elegant and informative maps with tmap](https://r-tmap.github.io/tmap-book/index.html) by Tennekes and Nowosad.
+
+- Try out more mapping with the ggplot2 library. The [Maps](https://ggplot2-book.org/maps) chapter will give you a head start.  
+
+- We highly recommend Chapters 3-5 as mandatory reading in this classic, [Geocomputation with R](https://r.geocompx.org/) by Lovelace, Nowosad, and Muenchow. Perfecting selections and filters in the *Attribute Data Operations* chapter will help you become a data wrangling master. Perfect distance metrics and essential GIS operations in subsequent chapters.
 
 - The Appendix in [Gimond's Intro to GIS](https://mgimond.github.io/Spatial/introGIS.html) online book has a super overview of R examples, not to be missed.
 
