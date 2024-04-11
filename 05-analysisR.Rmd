@@ -1,19 +1,48 @@
 ---
 ---
 
-# Research Design & Analysis
+# Research Design & Analysis in R
+
+## Variable Calculations
+
+### Buffers
+
+### Distance Metrics
+
+## Statistical Mapping
+
+### Choropleth Maps
+
+### Cartograms
+
+install.packages("cartogram")
+library(cartogram)
+
+https://cran.r-project.org/web/packages/cartogram/readme/README.html 
+
+non-overlapping Circles Cartogram (Dorling el al. 1996)
+
+test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing")
+> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
+
+test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 3)
+> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
+
+test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 9)
+> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
+
+test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 2)
+> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
 
 
-:::objective
-**Objectives**
+rubber sheet distortion algorithm (Dougenik et al. 1985)
 
-- Visualize Data as EDA method
-- Data Classification ~ Box Plots, Choropleth Maps
-- Rate Maps
-- Overlays
-- Calculate new spatial variables (buffers, distance)
-- Testing 
-
-:::
+test <- cartogram_ncont(Chi_Zipsf.3435, "TotHousing")
+tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
 
 
+## Design Tips
+
+### ColorBrewer
+
+### Cartograms
