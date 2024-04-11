@@ -54,7 +54,7 @@ pander(df, style = 'rmarkdown')
 
 Correlation is not causation. A good exploratory data analysis, however, can help you gather evidence and make a case for next steps. What are some considerations for your research design? 
 
-- **Data Integrations:** Do you have the right data combined and harmonized for analysis & viewing? 
+<details markdown='1'><summary>**Data Integrations:**</summary>Do you have the right data combined and harmonized for analysis & viewing? </br></br></details>
 
 - **Spatial Scale:** What is the scale of the phenomenon you are trying to understand -- and the scale of your data? If they're not the same, be careful of making errors in interpretation. 
 
@@ -134,14 +134,21 @@ To create a buffer in GIS software or coding, you specify a fixed or variable di
 
 **Activity**
 
-Buffer Analyses: Calculate Farmers Market Service Areas
+*Buffer Analyses: Calculate Farmers Market Service Areas*
 
 This activity focuses on utilizing data from Chicago's farmers' markets, specifically the "farmers_markets_2012" dataset. Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
 
-Start a New Project:
-Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
-Add the Dataset:
-Add the shapefile: "farmers_markets_2012.shp".
+<details markdown='1'><summary>Start a New Project</summary>
+
+- Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
+- Add the Dataset: 
+
+![](images/05-join_button.png){width=20%} 
+
+- Add the shapefile: "farmers_markets_2012.shp".
+
+</br></br></details>
+
 Creating Buffers:
 Go to the Vector menu > Geoprocessing Tools > Buffer(s).
 In the dialog box, choose "farmers_markets_2012" as the input layer.
