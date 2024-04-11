@@ -267,6 +267,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
 <li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-data-viz"><i class="fa fa-check"></i>Key Elements of Data Viz</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
@@ -350,14 +351,58 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.</p>
 <div id="research-design" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Research Design<a href="05-analysis.html#research-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Determining goals; descriptive, exploratory, confirmatory?</p>
+<p>You’ve got data, a goal, and an app on the horizon – How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model?</p>
+<p>There are multiple pitfalls you’ll want to avoid when design your analysis. In the following overview of <strong>Mindsets &amp; Spatial Reasoning,</strong> spatial data scientist <a href="https://spatial.uchicago.edu/directory/Julia-Koschinsky">Julia Koschinsky</a> reviews how to think about the process of analyzing data and how to set up the problem and research design.</p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Move Away From</th>
+<th align="center">Move Towards</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Confirmation Bias:</strong> Looking to confirm pre-existing beliefs with data</td>
+<td align="center">Expect that, as humans, we’ll be fooling ourselves.Focus on finding what’s wrong.</td>
+</tr>
+<tr class="even">
+<td align="center">Maps and spatial analysis will confirm the expected, which is fine …</td>
+<td align="center">… but what is more interesting is to discover something unexpected, something surprising, beyond what we already knew before we started the analysis. What is the added value of doing the spatial analysis?</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Fixed mindset:</strong> Only technical people can learn spatial data analysis</td>
+<td align="center"><strong>Growth mindset:</strong> Class and toolkit assumes that everyone can learn this</td>
+</tr>
+<tr class="even">
+<td align="center">Inductive or deductive reasoning, or ‘data-driven’ or ‘model-driven’ thinking that lets the data speak on its own.</td>
+<td align="center">Exploratory Spatial Data Analysis &amp; Spatial Reasoning as abductive/iterative reasoning. These approaches go back and forth between potential explanations and evidence to update both in lockstep.</td>
+</tr>
+<tr class="odd">
+<td align="center">Focus on description, for ex., where’s the cluster or access gap?</td>
+<td align="center">Focus on explanation and falsification: Why is the cluster there? Is the cluster real (not random)?</td>
+</tr>
+<tr class="even">
+<td align="center">Analyzing data with a classic exploratory or temporal analysis, ignoring the spatial dimension even though it’s relevant.</td>
+<td align="center">Spatial methods to explicitly analyze location, distance, and spatial interaction</td>
+</tr>
+<tr class="odd">
+<td align="center">Assuming maps are always objective</td>
+<td align="center">Recognizing that maps are often used to exercise power and to manipulate..</td>
+</tr>
+</tbody>
+</table>
+<p>Correlation is not causation. A good exploratory data analysis, however, can help you gather evidence and make a case for next steps. What are some considerations for your research design?</p>
 <ul>
-<li>Spatial Data Integrations</li>
-<li>New Spatial Variable Calculations</li>
-<li>Data Limitations</li>
-<li>Issues of Scale</li>
-<li>Spatial Methodologies Used</li>
-<li>Spatial Interpretations</li>
+<li><p><strong>Data Integrations:</strong> Do you have the right data combined and harmonized for analysis &amp; viewing?</p></li>
+<li><p><strong>Spatial Scale:</strong> What is the scale of the phenomenon you are trying to understand – and the scale of your data? If they’re not the same, be careful of making errors in interpretation.</p></li>
+<li><p><strong>New Variable Calculations:</strong> Do you need to generate new measures that may be more precise?</p></li>
+<li><p><strong>Data Limitations:</strong> How was the data you have collected? Are there any biases or issued you need to consider when interpreting findings? What’s missing?</p></li>
+<li><p><strong>Methodologies Used:</strong> Most methods will return some result – that doesn’t make them the correct or useful. Are you using the right methods for your data, and that also address data limitations?</p></li>
+<li><p><strong>Model Interpretation:</strong> Did you interpret your results with data, scale, and methodological considerations in mind? For example, be weary of drawing conclusions on individuals from population-level data. That’s the <a href="https://mgimond.github.io/Spatial/pitfalls-to-avoid.html#ecological-fallacy">ecological fallacy</a>.</p></li>
 </ul>
 <div class="pitfall">
 <p><strong>Potential Pitfall</strong></p>
@@ -463,19 +508,28 @@ This can be used to extract tract centroids that are within a specified maximum 
 </div>
 <div id="exploratory-data-analysis" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Exploratory Data Analysis<a href="05-analysis.html#exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>– Add something about EDA more broadly here –</p>
+<p>Exploratory <em>Spatial</em> Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial “regimes” and other forms of spatial non-stationarity.</p>
+<p>Each spatial pattern has a different story, or phenomenon driving its pattern. A polluting factory may influene someone’s health who is living across the street, based on proximity – in spatial terms, this may be a pattern of <strong>spatial dependence</strong>. Alternatively, or in addition to, residents near polluting sources may be more likely to have lower incomes based on complex, decades-long deinvestment processes, resulting in <strong>spatially heterogenous</strong> distribution of health outcomes.</p>
+<p>By exploring the data available to us, we can begin to understand what those drivers are – or at the very least, rule some out, and update our thinking. Because our brains our wired to find patterns (even if they’re not there), we can use math and good research design gather evidence.</p>
 <div id="univariate-and-bivariate-analyses" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Univariate and Bivariate Analyses<a href="05-analysis.html#univariate-and-bivariate-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A solid EDA/ESDA approach starts with one (univariate) or two (bivariate) variables at a time. The data views we take may be non-spatial, setting up classical figures and charts, and/or spatial, using thematic mapping techniques. We’ll highlight some approaches here, but recommend a deeper dive with a standard statistics course. Here are some things to look for:</p>
+<ul>
+<li><strong>Descriptive statistcs</strong>: Summarize data as tables, calculating population summaries, total number of areal units included, and include testing statistics. Stratify by different spatial regimes (e.g. urban vs rural) or groupings (quantiles), as they are uncovered in later analyses. Follow STROBE reporting guidelines for summaries (e.g. median and IQR vs. average and SD). Beware of missing data, so report data included in your tables and notes.</li>
+<li><strong>Visualize your data</strong>: It goes without saying, but we must – visualize your data! Examine histograms, scatter plots, thematic maps, and more and explore relationships. Software like <em>GeoDa</em> was designed for brushing and linking to explore trends further.</li>
+<li><strong>Models at the End</strong>: Avoid working with biased data and mis-specified models by waiting to run your regression &amp; other anlaytical models. Ensure your data is high quality and at least understand the limitations and biases. In traditional EDA, a confirmatory analysis follows.</li>
+</ul>
+<p>First let’s explore scatter plots as a classic approach, and then dive into spatial data with statistical mapping techniques.</p>
 <div id="scatter-plots" class="section level4 hasAnchor" number="5.4.1.1">
 <h4><span class="header-section-number">5.4.1.1</span> Scatter Plots<a href="05-analysis.html#scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Scatter plots are invaluable for visualizing relationships between SDOH and health outcomes. They plot data points on a Cartesian plane, with one variable on the x-axis and another on the y-axis.</p>
-<p>In SDOH analysis, scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.</p>
-<p>Understanding Correlations in Scatter Plots:</p>
+<p>Scatter plots are invaluable for visualizing relationships between Scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.</p>
+<p><strong>Understanding Correlations in Scatter Plots</strong></p>
 <ul>
-<li><p>Positive Correlation: This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.</p></li>
-<li><p>Negative Correlation: Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.</p></li>
+<li><p><em>Positive Correlation:</em> This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.</p></li>
+<li><p><em>Negative Correlation:</em> Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.</p></li>
 </ul>
-<p>Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making.</p>
-<p>However, it’s important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.</p>
+<p>Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making. However, it’s important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.</p>
 <div class="activity">
 <p>Creating Scatter Plots in GeoDa</p>
 <p>Scatter plots in GeoDa are useful for examining linear relationships between two variables:</p>
@@ -486,7 +540,6 @@ In this example, we’re exploring the relationship between the population over 
 Customizing and Analyzing the Scatter Plot:
 Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
 Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.</p>
-<p>Both the cartogram and scatter plot are powerful tools in GeoDa, allowing for visual exploration of data. The cartogram provides a unique perspective by resizing geographic areas based on the data, while scatter plots help identify and analyze relationships between variables, offering crucial insights for data-driven decision-making and research.</p>
 </div>
 </div>
 </div>
@@ -662,9 +715,15 @@ Focus on presenting the core message with precise use of color, symbols, and lab
 </ul>
 <p>This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.</p>
 </div>
+</div>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered hasAnchor">
+<h2>References<a href="05-analysis.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://spatial.uchicago.edu/education/scientific-reasoning">Center for Spatial Data Science (2024). Scientific Reasoning in Spatial Data Science Education Project. University of Chicago: Center for Spatial Data Science.</a></li>
+</ul>
 
-</div>
-</div>
 </div>
 </div>
 

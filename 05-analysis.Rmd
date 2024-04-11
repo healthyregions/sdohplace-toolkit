@@ -20,14 +20,43 @@ Finally, the module will focus on cartographic design principles, stressing the 
 
 ## Research Design
 
-Determining goals; descriptive, exploratory, confirmatory?
+You've got data, a goal, and an app on the horizon -- How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model? 
 
-- Spatial Data Integrations
-- New Spatial Variable Calculations
-- Data Limitations 
-- Issues of Scale
-- Spatial Methodologies Used
-- Spatial Interpretations
+There are multiple pitfalls you'll want to avoid when design your analysis. In the following overview of **Mindsets & Spatial Reasoning,** spatial data scientist [Julia Koschinsky](https://spatial.uchicago.edu/directory/Julia-Koschinsky) reviews how to think about the process of analyzing data and how to set up the problem and research design. 
+
+```{r table-pitfalls, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+require(pander)
+panderOptions('table.split.table', Inf)
+my.data <- "  Move Away From        | Move Towards
+  **Confirmation Bias:** Looking to confirm pre-existing beliefs with data | Expect that, as humans, we’ll be fooling ourselves.Focus on finding what’s wrong.
+  Maps and spatial analysis will confirm the expected, which is fine … | … but what is more interesting is to discover something unexpected, something surprising, beyond what we already knew before we started the analysis. What is the added value of doing the spatial analysis?
+  **Fixed mindset:** Only technical people can learn spatial data analysis | **Growth mindset:** Class and toolkit assumes that everyone can learn this
+  Inductive or deductive reasoning, or 'data-driven' or 'model-driven' thinking that lets the data speak on its own. | Exploratory Spatial Data Analysis & Spatial Reasoning as abductive/iterative reasoning. These approaches go back and forth between potential explanations and evidence to update both in lockstep.
+  Focus on description, for ex., where’s the cluster or access gap? | Focus on explanation and falsification: Why is the cluster there? Is the cluster real (not random)?
+  Analyzing data with a classic exploratory or temporal analysis, ignoring the spatial dimension even though it’s relevant. | Spatial methods to explicitly analyze location, distance, and spatial interaction
+  Assuming maps are always objective | Recognizing that maps are often used to exercise power and to manipulate.."
+set.caption("")
+df <- read.delim(textConnection(my.data),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df) <- unname(as.list(df[1,])) # put headers on
+df <- df[-1,] # remove first row
+row.names(df)<-NULL
+pander(df, style = 'rmarkdown')
+```
+
+
+Correlation is not causation. A good exploratory data analysis, however, can help you gather evidence and make a case for next steps. What are some considerations for your research design? 
+
+- **Data Integrations:** Do you have the right data combined and harmonized for analysis & viewing? 
+
+- **Spatial Scale:** What is the scale of the phenomenon you are trying to understand -- and the scale of your data? If they're not the same, be careful of making errors in interpretation. 
+
+- **New Variable Calculations:** Do you need to generate new measures that may be more precise? 
+
+- **Data Limitations:** How was the data you have collected? Are there any biases or issued you need to consider when interpreting findings? What's missing?  
+
+- **Methodologies Used:** Most methods will return some result -- that doesn't make them the correct or useful. Are you using the right methods for your data, and that also address data limitations?
+
+- **Model Interpretation:** Did you interpret your results with data, scale, and methodological considerations in mind? For example, be weary of drawing conclusions on individuals from population-level data. That's the [ecological fallacy](https://mgimond.github.io/Spatial/pitfalls-to-avoid.html#ecological-fallacy).
 
 ::: pitfall
 
@@ -172,23 +201,35 @@ Through these exercises, you will gain insights into the accessibility of fresh 
 
 ## Exploratory Data Analysis 
 
+-- Add something about EDA more broadly here --
+
+Exploratory *Spatial* Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial "regimes" and other forms of spatial non-stationarity. 
+
+Each spatial pattern has a different story, or phenomenon driving its pattern. A polluting factory may influene someone's health who is living across the street, based on proximity -- in spatial terms, this may be a pattern of **spatial dependence**. Alternatively, or in addition to, residents near polluting sources may be more likely to have lower incomes based on complex, decades-long deinvestment processes, resulting in **spatially heterogenous** distribution of health outcomes.
+
+By exploring the data available to us, we can begin to understand what those drivers are -- or at the very least, rule some out, and update our thinking. Because our brains our wired to find patterns (even if they're not there), we can use math and good research design gather evidence.
+
 ### Univariate and Bivariate Analyses
+
+A solid EDA/ESDA approach starts with one (univariate) or two (bivariate) variables at a time. The data views we take may be non-spatial, setting up classical figures and charts, and/or spatial, using thematic mapping techniques. We'll highlight some approaches here, but recommend a deeper dive with a standard statistics course. Here are some things to look for:
+
+- **Descriptive statistcs**: Summarize data as tables, calculating population summaries, total number of areal units included, and include testing statistics. Stratify by different spatial regimes (e.g. urban vs rural) or groupings (quantiles), as they are uncovered in later analyses. Follow STROBE reporting guidelines for summaries (e.g. median and IQR vs. average and SD). Beware of missing data, so report data included in your tables and notes.
+- **Visualize your data**: It goes without saying, but we must -- visualize your data! Examine histograms, scatter plots, thematic maps, and more and explore relationships. Software like *GeoDa* was designed for brushing and linking to explore trends further.
+- **Models at the End**: Avoid working with biased data and mis-specified models by waiting to run your regression & other anlaytical models. Ensure your data is high quality and at least understand the limitations and biases. In traditional EDA, a confirmatory analysis follows.
+
+First let's explore scatter plots as a classic approach, and then dive into spatial data with statistical mapping techniques. 
 
 #### Scatter Plots
 
-Scatter plots are invaluable for visualizing relationships between SDOH and health outcomes. They plot data points on a Cartesian plane, with one variable on the x-axis and another on the y-axis.
+Scatter plots are invaluable for visualizing relationships between Scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.
 
-In SDOH analysis, scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.
+**Understanding Correlations in Scatter Plots**
 
-Understanding Correlations in Scatter Plots:
+- *Positive Correlation:* This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.
 
-- Positive Correlation: This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.
+- *Negative Correlation:* Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.
 
-- Negative Correlation: Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.
-
-Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making.
-
-However, it's important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.
+Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making. However, it's important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.
 
 ::: activity
 Creating Scatter Plots in GeoDa
@@ -202,10 +243,6 @@ In this example, we're exploring the relationship between the population over 65
 Customizing and Analyzing the Scatter Plot:
 Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
 Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.
-
-
-Both the cartogram and scatter plot are powerful tools in GeoDa, allowing for visual exploration of data. The cartogram provides a unique perspective by resizing geographic areas based on the data, while scatter plots help identify and analyze relationships between variables, offering crucial insights for data-driven decision-making and research.
- 
 
 ::: 
 
@@ -422,4 +459,8 @@ The [Munsell Color System](), a model for describing and communicating color, is
 
 This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
 :::
+
+## References {-}
+
+- [Center for Spatial Data Science (2024). Scientific Reasoning in Spatial Data Science Education Project. University of Chicago: Center for Spatial Data Science.](https://spatial.uchicago.edu/education/scientific-reasoning)
 
