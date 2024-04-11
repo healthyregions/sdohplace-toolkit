@@ -62,3 +62,10 @@ the-elements-of-sdoh-data-visualization
 cartographic-principles
 key-elements-of-data-viz
 multivariate-data-analysis
+title
+legend
+scale-bar
+data-source-and-projection-information
+north-arrow
+the-munsell-color-system
+effective-sdoh-map-design-entails-several-critical-elements

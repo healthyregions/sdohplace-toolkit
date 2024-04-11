@@ -191,7 +191,8 @@
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-data-viz"><i class="fa fa-check"></i><b>5.5.1</b> Key Elements of Data Viz</a></li>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-data-viz"><i class="fa fa-check"></i>Key Elements of Data Viz</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#appendix-appendix"><i class="fa fa-check"></i>(APPENDIX) Appendix</a>
@@ -401,6 +402,18 @@ This can be used to extract tract centroids that are within a specified maximum 
 </ul>
 <p>Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making.</p>
 <p>However, it’s important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.</p>
+<div class="activity">
+<p>Creating Scatter Plots in GeoDa</p>
+<p>Scatter plots in GeoDa are useful for examining linear relationships between two variables:</p>
+<p>Setting Up the Scatter Plot:
+To start, select “Explore” &gt; “Scatter Plot”.
+In the “Scatter Plot Variables” dialog, choose a variable for the “Independent Var X” (e.g., age Over 65) and another for the “Dependent Var Y” (e.g., disability status).
+In this example, we’re exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.
+Customizing and Analyzing the Scatter Plot:
+Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
+Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.</p>
+<p>Both the cartogram and scatter plot are powerful tools in GeoDa, allowing for visual exploration of data. The cartogram provides a unique perspective by resizing geographic areas based on the data, while scatter plots help identify and analyze relationships between variables, offering crucial insights for data-driven decision-making and research.</p>
+</div>
 </div>
 </div>
 <div id="statistical-mapping" class="section level3 hasAnchor" number="5.4.2">
@@ -463,6 +476,15 @@ Create different choropleth maps using various variables from the attribute tabl
 <p>Although cartograms can distort geographic shapes and boundaries, they effectively communicate complex SDOH data, helping policymakers and the public understand underlying inequities and the necessity for focused interventions.</p>
 <div class="activity">
 <p><strong>Activity</strong></p>
+<p>Cartograms in GeoDa</p>
+<p>To create a cartogram in GeoDa, which visually emphasizes specific variables, follow these steps:</p>
+<p>Creating the Cartogram</p>
+<p>Open ChiZipCleaned in “GeoDa”
+b. Select “Map” from the menu, then click on “Cartogram”.</p>
+<p>c .In the “Cartogram Variables” dialog box, you’ll find two columns: “Circle Size” and “Circle Color”. For a simpler interpretation, select the same variable for both columns (e.g., age 18-64).
+d. Tip: While you can choose different variables for circle size and color, this might make the cartogram more complex and potentially confusing.
+Finalizing the Cartogram:
+Click “OK” to generate the cartogram. This will create a map where the size of the circles represents the selected variable, providing a visual emphasis on areas with higher or lower values.</p>
 </div>
 </div>
 </div>
@@ -482,66 +504,90 @@ What information will be mapped? (module 4)
 What are the time and budget constraints on your map production? (module 2)
 Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)</p>
 </div>
-<p>Effective SDOH map design entails several critical elements:</p>
-<ol style="list-style-type: decimal">
-<li>Audience Consideration:</li>
-</ol>
+<div id="effective-sdoh-map-design-entails-several-critical-elements" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Effective SDOH map design entails several critical elements<a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="audience-consideration" class="section level4 unnumbered hasAnchor">
+<h4>Audience Consideration<a href="05-analysis.html#audience-consideration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Tailor your map design to your audience’s needs and preferences. Different audiences have varying abilities to interpret visual data. For instance, maps for healthcare professionals might include detailed spatial patterns and statistical analyses, whereas maps for the general public should focus on clarity and ease of understanding.
 Revisit your user personas (module 3) and consider their motivations and challenges regarding cartography.
 For example, The City of Chicago (see below) created a COVID-19 vaccine centers asset map for the general public.</p>
 <p>ESRI (see below) created a dashboard for health professionals related to vaccine distribution during the pandemic.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Visual Hierarchy:</li>
-</ol>
+</div>
+<div id="visual-hierarchy" class="section level4 unnumbered hasAnchor">
+<h4>Visual Hierarchy<a href="05-analysis.html#visual-hierarchy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Establish a visual hierarchy to guide viewers through the most important aspects of your data. This can be achieved using color, size, contrast, and the placement of map elements.
 For example, ChiVes, an environmental justice dashboard may use bold colors to highlight critical areas, supported by descriptive text and a well-positioned legend.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Balance and Visual Arrangement:</li>
-</ol>
+</div>
+<div id="balance-and-visual-arrangement" class="section level4 unnumbered hasAnchor">
+<h4>Balance and Visual Arrangement<a href="05-analysis.html#balance-and-visual-arrangement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Achieve balance in your map to ensure no element dominates excessively and each component is visually proportionate.
 Organize elements logically and harmoniously, considering spatial relationships, grouping related features, and creating a clear flow for the viewer’s eye.</p>
 <p>The body-territory map (cuerpo-territorio) crafted by the Latinx collective Iconoclasistas serves as an exemplary showcase of balance and visual arrangement. Illustrating the detrimental impact of various industries on communities across South America, the map achieves balance by symmetrically delineating different regions and dividing them with the silhouette of a woman. Moreover, the title and sequential numbering naturally guides viewers through the map from top to bottom, facilitating intuitive reading of the cartography.</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Simplicity:
-Embrace simplicity for clear communication. Clear, uncluttered maps with essential elements are more accessible and easier for viewers to understand.
-Focus on presenting the core message with precise use of color, symbols, and labeling.</li>
-</ol>
+</div>
+<div id="simplicity" class="section level4 unnumbered hasAnchor">
+<h4>Simplicity<a href="05-analysis.html#simplicity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Embrace simplicity for clear communication. Clear, uncluttered maps with essential elements are more accessible and easier for viewers to understand.
+Focus on presenting the core message with precise use of color, symbols, and labeling.</p>
 <p>The Anti-eviction Mapping Project developed a straightforward yet impactful dashboard illustrating evictions in LA County during the COVID-19 pandemic. Users can easily navigate through the data by utilizing the bar chart. By using the bar chart, the map displays eviction rates for each month throughout the pandemic.</p>
 <p>Throughout these principles, the key is to present your SDOH data in a manner that is not just informative but also engaging and accessible to your intended audience. Each design decision, from the choice of color scheme to the positioning of elements, plays a role in how effectively your map communicates its message.</p>
-<div id="key-elements-of-data-viz" class="section level3 hasAnchor" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Key Elements of Data Viz<a href="05-analysis.html#key-elements-of-data-viz" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="key-elements-of-data-viz" class="section level3 unnumbered hasAnchor">
+<h3>Key Elements of Data Viz<a href="05-analysis.html#key-elements-of-data-viz" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Effectively conveying spatial information in maps requires careful consideration of various elements. These elements include symbols, colors, typography, and layout, each playing a crucial role in guiding the viewer’s understanding of the geographic context and the presented data. Symbols visually represent spatial features; colors differentiate categories or highlight patterns; typography ensures legibility and informativeness of labels and annotations; and layout determines spatial relationships and influences visual hierarchy. Strategic incorporation of these elements enables cartographers to create maps that are not only aesthetically pleasing but also informative and intuitive to interpret.</p>
-<p>Title:
-A map’s title should succinctly convey its main theme or message. It should include the theme (What?), the location (Where?), and the temporal scale (When?). A clear and informative title sets the context for the map.
-Tip: Make the title larger and bolder than other text to draw attention.
-Legend:
-The legend is a key component that decodes the symbols, colors, and patterns used on your map. It should be clear, concise, and understandable.
-Tip: Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.
-Scale Bar:
-The scale bar visually represents the relationship between map distances and real-world distances. It’s essential for accurately grasping the mapped area’s geographic extent and proportions.
-Tip: Choose a scale bar style that complements your map’s design, including both metric and imperial units if possible.
-Data Source and Projection Information:
-Providing data sources and projection information enhances your map’s transparency and credibility, allowing viewers to understand the data’s origins and any potential map projection distortions or limitations.
-Tip: Include clear citations for data sources and projection information in a designated map area.
-North Arrow:
-A north arrow, though not always necessary, can be helpful for orientation, especially in unfamiliar areas or when the map projection alters traditional alignments.
-Tip: If used, ensure the north arrow is visible and distinct from other map elements, and choose a simple design that fits the map’s overall aesthetic.
-Activity: Rapid-Fire SDOH Mapping Critique
-Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.
-Think about the audience, hierarchy, balance, simplicity, and visual arrangement.
-Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.
-Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.
-The Munsell Color System:</p>
-<p>(Source: Del Mar College, 2020)
-The Munsell Color System, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.</p>
-<p>Activity: SDOH Mapping with the Munsell Color System
-Analyze SDOH data and assign Munsell colors to different factors.
-Develop a map legend explaining each color and its significance.
-Apply these colors to a map, creating a thematic representation of SDOH in a specific area.
-Evaluate the map’s effectiveness and adjust as necessary.
-Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.
-This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.</p>
+<div id="title" class="section level4 unnumbered hasAnchor">
+<h4>Title<a href="05-analysis.html#title" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A map’s title should succinctly convey its main theme or message. It should include the theme (What?), the location (Where?), and the temporal scale (When?). A clear and informative title sets the context for the map.</p>
+<p><strong>Tip:</strong> Make the title larger and bolder than other text to draw attention.</p>
+</div>
+<div id="legend" class="section level4 unnumbered hasAnchor">
+<h4>Legend<a href="05-analysis.html#legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The legend is a key component that decodes the symbols, colors, and patterns used on your map. It should be clear, concise, and understandable.</p>
+<p><strong>Tip:</strong> Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.</p>
+</div>
+<div id="scale-bar" class="section level4 unnumbered hasAnchor">
+<h4>Scale Bar<a href="05-analysis.html#scale-bar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The scale bar visually represents the relationship between map distances and real-world distances. It’s essential for accurately grasping the mapped area’s geographic extent and proportions.</p>
+<p><strong>Tip:</strong> Choose a scale bar style that complements your map’s design, including both metric and imperial units if possible.</p>
+</div>
+<div id="data-source-and-projection-information" class="section level4 unnumbered hasAnchor">
+<h4>Data Source and Projection Information<a href="05-analysis.html#data-source-and-projection-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Providing data sources and projection information enhances your map’s transparency and credibility, allowing viewers to understand the data’s origins and any potential map projection distortions or limitations.</p>
+<p><strong>Tip:</strong> Include clear citations for data sources and projection information in a designated map area.</p>
+</div>
+<div id="north-arrow" class="section level4 unnumbered hasAnchor">
+<h4>North Arrow<a href="05-analysis.html#north-arrow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A north arrow, though not always necessary, can be helpful for orientation, especially in unfamiliar areas or when the map projection alters traditional alignments.</p>
+<p><strong>Tip:</strong> If used, ensure the <strong>north arrow</strong> is visible and distinct from other map elements, and choose a simple design that fits the map’s overall aesthetic.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Rapid-Fire SDOH Mapping Critique</em></p>
+<ul>
+<li>Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.</li>
+<li>Think about the audience, hierarchy, balance, simplicity, and visual arrangement.</li>
+<li>Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.</li>
+<li>Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.</li>
+</ul>
+</div>
+</div>
+<div id="the-munsell-color-system" class="section level4 hasAnchor" number="5.5.1.1">
+<h4><span class="header-section-number">5.5.1.1</span> The Munsell Color System:<a href="05-analysis.html#the-munsell-color-system" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(Source: Del Mar College, 2020)</p>
+<p>The <a href="">Munsell Color System</a>, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>SDOH Mapping with the Munsell Color System</em></p>
+<ul>
+<li>Analyze SDOH data and assign Munsell colors to different factors.</li>
+<li>Develop a map legend explaining each color and its significance.</li>
+<li>Apply these colors to a map, creating a thematic representation of SDOH in a specific area.</li>
+<li>Evaluate the map’s effectiveness and adjust as necessary.</li>
+<li>Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.</li>
+</ul>
+<p>This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.</p>
+</div>
 
+</div>
 </div>
 </div>
 </div>

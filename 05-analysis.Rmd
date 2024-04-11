@@ -328,9 +328,9 @@ What are the time and budget constraints on your map production? (module 2)
 Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)
 :::
 
-Effective SDOH map design entails several critical elements:
+### Effective SDOH map design entails several critical elements
 
-1. Audience Consideration:
+#### Audience Consideration {-}
 
 Tailor your map design to your audience's needs and preferences. Different audiences have varying abilities to interpret visual data. For instance, maps for healthcare professionals might include detailed spatial patterns and statistical analyses, whereas maps for the general public should focus on clarity and ease of understanding.
 Revisit your user personas (module 3) and consider their motivations and challenges regarding cartography.
@@ -338,19 +338,19 @@ For example, The City of Chicago (see below) created a COVID-19 vaccine centers 
 
 ESRI (see below) created a dashboard for health professionals related to vaccine distribution during the pandemic. 
 
-2. Visual Hierarchy:
+#### Visual Hierarchy {-}
 
 Establish a visual hierarchy to guide viewers through the most important aspects of your data. This can be achieved using color, size, contrast, and the placement of map elements.
 For example, ChiVes, an environmental justice dashboard may use bold colors to highlight critical areas, supported by descriptive text and a well-positioned legend.
 
-3. Balance and Visual Arrangement:
+#### Balance and Visual Arrangement {-}
 
 Achieve balance in your map to ensure no element dominates excessively and each component is visually proportionate.
 Organize elements logically and harmoniously, considering spatial relationships, grouping related features, and creating a clear flow for the viewer's eye.
 
 The body-territory map (cuerpo-territorio) crafted by the Latinx collective Iconoclasistas serves as an exemplary showcase of balance and visual arrangement. Illustrating the detrimental impact of various industries on communities across South America, the map achieves balance by symmetrically delineating different regions and dividing them with the silhouette of a woman. Moreover, the title and sequential numbering naturally guides viewers through the map from top to bottom, facilitating intuitive reading of the cartography.
 
-4. Simplicity:
+#### Simplicity {-}
 Embrace simplicity for clear communication. Clear, uncluttered maps with essential elements are more accessible and easier for viewers to understand.
 Focus on presenting the core message with precise use of color, symbols, and labeling.
 
@@ -359,46 +359,66 @@ The Anti-eviction Mapping Project developed a straightforward yet impactful dash
 Throughout these principles, the key is to present your SDOH data in a manner that is not just informative but also engaging and accessible to your intended audience. Each design decision, from the choice of color scheme to the positioning of elements, plays a role in how effectively your map communicates its message.
 
 
-### Key Elements of Data Viz
+### Key Elements of Data Viz {-}
 
 Effectively conveying spatial information in maps requires careful consideration of various elements. These elements include symbols, colors, typography, and layout, each playing a crucial role in guiding the viewer’s understanding of the geographic context and the presented data. Symbols visually represent spatial features; colors differentiate categories or highlight patterns; typography ensures legibility and informativeness of labels and annotations; and layout determines spatial relationships and influences visual hierarchy. Strategic incorporation of these elements enables cartographers to create maps that are not only aesthetically pleasing but also informative and intuitive to interpret.
 
-Title:
+#### Title {-}
 A map’s title should succinctly convey its main theme or message. It should include the theme (What?), the location (Where?), and the temporal scale (When?). A clear and informative title sets the context for the map.
-Tip: Make the title larger and bolder than other text to draw attention.
-Legend:
+
+**Tip:** Make the title larger and bolder than other text to draw attention.
+
+#### Legend {-}
 The legend is a key component that decodes the symbols, colors, and patterns used on your map. It should be clear, concise, and understandable.
-Tip: Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.
-Scale Bar:
+
+**Tip:** Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.
+
+#### Scale Bar {-}
 The scale bar visually represents the relationship between map distances and real-world distances. It's essential for accurately grasping the mapped area's geographic extent and proportions.
-Tip: Choose a scale bar style that complements your map's design, including both metric and imperial units if possible.
-Data Source and Projection Information:
+
+**Tip:** Choose a scale bar style that complements your map's design, including both metric and imperial units if possible.
+
+#### Data Source and Projection Information  {-}
+
 Providing data sources and projection information enhances your map's transparency and credibility, allowing viewers to understand the data’s origins and any potential map projection distortions or limitations.
-Tip: Include clear citations for data sources and projection information in a designated map area.
-North Arrow:
+
+**Tip:** Include clear citations for data sources and projection information in a designated map area.
+
+#### North Arrow {-}
+
 A north arrow, though not always necessary, can be helpful for orientation, especially in unfamiliar areas or when the map projection alters traditional alignments.
-Tip: If used, ensure the north arrow is visible and distinct from other map elements, and choose a simple design that fits the map's overall aesthetic.
-Activity: Rapid-Fire SDOH Mapping Critique
-Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.
-Think about the audience, hierarchy, balance, simplicity, and visual arrangement.
-Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.
-Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.
-The Munsell Color System:
+
+**Tip:** If used, ensure the **north arrow** is visible and distinct from other map elements, and choose a simple design that fits the map's overall aesthetic.
+
+
+::: activity
+**Activity**
+
+*Rapid-Fire SDOH Mapping Critique*
+
+- Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.
+- Think about the audience, hierarchy, balance, simplicity, and visual arrangement.
+- Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.
+- Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.
+:::
+
+#### The Munsell Color System:
 
 (Source: Del Mar College, 2020)
-The Munsell Color System, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.
+
+The [Munsell Color System](), a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.
 
 ::: activity
 **Activity**
 
 *SDOH Mapping with the Munsell Color System*
 
-Analyze SDOH data and assign Munsell colors to different factors.
-Develop a map legend explaining each color and its significance.
-Apply these colors to a map, creating a thematic representation of SDOH in a specific area.
-Evaluate the map’s effectiveness and adjust as necessary.
-Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.
-This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
+- Analyze SDOH data and assign Munsell colors to different factors.
+- Develop a map legend explaining each color and its significance.
+- Apply these colors to a map, creating a thematic representation of SDOH in a specific area.
+- Evaluate the map’s effectiveness and adjust as necessary.
+- Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.
 
+This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
 :::
 
