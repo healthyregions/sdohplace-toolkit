@@ -388,7 +388,11 @@ The Munsell Color System:
 (Source: Del Mar College, 2020)
 The Munsell Color System, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.
 
-Activity: SDOH Mapping with the Munsell Color System
+::: activity
+**Activity**
+
+*SDOH Mapping with the Munsell Color System*
+
 Analyze SDOH data and assign Munsell colors to different factors.
 Develop a map legend explaining each color and its significance.
 Apply these colors to a map, creating a thematic representation of SDOH in a specific area.
@@ -396,5 +400,5 @@ Evaluate the map’s effectiveness and adjust as necessary.
 Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.
 This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
 
-
+:::
 
