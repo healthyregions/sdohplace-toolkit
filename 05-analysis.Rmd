@@ -322,10 +322,11 @@ Cartographic design principles form a framework of guidelines and best practices
 **Tip** 
 
 As recommended by [Cynthia Brewer](https://www.esri.com/en-us/esri-press/browse/designing-better-maps-a-guide-for-gis-users) attempt to address the following questions at this point. Don't worry if you're uncertain of the answer, you can always revisit the previous modules for guidance.
-Who will be reading your maps? (module 3)
-What information will be mapped? (module 4)
-What are the time and budget constraints on your map production? (module 2)
-Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)
+
+- Who will be reading your maps? (module 3)
+- What information will be mapped? (module 4)
+- What are the time and budget constraints on your map production? (module 2)
+- Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)
 :::
 
 ### Effective SDOH map design entails several critical elements
