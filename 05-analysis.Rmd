@@ -6,11 +6,395 @@
 :::objective
 **Objectives**
 
-- Visualize Data as EDA method
-- Data Classification ~ Box Plots, Choropleth Maps
-- Rate Maps
-- Overlays
-- Calculate new spatial variables (buffers, distance)
-- Testing 
+In this module, you will: 
+
+- Gain insight into the different spatial analysis techniques applicable to SDOOH research
+- Delve into potential pitfalls and limitations in spatial analysis of SDOH data
+- Identify cartographic design principles for effective communication
 
 :::
+
+Spatial analysis and design mapping techniques have become indispensable tools in the study of Social Determinants of Health (SDOH).  This module provides an overview of spatial analysis methods in the SDOH context, highlighting common pitfalls and best practices in cartographic design. By understanding how health outcomes geographically correlate with socioeconomic and environmental factors, we can identify health disparities and guide effective interventions. Additionally, we'll then examine the limitations and challenges of spatial analysis in the SDOH context
+
+Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.
+
+## Research Design
+
+Determining goals; descriptive, exploratory, confirmatory?
+
+- Spatial Data Integrations
+- New Spatial Variable Calculations
+- Data Limitations 
+- Issues of Scale
+- Spatial Methodologies Used
+- Spatial Interpretations
+
+::: pitfall
+
+**Potential Pitfall**
+
+The **Modifiable Areal Unit Problem (MAUP)** is a significant issue in spatial analysis that arises when results of statistical analysis are affected by the scale or the zoning of the area units used in the study. Essentially, it reflects the idea that the same set of data can lead to different conclusions depending on how the data is grouped geographically. 
+
+This problem is particularly relevant in disciplines like geography, epidemiology, and urban planning. For a deeper understanding of MAUP, its implications, and strategies to mitigate its effects, [here's a comprehensive resource](https://gisgeography.com/maup-modifiable-areal-unit-problem/) that offers detailed insights.
+
+:::
+
+## Defining your Position
+
+In exploring cartography and spatial analysis, it's crucial to challenge their perceived objectivity. Traditionally viewed as neutral tools, unaffected by the biases of their creators, recent studies, especially from feminist and global South perspectives, have started to challenge this view. They reveal how data often overlooks marginalized communities, how maps can perpetuate colonialist views, and how the choice of colors and symbols might oversimplify diverse human experiences.
+
+Therefore, it's essential to rethink our approach to maps and analyses, recognizing that they are not impartial mirrors of reality. When conducting analyses or creating maps, we should ask ourselves critical questions: Who is collecting the data I use, and for what purpose? Which narratives are my analyses emphasizing? Whose interests does the software I use serve – is it a commercial product or open-source? How do factors like our gender, race, ethnicity, economic status, sexuality, and nationality influence our approach to cartography?
+
+A way forward involves examining our privileges, recognizing the types of discrimination we face—or don’t face—and considering how our experiences influence our mapping efforts. Listening becomes a crucial skill. Mapping should go beyond mere argumentation and become a tool for inquiry. We must critically examine our own maps and data, paying attention to who is represented and, importantly, who is left out. Engaging with stakeholders is a key part of this process.
+
+Additionally, we should strive to give a voice within our analyses to those directly impacted by our maps rather than speaking for them. Being mindful of our cartographic language is vital; like words, maps convey narratives.
+
+::: tip
+
+**Tip**
+
+Take time to reflect on these points and jot them down in your journal. Regularly revisit these thoughts and refer back to Module 1 of this toolkit, recognizing that mapping is an evolving, iterative process.
+:::
+
+### Reflective Mapping
+
+Remember, mapping is more than just inputting data into software; it involves thoughtful reflection. This process should take into consideration the context and significance of the data, ensuring that your maps tell an accurate and meaningful story. By carefully selecting and analyzing your variables, and critically examining the resulting spatial patterns, your maps can become powerful tools for understanding and communicating complex social and health-related phenomena.
+
+In modern spatial epidemiology, it’s critical to not take associations at face value. For instance, health disparities are often driven not by race itself but by systemic racism. Analyzing only a specific racial or ethnic group isn’t sufficient. Thus, investigating a multitude of variables and cultivating a curiosity to understand these complex intersections is crucial for meaningful knowledge discovery. This approach allows for a more nuanced understanding of the interplay between various factors and health outcomes, ultimately contributing to more effective public health strategies and interventions.
+
+
+## Calculating Spatial Variables
+
+While the previous module focused on spatial data wrangling techniques to develop new harmonized datasets and variables, there are many more approaches to refining measurements of the environment. 
+
+For example, spatial access to a resource can be calculated using multiple approaches. Let's consider approximating a neighborhood as a census tract. Access to the resource could be measured as:
+
+- Total number of resources within the census tract
+- Total number of resources within a mile of the census tract
+- Total number of mile-wide resource buffers intersecting the tract
+- Percentage of the census tract covered by a mile-wide resource buffer
+- Drive, bike, or walk time from the center of tract to nearest resource
+- Total number of resources within a mile per 1,000 people in the census tract
+- Gravity model score measuring spatial access to resoure using a distance decay function, total capacity at resource, and population in demand
+
+Which one is best? It will depend the data available, your skills and interest in calculations, and more importantly, the underlying phenomenon of interest. How often do persons access the resource? What travel behavior is used? 
+
+For density based measures (like total number of resources per area), use the spatial join function froom the last module, and summarize by area. This is also termed as a "point in polygon" operation. For additional proximity-based metrics like buffer and distance calculations, read on. For more complex access modeling techniques, check out the advanced metric resources at the end of the module.
+
+### Buffers
+
+Creating buffers and calculating distances are vital techniques for understanding relationships between geographic features and identifying potential spatial patterns or associations.
+
+Buffers are polygons created at a specified distance around input features, like points, lines, or other polygons. They are useful for analyzing the proximity of health-related phenomena to specific locations.
+
+*(E.g., Census tracts within ½ mile radius of a public health clinic) *
+
+For example, you can create a buffer of a half-mile radius around a public health clinic to analyze the census tracts within that area. Another application is generating a buffer around a hospital to identify the population within a certain distance or assessing the impact of pollution from a factory on nearby schools or residential areas.
+
+To create a buffer in GIS software or coding, you specify a fixed or variable distance value. Fixed-distance buffers are constant radius polygons around input features, while variable-distance buffers can vary based on an attribute value.
+
+::: activity
+
+**Activity**
+
+Buffer Analyses: Calculate Farmers Market Service Areas
+
+This activity focuses on utilizing data from Chicago's farmers' markets, specifically the "farmers_markets_2012" dataset. Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
+
+Start a New Project:
+Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
+Add the Dataset:
+Add the shapefile: "farmers_markets_2012.shp".
+Creating Buffers:
+Go to the Vector menu > Geoprocessing Tools > Buffer(s).
+In the dialog box, choose "farmers_markets_2012" as the input layer.
+Ensure you are using the correct Coordinate Reference System (CRS).
+Enter the buffer distance (e.g., 0.5 miles) and select the appropriate unit from the Unit drop-down menu.
+Tip: The distance unit is based on the CRS of the input layer. If you're not using the correct CRS, the default unit may be in degrees. Refer to Module 4 if you encounter issues.
+Keep default settings for segments, join style, and miter limit.
+Initially, leave the "dissolve result" box unchecked to maintain separate buffer zones.
+
+** Running the Buffer Tool:** 
+Click "Run" to execute the Buffer tool. A new buffered layer is added to your project.
+In the Layers Panel, arrange the point feature (farmers markets) above the buffered polygon for better visualization.
+Tip: Observe how the buffers overlap or remain separate, depending on the distance you chose.
+
+** Dissolving Overlapping Areas:** 
+Reopen the Buffer dialog box, go to Parameters, and check the box for "dissolve result".
+Click "Run" again. A new layer with dissolved overlapping areas is added.
+Close the Buffer dialog box.
+Organizing Your Layers:
+Remove the initial overlapping buffer layer and keep the dissolved buffer layer.
+
+** Tip:**  Organize your layers for clarity, such as renaming layers, removing unwanted ones, or toggling layer visibility.
+
+Through this activity, you will understand the spatial distribution of farmers' markets in Chicago and their impact radius, which is crucial for assessing community access to fresh food. The buffer analysis illustrates the physical reach of these markets, offering insights into potential areas needing more access to fresh produce.
+
+::: 
+
+### Nearest Resource
+Calculating distances involves measuring straight-line (Euclidean) or network (along paths or roads) distances between features.In health geographies, this might include assessing accessibility to healthcare facilities or analyzing the spatial distribution of disease cases relative to risk factors. Examples include calculating the Euclidean distance from residential locations to the nearest healthcare facility or measuring the network distance along roads to determine travel time to hospitals. 
+
+It’s important to choose the right measurement method (Euclidean or network) based on the research question and the nature of the features.
+
+::: activity
+** Activity ** 
+
+Minimum Distance Calculations 
+
+In this part of the exercise, we're interested in determining the straight-line distance from residential locations, such as census tracts, to the nearest farmers market. The "Distance to nearest hub (line to hub)" tool in QGIS can be used to calculate the distance between the center of an origin feature (e.g., centroids of Census Tracts) and its nearest destination feature (e.g., farmers market).
+
+** Accessing the Tool:** 
+In QGIS, open the Toolbox by going to Processing.
+Search for and select "Distance to Nearest Hub (line to hub)" under Vector analysis.
+
+
+** Setting Up the Tool:** 
+In the processing dialog box, set "Source Point layer" to "Chicgotracts_Centroids".
+For "Destination hubs layer", select "farmer’s market_2012".
+Choose your preferred measurement unit (e.g., miles) in the "Measurement unit" field.
+Leave other settings as default.
+Running the Tool:
+Click "Run". A new layer ("hub distance") will be added to your project. Close the dialogue box.
+Open the attribute table of the new layer to view the computed hub distances (HubDist).
+
+** Analyzing Access to Facilities:** 
+Examine the attribute table to identify if there are any facilities (e.g., farmers markets) that lack good access. Consider the implications of these findings for community access to fresh produce.
+Using Extract within Distance Tool:
+Another useful tool is the "Extract within distance" under vector selection in the geoprocessing toolbox.
+This can be used to extract tract centroids that are within a specified maximum distance (e.g., 1 mile) from the input features (e.g., farmers markets).
+
+Through these exercises, you will gain insights into the accessibility of fresh produce from various residential areas in Chicago, which is crucial for understanding the availability of healthy food options across the city. This analysis can inform urban planning and policy decisions to improve access to essential amenities like farmers markets.
+
+
+:::
+
+
+## Exploratory Data Analysis 
+
+### Univariate and Bivariate Analyses
+
+#### Scatter Plots
+
+Scatter plots are invaluable for visualizing relationships between SDOH and health outcomes. They plot data points on a Cartesian plane, with one variable on the x-axis and another on the y-axis.
+
+In SDOH analysis, scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.
+
+Understanding Correlations in Scatter Plots:
+
+- Positive Correlation: This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.
+
+- Negative Correlation: Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.
+
+Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making.
+
+However, it's important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.
+
+::: activity
+Creating Scatter Plots in GeoDa
+
+Scatter plots in GeoDa are useful for examining linear relationships between two variables:
+
+Setting Up the Scatter Plot:
+To start, select "Explore" > "Scatter Plot".
+In the "Scatter Plot Variables" dialog, choose a variable for the "Independent Var X" (e.g., age Over 65) and another for the "Dependent Var Y" (e.g., disability status).
+In this example, we're exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.
+Customizing and Analyzing the Scatter Plot:
+Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
+Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.
+
+
+Both the cartogram and scatter plot are powerful tools in GeoDa, allowing for visual exploration of data. The cartogram provides a unique perspective by resizing geographic areas based on the data, while scatter plots help identify and analyze relationships between variables, offering crucial insights for data-driven decision-making and research.
+ 
+
+::: 
+
+### Statistical Mapping
+
+Statistical mapping is ... Data Break Classifications... 
+
+- Quantiles
+- Equal Intervals
+- Natural Breaks (Jenks)
+- Standard Deviation
+- Box Plot
+
+#### Choropleth Maps
+
+Choropleth maps are a 
+
+Having addressed the subjectivity of maps, let's delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.
+
+** image
+Choropleth map of poverty rates by county in 2015 (source: Centers for Disease Control and Prevention) 
+
+Choropleth maps can help us to start revealing spatial patterns and disparities in various health and socioeconomic indicators related to SDOH. These representations can pinpoint areas with high rates of chronic diseases, like diabetes or heart disease, and enable visual comparisons with factors like education, access to healthcare facilities, and social exclusion.
+
+Moreover, choropleth maps are excellent for exploring potential correlations between SDOH and health outcomes. They can, for example, show how regions with limited access to healthy food options and green spaces might correlate with higher obesity rates. This visual data can inform targeted interventions and resource allocation, addressing social determinants in specific areas effectively.
+
+Choropleth maps are also invaluable in communicating complex data to policymakers, public health officials, and community members. By visually representing intricate datasets in an accessible format, these maps can spark discussions around health disparities, resource distribution, and health equity. Given their capability to illustrate spatial patterns and the relationship between SDOH and health outcomes, choropleth maps are a vital resource for researchers, policymakers, and community organizations aiming to promote health equity and tackle the root causes of health disparities.
+
+::: activity
+
+**Activity** 
+
+During the COVID-19 pandemic, choropleth maps became crucial for health geographers, visually representing the virus's spread and highlighting hotspots and regional disparities. These maps, tracking trends over time, provided a deeper understanding of the pandemic's progression, supporting targeted interventions and policy-making. They not only made the pandemic's impact tangible but also emphasized the significance of spatial analysis in public health crises and showcased the practicality of geographic data visualization in research and decision-making contexts.
+
+Now, let's create some maps to analyze the COVID-19 pandemic. We'll use QGIS for this tutorial, chosen for its flexibility in creating choropleth maps and its status as free, open-source software. 
+
+Note: Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.
+
+Opening a New Project in QGIS:
+Start by opening a new project in QGIS.
+In the Layers panel, drag and drop the "COVID-19_pivot.xlsx" spreadsheet, as outlined in section 4.5 of this toolkit. If you don't have it, find it in the Zip folder at the start of this module.
+Joining your spreadsheet with a boundary shapefile:
+Similar to the process in Module 4, join the "COVID-19_pivot.xlsx" with the boundary shapefile of Chicago's Zip codes, named “Chicago_Zipcodes.shp”.
+Add “Chicago_Zipcodes.shp” to your layer panel.
+ To access the join option, right click on “Chicago_Zipcodes.shp”, go to properties and select “join”. Lastly, select the “ plus icon.” 
+Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.
+Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from "COVID-19_pivot.xlsx" are there!
+Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it  “Chicago_COVID-19”.
+Tip: If you need to review and better understand this step, go back to Module 4.  
+
+Applying Symbology:
+In the Layers panel, right-click on “Chicago_COVID-19” and select Properties, then Symbology.
+Change the top tab from Single Symbol to Graduated.
+Under the "Value" tab, select "Sum of Cases - Weekly".
+Set the Mode to “Natural Breaks (Jenks)” and Classes to “4”.
+Click Classify, Apply, and Ok. You've now created a map of the Sum of Cases of COVID-19 during a week in 2020 in Chicago.
+
+Exploring Different Classification Methods:
+From the Map option in the toolbar, explore different choropleth map options using various variables or data breaks (e.g., quantile).
+Select a classification method, set the Categories (e.g., 4), and click apply.
+Examine your maps, comparing how different data break methods display the same variables and how spatial patterns vary between different variables.
+Mapping Multiple Variables Simultaneously:
+To investigate multiple maps at once, use the GeoJason file “ChiZipCleaned” that you organized in Module 4.
+Create different choropleth maps using various variables from the attribute table. For example, map the percentages of Asian (asianP), Black (blackP), Hispanic/Latinx (HispP), White (WhiteP), and populations over 65 (Over65p). Use Natural Breaks and 4 classes, similar to your previous COVID-19 map.
+
+From the exploratory results, where darker colors indicate higher population density and gray signifies data absence, we observe that cumulative COVID-19 outcomes for one week in September 2020 seem to correlate geographically with the Latinx/Hispanic community in Chicago.
+
+To refine your analysis further, consider introducing additional variables. Options might include the percentage of essential workers, varying age groups, or internet access. Integrating health outcomes such as asthma or hypertension rates at a similar scale could also offer deeper insights.
+:::
+
+#### Cartograms 
+
+Cartograms in Analyzing SDOH Data:
+
+Cartograms offer a distinctive way to analyze and display Social Determinants of Health (SDOH) data. They differ from traditional choropleth maps by altering the size of geographic areas based on a statistical variable like population.
+
+This technique provides a clearer depiction of disparities in SDOH across regions, highlighting areas more significantly impacted by adverse social and economic conditions.
+
+Although cartograms can distort geographic shapes and boundaries, they effectively communicate complex SDOH data, helping policymakers and the public understand underlying inequities and the necessity for focused interventions.
+
+::: activity
+
+**Activity**
+
+Cartograms in GeoDa
+
+To create a cartogram in GeoDa, which visually emphasizes specific variables, follow these steps:
+
+Creating the Cartogram
+      
+Open ChiZipCleaned in “GeoDa”
+b.  Select "Map" from the menu, then click on "Cartogram".
+
+c .In the "Cartogram Variables" dialog box, you'll find two columns: "Circle Size" and "Circle Color". For a simpler interpretation, select the same variable for both columns (e.g., age 18-64). 
+d. Tip: While you can choose different variables for circle size and color, this might make the cartogram more complex and potentially confusing.
+Finalizing the Cartogram:
+Click "OK" to generate the cartogram. This will create a map where the size of the circles represents the selected variable, providing a visual emphasis on areas with higher or lower values.
+
+
+
+:::
+
+### Multivariate Data Analysis
+
+
+## Cartographic Principles 
+
+Having honed your skills in data wrangling and spatial analysis, it's time to focus on effectively communicating your findings in Social Determinants of Health (SDOH) through cartography. This phase is vital: the choices you make regarding colors, scales, and legends will significantly influence how your audience interprets your maps. In this final section, we'll discuss how to create clear and impactful SDOH maps.
+
+Cartographic design principles form a framework of guidelines and best practices to create informative and visually appealing maps. They are key to ensuring maps not only convey spatial information accurately but are also easy to understand and aesthetically pleasing. While designing SDOH maps poses challenges, it's a crucial skill. We encourage you to delve deeper into cartographic design by exploring additional resources provided in this module.
+
+:::tip
+
+**Tip** 
+
+As recommended by [Cynthia Brewer](https://www.esri.com/en-us/esri-press/browse/designing-better-maps-a-guide-for-gis-users) attempt to address the following questions at this point. Don't worry if you're uncertain of the answer, you can always revisit the previous modules for guidance.
+Who will be reading your maps? (module 3)
+What information will be mapped? (module 4)
+What are the time and budget constraints on your map production? (module 2)
+Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)
+:::
+
+Effective SDOH map design entails several critical elements:
+
+1. Audience Consideration:
+
+Tailor your map design to your audience's needs and preferences. Different audiences have varying abilities to interpret visual data. For instance, maps for healthcare professionals might include detailed spatial patterns and statistical analyses, whereas maps for the general public should focus on clarity and ease of understanding.
+Revisit your user personas (module 3) and consider their motivations and challenges regarding cartography.
+For example, The City of Chicago (see below) created a COVID-19 vaccine centers asset map for the general public.
+
+ESRI (see below) created a dashboard for health professionals related to vaccine distribution during the pandemic. 
+
+2. Visual Hierarchy:
+
+Establish a visual hierarchy to guide viewers through the most important aspects of your data. This can be achieved using color, size, contrast, and the placement of map elements.
+For example, ChiVes, an environmental justice dashboard may use bold colors to highlight critical areas, supported by descriptive text and a well-positioned legend.
+
+3. Balance and Visual Arrangement:
+
+Achieve balance in your map to ensure no element dominates excessively and each component is visually proportionate.
+Organize elements logically and harmoniously, considering spatial relationships, grouping related features, and creating a clear flow for the viewer's eye.
+
+The body-territory map (cuerpo-territorio) crafted by the Latinx collective Iconoclasistas serves as an exemplary showcase of balance and visual arrangement. Illustrating the detrimental impact of various industries on communities across South America, the map achieves balance by symmetrically delineating different regions and dividing them with the silhouette of a woman. Moreover, the title and sequential numbering naturally guides viewers through the map from top to bottom, facilitating intuitive reading of the cartography.
+
+4. Simplicity:
+Embrace simplicity for clear communication. Clear, uncluttered maps with essential elements are more accessible and easier for viewers to understand.
+Focus on presenting the core message with precise use of color, symbols, and labeling.
+
+The Anti-eviction Mapping Project developed a straightforward yet impactful dashboard illustrating evictions in LA County during the COVID-19 pandemic. Users can easily navigate through the data by utilizing the bar chart. By using the bar chart, the map displays eviction rates for each month throughout the pandemic.
+
+Throughout these principles, the key is to present your SDOH data in a manner that is not just informative but also engaging and accessible to your intended audience. Each design decision, from the choice of color scheme to the positioning of elements, plays a role in how effectively your map communicates its message.
+
+
+### Key Elements of Data Viz
+
+Effectively conveying spatial information in maps requires careful consideration of various elements. These elements include symbols, colors, typography, and layout, each playing a crucial role in guiding the viewer’s understanding of the geographic context and the presented data. Symbols visually represent spatial features; colors differentiate categories or highlight patterns; typography ensures legibility and informativeness of labels and annotations; and layout determines spatial relationships and influences visual hierarchy. Strategic incorporation of these elements enables cartographers to create maps that are not only aesthetically pleasing but also informative and intuitive to interpret.
+
+Title:
+A map’s title should succinctly convey its main theme or message. It should include the theme (What?), the location (Where?), and the temporal scale (When?). A clear and informative title sets the context for the map.
+Tip: Make the title larger and bolder than other text to draw attention.
+Legend:
+The legend is a key component that decodes the symbols, colors, and patterns used on your map. It should be clear, concise, and understandable.
+Tip: Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.
+Scale Bar:
+The scale bar visually represents the relationship between map distances and real-world distances. It's essential for accurately grasping the mapped area's geographic extent and proportions.
+Tip: Choose a scale bar style that complements your map's design, including both metric and imperial units if possible.
+Data Source and Projection Information:
+Providing data sources and projection information enhances your map's transparency and credibility, allowing viewers to understand the data’s origins and any potential map projection distortions or limitations.
+Tip: Include clear citations for data sources and projection information in a designated map area.
+North Arrow:
+A north arrow, though not always necessary, can be helpful for orientation, especially in unfamiliar areas or when the map projection alters traditional alignments.
+Tip: If used, ensure the north arrow is visible and distinct from other map elements, and choose a simple design that fits the map's overall aesthetic.
+Activity: Rapid-Fire SDOH Mapping Critique
+Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.
+Think about the audience, hierarchy, balance, simplicity, and visual arrangement.
+Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.
+Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.
+The Munsell Color System:
+
+(Source: Del Mar College, 2020)
+The Munsell Color System, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, Colorbrewer 2.0 provides options suitable for colorblind individuals.
+
+Activity: SDOH Mapping with the Munsell Color System
+Analyze SDOH data and assign Munsell colors to different factors.
+Develop a map legend explaining each color and its significance.
+Apply these colors to a map, creating a thematic representation of SDOH in a specific area.
+Evaluate the map’s effectiveness and adjust as necessary.
+Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.
+This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
+
+
+
