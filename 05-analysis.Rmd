@@ -18,6 +18,14 @@ Spatial analysis and design mapping techniques have become indispensable tools i
 
 Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.
 
+:::tools
+**Tools**
+
+*Download the Activity Datasets*
+
+While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-ResearchDesignAnalysis.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-ResearchDesignAnalysis.zip)
+:::
+
 ## Research Design
 
 You've got data, a goal, and an app on the horizon -- How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model? 
