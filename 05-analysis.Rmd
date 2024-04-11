@@ -201,7 +201,7 @@ Through these exercises, you will gain insights into the accessibility of fresh 
 
 ## Exploratory Data Analysis 
 
--- Add something about EDA more broadly here --
+Exploratory Data Analysis (EDA) serves as the compass for spatial analysts navigating through the vast seas of data. It's a pivotal phase in the analytical journey, akin to charting a course before setting sail. EDA illuminates the landscape of spatial datasets, revealing patterns, anomalies, and relationships that might otherwise remain hidden. Through visualizations, statistical summaries, and spatial queries, health geographers delve into the intricacies of the data, unraveling its mysteries and gaining insights that inform subsequent spatial analyses and decision-making processes. In essence, EDA is the compass that guides spatial analysts in their quest to uncover the hidden treasures buried within geographic information.
 
 Exploratory *Spatial* Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial "regimes" and other forms of spatial non-stationarity. 
 
@@ -248,17 +248,23 @@ Examine the plot to assess the relationship between the two variables. Look for 
 
 ### Statistical Mapping
 
-Statistical mapping is ... Data Break Classifications... 
+Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It's a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.
 
-- Quantiles
-- Equal Intervals
-- Natural Breaks (Jenks)
-- Standard Deviation
-- Box Plot
+- *Quantiles:* this statisticalmethod is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category. This method works well when the data distribution is normal. The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.
+
+- *Equal Intervals:* this classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as it can lead to uneven distribution of observations across categories.
+
+- *Natural Breaks (Jenks):* Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.
+
+- *Standard Deviation:* The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. This method does not work well with heavily skewed or non-normally distributed data.
+
+- *Box Plot:* The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. It provides a quick means to spot outliers and general spatial trends within the dataset.
+
 
 #### Choropleth Maps
 
-Choropleth maps are a 
+A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method (e.g.,Quantiles, Natural Breaks, Equal Intervals, Box Plot, Standard Deviation)
+
 
 Having addressed the subjectivity of maps, let's delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.
 

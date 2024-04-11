@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -50,16 +50,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-binding-2.2.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.1/leaflet-providers-plugin.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
@@ -508,7 +508,7 @@ This can be used to extract tract centroids that are within a specified maximum 
 </div>
 <div id="exploratory-data-analysis" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Exploratory Data Analysis<a href="05-analysis.html#exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>– Add something about EDA more broadly here –</p>
+<p>Exploratory Data Analysis (EDA) serves as the compass for spatial analysts navigating through the vast seas of data. It’s a pivotal phase in the analytical journey, akin to charting a course before setting sail. EDA illuminates the landscape of spatial datasets, revealing patterns, anomalies, and relationships that might otherwise remain hidden. Through visualizations, statistical summaries, and spatial queries, health geographers delve into the intricacies of the data, unraveling its mysteries and gaining insights that inform subsequent spatial analyses and decision-making processes. In essence, EDA is the compass that guides spatial analysts in their quest to uncover the hidden treasures buried within geographic information.</p>
 <p>Exploratory <em>Spatial</em> Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial “regimes” and other forms of spatial non-stationarity.</p>
 <p>Each spatial pattern has a different story, or phenomenon driving its pattern. A polluting factory may influene someone’s health who is living across the street, based on proximity – in spatial terms, this may be a pattern of <strong>spatial dependence</strong>. Alternatively, or in addition to, residents near polluting sources may be more likely to have lower incomes based on complex, decades-long deinvestment processes, resulting in <strong>spatially heterogenous</strong> distribution of health outcomes.</p>
 <p>By exploring the data available to us, we can begin to understand what those drivers are – or at the very least, rule some out, and update our thinking. Because our brains our wired to find patterns (even if they’re not there), we can use math and good research design gather evidence.</p>
@@ -545,17 +545,17 @@ Examine the plot to assess the relationship between the two variables. Look for 
 </div>
 <div id="statistical-mapping" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Statistical Mapping<a href="05-analysis.html#statistical-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Statistical mapping is … Data Break Classifications…</p>
+<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
 <ul>
-<li>Quantiles</li>
-<li>Equal Intervals</li>
-<li>Natural Breaks (Jenks)</li>
-<li>Standard Deviation</li>
-<li>Box Plot</li>
+<li><p><em>Quantiles:</em> this statisticalmethod is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category. This method works well when the data distribution is normal. The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</p></li>
+<li><p><em>Equal Intervals:</em> this classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as it can lead to uneven distribution of observations across categories.</p></li>
+<li><p><em>Natural Breaks (Jenks):</em> Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</p></li>
+<li><p><em>Standard Deviation:</em> The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. This method does not work well with heavily skewed or non-normally distributed data.</p></li>
+<li><p><em>Box Plot:</em> The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. It provides a quick means to spot outliers and general spatial trends within the dataset.</p></li>
 </ul>
 <div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.1">
 <h4><span class="header-section-number">5.4.2.1</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Choropleth maps are a</p>
+<p>A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method (e.g.,Quantiles, Natural Breaks, Equal Intervals, Box Plot, Standard Deviation)</p>
 <p>Having addressed the subjectivity of maps, let’s delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.</p>
 <p>** image
 Choropleth map of poverty rates by county in 2015 (source: Centers for Disease Control and Prevention)</p>
