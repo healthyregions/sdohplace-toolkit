@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>The SDOH &amp; Place Community Toolkit</title>
+  <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The SDOH &amp; Place Community Toolkit" />
+  
+  <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+<link rel="next" href="01-intro.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
+<li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#integrate-equity-directly"><i class="fa fa-check"></i>Integrate Equity Directly</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="02-scoping.html"><a href="02-scoping.html#defining-stakeholders"><i class="fa fa-check"></i><b>2.3</b> Defining Stakeholders</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-team"><i class="fa fa-check"></i>Assess Your Team</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#motivations"><i class="fa fa-check"></i>Motivations</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#finding-a-community-of-practice"><i class="fa fa-check"></i>Finding a Community of Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-scoping.html"><a href="02-scoping.html#project-assessment"><i class="fa fa-check"></i><b>2.4</b> Project Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
+<li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-data-viz"><i class="fa fa-check"></i>Key Elements of Data Viz</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The SDOH &amp; Place Community Toolkit</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
+</div>
+<div id="header">
+<h1 class="title">The SDOH &amp; Place Community Toolkit</h1>
+</div>
+<p><img src="images/homepage-illustration.png" /></p>
+<div id="preface" class="section level2 unnumbered hasAnchor">
+<h2>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <a href="https://sdohplace.org/">SDOH &amp; Place Project Community Toolkit</a> aims to increase the capacity for community and civic organizations in health to:</p>
+<ul>
+<li>Access and work with social determinants of health (SDOH) data (i.e., place/spatial data)</li>
+<li>Use place data for social good and to further health equity</li>
+<li>Develop engaging and compelling apps to inspire, activate, and retain users</li>
+<li>Work within an open ecosystem infrastructure</li>
+</ul>
+<p>The SDOH &amp; Place Project Community Toolkit connects equity principles with analysis and design of spatial visualizations for SDOH spatial data. This toolkit draws inspiration from the Robert Wood Johnson Foundation (RWJF) Commission’s findings, which assessed <a href="https://www.rwjf.org/en/insights/our-research/interactives/whereyouliveaffectshowlongyoulive.html">how communities’s health and life expectancy are affected by the places where they live</a>. To address this issue, RWJF has previously created resources to <a href="https://www.rwjf.org/en/building-a-culture-of-health/focus-areas/Features/achieving-health-equity.html">promote health equity</a>.</p>
+<p>In order to identify and engage with the necessities of different social actors, the community toolkit is based on the principles of Human-Centered Design (HCD). HCD is a well-researched framework that ensures the potential users’ desires, abilities, and contexts are at the core of interactive systems and applications. HCD consists of four main steps: identifying users’ needs, designing for those needs, evaluating, and iterating. Inspired by HCD, the community toolkit is built upon an ongoing co-creation and evaluation process that leverages the collaborative efforts of various stakeholders, such as researchers, policymakers, and analysts.</p>
+<div id="table-of-contents" class="section level3 unnumbered hasAnchor">
+<h3>Table of Contents<a href="index.html#table-of-contents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Currently, the community toolkit contains six modules. Depending on your project’s objectives, you can opt to undertake either one module or several of them. We recommend starting with Modules 1-3 regardless, and choosing your own adventure in subsequent chapters.</p>
+<ul>
+<li><a href="https://toolkit.sdohplace.org/01-intro.html"><strong>Module 1</strong></a> explores SDOH, equity, and types of visualizations. (<em>Led by Kamaria Barronville, José Alavez, &amp; Marynia Kolak</em>)</li>
+<li><a href="https://toolkit.sdohplace.org/02-scoping.html"><strong>Module 2</strong></a> guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (<em>Led by Kamaria Barronville, José Alavez, &amp; Marynia Kolak</em>)</li>
+<li><a href="https://toolkit.sdohplace.org/03-design.html"><strong>Module 3</strong></a> emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (<em>Led by Shubham Kumar &amp; José Alavez</em>)</li>
+<li><strong>Module 4</strong> focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (<em>Led by Catherine Discenza, Yilin Lyu, &amp; Marynia Kolak</em>)</li>
+<li><strong>Module 5</strong> delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (<em>Led by José Alavez &amp; Kamaria Barronville</em> )</li>
+<li><strong>Module 6</strong> introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. (<em>Led by Catherine Discenza</em>)</li>
+<li><strong>Module 7</strong> addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. (<em>Led by Marc Astacio-Palmer</em>)</li>
+</ul>
+</div>
+<div id="author-team" class="section level3 unnumbered hasAnchor">
+<h3>Author Team<a href="index.html#author-team" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="toolkit-editors" class="section level4 unnumbered hasAnchor">
+<h4>Toolkit Editors<a href="index.html#toolkit-editors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Kamaria Barronville</strong> <em>Instructional Designer</em></p>
+<p><strong>José Alavez</strong> <em>Postdoctoral Scholar</em></p>
+<p><strong>Marynia Kolak</strong> <em>Principal Investigator</em></p>
+</div>
+<div id="toolkit-contributors" class="section level4 unnumbered hasAnchor">
+<h4>Toolkit Contributors<a href="index.html#toolkit-contributors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Shubham Kumar</strong> <em>Product Designer</em></p>
+<p><strong>Catherine Discenza</strong> <em>Graduate Research Assistant</em></p>
+<p><strong>Marc Astacio-Palmer</strong> <em>Research Coordinator</em></p>
+<p><strong>Adam Cox</strong> <em>Software Engineer</em></p>
+<p><strong>Andre Vines</strong> <em>Illustrator</em></p>
+<p><strong>Yilin Lyu</strong> <em>Graduate Research Assistant</em></p>
+</div>
+</div>
+<div id="feedback" class="section level3 unnumbered hasAnchor">
+<h3>Feedback<a href="index.html#feedback" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We welcome your input to make this toolkit better. Please submit via our <a href="https://sdohplace.org/contact">contact form</a>, or post an <a href="https://github.com/healthyregions/sdhoplace-toolkit/issues">issue</a> directly on the toolkit Github repository page.</p>
+</div>
+<div id="acknowledgements" class="section level3 unnumbered hasAnchor">
+<h3>Acknowledgements<a href="index.html#acknowledgements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Support for this toolkit was provided in part by the Robert Wood Johnson Foundation. The views expressed here do not necessarily reflect the views of the Foundation.</p>
+<p>The toolkit team is housed at the <a href="https://www.healthyregions.org">Healthy Regions &amp; Policies Lab</a> at the <a href="https://www.ggis.illinois.edu">Department of Geography and Geographic Information Science</a>, at the University of Illinois at Urbana-Champaign.</p>
+<p>As a land-grant institution, the University of Illinois Urbana-Champaign has a responsibility to acknowledge the historical context in which it exists. The University of Illinois Urbana-Champaign sits on the lands of the Peoria, Kaskaskia, Piankashaw, Wea, Miami, Mascoutin, Odawa, Sauk, Mesquaki, Kickapoo, Potawatomi, Ojibwe, and Chickasaw Nations. It is necessary for us to acknowledge these Native Nations and for us to work with them as we move forward as an institution. Over the next 150 years, we will be a vibrant community inclusive of all our differences, with Native peoples at the core of our efforts.</p>
+
+</div>
+</div>
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="01-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
