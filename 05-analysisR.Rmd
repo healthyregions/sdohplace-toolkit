@@ -3,9 +3,85 @@
 
 # Research Design & Analysis in R
 
+## Environment Setup
+
+First, let's import the library needed for our analysis.
+
+- 'sf'
+- 'tmap'
+
+```{r eval=FALSE}
+library(sf)
+library(tmap)
+```
+
+Let's also bring in our data, cleaned from the previous module. In this case, we'll read from saved files and load in.
+
 ## Variable Calculations
 
 ### Buffers
+
+**Activity: Farmers Markets in Chicago**
+
+This activity focuses on utilizing data from Chicago's farmers' markets, specifically the 'farmers_markets_2012'dataset. 
+
+Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
+
+#### Add Dataset
+
+First, read in and inspect the CSV file.
+
+```{r eval=FALSE}
+
+markets <- read.csv()
+
+head(markets)
+
+```
+
+Next, convert the data frame to a spatial object using.
+
+```{r eval=FALSE}
+
+markets.sf <- read.csv()
+
+head(markets.sf)
+
+```
+
+```{r eval=FALSE}
+
+tm_shape(Chi_Zips) + tm_borders(alpha=0.5) +
+  tm_shape(markets.sf) + tm_dots(size=0.5) 
+
+```
+
+#### Spatial Reference System
+
+```{r eval=FALSE}
+
+markets.3435 <- st_transform(markets.sf, 3435)
+
+```
+
+#### Create Buffers
+
+```{r eval=FALSE}
+
+markets.buffer <- st_buffer(markets.3435, 2640)
+
+```
+
+```{r eval=FALSE}
+
+tm_shape(Chi_Zips) + tm_borders(alpha=0.5) +
+  tm_stm_shape(markets.buffer) + tm_polyons(alpha = 0.6)
+
+```
+
+#### Dissolve Buffers
+
+#### Visualize
 
 ### Distance Metrics
 

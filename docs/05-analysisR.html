@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit</title>
+  <title>A Research Design &amp; Analysis in R | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:title" content="A Research Design &amp; Analysis in R | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit" />
+  <meta name="twitter:title" content="A Research Design &amp; Analysis in R | The SDOH &amp; Place Community Toolkit" />
   
   <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   
@@ -50,16 +50,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
@@ -244,48 +234,90 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
 <li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-data-viz"><i class="fa fa-check"></i>Key Elements of Data Viz</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#appendix-appendix"><i class="fa fa-check"></i>(APPENDIX) Appendix</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
-<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<li class="chapter" data-level="5.6" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>5.6</b> Environmental Setup</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<li class="chapter" data-level="5.7" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>5.7</b> Intro to Spatial Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="5.7.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>5.7.1</b> Adding a Basemap</a></li>
 </ul></li>
-<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<li class="chapter" data-level="5.8" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>5.8</b> Coordinate Reference Systems</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
 </ul></li>
-<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<li class="chapter" data-level="5.9" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>5.9</b> Converting to Spatial Data</a>
 <ul>
-<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
-<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+<li class="chapter" data-level="5.9.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>5.9.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="5.9.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>5.9.2</b> Geocode Addresses</a></li>
 </ul></li>
-<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<li class="chapter" data-level="5.10" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>5.10</b> Convert to Spatial Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
 </ul></li>
-<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<li class="chapter" data-level="5.11" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>5.11</b> Merge Data sets</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
 </ul></li>
-<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<li class="chapter" data-level="5.12" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>5.12</b> Inspect Data</a>
 <ul>
-<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
-<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+<li class="chapter" data-level="5.12.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>5.12.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="5.12.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>5.12.2</b> Map Overlay</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis</a></li>
+<li class="chapter" data-level="6" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>6</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>6.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="6.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>6.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>6.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="6.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>6.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>6.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>6.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="6.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>6.3.2</b> Cartograms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="05-analysisR.html"><a href="05-analysisR.html#design-tips"><i class="fa fa-check"></i><b>6.4</b> Design Tips</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="05-analysisR.html"><a href="05-analysisR.html#colorbrewer"><i class="fa fa-check"></i><b>6.4.1</b> ColorBrewer</a></li>
+<li class="chapter" data-level="6.4.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-2"><i class="fa fa-check"></i><b>6.4.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
 <ul>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
@@ -312,20 +344,94 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container">
   <img class= "hero-image" src="images/banner.png">
 </div>
-<div id="research-design-analysis-1" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">B</span> Research Design &amp; Analysis<a href="05-analysisR.html#research-design-analysis-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="objective">
-<p><strong>Objectives</strong></p>
+<div id="research-design-analysis-in-r" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">A</span> Research Design &amp; Analysis in R<a href="05-analysisR.html#research-design-analysis-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="environment-setup-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">A.1</span> Environment Setup<a href="05-analysisR.html#environment-setup-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, let’s import the library needed for our analysis.</p>
 <ul>
-<li>Visualize Data as EDA method</li>
-<li>Data Classification ~ Box Plots, Choropleth Maps</li>
-<li>Rate Maps</li>
-<li>Overlays</li>
-<li>Calculate new spatial variables (buffers, distance)</li>
-<li>Testing</li>
+<li>‘sf’</li>
+<li>‘tmap’</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="05-analysisR.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="05-analysisR.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span></code></pre></div>
+<p>Let’s also bring in our data, cleaned from the previous module. In this case, we’ll read from saved files and load in.</p>
 </div>
+<div id="variable-calculations" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">A.2</span> Variable Calculations<a href="05-analysisR.html#variable-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="buffers-1" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">A.2.1</span> Buffers<a href="05-analysisR.html#buffers-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Activity: Farmers Markets in Chicago</strong></p>
+<p>This activity focuses on utilizing data from Chicago’s farmers’ markets, specifically the ’farmers_markets_2012’dataset.</p>
+<p>Farmers’ markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers’ markets in a neighborhood significantly influence residents’ food accessibility.</p>
+<div id="add-dataset" class="section level4 hasAnchor" number="6.2.1.1">
+<h4><span class="header-section-number">A.2.1.1</span> Add Dataset<a href="05-analysisR.html#add-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>First, read in and inspect the CSV file.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="05-analysisR.html#cb2-1" aria-hidden="true" tabindex="-1"></a>markets <span class="ot">&lt;-</span> <span class="fu">read.csv</span>()</span>
+<span id="cb2-2"><a href="05-analysisR.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="05-analysisR.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(markets)</span></code></pre></div>
+<p>Next, convert the data frame to a spatial object using.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="05-analysisR.html#cb3-1" aria-hidden="true" tabindex="-1"></a>markets.sf <span class="ot">&lt;-</span> <span class="fu">read.csv</span>()</span>
+<span id="cb3-2"><a href="05-analysisR.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="05-analysisR.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(markets.sf)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="05-analysisR.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zips) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="05-analysisR.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(markets.sf) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="at">size=</span><span class="fl">0.5</span>) </span></code></pre></div>
+</div>
+<div id="spatial-reference-system" class="section level4 hasAnchor" number="6.2.1.2">
+<h4><span class="header-section-number">A.2.1.2</span> Spatial Reference System<a href="05-analysisR.html#spatial-reference-system" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="05-analysisR.html#cb5-1" aria-hidden="true" tabindex="-1"></a>markets<span class="fl">.3435</span> <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(markets.sf, <span class="dv">3435</span>)</span></code></pre></div>
+</div>
+<div id="create-buffers" class="section level4 hasAnchor" number="6.2.1.3">
+<h4><span class="header-section-number">A.2.1.3</span> Create Buffers<a href="05-analysisR.html#create-buffers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="05-analysisR.html#cb6-1" aria-hidden="true" tabindex="-1"></a>markets.buffer <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(markets<span class="fl">.3435</span>, <span class="dv">2640</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="05-analysisR.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zips) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="05-analysisR.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_stm_shape</span>(markets.buffer) <span class="sc">+</span> <span class="fu">tm_polyons</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>)</span></code></pre></div>
+</div>
+<div id="dissolve-buffers" class="section level4 hasAnchor" number="6.2.1.4">
+<h4><span class="header-section-number">A.2.1.4</span> Dissolve Buffers<a href="05-analysisR.html#dissolve-buffers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="visualize" class="section level4 hasAnchor" number="6.2.1.5">
+<h4><span class="header-section-number">A.2.1.5</span> Visualize<a href="05-analysisR.html#visualize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="distance-metrics" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">A.2.2</span> Distance Metrics<a href="05-analysisR.html#distance-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="statistical-mapping-1" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">A.3</span> Statistical Mapping<a href="05-analysisR.html#statistical-mapping-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="choropleth-maps-1" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">A.3.1</span> Choropleth Maps<a href="05-analysisR.html#choropleth-maps-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="cartograms-1" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">A.3.2</span> Cartograms<a href="05-analysisR.html#cartograms-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>install.packages(“cartogram”)
+library(cartogram)</p>
+<p><a href="https://cran.r-project.org/web/packages/cartogram/readme/README.html" class="uri">https://cran.r-project.org/web/packages/cartogram/readme/README.html</a></p>
+<p>non-overlapping Circles Cartogram (Dorling el al. 1996)</p>
+<p>test &lt;- cartogram_dorling(Chi_Zipsf.3435, “TotHousing”)
+&gt; tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons(“TotHousing”)</p>
+<p>test &lt;- cartogram_dorling(Chi_Zipsf.3435, “TotHousing”, k = 3)
+&gt; tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons(“TotHousing”)</p>
+<p>test &lt;- cartogram_dorling(Chi_Zipsf.3435, “TotHousing”, k = 9)
+&gt; tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons(“TotHousing”)</p>
+<p>test &lt;- cartogram_dorling(Chi_Zipsf.3435, “TotHousing”, k = 2)
+&gt; tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons(“TotHousing”)</p>
+<p>rubber sheet distortion algorithm (Dougenik et al. 1985)</p>
+<p>test &lt;- cartogram_ncont(Chi_Zipsf.3435, “TotHousing”)
+tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons(“TotHousing”)</p>
+</div>
+</div>
+<div id="design-tips" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">A.4</span> Design Tips<a href="05-analysisR.html#design-tips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="colorbrewer" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">A.4.1</span> ColorBrewer<a href="05-analysisR.html#colorbrewer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="cartograms-2" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">A.4.2</span> Cartograms<a href="05-analysisR.html#cartograms-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
+</div>
+</div>
 </div>
 <hr class="footer-line">
             </section>
