@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introduction | The SDOH &amp; Place Community Toolkit</title>
+  <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introduction | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introduction | The SDOH &amp; Place Community Toolkit" />
+  
+  <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link rel="prev" href="index.html"/>
+<link rel="next" href="02-scoping.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
+<li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#integrate-equity-directly"><i class="fa fa-check"></i>Integrate Equity Directly</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="02-scoping.html"><a href="02-scoping.html#defining-stakeholders"><i class="fa fa-check"></i><b>2.3</b> Defining Stakeholders</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-team"><i class="fa fa-check"></i>Assess Your Team</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#motivations"><i class="fa fa-check"></i>Motivations</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#finding-a-community-of-practice"><i class="fa fa-check"></i>Finding a Community of Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-scoping.html"><a href="02-scoping.html#project-assessment"><i class="fa fa-check"></i><b>2.4</b> Project Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
+<li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="B.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>B.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>B.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The SDOH &amp; Place Community Toolkit</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
+</div>
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introduction<a href="01-intro.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objective">
+<p><strong>Objectives</strong></p>
+<p>In this module, you will:</p>
+<ul>
+<li>Expand your understanding of the social determinants of health and equity</li>
+<li>Learn how spatial data visualizations are used in public health<br />
+</li>
+<li>Define four main types of web mapping applications</li>
+</ul>
+<p>By the end, you should have an idea of which type of spatial data visualization type you plan to work with for your project.</p>
+</div>
+<p>Think of spatial data visualizations as your bridge to meaningful conversations in public health. Nevertheless, crafting insightful maps, dashboards, or other spatial representations can be challenging, due to both technical and methodological hurdles. The path to creating an effective spatial data visualization does not commence with software usage; rather, it initiates with stakeholder meetings, annotations, and sketches. Therefore, a objective of this toolkit is to encourage you to invest time in thinking about your potential visualization and considering the individuals who will reap its benefits.</p>
+<p>Annotations, sketches, and meeting summaries can be handwritten in a notebook or digitally generated on a computer. We recommend creating a journal for this toolkit to annotate and store your notes. Your toolkit journal will assist you in organizing your thoughts, creating new content, making sketches, saving code, writing notes from meetings, and reflecting on your mapping process. Indeed, the production of relevant visualizations related to SDOH is a lengthy and complex process that requires creativity, organization, and technological skills. Your journal can be an invaluable companion on your journey.</p>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p>For this toolkit, you need your <strong>toolkit journal</strong>:</p>
+<ul>
+<li>Notebook and writing utensil or</li>
+<li>Note-taking or sketching app (if you prefer digital annotations)</li>
+</ul>
+<p>Some of our team members prefer drawing on post-it notes, tablets, digital apps, or wall-sized pieces of paper. Take your pick and go with it!</p>
+</div>
+<div id="sdoh-place" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> SDOH &amp; Place<a href="01-intro.html#sdoh-place" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When we talk about the factors that shape our health, it’s not just about biology or lifestyle — it’s about where we live and the complex tapestry of history, society, and economy that frames our lives. The <a href="https://www.cdc.gov/about/sdoh/index.html">social determinants of health (SDOH)</a> encompass a range of historical, social, cultural, political, and economic factors that significantly impact the well-being of individuals and their communities. These SDOH aren’t just statistics; they’re stories of communities and the places we call home, varying from one street to the next. They’re about whether we have parks over parking lots, fresh food on shelves, and whether our neighborhoods are marked by support or segregation.</p>
+<div class="figure">
+<img src="images/preface-SDOH1.png" style="width:80.0%" alt="" />
+<p class="caption">Figure 1.1 - Classic representations of the SDOH. Source: K. Barronville</p>
+</div>
+<p>The social determinants of health are complex and exist at many different scales — the individual, interpersonal, community, and regional levels. In this toolkit, we focus on how the <strong>SDOH emerge at community and regional levels</strong>. For example, neighborhoods will have differing availability of fresh produce, community clinics, and job opportunities, impacting how residents are able to successfully eat healthy, visit health providers, and afford housing essentials. By using neighborhood or regional scales of data to approximate SDOH, we can begin to get a deeper sense of the complex environment in which people live, work, and play. When working with measures at neighborhood-levels, a spatial view is essential to enable us to work with the data, from data wrangling to visualization and analysis. A <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2759757">neighborhood-view of SDOH</a> is multidimensional, and can predict over 60% of premature deaths.</p>
+<p>Academics, activists, government agents, and policymakers have employed data visualizations to examine the connections between places and SDOH. For example, they have utilized dashboards to study the impact of COVID-19 on vulnerable communities. They implemented <a href="https://www.cdc.gov/pcd/issues/2020/20_0123.htm">participatory mapping</a> to advocate for policy-based interventions, and deployed <a href="https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html">story maps</a> to promote health initiatives. To produce these data visualizations, health researchers and advocates mobilize a wide array of conceptual frameworks and diverse technical skill sets. Moreover, data visualizations in public health do not only analyze the relationship between places and SDOH. They promote health equity: “a state in which everyone has a fair and equitable opportunity to achieve their highest level of health” (CDC’s Office of Health Equity, 2022).</p>
+</div>
+<div id="centering-equity" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Centering Equity<a href="01-intro.html#centering-equity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The concept of equity in public health data visualizations goes beyond mere stylistic enhancements to aid in comprehension or research. It extends to encompass connections to pertinent resources and diverse language options, for example, empowering communities with information, processes, and agency to transform, advocate for, and influence residents, neighborhoods, and broader political, economic, and social structures towards healthier systems.</p>
+<p>Let’s dive deeper into how we can make data visualizations not just informative, but also inclusive and impactful. You see, it’s not all about graphs and numbers. By weaving in stories and multimedia—like videos and interactive media streams—we open up a world where data talks to everyone, not just to those who love statistics.</p>
+<p>Imagine a dashboard that not only shows you the trends but also tells you the stories behind the numbers. It’s designed with real people in mind, adapting to a variety of preferences—whether you’re someone who loves a good narrative or someone who digs deep into the data.</p>
+<p>However, we’ve got to acknowledge that sometimes, our public health systems fall short. They miss the mark on painting the full picture of health disparities. That’s why, when we’re talking about Place &amp; SDOH, we need to put equity at the heart of our work—from the word go, right through to the final pixel of the design. It’s not just a ‘nice-to-have’; it’s a must-do for visualizations that truly resonate with and serve all communities.</p>
+<div id="equity-orientation" class="section level3 unnumbered hasAnchor">
+<h3>Equity Orientation<a href="01-intro.html#equity-orientation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/">equity orientation in a public health data system</a> involves several key components that must be outlined to address health disparities and promote equitable outcomes effectively.</p>
+<p>These components include:</p>
+<div id="setting-parameters-of-equity" class="section level4 unnumbered hasAnchor">
+<h4>Setting Parameters of Equity:<a href="01-intro.html#setting-parameters-of-equity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>Decision-Making Inclusion:</strong> The process of setting parameters for equity should involve diverse stakeholders, including representatives from marginalized communities, to ensure that the perspectives and needs of all affected populations are considered.</li>
+<li><strong>Target Population:</strong> It is crucial to identify the specific populations and communities that are the focus of efforts to improve equity. This includes recognizing vulnerable groups that historically experience disparities in health outcomes.</li>
+</ul>
+</div>
+<div id="focus-on-equity" class="section level4 unnumbered hasAnchor">
+<h4>Focus on Equity:<a href="01-intro.html#focus-on-equity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>Differential Needs:</strong> An equity-oriented approach acknowledges that different populations have varying needs and histories. It recognizes the importance of tailoring interventions to address these disparities rather than assuming that a one-size-fits-all approach will be sufficient.</li>
+<li><strong>Addressing Historical Considerations:</strong> An equity-oriented system acknowledges historical injustices and systemic discrimination that have contributed to current health disparities. It seeks to redress these past injustices and provide opportunities for affected communities to improve their health and well-being.</li>
+</ul>
+</div>
+<div id="subject-of-equity" class="section level4 unnumbered hasAnchor">
+<h4>Subject of Equity:<a href="01-intro.html#subject-of-equity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>Inclusivity:</strong> The subject of equity encompasses all individuals and communities facing health disparities, including marginalized and underserved groups.</li>
+<li><strong>Generational and Historical Considerations:</strong> An equity-oriented data system takes into account intergenerational and historical factors that have contributed to health disparities. It recognizes that current health outcomes are influenced by past policies and practices.</li>
+</ul>
+</div>
+<div id="content-of-equity" class="section level4 unnumbered hasAnchor">
+<h4>Content of Equity:<a href="01-intro.html#content-of-equity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>Procedural Equity:</strong> This aspect of equity focuses on ensuring that the decision-making processes and procedures are perceived as fair and transparent. It involves involving affected communities in the planning, implementation, and evaluation of health interventions.</li>
+<li><strong>Distributive Equity:</strong> Distributive equity concerns how social welfare and resources are distributed to meet the needs of different populations. It aims to allocate resources in a way that reduces health disparities and provides equitable access to healthcare and other essential services.</li>
+<li><strong>Contextual Equity:</strong> This aspect acknowledges that pre-existing social conditions (such as poverty, discrimination, and access to resources) influence equity. An equity-oriented data system considers these contextual factors when designing interventions to address health disparities effectively.</li>
+</ul>
+<div class="figure">
+<img src="images/preface-centeringequity1.png" alt="" />
+<p class="caption">Figure 1.4 - A framework for centering equity in public health data systems. Source: K. Barronville, as adpated from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9508440/">Chandra et al 2022</a>.</p>
+</div>
+</div>
+</div>
+<div id="embracing-a-trauma-informed-mindset-in-decision-making" class="section level3 unnumbered hasAnchor">
+<h3>Embracing a Trauma-Informed Mindset in Decision-Making<a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Adopting a <a href="https://ncsacw.acf.hhs.gov/userfiles/files/SAMHSA_Trauma.pdf">trauma-informed mindset</a> is crucial for creating solutions that are sensitive, empathetic, and inclusive when working in the space of communicating, understanding, and analyzing. Trauma-informed decision-making ensures that your project respects the experiences and well-being of individuals whose data is being visualized. Here are key considerations to guide your decision-making process with a trauma-informed approach:</p>
+<ul>
+<li><p><strong>Understand the Impact of Trauma:</strong>
+Recognize that individuals within your data may have experienced trauma, whether it’s related to health disparities, socioeconomic challenges, or other adverse life events. Understanding the potential impact of trauma allows you to approach your project with empathy and compassion.</p></li>
+<li><p><strong>Prioritize Safety and Trust:</strong>
+Safety and trust are foundational elements of trauma-informed care. Ensure that your data visualization project creates a safe and trustworthy space for users. This involves transparent communication, data security measures, and a user-friendly interface that minimizes potential triggers.</p></li>
+<li><p><strong>Promote Choice and Empowerment:</strong>
+Empower users by providing choices in how they interact with and interpret the data. Consider customizable features that allow individuals to tailor their experience based on their preferences. This promotes a sense of agency and control over their engagement with the visualization.</p></li>
+<li><p><strong>Avoid Re-traumatization:</strong>
+Strive to avoid re-traumatization through your data visualizations. Be mindful of the language used, the visual elements displayed, and the overall tone of your project. Aim to present information in a way that informs without causing distress or harm.</p></li>
+<li><p><strong>Cultural Sensitivity and Diversity:</strong>
+Acknowledge and integrate cultural sensitivity into your decision-making process. Consider the diverse backgrounds, beliefs, and experiences of the individuals represented in the data. Ensure that your visualizations are inclusive and respectful of different cultural perspectives.</p></li>
+<li><p><strong>Engage Stakeholders and Communities:</strong>
+Involve stakeholders and communities in the decision-making process. Seek input from those directly impacted by the data being visualized. Community engagement ensures that your project aligns with the real needs and concerns of the people it serves.</p></li>
+<li><p><strong>Continuous Feedback Loops:</strong>
+Establish continuous feedback loops to gather insights from users and stakeholders. Regularly reassess your decision-making processes in light of the feedback received, allowing for ongoing improvement and adaptation to the evolving needs of the community.</p></li>
+<li><p><strong>Ethical Data Use and Privacy:</strong>
+Uphold ethical standards in data use and privacy protection. Clearly communicate how data will be used, ensuring transparency and obtaining informed consent when necessary. Respect privacy rights and prioritize the responsible and ethical handling of sensitive information.</p></li>
+</ul>
+<p>By embracing a trauma-informed mindset in decision-making, your SDOH data visualization project can contribute to a more compassionate and understanding approach to public health. This mindset not only enhances the user experience but also promotes a positive impact on the well-being of the individuals and communities represented in the data.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Consider your audience or who your project will impact. How can you involve them in the entire process of developing and disseminating your project?</p>
+<ul>
+<li>Start by creating a list of people you know that can be included, think about who they can connect you to.</li>
+<li>Ask if they’re willing to contribute some of their time and expertise to help you develop this project.</li>
+<li>View the people your working with as co-creators.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="dynamic-spatial-visualizations" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Dynamic Spatial Visualizations<a href="01-intro.html#dynamic-spatial-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualizing public health data isn’t just about the “what”—it’s about the “so what?” It’s about crafting digital narratives that anyone can access, understand, and use to make a difference. These visual tools are our digital megaphones and meeting places—they bring us together, keep us informed, and push us towards action. <a href="https://www.ahrq.gov/data/visualizations/index.html">Data visualizations</a> in public health that advance equity are digital tools designed to provide accessible and comprehensive data related to public health indicators, focusing on reducing health disparities and promoting equity among different populations. These tools often combine various data sources and visualization techniques to present information in a user-friendly and easily understandable format.</p>
+<p>Because of our focus on SDOH &amp; Place at neighborhood and regional levels, we’ll focus on spatial data visualizations. Spatial data visualizations incorporate not just the “regular” data, but <em>in addition</em>, how that data is linked to places. This new dimension of data can be visualized as a map. But another important aspect emerges; with spatial data, we are given the ability to link any data by location. This enables us to integrate the many facets of SDOH and health, converging on place.</p>
+<div class="figure">
+<img src="images/preface-airquality.png" alt="" />
+<p class="caption">Figure 1.2 - In this dashboard, clicking on a location launches an interactive infographic of detailed health outcomes. Source: <a href="https://connect.appsilon.com/air-quality/">Appsilon</a></p>
+</div>
+<p>Data visualizations can be used by community members and organizations, research groups, policymakers, and more to empower individuals to better access and mobilize SDOH data and advance <a href="https://www.cdc.gov/healthequity/whatis/index.html">health equity</a>.
+Within the realm of public health, maps, dashboards, and interactive web applications can be created to foster fairness through an inclusive design that accommodates diverse user groups and their varying degrees of health equity. These tools are not only visually appealing and easy to comprehend, they also provide valuable insights. They adapt to the needs of different social actors by combining well-suited graphics, animations, and audio-visual elements. They even offer networking tools (e.g., messaging boards) for seamless data exchange and user interaction. These interactive features also serve to promptly update users about any alterations.</p>
+<div class="figure">
+<img src="images/preface-storymap1.png" alt="" />
+<p class="caption">Figure 1.3 - Health initiatives across Greece are shared as an interactive storymap. Source: <a href="https://uploads.knightlab.com/storymapjs/ddf1b1212ec9c9aac4bebe45196b367d/hi-update-english/index.html">The Stavros Niarchos Foundation</a></p>
+</div>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>We use the term <em>spatial data visualizations</em> throughout the toolkit. We are focusing on web-based applications that will have some interactions. (In other words, they’re not just pictures.) There are many other names for what we’re talking about, like:</p>
+<ul>
+<li>Web Applications</li>
+<li>Mapping Applications</li>
+<li>Spatial Decision Support Systems</li>
+</ul>
+<p>We’re not covering all types of spatial data visualizations, or all web apps, but will focus on common types of web mapping applications.</p>
+</div>
+</div>
+<div id="types-of-spatial-applications" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Types of (Spatial) Applications<a href="01-intro.html#types-of-spatial-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Throughout this module, we’ve concentrated on orienting you to how we talk about SDOH and Place, given you a change to brainstorm ideas, recognize prospective stakeholders, and consider potential data at your disposal for your project As we progress, we will now examine how these three features converge when it comes to choosing an appropriate spatial visualization. To facilitate this, we will introduce four distinct types of spatial visualizations for communicating about and investigating the social determinants of health: asset maps, thematic maps, story maps, and dashboards.</p>
+<p>When comparing spatial visualization options, we’ll focus on two dimensions: 1) map type, and 2) level of data &amp; interaction complexity. For map type, visualizations may be more of a <strong>reference</strong> or <strong>thematic</strong> map. A reference map is meant to emphasize <em>information</em> about locations, whereas a thematic map will focus on <em>geographic patterns</em> of a specific topic. Interaction complexity refers to the intensity and variability of user interaction with the visualization. The interactions may involve a click to open an information window, or may require extensive decision-making and careful parameter selection to generate a updated visualization. Data complexity my refer to how many types of data you are incorporating, from different forms of spatial data (e.g. address-level locations, community boundaries) as well as different types of input data (e.g. photos, videos, tabular data). As applications get more complex, you can also have lines blurred across both dimensions.</p>
+<div class="figure">
+<img src="images/preface-map.png" alt="" />
+<p class="caption">Figure 1.5 - Types of Spatial Data Visualizations an Web Mapping Applications. Source: HEROP Lab Team</p>
+</div>
+<div id="asset-maps" class="section level3 unnumbered hasAnchor">
+<h3>Asset Maps<a href="01-intro.html#asset-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These are like your community’s highlight reel, showcasing everything from the vibrant parks and schools to the people who make your area tick. They’re about celebrating what’s there, not just what’s missing, and sparking conversations about building on those strengths.</p>
+<p>Asset maps act as reference maps and tend towards straightforward interactions, like clicking on an icon to access details about an address. Data-wise, asset maps will start with address-level locations, that will get converted to <strong>point</strong> data.</p>
+<div class="figure">
+<img src="images/intro-food.png" style="width:80.0%" alt="" />
+<p class="caption">Figure 1.6 Community Food Map as an Asset Map, Source: <a href="https://eat-move-save.extension.illinois.edu/#food-finder">University of Illinois</a></p>
+</div>
+<p><a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300351">Asset mapping</a> may involve engaging with community members, stakeholders, and local organizations to gather information and collaboratively build the map. The process can be facilitated through surveys, interviews, focus groups, and public meetings. Alternatively, you may link existing data about resources into a newly integrated platform. The resulting asset map is a visual tool that provides a comprehensive view of the community’s strengths, potential partnerships, and areas where support and resources are available.
+The assets included in an asset map can be diverse and encompass various categories, such as:</p>
+<ul>
+<li><p><strong>Physical Assets:</strong> These include tangible resources like parks, schools, hospitals, community centers, libraries, public transportation, and other infrastructure elements.</p></li>
+<li><p><strong>Human Assets:</strong> Human resources within the community, such as skilled individuals, volunteers, community leaders, and organizations’ staff, are valuable assets.</p></li>
+<li><p><strong>Social Assets:</strong> Social assets refer to the networks, relationships, and social capital present in the community, including support systems, cultural groups, and community organizations.</p></li>
+<li><p><strong>Economic Assets:</strong> These include businesses, local enterprises, job opportunities, and other economic resources that contribute to the community’s well-being.</p></li>
+<li><p><strong>Cultural Assets:</strong> The cultural assets encompass the traditions, heritage, arts, and cultural events that enrich the community’s identity and cohesion.</p></li>
+<li><p><strong>Environmental Assets:</strong> Natural resources, green spaces, environmental initiatives, and sustainable practices are considered environmental assets.</p></li>
+</ul>
+<p>Asset Maps empower communities, steer strategic planning, and guide resource allocation. They’re about networking and flipping the script to a more positive community narrative.</p>
+</div>
+<div id="simple-thematic-maps" class="section level3 unnumbered hasAnchor">
+<h3>Simple Thematic Maps<a href="01-intro.html#simple-thematic-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here’s where we paint with data, using colors and symbols to show patterns like disease spread or healthcare access across different places. <a href="https://www.cdc.gov/dhdsp/maps/gisx/resources/thematic-maps.html">Thematic maps</a> in public health are maps that use visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area.</p>
+<p>Data-wise, thematic maps use area boundaries, like census tracts or counties, referred to as <strong>polygon</strong> data. Statistical data in CSV formats are merged to spatial data boundaries. Data &amp; interaction complexity remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window.</p>
+<div class="figure">
+<img src="images/preface-thematic.png" style="width:100.0%" alt="" />
+<p class="caption">Figure 1.7 - Mapping Climate Risks by County and Community (Source: <a href="https://www.americancommunities.org/mapping-climate-risks-by-county-and-community/">Pinkus 2021, via the American Communities Project</a>)</p>
+</div>
+<p>Thematic maps are valuable tools in public health for conveying complex information in a spatial context, allowing researchers, policymakers, and the public to quickly understand and interpret health-related data. Simple thematic maps in public health are used for a variety of purposes, including:</p>
+<ul>
+<li><p>Visualizing disease prevalence and distribution</p></li>
+<li><p>Identifying health disparities across different regions or demographic groups</p></li>
+<li><p>Monitoring disease outbreaks and patterns</p></li>
+<li><p>Assessing access to healthcare services and resources</p></li>
+<li><p>Evaluating the impact of public health interventions and policies</p></li>
+<li><p>Communicating public health information to the general public and stakeholders</p></li>
+</ul>
+<p>Simple thematic maps get straight to the point, showing you who and where are affected by health issues, helping to direct attention and resources effectively.</p>
+</div>
+<div id="story-maps" class="section level3 unnumbered hasAnchor">
+<h3>Story Maps<a href="01-intro.html#story-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <a href="https://ica-abs.copernicus.org/articles/3/245/2021/ica-abs-3-245-2021.pdf">story map</a> in public health is a powerful and interactive tool that combines maps, text, images, and multimedia elements to tell a compelling narrative about health-related issues, initiatives, or research. Data and interactions may be gorgeously complex, encouraging users to fully imbibe. Different types of spatial data may be used, from point-based locations to regional views.</p>
+<p>These are your digital storybooks, weaving maps with tales and images that take you on a journey through health challenges and triumphs. It allows public health professionals to present complex data, trends, and information in a visually engaging and accessible manner, making it easier for a wide range of audiences to understand and connect with the subject matter.</p>
+<div class="figure">
+<img src="images/preface-storymap.png" style="width:90.0%" alt="" />
+<p class="caption">Figure 1.8 - The Mapping of Race in America (<a href="https://storymaps.arcgis.com/stories/ac998a8425b54e319f61d34ff1a94a0c">Hessler et al 2023</a>)</p>
+</div>
+<p>Key features and uses of story maps in public health include:</p>
+<ul>
+<li><p><strong>Data Visualization:</strong> Story maps use maps and data visualizations to illustrate health-related trends, patterns, and disparities across geographic regions. This can include disease prevalence, access to healthcare, environmental health risks, and other relevant data.</p></li>
+<li><p><strong>Narrative Communication:</strong> Story maps are structured to present information in a storytelling format. Public health professionals can use narrative elements to explain the context, significance, and implications of the data, helping the audience grasp the larger story behind the statistics.</p></li>
+<li><p><strong>Health Education and Promotion:</strong> Story maps are an effective educational tool to raise awareness about public health issues, promote healthy behaviors, and disseminate health-related information to the public.</p></li>
+<li><p><strong>Community Engagement:</strong> Story maps can engage communities in public health initiatives by presenting data and insights in a way that is relevant and relatable to specific geographic areas or demographics.</p></li>
+<li><p><strong>Policy Advocacy:</strong> Public health professionals can use story maps to advocate for specific policy changes by visualizing the impact of current policies and proposing evidence-based solutions.</p></li>
+<li><p><strong>Environmental Health:</strong> Story maps can be used to communicate information about environmental health hazards, pollution, and their impact on public health. They can also showcase initiatives aimed at improving environmental conditions and public health outcomes.</p></li>
+<li><p><strong>Outbreak Response and Preparedness:</strong> Story maps can be utilized during disease outbreaks to track the spread of infections, identify hotspots, and inform response efforts.</p></li>
+<li><p><strong>Health Equity and Disparities:</strong> Story maps can highlight health disparities and inequities across different communities and populations, drawing attention to areas with the most significant health challenges and the need for targeted interventions.</p></li>
+</ul>
+<p>Story Maps turn data into engaging tales, educate, and rally communities. They’re advocates, educators, and responders all in one.</p>
+</div>
+<div id="multivariate-data-dashboards" class="section level3 unnumbered hasAnchor">
+<h3>Multivariate Data Dashboards<a href="01-intro.html#multivariate-data-dashboards" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Imagine your health community’s stats brought to life in real-time – a dashboard that’s part control panel, part story, helping everyone from officials to neighbors make sense of the numbers. Multiple variables will be integrated across different views, enabling a multivariate experience. Interactions can be complex, requiring user input to change figures or update sliders. Data may also be complex, although will mainly focus on statistical tabular data (rather than multimedia formats).</p>
+<p>In public health, <a href="https://www.ruralhealthinfo.org/assets/4472-19438/lessons-learned-dashboard-norc-brief.pdf">data dashboards</a> are digital tools that provide visual representations of key health-related data and indicators. Here’s an example of a dashboard that highlights users stories, <a href="https://www.cityhealthdashboard.com/blog-media/1501">New Video Series: Moving from Data to Action | City Health Dashboard</a>. These dashboards are specifically designed to present public health data in a user-friendly and easily understandable format, enabling stakeholders, policymakers, researchers, and the general public to access and interpret critical information about population health.</p>
+<div class="figure">
+<img src="images/preface-dashboard.png" alt="" />
+<p class="caption">Figure 1.8 - The data dashboard was a commonly used tool during the COVID-19 pandemic to communicate community spread and different dimensions of vulnerability. Source: <a href="https://uscovidatlas.org/map">The US Covid Atlas</a></p>
+</div>
+<p>Data dashboards in public health typically include the following features:</p>
+<ul>
+<li><p><strong>Health Indicators:</strong> Dashboards display a variety of health indicators, such as disease rates, mortality rates, vaccination coverage, hospitalization rates, environmental health data, and other relevant metrics.</p></li>
+<li><p><strong>Geospatial Data:</strong> Many public health dashboards utilize spatial data to present geostatistical analysis in real-time, allowing users to understand health patterns and disparities across different geographic regions.</p></li>
+<li><p><strong>Time Series Data:</strong> Dashboards often provide data over time, allowing users to observe trends, track changes, and identify seasonal patterns in health outcomes.</p></li>
+<li><p><strong>Demographic Disaggregation:</strong> Public health data dashboards may disaggregate data by demographic characteristics, such as age, gender, race, ethnicity, and socioeconomic status. This helps identify disparities and understand how health outcomes vary among different population groups.</p></li>
+<li><p><strong>Comparisons and Benchmarks:</strong> Dashboards may include the ability to compare health outcomes across regions, states, or countries, as well as against national or global benchmarks.</p></li>
+<li><p><strong>Data Sources and References:</strong> Transparent dashboards typically provide information about the sources of data, data collection methods, and references to ensure data credibility.</p></li>
+<li><p><strong>Interactivity:</strong> Interactive elements allow users to customize the dashboard, apply filters, and explore data based on their specific interests and questions.</p></li>
+<li><p><strong>Alerts and Notifications:</strong> Some dashboards include alerting features to notify users about significant changes in health indicators or emerging health threats.</p></li>
+</ul>
+<p>Spatial Data Dashboards keep a pulse on public health, from tracking diseases to zooming in on health equity. They’re transparent, interactive, and always on the lookout with alerts.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p>After exploring the four spatial visualizations (e.g., story maps, thematic maps, dashboards, and asset maps), it is essential to reflect on their advantages and limitations. Create a list of three advantages and three limitations for each of the four visualizations that we reviewed in this module.</p>
+<p>For example, you could focus on which visualization is better suited for displaying a place’s historical health trends, analyzing the impact of a pandemic, or explaining the results of a public policy? Which visualization requires some experience with statistics and coding, and which one requires experience with the humanities and storytelling?</p>
+</div>
+</div>
+</div>
+<div id="resources" class="section level2 unnumbered hasAnchor">
+<h2>Resources<a href="01-intro.html#resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an <a href="https://github.com/healthyregions/sdhoplace-toolkit/issues">issue</a> to our toolkit repository.</p>
+<ul>
+<li><a href="https://www.rwjf.org/en/building-a-culture-of-health/focus-areas/Features/achieving-health-equity.html">Achieving Health Equity</a> - Robert Wood Johnson Foundation</li>
+<li><a href="https://civilrights.org/wp-content/uploads/2023/04/Data-For-Equity-Report.pdf">Data for Equity: A Review of Federal Agency Equity Action Plans</a> - Leadership Conference Education Fund</li>
+<li><a href="https://www.urban.org/projects/do-no-harm-project">Do No Harm Guide: Crafting Equitable Data Narratives</a> - the Urban Institute</li>
+<li><a href="https://gistbok.ucgis.org/bok-topics/common-thematic-map-types">Common Thematic Map Types</a> - The Geographic Information Science &amp; Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.)</li>
+<li><a href="https://gistbok.ucgis.org/bok-topics/narrative-and-storytelling">Narrative and Storytelling</a> - The Geographic Information Science &amp; Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.)</li>
+<li><a href="https://gistbok.ucgis.org/bok-topics/gist-equity-and-social-justice">GIS&amp;T for Equity and Social Justice</a> - The Geographic Information Science &amp; Technology Body of Knowledge (2nd Quarter 2021 Edition), John P. Wilson (ed.)</li>
+</ul>
+
+</div>
+</div>
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="02-scoping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

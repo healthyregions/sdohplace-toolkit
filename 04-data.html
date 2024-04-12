@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Spatial Data Wrangling | The SDOH &amp; Place Community Toolkit</title>
+  <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Spatial Data Wrangling | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Spatial Data Wrangling | The SDOH &amp; Place Community Toolkit" />
+  
+  <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link rel="prev" href="03-design.html"/>
+<link rel="next" href="05-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
+<li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#integrate-equity-directly"><i class="fa fa-check"></i>Integrate Equity Directly</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="02-scoping.html"><a href="02-scoping.html#defining-stakeholders"><i class="fa fa-check"></i><b>2.3</b> Defining Stakeholders</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-team"><i class="fa fa-check"></i>Assess Your Team</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#motivations"><i class="fa fa-check"></i>Motivations</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#finding-a-community-of-practice"><i class="fa fa-check"></i>Finding a Community of Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-scoping.html"><a href="02-scoping.html#project-assessment"><i class="fa fa-check"></i><b>2.4</b> Project Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
+<li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="B.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>B.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>B.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The SDOH &amp; Place Community Toolkit</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
+</div>
+<div id="spatial-data-wrangling" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Spatial Data Wrangling<a href="04-data.html#spatial-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objective">
+<p><strong>Objectives</strong></p>
+<p>In this module, you will:</p>
+<ul>
+<li>Introduction to spatial data concepts and operations</li>
+<li>Convert CSV lat/long to spatial points and geocode address</li>
+<li>Overlay points with boundary data, merge SDOH data, visualize as thematic map</li>
+<li>Gain insight into SDOH data resources</li>
+</ul>
+</div>
+<p>You’ve spent some time visioning your project goals, breaking down specific needs, and connecting with potential users of the application. Once you’ve done these things, you’re ready to take on the data at hand, and start wrangling.</p>
+<p>What sort of data will you be working with? Some examples could include:</p>
+<ul>
+<li><p><strong>Resource or asset data</strong>: This could be a spreadsheet of locations including their names, description, category, and address. For data wrangling, you’ll want to set this dataset up as a .CSV format to start. This may be used as a primary dataset for an asset map.</p></li>
+<li><p><strong>Tabular, statisical, or “flat-file” data</strong>: This could be a CSV, TXT, or XLSX format dataset filled with details on income, education, or housing estimates by county. It could be data on health outcomes, with each row corresponding to a different time point. You may have downloaded it directly from a data portal, or extracted from the Census. You may use this data for thematic maps, dashboards, and more.</p></li>
+<li><p><strong>Multi-media data</strong>: This could be photographs, videos, or stories that you have geo-tagged to specific locations. It can be used for story maps, and more.</p></li>
+</ul>
+<p>Because we’re working with place-based SDOH data, that means learning how to handle <em>spatial data.</em> (This may involve converting non-spatial data to spatial data.) Working with spatial data is like working with regular data, plus entirely new dimensions. The data formats are different, and you’ll need different tools to work with it.</p>
+<div id="environment-setup" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Environment Setup<a href="04-data.html#environment-setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p><em>Download the Activity Datasets</em></p>
+<p>While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: <a href="https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip">SDOHPlace-DataWrangling.zip</a></p>
+</div>
+<p>Which computing environment should you work with spatial data? It’s up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we’ll work with <em>QGIS</em>, <em>Excel</em>, and <em>GeoDa.</em> In the Appendix, you’ll find the same activities using <em>R programming</em> scripts.</p>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p>For this module, you need the following installed on your machine. A recent, stable version is sufficient; note that versions will be updated regularly, so you’ll need to learn to update, manage, and troubleshoot as you go.</p>
+<ul>
+<li><strong>QGIS</strong>: QGIS is a free, opensource geographic information system that can be used to create, map, and analyze geospatial data. Download QGIS <a href="https://qgis.org/en/site/">here</a>.</li>
+<li><strong>Excel</strong>: Excel is a spreadsheet software that can store, organize, and analyze data sets. Use a free online version <a href="https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits">here</a>.</li>
+<li><strong>GeoDa</strong>: GeoDa is a free, opensource GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa <a href="https://geodacenter.github.io/">here</a>.</li>
+</ul>
+<p>If you prefer to code, or want to practice coding, go to the <a href="">Appendix</a> to learn the same materials using the R Programming Language.</p>
+</div>
+<p>Throughout, you’ll learn the tool you’re using isn’t as important as your ideas, concepts, and goals. You can merge data, run a buffer analysis, and make a map using ESRI, QGIS, R, Python, Spatial SQL or any other number of software or coding languages. Your goal is to learn what you want to do, understand why you need to do it, and learn &amp; discover as you go.</p>
+<p>That being said, data wrangling takes up <strong>at least 80%</strong> of a traditional GIS/spatial analysis project. Don’t underestimate the time needed to resolve challenges, and practice patience.</p>
+<div id="installing-working-with-software" class="section level3 unnumbered hasAnchor">
+<h3>Installing &amp; Working with Software<a href="04-data.html#installing-working-with-software" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>All three software that you’ll be introduced to have extensive documentation to help users understand the tools available to them and troubleshoot issues they come across. This documentation can be found <a href="https://www.qgis.org/en/docs/index.html">here</a> for QGIS, <a href="https://support.microsoft.com/en-us/excel">here</a> for Excel, and <a href="https://geodacenter.github.io/documentation.html">here</a> for GeoDa.</p>
+<p>In addition to these official documentation sources, search engines are your best friend. Gravitate toward answers on community-driven forums like <a href="https://stackoverflow.com/">Stack Overflow</a> or <a href="https://gis.stackexchange.com/">GIS Stack Exchange</a>, because someone else will have likely experienced your problem before. Searching the issue you run into or the error message that you receive is likely to bring up a forum thread of people who worked to resolve the same issue.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<ul>
+<li>If possible, it’s best to copy/paste specific error messages (or “stack traces”) from your software into search engines to find the most relevant result.</li>
+<li><em>Google</em> tends to be the most common search engine used by developers, so may be most likely to give you the result you need.</li>
+<li>Sometimes information like local file paths or user names can be printed into error messages. Be sure to keep these out of content that you post to forums!</li>
+</ul>
+</div>
+<p>Another important aspect in working with this software is file management. Decide before you start a project what your file management strategy will be, and where everything will be stored. Generally when you open a dataset in GIS software, you are only creating a pointer to the locally stored files, not copying the data into the project. This means that if a file gets moved mid-project, the software will be unable to access the data, and you’ll have to re-add it to the project. Some file formats, like shapefiles, consist of multiple files that must always be kept in the same folder together. <strong>A robust file management approach will save you time and frustration in the long run.</strong></p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Mac users will need to override a security setting to download QGIS. Once you have installed QGIS, you will need to go to Security and Privacy in System Preferences. There, you will find a message that “1 GDAL Complete.pkg” was unable to be opened. Select “Open Anyway.” You may need to do this for multiple packages depending on the version of QGIS you download.</p>
+<p>If you still have issues opening QGIS after this, Stack Overflow is a great resource for troubleshooting GIS software issues.</p>
+</div>
+</div>
+</div>
+<div id="intro-to-spatial-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Intro to Spatial Data<a href="04-data.html#intro-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Spatial data is essential for understanding the world around us, as it combines information with specific locations. This type of data is vital because it allows us to see how information changes with location. Without the geographical component, we’re left with just a list, not a spatial analysis or map that can guide decisions or provide insights.</p>
+<p>Understanding these aspects of spatial data is crucial, especially as we delve into more complex analyses. Whether it’s navigating through the components of a shapefile or exploring data in R, having a grasp on these concepts can help tackle the challenges that come with spatial data analysis.</p>
+<div id="spatial-data-types" class="section level3 unnumbered hasAnchor">
+<h3>Spatial Data Types<a href="04-data.html#spatial-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spatial data is generally divided into two broad categories: <strong>vector</strong> and <strong>raster</strong> data. Vector data holds “features” using points, lines, or polygons whereas raster data can be satellite imagery or other pixelated surfaces.</p>
+<div class="figure">
+<img src="images/data-types.pbm" style="width:70.0%" alt="" />
+<p class="caption">Vector and raster data model in geographic space (Jukil &amp; Al-Hadad, 2017)</p>
+</div>
+<p>We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data is not just locations and shapes, but also attributes. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more.</p>
+<p>For example, a park can be represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.</p>
+<p><img src="images/data-diagram.png" style="width:95.0%" /></p>
+</div>
+<div id="more-types-of-data" class="section level3 unnumbered hasAnchor">
+<h3>More Types of Data<a href="04-data.html#more-types-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While we focus on tabular spatial data in this introductory module, you may work with multiple types of data in your SDOH project that is linked to place. Another of thinking about this is considering spatial data as primary, secondary, or tertiary. In the following section, we will provide a brief description of each of these types of data.</p>
+<details>
+<summary>
+<strong>Primary Spatial Data</strong>
+</summary>
+Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.</br></br>
+</details>
+<details>
+<summary>
+<strong>Secondary Spatial Data</strong>
+</summary>
+You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.</br></br>
+</details>
+<details>
+<summary>
+<strong>Tertiary Spatial Data</strong>
+</summary>
+In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it’s worth inquiring whether they possess any spatial layers that could prove beneficial for your project. </br></br>
+</details>
+<p>It is key to emphasize that data can often be tainted by biases and errors. As a result, the methods used to gather, aggregate, or model spatial data can have adverse effects on the quality of our data visualizations. It is of utmost importance to meticulously scrutinize various forms of data, whether they are qualitative (e..g, interviews or questionnaires), quantitative (e.g., databases), or mixed (e.g., surveys). A valuable starting point for data analysis involves assessing metadata within databases or interview questions. Further insights into this subject will be explored in subsequent sections of this toolkit.</p>
+<p>In your project, there’s no need to limit yourself to just one kind of data. In fact, it’s not only possible but often necessary to mix and match different sources and types of spatial data to craft compelling SDOH spatial visualizations.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p>Review these projects below and identify what type of data they use. In your opinion, what other types of data could they use to enrich their visualizations?</p>
+<p><a href="https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1396&amp;context=uresposters">Using Asset Mapping to Identify Health Needs of a Latinx Population in Rural Virginia</a>
+<a href="https://carto.com/blog/visualizing-health-data-social-factors">US Social Determinants of Health Atlas - Map of the Month</a></p>
+</div>
+</div>
+<div id="spatial-data-formats" class="section level3 unnumbered hasAnchor">
+<h3>Spatial Data Formats<a href="04-data.html#spatial-data-formats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Just like you may store text in an MS Word document or a PDF, there are many different formats used to store vector spatial data. Keep in mind that file extensions are very important – it is often how people refer to different file formats.</p>
+<p>Perhaps the simplest format is a comma-separated value, or <strong>CSV</strong>, file. This is a plain text format for table storage that can be opened and exported from MS Excel, or even just a simple text editor. What can make a CSV a “spatial” data format is the presence of columns that represent coordinate locations for each row in the table. These columns could be latitude, longitude coordinates, or a single column could hold a different coordinate format like Well-Known Text (WKT). A CSV file name will end in <code>.csv</code>, though you may also see <code>.tsv</code>, for “tab-separated values”.</p>
+<p>Another common spatial data format is the <strong>shapefile</strong>. A shapefile is actually a suite of multiple files, all with the same name but each with a different extension. There must be three files present at a minimum, <code>.shp</code>, <code>.shx</code>, <code>.dbf</code>, though typically you will have 4-7 files, other common extensions being <code>.prj</code>, <code>.cpg</code>, etc. These files must always be kept together, so make sure you zip up a shapefile if you are sending it to someone else!</p>
+<p>We will also use a format called <strong>GeoJSON</strong>, <code>.geojson</code> or sometimes just <code>.json</code>, and you may also hear about GeoPackages, <code>.gpkg</code>, though we won’t be using that format in this module.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th>Extension</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Human-readable data<br/>Edit in MS Excel or text editor</td>
+<td>Inefficient for large datasets</td>
+</tr>
+<tr class="even">
+<td>Shapefile</td>
+<td><code>.shp</code><br/><code>.shx</code><br/><code>.dbf</code><br/>etc.</td>
+<td>Robust and performant<br/>Can use any CRS</td>
+<td>10-character attribute name limit<br/>Sidecar files can be confusing!</td>
+</tr>
+<tr class="odd">
+<td>GeoJSON</td>
+<td><code>.geojson</code></td>
+<td>Human-readable data<br/>Edit in text editor</td>
+<td>Inefficient for large datasets</td>
+</tr>
+</tbody>
+</table>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Open a Vector Data File in QGIS</em></p>
+<p>There are multiple ways to add a vector dataset to a QGIS project. First, open QGIS and create a blank document. Next, use one of these methods:
+- Navigate to <strong>Layer</strong> &gt; <strong>Add Layer</strong> &gt; <strong>Add Vector Layer</strong>, and then find the <code>chicagotracts.shp</code> file in your file system.
+- Use the Browser panel to navigate your file system, and drag <code>chicagotracts.shp</code> into the map view.
+- In your standard file explorer, navigate to the <code>chicagotracts.shp</code> file, then drag and drop it directly into your QGIS project.
+- In your file system you will see all shapefile sidecar files, be sure to use the <code>.shp</code> file when you drag it into QGIS.</p>
+<p>You will now see a new layer in your <strong>Layers</strong> panel. To “style” the layer (change the colors and symbols that are used to represent it), you can either:</p>
+<ul>
+<li>Right-click on the layer and choose <strong>Properties…</strong>, then go to the <strong>Symbology</strong> tab.</li>
+<li>Go to <strong>View</strong> &gt; <strong>Toolbars</strong> and enable the <strong>Layer Styling</strong> toolbar.
+<ul>
+<li>This toolbar provides direct access to the symbology for the currently selected layer, no need to open the Properties window!</li>
+</ul></li>
+</ul>
+<p><strong>Challenge</strong>: Repeat the same activity using GeoDa, a spatial statistical software.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#intro-to-spatial-data-1"><em>Open a Vector Data File in R</em></a></p>
+</div>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Add a Basemap in QGIS</em></p>
+<p>The easiest way to add a basemap to your QGIS project is through the <strong>QuickMapServices</strong> plugin. To install this plugin:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <strong>Plugins</strong> &gt; <strong>Install and Manage Plugins…</strong></li>
+<li>Search for and select <code>QuickMapServices</code></li>
+<li>Click <strong>Install</strong></li>
+</ol>
+<p>Once installed, it’s best to add the extra “contributed pack” to this plugin, in order to get more basemap options.</p>
+<ol style="list-style-type: decimal">
+<li>Go to <strong>Web</strong> &gt; <strong>QuickMapServices</strong> &gt; <strong>Settings…</strong></li>
+<li>Go to the <strong>More services</strong> tab, and click <strong>Get contributed pack</strong></li>
+</ol>
+<p>Depending on your version of QGIS you may have different base map options, but all versions should at least have OSM Standard. Select this to add the base map.</p>
+<p><strong>Warning</strong>: Do not use Google or Bing basemaps in published work, it is generally against their terms of service.</p>
+<p><strong>Challenge</strong>: Repeat the same activity using GeoDa, a spatial statistical software.</p>
+</div>
+</div>
+</div>
+<div id="coordinate-reference-systems" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Coordinate Reference Systems<a href="04-data.html#coordinate-reference-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The “spatial” part of spatial data is coordinates. For example, you may have a dataset of hospitals: the location of each feature will be represented by a latitude/longitude coordinate pair. If you have a dataset of county boundaries, each corner, or “vertex” of every shape will be represented by a coordinate as well. The fact that spatial data stores coordinates is the only thing that makes it “special.”</p>
+<p>However, there are many different ways of storing coordinates (not only latitude/longitude as you may assume) which is what brings us to the concept of a “coordinate reference system” (CRS), which is exactly what it sounds like: a reference system for interpreting coordinates.</p>
+<p><img src="images/crs-image.png" style="width:95.0%" /></p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p><em>EPSG Codes</em>
+In the 1980s the European Petroleum Survey Group began a registry of coordinate reference systems, and this database is now a standard registry: All common coordinate reference systems have their own EPSG code.</p>
+</div>
+<p>There are two basic categories of coordinate reference systems: <strong>Geographic (GCS)</strong> and <strong>Projected (PCS)</strong>.</p>
+<p>A <strong>GCS</strong> is fairly straightforward, because its coordinates are latitude/longitude “decimal degrees” that look like <code>44.0208693</code>, <code>-92.4841652</code>. There are just a few common geographic coordinate systems, and the only thing that differentiates them is a slightly different mathematical model of the globe, called a “datum”. The most common one is <strong>WGS84</strong> (EPSG: 4326), though you may also see <strong>NAD83</strong> (EPSG: 4269), which is slightly more accurate for North America. For our purposes, we don’t need to worry much about the difference between these two.</p>
+<p>GeoJSON datasets should only store data in WGS84.</p>
+<p>If you’re not sure what CRS a latitude/longitude coordinate value is in a dataset you pulled from a data portal, there is a good chance it will be EPSG:4326! Once challenge with this CRS is that the distance is in degrees, not miles or kilometers. To use spatial data for distance or geometric calculations, you’ll need to transform to a different CRS that that uses different unit of distance…</p>
+<p>A <strong>PCS</strong> on other hand is “projected,” meaning that it is not only based on a datum, but on top of that it uses a <strong>map projection</strong>. Map projections are different methods for flattening the globe (or portions of it) so it can be displayed on a 2-dimensional plane (in other words, a map!). When a geospatial dataset is stored in a projected CRS, it doesn’t actually use latitude/longitude coordinates at all–it uses X/Y coordinates based on the flattened plane that the projection defines.</p>
+<p>Robust spatial data formats, like Shapefiles and GeoPackages, are able to store data in any CRS, either geographic or projected.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p><em>Summary of Geographic vs. Projected CRS</em></p>
+<ul>
+<li>A Geographic Coordinate Reference System interprets coordinates as latitude/longitude positions on the globe.
+<ul>
+<li>Units: degrees</li>
+<li>Examples: <strong>WGS84</strong> (EPSG: 4326), <strong>NAD83</strong> (EPSG:4269)</li>
+</ul></li>
+<li>A Projected Coordinate Reference System interprets coordinates as x, y positions within a given map projection.
+<ul>
+<li>Units: feet or meters (defined by CRS)</li>
+<li>Examples: <strong>Web Mercator</strong> (EPSG:3857), <strong>NAD83 / UTM Zone 16</strong> (EPSG: 26916), <strong>NAD83 / Illinois East (ftUS)</strong> (EPSG:3435)</li>
+</ul></li>
+</ul>
+<p><strong>Always use a projected coordinate system if you are making any distance-related calculations on your spatial data.</strong></p>
+</div>
+<div id="why-use-projected-coordinate-reference-systems-for-spatial-data" class="section level4 unnumbered hasAnchor">
+<h4>Why use Projected Coordinate Reference Systems for Spatial Data?<a href="04-data.html#why-use-projected-coordinate-reference-systems-for-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You may be wondering: Why isn’t all spatial data just stored as latitude/longitude coordinates? The short answer is simply “measurement.” In order to perform any geographic calculations–length of roads, area of districts, distance from hospitals, etc.–you will need to use a projected CRS.</p>
+<p>This is because every CRS is defined by the units that its coordinates are stored in, meaning that if your CRS uses latitude/longitude coordinates (like WGS84) your units are degrees. However, degrees are terrible for distance measurements because, for example, one degree of longitude along the equator is 69 miles, but around Chicago it’s just 51.</p>
+<p>A projected CRS, having flattened the Earth (or a portion of it) represents a grid system that is not based on degrees but on feet or meters. Therefore, the X/Y coordinates that a projected dataset stores are just the number of feet (or meters) away from the origin of the projection (like a Cartesian coordinate system in algebra). With your data in the appropriate projected CRS for your region, you are ready to make meaningful calculations.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p><em>Coordinate Reference Systems in QGIS</em></p>
+<p>QGIS applies coordinate reference systems at two different levels, and it is important to understand the difference between these levels.</p>
+<ul>
+<li>At the <strong>individual layer level</strong>, QGIS says: <em>What CRS should be used to interpret this particular dataset?</em>
+Generally, a dataset will properly reports its CRS and no action is needed. However, you can right-click on a layer and use <strong>Layer CRS &gt;</strong> to assign a different CRS to it. This does not change the underlying data, just how it is interpreted.
+<ul>
+<li>If a layer has no CRS assigned to it, a <code>?</code> symbol will appear next to its name and QGIS will default to interpreting is through the project-level CRS.</li>
+</ul></li>
+<li>At the <strong>project level</strong>, QGIS says: <em>What CRS should be used to display the layers in this project?</em> By default, QGIS will choose the CRS of the first layer that you add to a project.
+<ul>
+<li>You can change the project’s CRS in Project &gt; Properties… &gt; CRS, or through the small button in the bottom right that displays the current CRS.</li>
+</ul></li>
+</ul>
+<p>As long as each layer’s CRS is correctly assigned, GIS software will properly align datasets with different coordinate reference systems, and even allow you to display those datasets in a different projection altogether.</p>
+<p><strong>One of the most common problems people have with spatial data is not knowing what CRS to use with their data!</strong></p>
+</div>
+</div>
+<div id="common-projected-coordinate-reference-systems" class="section level4 unnumbered hasAnchor">
+<h4>Common Projected Coordinate Reference Systems<a href="04-data.html#common-projected-coordinate-reference-systems" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>One projected CRS you are already used to seeing is a modern adaptation of the Mercator projection, commonly called <strong>Web Mercator</strong> (EPSG:3857). Every interactive web map–Google, Apple, Uber, Lyft, etc.–uses this projection, because it covers the whole world and has a handful of other advantages. However, this projection is not very good for calculations because it greatly magnifies the size of land masses as you approach the north and south pole.</p>
+<p>Instead, we need to use a projected CRS that is designed for a smaller region within which our dataset is located. In the US we commonly use a series of projected CRSs called UTM Zones which are based on the NAD83 datum and the Universal Transverse Mercator projection, for example <strong>NAD83 / UTM Zone 16</strong> (EPSG: 26916) covers Chicago. Another common set of CRS definitions in the US is the State Plane series. Chicago sits within the area best covered by <strong>NAD83 / Illinois East (ftUS)</strong> (EPSG:3435).</p>
+<p>To find a CRS, we recommend using <strong>Google</strong> – seriously! Google “EPSG Illinois ft” if you want to identify a CRS that is appropriate for the Chicago region as an example, and using an appropriate distance metric for further analysis. Doing this, you’ll find that EPSG:3435 emerges as a top choice.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Reproject Data in QGIS</em></p>
+<p>If you have spatial data that uses a geographic CRS, like a GeoJSON file, then you will need to transform or reproject that data to a projected CRS in order to use it for any distance-related spatial analysis. Try the following in QGIS:</p>
+<ol style="list-style-type: decimal">
+<li>Load the <code>chicagotracts</code> dataset by dragging and dropping the <code>chicagotracts.shp</code> file into a new blank document.</li>
+<li>Right-click on the layer in the <strong>Layers</strong> panel.
+<ul>
+<li>Observe: In <strong>Layer CRS</strong>, QGIS has properly chosen EPSG:4326 (WGS84) to interpret this dataset.</li>
+<li>Note: By clicking <strong>Set to…</strong> or <strong>Set Layer CRS…</strong> you can tell QGIS to use a different CRS for this layer. <em>No need to do this in this case!</em></li>
+<li>Choose: Click <strong>Export &gt; Save Features As…</strong> to open the data save dialog box.</li>
+</ul></li>
+<li>Pick ESRI Shapefile as the output format.</li>
+<li>Browse to an appropriate folder and name your export <code>chicagotracts-3435</code>.</li>
+<li>Use the CRS dropdown to select <code>NAD83 / Illinois East (ftUS)</code>.
+<ul>
+<li>If this CRS is not in the dropdown, use the Select CRS button to open a more detailed dialog box.</li>
+<li>Filter for <code>NAD83 / Illinois East (ftUS)</code> and find the appropriate CRS in Projected &gt; Universal Transverse Mercator…</li>
+</ul></li>
+<li>Leave all other settings as they are, click <strong>Ok</strong> to save the dataset.
+<ul>
+<li>The new dataset will be in your selected CRS.</li>
+</ul></li>
+</ol>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#coordinate-reference-systems-1"><em>Reproject Data in R</em></a></p>
+</div>
+</div>
+</div>
+<div id="converting-to-spatial-data" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Converting to Spatial Data<a href="04-data.html#converting-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A common goal in SDOH research is to work address-level data, known as <em>points</em> or <em>events</em> (when considering time) in spatial analysis research. This could refer to resources in a community, . Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.</p>
+<p>Locations, when measured as points, can include things like:</p>
+<ul>
+<li><strong>Health providers</strong>: Hospitals, Clinics, Pharmacies, Mental health providers, Medication for opioid use disorder providers</li>
+<li><strong>Area resources</strong>: Grocery stores &amp; Supermarkets, Playgrounds, Daycare centers, Schools, Community centers</li>
+<li><strong>Area challenges</strong>: Crime, Superfund sites, Pollution-emitting facilities</li>
+</ul>
+<p>Points can also represent people, like individual patients residing in an area. Because individual locations for persons is protected health information, we’ll focus on point data as resources in the chapter. However, you can reuse the approach in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.</p>
+<p>Let’s start with an example where the spatial coordinate information has already been embedded within the data set as latitude and longitude information.</p>
+<div id="csv-to-spatial-data" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> CSV to Spatial Data<a href="04-data.html#csv-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Comma separated (CSV) files are not a spatial data format. To be used for spatial analysis or mapping they will need to be converted to a spatial data format, such as a <code>GeoJSON</code> or <code>shapefile</code> data format. As long as a CSV contains spatial data like coordinates, GIS software should allow you to save CSV data as a new spatial data file.</p>
+<p>There are multiple options for converting CSV files to spatial data. For this type of conversion, you’ll want a CSV file with coordinate information (e.g. longitude and latitude) in separate fields. It’s possible that coordinates recorded using a different CRS that is not long/lat, though we’ll use a classical example here.</p>
+<p>Your CSV may have:</p>
+<ul>
+<li>One field for <strong>longitude</strong> (which will be read as the <strong>x</strong> coordinate)</li>
+<li>One field for <strong>latitude</strong> ( which will be read as the <strong>y</strong> coordinate)</li>
+</ul>
+<p>Using a GIS or coding platform, you’ll assign the coordinate values and indicate the CRS being used. If you’re not sure what the CRS is and it’s a long/lat value, try EPSG:4326 as the most commont. You made need to troubleshoot if this is not the correct CRS for your dataset by inspecting documentation for the data.</p>
+<p>Always open a CSV to inspect it before trying to convert it. Verify longitude and latitude are in separate fields, and those fields are correctly labeled. Then, inspect afterwards! Make sure the points are plotting where you expect them. Common errors during this step is mixing up the long/lat, or assigning the wrong CRS.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Convert CSV to Spatial Data Format in QGIS</em></p>
+<details>
+<summary>
+<strong>Step 1: Open a CSV File</strong>
+</summary>
+<ul>
+<li>Open your CSV file via Layer -&gt; Add Layer -&gt; Add Delimited Text Layer. We’ll use <code>Affordable_Rental_Housing_Developments.csv</code> for this exercise.</li>
+<li>You will be prompted to indicate which fields in your CSV contain longitude and latitude (or some other X/Y coordinate system), as well as the CRS, which will likely (although not always!) be EPSG:4326 if not otherwise noted. Select the appropriate fields, then hit OK.</li>
+</ul>
+<div class="figure">
+<img src="images/04-2csvtojson.png" alt="" />
+<p class="caption">csvtojson</p>
+</div>
+<ul>
+<li>A map of your data will be generated.</li>
+</ul>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 2: Add a Basemap</strong>
+</summary>
+<p>Add a basemap to inspect that your data has loaded properly. If you’ve mixed up longitude and latitude, your data points may be on the other side of the world!</p>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 3: Save in a Spatial Data Format</strong>
+</summary>
+<p>Right click the layer and go to Export -&gt; Save Features As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!</p>
+<div class="figure">
+<img src="images/04-3csvtojsonsave.png" alt="" />
+<p class="caption">csvtojsonsave</p>
+</div>
+<br/>
+</details>
+<p><strong>Challenge:</strong> Open a CSV as a spatial data file in GeoDa, then save as a shapefile.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#convert-csvs-to-spatial-data-1"><em>Convert CSV to Spatial Data Format in R</em></a></p>
+</div>
+</div>
+<div id="geocode-addresses" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Geocode Addresses<a href="04-data.html#geocode-addresses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What if your original dataset only has addresses? In that case, you’ll need to geocode your data to identify coordinates for spatial data transformation.</p>
+<p>Addresses are not spatial data. They are real-world representations of spatial data, but GIS software will not be able to map them without further information. Geocoding is the process of converting addresses into geographic coordinates using a known coordinate reference system (CRS). We can then use these coordinates (ex. longitude, latitude) to spatially enable data.</p>
+<div id="using-topologies" class="section level4 unnumbered hasAnchor">
+<h4>Using Topologies<a href="04-data.html#using-topologies" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Geocoding services use <a href="https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding">topologies</a> to assign street addresses along streets. Different services have differing degrees of topology quality; some are updated regularly, and others may have fewer updates, so precision may not be the same. Many services will give you a match score to let you know how closely the address matched their information.</p>
+<p>How precise does your measure need to be? Do you want to reject matches with &lt;90% uncertainty? Some services will not have this option available. If you’re at a university or institutional setting, you may have access to geocoding services with more precise topologies, like ESRI or Google proprietary geocoding products. The examples used in this textbook use an open topology that will provide reasonable accuracy for many areas.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>If you are geocoding <a href="https://cphs.berkeley.edu/hipaa/hipaa18.html">protected health information (PHI)</a>, you may not use web-based geocoding service. Check with your instution to access a server-based, offline, HIPPA-compliant geocoding service.</p>
+</div>
+</div>
+<div id="data-preparation-for-geocoding" class="section level4 unnumbered hasAnchor">
+<h4>Data Preparation for Geocoding<a href="04-data.html#data-preparation-for-geocoding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>After determining the geocoding service you’ll use, plan for an intensive data cleaning and preparation stage. Read the service documentatioon to understand how data must be formatted. You will likely need to split your address field as different address, city, state, and zip code values.</p>
+<p>Geocoding tools may be having an issue reading some addresses due to formatting issues in the CSV. Suite or apartment numbers, for example, may cause tools to be unable to geocode addresses. Only include the street address in the address column of your CSV. If you want to retain apartment or suite numbers, include them in a separate column in your CSV. Another common issue is an address being miswritten in your CSV file.</p>
+<p>Even something as small as an extra apostrophe can prevent an address from being geocoded properly. Many cities have also addresses that are duplicates or are very similar. Providing the most information you can is the best way to resolve this issue. Geocoding tools can use street address, city, state, and country information to geocode addresses. If you do not already have all of this information in your original CSV, add it and try geocoding again.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Geocode with QGIS</em></p>
+<p>For this exercise, download <code>chicago_methadone_nogeometry.csv</code>, a data set of methadone centers in Chicago that only includes center names and addresses.</p>
+<details>
+<summary>
+<strong>Step 1: Geocode with MMQGIS</strong>
+</summary>
+<p>To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -&gt; Manage and Install Plugins. Search MMQGIS, and install it.</p>
+<div class="figure">
+<img src="images/04-4mmqgis.png" alt="" />
+<p class="caption">mmqgis</p>
+</div>
+<p>Once installed, the plugin should be visible on the toolbar across the top. Select MMQGIS -&gt; Geocode -&gt; Geocode CSV with Web Service.</p>
+<div class="figure">
+<img src="images/04-5geocodepathway.png" alt="" />
+<p class="caption">geocodepathway</p>
+</div>
+<p>Upload your CSV file. Confirm the correct fields are being read, choose your web service (OpenStreetMap is the open source option), name your output files and select the file formats. Hit apply, and the addresses should appear as points, and a spatial data file should have been generated and appear on the left side of your screen as a new layer.</p>
+<div class="figure">
+<img src="images/04-6geocodeparameters.png" alt="" />
+<p class="caption">geocodeparameters</p>
+</div>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 2: Inspect your Data</strong>
+</summary>
+<p>Once all your addresses are appearing, inspect them to ensure that everything has geocoded properly. Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue.</p>
+<p>Inspect the layer attribute table to determine the source of any issues. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have generated a few more pieces of information, including the full address and lat/long. Taking a look at this information for any points that did not properly geocode can help you discover where the issue may be in your original CSV.</p>
+<br/>
+</details>
+<p>Once everything has geocoded properly, you’ll have a spatial data file ready to use in other software.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#geocode-addresses-1"><em>Geocoding in R</em></a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="merge-data-sets" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Merge data sets<a href="04-data.html#merge-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Merging data sets is a vital skill for analyzing health data from an SDOH perspective. SDOH data and health data will often be in separate data sets, but use the same geographic scale, such as zip code or census tract. Being able to merge these kinds of data sets together using that scale is important to the ease of performing analysis with your data.</p>
+<p>You will likely be merging data in flat files, like statistical datasets and Census records, to a spatial boundary corresponding to some administrative boundary. The new spatial dataset, a shapefile or GeoJson, is your master dataset that retains all of the original data, spatial boundaries, and new data you’re merging in.</p>
+<p>Place literally serves as your “key” to join the data together.</p>
+<div id="reshape-data" class="section level3 unnumbered hasAnchor">
+<h3>Reshape Data<a href="04-data.html#reshape-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data sets often don’t come in GIS-friendly formats. Flat files may be separated vertically among multiple variables (long format) rather than horizontally along a single identifying variable (wide format). While long format is considered a standard for “tidy” data and the standard in epidemiological research, it’s not efficient for GIS purposes. To merge data to boundaries for mapping and some spatial analysis, we’ll have to reshape from long to wide format. Knowing how to reshape data efficiently will make you a master data wrangler.</p>
+<p><img src="images/04-pivot.png" /></p>
+<p>You can use pivot tables in Excel to reshape your data, or your favorite coding approach. Reshaping data is a pain, but important for subsequent research!</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Long to Wide with Excel</em></p>
+<p><strong>File:</strong> <code>COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv</code></p>
+<p>To create a wide data set with the cumulative cases for each week for each zip code, create a pivot table in Excel.</p>
+<details>
+<summary>
+<strong>Step 1: Create a Pivot Table</strong>
+</summary>
+<ul>
+<li>Open the CSV as an excel file, and open a new sheet.</li>
+<li>Go to Insert -&gt; Pivot Table.</li>
+<li>Select the data you wish to include; in this case, we want the cumulative case data, so select columns A-F from the original excel sheet.</li>
+<li>Make sure the pivot table will be placed in the new excel sheet, and hit OK.</li>
+</ul>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 2: Add Your Data</strong>
+</summary>
+<p>The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters.
+- In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows.
+- We want our columns to be organized by week, so drag either Week Number, Week Start, or Week End into the Columns.
+- You’ll notice these variables split into multiple categories when dragged into a pivot table field. Use the information icon at the side of each category unwanted information.
+- Finally, drag Cases - Cumulative into the Values to fill out the table.</p>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 3: Clean Up Your Table</strong>
+</summary>
+<p>Pivot tables often generate columns and rows that are unnecessary for our purposes. These extra columns and rows could make it difficult for spatial software to read your CSV later.</p>
+<ul>
+<li>Use the drop down menu for Row Labels or Column Labels to remove any unwanted rows or columns, such as Grand totals and the first row that includes Sum of Cases and Column Labels.<br />
+</li>
+<li>Rename the column containing zip codes.</li>
+</ul>
+<br/>
+</details>
+<p>Your nearly completed pivot table will look something like this:</p>
+<div class="figure">
+<img src="images/04-8pivotresult.png" alt="" />
+<p class="caption">pivotresult</p>
+</div>
+<p>Update the column names to include the variable and date together for bonus points (ex. “Cases_050320”). Note that if you will later merge to a shapefile, you’ll need to stick under 10 characters for variable names.</p>
+<p>Save the sheet as a new CSV by going to File -&gt; Save As. It’s ready for merging!</p>
+<p><strong>Note</strong>: You can also select variables of interest as a subset of the data using QGIS or GeoDa.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#reshape-data-1"><em>Reshaping Data in R</em></a></p>
+</div>
+</div>
+<div id="join-by-attribute" class="section level3 unnumbered hasAnchor">
+<h3>Join by Attribute<a href="04-data.html#join-by-attribute" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One of the most common spatial data tasks is merging. First, we merge by attribute, meaning the “key” to join two datasets exists as an exising column name. That may be a zip code, neighborhood, or county ID. For this step, you want to ensure you have a 1:1 match, meaning that your flat file data includes data for each geographic area only once. If not, go back to the “reshape data” section, rinse, and repeat!</p>
+<div id="geographic-identifiers" class="section level4 unnumbered hasAnchor">
+<h4>Geographic Identifiers<a href="04-data.html#geographic-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You will come across data with various different boundaries, such as county, zip code, and census tracts. Each of these boundaries have a unique identification code. In the U.S., that could be a Federal Information Processing System (FIPS) code, or numbers which uniquely identify geographic areas. These are types of <strong>Geographic Identifiers</strong>, also known as GEOID’s for short.</p>
+<p>Some of the most common administrative/legal and statistical geographic entities with unique GEOIDs include states, counties, congressional districts, core based statistical areas (metropolitan and micropolitan areas), census tracts, block groups and census blocks. Sometimes a census tract may be identified by its full 11-digit FIPS code, and other times, the data provider may only include the last 6 digits. Learn more about <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html">GEOIDs at the U.S. Census</a> for tips. Some cities, like New York and Chicago, have developed additional neighborhood boundaries that aggregate census tracts.</p>
+</div>
+<div id="merging-to-spatial-data" class="section level4 unnumbered hasAnchor">
+<h4>Merging to Spatial Data<a href="04-data.html#merging-to-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To merge your data to a geographic area, you’ll need to find the geographic spatial boundary or corresponding spatial data. You can search the Census for the specific area of interest, and select your year vintage (ex. “Illinois tracts in 2010”). You could also search using carefully selected keywords in your town’s Data Portal (ex. “Chicago tract boundaries”), or using Google as a search engine (ex. “Milwaukee census tract .shp”). Note that tract boundaries changed in 2020 (and generally every decade), so learning how to work with a Census crosswalk may take more time and learning in your journey.</p>
+<p>After inspecting your spatial dataset, ensure you know the GEOID of the variable that will be your key. Inspect the dataset you are joining, and identify the corresponding key. We recommend joining to the spatial dataset, not the other way around, to preserve data quality. Inspect any rows that were lost after joining during merges.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Merge SDOH data to Zip Codes in GeoDa</em></p>
+<p>Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.</p>
+<details>
+<summary>
+<strong>Step 1: Clean Zip Code Data</strong>
+</summary>
+<p>We’ve cleaned our covid case data already, but you’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.</p>
+<ul>
+<li>Select one row for each zip code and save the selection as a new geojson, ChiZipCleaned.</li>
+</ul>
+<p>You’ll notice that two zip codes have repeats that are not exactly alike. This is because these two zip codes have small exclaves, and so are listed separately since they are separate polygons. However, having the repeated zip code will create problems when merging the data, and the exclaves are small enough not to be relevant for our analysis. Only choose the rows with a larger area for these two zip codes.</p>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 2: Merge Data</strong>
+</summary>
+<ul>
+<li>Open ChiZipCleaned.geojson.</li>
+<li>Go to Table -&gt; Merge.</li>
+<li>Select the cumulative case data set.</li>
+<li>Under parameters, select Merge by key values, with zip selected for current table key and Zip Code selected for import table key.</li>
+<li>Move over all data columns you want to see in this merged data set.</li>
+</ul>
+<p>Tip: you do not need to include Zip Code since this field is being used to merge the two data sets, including it will only duplicate zip codes in the resulting data set.</p>
+<div class="figure">
+<img src="images/04-9mergeparameters.png" alt="" />
+<p class="caption">mergeparameters</p>
+</div>
+<br/>
+</details>
+<p><strong>Challenge:</strong> Do the same process using QGIS.</p>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#join-by-attribute-1"><em>Merge by Attribute in R</em></a></p>
+</div>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p><em>Using Zip Codes</em></p>
+<p>Zip codes are often the smallest area resolution available for many health researchers, due to privacy concerns. However, zip codes correspond to postal service routes, are not meaningful administrqtive units, and can mask data insights at the neighborhood level as a result. Associations that may appear if using tract-level data could be hidden at the zip code level. Be careful, and understand your limitations!</p>
+<p>The Census provides Zip Code Tabulation Areas (ZCTAs), which are similar to but not exactly the 5-digit Zip Codes people think of when referencing their postal address. Furthermore, full 9-digit Zip Codes change regularly. For precision, consider using the <a href="https://www.huduser.gov/portal/datasets/usps_crosswalk.html">HUD Crosswalk</a> to transform your zip code year to a census tract.</p>
+</div>
+</div>
+</div>
+<div id="join-by-location" class="section level3 unnumbered hasAnchor">
+<h3>Join by Location<a href="04-data.html#join-by-location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes, you won’t have a boundary key! How will you know which parks fall into which census tract? Or what about selecting neighborhoods with commuter train infrastructure?</p>
+<p>A spatial join is defined as merging data based on location. Both datasets are spatially enabled, and likely overlap each other. The data from one dataset (that you’re joining) gets “stuck” to the dataset you’re merging to. Both data should be in the same CRS.</p>
+<p>Add spatial joins to data to analyze the relationships data sets may have with each other. This tool allows you to merge certain aspects of data sets, such as joining descriptive statistics about one data sets relation to the other.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Add a Spatial Join</em></p>
+<p>We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.</p>
+<details>
+<summary>
+<strong>Step 1: Join Attributes</strong>
+</summary>
+<p>Go to Processing -&gt; Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:</p>
+<div class="figure">
+<img src="images/04-13joinparameters.png" alt="" />
+<p class="caption">joinparameters</p>
+</div>
+<p>These parameters are set on the premise that we want a count of the affordable housing developments contained within each zip code. A new joined layer will be mapped on top of your current layers.</p>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Step 2: Map the Joined Data</strong>
+</summary>
+<p>The new layer generated by the spatial join will default to a single symbol map, not providing any useful visual information about the spatial join.</p>
+<ul>
+<li>Change the symbology by right clicking and going to Properties -&gt; Symbology.</li>
+<li>Change the symbology from Single Symbol to Graduated with the value Community Area Name_count.</li>
+</ul>
+<p>Try changing the color ramp, mode, and number of classes. The resulting joined layer may look similar to the one below.</p>
+<div class="figure">
+<img src="images/04-14joinmap.png" alt="" />
+<p class="caption">joinmap</p>
+</div>
+<p><em>Note: In order for null values to appear, you may need to first set symbology to graduated colors, then change it to Rule-based. Add a field with the rule set to Else rather than Filter. Then change colors and arrange as you wish.</em></p>
+<br/>
+</details>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#join-by-location-1"><em>Merge by Location in R</em></a></p>
+</div>
+<div class="pitfall">
+<p><strong>Pitfall</strong></p>
+<p><em>Invalid Geometries</em></p>
+<p>In the example above, Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.</p>
+</div>
+</div>
+</div>
+<div id="inspect-data" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Inspect Data<a href="04-data.html#inspect-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Inspect data, both through spatial and non-spatial means, when starting a new project, after each step of data processing, and when complete. That means all the time! This helps verify that all data wrangling to this point has occurred properly.</p>
+<p>In the next module, we’ll dive into the details of this further, moving past inspection to cartography anddata analytics.</p>
+<div id="thematic-maps" class="section level3 unnumbered hasAnchor">
+<h3>Thematic Maps<a href="04-data.html#thematic-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To inspect data from a spatial perspective, create a series of choropleth maps. A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method.</p>
+</div>
+<div id="map-overlay" class="section level3 unnumbered hasAnchor">
+<h3>Map Overlay<a href="04-data.html#map-overlay" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Overlay multiple data sets to investigate how they correspond to one another. Open the data sets you are interested in and order your layers appropriately to get an initial view of potential relationships between data sets.</p>
+<div class="activity">
+<p><strong>Inspect Data with Different Methods</strong></p>
+<details>
+<summary>
+<strong>Generate Choropleth Maps in GeoDa</strong>
+</summary>
+<p>Open ChiZipCleaned.geojson. From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data.</p>
+<p>Select a mapping method and a variable to map. Inspect your data by comparing how different data break methods present the same variables, and how the spatial patterns of different variables compare.</p>
+<div class="figure">
+<img src="images/04-10choroplethmaps.png" alt="" />
+<p class="caption">choroplethmaps</p>
+</div>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Overlay Data in GeoDa</strong>
+</summary>
+<p>With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv.</p>
+<ul>
+<li>From the map view, select Add Map Layer.</li>
+<li>Select the affordable housing data set, set the lat/long fields, and hit OK.</li>
+<li>If you do not see the housing data, go to Map Layer Settings. Make sure the layer is turned on and ordered first.</li>
+</ul>
+<p>Once you add it to one map, you should be able to find it as a layer in each subsequent map you make with these data sets for the duration of your mapping session.</p>
+<p>Note: the first row does not have lat/long data and may impede GeoDa from mapping the rest of the affordable housing data set. If you have this problem, try removing this row from the CSV.</p>
+<div class="figure">
+<img src="images/04-11overlaymap.png" alt="" />
+<p class="caption">geodaoverlay</p>
+</div>
+<br/>
+</details>
+<details>
+<summary>
+<strong>Overlay Data in QGIS</strong>
+</summary>
+<p>Let’s overlay zip code boundary data with affordable housing point data.</p>
+<ul>
+<li>Load ChiZipCleaned.geojson into QGIS.</li>
+<li>Add Affordable_Rental_Housing _Development.csv by going to Layer -&gt; Add Layer-&gt; Delimited Text Layer.</li>
+<li>Navigate to the file, and ensure all fields indicate the correct data source in order to display the data properly.</li>
+</ul>
+<div class="figure">
+<img src="images/04-12qgisoverlay.png" alt="" />
+<p class="caption">qgisoverlay</p>
+</div>
+<p>Adjust the color, transparency, size, and borders of each layer by right clicking the layer and going to Styles -&gt; Edit Symbol. The affordable housing data can also be saved as a spatial data set at this point, by right clicking on the layer and navigating to Save Features As.</p>
+<br/>
+</details>
+<p><a href="https://toolkit.sdohplace.org//04-dataR.html#inspect-data-1"><em>Inspection in R</em></a></p>
+</div>
+</div>
+</div>
+<div id="finding-data" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Finding Data<a href="04-data.html#finding-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this module, we provided sample data to work with. When you’re looking for your own data to integrate, you’ll need to do some research to find what you need. Here are some tips of places to search:</p>
+<ul>
+<li><p>City, County, and State Data Portals. Look for your area of interest using search terms like “tracts” or “zip code” to find aggregate data ready for joining.</p></li>
+<li><p>The Social Vulnerability Index dataset by CDC includes cleaned American Community Survey that is easy to extract and merge with your spatial data.</p></li>
+<li><p>While U.S. Census data is available at Census.gov, finding data may be more efficient using third party platforms like IPUMS/NHGIS or Social Explorer. We also recommend the tidycensus package in R (see Appendix Resources for details).</p></li>
+<li><p>Additional aggregated products to check out include: EJScreen, the City Health Dashboard, County Health Rankings, the Opportunity Atlas, the Neighborhood Atlas, and more.</p></li>
+<li><p>Learning how to use the “turbo-pass” Open Street Map plugin in QGIS, or R corresponding library, will give you access to a public version of digitized infrastructure (e.g. streets, parks) and resources (e.g. supermarkets, schools) across the globe. Some areas have better coverage than others.</p></li>
+</ul>
+<p>When determining which data to include, consider using a conceptual model to guide your variable selection. The socio-ecological model of health or risk environment models, for example, identify specific indicators that you may want to fold in.</p>
+</div>
+<div id="resources-3" class="section level2 unnumbered hasAnchor">
+<h2>Resources<a href="04-data.html#resources-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding" class="uri">https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding</a></li>
+</ul>
+
+</div>
+</div>
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="03-design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="05-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

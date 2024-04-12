@@ -3,6 +3,8 @@
 
 # Research Design & Analysis in R
 
+In this Appendix overview, we continue to delve in further to working with R to support research design, hypothesis generation, and data anlaysis. Be sure to read through Module 5 alongside these activities.
+
 ## Environment Setup
 
 First, let's import the library needed for our analysis.
@@ -269,64 +271,170 @@ We've played a bit with thematic maps previously, but not gone into depth just y
 
 ### Choropleth Maps
 
-First we'll make a simple map. We generate a choropleth map of case rate data using quantile bins, and the Blue-Purple color palettef. As shared in a tip above, you can find an R color cheatsheet useful for identifying palette codes [here](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf).
+We will be plotting the spatial distribution of our health outcome variable for the city of Chicago using three methods.
+
+- Quantile
+- Natural Breaks
+- Standard Deviation
+
+For a more detailed overview of choropleth mapping and methods, check out related [GeoDa Center Documentation]().
+
+#### Quantiles
+
+A quantile map is based on sorted values for the variable that are then grouped into bins such that each bin has the same number of observations. It is obtained by setting style = 'quantile' and n = no of bins arguments in tm_fill() or tm_polygons().
+
+We generate a choropleth map of case rate data using quantile bins, and the Blue-Purple color palette. As shared in a tip above, you can find an R color cheatsheet useful for identifying palette codes [here](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf). Let's add a histogram of the data so we can see how the different data classifications change our map.
 
 ```{r warning = FALSE, messages=FALSE}
 
 tm_shape(zips_final) +
-  tm_polygons("Case.Rate...Cumulative", style="quantile", pal="BuPu",
-              title = "COVID Case Rate") 
+  tm_polygons("Case.Rate...Cumulative", 
+              style="quantile", pal="BuPu",
+              legend.hist=T, n=4,
+              title = "COVID Case Rate", ) + 
+  tm_scale_bar(position = "left") + 
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
 ```
 
 Already we can generate some insight. Areas on the far West side of the city have some of the highest case rates. 
 
-Next, we adjust some `tmap` parameters to improve our map. Now we switch to a red-yellow-green palette, and specify six bins for our quantile map. We flip the direction of the palette using a negative sign, so that red corresponds to areas with higher rates. We adjust transparency using an `alpha` parameter, and line thickness using the `lwd` parameter. We also update our layout.
+How might changing our bins from 4 to 6 change the map?
 
 ```{r warning = FALSE, messages=FALSE}
 
 tm_shape(zips_final) +
-  tm_fill("Case.Rate...Cumulative", style="quantile", n=6, pal="-RdYlGn",
-              title = "COVID Case Rate",alpha = 0.8) + 
-  tm_borders(lwd = 0) + 
-  tm_layout(main.title = "Walkable Methadone Service Areas",
-            main.title.position = "center",
-            main.title.size = 1,
-            frame = FALSE)
+  tm_polygons("Case.Rate...Cumulative", 
+              style="quantile", pal="BuPu",
+              legend.hist=T, n=6,
+              title = "COVID Case Rate", ) + 
+  tm_scale_bar(position = "left") + 
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
 ```
-In this view, the lone zip in the downtown area is further illuminated. We confirm higher rates on the West side, but with slightly more variability than when we used fewer bins.
 
+There is a bit more variability when adding more bins to the quantile map, and the data classification breaks in our histogram seem more intuitive than the first version.. 
 
+#### Natural Breaks
+
+Natural breaks or jenks distribution uses a nonlinear algorithm to cluster data into groups such that the intra-bin similarity is maximized and inter-bin dissimilarity is minimized. It is obtained by setting style = 'jenks' and n = no. of bins.
+
+As we can see, the jenks method generally better classifies the dataset in review than the quantile distribution. With only four bins, the algorithm has already detected an optimal break in the data.
+
+```{r warning = FALSE, messages=FALSE}
+
+tm_shape(zips_final) +
+  tm_polygons("Case.Rate...Cumulative", 
+              style="jenks", pal="BuPu",
+              legend.hist=T, n=4,
+              title = "COVID Case Rate", ) + 
+  tm_scale_bar(position = "left") + 
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
+```
+
+#### Standard Deviation
+
+Standard deviation is a statistical technique type of map based on how much the data differs from the mean. While you can update whatever number of bins you'd like, the standard deviation map will always have a specific set (6 bins), as the numbers will diverge from the mean systematically. 
+
+```{r warning = FALSE, messages=FALSE}
+
+tm_shape(zips_final) +
+  tm_polygons("Case.Rate...Cumulative", 
+              style="sd", pal="BuPu",
+              legend.hist=T, n=4,
+              title = "COVID Case Rate", ) + 
+  tm_scale_bar(position = "left") + 
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
+```
+
+:::tip
+
+**Tip**
+
+Never, ever stop with your first choropleth map or default setting! Choropleth mapping is a statistical mapping technique and requires a careful approach, accordingly. Test at least 2-3 data classification breaks with varying number of bins. Search for consistent patterns across multiple styles, and then select the style that best characterizes that pattern.
+:::
+
+#### Thematic Map Panel
+
+Who is being most impacted by this heightened burden of Covid in the fall of 2020? 
+
+To facilitate data discovery, we likely want to explore multiple maps at once. In our dataset, we have multiple additional variables characterizing social, economic, and other dimensions of the Chicago environment. Here we’ll generate maps for multiple variables of social and demographic groups, and plot them as a map panel. 
+
+First, assign maps as variables. 
+
+```{r}
+
+COVID <- tm_shape(zips_final) + tm_fill("Case.Rate...Cumulative", 
+              style="jenks", pal="Reds", n=4, title = "COVID Rt") 
+
+Senior <- tm_shape(zips_final) + tm_fill("ovr65P", 
+              style="jenks", pal="BuPu", n=4) 
+
+NoHS <- tm_shape(zips_final) + tm_fill("noHSP", 
+              style="jenks", pal="BuPu", n=4)
+
+BlkP <- tm_shape(zips_final) + tm_fill("blackP", 
+              style="jenks", pal="BuPu", n=4) 
+
+Latnx <- tm_shape(zips_final) + tm_fill("hispP", 
+              style="jenks", pal="BuPu", n=4) 
+
+WhiP <- tm_shape(zips_final) + tm_fill("whiteP", 
+              style="jenks", pal="BuPu", n=4) 
+```
+
+Next, use the `tmap_arrange` function to map them all at once!
+
+``` {r message= FALSE, warning = FALSE}
+tmap_arrange(COVID, Senior, NoHS, BlkP, Latnx, WhiP)
+```
+
+From the results, we see that cumulative COVID outcomes for one week in September 2020 seemed to have some geographic correlation with the Latinx/Hispanic community in Chicago. At the same time, low high school diploma rates are also concentrated in these areas, and there is some intersection with other variables considered. What are additional variables you could bring in to refine your approach? Perhaps percentage of essential workers; a different age group; internet access? What about linking in health outcomes like Asthma, Hypertension, and more at a similar scale?
+
+In modern spatial epidemiology, associations must never be taken at face value. For example, we know that it is not “race” but “racism” that drives multiple health disparities – simply looking at a specific racial/ethnic group is not enough. Thus exploring multiple variables and nurturing a curiosity to understand these complex intersections will support knowledge discovery.
 
 ### Cartograms
 
-install.packages("cartogram")
+As a special treat, let's also look at Cartograms, another thematic mapping technique. We need to bring in a new package, `cartogram` to generate these. More details in their [documentation](https://cran.r-project.org/web/packages/cartogram/readme/README.html).
+
+```{r}
+#install.packages("cartogram")
 library(cartogram)
-
-https://cran.r-project.org/web/packages/cartogram/readme/README.html 
-
-non-overlapping Circles Cartogram (Dorling el al. 1996)
-
-test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing")
-> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
-
-test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 3)
-> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
-
-test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 9)
-> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
-
-test <- cartogram_dorling(Chi_Zipsf.3435, "TotHousing", k = 2)
-> tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
+```
 
 
-rubber sheet distortion algorithm (Dougenik et al. 1985)
+#### Circles Cartogram 
+First, let's create a classic cartogram, with bubbles being larger or smaller based on size. The package uses the non-overlapping Circles Cartogram (Dorling el al. 1996) algorithm. We add the zip code boundaries for reference, and can map them as a regular spatial object using tmap.
 
-test <- cartogram_ncont(Chi_Zipsf.3435, "TotHousing")
-tm_shape(Chi_Zipsf.3435) + tm_polygons() + tm_shape(test) + tm_polygons("TotHousing")
+```{r}
+                                
+carto.Dorling <- cartogram_dorling(zips_final, "Case.Rate...Cumulative", k = 2)
 
+tm_shape(zips_final) + tm_polygons() + 
+   tm_shape(carto.Dorling) + tm_polygons("Case.Rate...Cumulative",
+                                        style="jenks", pal="BuPu", legend.hist=T, n=4,) + 
+  tm_layout(legend.outside = TRUE, frame = FALSE, legend.outside.position = "right")
+```
+ Adjust the "k" parameter to get the cartogram bubbles to a manageable size, as it may be difficult to interpret if they grow too much outside of the study area space.
+ 
+ In this view, we can see the downtown zip code become much more obvious. Because it has a such a small area size (due to high population density), it is visually minimized in traditional view.
+ 
+#### Distortion Algorithm
 
-## Design Tips
+Finally, let's try the rubber sheet distortion algorithm (Dougenik et al. 1985) cartogram. We adjust the k param
 
-### ColorBrewer
+```{r}
+                                
+carto.distort <- cartogram_ncont(zips_final, "Case.Rate...Cumulative", k = 1)
 
-### Cartograms
+tm_shape(zips_final) + tm_polygons() + 
+   tm_shape(carto.distort) + tm_polygons("Case.Rate...Cumulative",
+                                        style="jenks", pal="BuPu", legend.hist=T, n=4,) + 
+  tm_layout(legend.outside = TRUE, frame = FALSE, legend.outside.position = "right")
+
+```
+
+How does this view of the data shape your understanding? 
+
