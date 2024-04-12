@@ -50,9 +50,82 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -196,58 +269,59 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#appendix-appendix"><i class="fa fa-check"></i>(APPENDIX) Appendix</a>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
 <ul>
-<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
-<li class="chapter" data-level="5.6" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>5.6</b> Environmental Setup</a>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>5.7</b> Intro to Spatial Data</a>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
-<li class="chapter" data-level="5.7.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>5.7.1</b> Adding a Basemap</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>5.8</b> Coordinate Reference Systems</a>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
 </ul></li>
-<li class="chapter" data-level="5.9" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>5.9</b> Converting to Spatial Data</a>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
 <ul>
-<li class="chapter" data-level="5.9.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>5.9.1</b> Convert CSVs to Spatial Data</a></li>
-<li class="chapter" data-level="5.9.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>5.9.2</b> Geocode Addresses</a></li>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
 </ul></li>
-<li class="chapter" data-level="5.10" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>5.10</b> Convert to Spatial Data</a>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
 </ul></li>
-<li class="chapter" data-level="5.11" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>5.11</b> Merge Data sets</a>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
 </ul></li>
-<li class="chapter" data-level="5.12" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>5.12</b> Inspect Data</a>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
 <ul>
-<li class="chapter" data-level="5.12.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>5.12.1</b> Thematic Maps</a></li>
-<li class="chapter" data-level="5.12.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>5.12.2</b> Map Overlay</a></li>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>6</b> Research Design &amp; Analysis in R</a>
+<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>6.1</b> Environment Setup</a></li>
-<li class="chapter" data-level="6.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>6.2</b> Variable Calculations</a>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>6.2.1</b> Buffers</a></li>
-<li class="chapter" data-level="6.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>6.2.2</b> Distance Metrics</a></li>
+<li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="B.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>B.2.2</b> Distance Metrics</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>6.3</b> Statistical Mapping</a>
+<li class="chapter" data-level="B.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>B.3</b> Statistical Mapping</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>6.3.1</b> Choropleth Maps</a></li>
-<li class="chapter" data-level="6.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>6.3.2</b> Cartograms</a></li>
+<li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
@@ -289,6 +363,12 @@
 </div>
 <p>Spatial analysis and design mapping techniques have become indispensable tools in the study of Social Determinants of Health (SDOH). This module provides an overview of spatial analysis methods in the SDOH context, highlighting common pitfalls and best practices in cartographic design. By understanding how health outcomes geographically correlate with socioeconomic and environmental factors, we can identify health disparities and guide effective interventions. Additionally, we’ll then examine the limitations and challenges of spatial analysis in the SDOH context.</p>
 <p>Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.</p>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p><em>Download the Activity Datasets</em></p>
+<p>While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: <a href="https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/ResearchDesignAnalysis.zip">SDOHPlace-ResearchDesignAnalysis.zip</a></p>
+<p>This dataset includes data prepped and merged in the previous module.</p>
+</div>
 <div id="research-design" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Research Design<a href="05-analysis.html#research-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You’ve got data, a goal, and an app on the horizon – How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model?</p>
@@ -597,16 +677,69 @@ Customizing and Analyzing the Scatter Plot
 </div>
 <div id="statistical-mapping" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Statistical Mapping<a href="05-analysis.html#statistical-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
+<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions.</p>
+<div id="data-classification" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> Data Classification<a href="05-analysis.html#data-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution.</p>
+<details>
+<summary>
+Quantiles
+</summary>
 <ul>
-<li><p><em>Quantiles:</em> this statisticalmethod is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category. This method works well when the data distribution is normal. The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</p></li>
-<li><p><em>Equal Intervals:</em> this classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as it can lead to uneven distribution of observations across categories.</p></li>
-<li><p><em>Natural Breaks (Jenks):</em> Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</p></li>
-<li><p><em>Standard Deviation:</em> The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. This method does not work well with heavily skewed or non-normally distributed data.</p></li>
-<li><p><em>Box Plot:</em> The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. It provides a quick means to spot outliers and general spatial trends within the dataset.</p></li>
+<li>Observations are grouped into bins that each have the same number of observations, the so-called quantiles. The number of observations in each bin is equal, but the range for each bin is not.</li>
+<li>This statistical method is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category.</li>
+<li>This method works well when the data distribution is normal.</li>
+<li>The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</li>
 </ul>
-<div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.1">
-<h4><span class="header-section-number">5.4.2.1</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</br></br>
+</details>
+<details>
+<summary>
+Equal Intervals
+</summary>
+<ul>
+<li>Organizes observations into categories that divide the range of the variable into equal interval bins.</li>
+<li>This classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly.</li>
+<li>Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Natural Breaks (Jenks)
+</summary>
+<ul>
+<li>Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories.</li>
+<li>Uses a nonlinear algorithm to group observations such that the within-group homogeneity is maximized</li>
+<li>This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Standard Deviation
+</summary>
+<ul>
+<li>The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean.</li>
+<li>This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators.</li>
+<li>This method does not work well with heavily skewed or non-normally distributed data.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Box Plot
+</summary>
+<ul>
+<li>The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles.</li>
+<li>It provides a quick means to spot outliers and general spatial trends within the dataset.</li>
+</ul>
+</br></br>
+</details>
+<p>By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
+</div>
+<div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.2">
+<h4><span class="header-section-number">5.4.2.2</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method (e.g.,Quantiles, Natural Breaks, Equal Intervals, Box Plot, Standard Deviation)</p>
 <p>Having addressed the subjectivity of maps, let’s delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.</p>
 <div class="figure">
@@ -616,13 +749,13 @@ Customizing and Analyzing the Scatter Plot
 <p>Choropleth maps can help us to start revealing spatial patterns and disparities in various health and socioeconomic indicators related to SDOH. These representations can pinpoint areas with high rates of chronic diseases, like diabetes or heart disease, and enable visual comparisons with factors like education, access to healthcare facilities, and social exclusion.</p>
 <p>Moreover, choropleth maps are excellent for exploring potential correlations between SDOH and health outcomes. They can, for example, show how regions with limited access to healthy food options and green spaces might correlate with higher obesity rates. This visual data can inform targeted interventions and resource allocation, addressing social determinants in specific areas effectively.</p>
 <p>Choropleth maps are also invaluable in communicating complex data to policymakers, public health officials, and community members. By visually representing intricate datasets in an accessible format, these maps can spark discussions around health disparities, resource distribution, and health equity. Given their capability to illustrate spatial patterns and the relationship between SDOH and health outcomes, choropleth maps are a vital resource for researchers, policymakers, and community organizations aiming to promote health equity and tackle the root causes of health disparities.</p>
-<p>::: activity</p>
+<div class="activity">
 <p><strong>Activity</strong></p>
 <p><em>Mapping the Pandemic with Choropleths</em></p>
 <p>During the COVID-19 pandemic, choropleth maps became crucial for health geographers, visually representing the virus’s spread and highlighting hotspots and regional disparities. These maps, tracking trends over time, provided a deeper understanding of the pandemic’s progression, supporting targeted interventions and policy-making. They not only made the pandemic’s impact tangible but also emphasized the significance of spatial analysis in public health crises and showcased the practicality of geographic data visualization in research and decision-making contexts.</p>
 <p>Now, let’s create some maps to analyze the COVID-19 pandemic. We’ll use QGIS for this tutorial, chosen for its flexibility in creating choropleth maps and its status as free, open-source software.</p>
 <p><strong>Note:</strong> Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.</p>
-<details markdown='1'>
+<details>
 <summary>
 Opening a New Project in QGIS
 </summary>
@@ -636,10 +769,10 @@ Add “Chicago_Zipcodes.shp” to your layer panel.</li>
 Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.</li>
 <li>Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from “COVID-19_pivot.xlsx” are there!</li>
 <li>Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it “Chicago_COVID-19”.
-Tip: If you need to review and better understand this step, go back to Module 4.<br />
-</br></br>
-</details></li>
+Tip: If you need to review and better understand this step, go back to Module 4.</li>
 </ul>
+</br></br>
+</details>
 <details>
 <summary>
 Applying Symbology
@@ -684,11 +817,10 @@ Mapping Multiple Variables Simultaneously
 </br></br>
 </details>
 <p>To refine your analysis further, consider introducing additional variables. Options might include the percentage of essential workers, varying age groups, or internet access. Integrating health outcomes such as asthma or hypertension rates at a similar scale could also offer deeper insights.</p>
-<p>:::</p>
 </div>
-<div id="cartograms" class="section level4 hasAnchor" number="5.4.2.2">
-<h4><span class="header-section-number">5.4.2.2</span> Cartograms<a href="05-analysis.html#cartograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Cartograms in Analyzing SDOH Data:</p>
+</div>
+<div id="cartograms" class="section level4 hasAnchor" number="5.4.2.3">
+<h4><span class="header-section-number">5.4.2.3</span> Cartograms<a href="05-analysis.html#cartograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Cartograms offer a distinctive way to analyze and display Social Determinants of Health (SDOH) data. They differ from traditional choropleth maps by altering the size of geographic areas based on a statistical variable like population.</p>
 <p>This technique provides a clearer depiction of disparities in SDOH across regions, highlighting areas more significantly impacted by adverse social and economic conditions.</p>
 <p>Although cartograms can distort geographic shapes and boundaries, they effectively communicate complex SDOH data, helping policymakers and the public understand underlying inequities and the necessity for focused interventions.</p>

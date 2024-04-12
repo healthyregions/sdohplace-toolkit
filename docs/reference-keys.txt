@@ -34,6 +34,7 @@ exploratory-data-analysis
 univariate-and-bivariate-analyses
 scatter-plots
 statistical-mapping
+data-classification
 choropleth-maps
 cartograms
 multivariate-data-analysis
