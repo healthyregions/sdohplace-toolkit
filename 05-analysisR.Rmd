@@ -14,7 +14,16 @@ library(sf)
 library(tmap)
 ```
 
-Let's also bring in our data, cleaned from the previous module. In this case, we'll read from saved files and load in. Grab the data for this activity and the following ones [here](https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip).
+Let's also bring in our data, cleaned from the previous module. In this case, we'll read from saved files and load in. Grab the data for this activity and the following ones [here](:::tools
+**Tools**
+
+*Download the Activity Datasets*
+
+While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-ResearchDesignAnalysis.zip](https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip)
+
+This dataset includes data prepped and merged in the previous module.
+:::
+).
 
 ## Variable Calculations
 
