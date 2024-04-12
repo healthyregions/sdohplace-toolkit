@@ -70,3 +70,6 @@ cartograms-1
 design-tips
 colorbrewer
 cartograms-2
+centroid-calculation
+find-nearest-resource
+calculate-distance
