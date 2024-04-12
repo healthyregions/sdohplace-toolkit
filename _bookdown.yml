@@ -5,7 +5,9 @@ rmd_files: ["index.Rmd",
 "02-scoping.Rmd",
 "03-design.Rmd",
 "04-data.Rmd",
+"05-analysis.Rmd",
 "04-dataR.Rmd",
+"05-analysisR.Rmd",
 "08-references.Rmd",
 ]
 delete_merged_file: TRUE
