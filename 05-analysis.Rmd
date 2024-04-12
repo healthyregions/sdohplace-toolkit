@@ -127,41 +127,55 @@ To create a buffer in GIS software or coding, you specify a fixed or variable di
 
 **Activity**
 
-Buffer Analyses: Calculate Farmers Market Service Areas
+*Buffer Analyses: Calculate Farmers Market Service Areas*
 
 This activity focuses on utilizing data from Chicago's farmers' markets, specifically the "farmers_markets_2012" dataset. Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
 
-Start a New Project:
-Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
-Add the Dataset:
-Add the shapefile: "farmers_markets_2012.shp".
-Creating Buffers:
-Go to the Vector menu > Geoprocessing Tools > Buffer(s).
-In the dialog box, choose "farmers_markets_2012" as the input layer.
-Ensure you are using the correct Coordinate Reference System (CRS).
-Enter the buffer distance (e.g., 0.5 miles) and select the appropriate unit from the Unit drop-down menu.
-Tip: The distance unit is based on the CRS of the input layer. If you're not using the correct CRS, the default unit may be in degrees. Refer to Module 4 if you encounter issues.
-Keep default settings for segments, join style, and miter limit.
-Initially, leave the "dissolve result" box unchecked to maintain separate buffer zones.
+<details markdown='1'><summary>Start a New Project </summary>
+
+- Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
+- Add the shapefile: `farmers_markets_2012.shp`.
+
+</br></br></details>
+
+
+
+<details markdown='1'><summary>Creating Buffers</summary>
+
+- Go to the Vector menu > Geoprocessing Tools > Buffer(s).
+
+- In the dialog box, choose "farmers_markets_2012" as the input layer.Ensure you are using the correct Coordinate Reference System (CRS).
+
+- Enter the buffer distance (e.g., 0.5 miles) and select the appropriate unit from the Unit drop-down menu.
+
+- *Tip:* The distance unit is based on the CRS of the input layer. If you're not using the correct CRS, the default unit may be in degrees. Refer to Module 4 if you encounter issues.
+
+- Keep default settings for segments, join style, and miter limit. Initially, leave the "dissolve result" box unchecked to maintain separate buffer zones.
 
 ![Buffer panel in QGIS](images/05-Bufferpanel_FarmersQGIS.png)
 
-** Running the Buffer Tool:** 
-Click "Run" to execute the Buffer tool. A new buffered layer is added to your project.
-In the Layers Panel, arrange the point feature (farmers markets) above the buffered polygon for better visualization.
-Tip: Observe how the buffers overlap or remain separate, depending on the distance you chose.
+</br></br></details>
+
+
+<details markdown='1'><summary>Running the Buffer Tool</summary>
+
+- Click "Run" to execute the Buffer tool. A new buffered layer is added to your project.
+- In the Layers Panel, arrange the point feature (farmers markets) above the buffered polygon for better visualization.
+- *Tip:* Observe how the buffers overlap or remain separate, depending on the distance you chose.
 
 ![Buffers in QGIS](images/05-Buffersoverlapped.png)
-
-** Dissolving Overlapping Areas:** 
-Reopen the Buffer dialog box, go to Parameters, and check the box for "dissolve result".
-Click "Run" again. A new layer with dissolved overlapping areas is added.
-Close the Buffer dialog box.
-Organizing Your Layers:
-Remove the initial overlapping buffer layer and keep the dissolved buffer layer.
+</br></br></details>
 
 
-** Tip:**  Organize your layers for clarity, such as renaming layers, removing unwanted ones, or toggling layer visibility.
+<details markdown='1'><summary>Dissolving Overlapping Areas</summary>
+
+- -Reopen the Buffer dialog box, go to Parameters, and check the box for "dissolve result".
+- Click "Run" again. A new layer with dissolved overlapping areas is added.
+- Close the Buffer dialog box.
+- Remove the initial overlapping buffer layer and keep the dissolved buffer layer to organize your layers
+- *Tip*: Organize your layers for clarity, such as renaming layers, removing unwanted ones, or toggling layer visibility.
+
+</br></br></details>
 
 Through this activity, you will understand the spatial distribution of farmers' markets in Chicago and their impact radius, which is crucial for assessing community access to fresh food. The buffer analysis illustrates the physical reach of these markets, offering insights into potential areas needing more access to fresh produce.
 
@@ -173,45 +187,58 @@ Calculating distances involves measuring straight-line (Euclidean) or network (a
 It’s important to choose the right measurement method (Euclidean or network) based on the research question and the nature of the features.
 
 ::: activity
-** Activity ** 
 
-Minimum Distance Calculations 
+**Activity** 
+
+*Minimum Distance Calculations*
 
 In this part of the exercise, we're interested in determining the straight-line distance from residential locations, such as census tracts, to the nearest farmers market. The "Distance to nearest hub (line to hub)" tool in QGIS can be used to calculate the distance between the center of an origin feature (e.g., centroids of Census Tracts) and its nearest destination feature (e.g., farmers market).
 
 ![minimum distance in QGIS](images/05-MinimumDistance_example.png)
 
 
-** Accessing the Tool:** 
-In QGIS, open the Toolbox by going to Processing.
-Search for and select "Distance to Nearest Hub (line to hub)" under Vector analysis.
+<details markdown='1'><summary>Accessing the Tool</summary>
+
+- In QGIS, open the Toolbox by going to Processing.
+- Search for and select "Distance to Nearest Hub (line to hub)" under Vector analysis.
 
 ![Processing Toolbox](images/05-ProcessingToolbox.png)
+</br></br></details>
 
-** Setting Up the Tool:** 
-In the processing dialog box, set "Source Point layer" to "Chicgotracts_Centroids".
-For "Destination hubs layer", select "farmer’s market_2012".
-Choose your preferred measurement unit (e.g., miles) in the "Measurement unit" field.
-Leave other settings as default.
-Running the Tool:
-Click "Run". A new layer ("hub distance") will be added to your project. Close the dialogue box.
-Open the attribute table of the new layer to view the computed hub distances (HubDist).
+<details markdown='1'><summary>Setting Up the Tool</summary> 
 
+- In the processing dialog box, set "Source Point layer" to "Chicgotracts_Centroids".
+- For "Destination hubs layer", select "farmer’s market_2012".
+- Choose your preferred measurement unit (e.g., miles) in the "Measurement unit" field.
+- Leave other settings as default.
+</br></br></details>
+
+
+<details markdown='1'><summary>Running the Tool</summary> 
+
+- Click "Run". A new layer ("hub distance") will be added to your project. Close the dialogue box.
+- Open the attribute table of the new layer to view the computed hub distances (HubDist).
+      
 ![Line to Hub Tool](images/05-Hubdistance_panel.png)
 
+</br></br></details>
 
-** Analyzing Access to Facilities:** 
-Examine the attribute table to identify if there are any facilities (e.g., farmers markets) that lack good access. Consider the implications of these findings for community access to fresh produce.
-Using Extract within Distance Tool:
-Another useful tool is the "Extract within distance" under vector selection in the geoprocessing toolbox.
-This can be used to extract tract centroids that are within a specified maximum distance (e.g., 1 mile) from the input features (e.g., farmers markets).
+<details markdown='1'><summary>Analyzing Access to Facilities</summary> 
+
+- Examine the attribute table to identify if there are any facilities (e.g., farmers markets) that lack good access. Consider the implications of these findings for community access to fresh produce.
+    
+</br></br></details>
+
+<details markdown='1'><summary>Using Extract within Distance Tool</summary> 
+
+- Another useful tool is the "Extract within distance" under vector selection in the geoprocessing toolbox.
+- This can be used to extract tract centroids that are within a specified maximum distance (e.g., 1 mile) from the input features (e.g., farmers markets).
 
 ![Extract within distance tool](images/05-Ext_Distance_panel.png)
 
-
+</br></br></details>
 
 Through these exercises, you will gain insights into the accessibility of fresh produce from various residential areas in Chicago, which is crucial for understanding the availability of healthy food options across the city. This analysis can inform urban planning and policy decisions to improve access to essential amenities like farmers markets.
-
 
 :::
 
@@ -254,13 +281,20 @@ Scatter plots are invaluable for visualizing relationships between Scatter plots
 Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making. However, it's important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.
 
 ::: activity
-Creating Scatter Plots in GeoDa
+
+**Activity**
+
+*Creating Scatter Plots in GeoDa*
 
 Scatter plots in GeoDa are useful for examining linear relationships between two variables:
 
-Setting Up the Scatter Plot:
-To start, select "Explore" > "Scatter Plot".
-In the "Scatter Plot Variables" dialog, choose a variable for the "Independent Var X" (e.g., age Over 65) and another for the "Dependent Var Y" (e.g., disability status).
+<details markdown='1'><summary>Setting Up the Scatter Plot</summary>
+
+- To start, select "Explore" > "Scatter Plot".
+- In the "Scatter Plot Variables" dialog, choose a variable for the "Independent Var X" (e.g., age Over 65) and another for the "Dependent Var Y" (e.g., disability status).
+
+</br></br></details>
+
 In this example, we're exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.
 Customizing and Analyzing the Scatter Plot:
 Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
@@ -302,48 +336,63 @@ Choropleth maps are also invaluable in communicating complex data to policymaker
 
 **Activity** 
 
+*Mapping the Pandemic with Choropleths*
+
 During the COVID-19 pandemic, choropleth maps became crucial for health geographers, visually representing the virus's spread and highlighting hotspots and regional disparities. These maps, tracking trends over time, provided a deeper understanding of the pandemic's progression, supporting targeted interventions and policy-making. They not only made the pandemic's impact tangible but also emphasized the significance of spatial analysis in public health crises and showcased the practicality of geographic data visualization in research and decision-making contexts.
 
 Now, let's create some maps to analyze the COVID-19 pandemic. We'll use QGIS for this tutorial, chosen for its flexibility in creating choropleth maps and its status as free, open-source software. 
 
-Note: Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.
+**Note:** Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.
 
-Opening a New Project in QGIS:
-Start by opening a new project in QGIS.
-In the Layers panel, drag and drop the "COVID-19_pivot.xlsx" spreadsheet, as outlined in section 4.5 of this toolkit. If you don't have it, find it in the Zip folder at the start of this module.
-Joining your spreadsheet with a boundary shapefile:
+<details markdown='1'><summary>Opening a New Project in QGIS</summary>
+
+- Start by opening a new project in QGIS.
+- In the Layers panel, drag and drop the "COVID-19_pivot.xlsx" spreadsheet, as outlined in section 4.5 of this toolkit. If you don't have it, find it in the Zip folder at the start of this module.
+- Joining your spreadsheet with a boundary shapefile:
 Similar to the process in Module 4, join the "COVID-19_pivot.xlsx" with the boundary shapefile of Chicago's Zip codes, named “Chicago_Zipcodes.shp”.
 Add “Chicago_Zipcodes.shp” to your layer panel.
- To access the join option, right click on “Chicago_Zipcodes.shp”, go to properties and select “join”. Lastly, select the “ plus icon.” 
+- To access the join option, right click on “Chicago_Zipcodes.shp”, go to properties and select “join”. Lastly, select the “ plus icon.” 
 Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.
-Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from "COVID-19_pivot.xlsx" are there!
-Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it  “Chicago_COVID-19”.
+- Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from "COVID-19_pivot.xlsx" are there!
+- Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it  “Chicago_COVID-19”.
 Tip: If you need to review and better understand this step, go back to Module 4.  
+</br></br></details>
 
-Applying Symbology:
-In the Layers panel, right-click on “Chicago_COVID-19” and select Properties, then Symbology.
-Change the top tab from Single Symbol to Graduated.
-Under the "Value" tab, select "Sum of Cases - Weekly".
-Set the Mode to “Natural Breaks (Jenks)” and Classes to “4”.
-Click Classify, Apply, and Ok. You've now created a map of the Sum of Cases of COVID-19 during a week in 2020 in Chicago.
+
+<details markdown='1'><summary>Applying Symbology</summary>
+
+- In the Layers panel, right-click on “Chicago_COVID-19” and select Properties, then Symbology.
+- Change the top tab from Single Symbol to Graduated.
+- Under the "Value" tab, select "Sum of Cases - Weekly".
+- Set the Mode to “Natural Breaks (Jenks)” and Classes to “4”.
+- Click Classify, Apply, and Ok. You've now created a map of the Sum of Cases of COVID-19 during a week in 2020 in Chicago.
 
 ![COVID-19 cases during a week in 2020 in Chicago](images/05-COVID-19_mapQGIS.png)
 
+</br></br></details>
 
-Exploring Different Classification Methods:
-From the Map option in the toolbar, explore different choropleth map options using various variables or data breaks (e.g., quantile).
-Select a classification method, set the Categories (e.g., 4), and click apply.
-Examine your maps, comparing how different data break methods display the same variables and how spatial patterns vary between different variables.
-Mapping Multiple Variables Simultaneously:
-To investigate multiple maps at once, use the GeoJason file “ChiZipCleaned” that you organized in Module 4.
-Create different choropleth maps using various variables from the attribute table. For example, map the percentages of Asian (asianP), Black (blackP), Hispanic/Latinx (HispP), White (WhiteP), and populations over 65 (Over65p). Use Natural Breaks and 4 classes, similar to your previous COVID-19 map.
+
+<details markdown='1'><summary>Exploring Different Classification Methods</summary>
+
+- From the Map option in the toolbar, explore different choropleth map options using various variables or data breaks (e.g., quantile).
+- Select a classification method, set the Categories (e.g., 4), and click apply.
+- Examine your maps, comparing how different data break methods display the same variables and how spatial patterns vary between different variables.
+
+</br></br></details>
+
+<details markdown='1'><summary>Mapping Multiple Variables Simultaneously</summary>
+
+- To investigate multiple maps at once, use the GeoJason file “ChiZipCleaned” that you organized in Module 4.
+- Create different choropleth maps using various variables from the attribute table. For example, map the percentages of Asian (asianP), Black (blackP), Hispanic/Latinx (HispP), White (WhiteP), and populations over 65 (Over65p). Use Natural Breaks and 4 classes, similar to your previous COVID-19 map.
 
 From the exploratory results, where darker colors indicate higher population density and gray signifies data absence, we observe that cumulative COVID-19 outcomes for one week in September 2020 seem to correlate geographically with the Latinx/Hispanic community in Chicago.
 
 ![Different population maps in QGIS](images/05-maps-QGIS.png)
 
+</br></br></details>
 
 To refine your analysis further, consider introducing additional variables. Options might include the percentage of essential workers, varying age groups, or internet access. Integrating health outcomes such as asthma or hypertension rates at a similar scale could also offer deeper insights.
+
 :::
 
 #### Cartograms 
@@ -363,32 +412,42 @@ Although cartograms can distort geographic shapes and boundaries, they effective
 
 **Activity**
 
-Cartograms in GeoDa
+*Cartograms in GeoDa*
 
 To create a cartogram in GeoDa, which visually emphasizes specific variables, follow these steps:
 
-Creating the Cartogram
+<details markdown='1'><summary>Creating the Cartogram</summary>
       
-a. Open ChiZipCleaned in “GeoDa”
-b.  Select "Map" from the menu, then click on "Cartogram".
+- Open ChiZipCleaned in “GeoDa”
+-  Select "Map" from the menu, then click on "Cartogram".
 
 ![Cartogram tool in GeoDa](images/05-Cartogram_option_GeoDa.png)
 
+- In the "Cartogram Variables" dialog box, you'll find two columns: "Circle Size" and "Circle Color". For a simpler interpretation, select the same variable for both columns (e.g., age 18-64). 
 
-c .In the "Cartogram Variables" dialog box, you'll find two columns: "Circle Size" and "Circle Color". For a simpler interpretation, select the same variable for both columns (e.g., age 18-64). 
-d. Tip: While you can choose different variables for circle size and color, this might make the cartogram more complex and potentially confusing.
-Finalizing the Cartogram:
-Click "OK" to generate the cartogram. This will create a map where the size of the circles represents the selected variable, providing a visual emphasis on areas with higher or lower values.
+- *Tip:* While you can choose different variables for circle size and color, this might make the cartogram more complex and potentially confusing.
+
+</br></br></details>
+
+<details markdown='1'><summary>Finalizing the Cartogram</summary>
+
+- Click "OK" to generate the cartogram. This will create a map where the size of the circles represents the selected variable, providing a visual emphasis on areas with higher or lower values.
 
 ![Cartogram example in GeoDa](images/05-Cartogram_VisualizationGeoDa.png)
 
-
-
+</br></br></details>
 
 :::
 
 ### Multivariate Data Analysis
 
+In this first steps of Exploratory Spatial Data Analysis, you may investigate data patterns one or two variables at a time to uncover relationships. Moving towards multivariate analyses, looking at multiple variables at once, can give insight into the complex processes driving the phenomenon you're interested. 
+
+With this move, we may often begin to understand correlations across multiple variables. For example, historic segregation and decades of de-investment have tremendously influenced geodemographic patterns in Chicago.
+
+In modern spatial epidemiology, associations must never be taken at face value. For example, we know that it is not “race” but “racism” that drives multiple health disparities – simply looking at a specific racial/ethnic group is not enough. Thus exploring multiple variables and nurturing a curiosity to understand these complex intersections will support knowledge discovery.
+
+While we won't go through examples in depth beyond a simple thematic map panel, explore resources available to you to examine multivariate ESDA as well as increasingly complex modeling approaches.
 
 ## Cartographic Principles 
 
@@ -517,6 +576,8 @@ This activity will enhance your understanding of applying the Munsell Color Syst
 :::
 
 ## References {-}
+
+- [GeoDa Documentation](https://geodacenter.github.io/documentation.html) remains an ESDA standard to uncover dozens of techniques for discovery.
 
 - Brewer, C. (2016). Designing Better Maps: A Guide for GIS Users, 2nd Edition. ESRI press.
 
