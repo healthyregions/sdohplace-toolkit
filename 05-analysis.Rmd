@@ -129,7 +129,9 @@ To create a buffer in GIS software or coding, you specify a fixed or variable di
 
 *Buffer Analyses: Calculate Farmers Market Service Areas*
 
-This activity focuses on utilizing data from Chicago's farmers' markets, specifically the "farmers_markets_2012" dataset. Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
+Grab the data for this activity and the following ones [here](https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip).
+
+This activity focuses on utilizing data from Chicago's farmers' markets, specifically the `farmers_markets_2012` dataset. Farmers' markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers' markets in a neighborhood significantly influence residents' food accessibility.
 
 <details markdown='1'><summary>Start a New Project </summary>
 
@@ -137,8 +139,6 @@ This activity focuses on utilizing data from Chicago's farmers' markets, specifi
 - Add the shapefile: `farmers_markets_2012.shp`.
 
 </br></br></details>
-
-
 
 <details markdown='1'><summary>Creating Buffers</summary>
 
@@ -164,6 +164,7 @@ This activity focuses on utilizing data from Chicago's farmers' markets, specifi
 - *Tip:* Observe how the buffers overlap or remain separate, depending on the distance you chose.
 
 ![Buffers in QGIS](images/05-Buffersoverlapped.png)
+
 </br></br></details>
 
 
@@ -196,13 +197,13 @@ In this part of the exercise, we're interested in determining the straight-line 
 
 ![minimum distance in QGIS](images/05-MinimumDistance_example.png)
 
-
 <details markdown='1'><summary>Accessing the Tool</summary>
 
 - In QGIS, open the Toolbox by going to Processing.
 - Search for and select "Distance to Nearest Hub (line to hub)" under Vector analysis.
 
 ![Processing Toolbox](images/05-ProcessingToolbox.png)
+
 </br></br></details>
 
 <details markdown='1'><summary>Setting Up the Tool</summary> 
@@ -211,6 +212,7 @@ In this part of the exercise, we're interested in determining the straight-line 
 - For "Destination hubs layer", select "farmer’s market_2012".
 - Choose your preferred measurement unit (e.g., miles) in the "Measurement unit" field.
 - Leave other settings as default.
+
 </br></br></details>
 
 
@@ -245,7 +247,7 @@ Through these exercises, you will gain insights into the accessibility of fresh 
 
 ## Exploratory Data Analysis 
 
-Exploratory Data Analysis (EDA) serves as the compass for spatial analysts navigating through the vast seas of data. It's a pivotal phase in your analytical journey, akin to charting a course before setting sail. EDA illuminates the landscape of spatial datasets, revealing patterns, anomalies, and relationships that might otherwise remain hidden. Through visualizations, statistical summaries, and spatial queries, health geographers delve into the intricacies of the data, unraveling its mysteries and gaining insights that inform subsequent spatial analyses and decision-making processes. In essence, EDA is the compass that guides spatial analysts in their quest to uncover the hidden treasures buried within geographic information.
+Exploratory Data Analysis (EDA) serves as the compass for spatial analysts navigating through the vast seas of data. It's a pivotal phase in your analytical journey, akin to charting a course before setting sail. EDA illuminates the landscape of spatial datasets, revealing patterns, anomalies, and relationships that might otherwise remain hidden. Through visualizations, statistical summaries, and spatial queries, analysts delve into the intricacies of the data, unraveling its mysteries and gaining insights that inform subsequent spatial analyses and decision-making processes. In essence, EDA is the compass that guides spatial analysts in their quest to uncover the hidden treasures buried within geographic information.
 
 Exploratory *Spatial* Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial "regimes" and other forms of spatial non-stationarity. 
 
@@ -292,14 +294,16 @@ Scatter plots in GeoDa are useful for examining linear relationships between two
 
 - To start, select "Explore" > "Scatter Plot".
 - In the "Scatter Plot Variables" dialog, choose a variable for the "Independent Var X" (e.g., age Over 65) and another for the "Dependent Var Y" (e.g., disability status).
+- In this example, we're exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.
 
 </br></br></details>
 
-In this example, we're exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.
-Customizing and Analyzing the Scatter Plot:
-Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
-Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.
+<details markdown='1'><summary>Customizing and Analyzing the Scatter Plot</summary>
 
+- Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.
+- Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.
+
+</br></br></details>
 ::: 
 
 ### Statistical Mapping
