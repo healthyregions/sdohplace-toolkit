@@ -423,7 +423,7 @@ tm_shape(zips_final) + tm_polygons() +
  
 #### Distortion Algorithm
 
-Finally, let's try the rubber sheet distortion algorithm (Dougenik et al. 1985) cartogram. We adjust the k param
+Finally, let's try the rubber sheet distortion algorithm (Dougenik et al. 1985) cartogram. We adjust the k parameter again to get the map to be readable
 
 ```{r}
                                 
