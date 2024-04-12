@@ -18,6 +18,16 @@ Spatial analysis and design mapping techniques have become indispensable tools i
 
 Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.
 
+:::tools
+**Tools**
+
+*Download the Activity Datasets*
+
+While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-ResearchDesignAnalysis.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/ResearchDesignAnalysis.zip)
+
+This dataset includes data prepped and merged in the previous module.
+:::
+
 ## Research Design
 
 You've got data, a goal, and an app on the horizon -- How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model? 
@@ -308,18 +318,49 @@ Scatter plots in GeoDa are useful for examining linear relationships between two
 
 ### Statistical Mapping
 
-Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It's a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.
+Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It's a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. 
 
-- *Quantiles:* this statisticalmethod is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category. This method works well when the data distribution is normal. The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.
+#### Data Classification
 
-- *Equal Intervals:* this classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as it can lead to uneven distribution of observations across categories.
+At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. 
 
-- *Natural Breaks (Jenks):* Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.
+<details markdown='1'><summary>Quantiles</summary> 
 
-- *Standard Deviation:* The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. This method does not work well with heavily skewed or non-normally distributed data.
+- Observations are grouped into bins that each have the same number of observations, the so-called quantiles. The number of observations in each bin is equal, but the range for each bin is not.
+- This statistical method is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category.
+- This method works well when the data distribution is normal. 
+- The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.
 
-- *Box Plot:* The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. It provides a quick means to spot outliers and general spatial trends within the dataset.
+</br></br></details>
 
+<details markdown='1'><summary>Equal Intervals</summary> 
+- Organizes observations into categories that divide the range of the variable into equal interval bins.
+- This classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. 
+- Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as 
+
+</br></br></details>
+
+<details markdown='1'><summary>Natural Breaks (Jenks)</summary>  
+- Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. 
+- Uses a nonlinear algorithm to group observations such that the within-group homogeneity is maximized 
+- This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.
+
+</br></br></details>
+
+<details markdown='1'><summary>Standard Deviation</summary> 
+- The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. 
+- This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. 
+- This method does not work well with heavily skewed or non-normally distributed data.
+
+</br></br></details>
+
+<details markdown='1'><summary>Box Plot</summary> 
+- The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. 
+- It provides a quick means to spot outliers and general spatial trends within the dataset.
+
+</br></br></details>
+
+By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.
 
 #### Choropleth Maps
 
@@ -359,7 +400,8 @@ Add “Chicago_Zipcodes.shp” to your layer panel.
 Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.
 - Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from "COVID-19_pivot.xlsx" are there!
 - Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it  “Chicago_COVID-19”.
-Tip: If you need to review and better understand this step, go back to Module 4.  
+Tip: If you need to review and better understand this step, go back to Module 4. 
+
 </br></br></details>
 
 
@@ -400,8 +442,6 @@ To refine your analysis further, consider introducing additional variables. Opti
 :::
 
 #### Cartograms 
-
-Cartograms in Analyzing SDOH Data:
 
 Cartograms offer a distinctive way to analyze and display Social Determinants of Health (SDOH) data. They differ from traditional choropleth maps by altering the size of geographic areas based on a statistical variable like population.
 

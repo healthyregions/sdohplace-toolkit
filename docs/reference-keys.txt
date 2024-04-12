@@ -40,7 +40,6 @@ multivariate-data-analysis
 cartographic-principles
 effective-sdoh-map-design-entails-several-critical-elements
 the-munsell-color-system
-data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
 adding-a-basemap
@@ -76,3 +75,4 @@ thematic-map-panel
 cartograms-1
 circles-cartogram
 distortion-algorithm
+data-classification

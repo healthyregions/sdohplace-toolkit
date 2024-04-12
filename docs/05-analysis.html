@@ -289,6 +289,12 @@
 </div>
 <p>Spatial analysis and design mapping techniques have become indispensable tools in the study of Social Determinants of Health (SDOH). This module provides an overview of spatial analysis methods in the SDOH context, highlighting common pitfalls and best practices in cartographic design. By understanding how health outcomes geographically correlate with socioeconomic and environmental factors, we can identify health disparities and guide effective interventions. Additionally, we’ll then examine the limitations and challenges of spatial analysis in the SDOH context.</p>
 <p>Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.</p>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p><em>Download the Activity Datasets</em></p>
+<p>While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: <a href="https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/ResearchDesignAnalysis.zip">SDOHPlace-ResearchDesignAnalysis.zip</a></p>
+<p>This dataset includes data prepped and merged in the previous module.</p>
+</div>
 <div id="research-design" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Research Design<a href="05-analysis.html#research-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You’ve got data, a goal, and an app on the horizon – How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model?</p>
@@ -597,16 +603,69 @@ Customizing and Analyzing the Scatter Plot
 </div>
 <div id="statistical-mapping" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Statistical Mapping<a href="05-analysis.html#statistical-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions. At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution. By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
+<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions.</p>
+<div id="data-classification" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> Data Classification<a href="05-analysis.html#data-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution.</p>
+<details>
+<summary>
+Quantiles
+</summary>
 <ul>
-<li><p><em>Quantiles:</em> this statisticalmethod is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category. This method works well when the data distribution is normal. The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</p></li>
-<li><p><em>Equal Intervals:</em> this classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as it can lead to uneven distribution of observations across categories.</p></li>
-<li><p><em>Natural Breaks (Jenks):</em> Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories. This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</p></li>
-<li><p><em>Standard Deviation:</em> The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean. This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators. This method does not work well with heavily skewed or non-normally distributed data.</p></li>
-<li><p><em>Box Plot:</em> The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles. It provides a quick means to spot outliers and general spatial trends within the dataset.</p></li>
+<li>Observations are grouped into bins that each have the same number of observations, the so-called quantiles. The number of observations in each bin is equal, but the range for each bin is not.</li>
+<li>This statistical method is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category.</li>
+<li>This method works well when the data distribution is normal.</li>
+<li>The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</li>
 </ul>
-<div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.1">
-<h4><span class="header-section-number">5.4.2.1</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</br></br>
+</details>
+<details>
+<summary>
+Equal Intervals
+</summary>
+<ul>
+<li>Organizes observations into categories that divide the range of the variable into equal interval bins.</li>
+<li>This classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly.</li>
+<li>Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Natural Breaks (Jenks)
+</summary>
+<ul>
+<li>Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories.</li>
+<li>Uses a nonlinear algorithm to group observations such that the within-group homogeneity is maximized</li>
+<li>This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Standard Deviation
+</summary>
+<ul>
+<li>The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean.</li>
+<li>This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators.</li>
+<li>This method does not work well with heavily skewed or non-normally distributed data.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Box Plot
+</summary>
+<ul>
+<li>The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles.</li>
+<li>It provides a quick means to spot outliers and general spatial trends within the dataset.</li>
+</ul>
+</br></br>
+</details>
+<p>By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
+</div>
+<div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.2">
+<h4><span class="header-section-number">5.4.2.2</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method (e.g.,Quantiles, Natural Breaks, Equal Intervals, Box Plot, Standard Deviation)</p>
 <p>Having addressed the subjectivity of maps, let’s delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.</p>
 <div class="figure">
@@ -616,13 +675,13 @@ Customizing and Analyzing the Scatter Plot
 <p>Choropleth maps can help us to start revealing spatial patterns and disparities in various health and socioeconomic indicators related to SDOH. These representations can pinpoint areas with high rates of chronic diseases, like diabetes or heart disease, and enable visual comparisons with factors like education, access to healthcare facilities, and social exclusion.</p>
 <p>Moreover, choropleth maps are excellent for exploring potential correlations between SDOH and health outcomes. They can, for example, show how regions with limited access to healthy food options and green spaces might correlate with higher obesity rates. This visual data can inform targeted interventions and resource allocation, addressing social determinants in specific areas effectively.</p>
 <p>Choropleth maps are also invaluable in communicating complex data to policymakers, public health officials, and community members. By visually representing intricate datasets in an accessible format, these maps can spark discussions around health disparities, resource distribution, and health equity. Given their capability to illustrate spatial patterns and the relationship between SDOH and health outcomes, choropleth maps are a vital resource for researchers, policymakers, and community organizations aiming to promote health equity and tackle the root causes of health disparities.</p>
-<p>::: activity</p>
+<div class="activity">
 <p><strong>Activity</strong></p>
 <p><em>Mapping the Pandemic with Choropleths</em></p>
 <p>During the COVID-19 pandemic, choropleth maps became crucial for health geographers, visually representing the virus’s spread and highlighting hotspots and regional disparities. These maps, tracking trends over time, provided a deeper understanding of the pandemic’s progression, supporting targeted interventions and policy-making. They not only made the pandemic’s impact tangible but also emphasized the significance of spatial analysis in public health crises and showcased the practicality of geographic data visualization in research and decision-making contexts.</p>
 <p>Now, let’s create some maps to analyze the COVID-19 pandemic. We’ll use QGIS for this tutorial, chosen for its flexibility in creating choropleth maps and its status as free, open-source software.</p>
 <p><strong>Note:</strong> Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.</p>
-<details markdown='1'>
+<details>
 <summary>
 Opening a New Project in QGIS
 </summary>
@@ -636,10 +695,10 @@ Add “Chicago_Zipcodes.shp” to your layer panel.</li>
 Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.</li>
 <li>Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from “COVID-19_pivot.xlsx” are there!</li>
 <li>Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it “Chicago_COVID-19”.
-Tip: If you need to review and better understand this step, go back to Module 4.<br />
-</br></br>
-</details></li>
+Tip: If you need to review and better understand this step, go back to Module 4.</li>
 </ul>
+</br></br>
+</details>
 <details>
 <summary>
 Applying Symbology
@@ -684,10 +743,10 @@ Mapping Multiple Variables Simultaneously
 </br></br>
 </details>
 <p>To refine your analysis further, consider introducing additional variables. Options might include the percentage of essential workers, varying age groups, or internet access. Integrating health outcomes such as asthma or hypertension rates at a similar scale could also offer deeper insights.</p>
-<p>:::</p>
 </div>
-<div id="cartograms" class="section level4 hasAnchor" number="5.4.2.2">
-<h4><span class="header-section-number">5.4.2.2</span> Cartograms<a href="05-analysis.html#cartograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="cartograms" class="section level4 hasAnchor" number="5.4.2.3">
+<h4><span class="header-section-number">5.4.2.3</span> Cartograms<a href="05-analysis.html#cartograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Cartograms in Analyzing SDOH Data:</p>
 <p>Cartograms offer a distinctive way to analyze and display Social Determinants of Health (SDOH) data. They differ from traditional choropleth maps by altering the size of geographic areas based on a statistical variable like population.</p>
 <p>This technique provides a clearer depiction of disparities in SDOH across regions, highlighting areas more significantly impacted by adverse social and economic conditions.</p>
