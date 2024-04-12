@@ -141,7 +141,10 @@ This activity focuses on utilizing data from Chicago's farmers' markets, specifi
 <details markdown='1'><summary>Start a New Project</summary>
 
 - Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.
-- Add the Dataset: 
+
+</br></br></details>
+
+<details markdown='1'><summary>Add the Dataset</summary>
 
 ![](images/05-join_button.png){width=20%} 
 
@@ -154,6 +157,7 @@ This activity focuses on utilizing data from Chicago's farmers' markets, specifi
 - In the dialog box, choose "farmers_markets_2012" as the input layer.
 - Ensure you are using the correct Coordinate Reference System (CRS).
 - Enter the buffer distance (e.g., 0.5 miles) and select the appropriate unit from the Unit drop-down menu.
+
 **Tip:** The distance unit is based on the CRS of the input layer. If you're not using the correct CRS, the default unit may be in degrees. Refer to Module 4 if you encounter issues.
 Keep default settings for segments, join style, and miter limit.
 *Initially, leave the "dissolve result" box unchecked to maintain separate buffer zones.*
