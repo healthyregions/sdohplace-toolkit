@@ -20,18 +20,16 @@
   <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   
 
-<meta name="author" content="The Healthy Regions &amp; Policies Lab" />
 
 
-<meta name="date" content="2024-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 <link rel="prev" href="05-analysis.html"/>
-<link rel="next" href="07-dissem.html"/>
+<link rel="next" href="04-dataR.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,8 +50,82 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -73,30 +145,34 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="./"><img src="images/logo.png"></a></li>
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
-<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#dynamic-data-visualizations"><i class="fa fa-check"></i><b>1.2</b> Dynamic Data Visualizations</a>
-<ul>
-<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#is-there-app-for-that"><i class="fa fa-check"></i>Is there app for that?</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.3</b> Centering Equity</a>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
 <ul>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-applications"><i class="fa fa-check"></i><b>1.4</b> Types of Applications</a>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
 <ul>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
-<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#data-dashboards"><i class="fa fa-check"></i>Data Dashboards</a></li>
-<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
 <li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Scoping</a>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
 <li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
@@ -113,38 +189,154 @@
 <ul>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#establish-deliverables"><i class="fa fa-check"></i><strong>Establish Deliverables</strong></a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#application-action-goals"><i class="fa fa-check"></i>Application Action Goals</a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#user-prompted-input"><i class="fa fa-check"></i>User-Prompted Input</a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#smart-goals"><i class="fa fa-check"></i>SMART Goals</a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#establish-process"><i class="fa fa-check"></i><strong>Establish Process</strong></a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#project-management"><i class="fa fa-check"></i>Project Management</a></li>
-<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#agile-processes"><i class="fa fa-check"></i>Agile Processes</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
 </ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#brief-discussion-of-design-methods"><i class="fa fa-check"></i><b>3.1</b> Brief Discussion of Design Methods</a></li>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
 <li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
 <ul>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-1-identifying-user-needs"><i class="fa fa-check"></i>Step 1: Identifying User Needs</a></li>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-2-designing-to-user-needs"><i class="fa fa-check"></i>Step 2: Designing to User Needs</a></li>
-<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#step-3-evaluation-and-iteration"><i class="fa fa-check"></i>Step 3: Evaluation and Iteration</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
 <ul>
-<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#project-tip"><i class="fa fa-check"></i>Project Tip:</a></li>
-<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#activity-1.3"><i class="fa fa-check"></i>Activity 1.3:</a></li>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="06-appdev.html"><a href="06-appdev.html"><i class="fa fa-check"></i><b>6</b> App Development</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a></li>
-<li class="chapter" data-level="6.2" data-path="06-appdev.html"><a href="06-appdev.html#story-map-development"><i class="fa fa-check"></i><b>6.2</b> Story Map Development</a></li>
+<li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i><b>6.1.1</b> uMap</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="07-dissem.html"><a href="07-dissem.html"><i class="fa fa-check"></i><b>7</b> Dissemination</a></li>
-<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="B.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>B.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>B.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -162,28 +354,269 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<head>
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0">
-  <script src="assets/hideOutput.js"></script>
-  <link href="style.css" rel="stylesheet">
-</head>
-
-<div class="hero-image-container"> 
-  <img class= "hero-image" src="images/banner.jpg">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
 </div>
 <div id="app-development" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> App Development<a href="06-appdev.html#app-development" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We have finished a nice book.</p>
+<p>In this module, you will learn fundamental skills for creating asset maps, thematic maps, story maps, and data dashboards on a variety of free and/or open source platforms. Each section will include an exercise that will help you put into practice what you learn, highlighting the strengths of each map type and how they can be used to tell a well-rounded narrative with data. These exercises use data relevant to maternal health disparities in New York City and Georgia. All data required to complete each exercise can be found at [github link]. A reference file with information on variables and data sources is included.</p>
 <div id="asset-map-development" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Asset Map Development<a href="06-appdev.html#asset-map-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Asset maps</p>
-</div>
-<div id="story-map-development" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Story Map Development<a href="06-appdev.html#story-map-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Add stuff here</p>
+<p>An asset map, commonly used in the public health field, is a point map of resources. It can be used to identify where resources are, and where gaps in availability exist. They may be simple, but can be quite effective for both understanding and presenting information about resource distribution. When paired with other mapping tools, they can tell us a lot about the types of communities that have access to various resources compared to those without access.</p>
+<p>In this section, we’ll introduce two options for asset mapping, uMap and Leaflet with Google Sheets. Both are free and open source. We’ll use a dataset of hospitals in New York City to introduce these software options.</p>
+<div id="umap" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> uMap<a href="06-appdev.html#umap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>uMap is a web based mapping program that uses OpenStreetMap to allow users to create maps. It has a simple interface, and no coding is necessary.</p>
+<details markdown='1'>
+<summary>
+Create an account on <a href="https://umap.openstreetmap.fr/en/">uMap</a>
+</summary>
+<ul>
+<li>Log in or create an account with any of the providers listed. Once logged in, you are ready to create a map.
+</br></br>
+</details></li>
+</ul>
+<details>
+<summary>
+Click “Create a map” in the top right corner.
+</summary>
+<p>*Note: Familiarize yourself with the toolbar. Below is a quick cheat sheet.</p>
+</br></br>
+</details>
+<p>Step 3: Click to import “NYChospitals.csv” from the zip file linked at the start of the module . Then press the “Import” button.</p>
+<p>*Note: Points, lines, and polygons can be manually added to the map. Data can also be imported as a file, as a url, or pasted into the import tab. Multiple files can either be imported simultaneously to the same layer, or one by one to different layers.
+Additionally, uMap defaults to whatever layer you’ve most recently imported, so be sure that you are adding a new file to a new layer rather than replacing an existing file if you work with multiple layers in the future.
+Lastly, shapefiles are not compatible with uMap, you should instead prepare GeoJSONs if you add any.</p>
+<p>Your map should look something like this:</p>
+<p>Step 4: Click or “Manage Layers” on the right side of the toolbar and select the on the right side of the toolbar to edit “Layer Properties”</p>
+<p>*Note: Any edits will now be applied to all features. From this panel, you can change the color, shape, or symbol of the icon denoting your features. You can also change how a user interacts with features, such as whether they have to hover over a feature for a label to appear.</p>
+<p>*Optional: Selecting a feature (any point, line or polygon) will allow you to edit or delete it individually.</p>
+<p>Select to edit and it will bring up the “Feature Properties” tab. Scroll to the bottom of the “Features Properties” tab to edit the feature icon and interaction.</p>
+<p>*Optional: Basemaps in uMap are somewhat limited, but there are a few options that can be found on the left hand toolbar by clicking . You may need to expand the toolbar to find these options.</p>
+<p>Step 5: Add additional data (nyc-community-centers.geojson, nyc-day-care.geojson, and nyc-bjc.geojson) to create a map with multiple resources relevant to maternal health and support. Edit Layer Properties to make each layer’s icons visually distinct.
+Step 6: Save your map. First change the name and/or description by clicking the . Once you change the name, click on the “Save” button at the top right corner. You’ll be given a URL, along with the option to download.</p>
+<p>*Note: Descriptions will need to be written using HTML formatting, but selecting the help button next to the description box will bring up all the relevant text formatting needed to do this properly.</p>
+<p>6.1.2 Hands On Dataviz - Leaflet and Google Sheets: <a href="https://handsondataviz.org/leaflet-maps-with-google-sheets.html" class="uri">https://handsondataviz.org/leaflet-maps-with-google-sheets.html</a></p>
+<p>This</p>
+<p>?
+Extension Exercise
+Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.</p>
+<p>Tip: As you create an asset map, consider the following questions:
+Are there areas with many hospitals/resources?
+Are there areas with few or no hospitals/resources?
+What areas do you think could use more hospitals/resources?
+What may keep a population from utilizing a hospital/resource in their area?
+How might focusing solely on hospital/resource locations not tell the entire story?
+6.2 (10 min?) What is a Thematic Map?
+A thematic map in public health is a map that uses visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Data &amp; interaction complexity generally remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window. Here, we’ll introduce ArcGIS Online and Mapbox GL as two free thematic mapping options, while creating a thematic map of an SDOH or maternal health outcome variable(s) in NYC.</p>
+<p>6.2.1 (5 min) ArcGIS Online
+ArcGIS Online is a free version of ArcGIS, a popular mapping software. Due to it being a free version, there are restrictions around usage, specifically that ArcGIS Online can only be used for non-commercial use. Keep this in mind as you decide which software to use for thematic mapping.
+Access ArcGIS Online:
+Open a web browser and go to <a href="https://www.arcgis.com/" class="uri">https://www.arcgis.com/</a>.
+Log in with your credentials or create a free account if you do not have one.
+Start a New Map:
+Click on “Map” in the toolbar at the top of the home page to open a blank map.
+Add Data Layers:
+Click on the “Add” button and select “Add Layer from URL” to connect a URL, or “Add Layer from File” to upload a file.
+For the tutorial, upload the NYC SDOH data (NYC_nbrhd_data) as a GeoJSON file. Make sure all the Add Layer information is correct before adding it to the map.
+Click Create and Add to Map
+Modify the Basemap:
+Select the ‘Basemap’ option on the left-hand sidebar to change the underlying map style. Choose from various styles like satellite or streets to better suit your data visualization needs.</p>
+<p>Customize Data Display:
+Go to ‘Styles’ on the right-hand sidebar to select which variable(s) you wish to display.
+Under Choose Attributes. Click “+ Field” to add your variables. For this activity, we’ll add “pctblack” (for percent black). Click Add.
+Underneath, choose your symbology, which is the method of visually representing your variable data (e.g., color, size).
+Click on ‘Style Options’ to edit aspects of your chosen symbology like color, classification method, and transparency.
+Enhance Map with Additional Features (optional):
+Tip: If you display multiple variables at once, symbology options will adjust to allow for relationships between these variables to be displayed. One of the strengths of ArcGIS Online is how straightforward it can be to display multiple variables in a thematic map. However, it is still limited and it may not always be appropriate to try to use a thematic map to display multiple variables at once. In general, best practice would be to create a new field of the relationship you’re interested in during the data wrangling process so it stands as its own variable.
+Add additional variables by click the “+ Field” option. For example, add “pctwhite,” “pcthisp,” “pctapi,” and “pctother.”
+Click “Style Options,” go to Field Name, and you can edit how the name shows up on the legend.
+Use ‘Labels’ and ‘Pop-ups’ to display more information about each asset, which might not be visible through symbology alone.
+Click on ‘Add Sketch’ to manually add points, lines, polygons, or text labels to your map, creating a new feature layer.
+insert AGOTMimg1</p>
+<p>Edit Features (optional):
+To modify an existing sketch, select the sketch feature layer and choose ‘Properties’ to make changes.
+Save Your Map:
+Save your work by clicking on the save icon in the left-hand sidebar, ensuring you do not lose any changes.
+6.2.2 (10 min) Mapbox GL
+Mapbox GL is useful for creating base maps for larger projects, or standalone interactive thematic maps. In this section, we’ll walk through using Mapbox to create both. As a standalone interactive map, Mapbox does require some basic code to embed your map in your webpage, but code templates are available.
+Simple Basemap
+Start a New Map:
+Visit Mapbox and sign in or create an account if you haven’t already.
+From your account page, choose “Create a map in studio” and then select “New Style”.
+You can start with a template, a blank map, or use a color palette derived from an image by choosing “Style with image”. For this activity, start with “Classic Template.” Then click “Streets.”
+Add Features:
+Tip: For the “Blank” map option, click the purple “+” at the top left to add feature layers, then click “Components.” This includes administrative boundaries, points of interest, natural features, and road networks.
+For the “Classic Template,” most of the layers you may want are already added.
+Tip: Consider the label density for each feature to maintain a balance between clarity and information density. Place labels, Points of interest, Natural features, and Road network all have label density options.</p>
+<p>Style Your Basemap:
+Adjust the colors and typography of the features, ensuring they are distinct enough for general visibility and for those with common types of colorblindness.
+Share Your Basemap:
+Maps can be shared from Mapbox through a style URL and access token, available under the “Share” option in the studio editor or your Styles page.</p>
+<p>Interactive Thematic Map
+Using the above simple basemap, let’s create a more complex map with an embedded dataset. Since our dataset is situated in New York, make sure your basemap is appropriately designed for that context.</p>
+<p>Upload Your Data:
+Navigate to Add New Layer &gt; Components &gt; Data Visualization.
+Choose “Upload Data” and select the NYC_nbrhd_data.geojson file.
+Note: GeoJSON is generally more reliable than zipped shapefiles due to common zipper compatibility issues.
+Add Your Data to the Map:
+From the Data Visualization tab, select your uploaded “NYC_nbrhd_data.geojson” as the source.
+Select Data Visualization Type. Choose “Choropleth” as the data visualization type.
+Zoom into “New York” if it doesn’t automatically zoom.</p>
+<p>Create Data Classifications:
+Select “pctblack” as the variable for color mapping from the “Style Across Data Range”.
+Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges.
+Tip: Deciding on data classification schemes - Mapbox does not have a way to decide between different classification schemes, like Jenks or quantiles. Use QGIS or R to decide on a classification scheme and identify where the breaks are, then manually set those breaks in Mapbox. For this activity, use the following stops “0, 0.01, 22.78, 45.55, 68.32, and 91.1”
+Adjust the classification to visually exclude non-residential areas by setting the lowest bin to a grey color.
+Design Your Color Scheme:
+Use resources like ColorBrewer to choose an accessible and aesthetically pleasing color scheme. Increase the number of data classes for a larger color range, and use the HEX codes or RGB values provided to add your desired colors to Mapbox.
+Check the accessibility of your color scheme using Mapbox’s built-in color blindness simulator under Settings &gt; Debug tools.</p>
+<p>Share Your Map:
+Publish your map to ensure updates are visible on other applications.
+In order to add your map to your web page, you’ll need to do some coding. From your account page, selecting “Install Mapbox GL JS” will lead you through the code you will need to do so. A template is also provided here that you can use to install your map.</p>
+<p>Extension Exercise
+Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here].</p>
+<p>As you create this map, consider the following questions:
+How could these variables be best presented to a user?
+What are the strengths and limitations of each software?
+Are you able to map multiple variables at once? Trends between variables?
+What trends can you see between SDOH and maternal health outcomes?</p>
+<p>6.3 What is a Story Map?
+A story map is a tool that allows users to explore a geospatial dataset in greater detail, with more direction from the creator. You can lead users through individual points of interest, craft a narrative around your data, and ultimately tell a story. Datasets don’t need to be traditional data either. You can use photos, videos, or other media at points of interest in your story map. Effective story maps are informative, compelling, and the user will feel drawn through the narrative.</p>
+<p>Depending on what software you use, story maps might be standalone journeys or integrated as part of a larger project.</p>
+<p>Check out these examples below:</p>
+<p>ArcGIS Online: <a href="https://arcg.is/1bPHeK0" class="uri">https://arcg.is/1bPHeK0</a>
+<a href="https://arcg.is/0KTDX4" class="uri">https://arcg.is/0KTDX4</a>
+<a href="https://arcg.is/0HDezC" class="uri">https://arcg.is/0HDezC</a>
+Knight: <a href="https://www.georgiahumanities.org/southern-literary-trail-story-map/" class="uri">https://www.georgiahumanities.org/southern-literary-trail-story-map/</a>
+<a href="https://publications.newberry.org/time-machine/blackHawk/" class="uri">https://publications.newberry.org/time-machine/blackHawk/</a>
+<a href="https://www.justempower.org/coronadiaries" class="uri">https://www.justempower.org/coronadiaries</a> (best example but stamen basemap :( )</p>
+<p>Over the next few sections, you’ll be introduced to two softwares that can be used for story mapping: ArcGIS Online StoryMaps, and Knight Lab StoryMapJS. Neither requires coding, but StoryMapJS does allow for some basic coding. By the end of this section, you’ll be able to create a compelling story map while applying what you’ve learned thus far about data selection, cartographic principles, and human-centered design.</p>
+<p>We’ll create a story map of birth justice centers in NYC to guide you through the software. Unlike previous sections, where everything you needed was provided in the data, this section has a bit more creative freedom. An excel file of basic information (NYCBirthJusticeCenters.xlsx) will guide you, with names, addresses and websites of the birth justice centers. This will allow you to create the bones of a story map, but the content itself is up to you. Use this to explore what narrative you want to present, and what information you think is relevant or useful to constructing that narrative.</p>
+<p>6.3.1 (2 min) A Note on the Software
+In this section, we’ll be introducing ArcGIS StoryMaps and Knight Lab StoryMapJS, two of the most reliable no-code or low-code story map softwares available. We’ll introduce their technical capabilities and drawbacks through the section, but there are other aspects to consider when deciding which software to use. ArcGIS Online is a free version of the paid ArcGIS software which does limit use to non-commercial use. StoryMapJS is itself entirely free, but you may want to use other software to create basemaps given Knight Lab’s limited integrated basemap variety. These basemap softwares are again often free versions of paid services, so there is a usage limit. Keep these limitations in mind when choosing your software.</p>
+<p>6.3.2 ArcGIS Online
+ArcGIS Online has one of the most built-out and flexible story map softwares available. In fact, when you first open a story map, it might not look like what we’ve described above at all. ArcGIS Online StoryMaps are designed to allow for larger projects, with the “traditional” story map an element that you can add in between text, asset or thematic maps, and other media. Let’s get started with our “traditional” story map for now.</p>
+<p>Create a Traditional Story Map
+Set Up Your Account:
+Visit ArcGIS Online and either log into your existing account or create a new one.
+Access StoryMaps:
+Once logged in, navigate to the StoryMaps section at <a href="https://storymaps.arcgis.com/" class="uri">https://storymaps.arcgis.com/</a> to access your story dashboard.
+Start a New Story:
+Click on “New story” and choose “Guided map tour” to begin. For future projects, you might select “Start from scratch” to fully customize your story elements.
+Add Your Data
+Add Slides with Data:
+Data in StoryMaps is added one slide at a time.
+Each slide can include:
+A visual element (image or video)
+A title
+A description, which may contain text, audio, or a hyperlink button.
+Use the ‘Add location’ function to place the slide on the map.
+Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slides by dragging them along the slide bar.
+Customize Your Basemap &amp; User Experience
+AGOSMbasemap.mp4 (gif)</p>
+<p>Select and Edit Basemap:
+Click ‘edit’ on your map, then select ‘Select basemap’.
+Choose from default options or click ‘Browse more maps’ for additional choices. Simpler basemaps are under ‘Living Atlas’, or use your own from the content library.
+Add Maps to Your Library:
+For feature layers: Open the feature layer in Map Viewer, select the folder icon, then ‘Save as’. The map will then appear under ‘My Maps’.
+For existing maps: Add the map to your favorites for easy access under ‘My Favorites’.
+Tip: With these options, you can either keep your basemap simple, making largely aesthetic considerations (color, features, busyness) when choosing your basemap, or you can add a more complex basemap which displays additional data.
+Enhance Basemap and User Interaction:
+For mobile users, enable ‘Current location’ to show their location on your story map.
+Opt to show ‘progress lines’ to clarify the route of your story map.
+Customize map type and point color to improve the visual experience.
+Adjust the zoom level manually if needed, especially to set a custom spatial extent that optimizes how your data is displayed. See below for an (albeit extreme) example of the difference setting a custom zoom extent can make.
+AGOSMcitiesgif.mp4
+Finalize and Share Your Story Map
+Review and Publish:
+Review your story map to ensure all data and visual elements are correct and effectively communicate your story.
+Once satisfied, publish your story map to make it accessible to your intended audience.</p>
+<p>Integrate Other Geospatial Data Visualization
+The biggest strength of using ArcGIS Online is the ability to incorporate a variety of other types of data visualizations into a story map to create a larger narrative. Within an ArcGIS Online Story Map, you can find a traditional story map, but you can also include asset and thematic maps, media, timelines, and web apps. The end result can be a built out project with a story map as just one of many elements. Take your time to explore all of the available options. When you’re satisfied with how your story map is presented and contextualized, it’s time to hit publish.</p>
+<p>6.3.6 Knight Lab StoryMapJS
+Northwestern University’s Knight Lab has created a number of tools to help people tell stories with better visualizations. Their StoryMapJS tool is one of the most straightforward story map tools available, and it’s completely free. It doesn’t have the capacity of AGO to integrate with Knight Lab’s other tools, or its design flexibility, but it’s great for beginner story map-makers and can be integrated into existing web pages.</p>
+<p>Step 1: Create and Set Up Your StoryMap
+Visit Knight Lab’s StoryMapJS:
+Go to Knight Lab’s StoryMapJS to begin.
+Start Your StoryMap:
+Click on “Make a StoryMap”.
+Sign in with your Google account.</p>
+<p>Name Your StoryMap:
+Create a name for your StoryMap and enter it when prompted.
+Configure Your Basemap:
+Tip: You can chose the open streetmap for the map option
+For this activity, you want a customized basemap, create one using Mapbox (refer to the Mapbox section for details on creating a basemap).
+In StoryMapJS, go to Options -&gt; Map Type, and add your Mapbox basemap using the Style URL and Access Token from Mapbox. Click close.
+Tip: If using a Mapbox thematic map as a basemap, create and add a legend via QGIS. Place the legend as media on the title slide or at the end of your story map, referencing its location on the title slide for easy navigation.</p>
+<p>Tip: The zoom feature looks wonky at first but it looks better as you add more slides.
+Step 2: Add Your Data
+Insert Data into Slides:
+Data in StoryMapJS is added one slide at a time. Use the sidebar on the left to add and arrange slides.
+For each slide, you can add:
+A media element (link to media or upload an image).
+A title.
+A description. Credits and captions can be added here.
+Add location in the red box at the center of your screen.
+Example Data Entry:
+For a starting slide, add the logo of the Caribbean Women’s Health Association in the media section, along with relevant narrative information.
+Step 3: Customize Your Story
+Customize Icons:
+Change icons by selecting ‘Marker options’ at the bottom right of each slide.
+Tip: Customize the icons for each point on your story map. Use free icons from sources like The Noun Project (note attribution requirements) or upload your own.
+Adjust Background and Layout:
+Modify the background color or add an image behind your story elements to match your map’s theme using ‘Background options’ at the bottom right of each slide.
+Go to “Preview” to see your Story Map so far.
+When you’re done, click Save at the top left side of your map.</p>
+<p>Extension Exercise
+Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found [here].</p>
+<p>As you create your story map, consider the following questions:
+What media best represents each center?
+What information best supplements that piece of media?
+How do you want the user to feel over the course of this story map? At the end?
+If you use an ArcGIS Online story map, how could you include other information to contextualize this traditional-style story map?</p>
+<p>Georgia data
+<a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-median-household-income-variables-boundaries/about?layer=2
+<a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-race-and-hispanic-origin-variables-centroids/about?layer=2
+<a href="https://opendata.atlantaregional.com/datasets/GARC" class="uri">https://opendata.atlantaregional.com/datasets/GARC</a>::maternal-health-child-asthma-by-tract-2021/about
+<a href="https://dph.georgia.gov/maternal-and-neonatal-center" class="uri">https://dph.georgia.gov/maternal-and-neonatal-center</a></p>
+<p>6.4 (20 min?) What is a data dashboard?
+Aslvn;ks</p>
+<p>6.4.1 R Shiny
+Lf;nva;elsf</p>
+<p>6.4.2 Tableau Public
+Step 1: Create an Account
+Register at Tableau Public: Go to Tableau Public and sign up for a free account.
+Step 2: Start a Workbook
+Initialize Visualization: Log in <a href="https://public.tableau.com/app/discover" class="uri">https://public.tableau.com/app/discover</a>, navigate to your profile by clicking your name at the top right, and click on “Create a Viz”. Upload the “NYC_nbrhd_data.geojson” file and then select “Update Now” to preview the data. Proceed by clicking on “Sheet 1” at the bottom to start visualizing.
+Step 3: Create a Thematic Map
+Configure Data for Mapping: In the data pane, select “NTA Name”, “Geometry”, and “Pctblack” using command + click. Click “Show Me” and choose the map visualization.</p>
+<p>Adjust Map Settings: A legend will appear; switch to a stepped color scheme by selecting “Edit Color”.
+Tip: You can adjust range and midpoint under “Advanced”.
+Customize Tooltips: Hover over settings can be adjusted in ‘Tooltip’ under ‘Marks’ to display desired information effectively.
+Step 4: Filter Data
+Exclude Uninhabited Areas: Right-click on “NTA Names” under Marks to set a filter. Deselect “All.” Choose “Exclude selected values” and remove areas such as parks-cemeteries, airports, and Rikers Island. Click “Okay.”
+Borough-Specific Filtering: Drag “Boro Name” from the left toolbar under “Tables” to the Filters section above “Marks,” select all, click “Okay.” Then, right-click on “Boro Name” then click “Show Filter.” On the right-side of the map, choose “the down arrow to “Edit Filter” then choose “Single Value (dropdown)” allowing selection of individual boroughs.</p>
+<p>Step 5: Add Additional Information
+Integrate More Data: Include data like severe maternal morbidity (Smmrate) as a color-coded element and adjust the legend back to a stepped color scheme. Add other demographic data as details in the tooltips.
+Step 6: Create a Bar Graph
+Visualize Demographic Data: Add a new sheet, select “NTA Name” and racial demographics, then choose “side-by-side-bars” from “Show Me”. Customize axes and colors as needed.
+Repeat for Economic Data: Create another bar graph for data like poverty levels and rent burden, adjusting axes and visuals similarly.
+Step 7: Create a Dashboard
+Assemble the Dashboard: Navigate to Dashboard (at the top of screen) -&gt; New Dashboard. Use ‘Objects’ for layout and drag your created sheets into the layout. Adjust the size of graphs to ‘Standard’ for readability.
+Step 8: Add a Filter Action
+Enhance Interactivity: Go to Dashboard -&gt; Actions, add a Filter action. Configure it to update the bar graphs based on selections or hovers on the map section of the dashboard.
+Step 9: Finalize Your Dashboard
+Refine Your Dashboard: Make final adjustments to legends, field names, and aesthetics. Ensure color schemes are cohesive and information is clear. Edit titles within the dashboard to reflect interactive elements, like displaying the name of a highlighted neighborhood.</p>
+<p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found here.</p>
+<p>6.5 (10 min) Hosting Maps with Github Pages</p>
 
 </div>
 </div>
+</div>
+
+
+
 <hr class="footer-line">
             </section>
 
@@ -191,7 +624,7 @@
         </div>
       </div>
 <a href="05-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="07-dissem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="04-dataR.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

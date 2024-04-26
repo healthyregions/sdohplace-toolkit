@@ -41,6 +41,10 @@ multivariate-data-analysis
 cartographic-principles
 effective-sdoh-map-design-entails-several-critical-elements
 the-munsell-color-system
+app-development
+asset-map-development
+umap
+data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
 adding-a-basemap
