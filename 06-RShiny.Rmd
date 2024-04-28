@@ -1,0 +1,14 @@
+---
+---
+
+# R Shiny
+
+Introduction
+
+### Getting Started {-}
+
+### Tutorials for R {-}
+
+If you are new to R, we recommend the following [intro-level tutorials](https://learn.datacamp.com/courses/free-introduction-to-r) provided through [installation guides](https://rspatial.org/intr/1-introduction.html). You can also refer to this [R for Social Scientists](https://datacarpentry.org/r-socialsci/) tutorial developed by Data Carpentry for a refresher.
+
+You can also visit the [RStudio Education](https://education.rstudio.com/learn/) page to select a learning path tailored to your experience level ([Beginners](https://education.rstudio.com/learn/beginner/), [Intermediates](https://education.rstudio.com/learn/intermediate/), [Experts](https://education.rstudio.com/learn/expert/)). They offer detailed instructions to learners at different stages of their R journey.

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 R Shiny | The SDOH &amp; Place Community Toolkit</title>
+  <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 R Shiny | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 R Shiny | The SDOH &amp; Place Community Toolkit" />
+  
+  <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link rel="prev" href="06-appdev.html"/>
+<link rel="next" href="04-dataR.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
+<li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#integrate-equity-directly"><i class="fa fa-check"></i>Integrate Equity Directly</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="02-scoping.html"><a href="02-scoping.html#defining-stakeholders"><i class="fa fa-check"></i><b>2.3</b> Defining Stakeholders</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-team"><i class="fa fa-check"></i>Assess Your Team</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#motivations"><i class="fa fa-check"></i>Motivations</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#finding-a-community-of-practice"><i class="fa fa-check"></i>Finding a Community of Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-scoping.html"><a href="02-scoping.html#project-assessment"><i class="fa fa-check"></i><b>2.4</b> Project Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
+<li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="06-appdev.html"><a href="06-appdev.html"><i class="fa fa-check"></i><b>6</b> App Development</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i><b>6.1.1</b> uMap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="06-RShiny.html"><a href="06-RShiny.html"><i class="fa fa-check"></i><b>7</b> R Shiny</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#appendix-appendix"><i class="fa fa-check"></i>(APPENDIX) Appendix</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="7.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>7.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>7.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="7.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>7.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>7.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>7.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>7.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>7.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>7.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>7.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>7.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>7.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="7.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>7.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>8</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>8.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="8.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>8.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>8.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="8.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>8.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>8.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>8.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="8.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>8.3.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The SDOH &amp; Place Community Toolkit</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
+</div>
+<div id="r-shiny" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> R Shiny<a href="06-RShiny.html#r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Introduction</p>
+<div id="getting-started" class="section level3 unnumbered hasAnchor">
+<h3>Getting Started<a href="06-RShiny.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="tutorials-for-r" class="section level3 unnumbered hasAnchor">
+<h3>Tutorials for R<a href="06-RShiny.html#tutorials-for-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are new to R, we recommend the following <a href="https://learn.datacamp.com/courses/free-introduction-to-r">intro-level tutorials</a> provided through <a href="https://rspatial.org/intr/1-introduction.html">installation guides</a>. You can also refer to this <a href="https://datacarpentry.org/r-socialsci/">R for Social Scientists</a> tutorial developed by Data Carpentry for a refresher.</p>
+<p>You can also visit the <a href="https://education.rstudio.com/learn/">RStudio Education</a> page to select a learning path tailored to your experience level (<a href="https://education.rstudio.com/learn/beginner/">Beginners</a>, <a href="https://education.rstudio.com/learn/intermediate/">Intermediates</a>, <a href="https://education.rstudio.com/learn/expert/">Experts</a>). They offer detailed instructions to learners at different stages of their R journey.</p>
+
+</div>
+</div>
+
+
+
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="06-appdev.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="04-dataR.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

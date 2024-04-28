@@ -80,3 +80,4 @@ thematic-map-panel
 cartograms-1
 circles-cartogram
 distortion-algorithm
+r-shiny

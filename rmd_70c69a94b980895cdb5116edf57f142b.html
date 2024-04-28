@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 R Shiny | 06-RShiny.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 R Shiny | 06-RShiny.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 R Shiny | 06-RShiny.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="/Users/yilinlyu/Documents/sdohplace-toolkit/libs/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#section-r-shiny"><i class="fa fa-check"></i><b>1</b> R Shiny</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#section-getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#section-tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="/Users/yilinlyu/Documents/sdohplace-toolkit/libs/images/banner.png">
+</div>
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="section-r-shiny" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> R Shiny<a href="#section-r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Introduction</p>
+<div id="section-getting-started" class="section level3 unnumbered hasAnchor">
+<h3>Getting Started<a href="#section-getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="section-tutorials-for-r" class="section level3 unnumbered hasAnchor">
+<h3>Tutorials for R<a href="#section-tutorials-for-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are new to R, we recommend the following <a href="https://learn.datacamp.com/courses/free-introduction-to-r">intro-level tutorials</a> provided through <a href="https://rspatial.org/intr/1-introduction.html">installation guides</a>. You can also refer to this <a href="https://datacarpentry.org/r-socialsci/">R for Social Scientists</a> tutorial developed by Data Carpentry for a refresher.</p>
+<p>You can also visit the <a href="https://education.rstudio.com/learn/">RStudio Education</a> page to select a learning path tailored to your experience level (<a href="https://education.rstudio.com/learn/beginner/">Beginners</a>, <a href="https://education.rstudio.com/learn/intermediate/">Intermediates</a>, <a href="https://education.rstudio.com/learn/expert/">Experts</a>). They offer detailed instructions to learners at different stages of their R journey.</p>
+<div class="sourceCode" id="section-cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="section-cb1-1"><a href="#section-cb1-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="section-cb1-2"><a href="#section-cb1-2" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="section-cb1-3"><a href="#section-cb1-3" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="section-cb1-4"><a href="#section-cb1-4" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="section-cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="section-cb3-1"><a href="#section-cb3-1" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code></pre></div>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;plotly&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<div class="sourceCode" id="section-cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="section-cb9-1"><a href="#section-cb9-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode" id="section-cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="section-cb13-1"><a href="#section-cb13-1" tabindex="-1"></a><span class="co"># Load and prepare the data</span></span>
+<span id="section-cb13-2"><a href="#section-cb13-2" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;NYC_nbrhd_data.geojson&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="section-cb13-3"><a href="#section-cb13-3" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(nyc_data)</span>
+<span id="section-cb13-4"><a href="#section-cb13-4" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="section-cb13-5"><a href="#section-cb13-5" tabindex="-1"></a></span>
+<span id="section-cb13-6"><a href="#section-cb13-6" tabindex="-1"></a><span class="co"># Define UI for the first tab</span></span>
+<span id="section-cb13-7"><a href="#section-cb13-7" tabindex="-1"></a>tab1_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Map &amp; Racial Demographics&quot;</span>,</span>
+<span id="section-cb13-8"><a href="#section-cb13-8" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
+<span id="section-cb13-9"><a href="#section-cb13-9" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
+<span id="section-cb13-10"><a href="#section-cb13-10" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color&quot;</span>, <span class="st">&quot;Demographic variable:&quot;</span>,</span>
+<span id="section-cb13-11"><a href="#section-cb13-11" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent Black&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctblack&quot;</span>,</span>
+<span id="section-cb13-12"><a href="#section-cb13-12" tabindex="-1"></a>                                                <span class="st">&quot;Percent Hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;pcthisp&quot;</span>,</span>
+<span id="section-cb13-13"><a href="#section-cb13-13" tabindex="-1"></a>                                                <span class="st">&quot;Percent White&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctwhite&quot;</span>),</span>
+<span id="section-cb13-14"><a href="#section-cb13-14" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;pctblack&quot;</span>),</span>
+<span id="section-cb13-15"><a href="#section-cb13-15" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;neighborhood&quot;</span>, <span class="st">&quot;Select Neighborhood:&quot;</span>,</span>
+<span id="section-cb13-16"><a href="#section-cb13-16" tabindex="-1"></a>                                    <span class="at">choices =</span> nyc_data<span class="sc">$</span>NTAName,</span>
+<span id="section-cb13-17"><a href="#section-cb13-17" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;Pelham Bay-Country Club-City Island&quot;</span>),</span>
+<span id="section-cb13-18"><a href="#section-cb13-18" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>)</span>
+<span id="section-cb13-19"><a href="#section-cb13-19" tabindex="-1"></a>                      ),</span>
+<span id="section-cb13-20"><a href="#section-cb13-20" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
+<span id="section-cb13-21"><a href="#section-cb13-21" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(</span>
+<span id="section-cb13-22"><a href="#section-cb13-22" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">leafletOutput</span>(<span class="st">&quot;map&quot;</span>)),</span>
+<span id="section-cb13-23"><a href="#section-cb13-23" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">plotlyOutput</span>(<span class="st">&quot;racialDemoChart&quot;</span>))</span>
+<span id="section-cb13-24"><a href="#section-cb13-24" tabindex="-1"></a>                        )</span>
+<span id="section-cb13-25"><a href="#section-cb13-25" tabindex="-1"></a>                      )</span>
+<span id="section-cb13-26"><a href="#section-cb13-26" tabindex="-1"></a>                    )</span>
+<span id="section-cb13-27"><a href="#section-cb13-27" tabindex="-1"></a>)</span>
+<span id="section-cb13-28"><a href="#section-cb13-28" tabindex="-1"></a></span>
+<span id="section-cb13-29"><a href="#section-cb13-29" tabindex="-1"></a><span class="co"># Define server logic for the first tab</span></span>
+<span id="section-cb13-30"><a href="#section-cb13-30" tabindex="-1"></a>tab1_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="section-cb13-31"><a href="#section-cb13-31" tabindex="-1"></a>  <span class="co"># Map output for Racial Demographics</span></span>
+<span id="section-cb13-32"><a href="#section-cb13-32" tabindex="-1"></a>  output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="section-cb13-33"><a href="#section-cb13-33" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="section-cb13-34"><a href="#section-cb13-34" tabindex="-1"></a>    </span>
+<span id="section-cb13-35"><a href="#section-cb13-35" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
+<span id="section-cb13-36"><a href="#section-cb13-36" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="section-cb13-37"><a href="#section-cb13-37" tabindex="-1"></a>    </span>
+<span id="section-cb13-38"><a href="#section-cb13-38" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-39"><a href="#section-cb13-39" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-40"><a href="#section-cb13-40" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
+<span id="section-cb13-41"><a href="#section-cb13-41" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
+<span id="section-cb13-42"><a href="#section-cb13-42" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="section-cb13-43"><a href="#section-cb13-43" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="section-cb13-44"><a href="#section-cb13-44" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="section-cb13-45"><a href="#section-cb13-45" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-46"><a href="#section-cb13-46" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="section-cb13-47"><a href="#section-cb13-47" tabindex="-1"></a>  })</span>
+<span id="section-cb13-48"><a href="#section-cb13-48" tabindex="-1"></a>  </span>
+<span id="section-cb13-49"><a href="#section-cb13-49" tabindex="-1"></a>  <span class="co"># Racial Demographics chart</span></span>
+<span id="section-cb13-50"><a href="#section-cb13-50" tabindex="-1"></a>  output<span class="sc">$</span>racialDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="section-cb13-51"><a href="#section-cb13-51" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood, ]</span>
+<span id="section-cb13-52"><a href="#section-cb13-52" tabindex="-1"></a>    </span>
+<span id="section-cb13-53"><a href="#section-cb13-53" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
+<span id="section-cb13-54"><a href="#section-cb13-54" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
+<span id="section-cb13-55"><a href="#section-cb13-55" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(racial_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
+<span id="section-cb13-56"><a href="#section-cb13-56" tabindex="-1"></a>    </span>
+<span id="section-cb13-57"><a href="#section-cb13-57" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="fu">c</span>(<span class="st">&quot;pctblack&quot;</span>, <span class="st">&quot;pcthisp&quot;</span>, <span class="st">&quot;pctwhite&quot;</span>, <span class="st">&quot;pctapi&quot;</span>, <span class="st">&quot;pctother&quot;</span>)]</span>
+<span id="section-cb13-58"><a href="#section-cb13-58" tabindex="-1"></a>    </span>
+<span id="section-cb13-59"><a href="#section-cb13-59" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">t</span>(racial_data)</span>
+<span id="section-cb13-60"><a href="#section-cb13-60" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(racial_data)</span>
+<span id="section-cb13-61"><a href="#section-cb13-61" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Race =</span> <span class="fu">rownames</span>(racial_data), <span class="at">Percentage =</span> racial_data[, <span class="dv">1</span>])</span>
+<span id="section-cb13-62"><a href="#section-cb13-62" tabindex="-1"></a>    <span class="fu">rownames</span>(racial_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="section-cb13-63"><a href="#section-cb13-63" tabindex="-1"></a>    </span>
+<span id="section-cb13-64"><a href="#section-cb13-64" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(racial_data), <span class="at">x =</span> <span class="sc">~</span>Race, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Race) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-65"><a href="#section-cb13-65" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Racial Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood),</span>
+<span id="section-cb13-66"><a href="#section-cb13-66" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Race&quot;</span>),</span>
+<span id="section-cb13-67"><a href="#section-cb13-67" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
+<span id="section-cb13-68"><a href="#section-cb13-68" tabindex="-1"></a>  })</span>
+<span id="section-cb13-69"><a href="#section-cb13-69" tabindex="-1"></a>}</span>
+<span id="section-cb13-70"><a href="#section-cb13-70" tabindex="-1"></a></span>
+<span id="section-cb13-71"><a href="#section-cb13-71" tabindex="-1"></a><span class="co"># Define UI for the second tab</span></span>
+<span id="section-cb13-72"><a href="#section-cb13-72" tabindex="-1"></a>tab2_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Socioeconomic Demographics&quot;</span>,</span>
+<span id="section-cb13-73"><a href="#section-cb13-73" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
+<span id="section-cb13-74"><a href="#section-cb13-74" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
+<span id="section-cb13-75"><a href="#section-cb13-75" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color_socio&quot;</span>, <span class="st">&quot;Demographic variable:&quot;</span>,</span>
+<span id="section-cb13-76"><a href="#section-cb13-76" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent in Poverty&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctpov&quot;</span>,</span>
+<span id="section-cb13-77"><a href="#section-cb13-77" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 30% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.30&quot;</span>,</span>
+<span id="section-cb13-78"><a href="#section-cb13-78" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 50% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.50&quot;</span>),</span>
+<span id="section-cb13-79"><a href="#section-cb13-79" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;pctpov&quot;</span>),</span>
+<span id="section-cb13-80"><a href="#section-cb13-80" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;neighborhood_socio&quot;</span>, <span class="st">&quot;Select Neighborhood:&quot;</span>,</span>
+<span id="section-cb13-81"><a href="#section-cb13-81" tabindex="-1"></a>                                    <span class="at">choices =</span> nyc_data<span class="sc">$</span>NTAName,</span>
+<span id="section-cb13-82"><a href="#section-cb13-82" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;Pelham Bay-Country Club-City Island&quot;</span>),</span>
+<span id="section-cb13-83"><a href="#section-cb13-83" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>)</span>
+<span id="section-cb13-84"><a href="#section-cb13-84" tabindex="-1"></a>                      ),</span>
+<span id="section-cb13-85"><a href="#section-cb13-85" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
+<span id="section-cb13-86"><a href="#section-cb13-86" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(</span>
+<span id="section-cb13-87"><a href="#section-cb13-87" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">leafletOutput</span>(<span class="st">&quot;map_socio&quot;</span>)),</span>
+<span id="section-cb13-88"><a href="#section-cb13-88" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">plotlyOutput</span>(<span class="st">&quot;socioDemoChart&quot;</span>))</span>
+<span id="section-cb13-89"><a href="#section-cb13-89" tabindex="-1"></a>                        )</span>
+<span id="section-cb13-90"><a href="#section-cb13-90" tabindex="-1"></a>                      )</span>
+<span id="section-cb13-91"><a href="#section-cb13-91" tabindex="-1"></a>                    )</span>
+<span id="section-cb13-92"><a href="#section-cb13-92" tabindex="-1"></a>)</span>
+<span id="section-cb13-93"><a href="#section-cb13-93" tabindex="-1"></a></span>
+<span id="section-cb13-94"><a href="#section-cb13-94" tabindex="-1"></a><span class="co"># Define server logic for the second tab</span></span>
+<span id="section-cb13-95"><a href="#section-cb13-95" tabindex="-1"></a>tab2_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="section-cb13-96"><a href="#section-cb13-96" tabindex="-1"></a>  <span class="co"># Map output for Socioeconomic Demographics</span></span>
+<span id="section-cb13-97"><a href="#section-cb13-97" tabindex="-1"></a>  output<span class="sc">$</span>map_socio <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="section-cb13-98"><a href="#section-cb13-98" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="section-cb13-99"><a href="#section-cb13-99" tabindex="-1"></a>    </span>
+<span id="section-cb13-100"><a href="#section-cb13-100" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color_socio]]), ]</span>
+<span id="section-cb13-101"><a href="#section-cb13-101" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color_socio]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="section-cb13-102"><a href="#section-cb13-102" tabindex="-1"></a>    </span>
+<span id="section-cb13-103"><a href="#section-cb13-103" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-104"><a href="#section-cb13-104" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-105"><a href="#section-cb13-105" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
+<span id="section-cb13-106"><a href="#section-cb13-106" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color_socio]]),</span>
+<span id="section-cb13-107"><a href="#section-cb13-107" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="section-cb13-108"><a href="#section-cb13-108" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="section-cb13-109"><a href="#section-cb13-109" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color_socio, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color_socio]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="section-cb13-110"><a href="#section-cb13-110" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-111"><a href="#section-cb13-111" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="section-cb13-112"><a href="#section-cb13-112" tabindex="-1"></a>  })</span>
+<span id="section-cb13-113"><a href="#section-cb13-113" tabindex="-1"></a>  </span>
+<span id="section-cb13-114"><a href="#section-cb13-114" tabindex="-1"></a>  <span class="co"># Socioeconomic Demographics chart</span></span>
+<span id="section-cb13-115"><a href="#section-cb13-115" tabindex="-1"></a>  output<span class="sc">$</span>socioDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="section-cb13-116"><a href="#section-cb13-116" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood_socio, ]</span>
+<span id="section-cb13-117"><a href="#section-cb13-117" tabindex="-1"></a>    </span>
+<span id="section-cb13-118"><a href="#section-cb13-118" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
+<span id="section-cb13-119"><a href="#section-cb13-119" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
+<span id="section-cb13-120"><a href="#section-cb13-120" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(socio_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
+<span id="section-cb13-121"><a href="#section-cb13-121" tabindex="-1"></a>    </span>
+<span id="section-cb13-122"><a href="#section-cb13-122" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="fu">c</span>(<span class="st">&quot;pctpov&quot;</span>, <span class="st">&quot;rent.30&quot;</span>, <span class="st">&quot;rent.50&quot;</span>)]</span>
+<span id="section-cb13-123"><a href="#section-cb13-123" tabindex="-1"></a>    </span>
+<span id="section-cb13-124"><a href="#section-cb13-124" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">t</span>(socio_data)</span>
+<span id="section-cb13-125"><a href="#section-cb13-125" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(socio_data)</span>
+<span id="section-cb13-126"><a href="#section-cb13-126" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Category =</span> <span class="fu">rownames</span>(socio_data), <span class="at">Percentage =</span> socio_data[, <span class="dv">1</span>])</span>
+<span id="section-cb13-127"><a href="#section-cb13-127" tabindex="-1"></a>    <span class="fu">rownames</span>(socio_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="section-cb13-128"><a href="#section-cb13-128" tabindex="-1"></a>    </span>
+<span id="section-cb13-129"><a href="#section-cb13-129" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(socio_data), <span class="at">x =</span> <span class="sc">~</span>Category, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Category) <span class="sc">%&gt;%</span></span>
+<span id="section-cb13-130"><a href="#section-cb13-130" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Socioeconomic Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood_socio),</span>
+<span id="section-cb13-131"><a href="#section-cb13-131" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Category&quot;</span>),</span>
+<span id="section-cb13-132"><a href="#section-cb13-132" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
+<span id="section-cb13-133"><a href="#section-cb13-133" tabindex="-1"></a>  })</span>
+<span id="section-cb13-134"><a href="#section-cb13-134" tabindex="-1"></a>}</span>
+<span id="section-cb13-135"><a href="#section-cb13-135" tabindex="-1"></a></span>
+<span id="section-cb13-136"><a href="#section-cb13-136" tabindex="-1"></a><span class="co"># Define UI for the third tab</span></span>
+<span id="section-cb13-137"><a href="#section-cb13-137" tabindex="-1"></a>tab3_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;About&quot;</span>,</span>
+<span id="section-cb13-138"><a href="#section-cb13-138" tabindex="-1"></a>                    <span class="fu">h3</span>(<span class="st">&quot;About This App&quot;</span>),</span>
+<span id="section-cb13-139"><a href="#section-cb13-139" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;This application provides a visual representation of demographic data across New York City&#39;s neighborhoods.&quot;</span>),</span>
+<span id="section-cb13-140"><a href="#section-cb13-140" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Select different demographic variables from the dropdown menu to see how the distribution varies across the city.&quot;</span>),</span>
+<span id="section-cb13-141"><a href="#section-cb13-141" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Data source: NYC Neighborhood Data, provided in GeoJSON format and visualized using Leaflet in a Shiny application.&quot;</span>)</span>
+<span id="section-cb13-142"><a href="#section-cb13-142" tabindex="-1"></a>)</span>
+<span id="section-cb13-143"><a href="#section-cb13-143" tabindex="-1"></a></span>
+<span id="section-cb13-144"><a href="#section-cb13-144" tabindex="-1"></a><span class="co"># Define UI for the app</span></span>
+<span id="section-cb13-145"><a href="#section-cb13-145" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="section-cb13-146"><a href="#section-cb13-146" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;NYC Neighborhood Demographics&quot;</span>),</span>
+<span id="section-cb13-147"><a href="#section-cb13-147" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="section-cb13-148"><a href="#section-cb13-148" tabindex="-1"></a>    tab1_ui,</span>
+<span id="section-cb13-149"><a href="#section-cb13-149" tabindex="-1"></a>    tab2_ui,</span>
+<span id="section-cb13-150"><a href="#section-cb13-150" tabindex="-1"></a>    tab3_ui</span>
+<span id="section-cb13-151"><a href="#section-cb13-151" tabindex="-1"></a>  )</span>
+<span id="section-cb13-152"><a href="#section-cb13-152" tabindex="-1"></a>)</span>
+<span id="section-cb13-153"><a href="#section-cb13-153" tabindex="-1"></a></span>
+<span id="section-cb13-154"><a href="#section-cb13-154" tabindex="-1"></a><span class="co"># Combine server logic for all tabs</span></span>
+<span id="section-cb13-155"><a href="#section-cb13-155" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="section-cb13-156"><a href="#section-cb13-156" tabindex="-1"></a>  <span class="fu">tab1_server</span>(input, output, session)</span>
+<span id="section-cb13-157"><a href="#section-cb13-157" tabindex="-1"></a>  <span class="fu">tab2_server</span>(input, output, session)</span>
+<span id="section-cb13-158"><a href="#section-cb13-158" tabindex="-1"></a>}</span>
+<span id="section-cb13-159"><a href="#section-cb13-159" tabindex="-1"></a></span>
+<span id="section-cb13-160"><a href="#section-cb13-160" tabindex="-1"></a><span class="co"># Run the application</span></span>
+<span id="section-cb13-161"><a href="#section-cb13-161" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<iframe data-deferred-src="app31f264268b63f7984c6a07d57acb9b50/?w=&amp;__subapp__=1" width="100%" height="400" class="shiny-frame shiny-frame-deferred"></iframe>
+</div>
+</div>
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
