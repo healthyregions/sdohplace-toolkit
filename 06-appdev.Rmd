@@ -3,8 +3,28 @@
 
 # App Development
 
+
+:::objective
+**Objectives**
+
+In the module, you will:
+
+- Explore various options for creating your map
+
+- Create web maps using the suggested applications
+:::
+
 In this module, you will learn fundamental skills for creating asset maps, thematic maps, story maps, and data dashboards on a variety of free and/or open source platforms. Each section will include an exercise that will help you put into practice what you learn, highlighting the strengths of each map type and how they can be used to tell a well-rounded narrative with data. These exercises use data relevant to maternal health disparities in New York City and Georgia. All data required to complete each exercise can be found at [github link]. A reference file with information on variables and data sources is included.
-	
+
+:::tip
+**A Note on the Software**
+
+
+In this module, we’ll be introducing a number of no-code or low-code mapping software available. We’ll introduce their technical capabilities and drawbacks through each section, but there are other aspects to consider when deciding which software to use. While almost all software we’ve introduced in previous modules has been open source, many software options we’ll introduce today are free versions of paid services. These free versions may not have the full range of capabilities of the paid versions, or there may be usage limits that need to be kept in mind when choosing which software is best for your project. 
+:::
+
+
+
 ## Asset Map Development 
 An asset map, commonly used in the public health field, is a point map of resources. It can be used to identify where resources are, and where gaps in availability exist. They may be simple, but can be quite effective for both understanding and presenting information about resource distribution. When paired with other mapping tools, they can tell us a lot about the types of communities that have access to various resources compared to those without access.
 
@@ -20,51 +40,95 @@ uMap is a web based mapping program that uses OpenStreetMap to allow users to cr
 
 <details markdown='1'><summary>Click “Create a map” in the top right corner.</summary>
 
-*Note: Familiarize yourself with the toolbar. Below is a quick cheat sheet.
+- Familiarize yourself with the toolbar. Below is a quick cheat sheet.
+
+-----IMAGE HERE------
 
 </br></br></details>
 
-Step 3: Click  to import “NYChospitals.csv” from the zip file linked at the start of the module . Then press the “Import” button.
+<details markdown='1'><summary>Import .csv file</summary>
+- Click "Import data" to import “NYChospitals.csv” from the zip file linked at the start of the module.
 
-*Note: Points, lines, and polygons can be manually added to the map. Data can also be imported as a file, as a url, or pasted into the import tab. Multiple files can either be imported simultaneously to the same layer, or one by one to different layers. 
+- Then press the “Import” button.
+
+:::tip
+**Tip**
+
+Points, lines, and polygons can be manually added to the map. Data can also be imported as a file, as a url, or pasted into the import tab. Multiple files can either be imported simultaneously to the same layer, or one by one to different layers. 
+
 Additionally, uMap defaults to whatever layer you’ve most recently imported, so be sure that you are adding a new file to a new layer rather than replacing an existing file if you work with multiple layers in the future. 
+
 Lastly, shapefiles are not compatible with uMap, you should instead prepare GeoJSONs if you add any.
+:::
 
 Your map should look something like this:
+-----IMAGE HERE------
 
+</br></br></details>
 
-Step 4: Click  or “Manage Layers” on the right side of the toolbar and select the  on the right side of the toolbar to edit “Layer Properties”
+<details markdown='1'><summary> Edit layers</summary> 
 
-*Note: Any edits will now be applied to all features. From this panel, you can change the color, shape, or symbol of the icon denoting your features. You can also change how a user interacts with features, such as whether they have to hover over a feature for a label to appear.
+- Click “Manage layers” on the right side of the toolbar and select the "Edit" on the right side of the toolbar to edit “Layer Properties”
 
-*Optional: Selecting a feature (any point, line or polygon) will allow you to edit or delete it individually. 
+:::tip
+**Tip** 
 
-Select  to edit and it will bring up the “Feature Properties” tab. Scroll to the bottom of the “Features Properties” tab to edit the feature icon and interaction.
+Any edits will now be applied to all features. From this panel, you can change the color, shape, or symbol of the icon denoting your features. You can also change how a user interacts with features, such as whether they have to hover over a feature for a label to appear.
+:::
 
+*Optional: Selecting a feature (any point, line or polygon) will allow you to edit or delete it individually.* 
 
+- Select "Edit" to edit and it will bring up the “Feature Properties” tab. Scroll to the bottom of the “Features Properties” tab to edit the feature icon and interaction.
 
+*Optional: Basemaps in uMap are somewhat limited, but there are a few options that can be found on the left hand toolbar by clicking "Basemap options". You may need to expand the toolbar to find these options* 
 
-*Optional: Basemaps in uMap are somewhat limited, but there are a few options that can be found on the left hand toolbar by clicking  . You may need to expand the toolbar to find these options. 
+</br></br></details>
 
-Step 5: Add additional data (nyc-community-centers.geojson, nyc-day-care.geojson, and nyc-bjc.geojson) to create a map with multiple resources relevant to maternal health and support. Edit Layer Properties to make each layer’s icons visually distinct.
-Step 6: Save your map. First change the name and/or description by clicking the . Once you change the name, click on the “Save” button at the top right corner. You’ll be given a URL, along with the option to download.
+<details markdown='1'><summary>Additional data</summary>
+- Add additional data (nyc-community-centers.geojson, nyc-day-care.geojson, and nyc-bjc.geojson) to create a map with multiple resources relevant to maternal health and support. 
 
-*Note: Descriptions will need to be written using HTML formatting, but selecting the help button next to the description box will bring up all the relevant text formatting needed to do this properly. 
+- Edit Layer Properties to make each layer’s icons visually distinct.
+
+</br></br></details>
+
+<details markdown='1'><summary>Save your map</summary>
+
+- First change the name and/or description by clicking Edit map properties". 
+
+- Once you change the name, click on the “Save” button at the top right corner. 
+
+- You’ll be given a URL, along with the option to download.
+
+:::tip
+**Tip**
+
+Descriptions will need to be written using HTML formatting, but selecting the help button next to the description box will bring up all the relevant text formatting needed to do this properly. 
+:::
+
+</br></br></details>
 
 6.1.2 Hands On Dataviz - Leaflet and Google Sheets: https://handsondataviz.org/leaflet-maps-with-google-sheets.html
 
 This
 
-?
-Extension Exercise
+<details markdown='1'><summary>**Extension Exercise**</summary>
+
 Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.
 
-Tip: As you create an asset map, consider the following questions: 
-Are there areas with many hospitals/resources?
-Are there areas with few or no hospitals/resources?
-What areas do you think could use more hospitals/resources?
-What may keep a population from utilizing a hospital/resource in their area?
-How might focusing solely on hospital/resource locations not tell the entire story?
+As you create an asset map, consider the following questions: 
+
+- Are there areas with many hospitals/resources?
+
+- Are there areas with few or no hospitals/resources?
+
+- What areas do you think could use more hospitals/resources?
+
+- What may keep a population from utilizing a hospital/resource in their area?
+
+- How might focusing solely on hospital/resource locations not tell the entire story?
+
+</br></br></details>
+
 6.2 (10 min?) What is a Thematic Map?
 A thematic map in public health is a map that uses visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Data & interaction complexity generally remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window. Here, we’ll introduce ArcGIS Online and Mapbox GL as two free thematic mapping options, while creating a thematic map of an SDOH or maternal health outcome variable(s) in NYC.
 
@@ -133,6 +197,7 @@ Select Data Visualization Type. Choose "Choropleth" as the data visualization ty
 Zoom into “New York” if it doesn’t automatically zoom.
 
 Create Data Classifications:
+Select “choropleth-fill” from the Choropleth dropdown
 Select "pctblack" as the variable for color mapping from the “Style Across Data Range”. 
 Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges. 
 Tip: Deciding on data classification schemes - Mapbox does not have a way to decide between different classification schemes, like Jenks or quantiles. Use QGIS or R to decide on a classification scheme and identify where the breaks are, then manually set those breaks in Mapbox. For this activity, use the following stops “0, 0.01, 22.78, 45.55, 68.32, and 91.1”
@@ -171,9 +236,6 @@ https://www.justempower.org/coronadiaries (best example but stamen basemap :( )
 Over the next few sections, you’ll be introduced to two softwares that can be used for story mapping: ArcGIS Online StoryMaps, and Knight Lab StoryMapJS. Neither requires coding, but StoryMapJS does allow for some basic coding. By the end of this section, you’ll be able to create a compelling story map while applying what you’ve learned thus far about data selection, cartographic principles, and human-centered design. 
 
 We’ll create a story map of birth justice centers in NYC to guide you through the software. Unlike previous sections, where everything you needed was provided in the data, this section has a bit more creative freedom. An excel file of basic information (NYCBirthJusticeCenters.xlsx) will guide you, with names, addresses and websites of the birth justice centers. This will allow you to create the bones of a story map, but the content itself is up to you. Use this to explore what narrative you want to present, and what information you think is relevant or useful to constructing that narrative.
-
-6.3.1 (2 min) A Note on the Software
-In this section, we’ll be introducing ArcGIS StoryMaps and Knight Lab StoryMapJS, two of the most reliable no-code or low-code story map softwares available. We’ll introduce their technical capabilities and drawbacks through the section, but there are other aspects to consider when deciding which software to use. ArcGIS Online is a free version of the paid ArcGIS software which does limit use to non-commercial use. StoryMapJS is itself entirely free, but you may want to use other software to create basemaps given Knight Lab’s limited integrated basemap variety. These basemap softwares are again often free versions of paid services, so there is a usage limit. Keep these limitations in mind when choosing your software.
 
 6.3.2 ArcGIS Online
 ArcGIS Online has one of the most built-out and flexible story map softwares available. In fact, when you first open a story map, it might not look like what we’ve described above at all. ArcGIS Online StoryMaps are designed to allow for larger projects, with the “traditional” story map an element that you can add in between text, asset or thematic maps, and other media. Let’s get started with our “traditional” story map for now. 
@@ -311,4 +373,4 @@ If you get stuck while creating your data dashboard, Tableau Public provides a n
 
 6.5 (10 min) Hosting Maps with Github Pages
 
-
+## Resources {-}

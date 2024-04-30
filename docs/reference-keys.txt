@@ -44,6 +44,7 @@ the-munsell-color-system
 app-development
 asset-map-development
 umap
+r-shiny
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
@@ -80,4 +81,3 @@ thematic-map-panel
 cartograms-1
 circles-cartogram
 distortion-algorithm
-r-shiny
