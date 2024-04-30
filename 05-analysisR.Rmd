@@ -69,7 +69,7 @@ Next, we can create a buffer. We use the `st_buffer` function to calculate, pass
 
 To calculate a half mile buffer, we will use 2,640 feet as our input (since 2640 ft = 0.5 mile).
 
-``````{r }
+```{r }
 
 markets.buffer <- st_buffer(markets, 2640)
 

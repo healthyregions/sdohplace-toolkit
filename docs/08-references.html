@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-<link rel="prev" href="05-analysisR.html"/>
+<link rel="prev" href="06-RShiny.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -274,19 +274,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i><b>6.1.1</b> uMap</a></li>
+<li class="chapter" data-level="6.1.2" data-path="06-appdev.html"><a href="06-appdev.html#leaflet-with-csv-data"><i class="fa fa-check"></i><b>6.1.2</b> Leaflet with CSV Data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="06-RShiny.html"><a href="06-RShiny.html"><i class="fa fa-check"></i><b>7</b> R Shiny</a>
+<li class="chapter" data-level="6.2" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-thematic-map"><i class="fa fa-check"></i><b>6.2</b> What is a Thematic Map?</a>
 <ul>
-<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
-<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="6.2.1" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online"><i class="fa fa-check"></i><b>6.2.1</b> ArcGIS Online</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-story-map"><i class="fa fa-check"></i><b>6.3</b> What is a Story Map?</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online-1"><i class="fa fa-check"></i><b>6.3.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="6.3.2" data-path="06-appdev.html"><a href="06-appdev.html#knight-lab-storymapjs"><i class="fa fa-check"></i><b>6.3.2</b> Knight Lab StoryMapJS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-data-dashboard"><i class="fa fa-check"></i><b>6.4</b> What is a data dashboard?</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="06-appdev.html"><a href="06-appdev.html#tableau-public"><i class="fa fa-check"></i><b>6.4.1</b> Tableau Public</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="06-appdev.html"><a href="06-appdev.html#using-github-pages"><i class="fa fa-check"></i><b>6.5</b> Using Github Pages</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
 <ul>
-<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
-<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
 <li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
@@ -336,6 +346,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
 <li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="06-RShiny.html"><a href="06-RShiny.html"><i class="fa fa-check"></i><b>C</b> R Shiny</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
 <ul>
@@ -438,7 +453,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="05-analysisR.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="06-RShiny.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

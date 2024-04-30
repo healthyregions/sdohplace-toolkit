@@ -7,9 +7,9 @@ rmd_files: ["index.Rmd",
 "04-data.Rmd",
 "05-analysis.Rmd",
 "06-appdev.Rmd",
-"06-RShiny.Rmd",
 "04-dataR.Rmd",
 "05-analysisR.Rmd",
+"06-RShiny.Rmd",
 "08-references.Rmd",
 ]
 delete_merged_file: TRUE
