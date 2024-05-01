@@ -85,6 +85,20 @@
 
 ## Module 4 {-}
 
+- https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding 
+
 ## Module 5 {-}
+
+- [GeoDa Documentation](https://geodacenter.github.io/documentation.html) remains an ESDA standard to uncover dozens of techniques for discovery.
+
+- Brewer, C. (2016). Designing Better Maps: A Guide for GIS Users, 2nd Edition. ESRI press.
+
+- D'ignazio, C., & Klein, L. F. (2023). Data feminism. MIT press.
+
+- [Center for Spatial Data Science (2024). Scientific Reasoning in Spatial Data Science Education Project. University of Chicago: Center for Spatial Data Science.](https://spatial.uchicago.edu/education/scientific-reasoning)
+
+- Krygier, J., & Wood, D. (2016). Making maps: a visual guide to map design for GIS. Guilford Publications.
+
+- Peterson, G. N. (2020). GIS cartography: a guide to effective map design. CRC Press.
 
 ## Module 6 {-}

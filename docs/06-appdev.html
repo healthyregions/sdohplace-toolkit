@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 App Development | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 App Development | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -273,21 +273,23 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i><b>6.1.1</b> uMap</a></li>
-<li class="chapter" data-level="6.1.2" data-path="06-appdev.html"><a href="06-appdev.html#leaflet-with-csv-data"><i class="fa fa-check"></i><b>6.1.2</b> Leaflet with CSV Data</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i>uMap</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#leaflet-with-csv-data"><i class="fa fa-check"></i>Leaflet with CSV Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-thematic-map"><i class="fa fa-check"></i><b>6.2</b> What is a Thematic Map?</a>
+<li class="chapter" data-level="6.2" data-path="06-appdev.html"><a href="06-appdev.html#thematic-map-app-development"><i class="fa fa-check"></i><b>6.2</b> Thematic Map App Development</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online"><i class="fa fa-check"></i><b>6.2.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online"><i class="fa fa-check"></i>ArcGIS Online</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#mapbox-gl"><i class="fa fa-check"></i>Mapbox GL</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#interactive-thematic-map"><i class="fa fa-check"></i>Interactive Thematic Map</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-story-map"><i class="fa fa-check"></i><b>6.3</b> What is a Story Map?</a>
+<li class="chapter" data-level="6.3" data-path="06-appdev.html"><a href="06-appdev.html#story-map-app-development"><i class="fa fa-check"></i><b>6.3</b> Story Map App Development</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online-1"><i class="fa fa-check"></i><b>6.3.1</b> ArcGIS Online</a></li>
-<li class="chapter" data-level="6.3.2" data-path="06-appdev.html"><a href="06-appdev.html#knight-lab-storymapjs"><i class="fa fa-check"></i><b>6.3.2</b> Knight Lab StoryMapJS</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online-1"><i class="fa fa-check"></i>ArcGIS Online</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#knight-lab-storymapjs"><i class="fa fa-check"></i>Knight Lab StoryMapJS</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="06-appdev.html"><a href="06-appdev.html#what-is-a-data-dashboard"><i class="fa fa-check"></i><b>6.4</b> What is a data dashboard?</a>
+<li class="chapter" data-level="6.4" data-path="06-appdev.html"><a href="06-appdev.html#data-dashboard-app-development"><i class="fa fa-check"></i><b>6.4</b> Data Dashboard App Development</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="06-appdev.html"><a href="06-appdev.html#tableau-public"><i class="fa fa-check"></i><b>6.4.1</b> Tableau Public</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#tableau-public"><i class="fa fa-check"></i>Tableau Public</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="06-appdev.html"><a href="06-appdev.html#using-github-pages"><i class="fa fa-check"></i><b>6.5</b> Using Github Pages</a></li>
 <li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
@@ -400,8 +402,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> Asset Map Development<a href="06-appdev.html#asset-map-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An asset map, commonly used in the public health field, is a point map of resources. It can be used to identify where resources are, and where gaps in availability exist. They may be simple, but can be quite effective for both understanding and presenting information about resource distribution. When paired with other mapping tools, they can tell us a lot about the types of communities that have access to various resources compared to those without access.</p>
 <p>In this section, we’ll introduce two options for asset mapping, uMap and Leaflet. Both are free and open source. We’ll use a dataset of hospitals in New York City to introduce these software options.</p>
-<div id="umap" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> uMap<a href="06-appdev.html#umap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="umap" class="section level3 unnumbered hasAnchor">
+<h3>uMap<a href="06-appdev.html#umap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>uMap is a web based mapping program that uses OpenStreetMap to allow users to create maps. It has a simple interface, and no coding is necessary.</p>
 <details markdown='1'>
 <summary>
@@ -484,8 +486,8 @@ Save your map
 </br></br>
 </details>
 </div>
-<div id="leaflet-with-csv-data" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Leaflet with CSV Data<a href="06-appdev.html#leaflet-with-csv-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="leaflet-with-csv-data" class="section level3 unnumbered hasAnchor">
+<h3>Leaflet with CSV Data<a href="06-appdev.html#leaflet-with-csv-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="tip">
 <p><strong>About this exercise</strong></p>
 <p>We will reference <a href="https://handsondataviz.org/leaflet-maps-with-csv.html">Leaflet Maps with CSV Data</a> from <a href="https://handsondataviz.org/">HandsOnDataViz</a>, a fantastic collection of guides and recipes for data visualization by Jack Dougherty and Ilya Ilyankou that focus on using open source and accessible technologies. We strongly encourage you to explore all of their other content as well!</p>
@@ -510,216 +512,533 @@ Save your map
 </details>
 </div>
 </div>
-<div id="what-is-a-thematic-map" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> What is a Thematic Map?<a href="06-appdev.html#what-is-a-thematic-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="thematic-map-app-development" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Thematic Map App Development<a href="06-appdev.html#thematic-map-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A thematic map in public health is a map that uses visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Data &amp; interaction complexity generally remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window. Here, we’ll introduce ArcGIS Online and Mapbox GL as two free thematic mapping options, while creating a thematic map of an SDOH or maternal health outcome variable(s) in NYC.</p>
-<div id="arcgis-online" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> ArcGIS Online<a href="06-appdev.html#arcgis-online" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>ArcGIS Online is a free version of ArcGIS, a popular mapping software. Due to it being a free version, there are restrictions around usage, specifically that ArcGIS Online can only be used for non-commercial use. Keep this in mind as you decide which software to use for thematic mapping.
-Access ArcGIS Online:
-Open a web browser and go to <a href="https://www.arcgis.com/" class="uri">https://www.arcgis.com/</a>.
-Log in with your credentials or create a free account if you do not have one.
-Start a New Map:
-Click on “Map” in the toolbar at the top of the home page to open a blank map.
-Add Data Layers:
-Click on the “Add” button and select “Add Layer from URL” to connect a URL, or “Add Layer from File” to upload a file.
-For the tutorial, upload the NYC SDOH data (NYC_nbrhd_data) as a GeoJSON file. Make sure all the Add Layer information is correct before adding it to the map.
-Click Create and Add to Map
-Modify the Basemap:
-Select the ‘Basemap’ option on the left-hand sidebar to change the underlying map style. Choose from various styles like satellite or streets to better suit your data visualization needs.</p>
-<p>Customize Data Display:
-Go to ‘Styles’ on the right-hand sidebar to select which variable(s) you wish to display.
-Under Choose Attributes. Click “+ Field” to add your variables. For this activity, we’ll add “pctblack” (for percent black). Click Add.
-Underneath, choose your symbology, which is the method of visually representing your variable data (e.g., color, size).
-Click on ‘Style Options’ to edit aspects of your chosen symbology like color, classification method, and transparency.
-Enhance Map with Additional Features (optional):
-Tip: If you display multiple variables at once, symbology options will adjust to allow for relationships between these variables to be displayed. One of the strengths of ArcGIS Online is how straightforward it can be to display multiple variables in a thematic map. However, it is still limited and it may not always be appropriate to try to use a thematic map to display multiple variables at once. In general, best practice would be to create a new field of the relationship you’re interested in during the data wrangling process so it stands as its own variable.
-Add additional variables by click the “+ Field” option. For example, add “pctwhite,” “pcthisp,” “pctapi,” and “pctother.”
-Click “Style Options,” go to Field Name, and you can edit how the name shows up on the legend.
-Use ‘Labels’ and ‘Pop-ups’ to display more information about each asset, which might not be visible through symbology alone.
-Click on ‘Add Sketch’ to manually add points, lines, polygons, or text labels to your map, creating a new feature layer.
-insert AGOTMimg1</p>
-<p>Edit Features (optional):
-To modify an existing sketch, select the sketch feature layer and choose ‘Properties’ to make changes.
-Save Your Map:
-Save your work by clicking on the save icon in the left-hand sidebar, ensuring you do not lose any changes.
-6.2.2 (10 min) Mapbox GL
-Mapbox GL is useful for creating base maps for larger projects, or standalone interactive thematic maps. In this section, we’ll walk through using Mapbox to create both. As a standalone interactive map, Mapbox does require some basic code to embed your map in your webpage, but code templates are available.
-Simple Basemap
-Start a New Map:
-Visit Mapbox and sign in or create an account if you haven’t already.
+<div id="arcgis-online" class="section level3 unnumbered hasAnchor">
+<h3>ArcGIS Online<a href="06-appdev.html#arcgis-online" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ArcGIS Online is a free version of ArcGIS, a popular mapping software. Due to it being a free version, there are restrictions around usage, specifically that ArcGIS Online can only be used for non-commercial use. Keep this in mind as you decide which software to use for thematic mapping.</p>
+<details>
+<summary>
+Access ArcGIS Online
+</summary>
+<ul>
+<li><p>Open a web browser and go to <a href="https://www.arcgis.com/" class="uri">https://www.arcgis.com/</a>.</p></li>
+<li><p>Log in with your credentials or create a free account if you do not have one.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Start a New Map
+</summary>
+<ul>
+<li>Click on “Map” in the toolbar at the top of the home page to open a blank map.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Add Data Layers
+</summary>
+<ul>
+<li><p>Click on the “Add” button and select “Add Layer from URL” to connect a URL, or “Add Layer from File” to upload a file.</p></li>
+<li><p>For the tutorial, upload the NYC SDOH data (NYC_nbrhd_data) as a GeoJSON file. Make sure all the Add Layer information is correct before adding it to the map.</p></li>
+<li><p>Click Create and Add to Map</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Modify the Basemap
+</summary>
+<ul>
+<li>Select the “Basemap” option on the left-hand sidebar to change the underlying map style. Choose from various styles like satellite or streets to better suit your data visualization needs.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Customize Data Display
+</summary>
+<ul>
+<li><p>Go to ‘Styles’ on the right-hand sidebar to select which variable(s) you wish to display.</p></li>
+<li><p>Under Choose Attributes. Click “+ Field” to add your variables. For this activity, we’ll add “pctblack” (for percent black). Click Add.</p></li>
+<li><p>Underneath, choose your symbology, which is the method of visually representing your variable data (e.g., color, size).</p></li>
+<li><p>Click on ‘Style Options’ to edit aspects of your chosen symbology like color, classification method, and transparency.</p></li>
+<li><p>Enhance Map with Additional Features (optional):</p></li>
+</ul>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>If you display multiple variables at once, symbology options will adjust to allow for relationships between these variables to be displayed. One of the strengths of ArcGIS Online is how straightforward it can be to display multiple variables in a thematic map. However, it is still limited and it may not always be appropriate to try to use a thematic map to display multiple variables at once. In general, best practice would be to create a new field of the relationship you’re interested in during the data wrangling process so it stands as its own variable.</p>
+<ul>
+<li><p>Add additional variables by click the “+ Field” option. For example, add “pctwhite,” “pcthisp,” “pctapi,” and “pctother.”</p></li>
+<li><p>Click “Style Options,” go to Field Name, and you can edit how the name shows up on the legend.</p></li>
+<li><p>Use ‘Labels’ and ‘Pop-ups’ to display more information about each asset, which might not be visible through symbology alone.</p></li>
+<li><p>Click on ‘Add Sketch’ to manually add points, lines, polygons, or text labels to your map, creating a new feature layer.</p></li>
+</ul>
+</div>
+<p>—–IMAGE HERE——insert AGOTMimg1</p>
+</br></br>
+</details>
+<details>
+<summary>
+Edit Features (optional)
+</summary>
+<ul>
+<li>To modify an existing sketch, select the sketch feature layer and choose “Properties” to make changes.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Save Your Map
+</summary>
+<ul>
+<li>Save your work by clicking on the save icon in the left-hand sidebar, ensuring you do not lose any changes.</li>
+</ul>
+</br></br>
+</details>
+</div>
+<div id="mapbox-gl" class="section level3 unnumbered hasAnchor">
+<h3>Mapbox GL<a href="06-appdev.html#mapbox-gl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mapbox GL is useful for creating base maps for larger projects, or standalone interactive thematic maps. In this section, we’ll walk through using Mapbox to create both. As a standalone interactive map, Mapbox does require some basic code to embed your map in your webpage, but code templates are available.</p>
+<div id="simple-basemap" class="section level4 unnumbered hasAnchor">
+<h4>Simple Basemap<a href="06-appdev.html#simple-basemap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<details>
+<summary>
+Start a New Map
+</summary>
+<p>Visit Mapbox and sign in or create an account if you haven’t already.
 From your account page, choose “Create a map in studio” and then select “New Style”.
-You can start with a template, a blank map, or use a color palette derived from an image by choosing “Style with image”. For this activity, start with “Classic Template.” Then click “Streets.”
-Add Features:
-Tip: For the “Blank” map option, click the purple “+” at the top left to add feature layers, then click “Components.” This includes administrative boundaries, points of interest, natural features, and road networks.
-For the “Classic Template,” most of the layers you may want are already added.
-Tip: Consider the label density for each feature to maintain a balance between clarity and information density. Place labels, Points of interest, Natural features, and Road network all have label density options.</p>
-<p>Style Your Basemap:
-Adjust the colors and typography of the features, ensuring they are distinct enough for general visibility and for those with common types of colorblindness.
-Share Your Basemap:
-Maps can be shared from Mapbox through a style URL and access token, available under the “Share” option in the studio editor or your Styles page.</p>
-<p>Interactive Thematic Map
-Using the above simple basemap, let’s create a more complex map with an embedded dataset. Since our dataset is situated in New York, make sure your basemap is appropriately designed for that context.</p>
-<p>Upload Your Data:
-Navigate to Add New Layer &gt; Components &gt; Data Visualization.
+You can start with a template, a blank map, or use a color palette derived from an image by choosing “Style with image”. For this activity, start with “Classic Template.” Then click “Streets.”</p>
+</br></br>
+</details>
+<details>
+<summary>
+Add Features
+</summary>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>For the “Blank” map option, click the purple “+” at the top left to add feature layers, then click “Components.” This includes administrative boundaries, points of interest, natural features, and road networks.
+For the “Classic Template,” most of the layers you may want are already added.</p>
+</div>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Consider the label density for each feature to maintain a balance between clarity and information density. Place labels, Points of interest, Natural features, and Road network all have label density options.</p>
+</div>
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<details>
+<summary>
+Style Your Basemap
+</summary>
+<p>Adjust the colors and typography of the features, ensuring they are distinct enough for general visibility and for those with common types of colorblindness.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Share Your Basemap
+</summary>
+<p>Maps can be shared from Mapbox through a style URL and access token, available under the “Share” option in the studio editor or your Styles page.</p>
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+</div>
+</div>
+<div id="interactive-thematic-map" class="section level3 unnumbered hasAnchor">
+<h3>Interactive Thematic Map<a href="06-appdev.html#interactive-thematic-map" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the above simple basemap, let’s create a more complex map with an embedded dataset. Since our dataset is situated in New York, make sure your basemap is appropriately designed for that context.</p>
+<details>
+<summary>
+Upload Your Data
+</summary>
+<p>Navigate to Add New Layer &gt; Components &gt; Data Visualization.
 Choose “Upload Data” and select the NYC_nbrhd_data.geojson file.
-Note: GeoJSON is generally more reliable than zipped shapefiles due to common zipper compatibility issues.
-Add Your Data to the Map:
-From the Data Visualization tab, select your uploaded “NYC_nbrhd_data.geojson” as the source.
+Note: GeoJSON is generally more reliable than zipped shapefiles due to common zipper compatibility issues.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Add Your Data to the Map
+</summary>
+<p>From the Data Visualization tab, select your uploaded “NYC_nbrhd_data.geojson” as the source.
 Select Data Visualization Type. Choose “Choropleth” as the data visualization type.
 Zoom into “New York” if it doesn’t automatically zoom.</p>
-<p>Create Data Classifications:
-Select “choropleth-fill” from the Choropleth dropdown
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<details>
+<summary>
+Create Data Classifications
+</summary>
+<p>Select “choropleth-fill” from the Choropleth dropdown
 Select “pctblack” as the variable for color mapping from the “Style Across Data Range”.
-Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges.
-Tip: Deciding on data classification schemes - Mapbox does not have a way to decide between different classification schemes, like Jenks or quantiles. Use QGIS or R to decide on a classification scheme and identify where the breaks are, then manually set those breaks in Mapbox. For this activity, use the following stops “0, 0.01, 22.78, 45.55, 68.32, and 91.1”
-Adjust the classification to visually exclude non-residential areas by setting the lowest bin to a grey color.
-Design Your Color Scheme:
-Use resources like ColorBrewer to choose an accessible and aesthetically pleasing color scheme. Increase the number of data classes for a larger color range, and use the HEX codes or RGB values provided to add your desired colors to Mapbox.
+Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Deciding on data classification schemes - Mapbox does not have a way to decide between different classification schemes, like Jenks or quantiles. Use QGIS or R to decide on a classification scheme and identify where the breaks are, then manually set those breaks in Mapbox. For this activity, use the following stops “0, 0.01, 22.78, 45.55, 68.32, and 91.1”
+Adjust the classification to visually exclude non-residential areas by setting the lowest bin to a grey color.</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Design Your Color Scheme
+</summary>
+<p>Use resources like ColorBrewer to choose an accessible and aesthetically pleasing color scheme. Increase the number of data classes for a larger color range, and use the HEX codes or RGB values provided to add your desired colors to Mapbox.
 Check the accessibility of your color scheme using Mapbox’s built-in color blindness simulator under Settings &gt; Debug tools.</p>
-<p>Share Your Map:
-Publish your map to ensure updates are visible on other applications.
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<details>
+<summary>
+Share Your Map
+</summary>
+<p>Publish your map to ensure updates are visible on other applications.
 In order to add your map to your web page, you’ll need to do some coding. From your account page, selecting “Install Mapbox GL JS” will lead you through the code you will need to do so. A template is also provided here that you can use to install your map.</p>
-<p>Extension Exercise
-Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here].</p>
-<p>As you create this map, consider the following questions:
-How could these variables be best presented to a user?
-What are the strengths and limitations of each software?
-Are you able to map multiple variables at once? Trends between variables?
-What trends can you see between SDOH and maternal health outcomes?</p>
+</br></br>
+</details>
+<details>
+<summary>
+Extension Exercise
+</summary>
+<p>Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here].</p>
+<p>As you create this map, consider the following questions:</p>
+<ul>
+<li><p>How could these variables be best presented to a user?</p></li>
+<li><p>What are the strengths and limitations of each software?</p></li>
+<li><p>Are you able to map multiple variables at once? Trends between variables?</p></li>
+<li><p>What trends can you see between SDOH and maternal health outcomes?</p></li>
+</ul>
+</br></br>
+</details>
 </div>
 </div>
-<div id="what-is-a-story-map" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> What is a Story Map?<a href="06-appdev.html#what-is-a-story-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="story-map-app-development" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Story Map App Development<a href="06-appdev.html#story-map-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A story map is a tool that allows users to explore a geospatial dataset in greater detail, with more direction from the creator. You can lead users through individual points of interest, craft a narrative around your data, and ultimately tell a story. Datasets don’t need to be traditional data either. You can use photos, videos, or other media at points of interest in your story map. Effective story maps are informative, compelling, and the user will feel drawn through the narrative.</p>
 <p>Depending on what software you use, story maps might be standalone journeys or integrated as part of a larger project.</p>
 <p>Check out these examples below:</p>
-<p>ArcGIS Online: <a href="https://arcg.is/1bPHeK0" class="uri">https://arcg.is/1bPHeK0</a>
-<a href="https://arcg.is/0KTDX4" class="uri">https://arcg.is/0KTDX4</a>
-<a href="https://arcg.is/0HDezC" class="uri">https://arcg.is/0HDezC</a>
-Knight: <a href="https://www.georgiahumanities.org/southern-literary-trail-story-map/" class="uri">https://www.georgiahumanities.org/southern-literary-trail-story-map/</a>
-<a href="https://publications.newberry.org/time-machine/blackHawk/" class="uri">https://publications.newberry.org/time-machine/blackHawk/</a>
-<a href="https://www.justempower.org/coronadiaries" class="uri">https://www.justempower.org/coronadiaries</a> (best example but stamen basemap :( )</p>
+<p><em>ArcGIS Online</em></p>
+<ul>
+<li><p><a href="https://arcg.is/1bPHeK0">Example 1</a></p></li>
+<li><p><a href="https://arcg.is/0KTDX4">Example 2</a></p></li>
+<li><p><a href="https://arcg.is/0HDezC">Example 3</a></p></li>
+</ul>
+<p><em>KnightLab</em></p>
+<ul>
+<li><p><a href="https://www.georgiahumanities.org/southern-literary-trail-story-map/">Example 1</a></p></li>
+<li><p><a href="https://publications.newberry.org/time-machine/blackHawk/">Example 1</a></p></li>
+<li><p><a href="https://www.justempower.org/coronadiaries">Example 1</a> <em>best example but stamen basemap :(</em></p></li>
+</ul>
 <p>Over the next few sections, you’ll be introduced to two softwares that can be used for story mapping: ArcGIS Online StoryMaps, and Knight Lab StoryMapJS. Neither requires coding, but StoryMapJS does allow for some basic coding. By the end of this section, you’ll be able to create a compelling story map while applying what you’ve learned thus far about data selection, cartographic principles, and human-centered design.</p>
 <p>We’ll create a story map of birth justice centers in NYC to guide you through the software. Unlike previous sections, where everything you needed was provided in the data, this section has a bit more creative freedom. An excel file of basic information (NYCBirthJusticeCenters.xlsx) will guide you, with names, addresses and websites of the birth justice centers. This will allow you to create the bones of a story map, but the content itself is up to you. Use this to explore what narrative you want to present, and what information you think is relevant or useful to constructing that narrative.</p>
-<div id="arcgis-online-1" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> ArcGIS Online<a href="06-appdev.html#arcgis-online-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="arcgis-online-1" class="section level3 unnumbered hasAnchor">
+<h3>ArcGIS Online<a href="06-appdev.html#arcgis-online-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>ArcGIS Online has one of the most built-out and flexible story map softwares available. In fact, when you first open a story map, it might not look like what we’ve described above at all. ArcGIS Online StoryMaps are designed to allow for larger projects, with the “traditional” story map an element that you can add in between text, asset or thematic maps, and other media. Let’s get started with our “traditional” story map for now.</p>
-<p>Create a Traditional Story Map
-Set Up Your Account:
-Visit ArcGIS Online and either log into your existing account or create a new one.
-Access StoryMaps:
-Once logged in, navigate to the StoryMaps section at <a href="https://storymaps.arcgis.com/" class="uri">https://storymaps.arcgis.com/</a> to access your story dashboard.
-Start a New Story:
-Click on “New story” and choose “Guided map tour” to begin. For future projects, you might select “Start from scratch” to fully customize your story elements.
-Add Your Data
-Add Slides with Data:
-Data in StoryMaps is added one slide at a time.
-Each slide can include:
-A visual element (image or video)
-A title
-A description, which may contain text, audio, or a hyperlink button.
-Use the ‘Add location’ function to place the slide on the map.
-Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slides by dragging them along the slide bar.
-Customize Your Basemap &amp; User Experience
-AGOSMbasemap.mp4 (gif)</p>
-<p>Select and Edit Basemap:
-Click ‘edit’ on your map, then select ‘Select basemap’.
-Choose from default options or click ‘Browse more maps’ for additional choices. Simpler basemaps are under ‘Living Atlas’, or use your own from the content library.
-Add Maps to Your Library:
-For feature layers: Open the feature layer in Map Viewer, select the folder icon, then ‘Save as’. The map will then appear under ‘My Maps’.
-For existing maps: Add the map to your favorites for easy access under ‘My Favorites’.
-Tip: With these options, you can either keep your basemap simple, making largely aesthetic considerations (color, features, busyness) when choosing your basemap, or you can add a more complex basemap which displays additional data.
-Enhance Basemap and User Interaction:
-For mobile users, enable ‘Current location’ to show their location on your story map.
-Opt to show ‘progress lines’ to clarify the route of your story map.
-Customize map type and point color to improve the visual experience.
-Adjust the zoom level manually if needed, especially to set a custom spatial extent that optimizes how your data is displayed. See below for an (albeit extreme) example of the difference setting a custom zoom extent can make.
-AGOSMcitiesgif.mp4
-Finalize and Share Your Story Map
-Review and Publish:
-Review your story map to ensure all data and visual elements are correct and effectively communicate your story.
-Once satisfied, publish your story map to make it accessible to your intended audience.</p>
-<p>Integrate Other Geospatial Data Visualization
-The biggest strength of using ArcGIS Online is the ability to incorporate a variety of other types of data visualizations into a story map to create a larger narrative. Within an ArcGIS Online Story Map, you can find a traditional story map, but you can also include asset and thematic maps, media, timelines, and web apps. The end result can be a built out project with a story map as just one of many elements. Take your time to explore all of the available options. When you’re satisfied with how your story map is presented and contextualized, it’s time to hit publish.</p>
+<div id="create-a-traditional-story-map" class="section level4 unnumbered hasAnchor">
+<h4>Create a Traditional Story Map<a href="06-appdev.html#create-a-traditional-story-map" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<details>
+<summary>
+Set Up Your Account
+</summary>
+<ul>
+<li>Visit ArcGIS Online and either log into your existing account or create a new one.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Access StoryMaps
+</summary>
+<ul>
+<li>Once logged in, navigate to the StoryMaps section at <a href="https://storymaps.arcgis.com/" class="uri">https://storymaps.arcgis.com/</a> to access your story dashboard.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Start a New Story
+</summary>
+<ul>
+<li>Click on “New story” and choose “Guided map tour” to begin. For future projects, you might select “Start from scratch” to fully customize your story elements.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Add Slides with Data
+</summary>
+<ul>
+<li>Add data in StoryMaps is added one slide at a time.</li>
+</ul>
+<p><em>Each slide can include</em></p>
+<ul>
+<li><p>A visual element (image or video)</p></li>
+<li><p>A title</p></li>
+<li><p>A description, which may contain text, audio, or a hyperlink button.</p></li>
+<li><p>Use the ‘Add location’ function to place the slide on the map.
+Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slides by dragging them along the slide bar.</p></li>
+</ul>
+<p>—–IMAGE HERE—— AGOSMbasemap.mp4 (gif)</p>
+</br></br>
+</details>
+<details>
+<summary>
+Select and Edit Basemap
+</summary>
+<ul>
+<li><p>Click ‘edit’ on your map, then select ‘Select basemap’.</p></li>
+<li><p>Choose from default options or click ‘Browse more maps’ for additional choices. Simpler basemaps are under ‘Living Atlas’, or use your own from the content library.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Add Maps to Your Library
+</summary>
+<ul>
+<li><p>For feature layers: Open the feature layer in Map Viewer, select the folder icon, then ‘Save as’. The map will then appear under ‘My Maps’.</p></li>
+<li><p>For existing maps: Add the map to your favorites for easy access under ‘My Favorites’.</p></li>
+</ul>
+<p>Tip: With these options, you can either keep your basemap simple, making largely aesthetic considerations (color, features, busyness) when choosing your basemap, or you can add a more complex basemap which displays additional data.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Enhance Basemap and User Interaction
+</summary>
+<ul>
+<li><p>For mobile users, enable ‘Current location’ to show their location on your story map.</p></li>
+<li><p>Opt to show ‘progress lines’ to clarify the route of your story map.</p></li>
+<li><p>Adjust the zoom level manually if needed, especially to set a custom spatial extent that optimizes how your data is displayed. See below for an (albeit extreme) example of the difference setting a custom zoom extent can make.</p></li>
+</ul>
+<p>—–IMAGE HERE——AGOSMcitiesgif.mp4</p>
+</br></br>
+</details>
+<details>
+<summary>
+Review and Publish
+</summary>
+<ul>
+<li><p>Review your story map to ensure all data and visual elements are correct and effectively communicate your story.</p></li>
+<li><p>Once satisfied, publish your story map to make it accessible to your intended audience.</p></li>
+</ul>
+</br></br>
+</details>
+<div id="integrate-other-geospatial-data-visualization" class="section level5 unnumbered hasAnchor">
+<h5>Integrate Other Geospatial Data Visualization<a href="06-appdev.html#integrate-other-geospatial-data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The biggest strength of using ArcGIS Online is the ability to incorporate a variety of other types of data visualizations into a story map to create a larger narrative. Within an ArcGIS Online Story Map, you can find a traditional story map, but you can also include asset and thematic maps, media, timelines, and web apps. The end result can be a built out project with a story map as just one of many elements. Take your time to explore all of the available options. When you’re satisfied with how your story map is presented and contextualized, it’s time to hit publish.</p>
 </div>
-<div id="knight-lab-storymapjs" class="section level3 hasAnchor" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Knight Lab StoryMapJS<a href="06-appdev.html#knight-lab-storymapjs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="knight-lab-storymapjs" class="section level3 unnumbered hasAnchor">
+<h3>Knight Lab StoryMapJS<a href="06-appdev.html#knight-lab-storymapjs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Northwestern University’s Knight Lab has created a number of tools to help people tell stories with better visualizations. Their StoryMapJS tool is one of the most straightforward story map tools available, and it’s completely free. It doesn’t have the capacity of AGO to integrate with Knight Lab’s other tools, or its design flexibility, but it’s great for beginner story map-makers and can be integrated into existing web pages.</p>
-<p>Step 1: Create and Set Up Your StoryMap
-Visit Knight Lab’s StoryMapJS:
-Go to Knight Lab’s StoryMapJS to begin.
-Start Your StoryMap:
-Click on “Make a StoryMap”.
-Sign in with your Google account.</p>
-<p>Name Your StoryMap:
-Create a name for your StoryMap and enter it when prompted.
-Configure Your Basemap:
-Tip: You can chose the open streetmap for the map option
-For this activity, you want a customized basemap, create one using Mapbox (refer to the Mapbox section for details on creating a basemap).
-In StoryMapJS, go to Options -&gt; Map Type, and add your Mapbox basemap using the Style URL and Access Token from Mapbox. Click close.
-Tip: If using a Mapbox thematic map as a basemap, create and add a legend via QGIS. Place the legend as media on the title slide or at the end of your story map, referencing its location on the title slide for easy navigation.</p>
-<p>Tip: The zoom feature looks wonky at first but it looks better as you add more slides.
-Step 2: Add Your Data
-Insert Data into Slides:
-Data in StoryMapJS is added one slide at a time. Use the sidebar on the left to add and arrange slides.
-For each slide, you can add:
-A media element (link to media or upload an image).
-A title.
-A description. Credits and captions can be added here.
-Add location in the red box at the center of your screen.
-Example Data Entry:
-For a starting slide, add the logo of the Caribbean Women’s Health Association in the media section, along with relevant narrative information.
-Step 3: Customize Your Story
-Customize Icons:
-Change icons by selecting ‘Marker options’ at the bottom right of each slide.
-Tip: Customize the icons for each point on your story map. Use free icons from sources like The Noun Project (note attribution requirements) or upload your own.
-Adjust Background and Layout:
-Modify the background color or add an image behind your story elements to match your map’s theme using ‘Background options’ at the bottom right of each slide.
-Go to “Preview” to see your Story Map so far.
-When you’re done, click Save at the top left side of your map.</p>
-<p>Extension Exercise
-Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found [here].</p>
-<p>As you create your story map, consider the following questions:
-What media best represents each center?
-What information best supplements that piece of media?
-How do you want the user to feel over the course of this story map? At the end?
-If you use an ArcGIS Online story map, how could you include other information to contextualize this traditional-style story map?</p>
-<p>Georgia data
-<a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-median-household-income-variables-boundaries/about?layer=2
-<a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-race-and-hispanic-origin-variables-centroids/about?layer=2
-<a href="https://opendata.atlantaregional.com/datasets/GARC" class="uri">https://opendata.atlantaregional.com/datasets/GARC</a>::maternal-health-child-asthma-by-tract-2021/about
-<a href="https://dph.georgia.gov/maternal-and-neonatal-center" class="uri">https://dph.georgia.gov/maternal-and-neonatal-center</a></p>
+<details>
+<summary>
+Create and Set Up Your StoryMap
+</summary>
+<ul>
+<li>Go to Knight Lab’s StoryMapJS to begin.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Start Your StoryMap
+</summary>
+<ul>
+<li><p>Click on “Make a StoryMap”.</p></li>
+<li><p>Sign in with your Google account.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Name Your StoryMap
+</summary>
+<ul>
+<li>Create a name for your StoryMap and enter it when prompted.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Configure Your Basemap
+</summary>
+<ul>
+<li><p>You can chose the open streetmap for the map option.</p></li>
+<li><p>For this activity, you want a customized basemap, create one using Mapbox (refer to the Mapbox section for details on creating a basemap).</p></li>
+<li><p>In StoryMapJS, go to Options -&gt; Map Type, and add your Mapbox basemap using the Style URL and Access Token from Mapbox. Click close.</p></li>
+</ul>
+<p>Tip: If using a Mapbox thematic map as a basemap, create and add a legend via QGIS. Place the legend as media on the title slide or at the end of your story map, referencing its location on the title slide for easy navigation.</p>
+<p>—–IMAGE HERE——</p>
+<p>Tip: The zoom feature looks wonky at first but it looks better as you add more slides.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Insert Data into Slides
+</summary>
+<p>Data in StoryMapJS is added one slide at a time. Use the sidebar on the left to add and arrange slides.</p>
+<p>For each slide, you can add:</p>
+<ul>
+<li><p>A media element (link to media or upload an image).</p></li>
+<li><p>A title.</p></li>
+<li><p>A description. Credits and captions can be added here.</p></li>
+<li><p>Add location in the red box at the center of your screen.</p></li>
+</ul>
+<p><em>Example Data Entry:</em></p>
+<p>For a starting slide, add the logo of the Caribbean Women’s Health Association in the media section, along with relevant narrative information.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Customize Icons
+</summary>
+<ul>
+<li>Change icons by selecting ‘Marker options’ at the bottom right of each slide.</li>
+</ul>
+<p>Tip: Customize the icons for each point on your story map. Use free icons from sources like The Noun Project (note attribution requirements) or upload your own.</p>
+</br></br>
+</details>
+<details>
+<summary>
+Adjust Background and Layout
+</summary>
+<ul>
+<li><p>Modify the background color or add an image behind your story elements to match your map’s theme using “Background options” at the bottom right of each slide.</p></li>
+<li><p>Go to “Preview” to see your Story Map so far.</p></li>
+<li><p>When you’re done, click “Save” at the top left side of your map.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Extension Exercise
+</summary>
+<p>Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found below.</p>
+<p>As you create your story map, consider the following questions:</p>
+<ul>
+<li><p>What media best represents each center?</p></li>
+<li><p>What information best supplements that piece of media?</p></li>
+<li><p>How do you want the user to feel over the course of this story map? At the end?</p></li>
+<li><p>If you use an ArcGIS Online story map, how could you include other information to contextualize this traditional-style story map?</p></li>
+</ul>
+<p><em>Georgia data</em>
+- <a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-median-household-income-variables-boundaries/about?layer=2</p>
+<ul>
+<li><p><a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-race-and-hispanic-origin-variables-centroids/about?layer=2</p></li>
+<li><p><a href="https://opendata.atlantaregional.com/datasets/GARC" class="uri">https://opendata.atlantaregional.com/datasets/GARC</a>::maternal-health-child-asthma-by-tract-2021/about</p></li>
+<li><p><a href="https://dph.georgia.gov/maternal-and-neonatal-center" class="uri">https://dph.georgia.gov/maternal-and-neonatal-center</a></p></li>
+</ul>
+</br></br>
+</details>
 </div>
 </div>
-<div id="what-is-a-data-dashboard" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> What is a data dashboard?<a href="06-appdev.html#what-is-a-data-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="tableau-public" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Tableau Public<a href="06-appdev.html#tableau-public" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Step 1: Create an Account
-Register at Tableau Public: Go to Tableau Public and sign up for a free account.
-Step 2: Start a Workbook
-Initialize Visualization: Log in <a href="https://public.tableau.com/app/discover" class="uri">https://public.tableau.com/app/discover</a>, navigate to your profile by clicking your name at the top right, and click on “Create a Viz”. Upload the “NYC_nbrhd_data.geojson” file and then select “Update Now” to preview the data. Proceed by clicking on “Sheet 1” at the bottom to start visualizing.
-Step 3: Create a Thematic Map
-Configure Data for Mapping: In the data pane, select “NTA Name”, “Geometry”, and “Pctblack” using command + click. Click “Show Me” and choose the map visualization.</p>
-<p>Adjust Map Settings: A legend will appear; switch to a stepped color scheme by selecting “Edit Color”.
-Tip: You can adjust range and midpoint under “Advanced”.
-Customize Tooltips: Hover over settings can be adjusted in ‘Tooltip’ under ‘Marks’ to display desired information effectively.
-Step 4: Filter Data
-Exclude Uninhabited Areas: Right-click on “NTA Names” under Marks to set a filter. Deselect “All.” Choose “Exclude selected values” and remove areas such as parks-cemeteries, airports, and Rikers Island. Click “Okay.”
-Borough-Specific Filtering: Drag “Boro Name” from the left toolbar under “Tables” to the Filters section above “Marks,” select all, click “Okay.” Then, right-click on “Boro Name” then click “Show Filter.” On the right-side of the map, choose “the down arrow to “Edit Filter” then choose “Single Value (dropdown)” allowing selection of individual boroughs.</p>
-<p>Step 5: Add Additional Information
-Integrate More Data: Include data like severe maternal morbidity (Smmrate) as a color-coded element and adjust the legend back to a stepped color scheme. Add other demographic data as details in the tooltips.
-Step 6: Create a Bar Graph
-Visualize Demographic Data: Add a new sheet, select “NTA Name” and racial demographics, then choose “side-by-side-bars” from “Show Me”. Customize axes and colors as needed.
-Repeat for Economic Data: Create another bar graph for data like poverty levels and rent burden, adjusting axes and visuals similarly.
-Step 7: Create a Dashboard
-Assemble the Dashboard: Navigate to Dashboard (at the top of screen) -&gt; New Dashboard. Use ‘Objects’ for layout and drag your created sheets into the layout. Adjust the size of graphs to ‘Standard’ for readability.
-Step 8: Add a Filter Action
-Enhance Interactivity: Go to Dashboard -&gt; Actions, add a Filter action. Configure it to update the bar graphs based on selections or hovers on the map section of the dashboard.
-Step 9: Finalize Your Dashboard
-Refine Your Dashboard: Make final adjustments to legends, field names, and aesthetics. Ensure color schemes are cohesive and information is clear. Edit titles within the dashboard to reflect interactive elements, like displaying the name of a highlighted neighborhood.</p>
-<p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found here.</p>
+<div id="data-dashboard-app-development" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Data Dashboard App Development<a href="06-appdev.html#data-dashboard-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tableau-public" class="section level3 unnumbered hasAnchor">
+<h3>Tableau Public<a href="06-appdev.html#tableau-public" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<details>
+<summary>
+Create an Account
+</summary>
+<ul>
+<li>Go to Tableau Public and sign up for a free account.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Start a Workbook
+</summary>
+<ul>
+<li>Log in <a href="https://public.tableau.com/app/discover" class="uri">https://public.tableau.com/app/discover</a>, navigate to your profile by clicking your name at the top right, and click on “Create a Viz”. Upload the “NYC_nbrhd_data.geojson” file and then select “Update Now” to preview the data. Proceed by clicking on “Sheet 1” at the bottom to start visualizing.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Create a Thematic Map
+</summary>
+<ul>
+<li>In the data pane, select “NTA Name”, “Geometry”, and “Pctblack” using command + click. Click “Show Me” and choose the map visualization.</li>
+</ul>
+<p>—–IMAGE HERE——</p>
+<ul>
+<li>A legend will appear; switch to a stepped color scheme by selecting “Edit Color”.</li>
+</ul>
+<p>Tip: You can adjust range and midpoint under “Advanced”.</p>
+<ul>
+<li>Hover over settings can be adjusted in ‘Tooltip’ under ‘Marks’ to display desired information effectively.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Filter Data
+</summary>
+<ul>
+<li><p>Exclude Uninhabited Areas: Right-click on “NTA Names” under Marks to set a filter. Deselect “All.” Choose “Exclude selected values” and remove areas such as parks-cemeteries, airports, and Rikers Island. Click “Okay.”</p></li>
+<li><p>Borough-Specific Filtering: Drag “Boro Name” from the left toolbar under “Tables” to the Filters section above “Marks,” select all, click “Okay.” Then, right-click on “Boro Name” then click “Show Filter.” On the right-side of the map, choose “the down arrow to “Edit Filter” then choose “Single Value (dropdown)” allowing selection of individual boroughs.</p></li>
+</ul>
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<details>
+<summary>
+Add Additional Information
+</summary>
+<ul>
+<li>Include data like severe maternal morbidity (Smmrate) as a color-coded element and adjust the legend back to a stepped color scheme. Add other demographic data as details in the tooltips.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Create a Bar Graph
+</summary>
+<ul>
+<li><p>Add a new sheet, select “NTA Name” and racial demographics, then choose “side-by-side-bars” from “Show Me”. Customize axes and colors as needed.</p></li>
+<li><p>Repeat for Economic Data: Create another bar graph for data like poverty levels and rent burden, adjusting axes and visuals similarly.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Create a Dashboard
+</summary>
+<ul>
+<li>Navigate to Dashboard (at the top of screen) -&gt; New Dashboard. Use ‘Objects’ for layout and drag your created sheets into the layout. Adjust the size of graphs to ‘Standard’ for readability.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Add a Filter Action
+</summary>
+<ul>
+<li>Go to Dashboard -&gt; Actions, add a Filter action. Configure it to update the bar graphs based on selections or hovers on the map section of the dashboard.</li>
+</ul>
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<details>
+<summary>
+Finalize Your Dashboard
+</summary>
+<ul>
+<li><p>Make final adjustments to legends, field names, and aesthetics. Ensure color schemes are cohesive and information is clear.</p></li>
+<li><p>Edit titles within the dashboard to reflect interactive elements, like displaying the name of a highlighted neighborhood.</p></li>
+</ul>
+<p>—–IMAGE HERE——</p>
+</br></br>
+</details>
+<p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of this module.</p>
 </div>
 </div>
 <div id="using-github-pages" class="section level2 hasAnchor" number="6.5">
