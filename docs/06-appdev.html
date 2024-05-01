@@ -394,10 +394,71 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <p>In this module, you will learn fundamental skills for creating asset maps, thematic maps, story maps, and data dashboards on a variety of free and/or open source platforms. Each section will include an exercise that will help you put into practice what you learn, highlighting the strengths of each map type and how they can be used to tell a well-rounded narrative with data. These exercises use data relevant to maternal health disparities in New York City and Georgia. All data required to complete each exercise can be found at [github link]. A reference file with information on variables and data sources is included.</p>
+<p>Below is a figure that should be familar to you. You saw this in module 1! It’s all coming full circle now.</p>
+<div class="float">
+<img src="images/06-mapoptions.png" style="width:95.0%" alt="Types of Spatial Data Visualizations an Web Mapping Applications. Source: HEROP Lab Team" />
+<div class="figcaption">Types of Spatial Data Visualizations an Web Mapping Applications. Source: HEROP Lab Team</div>
+</div>
 <div class="tip">
 <p><strong>A Note on the Software</strong></p>
 <p>In this module, we’ll be introducing a number of no-code or low-code mapping software available. We’ll introduce their technical capabilities and drawbacks through each section, but there are other aspects to consider when deciding which software to use. While almost all software we’ve introduced in previous modules has been open source, many software options we’ll introduce today are free versions of paid services. These free versions may not have the full range of capabilities of the paid versions, or there may be usage limits that need to be kept in mind when choosing which software is best for your project.</p>
 </div>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="10%" />
+<col width="77%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>App Type</th>
+<th>Map Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Asset Map</td>
+<td>uMap</td>
+<td>A web-based mapping program using OpenStreetMap, no coding required. Allows importing data for asset mapping.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Leaflet with CSV</td>
+<td>A popular open-source mapping library for creating interactive web maps. Involves some JavaScript coding for customization.</td>
+</tr>
+<tr class="odd">
+<td>Thematic Map</td>
+<td>ArcGIS Online</td>
+<td>A free version of ArcGIS for creating thematic maps. Allows customization of data display and symbology for various variables.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Mapbox GL</td>
+<td>Useful for creating base maps and interactive thematic maps. Requires some basic coding for embedding in web pages.</td>
+</tr>
+<tr class="odd">
+<td>Story Map</td>
+<td>ArcGIS Online</td>
+<td>Offers flexible story map software with the ability to integrate various data visualizations and media elements.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Knight Lab</td>
+<td>Provides a straightforward, free tool for creating story maps with basic functionality. Can be integrated into existing web pages.</td>
+</tr>
+<tr class="odd">
+<td>Data Dashboard</td>
+<td>Tableau Public</td>
+<td>Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>R Shiny</td>
+<td>Enables building interactive web applications with R, suitable for creating customized data dashboards including maps.</td>
+</tr>
+</tbody>
+</table>
 <div id="asset-map-development" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Asset Map Development<a href="06-appdev.html#asset-map-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An asset map, commonly used in the public health field, is a point map of resources. It can be used to identify where resources are, and where gaps in availability exist. They may be simple, but can be quite effective for both understanding and presenting information about resource distribution. When paired with other mapping tools, they can tell us a lot about the types of communities that have access to various resources compared to those without access.</p>
@@ -438,8 +499,8 @@ Import .csv file
 <p>Additionally, uMap defaults to whatever layer you’ve most recently imported, so be sure that you are adding a new file to a new layer rather than replacing an existing file if you work with multiple layers in the future.</p>
 <p>Lastly, shapefiles are not compatible with uMap, you should instead prepare GeoJSONs if you add any.</p>
 </div>
-<p>Your map should look something like this:
-—–IMAGE HERE——</p>
+<p>Your map should look something like this:</p>
+<p>—–IMAGE HERE——</p>
 </br></br>
 </details>
 <details>
@@ -493,8 +554,8 @@ Save your map
 <p>We will reference <a href="https://handsondataviz.org/leaflet-maps-with-csv.html">Leaflet Maps with CSV Data</a> from <a href="https://handsondataviz.org/">HandsOnDataViz</a>, a fantastic collection of guides and recipes for data visualization by Jack Dougherty and Ilya Ilyankou that focus on using open source and accessible technologies. We strongly encourage you to explore all of their other content as well!</p>
 </div>
 <p>Leaflet is a very popular open source mapping library used to create interactive web maps. Leaflet is written in JavaScript, a programming language that all web browsers can run, so creating a map with Leaflet will involve at least a bit of looking at and modifying code–HMTL, CSS, and JavaScript which are the foundational components of any webpage.</p>
-<p>Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we</p>
-<p>This</p>
+<p>Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we …</p>
+<p>This …</p>
 <details>
 <summary>
 <strong>Extension Exercise</strong>
@@ -510,6 +571,8 @@ Save your map
 </ul>
 </br></br>
 </details>
+<p><strong>Looking Forward</strong></p>
+<p>In the asset map section, you explored how to identify and visualize spatial distributions of resources, facilities, or infrastructure within your area of interest. As you continue your exploration, delve deeper into specific themes or variables by transitioning to thematic mapping in the next section.</p>
 </div>
 </div>
 <div id="thematic-map-app-development" class="section level2 hasAnchor" number="6.2">
@@ -578,7 +641,7 @@ Customize Data Display
 <li><p>Click on ‘Add Sketch’ to manually add points, lines, polygons, or text labels to your map, creating a new feature layer.</p></li>
 </ul>
 </div>
-<p>—–IMAGE HERE——insert AGOTMimg1</p>
+<p><img src="images/06-AGOTMimg1.jpg" style="width:25.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -627,7 +690,7 @@ For the “Classic Template,” most of the layers you may want are already adde
 <p><strong>Tip</strong></p>
 <p>Consider the label density for each feature to maintain a balance between clarity and information density. Place labels, Points of interest, Natural features, and Road network all have label density options.</p>
 </div>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-mapboxlayeroptions.png" style="width:35.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -642,7 +705,7 @@ Style Your Basemap
 Share Your Basemap
 </summary>
 <p>Maps can be shared from Mapbox through a style URL and access token, available under the “Share” option in the studio editor or your Styles page.</p>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-mapboxapi.png" style="width:50.0%" /></p>
 </br></br>
 </details>
 </div>
@@ -666,7 +729,7 @@ Add Your Data to the Map
 <p>From the Data Visualization tab, select your uploaded “NYC_nbrhd_data.geojson” as the source.
 Select Data Visualization Type. Choose “Choropleth” as the data visualization type.
 Zoom into “New York” if it doesn’t automatically zoom.</p>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-mapboxdataviztypes.png" style="width:80.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -714,6 +777,8 @@ Extension Exercise
 </ul>
 </br></br>
 </details>
+<p><strong>Looking Forward</strong></p>
+<p>In the thematic map section, you learned how to visualize spatial patterns and distributions within your datasets. Transition to a story map to weave these insights into a compelling narrative.</p>
 </div>
 </div>
 <div id="story-map-app-development" class="section level2 hasAnchor" number="6.3">
@@ -782,7 +847,7 @@ Add Slides with Data
 <li><p>Use the ‘Add location’ function to place the slide on the map.
 Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slides by dragging them along the slide bar.</p></li>
 </ul>
-<p>—–IMAGE HERE—— AGOSMbasemap.mp4 (gif)</p>
+<p><video src="images/06-AGOSMcitiesgif.mp4" style="width:95.0%" controls=""><a href="images/06-AGOSMcitiesgif.mp4">Video</a></video></p>
 </br></br>
 </details>
 <details>
@@ -815,7 +880,7 @@ Enhance Basemap and User Interaction
 <li><p>Opt to show ‘progress lines’ to clarify the route of your story map.</p></li>
 <li><p>Adjust the zoom level manually if needed, especially to set a custom spatial extent that optimizes how your data is displayed. See below for an (albeit extreme) example of the difference setting a custom zoom extent can make.</p></li>
 </ul>
-<p>—–IMAGE HERE——AGOSMcitiesgif.mp4</p>
+<p><video src="images/06-AGOSMcitiesgif.mp4" style="width:95.0%" controls=""><a href="images/06-AGOSMcitiesgif.mp4">Video</a></video></p>
 </br></br>
 </details>
 <details>
@@ -875,7 +940,7 @@ Configure Your Basemap
 <li><p>In StoryMapJS, go to Options -&gt; Map Type, and add your Mapbox basemap using the Style URL and Access Token from Mapbox. Click close.</p></li>
 </ul>
 <p>Tip: If using a Mapbox thematic map as a basemap, create and add a legend via QGIS. Place the legend as media on the title slide or at the end of your story map, referencing its location on the title slide for easy navigation.</p>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-mapboxapi.png" style="width:50.0%" /></p>
 <p>Tip: The zoom feature looks wonky at first but it looks better as you add more slides.</p>
 </br></br>
 </details>
@@ -937,6 +1002,8 @@ Extension Exercise
 </ul>
 </br></br>
 </details>
+<p><strong>Looking Forward</strong></p>
+<p>In the story map section, you learned how to transform your data-driven insights into compelling narratives. By combining maps, text, images, and multimedia elements, you created immersive storytelling experiences that effectively communicated your findings to a broader audience. As you move forward, consider transitioning to a data dashboard for a more dynamic and exploratory approach.</p>
 </div>
 </div>
 <div id="data-dashboard-app-development" class="section level2 hasAnchor" number="6.4">
@@ -986,7 +1053,7 @@ Filter Data
 <li><p>Exclude Uninhabited Areas: Right-click on “NTA Names” under Marks to set a filter. Deselect “All.” Choose “Exclude selected values” and remove areas such as parks-cemeteries, airports, and Rikers Island. Click “Okay.”</p></li>
 <li><p>Borough-Specific Filtering: Drag “Boro Name” from the left toolbar under “Tables” to the Filters section above “Marks,” select all, click “Okay.” Then, right-click on “Boro Name” then click “Show Filter.” On the right-side of the map, choose “the down arrow to “Edit Filter” then choose “Single Value (dropdown)” allowing selection of individual boroughs.</p></li>
 </ul>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-TPfilterout.png" style="width:45.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -1024,7 +1091,7 @@ Add a Filter Action
 <ul>
 <li>Go to Dashboard -&gt; Actions, add a Filter action. Configure it to update the bar graphs based on selections or hovers on the map section of the dashboard.</li>
 </ul>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-TPaction.png" style="width:45.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -1035,9 +1102,11 @@ Finalize Your Dashboard
 <li><p>Make final adjustments to legends, field names, and aesthetics. Ensure color schemes are cohesive and information is clear.</p></li>
 <li><p>Edit titles within the dashboard to reflect interactive elements, like displaying the name of a highlighted neighborhood.</p></li>
 </ul>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-TPdashinitial.png" style="width:70.0%" /></p>
 </br></br>
 </details>
+<p><strong>Looking Forward</strong></p>
+<p>In the data dashboard section, you learned how to create interactive interfaces for exploratory data analysis. By designing dashboards with interactive visualizations such as charts, graphs, and maps, you provided users with dynamic tools to explore and analyze their data.</p>
 <p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of this module.</p>
 </div>
 </div>
