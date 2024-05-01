@@ -9,7 +9,7 @@ rmd_files: ["index.Rmd",
 "06-appdev.Rmd",
 "04-dataR.Rmd",
 "05-analysisR.Rmd",
-"06-RShiny.Rmd",
+"06-appdev-code.Rmd",
 "08-references.Rmd",
 ]
 delete_merged_file: TRUE

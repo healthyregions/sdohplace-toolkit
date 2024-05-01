@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C R Shiny | The SDOH &amp; Place Community Toolkit</title>
+  <title>C Getting Started with Github and Github Pages | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C R Shiny | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:title" content="C Getting Started with Github and Github Pages | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C R Shiny | The SDOH &amp; Place Community Toolkit" />
+  <meta name="twitter:title" content="C Getting Started with Github and Github Pages | The SDOH &amp; Place Community Toolkit" />
   
   <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
   
@@ -349,7 +349,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="C" data-path="06-RShiny.html"><a href="06-RShiny.html"><i class="fa fa-check"></i><b>C</b> R Shiny</a>
+<li class="chapter" data-level="C" data-path="06-RShiny.html"><a href="06-RShiny.html"><i class="fa fa-check"></i><b>C</b> Getting Started with Github and Github Pages</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="06-RShiny.html"><a href="06-RShiny.html#what-is-a-repository"><i class="fa fa-check"></i><b>C.1</b> What is a Repository?</a></li>
+<li class="chapter" data-level="C.2" data-path="06-RShiny.html"><a href="06-RShiny.html#understanding-githubs-url-structure---naming-is-important"><i class="fa fa-check"></i><b>C.2</b> Understanding Github’s URL Structure - Naming is important!</a></li>
+<li class="chapter" data-level="C.3" data-path="06-RShiny.html"><a href="06-RShiny.html#creating-an-account"><i class="fa fa-check"></i><b>C.3</b> Creating an Account</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="06-RShiny.html"><a href="06-RShiny.html#leaflet-map-with-csv-and-geojson-data"><i class="fa fa-check"></i><b>D</b> Leaflet Map with CSV and GeoJSON data</a></li>
+<li class="chapter" data-level="E" data-path="06-RShiny.html"><a href="06-RShiny.html#r-shiny"><i class="fa fa-check"></i><b>E</b> R Shiny</a>
 <ul>
 <li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="06-RShiny.html"><a href="06-RShiny.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
@@ -383,8 +390,35 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container">
   <img class= "hero-image" src="images/banner.png">
 </div>
-<div id="r-shiny" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">C</span> R Shiny<a href="06-RShiny.html#r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="getting-started-with-github-and-github-pages" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">C</span> Getting Started with Github and Github Pages<a href="06-RShiny.html#getting-started-with-github-and-github-pages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In these exercises we’ll begin working with a code sharing platform called <a href="https://github.com">Github</a> that is used by software developers, researchers, and hobbyists all around the world. With a free account on Github, you are able to upload code bases and datasets into public repositories, allowing other people to see your work, contribute to it, or build from it.</p>
+<p>One especially useful tool that the platform provides is called Github Pages, a mechanism that allows you to turn any single repository into a publicly accessible website for free. Github Pages is a perfect way to create a personal website, blog, or portfolio site, but we can also use it to host and serve simple web maps and visualizations. The following tips will help you get started with Github.</p>
+<div id="what-is-a-repository" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">C.1</span> What is a Repository?<a href="06-RShiny.html#what-is-a-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A repository is any collection of code or data that is stored together as a unit. For example, the entire code base for <a href="https://github.com/moodle/moodle">Moodle</a>, or [covid-19-data] downloads from the NY Times.</p>
+</div>
+<div id="understanding-githubs-url-structure---naming-is-important" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">C.2</span> Understanding Github’s URL Structure - Naming is important!<a href="06-RShiny.html#understanding-githubs-url-structure---naming-is-important" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Github is organized with a simple hierarchy: Account &gt; Repository Name, where accounts can be either individual users, or organizational accounts. For example, our HeRoP lab organization is <a href="https://github.com/healthyregions">healthyregions</a> which means that our repository “sdohplace-toolkit” (this toolkit!) is located at <a href="https://github.com/healthyregions/sdohplace-toolkit">https://github.com/healthyregions/sdohplace-toolkit</a>.</p>
+</div>
+<div id="creating-an-account" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">C.3</span> Creating an Account<a href="06-RShiny.html#creating-an-account" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you choose a username, pick something simple that can be shared easily, because, as described above, your username will be in public urls all the time. Additionally, when you publish a repository with Github Pages, that user name will become part of the URL for your page.</p>
+</div>
+</div>
+<div id="leaflet-map-with-csv-and-geojson-data" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">D</span> Leaflet Map with CSV and GeoJSON data<a href="06-RShiny.html#leaflet-map-with-csv-and-geojson-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Leaflet is a very popular open source mapping library used to create interactive web maps. Leaflet is written in JavaScript, a programming language that runs in all web browsers, so creating a map with Leaflet will involve at least a bit of looking at and modifying code–HMTL, CSS, and JavaScript which are the foundational components of any webpage.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Our example builds from <a href="https://handsondataviz.org/leaflet-maps-with-csv.html">Leaflet Maps with CSV Data</a> from <a href="https://handsondataviz.org/">HandsOnDataViz</a>, a fantastic collection of guides and recipes for data visualization by Jack Dougherty and Ilya Ilyankou that focus on using open source and accessible technologies. We strongly encourage you to explore all of their other content as well!</p>
+</div>
+<p>Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we will create and publish a very simple web map using prepared CSV and GeoJSON datasets. At the end of the exercise, you should be able to swap these datasets out with your own, and have a basic understanding of how to modify Leaflet code.</p>
+<p>We will do all of our file storage and editing directly in <a href="https://github.com">Github</a>, which will also allow us to immediately make our map publicly visible.</p>
+</div>
+<div id="r-shiny" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">E</span> R Shiny<a href="06-RShiny.html#r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Introduction</p>
 <div id="getting-started-1" class="section level3 unnumbered hasAnchor">
 <h3>Getting Started<a href="06-RShiny.html#getting-started-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>

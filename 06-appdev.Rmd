@@ -122,20 +122,6 @@ Descriptions will need to be written using HTML formatting, but selecting the he
 
 </br></br></details>
 
-### Leaflet with CSV Data {-}
-
-:::tip
-**About this exercise**
-
-We will reference [Leaflet Maps with CSV Data](https://handsondataviz.org/leaflet-maps-with-csv.html) from [HandsOnDataViz](https://handsondataviz.org/), a fantastic collection of guides and recipes for data visualization by Jack Dougherty and Ilya Ilyankou that focus on using open source and accessible technologies. We strongly encourage you to explore all of their other content as well!
-:::
-
-Leaflet is a very popular open source mapping library used to create interactive web maps. Leaflet is written in JavaScript, a programming language that all web browsers can run, so creating a map with Leaflet will involve at least a bit of looking at and modifying code--HMTL, CSS, and JavaScript which are the foundational components of any webpage.
-
-Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we ...
-
-This ...
-
 <details markdown='1'><summary>**Extension Exercise**</summary>
 
 Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.
@@ -641,7 +627,5 @@ Tip: You can adjust range and midpoint under "Advanced".
 In the data dashboard section, you learned how to create interactive interfaces for exploratory data analysis. By designing dashboards with interactive visualizations such as charts, graphs, and maps, you provided users with dynamic tools to explore and analyze their data. 
 
 If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of this module. 
-
-## Using Github Pages
 
 ## Resources {-}

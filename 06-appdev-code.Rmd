@@ -1,0 +1,48 @@
+---
+---
+
+# Coding for app development
+
+## Getting Started with Github and Github Pages
+
+In these exercises we'll begin working with a code sharing platform called [Github](https://github.com) that is used by software developers, researchers, and hobbyists all around the world. With a free account on Github, you are able to upload code bases and datasets into public repositories, allowing other people to see your work, contribute to it, or build from it.
+
+One especially useful tool that the platform provides is called Github Pages, a mechanism that allows you to turn any single repository into a publicly accessible website for free. Github Pages is a perfect way to create a personal website, blog, or portfolio site, but we can also use it to host and serve simple web maps and visualizations. The following tips will help you get started with Github.
+
+### What is a Repository?
+
+A repository is any collection of code or data that is stored together as a unit. For example, the entire code base for [Moodle](https://github.com/moodle/moodle), or [covid-19-data] downloads from the NY Times.
+
+### Understanding Github's URL Structure - Naming is important!
+
+Github is organized with a simple hierarchy: Account > Repository Name, where accounts can be either individual users, or organizational accounts. For example, our HeRoP lab organization is [healthyregions](https://github.com/healthyregions) which means that our repository "sdohplace-toolkit" (this toolkit!) is located at [https://github.com/healthyregions/sdohplace-toolkit](https://github.com/healthyregions/sdohplace-toolkit).
+
+### Creating an Account
+
+When you choose a username, pick something simple that can be shared easily, because, as described above, your username will be in public urls all the time. Additionally, when you publish a repository with Github Pages, that user name will become part of the URL for your page.
+
+## Leaflet Map with CSV and GeoJSON data
+
+Leaflet is a very popular open source mapping library used to create interactive web maps. Leaflet is written in JavaScript, a programming language that runs in all web browsers, so creating a map with Leaflet will involve at least a bit of looking at and modifying code--HMTL, CSS, and JavaScript which are the foundational components of any webpage.
+
+:::tip
+**Tip**
+
+Our example builds from [Leaflet Maps with CSV Data](https://handsondataviz.org/leaflet-maps-with-csv.html) from [HandsOnDataViz](https://handsondataviz.org/), a fantastic collection of guides and recipes for data visualization by Jack Dougherty and Ilya Ilyankou that focus on using open source and accessible technologies. We strongly encourage you to explore all of their other content as well!
+:::
+
+Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we will create and publish a very simple web map using prepared CSV and GeoJSON datasets. At the end of the exercise, you should be able to swap these datasets out with your own, and have a basic understanding of how to modify Leaflet code.
+
+We will do all of our file storage and editing directly in [Github](https://github.com), which will also allow us to immediately make our map publicly visible.
+
+## R Shiny
+
+Introduction
+
+### Getting Started {-}
+
+### Tutorials for R {-}
+
+If you are new to R, we recommend the following [intro-level tutorials](https://learn.datacamp.com/courses/free-introduction-to-r) provided through [installation guides](https://rspatial.org/intr/1-introduction.html). You can also refer to this [R for Social Scientists](https://datacarpentry.org/r-socialsci/) tutorial developed by Data Carpentry for a refresher.
+
+You can also visit the [RStudio Education](https://education.rstudio.com/learn/) page to select a learning path tailored to your experience level ([Beginners](https://education.rstudio.com/learn/beginner/), [Intermediates](https://education.rstudio.com/learn/intermediate/), [Experts](https://education.rstudio.com/learn/expert/)). They offer detailed instructions to learners at different stages of their R journey.

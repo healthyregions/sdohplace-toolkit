@@ -46,7 +46,6 @@ asset-map-development
 thematic-map-app-development
 story-map-app-development
 data-dashboard-app-development
-using-github-pages
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
@@ -83,4 +82,10 @@ thematic-map-panel
 cartograms-1
 circles-cartogram
 distortion-algorithm
+coding-for-app-development
+getting-started-with-github-and-github-pages
+what-is-a-repository
+understanding-githubs-url-structure---naming-is-important
+creating-an-account
+leaflet-map-with-csv-and-geojson-data
 r-shiny
