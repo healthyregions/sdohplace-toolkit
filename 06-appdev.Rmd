@@ -188,6 +188,10 @@ ArcGIS Online is a free version of ArcGIS, a popular mapping software. Due to it
 
 <details markdown='1'><summary>Modify the Basemap</summary>
 - Select the "Basemap" option on the left-hand sidebar to change the underlying map style. Choose from various styles like satellite or streets to better suit your data visualization needs.
+<video controls width="100%">
+  <source src="./images/AGOSMbasemap.mp4" type="video/mp4" />
+  Not supported
+</video>
 
 </br></br></details>
 
