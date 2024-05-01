@@ -214,9 +214,11 @@ If you display multiple variables at once, symbology options will adjust to allo
 - Use ‘Labels’ and ‘Pop-ups’ to display more information about each asset, which might not be visible through symbology alone.
 
 - Click on ‘Add Sketch’ to manually add points, lines, polygons, or text labels to your map, creating a new feature layer.
+
+![](images/06-AGOTMimg1.jpg){width=80%}
+
 :::
 
-![](images/06-AGOTMimg1.jpg){width=25%}
 
 </br></br></details>
 
