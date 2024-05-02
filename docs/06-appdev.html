@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 App Development | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 App Development | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -356,10 +356,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="C.1.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#creating-an-account"><i class="fa fa-check"></i><b>C.1.3</b> Creating an Account</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#leaflet-map-with-csv-and-geojson-data"><i class="fa fa-check"></i><b>C.2</b> Leaflet Map with CSV and GeoJSON data</a></li>
-<li class="chapter" data-level="C.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#r-shiny"><i class="fa fa-check"></i><b>C.3</b> R Shiny</a>
+<li class="chapter" data-level="C.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#thematic-map-with-html-css"><i class="fa fa-check"></i><b>C.3</b> Thematic Map with HTML &amp; CSS</a></li>
+<li class="chapter" data-level="C.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>C.4</b> Dashboards with R Shiny</a>
 <ul>
 <li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
-<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="C.4.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>C.4.1</b> User Interface</a></li>
+<li class="chapter" data-level="C.4.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>C.4.2</b> Server</a></li>
+<li class="chapter" data-level="C.4.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>C.4.3</b> Expand Your Prototype</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#more-shiny-resources"><i class="fa fa-check"></i>More Shiny Resources:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
@@ -469,6 +473,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <div id="asset-map-development" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Asset Map Development<a href="06-appdev.html#asset-map-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/06-umapexample.png" style="width:70.0%" /></p>
 <p>An asset map, commonly used in the public health field, is a point map of resources. It can be used to identify where resources are, and where gaps in availability exist. They may be simple, but can be quite effective for both understanding and presenting information about resource distribution. When paired with other mapping tools, they can tell us a lot about the types of communities that have access to various resources compared to those without access.</p>
 <p>In this section, we’ll introduce two options for asset mapping, uMap and Leaflet. Both are free and open source. We’ll use a dataset of hospitals in New York City to introduce these software options.</p>
 <div id="umap" class="section level3 unnumbered hasAnchor">
@@ -490,7 +495,7 @@ Click “Create a map” in the top right corner.
 <ul>
 <li>Familiarize yourself with the toolbar. Below is a quick cheat sheet.</li>
 </ul>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-umaptoolbar.png" style="width:70.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -508,7 +513,7 @@ Import .csv file
 <p>Lastly, shapefiles are not compatible with uMap, you should instead prepare GeoJSONs if you add any.</p>
 </div>
 <p>Your map should look something like this:</p>
-<p>—–IMAGE HERE——</p>
+<p><img src="images/06-umapfirstmap.png" style="width:60.0%" /></p>
 </br></br>
 </details>
 <details>
@@ -523,6 +528,7 @@ Edit layers
 <p>Any edits will now be applied to all features. From this panel, you can change the color, shape, or symbol of the icon denoting your features. You can also change how a user interacts with features, such as whether they have to hover over a feature for a label to appear.</p>
 </div>
 <p><em>Optional: Selecting a feature (any point, line or polygon) will allow you to edit or delete it individually.</em></p>
+<p><img src="images/06-umapfeaturesprop.png" style="width:40.0%" /></p>
 <ul>
 <li>Select “Edit” to edit and it will bring up the “Feature Properties” tab. Scroll to the bottom of the “Features Properties” tab to edit the feature icon and interaction.</li>
 </ul>
@@ -554,10 +560,8 @@ Save your map
 </div>
 </br></br>
 </details>
-<details>
-<summary>
-<strong>Extension Exercise</strong>
-</summary>
+<div class="activity">
+<p><strong>Extension Exercise</strong></p>
 <p>Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.</p>
 <p>As you create an asset map, consider the following questions:</p>
 <ul>
@@ -567,14 +571,14 @@ Save your map
 <li><p>What may keep a population from utilizing a hospital/resource in their area?</p></li>
 <li><p>How might focusing solely on hospital/resource locations not tell the entire story?</p></li>
 </ul>
-</br></br>
-</details>
+</div>
 <p><strong>Looking Forward</strong></p>
 <p>In the asset map section, you explored how to identify and visualize spatial distributions of resources, facilities, or infrastructure within your area of interest. As you continue your exploration, delve deeper into specific themes or variables by transitioning to thematic mapping in the next section.</p>
 </div>
 </div>
 <div id="thematic-map-app-development" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Thematic Map App Development<a href="06-appdev.html#thematic-map-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/06-arcgisexample.png" style="width:70.0%" /></p>
 <p>A thematic map in public health is a map that uses visual symbols, colors, and patterns to represent specific health-related data or themes within a geographic area. Data &amp; interaction complexity generally remain more simplified, encouraging the user to inspect visualized patterns. Interactions may include selecting different variables for different maps, or clicking on an area to get information in a pop-up window. Here, we’ll introduce ArcGIS Online and Mapbox GL as two free thematic mapping options, while creating a thematic map of an SDOH or maternal health outcome variable(s) in NYC.</p>
 <div id="arcgis-online" class="section level3 unnumbered hasAnchor">
 <h3>ArcGIS Online<a href="06-appdev.html#arcgis-online" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -667,6 +671,7 @@ Save Your Map
 </div>
 <div id="mapbox-gl" class="section level3 unnumbered hasAnchor">
 <h3>Mapbox GL<a href="06-appdev.html#mapbox-gl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/06-mapboxexample.png" style="width:70.0%" /></p>
 <p>Mapbox GL is useful for creating base maps for larger projects, or standalone interactive thematic maps. In this section, we’ll walk through using Mapbox to create both. As a standalone interactive map, Mapbox does require some basic code to embed your map in your webpage, but code templates are available.</p>
 <div id="simple-basemap" class="section level4 unnumbered hasAnchor">
 <h4>Simple Basemap<a href="06-appdev.html#simple-basemap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -754,7 +759,6 @@ Design Your Color Scheme
 </summary>
 <p>Use resources like ColorBrewer to choose an accessible and aesthetically pleasing color scheme. Increase the number of data classes for a larger color range, and use the HEX codes or RGB values provided to add your desired colors to Mapbox.
 Check the accessibility of your color scheme using Mapbox’s built-in color blindness simulator under Settings &gt; Debug tools.</p>
-<p>—–IMAGE HERE——</p>
 </br></br>
 </details>
 <details>
@@ -765,10 +769,8 @@ Share Your Map
 In order to add your map to your web page, you’ll need to do some coding. From your account page, selecting “Install Mapbox GL JS” will lead you through the code you will need to do so. A template is also provided here that you can use to install your map.</p>
 </br></br>
 </details>
-<details>
-<summary>
-Extension Exercise
-</summary>
+<div class="activity">
+<p><strong>Extension Exercise</strong></p>
 <p>Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here].</p>
 <p>As you create this map, consider the following questions:</p>
 <ul>
@@ -777,14 +779,14 @@ Extension Exercise
 <li><p>Are you able to map multiple variables at once? Trends between variables?</p></li>
 <li><p>What trends can you see between SDOH and maternal health outcomes?</p></li>
 </ul>
-</br></br>
-</details>
+</div>
 <p><strong>Looking Forward</strong></p>
 <p>In the thematic map section, you learned how to visualize spatial patterns and distributions within your datasets. Transition to a story map to weave these insights into a compelling narrative.</p>
 </div>
 </div>
 <div id="story-map-app-development" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Story Map App Development<a href="06-appdev.html#story-map-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/06-storymapexample.png" style="width:70.0%" /></p>
 <p>A story map is a tool that allows users to explore a geospatial dataset in greater detail, with more direction from the creator. You can lead users through individual points of interest, craft a narrative around your data, and ultimately tell a story. Datasets don’t need to be traditional data either. You can use photos, videos, or other media at points of interest in your story map. Effective story maps are informative, compelling, and the user will feel drawn through the narrative.</p>
 <p>Depending on what software you use, story maps might be standalone journeys or integrated as part of a larger project.</p>
 <p>Check out these examples below:</p>
@@ -983,11 +985,9 @@ Adjust Background and Layout
 </ul>
 </br></br>
 </details>
-<details>
-<summary>
-Extension Exercise
-</summary>
-<p>Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found below.</p>
+<div class="activity">
+<p><strong>Extension Exercise</strong>
+Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found below.</p>
 <p>As you create your story map, consider the following questions:</p>
 <ul>
 <li><p>What media best represents each center?</p></li>
@@ -1002,14 +1002,15 @@ Extension Exercise
 <li><p><a href="https://opendata.atlantaregional.com/datasets/GARC" class="uri">https://opendata.atlantaregional.com/datasets/GARC</a>::maternal-health-child-asthma-by-tract-2021/about</p></li>
 <li><p><a href="https://dph.georgia.gov/maternal-and-neonatal-center" class="uri">https://dph.georgia.gov/maternal-and-neonatal-center</a></p></li>
 </ul>
-</br></br>
-</details>
+</div>
 <p><strong>Looking Forward</strong></p>
 <p>In the story map section, you learned how to transform your data-driven insights into compelling narratives. By combining maps, text, images, and multimedia elements, you created immersive storytelling experiences that effectively communicated your findings to a broader audience. As you move forward, consider transitioning to a data dashboard for a more dynamic and exploratory approach.</p>
 </div>
 </div>
 <div id="data-dashboard-app-development" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Data Dashboard App Development<a href="06-appdev.html#data-dashboard-app-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/preface-dashboard.png" /></p>
+<p>In the data dashboard section, you will learn how to create interactive interfaces for exploratory data analysis. By designing dashboards with interactive visualizations such as charts, graphs, and maps, you provided users with dynamic tools to explore and analyze their data. Through customization and interactivity, you empowered your audience to delve deeper into the data, uncovering insights and trends that drive informed decision-making.</p>
 <div id="tableau-public" class="section level3 unnumbered hasAnchor">
 <h3>Tableau Public<a href="06-appdev.html#tableau-public" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details>
@@ -1035,11 +1036,8 @@ Start a Workbook
 Create a Thematic Map
 </summary>
 <ul>
-<li>In the data pane, select “NTA Name”, “Geometry”, and “Pctblack” using command + click. Click “Show Me” and choose the map visualization.</li>
-</ul>
-<p>—–IMAGE HERE——</p>
-<ul>
-<li>A legend will appear; switch to a stepped color scheme by selecting “Edit Color”.</li>
+<li><p>In the data pane, select “NTA Name”, “Geometry”, and “Pctblack” using command + click. Click “Show Me” and choose the map visualization.</p></li>
+<li><p>A legend will appear; switch to a stepped color scheme by selecting “Edit Color”.</p></li>
 </ul>
 <p>Tip: You can adjust range and midpoint under “Advanced”.</p>
 <ul>
@@ -1109,7 +1107,11 @@ Finalize Your Dashboard
 </details>
 <p><strong>Looking Forward</strong></p>
 <p>In the data dashboard section, you learned how to create interactive interfaces for exploratory data analysis. By designing dashboards with interactive visualizations such as charts, graphs, and maps, you provided users with dynamic tools to explore and analyze their data.</p>
-<p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of this module.</p>
+<p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of <a href="https://public.tableau.com/app/learn/how-to-videos">here</a>.</p>
+<div class="activity">
+<p><strong>Extension Activity</strong></p>
+<p>Want additional practice? Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].</p>
+</div>
 </div>
 </div>
 <div id="resources-4" class="section level2 unnumbered hasAnchor">
