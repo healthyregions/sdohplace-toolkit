@@ -1,0 +1,305 @@
+---
+title: "NYC Neighborhood Demographics"
+output: html_document
+date: "2024-04-26"
+---
+
+## Getting Started {-}
+
+If you are new to R, we recommend the following [intro-level tutorials](https://learn.datacamp.com/courses/free-introduction-to-r) provided through [installation guides](https://rspatial.org/intr/1-introduction.html). You can also refer to this [R for Social Scientists](https://datacarpentry.org/r-socialsci/) tutorial developed by Data Carpentry for a refresher.
+
+You can also visit the [RStudio Education](https://education.rstudio.com/learn/) page to select a learning path tailored to your experience level ([Beginners](https://education.rstudio.com/learn/beginner/), [Intermediates](https://education.rstudio.com/learn/intermediate/), [Experts](https://education.rstudio.com/learn/expert/)). They offer detailed instructions to learners at different stages of their R journey.
+
+## Introduction
+
+This document provides an overview of a Shiny application designed to visualize demographic data across New York City's neighborhoods. Shiny is a web application framework for R that makes it easy to build interactive web apps straight from R. This particular application allows users to explore various demographic metrics through interactive maps and charts.
+
+The application is structured into three main parts: the user interface (`ui`), the server logic (`server`), and the global setup where libraries are loaded and data is prepared.
+
+### Step 1: Libraries and Data Preparation
+
+First, we need to load the necessary R packages. These libraries enable various functionalities: `shiny` for the app framework, leaflet for interactive maps, `sf` for handling geographic data, `plotly` for interactive charts, and `dplyr` for data manipulation.
+
+```{r}
+library(shiny)
+library(leaflet)
+library(sf)
+library(plotly)
+library(dplyr)
+```
+
+Now, let's load and prepare the NYC demographic GeoJSON data. This file format is commonly used for geographic data structures.
+
+```{r}
+nyc_data <- st_read("NYC_nbrhd_data.geojson", quiet = TRUE)
+nyc_data <- st_make_valid(nyc_data)
+nyc_data <- st_transform(nyc_data, crs = 4326)
+```
+
+### Step 2: Define the User Interface
+
+The user interface is defined in a way that allows users to interact with the application. First, we aim to includes dropdown menus for selecting demographic variables and neighborhoods, and panels for displaying maps and charts. Then, we want the final UI organize into three main tabs, allowing users to interactively explore different facets of the NYC neighborhood data.
+
+#### Tab 1: Map & Racial Demographics
+
+Let's create the first tab! This tab features a map and a demographic chart, with controls for selecting demographic variables and neighborhoods. In this tab, we will include:
+- Demographic Variable Selection: Provides options related to economic conditions.
+- Interactive map and chart: Visualize the selected economic data spatially and through a bar chart.
+
+Here are the explanation for some functions that we used below:
+- `selectInput` for demographic variable: Allows users to select which `demographic` statistic to visualize on the map.
+- `selectInput` for neighborhood: Enables users to pick a specific neighborhood for detailed demographic breakdown in the chart.
+- `leafletOutput` and `plotlyOutput`: Reserved spaces in the UI for displaying the map and the chart respectively.
+
+```{r}
+tab1_ui <- tabPanel("Map & Racial Demographics",
+                    sidebarLayout(
+                      sidebarPanel(
+                        selectInput("color", "Demographic variable:",
+                                    choices = c("Percent Black" = "pctblack",
+                                                "Percent Hispanic" = "pcthisp",
+                                                "Percent White" = "pctwhite"),
+                                    selected = "pctblack"),
+                        selectInput("neighborhood", "Select Neighborhood:",
+                                    choices = nyc_data$NTAName,
+                                    selected = "Pelham Bay-Country Club-City Island"),
+                        helpText("Data source: NYC Neighborhood Data")
+                      ),
+                      mainPanel(
+                        fluidRow(
+                          column(12, leafletOutput("map")),
+                          column(12, plotlyOutput("racialDemoChart"))
+                        )
+                      )
+                    )
+)
+```
+
+#### Tab 2: Socioeconomic Demographics
+
+Similar in structure to Tab 1, now let's create the Tab 2, which focuses on socioeconomic indicators such as poverty levels and rent burden.
+
+```{r}
+tab2_ui <- tabPanel("Socioeconomic Demographics",
+                    sidebarLayout(
+                      sidebarPanel(
+                        selectInput("color_socio", "Demographic variable:",
+                                    choices = c("Percent in Poverty" = "pctpov",
+                                                "Rent < 30% of Income" = "rent.30",
+                                                "Rent < 50% of Income" = "rent.50"),
+                                    selected = "pctpov"),
+                        selectInput("neighborhood_socio", "Select Neighborhood:",
+                                    choices = nyc_data$NTAName,
+                                    selected = "Pelham Bay-Country Club-City Island"),
+                        helpText("Data source: NYC Neighborhood Data")
+                      ),
+                      mainPanel(
+                        fluidRow(
+                          column(12, leafletOutput("map_socio")),
+                          column(12, plotlyOutput("socioDemoChart"))
+                        )
+                      )
+                    )
+)
+```
+
+#### Tab 3: Severe Maternal Morbidity & Preterm Birth Rates
+
+In Tab 3, we want to introduces more health-related variables, displaying a map and a scatter plot.
+
+```{r}
+tab3_ui <- tabPanel("Severe Maternal Morbidity & Preterm Birth Rates",
+                    sidebarLayout(
+                      sidebarPanel(
+                        selectInput("color_health", "Health variable:",
+                                    choices = c("Severe Maternal Morbidity Rate" = "smmrate",
+                                                "Preterm Birth Rate" = "ptbrate"),
+                                    selected = "smmrate"),
+                        helpText("Data source: NYC Neighborhood Data")
+                      ),
+                      mainPanel(
+                        fluidRow(
+                          column(12, leafletOutput("map_health")),
+                          column(12, plotlyOutput("healthScatterChart"))
+                        )
+                      )
+                    )
+)
+```
+
+#### Tab 4: About
+
+Finally, we also want to include a Tab 4 that provides contextual information about the application, explaining its purpose and the data source.
+
+```{r}
+tab4_ui <- tabPanel("About",
+                    h3("About This App"),
+                    p("This application provides a visual representation of demographic and health data across New York City's neighborhoods."),
+                    p("Select different demographic and health variables from the dropdown menus to explore the data."),
+                    p("Data source: NYC Neighborhood Data, provided in GeoJSON format and visualized using Leaflet and Plotly in a Shiny application.")
+)
+```
+
+### Step 3: Define Server Logic
+
+After define the user interface, we will move on to define the server logic. It processes user inputs from the UI and updates the outputs (maps and charts). It dynamically reacts to user interactions such as selecting a neighborhood or a demographic variable.
+
+#### Server Logic for Tab 1:
+
+Now, we will create server code to handle the dynamic visualization of racial demographics within New York City neighborhoods in Tab 1. It renders an interactive map and a bar chart based on user inputs, showing the distribution of different racial groups. The map highlights neighborhoods with varying demographic densities, while the bar chart provides detailed statistics for a selected neighborhood.
+
+```{r}
+tab1_server <- function(input, output, session) {
+  # Map output for Racial Demographics
+  output$map <- renderLeaflet({
+    map_data <- st_transform(nyc_data, crs = 4326)
+    
+    valid_data <- map_data[!is.na(map_data[[input$color]]), ]
+    pal <- colorQuantile("YlOrRd", valid_data[[input$color]], n = 5)
+    
+    leaflet(valid_data) %>%
+      addProviderTiles(providers$CartoDB.Positron) %>%
+      addPolygons(
+        fillColor = ~pal(valid_data[[input$color]]),
+        fillOpacity = 0.7, weight = 1, color = "white",
+        popup = ~paste(NTAName, "<br>",
+                       paste(input$color, ":", round(valid_data[[input$color]], 2), "%"))
+      ) %>%
+      setView(lng = -73.935242, lat = 40.730610, zoom = 10)
+  })
+  
+  # Racial Demographics chart
+  output$racialDemoChart <- renderPlotly({
+    chart_data <- nyc_data[nyc_data$NTAName == input$neighborhood, ]
+    
+    # Extract data and remove "geometry" column
+    racial_data <- as.data.frame(chart_data)
+    racial_data <- racial_data[, -which(names(racial_data) == "geometry")]
+    
+    racial_data <- racial_data[, c("pctblack", "pcthisp", "pctwhite", "pctapi", "pctother")]
+    
+    racial_data <- t(racial_data)
+    racial_data <- as.data.frame(racial_data)
+    racial_data <- cbind(Race = rownames(racial_data), Percentage = racial_data[, 1])
+    rownames(racial_data) <- NULL
+    
+    plot_ly(data = as.data.frame(racial_data), x = ~Race, y = ~Percentage, type = 'bar', color = ~Race) %>%
+      layout(title = paste("Racial Demographics -", input$neighborhood),
+             xaxis = list(title = "Race"),
+             yaxis = list(title = "Percentage", range = c(0, 100), tickvals = seq(0, 100, 20)))
+  })
+}
+```
+
+The server functions for other tabs follow a similar structure but focus on different data attributes. So, let's define the server logic for other three tabs.
+
+#### Server Logic for Tab 2:
+
+```{r}
+tab2_server <- function(input, output, session) {
+  # Map output for Socioeconomic Demographics
+  output$map_socio <- renderLeaflet({
+    map_data <- st_transform(nyc_data, crs = 4326)
+    
+    valid_data <- map_data[!is.na(map_data[[input$color_socio]]), ]
+    pal <- colorQuantile("YlOrRd", valid_data[[input$color_socio]], n = 5)
+    
+    leaflet(valid_data) %>%
+      addProviderTiles(providers$CartoDB.Positron) %>%
+      addPolygons(
+        fillColor = ~pal(valid_data[[input$color_socio]]),
+        fillOpacity = 0.7, weight = 1, color = "white",
+        popup = ~paste(NTAName, "<br>",
+                       paste(input$color_socio, ":", round(valid_data[[input$color_socio]], 2), "%"))
+      ) %>%
+      setView(lng = -73.935242, lat = 40.730610, zoom = 10)
+  })
+  
+  # Socioeconomic Demographics chart
+  output$socioDemoChart <- renderPlotly({
+    chart_data <- nyc_data[nyc_data$NTAName == input$neighborhood_socio, ]
+    
+    # Extract data and remove "geometry" column
+    socio_data <- as.data.frame(chart_data)
+    socio_data <- socio_data[, -which(names(socio_data) == "geometry")]
+    
+    socio_data <- socio_data[, c("pctpov", "rent.30", "rent.50")]
+    
+    socio_data <- t(socio_data)
+    socio_data <- as.data.frame(socio_data)
+    socio_data <- cbind(Category = rownames(socio_data), Percentage = socio_data[, 1])
+    rownames(socio_data) <- NULL
+    
+    plot_ly(data = as.data.frame(socio_data), x = ~Category, y = ~Percentage, type = 'bar', color = ~Category) %>%
+      layout(title = paste("Socioeconomic Demographics -", input$neighborhood_socio),
+             xaxis = list(title = "Category"),
+             yaxis = list(title = "Percentage", range = c(0, 100), tickvals = seq(0, 100, 20)))
+  })
+}
+```
+
+#### Server Logic for Tab 3:
+
+```{r}
+tab3_server <- function(input, output, session) {
+  # Map output for Health Demographics
+  output$map_health <- renderLeaflet({
+    map_data <- st_transform(nyc_data, crs = 4326)
+    
+    valid_data <- map_data[!is.na(map_data[[input$color_health]]), ]
+    pal <- colorQuantile("YlOrRd", valid_data[[input$color_health]], n = 5)
+    
+    leaflet(valid_data) %>%
+      addProviderTiles(providers$CartoDB.Positron) %>%
+      addPolygons(
+        fillColor = ~pal(valid_data[[input$color_health]]),
+        fillOpacity = 0.7, weight = 1, color = "white",
+        popup = ~paste(NTAName, "<br>",
+                       paste(input$color_health, ":", round(valid_data[[input$color_health]], 2)))
+      ) %>%
+      setView(lng = -73.935242, lat = 40.730610, zoom = 10)
+  })
+  
+  # Health Demographics scatter plot
+  output$healthScatterChart <- renderPlotly({
+    plot_ly(nyc_data, x = ~smmrate, y = ~ptbrate, text = ~NTAName, mode = 'markers') %>%
+      layout(title = "Severe Maternal Morbidity vs Preterm Birth Rates",
+             xaxis = list(title = "Severe Maternal Morbidity Rate"),
+             yaxis = list(title = "Preterm Birth Rate", range = c(0, 100)))
+  })
+}
+```
+
+Now, combine all tabs into a single UI object.
+
+```{r}
+ui <- fluidPage(
+  titlePanel("NYC Neighborhood Demographics"),
+  tabsetPanel(
+    tab1_ui,
+    tab2_ui,
+    tab3_ui,
+    tab4_ui
+  )
+)
+```
+
+### Step 4: Run the Application
+
+In this final step,we combine the server logic for all tabs and define the overall UI layout to launch the application.
+
+```{r}
+# Combine server logic for all tabs
+server <- function(input, output, session) {
+  tab1_server(input, output, session)
+  tab2_server(input, output, session)
+  tab3_server(input, output, session)
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+```
+
+## Conclusion
+
+This Shiny application offers a detailed and interactive exploration of demographic data across New York City neighborhoods. Users can interactively analyze racial and socioeconomic information through dynamically updated maps and charts. The application exemplifies how R and Shiny can be used to build engaging and informative data visualizations.
