@@ -345,20 +345,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#creating-an-account"><i class="fa fa-check"></i><b>8.1.3</b> Creating an Account</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#leaflet-map-with-csv-and-geojson-data"><i class="fa fa-check"></i><b>8.2</b> Leaflet Map with CSV and GeoJSON data</a></li>
-<li class="chapter" data-level="8.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#r-shiny"><i class="fa fa-check"></i><b>8.3</b> R Shiny</a>
+<li class="chapter" data-level="8.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#thematic-map-with-html-css"><i class="fa fa-check"></i><b>8.3</b> Thematic Map with HTML &amp; CSS</a></li>
+<li class="chapter" data-level="8.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>8.4</b> Dashboards with R Shiny</a>
 <ul>
 <li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
-<li class="chapter" data-level="8.3.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>8.3.1</b> User Interface</a></li>
-<li class="chapter" data-level="8.3.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>8.3.2</b> Server</a></li>
-<li class="chapter" data-level="8.3.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>8.3.3</b> Expand Your Prototype</a></li>
-<li class="chapter" data-level="8.3.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#step-1-libraries-and-data-preparation"><i class="fa fa-check"></i><b>8.3.4</b> Step 1: Libraries and Data Preparation</a></li>
-<li class="chapter" data-level="8.3.5" data-path="06-appdev-code.html"><a href="06-appdev-code.html#step-2-define-the-user-interface"><i class="fa fa-check"></i><b>8.3.5</b> Step 2: Define the User Interface</a></li>
-<li class="chapter" data-level="8.3.6" data-path="06-appdev-code.html"><a href="06-appdev-code.html#step-3-define-server-logic"><i class="fa fa-check"></i><b>8.3.6</b> Step 3: Define Server Logic</a></li>
-<li class="chapter" data-level="8.3.7" data-path="06-appdev-code.html"><a href="06-appdev-code.html#step-4-run-the-application"><i class="fa fa-check"></i><b>8.3.7</b> Step 4: Run the Application</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#conclusion"><i class="fa fa-check"></i><b>8.4</b> Conclusion</a>
-<ul>
-<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#tutorials-for-r-1"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="8.4.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>8.4.1</b> User Interface</a></li>
+<li class="chapter" data-level="8.4.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>8.4.2</b> Server</a></li>
+<li class="chapter" data-level="8.4.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>8.4.3</b> Expand Your Prototype</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#more-shiny-resources"><i class="fa fa-check"></i>More Shiny Resources:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
@@ -419,8 +413,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we will create and publish a very simple web map using prepared CSV and GeoJSON datasets. At the end of the exercise, you should be able to swap these datasets out with your own, and have a basic understanding of how to modify Leaflet code.</p>
 <p>We will do all of our file storage and editing directly in <a href="https://github.com">Github</a>, which will also allow us to immediately make our map publicly visible.</p>
 </div>
-<div id="r-shiny" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">B.3</span> R Shiny<a href="06-appdev-code.html#r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="thematic-map-with-html-css" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">B.3</span> Thematic Map with HTML &amp; CSS<a href="06-appdev-code.html#thematic-map-with-html-css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="dashboards-with-r-shiny" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">B.4</span> Dashboards with R Shiny<a href="06-appdev-code.html#dashboards-with-r-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="getting-started-1" class="section level3 unnumbered hasAnchor">
 <h3>Getting Started<a href="06-appdev-code.html#getting-started-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you have a solid sense of R (see previous modules and recommended tutorials), you may be ready to make your first app! To develop an application quickly, we use the <code>shiny</code> package. Shiny is a web application framework for R that makes it easy to build interactive web apps straight from R. This particular application allows users to explore various demographic metrics through interactive maps and charts.</p>
@@ -435,12 +432,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><p>a call to the <code>shinyApp</code> function</p></li>
 </ul>
 <p>The application is structured into three main parts: the user interface (<code>ui</code>), the server logic (<code>server</code>), and the global setup where libraries are loaded and data is prepared.</p>
-<p><img src="images/6-shinyintro.png" style="width:95.0%" /></p>
+<div class="figure">
+<img src="images/06-overview-shinyApp.png" style="width:50.0%" alt="" />
+<p class="caption">RShiny Application Structure. Source: <a href="https://codingclubuc3m.rbind.io/post/2018-06-19/">Coding Club UC3M</a></p>
 </div>
-<div id="user-interface" class="section level3 hasAnchor" number="8.3.1">
-<h3><span class="header-section-number">B.3.1</span> User Interface<a href="06-appdev-code.html#user-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="user-interface" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">B.4.1</span> User Interface<a href="06-appdev-code.html#user-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can define the layout of your application using the user inferface, defining what goes where, how it looks, and what events are triggered. Upon loading the site, a default plot may be triggered to be oupit. A user may also select specific items within the user interface, like a variable from a drop-down panel, or sliding a slider.</p>
-<p>Using the <a href="">example</a> from Shiny’s official tutorial, copy and paste the following into a new file you’ll save as <code>app.R</code> in a folder on your computer.</p>
+<p>Using the <a href="https://shiny.posit.co/r/getstarted/shiny-basics/">example</a> from Shiny’s official tutorial, copy and paste the following into a new file you’ll save as <code>app.R</code> in a folder on your computer.</p>
+<p>To run within RStudio, click the “Knit” icon at the top of your code.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb2-1"><a href="06-appdev-code.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb2-2"><a href="06-appdev-code.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bslib)</span>
 <span id="cb2-3"><a href="06-appdev-code.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -473,8 +474,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-16"><a href="06-appdev-code.html#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the app ----</span></span>
 <span id="cb3-17"><a href="06-appdev-code.html#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 <p>Next, let’s add a drop down variable selection for a variable of interest we’d like to explore in the app. For example, we may want to examine data by self-identified race and ethnicity, as reported by neighborhood via the Census. We’ll add a drop-down widget, and “helper text” to explain what the user should do.</p>
-<details markdown='1'>
-<summary>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb4-1"><a href="06-appdev-code.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb4-2"><a href="06-appdev-code.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bslib)</span>
 <span id="cb4-3"><a href="06-appdev-code.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -502,327 +501,345 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-25"><a href="06-appdev-code.html#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 </summary>
 <p>Ensure you’re running each time that you add, edit, or change anything. This helps with the troubleshooting process! By now, your application will be looking like this:</p>
-<p><img src="images/6-shinyintro.png" style="width:95.0%" /></p>
+<p><img src="images/06-shiny1.png" style="width:95.0%" /></p>
 <p>Continue to explore the different layouts, widgets, themes, and options available to you in the Shiny documentation.</p>
 </div>
-<div id="server" class="section level3 hasAnchor" number="8.3.2">
-<h3><span class="header-section-number">B.3.2</span> Server<a href="06-appdev-code.html#server" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When we’re running the application, we’re actually using our coomputers as the server. Let’s connect our drop down to data we’ll load in – NYC data – and use the user selection to generate a map.</p>
-<p>We recommend getting the script to work in a .R file on its own before plugging in, to confirm that it will work the way you need it to. De-bugging can be tricky in more complex applications, so anything you can do to support your process will be beneficial.</p>
-<p>We’ll jump a few steps ahead, to show what the full set up can look like:</p>
+<div id="server" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">B.4.2</span> Server<a href="06-appdev-code.html#server" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we’re running the application, we’re actually using our computer as the server. Let’s connect our dropdown to data we’ll load in – NYC data – and use the user selection to generate a map.</p>
+<p>We recommend getting the script to work in an R script on its own before plugging in, to confirm that it will work the way you need it to. De-bugging can be tricky in more complex applications, so anything you can do to support your process will be beneficial.</p>
+<p>We’ll jump a few steps ahead, to show what the full set up can look like for adding a map that is linked to user input:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="06-appdev-code.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb5-2"><a href="06-appdev-code.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bslib)</span>
-<span id="cb5-3"><a href="06-appdev-code.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="06-appdev-code.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data ----</span></span>
-<span id="cb5-5"><a href="06-appdev-code.html#cb5-5" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;NYC_nbrhd_data.geojson&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-6"><a href="06-appdev-code.html#cb5-6" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(nyc_data)</span>
-<span id="cb5-7"><a href="06-appdev-code.html#cb5-7" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb5-8"><a href="06-appdev-code.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="06-appdev-code.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI ----</span></span>
-<span id="cb5-10"><a href="06-appdev-code.html#cb5-10" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> </span>
-<span id="cb5-11"><a href="06-appdev-code.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">page_sidebar</span>(</span>
-<span id="cb5-12"><a href="06-appdev-code.html#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;NYC SDOH App&quot;</span>,</span>
-<span id="cb5-13"><a href="06-appdev-code.html#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">sidebar =</span> <span class="fu">sidebar</span>(</span>
-<span id="cb5-14"><a href="06-appdev-code.html#cb5-14" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-15"><a href="06-appdev-code.html#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">helpText</span>(<span class="st">&quot;Select different variables from the dropdown menus to explore the data.&quot;</span>),</span>
-<span id="cb5-16"><a href="06-appdev-code.html#cb5-16" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-17"><a href="06-appdev-code.html#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">selectInput</span>(<span class="st">&quot;color&quot;</span>, <span class="st">&quot;Self-Identified Race &amp; Ethnicity:&quot;</span>,</span>
-<span id="cb5-18"><a href="06-appdev-code.html#cb5-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent Black&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctblack&quot;</span>,</span>
-<span id="cb5-19"><a href="06-appdev-code.html#cb5-19" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Percent Hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;pcthisp&quot;</span>,</span>
-<span id="cb5-20"><a href="06-appdev-code.html#cb5-20" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Percent White&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctwhite&quot;</span>),</span>
-<span id="cb5-21"><a href="06-appdev-code.html#cb5-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">selected =</span> <span class="st">&quot;pctblack&quot;</span>)),</span>
-<span id="cb5-22"><a href="06-appdev-code.html#cb5-22" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-23"><a href="06-appdev-code.html#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mainPanel</span>(</span>
-<span id="cb5-24"><a href="06-appdev-code.html#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="do">## Add a map</span></span>
-<span id="cb5-25"><a href="06-appdev-code.html#cb5-25" aria-hidden="true" tabindex="-1"></a>        (<span class="fu">leafletOutput</span>(<span class="st">&quot;map&quot;</span>, <span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span>
-<span id="cb5-26"><a href="06-appdev-code.html#cb5-26" aria-hidden="true" tabindex="-1"></a>        )))</span>
-<span id="cb5-27"><a href="06-appdev-code.html#cb5-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-28"><a href="06-appdev-code.html#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic ----</span></span>
-<span id="cb5-29"><a href="06-appdev-code.html#cb5-29" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb5-30"><a href="06-appdev-code.html#cb5-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-31"><a href="06-appdev-code.html#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Map output for Racial Demographics</span></span>
-<span id="cb5-32"><a href="06-appdev-code.html#cb5-32" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
-<span id="cb5-33"><a href="06-appdev-code.html#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="06-appdev-code.html#cb5-34" aria-hidden="true" tabindex="-1"></a>      valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
-<span id="cb5-35"><a href="06-appdev-code.html#cb5-35" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-36"><a href="06-appdev-code.html#cb5-36" aria-hidden="true" tabindex="-1"></a>      pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;PuBuGn&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
-<span id="cb5-37"><a href="06-appdev-code.html#cb5-37" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-38"><a href="06-appdev-code.html#cb5-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
-<span id="cb5-39"><a href="06-appdev-code.html#cb5-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
-<span id="cb5-40"><a href="06-appdev-code.html#cb5-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addPolygons</span>(</span>
-<span id="cb5-41"><a href="06-appdev-code.html#cb5-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
-<span id="cb5-42"><a href="06-appdev-code.html#cb5-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb5-43"><a href="06-appdev-code.html#cb5-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
-<span id="cb5-44"><a href="06-appdev-code.html#cb5-44" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
-<span id="cb5-45"><a href="06-appdev-code.html#cb5-45" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-46"><a href="06-appdev-code.html#cb5-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
-<span id="cb5-47"><a href="06-appdev-code.html#cb5-47" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb5-48"><a href="06-appdev-code.html#cb5-48" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-49"><a href="06-appdev-code.html#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="06-appdev-code.html#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the app ----</span></span>
-<span id="cb5-51"><a href="06-appdev-code.html#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
-<p>Inspect how the map output call was added to the UI. In the server function, the map data is slightly cleaned (from debugging in a script on its own), and a color palette is indicated using a ColorBrewer selection. Then, we use leaflet to visualize the variable selected by the user. Leaflet is more responsive than tmap, as used in previous sessions.</p>
+<span id="cb5-2"><a href="06-appdev-code.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb5-3"><a href="06-appdev-code.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb5-4"><a href="06-appdev-code.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb5-5"><a href="06-appdev-code.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-6"><a href="06-appdev-code.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="06-appdev-code.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data ----</span></span>
+<span id="cb5-8"><a href="06-appdev-code.html#cb5-8" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;NYC_nbrhd_data.geojson&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-9"><a href="06-appdev-code.html#cb5-9" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(nyc_data)</span>
+<span id="cb5-10"><a href="06-appdev-code.html#cb5-10" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb5-11"><a href="06-appdev-code.html#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="06-appdev-code.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI ----</span></span>
+<span id="cb5-13"><a href="06-appdev-code.html#cb5-13" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> </span>
+<span id="cb5-14"><a href="06-appdev-code.html#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">page_sidebar</span>(</span>
+<span id="cb5-15"><a href="06-appdev-code.html#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;NYC SDOH App&quot;</span>,</span>
+<span id="cb5-16"><a href="06-appdev-code.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">sidebar =</span> <span class="fu">sidebar</span>(</span>
+<span id="cb5-17"><a href="06-appdev-code.html#cb5-17" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-18"><a href="06-appdev-code.html#cb5-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">helpText</span>(<span class="st">&quot;Select different variables from the dropdown menus to explore the data.&quot;</span>),</span>
+<span id="cb5-19"><a href="06-appdev-code.html#cb5-19" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-20"><a href="06-appdev-code.html#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">selectInput</span>(<span class="st">&quot;color&quot;</span>, <span class="st">&quot;Self-Identified Race &amp; Ethnicity:&quot;</span>,</span>
+<span id="cb5-21"><a href="06-appdev-code.html#cb5-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent Black&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctblack&quot;</span>,</span>
+<span id="cb5-22"><a href="06-appdev-code.html#cb5-22" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Percent Hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;pcthisp&quot;</span>,</span>
+<span id="cb5-23"><a href="06-appdev-code.html#cb5-23" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Percent White&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctwhite&quot;</span>),</span>
+<span id="cb5-24"><a href="06-appdev-code.html#cb5-24" aria-hidden="true" tabindex="-1"></a>                  <span class="at">selected =</span> <span class="st">&quot;pctblack&quot;</span>)),</span>
+<span id="cb5-25"><a href="06-appdev-code.html#cb5-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-26"><a href="06-appdev-code.html#cb5-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mainPanel</span>(</span>
+<span id="cb5-27"><a href="06-appdev-code.html#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="do">## Add a map</span></span>
+<span id="cb5-28"><a href="06-appdev-code.html#cb5-28" aria-hidden="true" tabindex="-1"></a>        (<span class="fu">leafletOutput</span>(<span class="st">&quot;map&quot;</span>, <span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span>
+<span id="cb5-29"><a href="06-appdev-code.html#cb5-29" aria-hidden="true" tabindex="-1"></a>        )))</span>
+<span id="cb5-30"><a href="06-appdev-code.html#cb5-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-31"><a href="06-appdev-code.html#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic ----</span></span>
+<span id="cb5-32"><a href="06-appdev-code.html#cb5-32" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb5-33"><a href="06-appdev-code.html#cb5-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-34"><a href="06-appdev-code.html#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Map output for Racial Demographics</span></span>
+<span id="cb5-35"><a href="06-appdev-code.html#cb5-35" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb5-36"><a href="06-appdev-code.html#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="06-appdev-code.html#cb5-37" aria-hidden="true" tabindex="-1"></a>      valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
+<span id="cb5-38"><a href="06-appdev-code.html#cb5-38" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-39"><a href="06-appdev-code.html#cb5-39" aria-hidden="true" tabindex="-1"></a>      pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;PuBuGn&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb5-40"><a href="06-appdev-code.html#cb5-40" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-41"><a href="06-appdev-code.html#cb5-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="cb5-42"><a href="06-appdev-code.html#cb5-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb5-43"><a href="06-appdev-code.html#cb5-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addPolygons</span>(</span>
+<span id="cb5-44"><a href="06-appdev-code.html#cb5-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
+<span id="cb5-45"><a href="06-appdev-code.html#cb5-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb5-46"><a href="06-appdev-code.html#cb5-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="cb5-47"><a href="06-appdev-code.html#cb5-47" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb5-48"><a href="06-appdev-code.html#cb5-48" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-49"><a href="06-appdev-code.html#cb5-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="cb5-50"><a href="06-appdev-code.html#cb5-50" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb5-51"><a href="06-appdev-code.html#cb5-51" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-52"><a href="06-appdev-code.html#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="06-appdev-code.html#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the app ----</span></span>
+<span id="cb5-54"><a href="06-appdev-code.html#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<p><img src="images/5-ShinyAppV1.png" style="width:95.0%" /></p>
+<p>Inspect how the map output call was added to the UI. In the server function, the map data is slightly cleaned (from debugging in a script on its own), and a color palette is indicated using a ColorBrewer selection. Then, we use leaflet to visualize the variable selected by the user. We have found that leaflet is more responsive than tmap when using Shiny apps, though be sure to explore new options on your own!</p>
 </div>
-<div id="expand-your-prototype" class="section level3 hasAnchor" number="8.3.3">
-<h3><span class="header-section-number">B.3.3</span> Expand Your Prototype<a href="06-appdev-code.html#expand-your-prototype" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="expand-your-prototype" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">B.4.3</span> Expand Your Prototype<a href="06-appdev-code.html#expand-your-prototype" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="updated-user-interface" class="section level4 hasAnchor" number="8.4.3.1">
+<h4><span class="header-section-number">B.4.3.1</span> Updated User Interface<a href="06-appdev-code.html#updated-user-interface" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In our extension, we want the final UI organize into three main tabs, allowing users to interactively explore different facets of the NYC neighborhood data. For this example, we’ll try using tabs instead of a sidebar. Try blending both styles, and keeping the bootstrap library used in our initial example as a challenge.</p>
+<div id="tab-1-map-racial-demographics" class="section level5 hasAnchor" number="8.4.3.1.1">
+<h5><span class="header-section-number">B.4.3.1.1</span> Tab 1: Map &amp; Racial Demographics<a href="06-appdev-code.html#tab-1-map-racial-demographics" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>In the first tab, we’ll features a map and a demographic chart, with controls for selecting demographic variables and neighborhoods. Here are the explanation for some functions that we used below:</p>
+<ul>
+<li><code>selectInput</code> for variable of interest: Allows users to select which <code>variable</code> statistic to visualize on the map.</li>
+<li><code>selectInput</code> for neighborhood: Enables users to pick a specific neighborhood for detailed demographic breakdown in the chart.</li>
+<li><code>leafletOutput</code> and <code>plotlyOutput</code>: Reserved spaces in the UI for displaying the map and the chart respectively.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="06-appdev-code.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic for the first tab</span></span>
+<span id="cb6-2"><a href="06-appdev-code.html#cb6-2" aria-hidden="true" tabindex="-1"></a>tab1_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb6-3"><a href="06-appdev-code.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Racial Demographics</span></span>
+<span id="cb6-4"><a href="06-appdev-code.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb6-5"><a href="06-appdev-code.html#cb6-5" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb6-6"><a href="06-appdev-code.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-7"><a href="06-appdev-code.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
+<span id="cb6-8"><a href="06-appdev-code.html#cb6-8" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;PuBuGn&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb6-9"><a href="06-appdev-code.html#cb6-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-10"><a href="06-appdev-code.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="06-appdev-code.html#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="06-appdev-code.html#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
+<span id="cb6-13"><a href="06-appdev-code.html#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
+<span id="cb6-14"><a href="06-appdev-code.html#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb6-15"><a href="06-appdev-code.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="cb6-16"><a href="06-appdev-code.html#cb6-16" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb6-17"><a href="06-appdev-code.html#cb6-17" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-18"><a href="06-appdev-code.html#cb6-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="cb6-19"><a href="06-appdev-code.html#cb6-19" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb6-20"><a href="06-appdev-code.html#cb6-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-21"><a href="06-appdev-code.html#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Racial Demographics chart</span></span>
+<span id="cb6-22"><a href="06-appdev-code.html#cb6-22" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>racialDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="cb6-23"><a href="06-appdev-code.html#cb6-23" aria-hidden="true" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood, ]</span>
+<span id="cb6-24"><a href="06-appdev-code.html#cb6-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-25"><a href="06-appdev-code.html#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lose the spatial component for the chart data</span></span>
+<span id="cb6-26"><a href="06-appdev-code.html#cb6-26" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(chart_data)</span>
+<span id="cb6-27"><a href="06-appdev-code.html#cb6-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-28"><a href="06-appdev-code.html#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Subselect to only variables we&#39;re interested in</span></span>
+<span id="cb6-29"><a href="06-appdev-code.html#cb6-29" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="fu">c</span>(<span class="st">&quot;pctblack&quot;</span>, <span class="st">&quot;pcthisp&quot;</span>, <span class="st">&quot;pctwhite&quot;</span>, <span class="st">&quot;pctapi&quot;</span>, <span class="st">&quot;pctother&quot;</span>)]</span>
+<span id="cb6-30"><a href="06-appdev-code.html#cb6-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-31"><a href="06-appdev-code.html#cb6-31" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">t</span>(racial_data)</span>
+<span id="cb6-32"><a href="06-appdev-code.html#cb6-32" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(racial_data)</span>
+<span id="cb6-33"><a href="06-appdev-code.html#cb6-33" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Race =</span> <span class="fu">rownames</span>(racial_data), <span class="at">Percentage =</span> racial_data[, <span class="dv">1</span>])</span>
+<span id="cb6-34"><a href="06-appdev-code.html#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(racial_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb6-35"><a href="06-appdev-code.html#cb6-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-36"><a href="06-appdev-code.html#cb6-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(racial_data), <span class="at">x =</span> <span class="sc">~</span>Race, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Race) <span class="sc">%&gt;%</span></span>
+<span id="cb6-37"><a href="06-appdev-code.html#cb6-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Self-Identified Race - &quot;</span>, input<span class="sc">$</span>neighborhood),</span>
+<span id="cb6-38"><a href="06-appdev-code.html#cb6-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Race&quot;</span>),</span>
+<span id="cb6-39"><a href="06-appdev-code.html#cb6-39" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
+<span id="cb6-40"><a href="06-appdev-code.html#cb6-40" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb6-41"><a href="06-appdev-code.html#cb6-41" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="step-1-libraries-and-data-preparation" class="section level3 hasAnchor" number="8.3.4">
-<h3><span class="header-section-number">B.3.4</span> Step 1: Libraries and Data Preparation<a href="06-appdev-code.html#step-1-libraries-and-data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>First, we need to load the necessary R packages. These libraries enable various functionalities: <code>shiny</code> for the app framework, leaflet for interactive maps, <code>sf</code> for handling geographic data, <code>plotly</code> for interactive charts, and <code>dplyr</code> for data manipulation.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="06-appdev-code.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb6-2"><a href="06-appdev-code.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb6-3"><a href="06-appdev-code.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb6-4"><a href="06-appdev-code.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb6-5"><a href="06-appdev-code.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
-<p>Now, let’s load and prepare the NYC demographic GeoJSON data. This file format is commonly used for geographic data structures.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="06-appdev-code.html#cb7-1" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;NYC_nbrhd_data.geojson&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-2"><a href="06-appdev-code.html#cb7-2" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(nyc_data)</span>
-<span id="cb7-3"><a href="06-appdev-code.html#cb7-3" aria-hidden="true" tabindex="-1"></a>nyc_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div>
+<div id="tab-2-socioeconomic-demographics" class="section level5 hasAnchor" number="8.4.3.1.2">
+<h5><span class="header-section-number">B.4.3.1.2</span> Tab 2: Socioeconomic Demographics<a href="06-appdev-code.html#tab-2-socioeconomic-demographics" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Similar in structure to Tab 1, now let’s create the Tab 2, which focuses on socioeconomic indicators such as poverty levels and rent burden.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="06-appdev-code.html#cb7-1" aria-hidden="true" tabindex="-1"></a>tab2_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Socioeconomic Demographics&quot;</span>,</span>
+<span id="cb7-2"><a href="06-appdev-code.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb7-3"><a href="06-appdev-code.html#cb7-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
+<span id="cb7-4"><a href="06-appdev-code.html#cb7-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color_socio&quot;</span>, <span class="st">&quot;Demographic variable:&quot;</span>,</span>
+<span id="cb7-5"><a href="06-appdev-code.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent in Poverty&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctpov&quot;</span>,</span>
+<span id="cb7-6"><a href="06-appdev-code.html#cb7-6" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 30% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.30&quot;</span>,</span>
+<span id="cb7-7"><a href="06-appdev-code.html#cb7-7" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 50% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.50&quot;</span>),</span>
+<span id="cb7-8"><a href="06-appdev-code.html#cb7-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;pctpov&quot;</span>),</span>
+<span id="cb7-9"><a href="06-appdev-code.html#cb7-9" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;neighborhood_socio&quot;</span>, <span class="st">&quot;Select Neighborhood:&quot;</span>,</span>
+<span id="cb7-10"><a href="06-appdev-code.html#cb7-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> nyc_data<span class="sc">$</span>NTAName,</span>
+<span id="cb7-11"><a href="06-appdev-code.html#cb7-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;Pelham Bay-Country Club-City Island&quot;</span>),</span>
+<span id="cb7-12"><a href="06-appdev-code.html#cb7-12" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>),</span>
+<span id="cb7-13"><a href="06-appdev-code.html#cb7-13" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">br</span>(),</span>
+<span id="cb7-14"><a href="06-appdev-code.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">h3</span>(<span class="st">&quot;About This App&quot;</span>),</span>
+<span id="cb7-15"><a href="06-appdev-code.html#cb7-15" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">p</span>(<span class="st">&quot;This application provides a visual representation of demographic and health data across New York City&#39;s neighborhoods.&quot;</span>),</span>
+<span id="cb7-16"><a href="06-appdev-code.html#cb7-16" aria-hidden="true" tabindex="-1"></a>                      ),</span>
+<span id="cb7-17"><a href="06-appdev-code.html#cb7-17" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
+<span id="cb7-18"><a href="06-appdev-code.html#cb7-18" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(<span class="fu">leafletOutput</span>(<span class="st">&quot;map_socio&quot;</span>),</span>
+<span id="cb7-19"><a href="06-appdev-code.html#cb7-19" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">br</span>(),</span>
+<span id="cb7-20"><a href="06-appdev-code.html#cb7-20" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(<span class="fu">plotlyOutput</span>(<span class="st">&quot;socioDemoChart&quot;</span>))</span>
+<span id="cb7-21"><a href="06-appdev-code.html#cb7-21" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb7-22"><a href="06-appdev-code.html#cb7-22" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb7-23"><a href="06-appdev-code.html#cb7-23" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb7-24"><a href="06-appdev-code.html#cb7-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="step-2-define-the-user-interface" class="section level3 hasAnchor" number="8.3.5">
-<h3><span class="header-section-number">B.3.5</span> Step 2: Define the User Interface<a href="06-appdev-code.html#step-2-define-the-user-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The user interface is defined in a way that allows users to interact with the application. First, we aim to includes dropdown menus for selecting demographic variables and neighborhoods, and panels for displaying maps and charts. Then, we want the final UI organize into three main tabs, allowing users to interactively explore different facets of the NYC neighborhood data.</p>
-<div id="tab-1-map-racial-demographics" class="section level4 hasAnchor" number="8.3.5.1">
-<h4><span class="header-section-number">B.3.5.1</span> Tab 1: Map &amp; Racial Demographics<a href="06-appdev-code.html#tab-1-map-racial-demographics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Let’s create the first tab! This tab features a map and a demographic chart, with controls for selecting demographic variables and neighborhoods. In this tab, we will include:
-- Demographic Variable Selection: Provides options related to economic conditions.
-- Interactive map and chart: Visualize the selected economic data spatially and through a bar chart.</p>
-<p>Here are the explanation for some functions that we used below:
-- <code>selectInput</code> for demographic variable: Allows users to select which <code>demographic</code> statistic to visualize on the map.
-- <code>selectInput</code> for neighborhood: Enables users to pick a specific neighborhood for detailed demographic breakdown in the chart.
-- <code>leafletOutput</code> and <code>plotlyOutput</code>: Reserved spaces in the UI for displaying the map and the chart respectively.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="06-appdev-code.html#cb8-1" aria-hidden="true" tabindex="-1"></a>tab1_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Map &amp; Racial Demographics&quot;</span>,</span>
+<div id="tab-3-severe-maternal-morbidity-preterm-birth-rates" class="section level5 hasAnchor" number="8.4.3.1.3">
+<h5><span class="header-section-number">B.4.3.1.3</span> Tab 3: Severe Maternal Morbidity &amp; Preterm Birth Rates<a href="06-appdev-code.html#tab-3-severe-maternal-morbidity-preterm-birth-rates" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>In Tab 3, we want to introduces more health-related variables, displaying a map and a scatter plot. The scatter plot takes time to load, so further de-bugging may be necessary. Try alternate libraries, styles, and new approaches to refine further.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="06-appdev-code.html#cb8-1" aria-hidden="true" tabindex="-1"></a>tab3_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Severe Maternal Morbidity &amp; Preterm Birth Rates&quot;</span>,</span>
 <span id="cb8-2"><a href="06-appdev-code.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
 <span id="cb8-3"><a href="06-appdev-code.html#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
-<span id="cb8-4"><a href="06-appdev-code.html#cb8-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color&quot;</span>, <span class="st">&quot;Demographic variable:&quot;</span>,</span>
-<span id="cb8-5"><a href="06-appdev-code.html#cb8-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent Black&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctblack&quot;</span>,</span>
-<span id="cb8-6"><a href="06-appdev-code.html#cb8-6" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Percent Hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;pcthisp&quot;</span>,</span>
-<span id="cb8-7"><a href="06-appdev-code.html#cb8-7" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Percent White&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctwhite&quot;</span>),</span>
-<span id="cb8-8"><a href="06-appdev-code.html#cb8-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;pctblack&quot;</span>),</span>
-<span id="cb8-9"><a href="06-appdev-code.html#cb8-9" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;neighborhood&quot;</span>, <span class="st">&quot;Select Neighborhood:&quot;</span>,</span>
-<span id="cb8-10"><a href="06-appdev-code.html#cb8-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> nyc_data<span class="sc">$</span>NTAName,</span>
-<span id="cb8-11"><a href="06-appdev-code.html#cb8-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;Pelham Bay-Country Club-City Island&quot;</span>),</span>
-<span id="cb8-12"><a href="06-appdev-code.html#cb8-12" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>)</span>
-<span id="cb8-13"><a href="06-appdev-code.html#cb8-13" aria-hidden="true" tabindex="-1"></a>                      ),</span>
-<span id="cb8-14"><a href="06-appdev-code.html#cb8-14" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
-<span id="cb8-15"><a href="06-appdev-code.html#cb8-15" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(</span>
-<span id="cb8-16"><a href="06-appdev-code.html#cb8-16" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">leafletOutput</span>(<span class="st">&quot;map&quot;</span>)),</span>
-<span id="cb8-17"><a href="06-appdev-code.html#cb8-17" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">plotlyOutput</span>(<span class="st">&quot;racialDemoChart&quot;</span>))</span>
-<span id="cb8-18"><a href="06-appdev-code.html#cb8-18" aria-hidden="true" tabindex="-1"></a>                        )</span>
-<span id="cb8-19"><a href="06-appdev-code.html#cb8-19" aria-hidden="true" tabindex="-1"></a>                      )</span>
-<span id="cb8-20"><a href="06-appdev-code.html#cb8-20" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb8-21"><a href="06-appdev-code.html#cb8-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb8-4"><a href="06-appdev-code.html#cb8-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color_health&quot;</span>, <span class="st">&quot;Health variable:&quot;</span>,</span>
+<span id="cb8-5"><a href="06-appdev-code.html#cb8-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Severe Maternal Morbidity Rate&quot;</span> <span class="ot">=</span> <span class="st">&quot;smmrate&quot;</span>,</span>
+<span id="cb8-6"><a href="06-appdev-code.html#cb8-6" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Preterm Birth Rate&quot;</span> <span class="ot">=</span> <span class="st">&quot;ptbrate&quot;</span>),</span>
+<span id="cb8-7"><a href="06-appdev-code.html#cb8-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;smmrate&quot;</span>),</span>
+<span id="cb8-8"><a href="06-appdev-code.html#cb8-8" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>),</span>
+<span id="cb8-9"><a href="06-appdev-code.html#cb8-9" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">br</span>(),</span>
+<span id="cb8-10"><a href="06-appdev-code.html#cb8-10" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">h3</span>(<span class="st">&quot;About This App&quot;</span>),</span>
+<span id="cb8-11"><a href="06-appdev-code.html#cb8-11" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">p</span>(<span class="st">&quot;This application provides a visual representation of demographic and health data across New York City&#39;s neighborhoods.&quot;</span>),</span>
+<span id="cb8-12"><a href="06-appdev-code.html#cb8-12" aria-hidden="true" tabindex="-1"></a>                      ),</span>
+<span id="cb8-13"><a href="06-appdev-code.html#cb8-13" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
+<span id="cb8-14"><a href="06-appdev-code.html#cb8-14" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(<span class="fu">leafletOutput</span>(<span class="st">&quot;map_health&quot;</span>),</span>
+<span id="cb8-15"><a href="06-appdev-code.html#cb8-15" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">br</span>(),</span>
+<span id="cb8-16"><a href="06-appdev-code.html#cb8-16" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(<span class="fu">plotlyOutput</span>(<span class="st">&quot;healthScatterChart&quot;</span>))</span>
+<span id="cb8-17"><a href="06-appdev-code.html#cb8-17" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb8-18"><a href="06-appdev-code.html#cb8-18" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb8-19"><a href="06-appdev-code.html#cb8-19" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb8-20"><a href="06-appdev-code.html#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="tab-2-socioeconomic-demographics" class="section level4 hasAnchor" number="8.3.5.2">
-<h4><span class="header-section-number">B.3.5.2</span> Tab 2: Socioeconomic Demographics<a href="06-appdev-code.html#tab-2-socioeconomic-demographics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Similar in structure to Tab 1, now let’s create the Tab 2, which focuses on socioeconomic indicators such as poverty levels and rent burden.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="06-appdev-code.html#cb9-1" aria-hidden="true" tabindex="-1"></a>tab2_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Socioeconomic Demographics&quot;</span>,</span>
-<span id="cb9-2"><a href="06-appdev-code.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
-<span id="cb9-3"><a href="06-appdev-code.html#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
-<span id="cb9-4"><a href="06-appdev-code.html#cb9-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color_socio&quot;</span>, <span class="st">&quot;Demographic variable:&quot;</span>,</span>
-<span id="cb9-5"><a href="06-appdev-code.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Percent in Poverty&quot;</span> <span class="ot">=</span> <span class="st">&quot;pctpov&quot;</span>,</span>
-<span id="cb9-6"><a href="06-appdev-code.html#cb9-6" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 30% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.30&quot;</span>,</span>
-<span id="cb9-7"><a href="06-appdev-code.html#cb9-7" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Rent &lt; 50% of Income&quot;</span> <span class="ot">=</span> <span class="st">&quot;rent.50&quot;</span>),</span>
-<span id="cb9-8"><a href="06-appdev-code.html#cb9-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;pctpov&quot;</span>),</span>
-<span id="cb9-9"><a href="06-appdev-code.html#cb9-9" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;neighborhood_socio&quot;</span>, <span class="st">&quot;Select Neighborhood:&quot;</span>,</span>
-<span id="cb9-10"><a href="06-appdev-code.html#cb9-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> nyc_data<span class="sc">$</span>NTAName,</span>
-<span id="cb9-11"><a href="06-appdev-code.html#cb9-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;Pelham Bay-Country Club-City Island&quot;</span>),</span>
-<span id="cb9-12"><a href="06-appdev-code.html#cb9-12" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>)</span>
-<span id="cb9-13"><a href="06-appdev-code.html#cb9-13" aria-hidden="true" tabindex="-1"></a>                      ),</span>
-<span id="cb9-14"><a href="06-appdev-code.html#cb9-14" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
-<span id="cb9-15"><a href="06-appdev-code.html#cb9-15" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(</span>
-<span id="cb9-16"><a href="06-appdev-code.html#cb9-16" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">leafletOutput</span>(<span class="st">&quot;map_socio&quot;</span>)),</span>
-<span id="cb9-17"><a href="06-appdev-code.html#cb9-17" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">plotlyOutput</span>(<span class="st">&quot;socioDemoChart&quot;</span>))</span>
-<span id="cb9-18"><a href="06-appdev-code.html#cb9-18" aria-hidden="true" tabindex="-1"></a>                        )</span>
-<span id="cb9-19"><a href="06-appdev-code.html#cb9-19" aria-hidden="true" tabindex="-1"></a>                      )</span>
-<span id="cb9-20"><a href="06-appdev-code.html#cb9-20" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb9-21"><a href="06-appdev-code.html#cb9-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-</div>
-<div id="tab-3-severe-maternal-morbidity-preterm-birth-rates" class="section level4 hasAnchor" number="8.3.5.3">
-<h4><span class="header-section-number">B.3.5.3</span> Tab 3: Severe Maternal Morbidity &amp; Preterm Birth Rates<a href="06-appdev-code.html#tab-3-severe-maternal-morbidity-preterm-birth-rates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In Tab 3, we want to introduces more health-related variables, displaying a map and a scatter plot.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="06-appdev-code.html#cb10-1" aria-hidden="true" tabindex="-1"></a>tab3_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;Severe Maternal Morbidity &amp; Preterm Birth Rates&quot;</span>,</span>
-<span id="cb10-2"><a href="06-appdev-code.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sidebarLayout</span>(</span>
-<span id="cb10-3"><a href="06-appdev-code.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sidebarPanel</span>(</span>
-<span id="cb10-4"><a href="06-appdev-code.html#cb10-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">selectInput</span>(<span class="st">&quot;color_health&quot;</span>, <span class="st">&quot;Health variable:&quot;</span>,</span>
-<span id="cb10-5"><a href="06-appdev-code.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">&quot;Severe Maternal Morbidity Rate&quot;</span> <span class="ot">=</span> <span class="st">&quot;smmrate&quot;</span>,</span>
-<span id="cb10-6"><a href="06-appdev-code.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Preterm Birth Rate&quot;</span> <span class="ot">=</span> <span class="st">&quot;ptbrate&quot;</span>),</span>
-<span id="cb10-7"><a href="06-appdev-code.html#cb10-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">selected =</span> <span class="st">&quot;smmrate&quot;</span>),</span>
-<span id="cb10-8"><a href="06-appdev-code.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">helpText</span>(<span class="st">&quot;Data source: NYC Neighborhood Data&quot;</span>)</span>
-<span id="cb10-9"><a href="06-appdev-code.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                      ),</span>
-<span id="cb10-10"><a href="06-appdev-code.html#cb10-10" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">mainPanel</span>(</span>
-<span id="cb10-11"><a href="06-appdev-code.html#cb10-11" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">fluidRow</span>(</span>
-<span id="cb10-12"><a href="06-appdev-code.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">leafletOutput</span>(<span class="st">&quot;map_health&quot;</span>)),</span>
-<span id="cb10-13"><a href="06-appdev-code.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">column</span>(<span class="dv">12</span>, <span class="fu">plotlyOutput</span>(<span class="st">&quot;healthScatterChart&quot;</span>))</span>
-<span id="cb10-14"><a href="06-appdev-code.html#cb10-14" aria-hidden="true" tabindex="-1"></a>                        )</span>
-<span id="cb10-15"><a href="06-appdev-code.html#cb10-15" aria-hidden="true" tabindex="-1"></a>                      )</span>
-<span id="cb10-16"><a href="06-appdev-code.html#cb10-16" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb10-17"><a href="06-appdev-code.html#cb10-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-</div>
-<div id="tab-4-about" class="section level4 hasAnchor" number="8.3.5.4">
-<h4><span class="header-section-number">B.3.5.4</span> Tab 4: About<a href="06-appdev-code.html#tab-4-about" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="tab-4-about" class="section level5 hasAnchor" number="8.4.3.1.4">
+<h5><span class="header-section-number">B.4.3.1.4</span> Tab 4: About<a href="06-appdev-code.html#tab-4-about" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Finally, we also want to include a Tab 4 that provides contextual information about the application, explaining its purpose and the data source.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="06-appdev-code.html#cb11-1" aria-hidden="true" tabindex="-1"></a>tab4_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;About&quot;</span>,</span>
-<span id="cb11-2"><a href="06-appdev-code.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">h3</span>(<span class="st">&quot;About This App&quot;</span>),</span>
-<span id="cb11-3"><a href="06-appdev-code.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;This application provides a visual representation of demographic and health data across New York City&#39;s neighborhoods.&quot;</span>),</span>
-<span id="cb11-4"><a href="06-appdev-code.html#cb11-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Select different demographic and health variables from the dropdown menus to explore the data.&quot;</span>),</span>
-<span id="cb11-5"><a href="06-appdev-code.html#cb11-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Data source: NYC Neighborhood Data, provided in GeoJSON format and visualized using Leaflet and Plotly in a Shiny application.&quot;</span>)</span>
-<span id="cb11-6"><a href="06-appdev-code.html#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>We are making a prototype, so use some “Lorem Ipsum” placeholder language that we can update in the future.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="06-appdev-code.html#cb9-1" aria-hidden="true" tabindex="-1"></a>tab4_ui <span class="ot">&lt;-</span> <span class="fu">tabPanel</span>(<span class="st">&quot;About&quot;</span>,</span>
+<span id="cb9-2"><a href="06-appdev-code.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">h3</span>(<span class="st">&quot;About This App&quot;</span>),</span>
+<span id="cb9-3"><a href="06-appdev-code.html#cb9-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;This application provides a visual representation of demographic and health data across New York City&#39;s neighborhoods. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi porta lorem mollis aliquam ut. &quot;</span>),</span>
+<span id="cb9-4"><a href="06-appdev-code.html#cb9-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Select different demographic and health variables from the dropdown menus to explore the data. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Eget gravida cum sociis natoque penatibus. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. &quot;</span>),</span>
+<span id="cb9-5"><a href="06-appdev-code.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">p</span>(<span class="st">&quot;Data source: NYC Neighborhood Data, provided in GeoJSON format and visualized using Leaflet and Plotly in a Shiny application.&quot;</span>)</span>
+<span id="cb9-6"><a href="06-appdev-code.html#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 </div>
-<div id="step-3-define-server-logic" class="section level3 hasAnchor" number="8.3.6">
-<h3><span class="header-section-number">B.3.6</span> Step 3: Define Server Logic<a href="06-appdev-code.html#step-3-define-server-logic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="define-server-logic" class="section level4 hasAnchor" number="8.4.3.2">
+<h4><span class="header-section-number">B.4.3.2</span> Define Server Logic<a href="06-appdev-code.html#define-server-logic" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>After define the user interface, we will move on to define the server logic. It processes user inputs from the UI and updates the outputs (maps and charts). It dynamically reacts to user interactions such as selecting a neighborhood or a demographic variable.</p>
-<div id="server-logic-for-tab-1" class="section level4 hasAnchor" number="8.3.6.1">
-<h4><span class="header-section-number">B.3.6.1</span> Server Logic for Tab 1:<a href="06-appdev-code.html#server-logic-for-tab-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="server-logic-for-tab-1" class="section level5 hasAnchor" number="8.4.3.2.1">
+<h5><span class="header-section-number">B.4.3.2.1</span> Server Logic for Tab 1:<a href="06-appdev-code.html#server-logic-for-tab-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Now, we will create server code to handle the dynamic visualization of racial demographics within New York City neighborhoods in Tab 1. It renders an interactive map and a bar chart based on user inputs, showing the distribution of different racial groups. The map highlights neighborhoods with varying demographic densities, while the bar chart provides detailed statistics for a selected neighborhood.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="06-appdev-code.html#cb12-1" aria-hidden="true" tabindex="-1"></a>tab1_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb12-2"><a href="06-appdev-code.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Racial Demographics</span></span>
-<span id="cb12-3"><a href="06-appdev-code.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="06-appdev-code.html#cb10-1" aria-hidden="true" tabindex="-1"></a>tab1_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb10-2"><a href="06-appdev-code.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Racial Demographics</span></span>
+<span id="cb10-3"><a href="06-appdev-code.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb10-4"><a href="06-appdev-code.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb10-5"><a href="06-appdev-code.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-6"><a href="06-appdev-code.html#cb10-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
+<span id="cb10-7"><a href="06-appdev-code.html#cb10-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb10-8"><a href="06-appdev-code.html#cb10-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-9"><a href="06-appdev-code.html#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="cb10-10"><a href="06-appdev-code.html#cb10-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb10-11"><a href="06-appdev-code.html#cb10-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
+<span id="cb10-12"><a href="06-appdev-code.html#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
+<span id="cb10-13"><a href="06-appdev-code.html#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb10-14"><a href="06-appdev-code.html#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="cb10-15"><a href="06-appdev-code.html#cb10-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb10-16"><a href="06-appdev-code.html#cb10-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="06-appdev-code.html#cb10-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="cb10-18"><a href="06-appdev-code.html#cb10-18" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb10-19"><a href="06-appdev-code.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-20"><a href="06-appdev-code.html#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Racial Demographics chart</span></span>
+<span id="cb10-21"><a href="06-appdev-code.html#cb10-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>racialDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="cb10-22"><a href="06-appdev-code.html#cb10-22" aria-hidden="true" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood, ]</span>
+<span id="cb10-23"><a href="06-appdev-code.html#cb10-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-24"><a href="06-appdev-code.html#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
+<span id="cb10-25"><a href="06-appdev-code.html#cb10-25" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
+<span id="cb10-26"><a href="06-appdev-code.html#cb10-26" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(racial_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
+<span id="cb10-27"><a href="06-appdev-code.html#cb10-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-28"><a href="06-appdev-code.html#cb10-28" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="fu">c</span>(<span class="st">&quot;pctblack&quot;</span>, <span class="st">&quot;pcthisp&quot;</span>, <span class="st">&quot;pctwhite&quot;</span>, <span class="st">&quot;pctapi&quot;</span>, <span class="st">&quot;pctother&quot;</span>)]</span>
+<span id="cb10-29"><a href="06-appdev-code.html#cb10-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-30"><a href="06-appdev-code.html#cb10-30" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">t</span>(racial_data)</span>
+<span id="cb10-31"><a href="06-appdev-code.html#cb10-31" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(racial_data)</span>
+<span id="cb10-32"><a href="06-appdev-code.html#cb10-32" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Race =</span> <span class="fu">rownames</span>(racial_data), <span class="at">Percentage =</span> racial_data[, <span class="dv">1</span>])</span>
+<span id="cb10-33"><a href="06-appdev-code.html#cb10-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(racial_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb10-34"><a href="06-appdev-code.html#cb10-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-35"><a href="06-appdev-code.html#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(racial_data), <span class="at">x =</span> <span class="sc">~</span>Race, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Race) <span class="sc">%&gt;%</span></span>
+<span id="cb10-36"><a href="06-appdev-code.html#cb10-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Racial Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood),</span>
+<span id="cb10-37"><a href="06-appdev-code.html#cb10-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Race&quot;</span>),</span>
+<span id="cb10-38"><a href="06-appdev-code.html#cb10-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
+<span id="cb10-39"><a href="06-appdev-code.html#cb10-39" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb10-40"><a href="06-appdev-code.html#cb10-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>The server functions for other tabs follow a similar structure but focus on different data attributes. So, let’s define the server logic for other three tabs.</p>
+</div>
+<div id="server-logic-for-tab-2" class="section level5 hasAnchor" number="8.4.3.2.2">
+<h5><span class="header-section-number">B.4.3.2.2</span> Server Logic for Tab 2:<a href="06-appdev-code.html#server-logic-for-tab-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="06-appdev-code.html#cb11-1" aria-hidden="true" tabindex="-1"></a>tab2_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb11-2"><a href="06-appdev-code.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Socioeconomic Demographics</span></span>
+<span id="cb11-3"><a href="06-appdev-code.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map_socio <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb11-4"><a href="06-appdev-code.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb11-5"><a href="06-appdev-code.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-6"><a href="06-appdev-code.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color_socio]]), ]</span>
+<span id="cb11-7"><a href="06-appdev-code.html#cb11-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color_socio]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb11-8"><a href="06-appdev-code.html#cb11-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-9"><a href="06-appdev-code.html#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="06-appdev-code.html#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb11-11"><a href="06-appdev-code.html#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
+<span id="cb11-12"><a href="06-appdev-code.html#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color_socio]]),</span>
+<span id="cb11-13"><a href="06-appdev-code.html#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb11-14"><a href="06-appdev-code.html#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
+<span id="cb11-15"><a href="06-appdev-code.html#cb11-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color_socio, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color_socio]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb11-16"><a href="06-appdev-code.html#cb11-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-17"><a href="06-appdev-code.html#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
+<span id="cb11-18"><a href="06-appdev-code.html#cb11-18" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb11-19"><a href="06-appdev-code.html#cb11-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-20"><a href="06-appdev-code.html#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Socioeconomic Demographics chart</span></span>
+<span id="cb11-21"><a href="06-appdev-code.html#cb11-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>socioDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="cb11-22"><a href="06-appdev-code.html#cb11-22" aria-hidden="true" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood_socio, ]</span>
+<span id="cb11-23"><a href="06-appdev-code.html#cb11-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-24"><a href="06-appdev-code.html#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
+<span id="cb11-25"><a href="06-appdev-code.html#cb11-25" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
+<span id="cb11-26"><a href="06-appdev-code.html#cb11-26" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(socio_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
+<span id="cb11-27"><a href="06-appdev-code.html#cb11-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-28"><a href="06-appdev-code.html#cb11-28" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="fu">c</span>(<span class="st">&quot;pctpov&quot;</span>, <span class="st">&quot;rent.30&quot;</span>, <span class="st">&quot;rent.50&quot;</span>)]</span>
+<span id="cb11-29"><a href="06-appdev-code.html#cb11-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-30"><a href="06-appdev-code.html#cb11-30" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">t</span>(socio_data)</span>
+<span id="cb11-31"><a href="06-appdev-code.html#cb11-31" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(socio_data)</span>
+<span id="cb11-32"><a href="06-appdev-code.html#cb11-32" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Category =</span> <span class="fu">rownames</span>(socio_data), <span class="at">Percentage =</span> socio_data[, <span class="dv">1</span>])</span>
+<span id="cb11-33"><a href="06-appdev-code.html#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(socio_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb11-34"><a href="06-appdev-code.html#cb11-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-35"><a href="06-appdev-code.html#cb11-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(socio_data), <span class="at">x =</span> <span class="sc">~</span>Category, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Category) <span class="sc">%&gt;%</span></span>
+<span id="cb11-36"><a href="06-appdev-code.html#cb11-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Socioeconomic Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood_socio),</span>
+<span id="cb11-37"><a href="06-appdev-code.html#cb11-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Category&quot;</span>),</span>
+<span id="cb11-38"><a href="06-appdev-code.html#cb11-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
+<span id="cb11-39"><a href="06-appdev-code.html#cb11-39" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb11-40"><a href="06-appdev-code.html#cb11-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="server-logic-for-tab-3" class="section level5 hasAnchor" number="8.4.3.2.3">
+<h5><span class="header-section-number">B.4.3.2.3</span> Server Logic for Tab 3:<a href="06-appdev-code.html#server-logic-for-tab-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="06-appdev-code.html#cb12-1" aria-hidden="true" tabindex="-1"></a>tab3_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb12-2"><a href="06-appdev-code.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Health Demographics</span></span>
+<span id="cb12-3"><a href="06-appdev-code.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map_health <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
 <span id="cb12-4"><a href="06-appdev-code.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb12-5"><a href="06-appdev-code.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-6"><a href="06-appdev-code.html#cb12-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color]]), ]</span>
-<span id="cb12-7"><a href="06-appdev-code.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color]], <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb12-6"><a href="06-appdev-code.html#cb12-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color_health]]), ]</span>
+<span id="cb12-7"><a href="06-appdev-code.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;PuBuGn&quot;</span>, valid_data[[input<span class="sc">$</span>color_health]], <span class="at">n =</span> <span class="dv">5</span>)</span>
 <span id="cb12-8"><a href="06-appdev-code.html#cb12-8" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb12-9"><a href="06-appdev-code.html#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
 <span id="cb12-10"><a href="06-appdev-code.html#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
 <span id="cb12-11"><a href="06-appdev-code.html#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
-<span id="cb12-12"><a href="06-appdev-code.html#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color]]),</span>
+<span id="cb12-12"><a href="06-appdev-code.html#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color_health]]),</span>
 <span id="cb12-13"><a href="06-appdev-code.html#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
 <span id="cb12-14"><a href="06-appdev-code.html#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
-<span id="cb12-15"><a href="06-appdev-code.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb12-15"><a href="06-appdev-code.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color_health, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color_health]], <span class="dv">2</span>)))</span>
 <span id="cb12-16"><a href="06-appdev-code.html#cb12-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
 <span id="cb12-17"><a href="06-appdev-code.html#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
 <span id="cb12-18"><a href="06-appdev-code.html#cb12-18" aria-hidden="true" tabindex="-1"></a>  })</span>
 <span id="cb12-19"><a href="06-appdev-code.html#cb12-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-20"><a href="06-appdev-code.html#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Racial Demographics chart</span></span>
-<span id="cb12-21"><a href="06-appdev-code.html#cb12-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>racialDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
-<span id="cb12-22"><a href="06-appdev-code.html#cb12-22" aria-hidden="true" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood, ]</span>
-<span id="cb12-23"><a href="06-appdev-code.html#cb12-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-24"><a href="06-appdev-code.html#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
-<span id="cb12-25"><a href="06-appdev-code.html#cb12-25" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
-<span id="cb12-26"><a href="06-appdev-code.html#cb12-26" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(racial_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
-<span id="cb12-27"><a href="06-appdev-code.html#cb12-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-28"><a href="06-appdev-code.html#cb12-28" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> racial_data[, <span class="fu">c</span>(<span class="st">&quot;pctblack&quot;</span>, <span class="st">&quot;pcthisp&quot;</span>, <span class="st">&quot;pctwhite&quot;</span>, <span class="st">&quot;pctapi&quot;</span>, <span class="st">&quot;pctother&quot;</span>)]</span>
-<span id="cb12-29"><a href="06-appdev-code.html#cb12-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-30"><a href="06-appdev-code.html#cb12-30" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">t</span>(racial_data)</span>
-<span id="cb12-31"><a href="06-appdev-code.html#cb12-31" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(racial_data)</span>
-<span id="cb12-32"><a href="06-appdev-code.html#cb12-32" aria-hidden="true" tabindex="-1"></a>    racial_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Race =</span> <span class="fu">rownames</span>(racial_data), <span class="at">Percentage =</span> racial_data[, <span class="dv">1</span>])</span>
-<span id="cb12-33"><a href="06-appdev-code.html#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(racial_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-34"><a href="06-appdev-code.html#cb12-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-35"><a href="06-appdev-code.html#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(racial_data), <span class="at">x =</span> <span class="sc">~</span>Race, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Race) <span class="sc">%&gt;%</span></span>
-<span id="cb12-36"><a href="06-appdev-code.html#cb12-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Racial Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood),</span>
-<span id="cb12-37"><a href="06-appdev-code.html#cb12-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Race&quot;</span>),</span>
-<span id="cb12-38"><a href="06-appdev-code.html#cb12-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
-<span id="cb12-39"><a href="06-appdev-code.html#cb12-39" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb12-40"><a href="06-appdev-code.html#cb12-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>The server functions for other tabs follow a similar structure but focus on different data attributes. So, let’s define the server logic for other three tabs.</p>
-</div>
-<div id="server-logic-for-tab-2" class="section level4 hasAnchor" number="8.3.6.2">
-<h4><span class="header-section-number">B.3.6.2</span> Server Logic for Tab 2:<a href="06-appdev-code.html#server-logic-for-tab-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="06-appdev-code.html#cb13-1" aria-hidden="true" tabindex="-1"></a>tab2_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb13-2"><a href="06-appdev-code.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Socioeconomic Demographics</span></span>
-<span id="cb13-3"><a href="06-appdev-code.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map_socio <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
-<span id="cb13-4"><a href="06-appdev-code.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb13-5"><a href="06-appdev-code.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-6"><a href="06-appdev-code.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color_socio]]), ]</span>
-<span id="cb13-7"><a href="06-appdev-code.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color_socio]], <span class="at">n =</span> <span class="dv">5</span>)</span>
-<span id="cb13-8"><a href="06-appdev-code.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-9"><a href="06-appdev-code.html#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
-<span id="cb13-10"><a href="06-appdev-code.html#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
-<span id="cb13-11"><a href="06-appdev-code.html#cb13-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
-<span id="cb13-12"><a href="06-appdev-code.html#cb13-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color_socio]]),</span>
-<span id="cb13-13"><a href="06-appdev-code.html#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb13-14"><a href="06-appdev-code.html#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
-<span id="cb13-15"><a href="06-appdev-code.html#cb13-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color_socio, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color_socio]], <span class="dv">2</span>), <span class="st">&quot;%&quot;</span>))</span>
-<span id="cb13-16"><a href="06-appdev-code.html#cb13-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-17"><a href="06-appdev-code.html#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
-<span id="cb13-18"><a href="06-appdev-code.html#cb13-18" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb13-19"><a href="06-appdev-code.html#cb13-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-20"><a href="06-appdev-code.html#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Socioeconomic Demographics chart</span></span>
-<span id="cb13-21"><a href="06-appdev-code.html#cb13-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>socioDemoChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
-<span id="cb13-22"><a href="06-appdev-code.html#cb13-22" aria-hidden="true" tabindex="-1"></a>    chart_data <span class="ot">&lt;-</span> nyc_data[nyc_data<span class="sc">$</span>NTAName <span class="sc">==</span> input<span class="sc">$</span>neighborhood_socio, ]</span>
-<span id="cb13-23"><a href="06-appdev-code.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-24"><a href="06-appdev-code.html#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract data and remove &quot;geometry&quot; column</span></span>
-<span id="cb13-25"><a href="06-appdev-code.html#cb13-25" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(chart_data)</span>
-<span id="cb13-26"><a href="06-appdev-code.html#cb13-26" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(socio_data) <span class="sc">==</span> <span class="st">&quot;geometry&quot;</span>)]</span>
-<span id="cb13-27"><a href="06-appdev-code.html#cb13-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-28"><a href="06-appdev-code.html#cb13-28" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> socio_data[, <span class="fu">c</span>(<span class="st">&quot;pctpov&quot;</span>, <span class="st">&quot;rent.30&quot;</span>, <span class="st">&quot;rent.50&quot;</span>)]</span>
-<span id="cb13-29"><a href="06-appdev-code.html#cb13-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-30"><a href="06-appdev-code.html#cb13-30" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">t</span>(socio_data)</span>
-<span id="cb13-31"><a href="06-appdev-code.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(socio_data)</span>
-<span id="cb13-32"><a href="06-appdev-code.html#cb13-32" aria-hidden="true" tabindex="-1"></a>    socio_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Category =</span> <span class="fu">rownames</span>(socio_data), <span class="at">Percentage =</span> socio_data[, <span class="dv">1</span>])</span>
-<span id="cb13-33"><a href="06-appdev-code.html#cb13-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(socio_data) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb13-34"><a href="06-appdev-code.html#cb13-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-35"><a href="06-appdev-code.html#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(socio_data), <span class="at">x =</span> <span class="sc">~</span>Category, <span class="at">y =</span> <span class="sc">~</span>Percentage, <span class="at">type =</span> <span class="st">&#39;bar&#39;</span>, <span class="at">color =</span> <span class="sc">~</span>Category) <span class="sc">%&gt;%</span></span>
-<span id="cb13-36"><a href="06-appdev-code.html#cb13-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Socioeconomic Demographics -&quot;</span>, input<span class="sc">$</span>neighborhood_socio),</span>
-<span id="cb13-37"><a href="06-appdev-code.html#cb13-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Category&quot;</span>),</span>
-<span id="cb13-38"><a href="06-appdev-code.html#cb13-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Percentage&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">tickvals =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)))</span>
-<span id="cb13-39"><a href="06-appdev-code.html#cb13-39" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb13-40"><a href="06-appdev-code.html#cb13-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</div>
-<div id="server-logic-for-tab-3" class="section level4 hasAnchor" number="8.3.6.3">
-<h4><span class="header-section-number">B.3.6.3</span> Server Logic for Tab 3:<a href="06-appdev-code.html#server-logic-for-tab-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="06-appdev-code.html#cb14-1" aria-hidden="true" tabindex="-1"></a>tab3_server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb14-2"><a href="06-appdev-code.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Map output for Health Demographics</span></span>
-<span id="cb14-3"><a href="06-appdev-code.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>map_health <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
-<span id="cb14-4"><a href="06-appdev-code.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    map_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nyc_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb14-5"><a href="06-appdev-code.html#cb14-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-6"><a href="06-appdev-code.html#cb14-6" aria-hidden="true" tabindex="-1"></a>    valid_data <span class="ot">&lt;-</span> map_data[<span class="sc">!</span><span class="fu">is.na</span>(map_data[[input<span class="sc">$</span>color_health]]), ]</span>
-<span id="cb14-7"><a href="06-appdev-code.html#cb14-7" aria-hidden="true" tabindex="-1"></a>    pal <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, valid_data[[input<span class="sc">$</span>color_health]], <span class="at">n =</span> <span class="dv">5</span>)</span>
-<span id="cb14-8"><a href="06-appdev-code.html#cb14-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-9"><a href="06-appdev-code.html#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>(valid_data) <span class="sc">%&gt;%</span></span>
-<span id="cb14-10"><a href="06-appdev-code.html#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
-<span id="cb14-11"><a href="06-appdev-code.html#cb14-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addPolygons</span>(</span>
-<span id="cb14-12"><a href="06-appdev-code.html#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">pal</span>(valid_data[[input<span class="sc">$</span>color_health]]),</span>
-<span id="cb14-13"><a href="06-appdev-code.html#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">fillOpacity =</span> <span class="fl">0.7</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb14-14"><a href="06-appdev-code.html#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste</span>(NTAName, <span class="st">&quot;&lt;br&gt;&quot;</span>,</span>
-<span id="cb14-15"><a href="06-appdev-code.html#cb14-15" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">paste</span>(input<span class="sc">$</span>color_health, <span class="st">&quot;:&quot;</span>, <span class="fu">round</span>(valid_data[[input<span class="sc">$</span>color_health]], <span class="dv">2</span>)))</span>
-<span id="cb14-16"><a href="06-appdev-code.html#cb14-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-17"><a href="06-appdev-code.html#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">73.935242</span>, <span class="at">lat =</span> <span class="fl">40.730610</span>, <span class="at">zoom =</span> <span class="dv">10</span>)</span>
-<span id="cb14-18"><a href="06-appdev-code.html#cb14-18" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb14-19"><a href="06-appdev-code.html#cb14-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-20"><a href="06-appdev-code.html#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Health Demographics scatter plot</span></span>
-<span id="cb14-21"><a href="06-appdev-code.html#cb14-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>healthScatterChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
-<span id="cb14-22"><a href="06-appdev-code.html#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(nyc_data, <span class="at">x =</span> <span class="sc">~</span>smmrate, <span class="at">y =</span> <span class="sc">~</span>ptbrate, <span class="at">text =</span> <span class="sc">~</span>NTAName, <span class="at">mode =</span> <span class="st">&#39;markers&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-23"><a href="06-appdev-code.html#cb14-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">&quot;Severe Maternal Morbidity vs Preterm Birth Rates&quot;</span>,</span>
-<span id="cb14-24"><a href="06-appdev-code.html#cb14-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Severe Maternal Morbidity Rate&quot;</span>),</span>
-<span id="cb14-25"><a href="06-appdev-code.html#cb14-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Preterm Birth Rate&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)))</span>
-<span id="cb14-26"><a href="06-appdev-code.html#cb14-26" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb14-27"><a href="06-appdev-code.html#cb14-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb12-20"><a href="06-appdev-code.html#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Health Demographics scatter plot</span></span>
+<span id="cb12-21"><a href="06-appdev-code.html#cb12-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>healthScatterChart <span class="ot">&lt;-</span> <span class="fu">renderPlotly</span>({</span>
+<span id="cb12-22"><a href="06-appdev-code.html#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_ly</span>(nyc_data, <span class="at">x =</span> <span class="sc">~</span>smmrate, <span class="at">y =</span> <span class="sc">~</span>ptbrate, <span class="at">text =</span> <span class="sc">~</span>NTAName, <span class="at">mode =</span> <span class="st">&#39;markers&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-23"><a href="06-appdev-code.html#cb12-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">&quot;Severe Maternal Morbidity vs Preterm Birth Rates&quot;</span>,</span>
+<span id="cb12-24"><a href="06-appdev-code.html#cb12-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Severe Maternal Morbidity Rate&quot;</span>),</span>
+<span id="cb12-25"><a href="06-appdev-code.html#cb12-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Preterm Birth Rate&quot;</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">15</span>)))</span>
+<span id="cb12-26"><a href="06-appdev-code.html#cb12-26" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb12-27"><a href="06-appdev-code.html#cb12-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now, combine all tabs into a single UI object.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="06-appdev-code.html#cb15-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb15-2"><a href="06-appdev-code.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;NYC Neighborhood Demographics&quot;</span>),</span>
-<span id="cb15-3"><a href="06-appdev-code.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
-<span id="cb15-4"><a href="06-appdev-code.html#cb15-4" aria-hidden="true" tabindex="-1"></a>    tab1_ui,</span>
-<span id="cb15-5"><a href="06-appdev-code.html#cb15-5" aria-hidden="true" tabindex="-1"></a>    tab2_ui,</span>
-<span id="cb15-6"><a href="06-appdev-code.html#cb15-6" aria-hidden="true" tabindex="-1"></a>    tab3_ui,</span>
-<span id="cb15-7"><a href="06-appdev-code.html#cb15-7" aria-hidden="true" tabindex="-1"></a>    tab4_ui</span>
-<span id="cb15-8"><a href="06-appdev-code.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-9"><a href="06-appdev-code.html#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="06-appdev-code.html#cb13-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb13-2"><a href="06-appdev-code.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;NYC Neighborhood Demographics&quot;</span>),</span>
+<span id="cb13-3"><a href="06-appdev-code.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb13-4"><a href="06-appdev-code.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    tab1_ui,</span>
+<span id="cb13-5"><a href="06-appdev-code.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    tab2_ui,</span>
+<span id="cb13-6"><a href="06-appdev-code.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    tab3_ui,</span>
+<span id="cb13-7"><a href="06-appdev-code.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    tab4_ui</span>
+<span id="cb13-8"><a href="06-appdev-code.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-9"><a href="06-appdev-code.html#cb13-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 </div>
-<div id="step-4-run-the-application" class="section level3 hasAnchor" number="8.3.7">
-<h3><span class="header-section-number">B.3.7</span> Step 4: Run the Application<a href="06-appdev-code.html#step-4-run-the-application" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="run-the-application" class="section level4 hasAnchor" number="8.4.3.3">
+<h4><span class="header-section-number">B.4.3.3</span> Run the Application<a href="06-appdev-code.html#run-the-application" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In this final step,we combine the server logic for all tabs and define the overall UI layout to launch the application.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="06-appdev-code.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine server logic for all tabs</span></span>
-<span id="cb16-2"><a href="06-appdev-code.html#cb16-2" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb16-3"><a href="06-appdev-code.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab1_server</span>(input, output, session)</span>
-<span id="cb16-4"><a href="06-appdev-code.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab2_server</span>(input, output, session)</span>
-<span id="cb16-5"><a href="06-appdev-code.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab3_server</span>(input, output, session)</span>
-<span id="cb16-6"><a href="06-appdev-code.html#cb16-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb16-7"><a href="06-appdev-code.html#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="06-appdev-code.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application</span></span>
-<span id="cb16-9"><a href="06-appdev-code.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
-</div>
-</div>
-<div id="conclusion" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">B.4</span> Conclusion<a href="06-appdev-code.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="06-appdev-code.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine server logic for all tabs</span></span>
+<span id="cb14-2"><a href="06-appdev-code.html#cb14-2" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb14-3"><a href="06-appdev-code.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab1_server</span>(input, output, session)</span>
+<span id="cb14-4"><a href="06-appdev-code.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab2_server</span>(input, output, session)</span>
+<span id="cb14-5"><a href="06-appdev-code.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab3_server</span>(input, output, session)</span>
+<span id="cb14-6"><a href="06-appdev-code.html#cb14-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-7"><a href="06-appdev-code.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="06-appdev-code.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application</span></span>
+<span id="cb14-9"><a href="06-appdev-code.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<p><img src="images/06-shiny-expanded.png" /></p>
 <p>This Shiny application offers a detailed and interactive exploration of demographic data across New York City neighborhoods. Users can interactively analyze racial and socioeconomic information through dynamically updated maps and charts. The application exemplifies how R and Shiny can be used to build engaging and informative data visualizations.</p>
-<div id="tutorials-for-r-1" class="section level3 unnumbered hasAnchor">
-<h3>Tutorials for R<a href="06-appdev-code.html#tutorials-for-r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you are new to R, we recommend the following <a href="https://learn.datacamp.com/courses/free-introduction-to-r">intro-level tutorials</a> provided through <a href="https://rspatial.org/intr/1-introduction.html">installation guides</a>. You can also refer to this <a href="https://datacarpentry.org/r-socialsci/">R for Social Scientists</a> tutorial developed by Data Carpentry for a refresher.</p>
-<p>You can also visit the <a href="https://education.rstudio.com/learn/">RStudio Education</a> page to select a learning path tailored to your experience level (<a href="https://education.rstudio.com/learn/beginner/">Beginners</a>, <a href="https://education.rstudio.com/learn/intermediate/">Intermediates</a>, <a href="https://education.rstudio.com/learn/expert/">Experts</a>). They offer detailed instructions to learners at different stages of their R journey.</p>
+</div>
+</div>
+<div id="more-shiny-resources" class="section level3 unnumbered hasAnchor">
+<h3>More Shiny Resources:<a href="06-appdev-code.html#more-shiny-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Try out new themes with x and x</li>
+<li>Quarto</li>
+<li>Once you’re happy with your final application, it’s time to serve it! Check out tutorials like X and X to make it public</li>
+</ul>
 
 </div>
 </div>

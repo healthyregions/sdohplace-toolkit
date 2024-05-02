@@ -106,3 +106,9 @@ the-user-interface
 user-interface
 server
 expand-your-prototype
+updated-user-interface
+define-server-logic
+dashboards-with-r-shiny
+run-the-application
+thematic-map-with-mapbox-html-css
+thematic-map-with-html-css
