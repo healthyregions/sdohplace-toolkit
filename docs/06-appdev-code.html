@@ -352,6 +352,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#basics-of-an-html-page"><i class="fa fa-check"></i><b>8.3.2</b> Basics of an HTML page</a></li>
 <li class="chapter" data-level="8.3.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#add-a-panel-legend"><i class="fa fa-check"></i><b>8.3.3</b> Add a Panel Legend</a></li>
 <li class="chapter" data-level="8.3.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#finalize-and-push"><i class="fa fa-check"></i><b>8.3.4</b> Finalize and Push</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>8.4</b> Dashboards with R Shiny</a>
 <ul>
@@ -538,6 +539,10 @@ Show Mapbox Script
 </details>
 <p>Refresh your app in your web browser! It should look like this:</p>
 <p><img src="images/06-mapbox-map.png" style="width:95.0%" /></p>
+<div class="pitfall">
+<p><strong>Pitfall</strong></p>
+<p>In this example, we are exposing an API token. This is not good practice! Add more here…</p>
+</div>
 </div>
 </div>
 <div id="add-a-panel-legend" class="section level3 hasAnchor" number="8.3.3">
@@ -716,7 +721,7 @@ Final index.html Code
 <span id="cb5-66"><a href="06-appdev-code.html#cb5-66" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>script<span class="sc">&gt;</span> </span>
 <span id="cb5-67"><a href="06-appdev-code.html#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-68"><a href="06-appdev-code.html#cb5-68" aria-hidden="true" tabindex="-1"></a>        <span class="er">&lt;</span><span class="sc">!--</span> Temp <span class="sc">--</span> Need to push to Github Environmental Secret <span class="sc">-</span><span class="ot">-&gt;</span></span>
-<span id="cb5-69"><a href="06-appdev-code.html#cb5-69" aria-hidden="true" tabindex="-1"></a>        mapboxgl.accessToken <span class="ot">=</span> <span class="st">&#39;pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q&#39;</span>;</span>
+<span id="cb5-69"><a href="06-appdev-code.html#cb5-69" aria-hidden="true" tabindex="-1"></a>        mapboxgl.accessToken <span class="ot">=</span>   <span class="st">&#39;pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q&#39;</span>;</span>
 <span id="cb5-70"><a href="06-appdev-code.html#cb5-70" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb5-71"><a href="06-appdev-code.html#cb5-71" aria-hidden="true" tabindex="-1"></a>            var map <span class="ot">=</span> new <span class="fu">mapboxgl.Map</span>({ </span>
 <span id="cb5-72"><a href="06-appdev-code.html#cb5-72" aria-hidden="true" tabindex="-1"></a>            container<span class="sc">:</span> <span class="st">&#39;map&#39;</span>, </span>
@@ -740,14 +745,41 @@ Final index.html Code
 <span id="cb5-90"><a href="06-appdev-code.html#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/</span>body<span class="sc">&gt;</span></span>
 <span id="cb5-91"><a href="06-appdev-code.html#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-92"><a href="06-appdev-code.html#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/</span>html<span class="sc">&gt;</span></span></code></pre></div>
-</br></br>
+</br>
 </details>
 </br></br>
 </details>
-<p>Next, go back to Github Desktop. Add a short comment (ex. “push initial map”), Commit to Main, and then Push to Origin.</p>
-<p><img src="images/06-github-push.png" style="width:95.0%" /></p>
-<p>Return to Github’s website repository. You’ll see your updates live on the Github site. Finally, use what you learned previouslly to serve your map using Github Pages.</p>
-<p>When you’re ready, work through additional <a href="">Github Tutorials</a> to get more familiar with the “push and pull” process of working with code this way.</p>
+<details>
+<summary>
+Push local code up back to Github’s main servers.
+</summary>
+<ul>
+<li>Go back to Github Desktop. Add a short comment (ex. “push initial map”), Commit to Main, and then Push to Origin.</li>
+</ul>
+<img src="images/06-github-push.png" style="width:95.0%" />
+</br>
+</details>
+</br></br>
+</details>
+<details>
+<summary>
+Confirm things worked, and serve your map
+</summary>
+Return to Github’s website repository. You’ll see your updates live on the Github site. Finally, use what you learned previouslly to serve your map using Github Pages.
+</br>
+</details>
+</br></br>
+</details>
+<p>When you’re ready, work through additional <a href="">Github Tutorials</a> to get more familiar with the “push and pull” process of working with code this way. This is just the beginning!</p>
+</div>
+<div id="resources-6" class="section level3 unnumbered hasAnchor">
+<h3>Resources<a href="06-appdev-code.html#resources-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Learning HTML &amp; CSS:</li>
+<li>Learning Javascript:</li>
+<li>Learning Mapbox GL:</li>
+<li>Learning Github ProcessesL:</li>
+</ul>
 </div>
 </div>
 <div id="dashboards-with-r-shiny" class="section level2 hasAnchor" number="8.4">

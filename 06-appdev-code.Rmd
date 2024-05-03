@@ -169,6 +169,13 @@ Refresh your app in your web browser! It should look like this:
 
 ![](images/06-mapbox-map.png){width=95%}
 
+:::pitfall
+**Pitfall**
+
+In this example, we are exposing an API token. This is not good practice!  Add more here...
+
+::::
+
 ### Add a Panel Legend 
 
 We're going to hack out a legend. The official way to do this can be found via a [mapbox tutoria](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/). Here, let's generate a temporary option with less fuss. lUsing our panel and HTML, we'll add a description of the data we have in our map.
@@ -348,7 +355,7 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 	<script> 
 
         <!-- Temp -- Need to push to Github Environmental Secret -->
-        mapboxgl.accessToken = 'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
+        mapboxgl.accessToken =   'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
     
             var map = new mapboxgl.Map({ 
             container: 'map', 
@@ -373,16 +380,27 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 
 </html>
 ```
-</br></br></details></br></br></details>
+</br></details></br></br></details>
 
-Next, go back to Github Desktop. Add a short comment (ex. "push initial map"), Commit to Main, and then Push to Origin.
+<details markdown='1'><summary> Push local code up back to Github's main servers. </summary>
+- Go back to Github Desktop. Add a short comment (ex. "push initial map"), Commit to Main, and then Push to Origin.
 
 ![](images/06-github-push.png){width=95%}
+</br></details></br></br></details>
 
+<details markdown='1'><summary> Confirm things worked, and serve your map </summary>
 
 Return to Github's website repository. You'll see your updates live on the Github site. Finally, use what you learned previouslly to serve your map using Github Pages. 
+</br></details></br></br></details>
 
-When you're ready, work through additional [Github Tutorials]() to get more familiar with the "push and pull" process of working with code this way.
+When you're ready, work through additional [Github Tutorials]() to get more familiar with the "push and pull" process of working with code this way. This is just the beginning!
+
+### Resources {-}
+- Learning HTML & CSS: 
+- Learning Javascript: 
+- Learning Mapbox GL: 
+- Learning Github ProcessesL: 
+
 
 
 ## Dashboards with R Shiny
