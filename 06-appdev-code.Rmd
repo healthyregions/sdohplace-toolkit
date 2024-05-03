@@ -58,17 +58,17 @@ For valid icon names, see [ionic.io/ionicons/v2](https://ionic.io/ionicons/v2). 
 
 ### Getting Started {-}
 
-You have soome experience working with Github *within* Github, the website. Now let's bring it to your own computer! 
+You have some experience working with Github *within* Github, the website. Now let's bring Github to your own computer! 
 
-- Set up a Code folder on your computer somwhere that is easy to navigate. This will store your Github coding projects.
-- Download [Github Desktop](). Direct it to upload new repositories to this folder.
+- Set up a "Code" folder on your computer somwhere that is easy to navigate. This will store your Github coding projects.
+- Download [Github Desktop](https://desktop.github.com/). Direct it to upload new repositories to this folder.
 - Download a coding editor software for your computer. Popular ones are [Visual Studio](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/). When it doubt, google and research on your own! 
 
-You could also use RStudio/Posit cloud, but it may not be optimized for all coding systems.
+You could also use RStudio/Posit cloud, but it may not be optimized for all coding languages.
 
 #### Start a New Repository  {-}
 
-In Github (the website), create a New Repository. Give it a name, a description, and make it public. In this case, we're calling our project "NYC-Map". Add a "README" file to leave more details and descriptions for yourself later. Click on "Create Repository" at the bottom of the page.
+In Github (the website), create a *New Repository*. Give it a name, a description, and make it public. In this case, we're calling our project "NYC-Map". Add a "README" file to leave more details and descriptions for yourself later. Click on "Create Repository" at the bottom of the page.
 
 ![](images/06-github-start.png)
 
@@ -76,10 +76,9 @@ Next, click on the big green button, "Code", and select "Open in Github Desktop.
 
 ![](images/06-github-clone.png){width=95%}
 
-
 You are *cloning the repository* you just made, and adding a copy to your own computer. Select the right path to access your coding project.
 
-![](images/06-clone.png)
+![](images/06-clone.png){width=35%}
 
 ### Start Coding
 
@@ -88,7 +87,6 @@ You are *cloning the repository* you just made, and adding a copy to your own co
 - In your code editing software, create a new file, and name it "index.html."
 
 ![](images/06-index-start.png)
-
 
 ### Basics of an HTML page
 
@@ -152,14 +150,16 @@ To render the html page, simple drag and drop the .html file from your folder on
 
 #### Add your Mapbox Map {-}
 
-Using the code snippet provided from Mapbox, we can add our basemap. Add this script after the map div, and within the body section.
+Using the code snippet provided from Mapbox, we can add our basemap. (If you're not sure what we're referring to here, check out the Mapbox section in the main Module 6 chapter.) Add this script after the map div, and within the body section. 
+
+Use your own Mapbox token -- copy and paste to replace the text, "YOUR MAPBOX API TOKEN." 
 
 <details markdown='1'><summary>Show Mapbox Script </summary>
 ```{r eval=FALSE}
 	<script> 
 
         <!-- Temp -- Need to push to Github Environmental Secret -->
-        mapboxgl.accessToken = 'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
+        mapboxgl.accessToken = 'YOUR MAPBOX API TOKEN';
     
             var map = new mapboxgl.Map({ 
             container: 'map', 
@@ -188,17 +188,19 @@ Refresh your app in your web browser! It should look like this:
 :::pitfall
 **Pitfall**
 
-In this example, we are exposing an API token. This is not good practice!  Add more here...
+In this example, we are exposing an **API token** as a learning activity. You would be running this on your own private computer for testing. However, you won't want to expose your token outside of this environment. 
+
+As you get to the end of this exercise, once your map is working and served, check out this detailed, [step-by-step tutorial](https://github.com/healthyregions/leaflet-asset-map?tab=readme-ov-file#adding-api-keys) about how to hide your API token using Github Secrets when serving your app through Github Pages!
 
 ::::
 
 ### Add a Panel Legend 
 
-We're going to hack out a legend. The official way to do this can be found via a [mapbox tutoria](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/). Here, let's generate a temporary option with less fuss. lUsing our panel and HTML, we'll add a description of the data we have in our map.
+We're going to hack out a legend. Experienced coders, avert your eyes! The official way to do this can be found via a [mapbox tutorial](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/). Here, let's generate a temporary option with less fuss. We'll "hard code" the data classification intervals into our legend. Using our panel and HTML, we'll add a description of the data we have in our map.
 
 #### Add custom CSS {-}
 
-Generate a new file in your coding project called "main-style.css". Copy and past the following code, and save.
+Generate a new file in your coding project called `main-style.css`. Copy and past the following code, and save.
 
 <details markdown='1'><summary>Show Custom CSS Code </summary>
 ```{r eval=FALSE}
@@ -248,13 +250,26 @@ a {
 ```
 </br></br></details>
 
+:::tip
+**Tip**
+
+Note the font family selected here, 'Nunito Sans.' A quick way to make your app stand out is playing with font families! Check out free [Google Fonts](https://fonts.google.com/) to bring more fonts in your system. Some tips on how we're using them here:
+
+- Brought in the font family as a stylesheet in our main `index.html` file, in the header:
+
+	`<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">`
+	
+- Specify font families in a customized CSS file, `main-style.css`. 
+
+::::
+
 #### "Hack" a Legend {-}
 
-Go back to your Mapbox account, and record the intervals of each bin of your choropleth map. Take a screenshot of each corresponding color swatch; then, rename those swatched, and add to a new folder called "images" in your coding project folder.
+Go back to your Mapbox account, and record the intervals of each bin of your choropleth map. Take a screenshot of each corresponding color swatch; then, rename those swatches something easy to input, like `1.png`. Bring all of these image swatches to a new folder called "images" in your coding project folder.
 
 ![](images/06-images.png){width=40%}
 
-This is a prototype -- not a final project! The goal is to get something working quickly, and it may not be pretty when you open the hood. But, it's possible to get a working app with some HTML, CSS, and grease!
+This is a prototype -- not a final project! The goal is to get something working quickly, and it may not be pretty when you open the hood. But, it's possible to get a working app with some HTML/CSS, sweat, and grease! Have fun with the process.
 
 #### Add to your Panel {-}
 
@@ -273,17 +288,17 @@ In your main index file, you can now add more content to your panel. Give the ma
 
         <h5> Proportion of Neighborhood Residents Self-Identified as Black or African American </h5>
 
-    	<p><img src="images/6.png" height="15"><b> 0.0% </p>
+    	<p><img src="images/6.png" height="15"><b> 0.0% </b></p>
 
-        <p><img src="images/5.png" height="15"><b> 0.01 - 22.77% </p>
+        <p><img src="images/5.png" height="15"><b> 0.01 - 22.77% </b></p>
 
-        <p><img src="images/4.png" height="15"><b> 22.78 - 45.54% </p>
+        <p><img src="images/4.png" height="15"><b> 22.78 - 45.54% </b></p>
 
-        <p><img src="images/3.png" height="15"><b> 45.55 - 68.2% </p>    	
+        <p><img src="images/3.png" height="15"><b> 45.55 - 68.2% </b></p>    	
         
-        <p><img src="images/2.png" height="15"><b> 68.3 - 91.0% </p>
+        <p><img src="images/2.png" height="15"><b> 68.3 - 91.0% </b></p>
 
-        <p><img src="images/1.png" height="15"><b> 91.1% </p>
+        <p><img src="images/1.png" height="15"><b> 91.1% </b></p>
 
     	<hr>
 
@@ -371,7 +386,7 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 	<script> 
 
         <!-- Temp -- Need to push to Github Environmental Secret -->
-        mapboxgl.accessToken =   'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
+        mapboxgl.accessToken = 'YOUR MAPBOX API TOKEN';
     
             var map = new mapboxgl.Map({ 
             container: 'map', 
@@ -396,20 +411,20 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 
 </html>
 ```
-</br></details></br></br></details>
+</br></details></br></details>
 
 <details markdown='1'><summary> Push local code up back to Github's main servers. </summary>
 - Go back to Github Desktop. Add a short comment (ex. "push initial map"), Commit to Main, and then Push to Origin.
 
 ![](images/06-github-push.png){width=95%}
-</br></details></br></br></details>
+</br></details></br></details>
 
 <details markdown='1'><summary> Confirm things worked, and serve your map </summary>
 
 Return to Github's website repository. You'll see your updates live on the Github site. Finally, use what you learned previously to serve your map using Github Pages. 
-</br></details></br></br></details>
+</br></details></br></details>
 
-When you're ready, work through additional [Github Tutorials]() to get more familiar with the "push and pull" process of working with code this way. This is just the beginning!
+When you're ready, work through additional [Github Tutorials](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources) to get more familiar with the "push and pull" process of working with code this way. This is just the beginning!
 
 ### Resources {-}
 - Check out (mostly) free resources like [W3 Schools](https://www.w3schools.com/) to learn more basics on HTML, CSS, Javascript, and more. Expect to make lots of mistakes, and learn froom them at each step!
@@ -443,7 +458,7 @@ A Shiny app can be contained in a single script, `app.R`, which will have the fo
 
 ### User Interface
 
-You can define the layout of your application using the user inferface, defining what goes where, how it looks, and what events are triggered. Upon loading the site, a default plot may be triggered to be oupit. A user may also select specific items within the user interface, like a variable from a drop-down panel, or sliding a slider. 
+You can define the layout of your application using the user interface, defining what goes where, how it looks, and what events are triggered. Upon loading the site, a default plot may be triggered to be output. A user may also select specific items within the user interface, like a variable from a drop-down panel, or sliding a slider. 
 
 Using the [example](https://shiny.posit.co/r/getstarted/shiny-basics/) from Shiny's official tutorial, copy and paste the following into a new file you'll save as `app.R` in a folder on your computer. 
 
@@ -604,13 +619,13 @@ Inspect how the map output call was added to the UI. In the server function, the
 
 It's easier to get a basic prototype up and running. Now the fun and frustrating part begins! Start editing, updating, refining, and getting closer to your final goal. Multiple updates are included in these refinements of our expanded prototype across UI and Server settings, including:
 
-- Addition of new tabs with addtional variables, visualizations, and content about the project.
+- Addition of new tabs with additional variables, visualizations, and content about the project.
 
 - Integration of a new Shiny library, 'shinythemes'. After exploring how to add and update a new theme, the library was installed, and a call made in the final part of the application. (Hint: look for the 'yeti' theme in the final code.) Get more ideas at [Shiny Themes](https://rstudio.github.io/shinythemes/).
 
-- Improvements on performance via lots of 'tinkering' and testing. A slow scatterplot was fixed by removing the spatial components of the dataset, using the `st_drop_geometry()` call in the `sf` framework. A list of neighborhood names was made alphabetical. And so much more... 
+- Improvements on performance via lots of 'tinkering' and testing. A slow scatter plot was fixed by removing the spatial components of the dataset, using the `st_drop_geometry()` call in the `sf` framework. A list of neighborhood names was made alphabetical. And so much more... 
 
-Look for some of the "easter eggs" in code snippets below, and see how you can improve and refine further! The app could get even more fine-tuned, "reactive" (and less reptitive in coding output), and styled further.
+Look for some of the "easter eggs" in code snippets below, and see how you can improve and refine further! The app could get even more fine-tuned, "reactive" (and less repetitive in coding output), and styled further.
 
 #### Updated User Interface {-}
 
@@ -749,7 +764,7 @@ tab3_ui <- tabPanel("Severe Maternal Morbidity & Preterm Birth Rates",
 
 Finally, we also want to include a Tab 4 that provides contextual information about the application, explaining its purpose and the data source.
 
-We are making a prototype, so use some "Lorem Ipsum" placeholder language that we can update in the future.
+We are making a prototype, so use some ["Lorem Ipsum"](https://loremipsum.io/) placeholder language that we can update in the future.
 
 ![](images/06-shiny-about.png)
 
