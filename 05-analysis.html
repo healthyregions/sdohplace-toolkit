@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit</title>
+  <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  <meta name="github-repo" content="healthyregions/sdhoplace-toolkit" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Research Design &amp; Analysis | The SDOH &amp; Place Community Toolkit" />
+  
+  <meta name="twitter:description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link rel="prev" href="04-data.html"/>
+<link rel="next" href="06-appdev.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#sdoh-place"><i class="fa fa-check"></i><b>1.1</b> SDOH &amp; Place</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#centering-equity"><i class="fa fa-check"></i><b>1.2</b> Centering Equity</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#equity-orientation"><i class="fa fa-check"></i>Equity Orientation</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#embracing-a-trauma-informed-mindset-in-decision-making"><i class="fa fa-check"></i>Embracing a Trauma-Informed Mindset in Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-intro.html"><a href="01-intro.html#dynamic-spatial-visualizations"><i class="fa fa-check"></i><b>1.3</b> Dynamic Spatial Visualizations</a></li>
+<li class="chapter" data-level="1.4" data-path="01-intro.html"><a href="01-intro.html#types-of-spatial-applications"><i class="fa fa-check"></i><b>1.4</b> Types of (Spatial) Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#asset-maps"><i class="fa fa-check"></i>Asset Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#simple-thematic-maps"><i class="fa fa-check"></i>Simple Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#story-maps"><i class="fa fa-check"></i>Story Maps</a></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#multivariate-data-dashboards"><i class="fa fa-check"></i>Multivariate Data Dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-intro.html"><a href="01-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-scoping.html"><a href="02-scoping.html"><i class="fa fa-check"></i><b>2</b> Project Planning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-scoping.html"><a href="02-scoping.html#whats-the-point"><i class="fa fa-check"></i><b>2.1</b> What’s the Point?</a></li>
+<li class="chapter" data-level="2.2" data-path="02-scoping.html"><a href="02-scoping.html#refining-goals-for-sdoh"><i class="fa fa-check"></i><b>2.2</b> Refining Goals for SDOH</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#integrate-equity-directly"><i class="fa fa-check"></i>Integrate Equity Directly</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="02-scoping.html"><a href="02-scoping.html#defining-stakeholders"><i class="fa fa-check"></i><b>2.3</b> Defining Stakeholders</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-team"><i class="fa fa-check"></i>Assess Your Team</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#motivations"><i class="fa fa-check"></i>Motivations</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#finding-a-community-of-practice"><i class="fa fa-check"></i>Finding a Community of Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-scoping.html"><a href="02-scoping.html#project-assessment"><i class="fa fa-check"></i><b>2.4</b> Project Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-your-strengths"><i class="fa fa-check"></i>Assess Your Strengths</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#assess-project-needs"><i class="fa fa-check"></i>Assess Project Needs</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#is-there-an-app-for-that"><i class="fa fa-check"></i>Is there an app for that?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-scoping.html"><a href="02-scoping.html#finalize-approach"><i class="fa fa-check"></i><b>2.5</b> Finalize Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-smart-goals"><i class="fa fa-check"></i>Define SMART Goals</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#define-requirements"><i class="fa fa-check"></i>Define Requirements</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-design.html"><a href="03-design.html#design-methods"><i class="fa fa-check"></i><b>3.1</b> Design Methods</a></li>
+<li class="chapter" data-level="3.2" data-path="03-design.html"><a href="03-design.html#human-centered-design-1"><i class="fa fa-check"></i><b>3.2</b> Human-Centered Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#identifying-user-needs"><i class="fa fa-check"></i>Identifying User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#designing-to-user-needs"><i class="fa fa-check"></i>Designing to User Needs</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-data.html"><a href="04-data.html#environment-setup"><i class="fa fa-check"></i><b>4.1</b> Environment Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#installing-working-with-software"><i class="fa fa-check"></i>Installing &amp; Working with Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="04-data.html"><a href="04-data.html#intro-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-types"><i class="fa fa-check"></i>Spatial Data Types</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#more-types-of-data"><i class="fa fa-check"></i>More Types of Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#spatial-data-formats"><i class="fa fa-check"></i>Spatial Data Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="04-data.html"><a href="04-data.html#coordinate-reference-systems"><i class="fa fa-check"></i><b>4.3</b> Coordinate Reference Systems</a></li>
+<li class="chapter" data-level="4.4" data-path="04-data.html"><a href="04-data.html#converting-to-spatial-data"><i class="fa fa-check"></i><b>4.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="04-data.html"><a href="04-data.html#csv-to-spatial-data"><i class="fa fa-check"></i><b>4.4.1</b> CSV to Spatial Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="04-data.html"><a href="04-data.html#geocode-addresses"><i class="fa fa-check"></i><b>4.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="04-data.html"><a href="04-data.html#merge-data-sets"><i class="fa fa-check"></i><b>4.5</b> Merge data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#reshape-data"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-attribute"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#join-by-location"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="04-data.html"><a href="04-data.html#inspect-data"><i class="fa fa-check"></i><b>4.6</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#thematic-maps"><i class="fa fa-check"></i>Thematic Maps</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-analysis.html"><a href="05-analysis.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="05-analysis.html"><a href="05-analysis.html#defining-your-position"><i class="fa fa-check"></i><b>5.2</b> Defining your Position</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-analysis.html"><a href="05-analysis.html#reflective-mapping"><i class="fa fa-check"></i><b>5.2.1</b> Reflective Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-analysis.html"><a href="05-analysis.html#calculating-spatial-variables"><i class="fa fa-check"></i><b>5.3</b> Calculating Spatial Variables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-analysis.html"><a href="05-analysis.html#buffers"><i class="fa fa-check"></i><b>5.3.1</b> Buffers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-analysis.html"><a href="05-analysis.html#nearest-resource"><i class="fa fa-check"></i><b>5.3.2</b> Nearest Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-analysis.html"><a href="05-analysis.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.4</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="05-analysis.html"><a href="05-analysis.html#univariate-and-bivariate-analyses"><i class="fa fa-check"></i><b>5.4.1</b> Univariate and Bivariate Analyses</a></li>
+<li class="chapter" data-level="5.4.2" data-path="05-analysis.html"><a href="05-analysis.html#statistical-mapping"><i class="fa fa-check"></i><b>5.4.2</b> Statistical Mapping</a></li>
+<li class="chapter" data-level="5.4.3" data-path="05-analysis.html"><a href="05-analysis.html#multivariate-data-analysis"><i class="fa fa-check"></i><b>5.4.3</b> Multivariate Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="05-analysis.html"><a href="05-analysis.html#cartographic-principles"><i class="fa fa-check"></i><b>5.5</b> Cartographic Principles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="06-appdev.html"><a href="06-appdev.html"><i class="fa fa-check"></i><b>6</b> App Development</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="06-appdev.html"><a href="06-appdev.html#asset-map-development"><i class="fa fa-check"></i><b>6.1</b> Asset Map Development</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#umap"><i class="fa fa-check"></i>uMap</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="06-appdev.html"><a href="06-appdev.html#thematic-map-app-development"><i class="fa fa-check"></i><b>6.2</b> Thematic Map App Development</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online"><i class="fa fa-check"></i>ArcGIS Online</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#mapbox-gl"><i class="fa fa-check"></i>Mapbox GL</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#interactive-thematic-map"><i class="fa fa-check"></i>Interactive Thematic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="06-appdev.html"><a href="06-appdev.html#story-map-app-development"><i class="fa fa-check"></i><b>6.3</b> Story Map App Development</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#arcgis-online-1"><i class="fa fa-check"></i>ArcGIS Online</a></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#knight-lab-storymapjs"><i class="fa fa-check"></i>Knight Lab StoryMapJS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="06-appdev.html"><a href="06-appdev.html#data-dashboard-app-development"><i class="fa fa-check"></i><b>6.4</b> Data Dashboard App Development</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#tableau-public"><i class="fa fa-check"></i>Tableau Public</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="04-dataR.html"><a href="04-dataR.html"><i class="fa fa-check"></i><b>A</b> Data Wrangling in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="04-dataR.html"><a href="04-dataR.html#intro-to-spatial-data-1"><i class="fa fa-check"></i><b>A.2</b> Intro to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#load-spatial-data"><i class="fa fa-check"></i>Load Spatial Data</a></li>
+<li class="chapter" data-level="A.2.1" data-path="04-dataR.html"><a href="04-dataR.html#adding-a-basemap"><i class="fa fa-check"></i><b>A.2.1</b> Adding a Basemap</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="04-dataR.html"><a href="04-dataR.html#coordinate-reference-systems-1"><i class="fa fa-check"></i><b>A.3</b> Coordinate Reference Systems</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#refine-basic-map"><i class="fa fa-check"></i>Refine Basic Map</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="04-dataR.html"><a href="04-dataR.html#converting-to-spatial-data-1"><i class="fa fa-check"></i><b>A.4</b> Converting to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="04-dataR.html"><a href="04-dataR.html#convert-csvs-to-spatial-data"><i class="fa fa-check"></i><b>A.4.1</b> Convert CSVs to Spatial Data</a></li>
+<li class="chapter" data-level="A.4.2" data-path="04-dataR.html"><a href="04-dataR.html#geocode-addresses-1"><i class="fa fa-check"></i><b>A.4.2</b> Geocode Addresses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="04-dataR.html"><a href="04-dataR.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>A.5</b> Convert to Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#basic-map-of-points"><i class="fa fa-check"></i>Basic Map of Points</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="04-dataR.html"><a href="04-dataR.html#merge-data-sets-1"><i class="fa fa-check"></i><b>A.6</b> Merge Data sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#reshape-data-1"><i class="fa fa-check"></i>Reshape Data</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-attribute-1"><i class="fa fa-check"></i>Join by Attribute</a></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#join-by-location-1"><i class="fa fa-check"></i>Join by Location</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="04-dataR.html"><a href="04-dataR.html#inspect-data-1"><i class="fa fa-check"></i><b>A.7</b> Inspect Data</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
+<li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
+<li class="chapter" data-level="B.2.2" data-path="05-analysisR.html"><a href="05-analysisR.html#distance-metrics"><i class="fa fa-check"></i><b>B.2.2</b> Distance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="05-analysisR.html"><a href="05-analysisR.html#statistical-mapping-1"><i class="fa fa-check"></i><b>B.3</b> Statistical Mapping</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="05-analysisR.html"><a href="05-analysisR.html#choropleth-maps-1"><i class="fa fa-check"></i><b>B.3.1</b> Choropleth Maps</a></li>
+<li class="chapter" data-level="B.3.2" data-path="05-analysisR.html"><a href="05-analysisR.html#cartograms-1"><i class="fa fa-check"></i><b>B.3.2</b> Cartograms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="06-appdev-code.html"><a href="06-appdev-code.html"><i class="fa fa-check"></i><b>C</b> Coding for app development</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-with-github-and-github-pages"><i class="fa fa-check"></i><b>C.1</b> Getting Started with Github and Github Pages</a>
+<ul>
+<li class="chapter" data-level="C.1.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#what-is-a-repository"><i class="fa fa-check"></i><b>C.1.1</b> What is a Repository?</a></li>
+<li class="chapter" data-level="C.1.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#understanding-githubs-url-structure---naming-is-important"><i class="fa fa-check"></i><b>C.1.2</b> Understanding Github’s URL Structure - Naming is important!</a></li>
+<li class="chapter" data-level="C.1.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#creating-an-account"><i class="fa fa-check"></i><b>C.1.3</b> Creating an Account</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#leaflet-map-with-csv-and-geojson-data"><i class="fa fa-check"></i><b>C.2</b> Leaflet Map with CSV and GeoJSON data</a></li>
+<li class="chapter" data-level="C.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#thematic-map-with-html-css"><i class="fa fa-check"></i><b>C.3</b> Thematic Map with HTML &amp; CSS</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="C.3.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#start-coding"><i class="fa fa-check"></i><b>C.3.1</b> Start Coding</a></li>
+<li class="chapter" data-level="C.3.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#basics-of-an-html-page"><i class="fa fa-check"></i><b>C.3.2</b> Basics of an HTML page</a></li>
+<li class="chapter" data-level="C.3.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#add-a-panel-legend"><i class="fa fa-check"></i><b>C.3.3</b> Add a Panel Legend</a></li>
+<li class="chapter" data-level="C.3.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#finalize-and-push"><i class="fa fa-check"></i><b>C.3.4</b> Finalize and Push</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="C.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>C.4</b> Dashboards with R Shiny</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-2"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="C.4.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>C.4.1</b> User Interface</a></li>
+<li class="chapter" data-level="C.4.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>C.4.2</b> Server</a></li>
+<li class="chapter" data-level="C.4.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>C.4.3</b> Expand Your Prototype</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#more-shiny-resources"><i class="fa fa-check"></i>More Shiny Resources:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-1"><i class="fa fa-check"></i>Module 1</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-2"><i class="fa fa-check"></i>Module 2</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-3"><i class="fa fa-check"></i>Module 3</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-4"><i class="fa fa-check"></i>Module 4</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-5"><i class="fa fa-check"></i>Module 5</a></li>
+<li class="chapter" data-level="" data-path="08-references.html"><a href="08-references.html#module-6"><i class="fa fa-check"></i>Module 6</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The SDOH &amp; Place Community Toolkit</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div class="hero-image-container">
+  <img class= "hero-image" src="images/banner.png">
+</div>
+<div id="research-design-analysis" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Research Design &amp; Analysis<a href="05-analysis.html#research-design-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objective">
+<p><strong>Objectives</strong></p>
+<p>In this module, you will:</p>
+<ul>
+<li>Gain insight into the different spatial analysis techniques applicable to SDOOH research</li>
+<li>Delve into potential pitfalls and limitations in spatial analysis of SDOH data</li>
+<li>Identify cartographic design principles for effective communication</li>
+</ul>
+</div>
+<p>Spatial analysis and design mapping techniques have become indispensable tools in the study of Social Determinants of Health (SDOH). This module provides an overview of spatial analysis methods in the SDOH context, highlighting common pitfalls and best practices in cartographic design. By understanding how health outcomes geographically correlate with socioeconomic and environmental factors, we can identify health disparities and guide effective interventions. Additionally, we’ll then examine the limitations and challenges of spatial analysis in the SDOH context.</p>
+<p>Finally, the module will focus on cartographic design principles, stressing the importance of effectively communicating through maps. We will delve into using color schemes, symbology, and other mapping elements to accurately present and visually enhance spatial data related to SDOH.</p>
+<div class="tools">
+<p><strong>Tools</strong></p>
+<p><em>Download the Activity Datasets</em></p>
+<p>While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: <a href="https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip">SDOHPlace-ResearchDesignAnalysis.zip</a></p>
+<p>This dataset includes data prepped and merged in the previous module.</p>
+</div>
+<div id="research-design" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Research Design<a href="05-analysis.html#research-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You’ve got data, a goal, and an app on the horizon – How can you ensure that your understanding of the data is accurate, complete, and representational? Do you need to transform your data into new variables to get a better picture first? Do you need to visualize your data in new ways, or prepare for a more advanced analytical model?</p>
+<p>There are multiple pitfalls you’ll want to avoid when design your analysis. In the following overview of <strong>Mindsets &amp; Spatial Reasoning,</strong> spatial data scientist <a href="https://spatial.uchicago.edu/directory/Julia-Koschinsky">Julia Koschinsky</a> reviews how to think about the process of analyzing data and how to set up the problem and research design.</p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Move Away From</th>
+<th align="center">Move Towards</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Confirmation Bias:</strong> Looking to confirm pre-existing beliefs with data</td>
+<td align="center">Expect that, as humans, we’ll be fooling ourselves.Focus on finding what’s wrong.</td>
+</tr>
+<tr class="even">
+<td align="center">Maps and spatial analysis will confirm the expected, which is fine …</td>
+<td align="center">… but what is more interesting is to discover something unexpected, something surprising, beyond what we already knew before we started the analysis. What is the added value of doing the spatial analysis?</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Fixed mindset:</strong> Only technical people can learn spatial data analysis</td>
+<td align="center"><strong>Growth mindset:</strong> Class and toolkit assumes that everyone can learn this</td>
+</tr>
+<tr class="even">
+<td align="center">Inductive or deductive reasoning, or ‘data-driven’ or ‘model-driven’ thinking that lets the data speak on its own.</td>
+<td align="center">Exploratory Spatial Data Analysis &amp; Spatial Reasoning as abductive/iterative reasoning. These approaches go back and forth between potential explanations and evidence to update both in lockstep.</td>
+</tr>
+<tr class="odd">
+<td align="center">Focus on description, for ex., where’s the cluster or access gap?</td>
+<td align="center">Focus on explanation and falsification: Why is the cluster there? Is the cluster real (not random)?</td>
+</tr>
+<tr class="even">
+<td align="center">Analyzing data with a classic exploratory or temporal analysis, ignoring the spatial dimension even though it’s relevant.</td>
+<td align="center">Spatial methods to explicitly analyze location, distance, and spatial interaction</td>
+</tr>
+<tr class="odd">
+<td align="center">Assuming maps are always objective</td>
+<td align="center">Recognizing that maps are often used to exercise power and to manipulate..</td>
+</tr>
+</tbody>
+</table>
+<p>Correlation is not causation. A good exploratory data analysis, however, can help you gather evidence and make a case for next steps. What are some considerations for your research design?</p>
+<ul>
+<li><p><strong>Data Integrations:</strong> Do you have the right data combined and harmonized for analysis &amp; viewing?</p></li>
+<li><p><strong>Spatial Scale:</strong> What is the scale of the phenomenon you are trying to understand – and the scale of your data? If they’re not the same, be careful of making errors in interpretation.</p></li>
+<li><p><strong>New Variable Calculations:</strong> Do you need to generate new measures that may be more precise?</p></li>
+<li><p><strong>Data Limitations:</strong> How was the data you have collected? Are there any biases or issued you need to consider when interpreting findings? What’s missing?</p></li>
+<li><p><strong>Methodologies Used:</strong> Most methods will return some result – that doesn’t make them the correct or useful. Are you using the right methods for your data, and that also address data limitations?</p></li>
+<li><p><strong>Model Interpretation:</strong> Did you interpret your results with data, scale, and methodological considerations in mind? For example, be weary of drawing conclusions on individuals from population-level data. That’s the <a href="https://mgimond.github.io/Spatial/pitfalls-to-avoid.html#ecological-fallacy">ecological fallacy</a>.</p></li>
+</ul>
+<div class="pitfall">
+<p><strong>Potential Pitfall</strong></p>
+<p>The <strong>Modifiable Areal Unit Problem (MAUP)</strong> is a significant issue in spatial analysis that arises when results of statistical analysis are affected by the scale or the zoning of the area units used in the study. Essentially, it reflects the idea that the same set of data can lead to different conclusions depending on how the data is grouped geographically.</p>
+<p>This problem is particularly relevant in disciplines like geography, epidemiology, and urban planning. For a deeper understanding of MAUP, its implications, and strategies to mitigate its effects, <a href="https://gisgeography.com/maup-modifiable-areal-unit-problem/">here’s a comprehensive resource</a> that offers detailed insights. You may also watch this informative <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=512fd409-0b51-4d24-b43e-b1030168712b">video</a> from GIS Librarian <a href="https://www.lib.uchicago.edu/about/news/meet-rob-shepard-new-gis-librarian/">Robert C. Shepard</a> from University of Chicago.</p>
+</div>
+</div>
+<div id="defining-your-position" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Defining your Position<a href="05-analysis.html#defining-your-position" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In exploring cartography and spatial analysis, it’s crucial to challenge their perceived objectivity. Traditionally viewed as neutral tools, unaffected by the biases of their creators, recent studies, especially from feminist and global South perspectives, have started to challenge this view. They reveal how data often overlooks marginalized communities, how maps can perpetuate colonialist views, and how the choice of colors and symbols might oversimplify diverse human experiences.</p>
+<p>Therefore, it’s essential to rethink our approach to maps and analyses, recognizing that they are not impartial mirrors of reality. When conducting analyses or creating maps, we should ask ourselves critical questions: Who is collecting the data I use, and for what purpose? Which narratives are my analyses emphasizing? Whose interests does the software I use serve – is it a commercial product or open-source? How do factors like our gender, race, ethnicity, economic status, sexuality, and nationality influence our approach to cartography?</p>
+<p>A way forward involves examining our privileges, recognizing the types of discrimination we face—or don’t face—and considering how our experiences influence our mapping efforts. Listening becomes a crucial skill. Mapping should go beyond mere argumentation and become a tool for inquiry. We must critically examine our own maps and data, paying attention to who is represented and, importantly, who is left out. Engaging with stakeholders is a key part of this process.</p>
+<p>Additionally, we should strive to give a voice within our analyses to those directly impacted by our maps rather than speaking for them. Being mindful of our cartographic language is vital; like words, maps convey narratives.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>Take time to reflect on these points and jot them down in your journal. Regularly revisit these thoughts and refer back to Module 1 of this toolkit, recognizing that mapping is an evolving, iterative process.</p>
+</div>
+<div id="reflective-mapping" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Reflective Mapping<a href="05-analysis.html#reflective-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Remember, mapping is more than just inputting data into software; it involves thoughtful reflection. This process should take into consideration the context and significance of the data, ensuring that your maps tell an accurate and meaningful story. By carefully selecting and analyzing your variables, and critically examining the resulting spatial patterns, your maps can become powerful tools for understanding and communicating complex social and health-related phenomena.</p>
+<p>In modern spatial epidemiology, it’s critical to not take associations at face value. For instance, health disparities are often driven not by race itself but by systemic racism. Analyzing only a specific racial or ethnic group isn’t sufficient. Thus, investigating a multitude of variables and cultivating a curiosity to understand these complex intersections is crucial for meaningful knowledge discovery. This approach allows for a more nuanced understanding of the interplay between various factors and health outcomes, ultimately contributing to more effective public health strategies and interventions.</p>
+</div>
+</div>
+<div id="calculating-spatial-variables" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Calculating Spatial Variables<a href="05-analysis.html#calculating-spatial-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While the previous module focused on spatial data wrangling techniques to develop new harmonized datasets and variables, there are many more approaches to refining measurements of the environment.</p>
+<p>For example, spatial access to a resource can be calculated using multiple approaches. Let’s consider approximating a neighborhood as a census tract. Access to the resource could be measured as:</p>
+<ul>
+<li>Total number of resources within the census tract</li>
+<li>Total number of resources within a mile of the census tract</li>
+<li>Total number of mile-wide resource buffers intersecting the tract</li>
+<li>Percentage of the census tract covered by a mile-wide resource buffer</li>
+<li>Drive, bike, or walk time from the center of tract to nearest resource</li>
+<li>Total number of resources within a mile per 1,000 people in the census tract</li>
+<li>Gravity model score measuring spatial access to resoure using a distance decay function, total capacity at resource, and population in demand</li>
+</ul>
+<p>Which one is best? It will depend the data available, your skills and interest in calculations, and more importantly, the underlying phenomenon of interest. How often do persons access the resource? What travel behavior is used?</p>
+<p>For density based measures (like total number of resources per area), use the spatial join function froom the last module, and summarize by area. This is also termed as a “point in polygon” operation. For additional proximity-based metrics like buffer and distance calculations, read on. For more complex access modeling techniques, check out the advanced metric resources at the end of the module.</p>
+<div id="buffers" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Buffers<a href="05-analysis.html#buffers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Creating buffers and calculating distances are vital techniques for understanding relationships between geographic features and identifying potential spatial patterns or associations.</p>
+<p>Buffers are polygons created at a specified distance around input features, like points, lines, or other polygons. They are useful for analyzing the proximity of health-related phenomena to specific locations.</p>
+<div class="figure">
+<img src="images/05-Buffer_healthclinic_example.png" alt="" />
+<p class="caption">Census tracts within ½ mile radius of a public health clinic</p>
+</div>
+<p>For example, you can create a buffer of a half-mile radius around a public health clinic to analyze the census tracts within that area. Another application is generating a buffer around a hospital to identify the population within a certain distance or assessing the impact of pollution from a factory on nearby schools or residential areas.</p>
+<p>To create a buffer in GIS software or coding, you specify a fixed or variable distance value. Fixed-distance buffers are constant radius polygons around input features, while variable-distance buffers can vary based on an attribute value.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Buffer Analyses: Calculate Farmers Market Service Areas</em></p>
+<p>Grab the data for this activity and the following ones <a href="https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip">here</a>.</p>
+<p>This activity focuses on utilizing data from Chicago’s farmers’ markets, specifically the <code>farmers_markets_2012</code> dataset. Farmers’ markets are vital for health and well-being, providing access to fresh, locally-grown produce and supporting sustainable food systems. They offer diverse, nutritious food options, often at affordable prices, and foster community connections and local agriculture support. The presence and density of farmers’ markets in a neighborhood significantly influence residents’ food accessibility.</p>
+<details>
+<summary>
+Start a New Project
+</summary>
+<ul>
+<li>Open QGIS and create a new project. Save it as “Chicago Farmers Markets 2012”.</li>
+<li>Add the shapefile: <code>farmers_markets_2012.shp</code>.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Creating Buffers
+</summary>
+<ul>
+<li><p>Go to the Vector menu &gt; Geoprocessing Tools &gt; Buffer(s).</p></li>
+<li><p>In the dialog box, choose “farmers_markets_2012” as the input layer.Ensure you are using the correct Coordinate Reference System (CRS).</p></li>
+<li><p>Enter the buffer distance (e.g., 0.5 miles) and select the appropriate unit from the Unit drop-down menu.</p></li>
+<li><p><em>Tip:</em> The distance unit is based on the CRS of the input layer. If you’re not using the correct CRS, the default unit may be in degrees. Refer to Module 4 if you encounter issues.</p></li>
+<li><p>Keep default settings for segments, join style, and miter limit. Initially, leave the “dissolve result” box unchecked to maintain separate buffer zones.</p></li>
+</ul>
+<div class="figure">
+<img src="images/05-Bufferpanel_FarmersQGIS.png" alt="" />
+<p class="caption">Buffer panel in QGIS</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Running the Buffer Tool
+</summary>
+<ul>
+<li>Click “Run” to execute the Buffer tool. A new buffered layer is added to your project.</li>
+<li>In the Layers Panel, arrange the point feature (farmers markets) above the buffered polygon for better visualization.</li>
+<li><em>Tip:</em> Observe how the buffers overlap or remain separate, depending on the distance you chose.</li>
+</ul>
+<div class="figure">
+<img src="images/05-Buffersoverlapped.png" alt="" />
+<p class="caption">Buffers in QGIS</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Dissolving Overlapping Areas
+</summary>
+<ul>
+<li>-Reopen the Buffer dialog box, go to Parameters, and check the box for “dissolve result”.</li>
+<li>Click “Run” again. A new layer with dissolved overlapping areas is added.</li>
+<li>Close the Buffer dialog box.</li>
+<li>Remove the initial overlapping buffer layer and keep the dissolved buffer layer to organize your layers</li>
+<li><em>Tip</em>: Organize your layers for clarity, such as renaming layers, removing unwanted ones, or toggling layer visibility.</li>
+</ul>
+</br></br>
+</details>
+<p>Through this activity, you will understand the spatial distribution of farmers’ markets in Chicago and their impact radius, which is crucial for assessing community access to fresh food. The buffer analysis illustrates the physical reach of these markets, offering insights into potential areas needing more access to fresh produce.</p>
+</div>
+</div>
+<div id="nearest-resource" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Nearest Resource<a href="05-analysis.html#nearest-resource" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Calculating distances involves measuring straight-line (Euclidean) or network (along paths or roads) distances between features.In health geographies, this might include assessing accessibility to healthcare facilities or analyzing the spatial distribution of disease cases relative to risk factors. Examples include calculating the Euclidean distance from residential locations to the nearest healthcare facility or measuring the network distance along roads to determine travel time to hospitals.</p>
+<p>It’s important to choose the right measurement method (Euclidean or network) based on the research question and the nature of the features.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Minimum Distance Calculations</em></p>
+<p>In this part of the exercise, we’re interested in determining the straight-line distance from residential locations, such as census tracts, to the nearest farmers market. The “Distance to nearest hub (line to hub)” tool in QGIS can be used to calculate the distance between the center of an origin feature (e.g., centroids of Census Tracts) and its nearest destination feature (e.g., farmers market).</p>
+<div class="figure">
+<img src="images/05-MinimumDistance_example.png" alt="" />
+<p class="caption">minimum distance in QGIS</p>
+</div>
+<details>
+<summary>
+Accessing the Tool
+</summary>
+<ul>
+<li>In QGIS, open the Toolbox by going to Processing.</li>
+<li>Search for and select “Distance to Nearest Hub (line to hub)” under Vector analysis.</li>
+</ul>
+<div class="figure">
+<img src="images/05-ProcessingToolbox.png" alt="" />
+<p class="caption">Processing Toolbox</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Setting Up the Tool
+</summary>
+<ul>
+<li>In the processing dialog box, set “Source Point layer” to “Chicgotracts_Centroids”.</li>
+<li>For “Destination hubs layer”, select “farmer’s market_2012”.</li>
+<li>Choose your preferred measurement unit (e.g., miles) in the “Measurement unit” field.</li>
+<li>Leave other settings as default.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Running the Tool
+</summary>
+<ul>
+<li>Click “Run”. A new layer (“hub distance”) will be added to your project. Close the dialogue box.</li>
+<li>Open the attribute table of the new layer to view the computed hub distances (HubDist).</li>
+</ul>
+<div class="figure">
+<img src="images/05-Hubdistance_panel.png" alt="" />
+<p class="caption">Line to Hub Tool</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Analyzing Access to Facilities
+</summary>
+<ul>
+<li>Examine the attribute table to identify if there are any facilities (e.g., farmers markets) that lack good access. Consider the implications of these findings for community access to fresh produce.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Using Extract within Distance Tool
+</summary>
+<ul>
+<li>Another useful tool is the “Extract within distance” under vector selection in the geoprocessing toolbox.</li>
+<li>This can be used to extract tract centroids that are within a specified maximum distance (e.g., 1 mile) from the input features (e.g., farmers markets).</li>
+</ul>
+<div class="figure">
+<img src="images/05-Ext_Distance_panel.png" alt="" />
+<p class="caption">Extract within distance tool</p>
+</div>
+</br></br>
+</details>
+<p>Through these exercises, you will gain insights into the accessibility of fresh produce from various residential areas in Chicago, which is crucial for understanding the availability of healthy food options across the city. This analysis can inform urban planning and policy decisions to improve access to essential amenities like farmers markets.</p>
+</div>
+</div>
+</div>
+<div id="exploratory-data-analysis" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Exploratory Data Analysis<a href="05-analysis.html#exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Exploratory Data Analysis (EDA) serves as the compass for spatial analysts navigating through the vast seas of data. It’s a pivotal phase in your analytical journey, akin to charting a course before setting sail. EDA illuminates the landscape of spatial datasets, revealing patterns, anomalies, and relationships that might otherwise remain hidden. Through visualizations, statistical summaries, and spatial queries, analysts delve into the intricacies of the data, unraveling its mysteries and gaining insights that inform subsequent spatial analyses and decision-making processes. In essence, EDA is the compass that guides spatial analysts in their quest to uncover the hidden treasures buried within geographic information.</p>
+<p>Exploratory <em>Spatial</em> Data Analysis includes techniques to describe and visualize spatial distributions, identify non-typical locations (known as spatial outliers), discover patterns of spatial association (e.g. spatial clusters) and suggest different spatial “regimes” and other forms of spatial non-stationarity.</p>
+<p>Each spatial pattern has a different story, or phenomenon driving its pattern. A polluting factory may influene someone’s health who is living across the street, based on proximity – in spatial terms, this may be a pattern of <strong>spatial dependence</strong>. Alternatively, or in addition to, residents near polluting sources may be more likely to have lower incomes based on complex, decades-long deinvestment processes, resulting in <strong>spatially heterogenous</strong> distribution of health outcomes.</p>
+<p>By exploring the data available to us, we can begin to understand what those drivers are – or at the very least, rule some out, and update our thinking. Because our brains our wired to find patterns (even if they’re not there), we can use math and good research design gather evidence.</p>
+<div id="univariate-and-bivariate-analyses" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Univariate and Bivariate Analyses<a href="05-analysis.html#univariate-and-bivariate-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A solid EDA/ESDA approach starts with one (univariate) or two (bivariate) variables at a time. The data views we take may be non-spatial, setting up classical figures and charts, and/or spatial, using thematic mapping techniques. We’ll highlight some approaches here, but recommend a deeper dive with a standard statistics course. Here are some things to look for:</p>
+<ul>
+<li><strong>Descriptive statistcs</strong>: Summarize data as tables, calculating population summaries, total number of areal units included, and include testing statistics. Stratify by different spatial regimes (e.g. urban vs rural) or groupings (quantiles), as they are uncovered in later analyses. Follow STROBE reporting guidelines for summaries (e.g. median and IQR vs. average and SD). Beware of missing data, so report data included in your tables and notes.</li>
+<li><strong>Visualize your data</strong>: It goes without saying, but we must – visualize your data! Examine histograms, scatter plots, thematic maps, and more and explore relationships. Software like <em>GeoDa</em> was designed for brushing and linking to explore trends further.</li>
+<li><strong>Models at the End</strong>: Avoid working with biased data and mis-specified models by waiting to run your regression &amp; other anlaytical models. Ensure your data is high quality and at least understand the limitations and biases. In traditional EDA, a confirmatory analysis follows.</li>
+</ul>
+<p>First let’s explore scatter plots as a classic approach, and then dive into spatial data with statistical mapping techniques.</p>
+<div id="scatter-plots" class="section level4 hasAnchor" number="5.4.1.1">
+<h4><span class="header-section-number">5.4.1.1</span> Scatter Plots<a href="05-analysis.html#scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Scatter plots are invaluable for visualizing relationships between Scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.</p>
+<p><strong>Understanding Correlations in Scatter Plots</strong></p>
+<ul>
+<li><em>Positive Correlation:</em> This is observed when data points in a scatter plot align along an upward diagonal line. It suggests that as one variable increases, the other variable tends to increase as well.</li>
+</ul>
+<div class="figure">
+<img src="images/05-PositiveCorrelation_example.png" alt="" />
+<p class="caption">example of positive correlation</p>
+</div>
+<ul>
+<li><em>Negative Correlation:</em> Seen when data points align along a downward diagonal line, indicating that one variable decreases as the other increases.</li>
+</ul>
+<div class="figure">
+<img src="images/05-Negative_Correlation_example.png" alt="" />
+<p class="caption">example of negative correlation</p>
+</div>
+<p>Interpreting these correlations offers insights into potential links between SDOH factors and health outcomes, guiding targeted interventions and policy-making. However, it’s important to remember that correlation does not equate to causation. Always complement scatter plot analyses with additional analysis, theories, and concepts to ensure a comprehensive understanding of the data and its implications.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Creating Scatter Plots in GeoDa</em></p>
+<p>Scatter plots in GeoDa are useful for examining linear relationships between two variables:</p>
+<details>
+<summary>
+Setting Up the Scatter Plot
+</summary>
+<ul>
+<li>To start, select “Explore” &gt; “Scatter Plot”.</li>
+<li>In the “Scatter Plot Variables” dialog, choose a variable for the “Independent Var X” (e.g., age Over 65) and another for the “Dependent Var Y” (e.g., disability status).</li>
+<li>In this example, we’re exploring the relationship between the population over 65 years and disability status. It’s generally good practice to place the variable you’re most interested in as the Y (dependent) variable.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Customizing and Analyzing the Scatter Plot
+</summary>
+<ul>
+<li>Once the scatter plot is generated, you can right-click on it to access various functions, such as changing the color or saving the image.</li>
+<li>Examine the plot to assess the relationship between the two variables. Look for patterns such as a positive or negative correlation, or no apparent correlation.</li>
+</ul>
+</br></br>
+</details>
+</div>
+</div>
+</div>
+<div id="statistical-mapping" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Statistical Mapping<a href="05-analysis.html#statistical-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Statistical mapping is the art and science of visually representing spatial data through the lens of statistical analysis. It’s a powerful tool that transforms raw data into insightful maps, providing a tangible means of understanding spatial patterns and distributions.</p>
+<div id="data-classification" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> Data Classification<a href="05-analysis.html#data-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>At the heart of statistical mapping lies data breaks classification, a fundamental technique used to categorize continuous data into distinct intervals or classes. These classes are defined based on statistical measures such as quantiles, standard deviations, or natural breaks in the data distribution.</p>
+<details>
+<summary>
+Quantiles
+</summary>
+<ul>
+<li>Observations are grouped into bins that each have the same number of observations, the so-called quantiles. The number of observations in each bin is equal, but the range for each bin is not.</li>
+<li>This statistical method is easy for the map reader to understand as it offers a straightforward approach by distributing equal observations across categories. For instance, with 30 counties divided into six categories, there would be five counties per category.</li>
+<li>This method works well when the data distribution is normal.</li>
+<li>The problem with quantiles is that ties in data rankings can complicate quantile maps, leading to uneven class sizes. Also, outliers are lost when equal numbers of data values are in each class.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Equal Intervals
+</summary>
+<ul>
+<li>Organizes observations into categories that divide the range of the variable into equal interval bins.</li>
+<li>This classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly.</li>
+<li>Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Natural Breaks (Jenks)
+</summary>
+<ul>
+<li>Natural breaks focus on the inherent groupings within the data, clustering similar values together while emphasizing the differences between categories.</li>
+<li>Uses a nonlinear algorithm to group observations such that the within-group homogeneity is maximized</li>
+<li>This method suits data not normally distributed and is particularly effective for highlighting extreme values. However, the number of observations in each category can be highly unequal.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Standard Deviation
+</summary>
+<ul>
+<li>The Standard Deviation method showcases the variation of a feature’s attribute from the mean, identifying outliers and emphasizing how values differ from the mean.</li>
+<li>This classification is useful when understanding the relationship to the mean is crucial, such as in studies of population density or economic indicators.</li>
+<li>This method does not work well with heavily skewed or non-normally distributed data.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Box Plot
+</summary>
+<ul>
+<li>The Box Plot (i.e.,Whisker Plot) classification visualizes data distribution through quartiles and outliers, extending the quantile approach with additional categories to separately identify lower and upper quartiles.</li>
+<li>It provides a quick means to spot outliers and general spatial trends within the dataset.</li>
+</ul>
+</br></br>
+</details>
+<p>By grouping similar values together, data breaks classification simplifies complex datasets, making them more interpretable and facilitating the communication of spatial patterns and trends to a diverse audience.</p>
+</div>
+<div id="choropleth-maps" class="section level4 hasAnchor" number="5.4.2.2">
+<h4><span class="header-section-number">5.4.2.2</span> Choropleth Maps<a href="05-analysis.html#choropleth-maps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A choropleth map is a thematic map that utilizes shades, textures, and colors to depict data values in specific geographic areas. Choropleth maps are useful for rapidly discerning spatial data patterns. However, these patterns may vary depending on the chosen data classification method (e.g.,Quantiles, Natural Breaks, Equal Intervals, Box Plot, Standard Deviation)</p>
+<p>Having addressed the subjectivity of maps, let’s delve into choropleth maps, a key tool in the exploratory spatial analysis of Social Determinants of Health (SDOH). Choropleth maps are instrumental in examining health geographies and SDOH, using different shades or colors to depict varying values or rates of specific variables across geographic areas, such as counties, census tracts, or ZIP codes.</p>
+<div class="figure">
+<img src="images/05-Choroplethmapexample.png" alt="" />
+<p class="caption">Choropleth map of poverty rates by county in 2015 (source: Centers for Disease Control and Prevention)</p>
+</div>
+<p>Choropleth maps can help us to start revealing spatial patterns and disparities in various health and socioeconomic indicators related to SDOH. These representations can pinpoint areas with high rates of chronic diseases, like diabetes or heart disease, and enable visual comparisons with factors like education, access to healthcare facilities, and social exclusion.</p>
+<p>Moreover, choropleth maps are excellent for exploring potential correlations between SDOH and health outcomes. They can, for example, show how regions with limited access to healthy food options and green spaces might correlate with higher obesity rates. This visual data can inform targeted interventions and resource allocation, addressing social determinants in specific areas effectively.</p>
+<p>Choropleth maps are also invaluable in communicating complex data to policymakers, public health officials, and community members. By visually representing intricate datasets in an accessible format, these maps can spark discussions around health disparities, resource distribution, and health equity. Given their capability to illustrate spatial patterns and the relationship between SDOH and health outcomes, choropleth maps are a vital resource for researchers, policymakers, and community organizations aiming to promote health equity and tackle the root causes of health disparities.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Mapping the Pandemic with Choropleths</em></p>
+<p>During the COVID-19 pandemic, choropleth maps became crucial for health geographers, visually representing the virus’s spread and highlighting hotspots and regional disparities. These maps, tracking trends over time, provided a deeper understanding of the pandemic’s progression, supporting targeted interventions and policy-making. They not only made the pandemic’s impact tangible but also emphasized the significance of spatial analysis in public health crises and showcased the practicality of geographic data visualization in research and decision-making contexts.</p>
+<p>Now, let’s create some maps to analyze the COVID-19 pandemic. We’ll use QGIS for this tutorial, chosen for its flexibility in creating choropleth maps and its status as free, open-source software.</p>
+<p><strong>Note:</strong> Other software options like R (see appendix) and GeoDa are also suitable for this task. Additionally, ArcGIS Pro and Carto are viable options, but remember they are proprietary and require a fee.</p>
+<details>
+<summary>
+Opening a New Project in QGIS
+</summary>
+<ul>
+<li>Start by opening a new project in QGIS.</li>
+<li>In the Layers panel, drag and drop the “COVID-19_pivot.xlsx” spreadsheet, as outlined in section 4.5 of this toolkit. If you don’t have it, find it in the Zip folder at the start of this module.</li>
+<li>Joining your spreadsheet with a boundary shapefile:
+Similar to the process in Module 4, join the “COVID-19_pivot.xlsx” with the boundary shapefile of Chicago’s Zip codes, named “Chicago_Zipcodes.shp”.
+Add “Chicago_Zipcodes.shp” to your layer panel.</li>
+<li>To access the join option, right click on “Chicago_Zipcodes.shp”, go to properties and select “join”. Lastly, select the “ plus icon.”
+Similar to GeoDa, you will need to specify: “the spreadsheet or layer you want to join” (e.g., COVID-19_pivot.xlsx), and the join and target fields (e.g., “zip”). Then click Okay.</li>
+<li>Check the attribute table on “Chicago_Zipcodes.shp.” You will see the fields from “COVID-19_pivot.xlsx” are there!</li>
+<li>Lastly, right click on “Chicago_Zipcodes.shp.” Select “Duplicate layer.” Right-click the new layer, Select “rename, and name it “Chicago_COVID-19”.
+Tip: If you need to review and better understand this step, go back to Module 4.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Applying Symbology
+</summary>
+<ul>
+<li>In the Layers panel, right-click on “Chicago_COVID-19” and select Properties, then Symbology.</li>
+<li>Change the top tab from Single Symbol to Graduated.</li>
+<li>Under the “Value” tab, select “Sum of Cases - Weekly”.</li>
+<li>Set the Mode to “Natural Breaks (Jenks)” and Classes to “4”.</li>
+<li>Click Classify, Apply, and Ok. You’ve now created a map of the Sum of Cases of COVID-19 during a week in 2020 in Chicago.</li>
+</ul>
+<div class="figure">
+<img src="images/05-COVID-19_mapQGIS.png" alt="" />
+<p class="caption">COVID-19 cases during a week in 2020 in Chicago</p>
+</div>
+</br></br>
+</details>
+<details>
+<summary>
+Exploring Different Classification Methods
+</summary>
+<ul>
+<li>From the Map option in the toolbar, explore different choropleth map options using various variables or data breaks (e.g., quantile).</li>
+<li>Select a classification method, set the Categories (e.g., 4), and click apply.</li>
+<li>Examine your maps, comparing how different data break methods display the same variables and how spatial patterns vary between different variables.</li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Mapping Multiple Variables Simultaneously
+</summary>
+<ul>
+<li>To investigate multiple maps at once, use the GeoJason file “ChiZipCleaned” that you organized in Module 4.</li>
+<li>Create different choropleth maps using various variables from the attribute table. For example, map the percentages of Asian (asianP), Black (blackP), Hispanic/Latinx (HispP), White (WhiteP), and populations over 65 (Over65p). Use Natural Breaks and 4 classes, similar to your previous COVID-19 map.</li>
+</ul>
+<p>From the exploratory results, where darker colors indicate higher population density and gray signifies data absence, we observe that cumulative COVID-19 outcomes for one week in September 2020 seem to correlate geographically with the Latinx/Hispanic community in Chicago.</p>
+<div class="figure">
+<img src="images/05-maps-QGIS.png" alt="" />
+<p class="caption">Different population maps in QGIS</p>
+</div>
+</br></br>
+</details>
+<p>To refine your analysis further, consider introducing additional variables. Options might include the percentage of essential workers, varying age groups, or internet access. Integrating health outcomes such as asthma or hypertension rates at a similar scale could also offer deeper insights.</p>
+</div>
+</div>
+<div id="cartograms" class="section level4 hasAnchor" number="5.4.2.3">
+<h4><span class="header-section-number">5.4.2.3</span> Cartograms<a href="05-analysis.html#cartograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Cartograms offer a distinctive way to analyze and display Social Determinants of Health (SDOH) data. They differ from traditional choropleth maps by altering the size of geographic areas based on a statistical variable like population.</p>
+<p>This technique provides a clearer depiction of disparities in SDOH across regions, highlighting areas more significantly impacted by adverse social and economic conditions.</p>
+<p>Although cartograms can distort geographic shapes and boundaries, they effectively communicate complex SDOH data, helping policymakers and the public understand underlying inequities and the necessity for focused interventions.</p>
+<div class="figure">
+<img src="images/05-Cartogram_example.png" alt="" />
+<p class="caption">An example of a cartogram</p>
+</div>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Cartograms in GeoDa</em></p>
+<p>To create a cartogram in GeoDa, which visually emphasizes specific variables, follow these steps:</p>
+<details>
+<summary>
+Creating the Cartogram
+</summary>
+<ul>
+<li>Open ChiZipCleaned in “GeoDa”</li>
+<li>Select “Map” from the menu, then click on “Cartogram”.</li>
+</ul>
+<div class="figure">
+<img src="images/05-Cartogram_option_GeoDa.png" alt="" />
+<p class="caption">Cartogram tool in GeoDa</p>
+</div>
+<ul>
+<li><p>In the “Cartogram Variables” dialog box, you’ll find two columns: “Circle Size” and “Circle Color”. For a simpler interpretation, select the same variable for both columns (e.g., age 18-64).</p></li>
+<li><p><em>Tip:</em> While you can choose different variables for circle size and color, this might make the cartogram more complex and potentially confusing.</p></li>
+</ul>
+</br></br>
+</details>
+<details>
+<summary>
+Finalizing the Cartogram
+</summary>
+<ul>
+<li>Click “OK” to generate the cartogram. This will create a map where the size of the circles represents the selected variable, providing a visual emphasis on areas with higher or lower values.</li>
+</ul>
+<div class="figure">
+<img src="images/05-Cartogram_VisualizationGeoDa.png" alt="" />
+<p class="caption">Cartogram example in GeoDa</p>
+</div>
+</br></br>
+</details>
+</div>
+</div>
+</div>
+<div id="multivariate-data-analysis" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Multivariate Data Analysis<a href="05-analysis.html#multivariate-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this first steps of Exploratory Spatial Data Analysis, you may investigate data patterns one or two variables at a time to uncover relationships. Moving towards multivariate analyses, looking at multiple variables at once, can give insight into the complex processes driving the phenomenon you’re interested.</p>
+<p>With this move, we may often begin to understand correlations across multiple variables. For example, historic segregation and decades of de-investment have tremendously influenced geodemographic patterns in Chicago.</p>
+<p>In modern spatial epidemiology, associations must never be taken at face value. For example, we know that it is not “race” but “racism” that drives multiple health disparities – simply looking at a specific racial/ethnic group is not enough. Thus exploring multiple variables and nurturing a curiosity to understand these complex intersections will support knowledge discovery.</p>
+<p>While we won’t go through examples in depth beyond a simple thematic map panel, explore resources available to you to examine multivariate ESDA as well as increasingly complex modeling approaches.</p>
+</div>
+</div>
+<div id="cartographic-principles" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Cartographic Principles<a href="05-analysis.html#cartographic-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Having honed your skills in data wrangling and spatial analysis, it’s time to focus on effectively communicating your findings in Social Determinants of Health (SDOH) through cartography. This phase is vital: the choices you make regarding colors, scales, and legends will significantly influence how your audience interprets your maps. In this final section, we’ll discuss how to create clear and impactful SDOH maps.</p>
+<p>Cartographic design principles form a framework of guidelines and best practices to create informative and visually appealing maps. They are key to ensuring maps not only convey spatial information accurately but are also easy to understand and aesthetically pleasing. While designing SDOH maps poses challenges, it’s a crucial skill. We encourage you to delve deeper into cartographic design by exploring additional resources provided in this module.</p>
+<div class="tip">
+<p><strong>Tip</strong></p>
+<p>As recommended by <a href="https://www.esri.com/en-us/esri-press/browse/designing-better-maps-a-guide-for-gis-users">Cynthia Brewer</a> attempt to address the following questions at this point. Don’t worry if you’re uncertain of the answer, you can always revisit the previous modules for guidance.</p>
+<ul>
+<li>Who will be reading your maps? (module 3)</li>
+<li>What information will be mapped? (module 4)</li>
+<li>What are the time and budget constraints on your map production? (module 2)</li>
+<li>Will your map be coordinated with written text, videos, graphics, or other data visualizations? Do you have time to create or curate them? (module 2)</li>
+</ul>
+</div>
+<div id="effective-sdoh-map-design-entails-several-critical-elements" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Effective SDOH map design entails several critical elements<a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="audience-consideration" class="section level4 unnumbered hasAnchor">
+<h4>Audience Consideration<a href="05-analysis.html#audience-consideration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tailor your map design to your audience’s needs and preferences. Different audiences have varying abilities to interpret visual data. For instance, maps for healthcare professionals might include detailed spatial patterns and statistical analyses, whereas maps for the general public should focus on clarity and ease of understanding.
+Revisit your user personas (module 3) and consider their motivations and challenges regarding cartography.
+For example, The City of Chicago (see below) created a COVID-19 vaccine centers asset map for the general public.</p>
+<div class="figure">
+<img src="images/05-City_of_Chicagoassetmap.png" alt="" />
+<p class="caption">COVID-19 vaccine centers asset map (source: city of Chicago)</p>
+</div>
+<p>ESRI (see below) created a dashboard for health professionals related to vaccine distribution during the pandemic.</p>
+<div class="figure">
+<img src="images/05-ESRI_Dashboard.png" alt="" />
+<p class="caption">COVID-19 Dashboard (source: ESRI)</p>
+</div>
+</div>
+<div id="visual-hierarchy" class="section level4 unnumbered hasAnchor">
+<h4>Visual Hierarchy<a href="05-analysis.html#visual-hierarchy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Establish a visual hierarchy to guide viewers through the most important aspects of your data. This can be achieved using color, size, contrast, and the placement of map elements.
+For example, ChiVes, an environmental justice dashboard may use bold colors to highlight critical areas, supported by descriptive text and a well-positioned legend.</p>
+<div class="figure">
+<img src="images/05-ChiVes.png" alt="" />
+<p class="caption">Chives dashboard</p>
+</div>
+</div>
+<div id="balance-and-visual-arrangement" class="section level4 unnumbered hasAnchor">
+<h4>Balance and Visual Arrangement<a href="05-analysis.html#balance-and-visual-arrangement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Achieve balance in your map to ensure no element dominates excessively and each component is visually proportionate.
+Organize elements logically and harmoniously, considering spatial relationships, grouping related features, and creating a clear flow for the viewer’s eye.</p>
+<p>The body-territory map (cuerpo-territorio) crafted by the Latinx collective Iconoclasistas serves as an exemplary showcase of balance and visual arrangement. Illustrating the detrimental impact of various industries on communities across South America, the map achieves balance by symmetrically delineating different regions and dividing them with the silhouette of a woman. Moreover, the title and sequential numbering naturally guides viewers through the map from top to bottom, facilitating intuitive reading of the cartography.</p>
+<div class="figure">
+<img src="images/05-Cuerpo_Territorio.png" alt="" />
+<p class="caption">Body-Territory Map (source:Iconoclasistas)</p>
+</div>
+</div>
+<div id="simplicity" class="section level4 unnumbered hasAnchor">
+<h4>Simplicity<a href="05-analysis.html#simplicity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Embrace simplicity for clear communication. Clear, uncluttered maps with essential elements are more accessible and easier for viewers to understand.
+Focus on presenting the core message with precise use of color, symbols, and labeling.</p>
+<p>The Anti-eviction Mapping Project developed a straightforward yet impactful dashboard illustrating evictions in LA County during the COVID-19 pandemic. Users can easily navigate through the data by utilizing the bar chart. By using the bar chart, the map displays eviction rates for each month throughout the pandemic.</p>
+<div class="figure">
+<img src="images/05-Anti-eviction.png" alt="" />
+<p class="caption">LA County evictions during the COVID-19 pandemic (source: The Anti-eviction Mapping Project)</p>
+</div>
+<p>Throughout these principles, the key is to present your SDOH data in a manner that is not just informative but also engaging and accessible to your intended audience. Each design decision, from the choice of color scheme to the positioning of elements, plays a role in how effectively your map communicates its message.</p>
+</div>
+</div>
+<div id="key-elements-of-spatial-data-visualizations" class="section level3 unnumbered hasAnchor">
+<h3>Key Elements of Spatial Data Visualizations<a href="05-analysis.html#key-elements-of-spatial-data-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Effectively conveying spatial information in maps requires careful consideration of various elements. These elements include symbols, colors, typography, and layout, each playing a crucial role in guiding the viewer’s understanding of the geographic context and the presented data. Symbols visually represent spatial features; colors differentiate categories or highlight patterns; typography ensures legibility and informativeness of labels and annotations; and layout determines spatial relationships and influences visual hierarchy. Strategic incorporation of these elements enables cartographers to create maps that are not only aesthetically pleasing but also informative and intuitive to interpret.</p>
+<div id="title" class="section level4 unnumbered hasAnchor">
+<h4>Title<a href="05-analysis.html#title" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A map’s title should succinctly convey its main theme or message. It should include the theme (What?), the location (Where?), and the temporal scale (When?). A clear and informative title sets the context for the map.</p>
+<p><strong>Tip:</strong> Make the title larger and bolder than other text to draw attention.</p>
+</div>
+<div id="legend" class="section level4 unnumbered hasAnchor">
+<h4>Legend<a href="05-analysis.html#legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The legend is a key component that decodes the symbols, colors, and patterns used on your map. It should be clear, concise, and understandable.</p>
+<p><strong>Tip:</strong> Place the legend near the map body and maintain a consistent color scheme and symbol style throughout your map series for coherence.</p>
+</div>
+<div id="scale-bar" class="section level4 unnumbered hasAnchor">
+<h4>Scale Bar<a href="05-analysis.html#scale-bar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The scale bar visually represents the relationship between map distances and real-world distances. It’s essential for accurately grasping the mapped area’s geographic extent and proportions.</p>
+<p><strong>Tip:</strong> Choose a scale bar style that complements your map’s design, including both metric and imperial units if possible.</p>
+</div>
+<div id="data-source-and-projection-information" class="section level4 unnumbered hasAnchor">
+<h4>Data Source and Projection Information<a href="05-analysis.html#data-source-and-projection-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Providing data sources and projection information enhances your map’s transparency and credibility, allowing viewers to understand the data’s origins and any potential map projection distortions or limitations.</p>
+<p><strong>Tip:</strong> Include clear citations for data sources and projection information in a designated map area.</p>
+</div>
+<div id="north-arrow" class="section level4 unnumbered hasAnchor">
+<h4>North Arrow<a href="05-analysis.html#north-arrow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A north arrow, though not always necessary, can be helpful for orientation, especially in unfamiliar areas or when the map projection alters traditional alignments.</p>
+<p><strong>Tip:</strong> If used, ensure the <strong>north arrow</strong> is visible and distinct from other map elements, and choose a simple design that fits the map’s overall aesthetic.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>Rapid-Fire SDOH Mapping Critique</em></p>
+<ul>
+<li>Spend 10 minutes critiquing a Social Determinants of Health map, focusing on elements like the title, legend, scale bar, and data sources.</li>
+<li>Think about the audience, hierarchy, balance, simplicity, and visual arrangement.</li>
+<li>Then, analyze another SDOH map, noting similarities or differences in design and effectiveness.</li>
+<li>Reflect on the clarity and informativeness of these elements, considering the context (what, where, when), the effectiveness of the legend, the appropriateness of the scale bar, the utility of the north arrow, and the clarity of data sources and projections.</li>
+</ul>
+</div>
+</div>
+<div id="the-munsell-color-system" class="section level4 hasAnchor" number="5.5.1.1">
+<h4><span class="header-section-number">5.5.1.1</span> The Munsell Color System:<a href="05-analysis.html#the-munsell-color-system" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure">
+<img src="images/05-Munsell_Color.png" alt="" />
+<p class="caption">The Munsell Color System(source: Del Mar College, 2020)</p>
+</div>
+<p>The <a href="https://munsell.com/about-munsell-color/how-color-notation-works/">Munsell Color System</a>, a model for describing and communicating color, is crucial in map design. It categorizes color into three dimensions: hue, value, and chroma, aiding in systematic color selection and specification. In mapping, it helps in color selection, achieving contrast, creating color harmony, and ensuring accessibility. For example, <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">Colorbrewer 2.0</a> provides options suitable for colorblind individuals.</p>
+<div class="activity">
+<p><strong>Activity</strong></p>
+<p><em>SDOH Mapping with the Munsell Color System</em></p>
+<ul>
+<li>Analyze SDOH data and assign Munsell colors to different factors.</li>
+<li>Develop a map legend explaining each color and its significance.</li>
+<li>Apply these colors to a map, creating a thematic representation of SDOH in a specific area.</li>
+<li>Evaluate the map’s effectiveness and adjust as necessary.</li>
+<li>Share and discuss your findings, interpreting the relationships between SDOH factors and geographic distribution.</li>
+</ul>
+<p>This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered hasAnchor">
+<h2>References<a href="05-analysis.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><a href="https://geodacenter.github.io/documentation.html">GeoDa Documentation</a> remains an ESDA standard to uncover dozens of techniques for discovery.</p></li>
+<li><p>Brewer, C. (2016). Designing Better Maps: A Guide for GIS Users, 2nd Edition. ESRI press.</p></li>
+<li><p>D’ignazio, C., &amp; Klein, L. F. (2023). Data feminism. MIT press.</p></li>
+<li><p><a href="https://spatial.uchicago.edu/education/scientific-reasoning">Center for Spatial Data Science (2024). Scientific Reasoning in Spatial Data Science Education Project. University of Chicago: Center for Spatial Data Science.</a></p></li>
+<li><p>Krygier, J., &amp; Wood, D. (2016). Making maps: a visual guide to map design for GIS. Guilford Publications.</p></li>
+<li><p>Peterson, G. N. (2020). GIS cartography: a guide to effective map design. CRC Press.</p></li>
+</ul>
+
+</div>
+</div>
+<hr class="footer-line">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="04-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="06-appdev.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"float": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
