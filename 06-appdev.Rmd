@@ -131,7 +131,7 @@ Descriptions will need to be written using HTML formatting, but selecting the he
 :::activity
 **Extension Exercise**
 
-Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.
+Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot using the file **counties_ga.csv**. Add **counties_ga.geojson** to add county boundaries. Considering adding additional data to create a more comprehensive asset map.
 
 As you create an asset map, consider the following questions: 
 
@@ -327,7 +327,7 @@ In order to add your map to your web page, you’ll need to do some coding. From
 :::activity
 **Extension Exercise**
 
-Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here]. 
+Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia using gatracts.geojson. 
 
 As you create this map, consider the following questions:
 
@@ -538,7 +538,8 @@ Tip: Customize the icons for each point on your story map. Use free icons from s
 
 :::activity
 **Extension Exercise**
-Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found below.
+
+Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found in **dmfgeorgia.csv**.
 
 As you create your story map, consider the following questions:
 
