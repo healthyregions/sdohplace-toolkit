@@ -40,7 +40,349 @@ We will do all of our file storage and editing directly in [Github](https://gith
 
 ## Thematic Map with HTML & CSS
 
+### Getting Started {-}
 
+You have soome experience working with Github *within* Github, the website. Now let's bring it to your own computer! 
+
+- Set up a Code folder on your computer somwhere that is easy to navigate. This will store your Github coding projects.
+- Download [Github Desktop](). Direct it to upload new repositories to this folder.
+- Download a coding editor software for your computer. Popular ones are [Visual Studio](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/). When it doubt, google and research on your own! 
+
+You could also use RStudio/Posit cloud, but it may not be optimized for all coding systems.
+
+#### Start a New Repository  {-}
+
+In Github (the website), create a New Repository. Give it a name, a description, and make it public. In this case, we're calling our project "NYC-Map". Add a "README" file to leave more details and descriptions for yourself later. Click on "Create Repository" at the bottom of the page.
+
+![](images/06-github-start.png)
+
+Next, click on the big green button, "Code", and select "Open in Github Desktop.
+
+![](images/06-github-clone.png){width=95%}
+
+
+You are *cloning the repository* you just made, and adding a copy to your own computer. Select the right path to access your coding project.
+
+![](images/06-clone.png)
+
+### Start Coding
+
+- Open up your coding project folder. You'll see the README file that was initialized in the Repo.
+
+- In your code editing software, create a new file, and name it "index.html."
+
+![](images/06-index-start.png)
+
+
+### Basics of an HTML page
+
+In our very simple application, we will use the basics of an html page: the head and body.
+
+- In the `head`, we'll add some metadata like the title of our map. Additionally, crucial libraries for styling and functionalities will be loaded in as CSS and Javascript (JS) links. 
+
+- In the `body`, we'll prepare to bring in two divs, or "divisions." One will be a map div, that calls the mapbox basemap we made in an earlier module. The other will overlay a transparent panel that will serve as our legend. We add a heading 1 level title, "NYC Map" to start.
+
+Learn more about the basics of HTML using free online educational tools like [W3 Schools](https://www.w3schools.com/html/html_basic.asp). For now, it's okay to just copy and paste the information below.
+
+<details markdown='1'><summary>Show HTML App Code</summary>
+```{r eval=FALSE}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>NYC Map </title>
+
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes" /> 
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+	<link href="main-style.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+
+	<!-- JS only -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
+	<style> 
+		body { margin: 0; padding: 0; } 
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; }; 
+	</style> 
+
+</head>
+
+
+<body> 
+
+	<div class="panel">
+  
+        <h1 > NYC Map </h1>
+    	
+	</div>
+
+	<div id='map'> </div> 
+
+</body>
+```
+</br></br></details>
+
+To render the html page, simple drag and drop the .html file from your folder on your computer into a web browser. Right now, there should be nothing except a title, "NYC Map" -- we've just loaded in some libraries, and that's it!
+
+#### Add your Mapbox Map {-}
+
+Using the code snippet provided from Mapbox, we can add our basemap. Add this script after the map div, and within the body section.
+
+<details markdown='1'><summary>Show Mapbox Script </summary>
+```{r eval=FALSE}
+	<script> 
+
+        <!-- Temp -- Need to push to Github Environmental Secret -->
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
+    
+            var map = new mapboxgl.Map({ 
+            container: 'map', 
+            style: 'mapbox://styles/cdiscenza/clvmny7ym06yv01nug1kbefwd', 
+            zoom: 10,  
+            minZoom: 5.3,                                               
+            center: [-74.03638858449402 , 40.68048994718785]                         
+    
+         }); 
+    
+    
+        // Add zoom and rotation controls to the map.
+        var nav = new mapboxgl.NavigationControl();
+            
+            map.addControl(nav, 'top-right');
+            
+    </script>
+          
+```
+</br></br></details>
+
+Refresh your app in your web browser! It should look like this: 
+
+![](images/06-mapbox-map.png){width=95%}
+
+### Add a Panel Legend 
+
+We're going to hack out a legend. The official way to do this can be found via a [mapbox tutoria](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/). Here, let's generate a temporary option with less fuss. lUsing our panel and HTML, we'll add a description of the data we have in our map.
+
+#### Add custom CSS {-}
+
+Generate a new file in your coding project called "main-style.css". Copy and past the following code, and save.
+
+<details markdown='1'><summary>Show Custom CSS Code </summary>
+```{r eval=FALSE}
+
+.panel {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 380px;
+    max-height: 660px; 
+    opacity: .9;
+    background: #fff ;
+    color: #545454;
+    padding: 20px 24px 12px 24px;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: none;
+    z-index: 9092;
+    border-radius: 0px 0px 10px 0px;
+  }
+
+h1 {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 900;
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+
+}
+
+p.temp {
+  font-family: 'Nunito Sans', serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.2;
+
+}
+
+a {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #2f5aa8;
+
+}
+```
+</br></br></details>
+
+#### "Hack" a Legend {-}
+
+Go back to your Mapbox account, and record the intervals of each bin of your choropleth map. Take a screenshot of each corresponding color swatch; then, rename those swatched, and add to a new folder called "images" in your coding project folder.
+
+![](images/06-images.png){width=40%}
+
+This is a prototype -- not a final project! The goal is to get something working quickly, and it may not be pretty when you open the hood. But, it's possible to get a working app with some HTML, CSS, and grease!
+
+#### Add to your Panel {-}
+
+In your main index file, you can now add more content to your panel. Give the map panel some additional helper text using the "text-muted" class, and add horizontal lines using the `<hr>` tag to keep it classy. Use the legend swatches, resized, and update the corresponding interval. 
+
+<details markdown='1'><summary>Show index.html Panel Code </summary>
+```{r eval=FALSE}
+
+	<div class="panel">
+    	
+        <h1 > NYC Neighborhood & Health Map </h1>
+    	
+    	<p class="text-muted"> Health Equity across City Neighborhoods. See XXX for more details. </a> </p>
+
+    	<hr>
+
+        <h5> Proportion of Neighborhood Residents Self-Identified as Black or African American </h5>
+
+    	<p><img src="images/6.png" height="15"><b> 0.0% </p>
+
+        <p><img src="images/5.png" height="15"><b> 0.01 - 22.77% </p>
+
+        <p><img src="images/4.png" height="15"><b> 22.78 - 45.54% </p>
+
+        <p><img src="images/3.png" height="15"><b> 45.55 - 68.2% </p>    	
+        
+        <p><img src="images/2.png" height="15"><b> 68.3 - 91.0% </p>
+
+        <p><img src="images/1.png" height="15"><b> 91.1% </p>
+
+    	<hr>
+
+    	<p class="temp"> <b>Data Sources:</b> NYC Data, 2019. </p>
+
+    	
+	</div>
+```
+</br></br></details>
+
+### Finalize and Push 
+
+Run the app in your browser as you go to ensure you can troubleshoot any bugs that come up. 
+
+![](images/06-final-mapbox.png)
+
+<details markdown='1'><summary>Final index.html Code </summary>
+```{r eval=FALSE}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title></title>
+
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes" /> 
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+	<link href="main-style.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+
+
+	<!-- JS only -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
+	<style> 
+		body { margin: 0; padding: 0; } 
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; }; 
+	</style> 
+
+</head>
+
+
+<body> 
+
+	<div class="panel">
+    	
+        <h1 > NYC Neighborhood & Health Map </h1>
+    	
+    	<p class="text-muted"> Health Equity across City Neighborhoods. See XXX for more details. </a> </p>
+
+    	<hr>
+
+        <h5> Proportion of Neighborhood Residents Self-Identified as Black or African American </h5>
+
+    	<p><img src="images/6.png" height="15"><b> 0.0% </p>
+
+        <p><img src="images/5.png" height="15"><b> 0.01 - 22.77% </p>
+
+        <p><img src="images/4.png" height="15"><b> 22.78 - 45.54% </p>
+
+        <p><img src="images/3.png" height="15"><b> 45.55 - 68.2% </p>    	
+        
+        <p><img src="images/2.png" height="15"><b> 68.3 - 91.0% </p>
+
+        <p><img src="images/1.png" height="15"><b> 91.1% </p>
+
+    	<hr>
+
+    	<p class="temp"> <b>Data Sources:</b> NYC Data, 2019. </p>
+
+    	
+	</div>
+
+	<div id='map'> </div> 
+
+	<script> 
+
+        <!-- Temp -- Need to push to Github Environmental Secret -->
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2Rpc2NlbnphIiwiYSI6ImNsbzhwb25rYjAyeGYya21rd20xZ3U1ZHgifQ.5tbPqubrrKekGR12uOHN_Q';
+    
+            var map = new mapboxgl.Map({ 
+            container: 'map', 
+            style: 'mapbox://styles/cdiscenza/clvmny7ym06yv01nug1kbefwd', 
+            zoom: 10,  
+            minZoom: 5.3,                                               
+            center: [-74.03638858449402 , 40.68048994718785]                         
+    
+         }); 
+    
+    
+        // Add zoom and rotation controls to the map.
+        var nav = new mapboxgl.NavigationControl();
+            
+            map.addControl(nav, 'top-right');
+
+            
+    </script>
+
+
+</body>
+
+</html>
+```
+</br></br></details></br></br></details>
+
+Next, go back to Github Desktop. Add a short comment (ex. "push initial map"), Commit to Main, and then Push to Origin.
+
+![](images/06-github-push.png){width=95%}
+
+
+Return to Github's website repository. You'll see your updates live on the Github site. Finally, use what you learned previouslly to serve your map using Github Pages. 
+
+When you're ready, work through additional [Github Tutorials]() to get more familiar with the "push and pull" process of working with code this way.
 
 
 ## Dashboards with R Shiny
@@ -52,6 +394,7 @@ Once you have a solid sense of R (see previous modules and recommended tutorials
 ```{r eval=FALSE}
 install.packages("shiny")
 ```
+
 
 We recommend going through the [beginner lessons on Shiny applications](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) at Posit before diving into your app development directly. Get familiar with the basics, practice, and explore different example apps for ideas. 
 
@@ -66,8 +409,6 @@ A Shiny app can be contained in a single script, `app.R`, which will have the fo
 - a server function
 
 - a call to the `shinyApp` function
-
-![RShiny Application Structure. Source: [Coding Club UC3M](https://codingclubuc3m.rbind.io/post/2018-06-19/)](images/06-overview-shinyApp.png){width=50%}
 
 ### User Interface
 

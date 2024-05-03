@@ -103,3 +103,8 @@ server-logic-for-tab-1
 server-logic-for-tab-2
 server-logic-for-tab-3
 run-the-application
+start-coding
+basics-of-an-html-page
+add-your-mapbox
+add-a-panel-legend
+finalize-and-push
