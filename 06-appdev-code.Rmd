@@ -1015,9 +1015,10 @@ This Shiny application offers an interactive exploration of demographic data acr
 
 ### More Shiny Resources: {-}
 
-- Try out new themes with x and x
-- Quarto
-- Once you're happy with your final application, it's time to serve it! Check out tutorials like X and X to make it public
+- Once you're happy with your final application, it's time to serve it and share with the world! There are many deployment options; check out the official [Shiny hosting & deployment](https://shiny.posit.co/r/deploy.html) page, or google up some additional ideas.
+- Try out new themes with [Shiny Themes](https://rstudio.github.io/shinythemes/), or shift to using the [Shiny Dashboard](https://rstudio.github.io/shinydashboard/) library
+- [Quarto](https://quarto.org/docs/dashboards/interactivity/shiny-r.html) is the newest, hottest, & latest in developing interactive features with R. Explore even more options, themes, and approaches here. It's exceptionally responsive. You'll need to start with a new project.
+
 
 
 
