@@ -431,6 +431,26 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Generally speaking, libraries like Leaflet create web maps by defining an area of a web page, like a canvas, and then loading various geospatial data into that area, allowing users to pan, zoom, inspect, and interact with the content. In this example, we will create and publish a very simple web map using prepared CSV and GeoJSON datasets. At the end of the exercise, you should be able to swap these datasets out with your own, and have a basic understanding of how to modify Leaflet code.</p>
 <p>We will do all of our file storage and editing directly in <a href="https://github.com">Github</a>, which will also allow us to immediately make our map publicly visible.</p>
+<p>To get started, head to our template repository: <a href="https://github.com/healthyregions/leaflet-asset-map">https://github.com/healthyregions/leaflet-asset-map</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Click the <strong>Use this template</strong> button to create a copy of this repository in your own GitHub account.</li>
+<li>Configure Github Pages using the Static HTML workflow
+<ul>
+<li>In <strong>Settings</strong> &gt; <strong>Pages</strong> set the <strong>Source</strong> dropdown to <strong>Github Actions</strong></li>
+<li>Choose the <strong>Static HTML</strong> option and click <strong>Configure</strong>
+<ul>
+<li>Don’t make any changes to the code you see yet, just click <strong>Commit changes..</strong></li>
+</ul></li>
+<li>Wait a few seconds and visit <a href="https://" class="uri">https://</a><username>.github.io/leaflet-asset-map. You should see a zoomable map with markers on it.</li>
+</ul></li>
+<li>Upload your own CSV or GeoJSON file to the data directory.
+<ul>
+<li>Make sure your CSV has columns that hold Latitude and Longitude values for each feature.</li>
+</ul></li>
+<li>Follow the examples in example.html to add your own layers to the main map in index.html.</li>
+</ol>
+<p>For more information on customization, see <a href="https://leafletjs.org">Leaflet documentation</a>.</p>
+<p>For valid icon names, see <a href="https://ionic.io/ionicons/v2">ionic.io/ionicons/v2</a>. Click an icon, and use the name you see without including the ion- prefix.</p>
 </div>
 <div id="thematic-map-with-html-css" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">C.3</span> Thematic Map with HTML &amp; CSS<a href="06-appdev-code.html#thematic-map-with-html-css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
