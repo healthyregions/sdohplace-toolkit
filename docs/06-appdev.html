@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 App Development | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 App Development | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -356,10 +356,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="C.1.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#creating-an-account"><i class="fa fa-check"></i><b>C.1.3</b> Creating an Account</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#leaflet-map-with-csv-and-geojson-data"><i class="fa fa-check"></i><b>C.2</b> Leaflet Map with CSV and GeoJSON data</a></li>
-<li class="chapter" data-level="C.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#thematic-map-with-html-css"><i class="fa fa-check"></i><b>C.3</b> Thematic Map with HTML &amp; CSS</a></li>
-<li class="chapter" data-level="C.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>C.4</b> Dashboards with R Shiny</a>
+<li class="chapter" data-level="C.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#thematic-map-with-html-css"><i class="fa fa-check"></i><b>C.3</b> Thematic Map with HTML &amp; CSS</a>
 <ul>
 <li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-1"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="C.3.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#start-coding"><i class="fa fa-check"></i><b>C.3.1</b> Start Coding</a></li>
+<li class="chapter" data-level="C.3.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#basics-of-an-html-page"><i class="fa fa-check"></i><b>C.3.2</b> Basics of an HTML page</a></li>
+<li class="chapter" data-level="C.3.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#add-a-panel-legend"><i class="fa fa-check"></i><b>C.3.3</b> Add a Panel Legend</a></li>
+<li class="chapter" data-level="C.3.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#finalize-and-push"><i class="fa fa-check"></i><b>C.3.4</b> Finalize and Push</a></li>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="C.4" data-path="06-appdev-code.html"><a href="06-appdev-code.html#dashboards-with-r-shiny"><i class="fa fa-check"></i><b>C.4</b> Dashboards with R Shiny</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#getting-started-2"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="C.4.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>C.4.1</b> User Interface</a></li>
 <li class="chapter" data-level="C.4.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>C.4.2</b> Server</a></li>
 <li class="chapter" data-level="C.4.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>C.4.3</b> Expand Your Prototype</a></li>
@@ -479,7 +487,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="umap" class="section level3 unnumbered hasAnchor">
 <h3>uMap<a href="06-appdev.html#umap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>uMap is a web based mapping program that uses OpenStreetMap to allow users to create maps. It has a simple interface, and no coding is necessary.</p>
-<details markdown='1'>
+<details>
 <summary>
 Create an account on <a href="https://umap.openstreetmap.fr/en/">uMap</a>
 </summary>
@@ -562,7 +570,7 @@ Save your map
 </details>
 <div class="activity">
 <p><strong>Extension Exercise</strong></p>
-<p>Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot. A csv file with the relevant data can be found [here], along with Georgia county boundary data.</p>
+<p>Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot using the file <strong>counties_ga.csv</strong>. Add <strong>counties_ga.geojson</strong> to add county boundaries. Considering adding additional data to create a more comprehensive asset map.</p>
 <p>As you create an asset map, consider the following questions:</p>
 <ul>
 <li><p>Are there areas with many hospitals/resources?</p></li>
@@ -771,7 +779,7 @@ In order to add your map to your web page, you’ll need to do some coding. From
 </details>
 <div class="activity">
 <p><strong>Extension Exercise</strong></p>
-<p>Want additional practice? Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia. A full dataset can be found [here].</p>
+<p>Create a thematic map of an SDOH or maternal health outcome variable(s) in Georgia using gatracts.geojson.</p>
 <p>As you create this map, consider the following questions:</p>
 <ul>
 <li><p>How could these variables be best presented to a user?</p></li>
@@ -986,8 +994,8 @@ Adjust Background and Layout
 </br></br>
 </details>
 <div class="activity">
-<p><strong>Extension Exercise</strong>
-Want additional practice? Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found below.</p>
+<p><strong>Extension Exercise</strong></p>
+<p>Create a story map of designated maternal facilities in Georgia. A list of facilities, their locations, and their designation levels can be found in <strong>dmfgeorgia.csv</strong>.</p>
 <p>As you create your story map, consider the following questions:</p>
 <ul>
 <li><p>What media best represents each center?</p></li>
