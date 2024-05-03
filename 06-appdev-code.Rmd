@@ -406,18 +406,15 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 
 <details markdown='1'><summary> Confirm things worked, and serve your map </summary>
 
-Return to Github's website repository. You'll see your updates live on the Github site. Finally, use what you learned previouslly to serve your map using Github Pages. 
+Return to Github's website repository. You'll see your updates live on the Github site. Finally, use what you learned previously to serve your map using Github Pages. 
 </br></details></br></br></details>
 
 When you're ready, work through additional [Github Tutorials]() to get more familiar with the "push and pull" process of working with code this way. This is just the beginning!
 
 ### Resources {-}
-- Learning HTML & CSS: 
-- Learning Javascript: 
-- Learning Mapbox GL: 
-- Learning Github ProcessesL: 
-
-
+- Check out (mostly) free resources like [W3 Schools](https://www.w3schools.com/) to learn more basics on HTML, CSS, Javascript, and more. Expect to make lots of mistakes, and learn froom them at each step!
+- Mapbox also has many free step-by-step [tutorials](https://docs.mapbox.com/help/tutorials/) that link back to an application you're developing.
+- For a comprehensive appraoch, check out the [Web Mapping: A Workbook for Interactive Cartography and Visualization on the Open Web](https://github.com/uwcartlab/webmapping) by Robert Roth and colleagues at UWisconsin, Madison. This will take you through workspace set up, scripting debugging tips, Leaflet and D3 (Plotly) exercises, and more.
 
 ## Dashboards with R Shiny
 
