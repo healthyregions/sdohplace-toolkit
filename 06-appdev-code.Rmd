@@ -38,6 +38,22 @@ Generally speaking, libraries like Leaflet create web maps by defining an area o
 
 We will do all of our file storage and editing directly in [Github](https://github.com), which will also allow us to immediately make our map publicly visible.
 
+To get started, head to our template repository: [https://github.com/healthyregions/leaflet-asset-map](https://github.com/healthyregions/leaflet-asset-map).
+
+1. Click the **Use this template** button to create a copy of this repository in your own GitHub account.
+2. Configure Github Pages using the Static HTML workflow
+    - In **Settings** > **Pages** set the **Source** dropdown to **Github Actions**
+    - Choose the **Static HTML** option and click **Configure**
+        - Don't make any changes to the code you see yet, just click **Commit changes..**
+    - Wait a few seconds and visit https://<username>.github.io/leaflet-asset-map. You should see a zoomable map with markers on it.
+3. Upload your own CSV or GeoJSON file to the data directory.
+    - Make sure your CSV has columns that hold Latitude and Longitude values for each feature.
+4. Follow the examples in example.html to add your own layers to the main map in index.html.
+
+For more information on customization, see [Leaflet documentation](https://leafletjs.org).
+
+For valid icon names, see [ionic.io/ionicons/v2](https://ionic.io/ionicons/v2). Click an icon, and use the name you see without including the ion- prefix.
+
 ## Thematic Map with HTML & CSS
 
 ### Getting Started {-}

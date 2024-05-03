@@ -14,9 +14,9 @@ In the module, you will:
 - Create web maps using the suggested applications
 :::
 
-In this module, you will learn fundamental skills for creating asset maps, thematic maps, story maps, and data dashboards on a variety of free and/or open source platforms. Each section will include an exercise that will help you put into practice what you learn, highlighting the strengths of each map type and how they can be used to tell a well-rounded narrative with data. These exercises use data relevant to maternal health disparities in New York City and Georgia. All data required to complete each exercise can be found at [github link]. A reference file with information on variables and data sources is included.
+In this module, you will learn fundamental skills for creating asset maps, thematic maps, story maps, and data dashboards on a variety of free and/or open source platforms. Each section will include an exercise that will help you put into practice what you learn, highlighting the strengths of each map type and how they can be used to tell a well-rounded narrative with data. These exercises use data relevant to maternal health disparities in New York City and Georgia. All data required to complete each exercise can be found in [SDOHPlace-AppDevelopment.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-AppDevelopment.zip).
 
-Below is a figure that should be familar to you. You saw this in module 1! It's all coming full circle now. 
+Below is a figure that should be familiar to you. You saw this in module 1! It's all coming full circle now. 
 
 ![Types of Spatial Data Visualizations an Web Mapping Applications. Source: HEROP Lab Team](images/06-mapoptions.png){width=95%}
 
@@ -35,7 +35,7 @@ In this module, we’ll be introducing a number of no-code or low-code mapping s
 |                    | Mapbox GL        | Useful for creating base maps and interactive thematic maps. Requires some basic coding for embedding in web pages.           |
 | Story Map          | ArcGIS Online    | Offers flexible story map software with the ability to integrate various data visualizations and media elements.               |
 |                    | Knight Lab       | Provides a straightforward, free tool for creating story maps with basic functionality. Can be integrated into existing web pages. |
-| Data Dashboard    | Tableau Public   | Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.              |
+| Data Dashboard     | Tableau Public   | Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.              |
 |                    | R Shiny          | Enables building interactive web applications with R, suitable for creating customized data dashboards including maps.         |
 
 
@@ -131,7 +131,7 @@ Descriptions will need to be written using HTML formatting, but selecting the he
 :::activity
 **Extension Exercise**
 
-Want additional practice? Create an asset map of Georgia counties participating in the Home Visiting Program pilot using the file **counties_ga.csv**. Add **counties_ga.geojson** to add county boundaries. Considering adding additional data to create a more comprehensive asset map.
+Want additional practice? First, download the extension dataset: [SDOHPlace-AppDevelopment-Extension.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-AppDevelopment-Extension.zip) Create an asset map of Georgia counties participating in the Home Visiting Program pilot using the file **counties_ga.csv**. Add **counties_ga.geojson** to add county boundaries. Considering adding additional data to create a more comprehensive asset map.
 
 As you create an asset map, consider the following questions: 
 
@@ -149,7 +149,7 @@ As you create an asset map, consider the following questions:
 
 **Looking Forward**
 
-In the asset map section, you explored how to identify and visualize spatial distributions of resources, facilities, or infrastructure within your area of interest.  As you continue your exploration, delve deeper into specific themes or variables by transitioning to thematic mapping in the next section. 
+In the asset map section, you explored how to identify and visualize spatial distributions of resources, facilities, or infrastructure within your area of interest.  As you continue your exploration, delve deeper into specific themes or variables by transitioning to thematic mapping in the next section.
 
 ## Thematic Map App Development
 
