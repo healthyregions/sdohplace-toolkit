@@ -662,7 +662,7 @@ If you get stuck while creating your data dashboard, Tableau Public provides a n
 :::activity
 **Extension Activity**
 
-Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].
+Create a dashboard on maternal health and SDOH in Georgia using the data provided in [SDOHPlace-AppDevelopment-Extension.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-AppDevelopment-Extension.zip).
 
 :::
 
