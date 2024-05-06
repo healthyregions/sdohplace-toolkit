@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 App Development | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 App Development | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -438,17 +438,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>Asset Map</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev.html#:~:text=6.1-,Asset%20Map%20Development,-An%20asset%20map">Asset Map</a></td>
 <td>uMap</td>
 <td>A web-based mapping program using OpenStreetMap, no coding required. Allows importing data for asset mapping.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Leaflet with CSV</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev-code.html#:~:text=C.2-,Leaflet%20Map%20with%20CSV%20and%20GeoJSON%20data,-Leaflet%20is%20a">Leaflet with CSV (Appendix)</a></td>
 <td>A popular open-source mapping library for creating interactive web maps. Involves some JavaScript coding for customization.</td>
 </tr>
 <tr class="odd">
-<td>Thematic Map</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev.html#:~:text=6.2-,Thematic%20Map%20App%20Development,-A%20thematic%20map">Thematic Map</a></td>
 <td>ArcGIS Online</td>
 <td>A free version of ArcGIS for creating thematic maps. Allows customization of data display and symbology for various variables.</td>
 </tr>
@@ -458,7 +458,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <td>Useful for creating base maps and interactive thematic maps. Requires some basic coding for embedding in web pages.</td>
 </tr>
 <tr class="odd">
-<td>Story Map</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev.html#story-map-app-development:~:text=6.3-,Story%20Map%20App%20Development,-A%20story%20map">Story Map</a></td>
 <td>ArcGIS Online</td>
 <td>Offers flexible story map software with the ability to integrate various data visualizations and media elements.</td>
 </tr>
@@ -468,13 +468,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <td>Provides a straightforward, free tool for creating story maps with basic functionality. Can be integrated into existing web pages.</td>
 </tr>
 <tr class="odd">
-<td>Data Dashboard</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev.html#data-dashboard-app-development">Data Dashboard</a></td>
 <td>Tableau Public</td>
 <td>Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>R Shiny</td>
+<td><a href="https://toolkit.sdohplace.org/06-appdev-code.html#:~:text=C.4-,Dashboards%20with%20R%20Shiny,-Getting%20Started">R Shiny (Appendix)</a></td>
 <td>Enables building interactive web applications with R, suitable for creating customized data dashboards including maps.</td>
 </tr>
 </tbody>
@@ -751,9 +751,11 @@ Zoom into “New York” if it doesn’t automatically zoom.</p>
 <summary>
 Create Data Classifications
 </summary>
-<p>Select “choropleth-fill” from the Choropleth dropdown
-Select “pctblack” as the variable for color mapping from the “Style Across Data Range”.
-Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges.</p>
+<ul>
+<li><p>Select “choropleth-fill” from the Choropleth dropdown</p></li>
+<li><p>Select “pctblack” as the variable for color mapping from the “Style Across Data Range”.</p></li>
+<li><p>Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges.</p></li>
+</ul>
 <div class="tip">
 <p><strong>Tip</strong></p>
 <p>Deciding on data classification schemes - Mapbox does not have a way to decide between different classification schemes, like Jenks or quantiles. Use QGIS or R to decide on a classification scheme and identify where the breaks are, then manually set those breaks in Mapbox. For this activity, use the following stops “0, 0.01, 22.78, 45.55, 68.32, and 91.1”
@@ -866,6 +868,10 @@ Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slide
 <summary>
 Select and Edit Basemap
 </summary>
+<video controls>
+<source src="images/06-AGOSMbasemap.mp4" type="video/mp4" />
+Video not supported
+</video>
 <ul>
 <li><p>Click ‘edit’ on your map, then select ‘Select basemap’.</p></li>
 <li><p>Choose from default options or click ‘Browse more maps’ for additional choices. Simpler basemaps are under ‘Living Atlas’, or use your own from the content library.</p></li>
@@ -905,10 +911,8 @@ Review and Publish
 </ul>
 </br></br>
 </details>
-<div id="integrate-other-geospatial-data-visualization" class="section level5 unnumbered hasAnchor">
-<h5>Integrate Other Geospatial Data Visualization<a href="06-appdev.html#integrate-other-geospatial-data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Integrate Other Geospatial Data Visualization</strong></p>
 <p>The biggest strength of using ArcGIS Online is the ability to incorporate a variety of other types of data visualizations into a story map to create a larger narrative. Within an ArcGIS Online Story Map, you can find a traditional story map, but you can also include asset and thematic maps, media, timelines, and web apps. The end result can be a built out project with a story map as just one of many elements. Take your time to explore all of the available options. When you’re satisfied with how your story map is presented and contextualized, it’s time to hit publish.</p>
-</div>
 </div>
 </div>
 <div id="knight-lab-storymapjs" class="section level3 unnumbered hasAnchor">
@@ -1003,9 +1007,9 @@ Adjust Background and Layout
 <li><p>How do you want the user to feel over the course of this story map? At the end?</p></li>
 <li><p>If you use an ArcGIS Online story map, how could you include other information to contextualize this traditional-style story map?</p></li>
 </ul>
-<p><em>Georgia data</em>
-- <a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-median-household-income-variables-boundaries/about?layer=2</p>
+<p><em>Georgia data</em></p>
 <ul>
+<li><p><a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-median-household-income-variables-boundaries/about?layer=2</p></li>
 <li><p><a href="https://covid-hub.gio.georgia.gov/datasets/esri" class="uri">https://covid-hub.gio.georgia.gov/datasets/esri</a>::acs-race-and-hispanic-origin-variables-centroids/about?layer=2</p></li>
 <li><p><a href="https://opendata.atlantaregional.com/datasets/GARC" class="uri">https://opendata.atlantaregional.com/datasets/GARC</a>::maternal-health-child-asthma-by-tract-2021/about</p></li>
 <li><p><a href="https://dph.georgia.gov/maternal-and-neonatal-center" class="uri">https://dph.georgia.gov/maternal-and-neonatal-center</a></p></li>
@@ -1118,12 +1122,19 @@ Finalize Your Dashboard
 <p>If you get stuck while creating your data dashboard, Tableau Public provides a number of how-to videos and community resources, including a community forum for troubleshooting. These additional resources can be found at the end of <a href="https://public.tableau.com/app/learn/how-to-videos">here</a>.</p>
 <div class="activity">
 <p><strong>Extension Activity</strong></p>
-<p>Want additional practice? Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].</p>
+<p>Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].</p>
 </div>
 </div>
 </div>
 <div id="resources-4" class="section level2 unnumbered hasAnchor">
 <h2>Resources<a href="06-appdev.html#resources-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>uMap: <a href="https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help" class="uri">https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help</a></p></li>
+<li><p>ArcGIS Online: <a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/resources" class="uri">https://www.esri.com/en-us/arcgis/products/arcgis-online/resources</a></p></li>
+<li><p>Mapbox: <a href="https://docs.mapbox.com/" class="uri">https://docs.mapbox.com/</a></p></li>
+<li><p>StoryMapJS: <a href="https://storymap.knightlab.com/#help" class="uri">https://storymap.knightlab.com/#help</a></p></li>
+<li><p>Tableau Public: <a href="https://public.tableau.com/app/learn/how-to-videos" class="uri">https://public.tableau.com/app/learn/how-to-videos</a></p></li>
+</ul>
 
 </div>
 </div>

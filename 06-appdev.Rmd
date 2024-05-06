@@ -29,14 +29,14 @@ In this module, we’ll be introducing a number of no-code or low-code mapping s
 
 | App Type           | Map Type         | Description                                                                                                                    |
 |--------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| Asset Map          | uMap             | A web-based mapping program using OpenStreetMap, no coding required. Allows importing data for asset mapping.                   |
-|                    | Leaflet with CSV | A popular open-source mapping library for creating interactive web maps. Involves some JavaScript coding for customization.   |
-| Thematic Map       | ArcGIS Online    | A free version of ArcGIS for creating thematic maps. Allows customization of data display and symbology for various variables. |
+| [Asset Map](https://toolkit.sdohplace.org/06-appdev.html#:~:text=6.1-,Asset%20Map%20Development,-An%20asset%20map)          | uMap             | A web-based mapping program using OpenStreetMap, no coding required. Allows importing data for asset mapping.                   |
+|                    | [Leaflet with CSV (Appendix)](https://toolkit.sdohplace.org/06-appdev-code.html#:~:text=C.2-,Leaflet%20Map%20with%20CSV%20and%20GeoJSON%20data,-Leaflet%20is%20a) | A popular open-source mapping library for creating interactive web maps. Involves some JavaScript coding for customization.   |
+| [Thematic Map](https://toolkit.sdohplace.org/06-appdev.html#:~:text=6.2-,Thematic%20Map%20App%20Development,-A%20thematic%20map)       | ArcGIS Online    | A free version of ArcGIS for creating thematic maps. Allows customization of data display and symbology for various variables. |
 |                    | Mapbox GL        | Useful for creating base maps and interactive thematic maps. Requires some basic coding for embedding in web pages.           |
-| Story Map          | ArcGIS Online    | Offers flexible story map software with the ability to integrate various data visualizations and media elements.               |
+| [Story Map](https://toolkit.sdohplace.org/06-appdev.html#story-map-app-development:~:text=6.3-,Story%20Map%20App%20Development,-A%20story%20map)          | ArcGIS Online    | Offers flexible story map software with the ability to integrate various data visualizations and media elements.               |
 |                    | Knight Lab       | Provides a straightforward, free tool for creating story maps with basic functionality. Can be integrated into existing web pages. |
-| Data Dashboard     | Tableau Public   | Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.              |
-|                    | R Shiny          | Enables building interactive web applications with R, suitable for creating customized data dashboards including maps.         |
+| [Data Dashboard](https://toolkit.sdohplace.org/06-appdev.html#data-dashboard-app-development)     | Tableau Public   | Allows for the creation of interactive data dashboards with map visualizations, bar graphs, and filter actions.              |
+|                    | [R Shiny (Appendix)](https://toolkit.sdohplace.org/06-appdev-code.html#:~:text=C.4-,Dashboards%20with%20R%20Shiny,-Getting%20Started)          | Enables building interactive web applications with R, suitable for creating customized data dashboards including maps.         |
 
 
 ## Asset Map Development 
@@ -298,9 +298,12 @@ Zoom into “New York” if it doesn’t automatically zoom.
 </br></br></details>
 
 <details markdown='1'><summary>Create Data Classifications</summary>
-Select “choropleth-fill” from the Choropleth dropdown
-Select "pctblack" as the variable for color mapping from the “Style Across Data Range”. 
-Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges. 
+
+- Select “choropleth-fill” from the Choropleth dropdown
+
+- Select "pctblack" as the variable for color mapping from the “Style Across Data Range”. 
+
+- Click “Add another stop.” Consider using a “Step” in the Rate of Change. Add 6 bins or “stops” for distinct data ranges. 
 
 :::tip
 **Tip** 
@@ -420,6 +423,11 @@ Add new slides by clicking the ‘+’ icon at the bottom right. Rearrange slide
 
 <details markdown='1'><summary> Select and Edit Basemap</summary>
 
+<video controls>
+  <source src="images/06-AGOSMbasemap.mp4" type="video/mp4" />
+  Video not supported
+</video>
+
 - Click ‘edit’ on your map, then select ‘Select basemap’.
 
 - Choose from default options or click ‘Browse more maps’ for additional choices. Simpler basemaps are under ‘Living Atlas’, or use your own from the content library.
@@ -456,7 +464,8 @@ Tip: With these options, you can either keep your basemap simple, making largely
 
 </br></br></details>
 
-##### Integrate Other Geospatial Data Visualization {-}
+**Integrate Other Geospatial Data Visualization**
+
 The biggest strength of using ArcGIS Online is the ability to incorporate a variety of other types of data visualizations into a story map to create a larger narrative. Within an ArcGIS Online Story Map, you can find a traditional story map, but you can also include asset and thematic maps, media, timelines, and web apps. The end result can be a built out project with a story map as just one of many elements. Take your time to explore all of the available options. When you’re satisfied with how your story map is presented and contextualized, it’s time to hit publish.
 
 ### Knight Lab StoryMapJS {-}
@@ -553,6 +562,7 @@ As you create your story map, consider the following questions:
 
 
 *Georgia data*
+
 - https://covid-hub.gio.georgia.gov/datasets/esri::acs-median-household-income-variables-boundaries/about?layer=2
 
 - https://covid-hub.gio.georgia.gov/datasets/esri::acs-race-and-hispanic-origin-variables-centroids/about?layer=2
@@ -652,8 +662,18 @@ If you get stuck while creating your data dashboard, Tableau Public provides a n
 :::activity
 **Extension Activity**
 
-Want additional practice? Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].
+Create a dashboard on maternal health and SDOH in Georgia using the data provided [here].
 
 :::
 
 ## Resources {-}
+
+- uMap: https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help
+
+- ArcGIS Online: https://www.esri.com/en-us/arcgis/products/arcgis-online/resources
+
+- Mapbox: https://docs.mapbox.com/
+
+- StoryMapJS: https://storymap.knightlab.com/#help
+
+- Tableau Public: https://public.tableau.com/app/learn/how-to-videos

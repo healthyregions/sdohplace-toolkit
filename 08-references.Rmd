@@ -102,3 +102,13 @@
 - Peterson, G. N. (2020). GIS cartography: a guide to effective map design. CRC Press.
 
 ## Module 6 {-}
+
+- Arcgis online resources | tutorials, documentation, videos & more. https://www.esri.com/en-us/arcgis/products/arcgis-online/resources
+
+- Mapbox. https://docs.mapbox.com/
+
+- StoryMap. https://storymap.knightlab.com
+
+- Tableau Public. https://public.tableau.com/app/learn/how-to-videos
+
+- Umap—Openstreetmap wiki. https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help
