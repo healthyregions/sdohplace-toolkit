@@ -123,7 +123,7 @@ Decide what platforms you are most likely to use, and where most of your audienc
 
 Here’s an example of the US Covid Atlas Twitter page: 
 
------IMAGE HERE-----
+![](images/07-covid.png){width=40%}
 
 
 As you can see, the username is as close to the name of the project as possible, without any numbers or special characters making it easy to search. The description includes a short summary of what the project is about, and includes a link to take people to view the project. The profile image and banner are also both set up to convey more information about the project, including the project’s logo.
@@ -140,7 +140,7 @@ Some things to include in the dissemination plan are:
 See below for an example:
 
 
------IMAGE HERE---
+![](images/07-plan.png){width=75%}
 
 As you can see, for each post we have a corresponding image, who wrote the post, when and where the post will be uploaded, and if the post has been reviewed and approved to go out. Using this dissemination plan also allows you to schedule future posts, and ensures that people stay on track of promoting on social media. 
 
@@ -161,8 +161,7 @@ Social media promotion is an effective way to ensure people know of your applica
 
 With all of that in mind, let’s go through an example of a project Launch from start to finish. This is Adila: 
 
-
-----IMAGE HERE---
+![](images/07-adila.png){width=80%}
 
 **Background**
 
