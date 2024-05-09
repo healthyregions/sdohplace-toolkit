@@ -46,6 +46,11 @@ asset-map-development
 thematic-map-app-development
 story-map-app-development
 data-dashboard-app-development
+sharing-your-prototype
+iteration-evaluationcontinuous-improvement
+iterate-evaluate
+the-launch
+example-of-a-launch
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
@@ -99,9 +104,3 @@ server
 expand-your-prototype
 define-server-logic
 run-the-application
-sharing-your-prototype
-iteration-evaluationcontinuous-improvement
-evaluate
-does-the-web-application-do-what-i-set-out-for-it-to-do
-the-launch
-example-of-a-launch
