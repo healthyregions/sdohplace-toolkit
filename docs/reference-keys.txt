@@ -99,3 +99,9 @@ server
 expand-your-prototype
 define-server-logic
 run-the-application
+sharing-your-prototype
+iteration-evaluationcontinuous-improvement
+evaluate
+does-the-web-application-do-what-i-set-out-for-it-to-do
+the-launch
+example-of-a-launch
