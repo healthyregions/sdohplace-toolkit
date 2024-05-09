@@ -48,7 +48,6 @@ story-map-app-development
 data-dashboard-app-development
 sharing-your-prototype
 iteration-evaluationcontinuous-improvement
-iterate-evaluate
 the-launch
 example-of-a-launch
 data-wrangling-in-r

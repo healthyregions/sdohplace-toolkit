@@ -25,7 +25,7 @@ The Iteration process is the process of continuous improvement, in which a perso
 The prototype is the first draft of your project, and it should go without saying that you would hope to improve it beyond the simple design you’ve achieved. From here we move onto evaluation. 
 
 
-### Iterate & Evaluate 
+### Iterate & Evaluate {-}
 
 As we enter the evaluation phase, think about your team and stakeholders. Identify who should be the first to view each version of your product, and when their feedback might be most valuable.  
 
