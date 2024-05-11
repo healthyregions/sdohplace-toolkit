@@ -180,9 +180,9 @@ As you can see, for each post we have a corresponding image, who wrote the post,
 :::tip
 **Tip**  
 
-Having images accompany your social media posts can help them grab people’s attention, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through Canva.com. Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:
+Having images accompany your social media posts can help them grab people’s attention, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through [Canva](www.Canva.com). Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:
 
-----IMAGE HERE----
+![](images/07-socialexample.png){width=30%}
 
 :::
 
@@ -211,6 +211,8 @@ Here is a step-by-step process for creating a mailchimp campaign:
 
 - After you have developed your contact list, import the list into the Audience section of your MailChimp, as seen below. 
 
+![](images/07-mail1.png){width=95%}
+
 </br></br></details>
 
 <details markdown='1'><summary>Create a new campaign</summary>
@@ -220,11 +222,16 @@ Here is a step-by-step process for creating a mailchimp campaign:
 - If you have completed step 1 correctly, your audience will automatically be selected as the recipients in the “To” section. 
 
 - Make sure to write a subject, indicate a time to send the email, and select a from email. 
+
+![](images/07-mail2.png){width=95%}
+
 </br></br></details>
 
 <details markdown='1'><summary>Create your content</summary>
 
 - You can develop the complete content of your email from scratch or use a template.
+
+![](images/07-mail3.png){width=95%}
 
 </br></br></details>
 
@@ -244,11 +251,15 @@ If you have to use an address, you can use the address of your institution or or
 
 - You can send yourself test emails, and make sure you send yourself a bunch! What might look good in the preview might look horrible when its in an email format, so double-check!
 
+![](images/07-mail4.png){width=95%}
+
 </br></br></details>
 
 <details markdown='1'><summary>Double-check tracking</summary>
 
 - This is the second most important part. Make sure you have set up tracking so that mailchimp tracks opens and clicks. This will tell you how many people you sent your campaign to opened your email, and how many of those clicked links to your application. 
+
+![](images/07-mail5.png){width=95%}
 
 </br></br></details>
 
@@ -257,6 +268,8 @@ If you have to use an address, you can use the address of your institution or or
 - Send your email! If you have an idea for the best time to send it, make sure to schedule your email to send during that time. 
 
 - Afterwards, you can access a report of your email campaign in the “Campaigns” section of your MailChimp. Here you can see how successful your email was.
+
+![](images/07-mail6.png){width=95%}
 
 </br></br></details>
 
@@ -300,7 +313,7 @@ Facebook will hold a majority of her target audience, and so she will make sure 
 
 With all that in mind she starts with a Dissemination plan. She decides to go with the following plan: 
 
-[Screenshot here]
+![](images/07-adilaplan.png){width=75%}
 
 </br></br></details>
 
@@ -310,7 +323,7 @@ As we can see, as Facebook is her primary mode of social media promotion, she pl
 
 For X, she decides to post every Tuesday and Thursday at 12 PM. She decides to stick to the plan of posting around noon which will lineup with most of her intended audience’s lunch break where they’re most likely to be on their phones. Thanks to the scheduled post feature on X, Adila can make a bunch of posts in advance so she can spend more time interacting and promoting on Facebook. However, she will still want to check in every now and then to make sure her X profile appears active. 
 
----IMAGE HERE OF EXAMPLE POST (IMAGE AND CAPTION)---
+![](images/07-adilapost.png){width=35%}
 
 For Instagram, she decides to post only once a week on Friday, when her younger audience will be ending their week and making plans for the weekend. She has this post scheduled around noon to line up nicely with lunch breaks when most of the younger audience will be on their phones, as they might not have time later in the day if they’ve made plans. 
 
@@ -331,9 +344,10 @@ With all this planned and in motion, she has completed her hard launch, and now 
 
 ## Resources
 
-- Social Media Fact Sheet https://www.pewresearch.org/internet/fact-sheet/social-media/?tabItem=5b319c90-7363-4881-8e6f-f98925683a2f
+- [Social Media Fact Sheet](https://www.pewresearch.org/internet/fact-sheet/social-media/?tabItem=5b319c90-7363-4881-8e6f-f98925683a2f)
 
-- Canva https://www.canva.com/
+- [Canva](https://www.canva.com/)
 
-- MailChimp https://mailchimp.com/
+- [MailChimp](https://mailchimp.com/)
 
+- [Soft vs Hard Launch Examples](https://blog.flutter.wtf/soft-launch-vs-hard-launch/)
