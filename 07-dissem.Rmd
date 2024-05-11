@@ -84,7 +84,7 @@ A word of caution: it can be easy to fall into an endless loop of evaluation and
 
 :::
 
-## Analytics
+## Web Analytics
 
 One way to measure the impact of your project is with tracking analytics. Generally speaking, analytics services will log every visit to your webpage or application, and report this information to you, often through a dashboard, giving you insight to how people are using your site and which pages they are viewing. Analytics can provide answers to questions like:
 
@@ -98,10 +98,25 @@ Getting the answers to these questions can help guide next steps and steer furth
 :::tip
 **Why Plausible?** 
 
-We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also [privacy focused](https://plausible.io/privacy-focused-web-analytics) and does not collect personal data or personally identifiable information (PII). Unfortunately, though it is open source software, Plausible is not free (unless you [self-host it](https://plausible.io/self-hosted-web-analytics)), so it may not be a feasible solution for everyone. Google Analytics is, afterall, a marketing platform.
+We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also [privacy focused](https://plausible.io/privacy-focused-web-analytics) and does not collect personal data or personally identifiable information (PII). Unfortunately, though it is open source software, Plausible is not free (unless you [self-host it](https://plausible.io/self-hosted-web-analytics)), so it may not be a feasible solution for everyone. Google Analytics is, after all, a marketing platform.
 :::
 
 Though the specific details may differ depending on your application and your analytics provider, what you typically need to do is add a small snippet of code into the top of your site. If you are building an application on a hosted platform, you may simply need to get a key from your provider and enter it into a setting for your application. These code snippets will be run anytime someone visits your site in a browser, and will send a message back to the analytics provider with information about the user.
+
+Here are some privacy-focused web analytics providers that we recommend:
+
+- Plausible: https://plausible.io/docs/ - 14-day free trial, $9/month
+
+- Matomo: https://matomo.org/ - 21-day free trial, $26/month
+
+- Insights: https://getinsights.io/ - Free tier available
+
+:::tip
+**Tip**
+
+Remember: Adding web analytics tracking to your app is completely optional, and it may not be worth the extra effort and/or expense. Nevertheless, it is an important thing to consider before the launch.
+
+:::
 
 ## The Launch
 
@@ -121,6 +136,7 @@ The Hard Launch is the official public launch of the data application. For this,
 
 </br></br></details>
 
+### Social Media & Dissemination Plan {-}
 
 The first step for either is having a landing page for your data application. Here is where people will be directed to in order to access your data application, and as a result it needs to look good! Additionally it can be used for tracking how many visitors come to your site and access your data application 
 
@@ -143,6 +159,7 @@ Here’s an example of the US Covid Atlas Twitter page:
 
 
 As you can see, the username is as close to the name of the project as possible, without any numbers or special characters making it easy to search. The description includes a short summary of what the project is about, and includes a link to take people to view the project. The profile image and banner are also both set up to convey more information about the project, including the project’s logo.
+
 Once you have everything set up for your social media promotions, begin by creating a dissemination plan for your launch. A dissemination plan can help you track when and where you are promoting your application, and who made what post. This can be done in Google Sheets, Notion, or any other project management site you can think of.
 
 Some things to include in the dissemination plan are: 
@@ -160,6 +177,16 @@ See below for an example:
 
 As you can see, for each post we have a corresponding image, who wrote the post, when and where the post will be uploaded, and if the post has been reviewed and approved to go out. Using this dissemination plan also allows you to schedule future posts, and ensures that people stay on track of promoting on social media. 
 
+:::tip
+**Tip**  
+
+Having images accompany your social media posts can help them grab people’s attention, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through Canva.com. Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:
+
+----IMAGE HERE----
+
+:::
+
+When you begin to promote your application on social media, remember to also track post engagement. At the bottom of every social media post you can find clickable text that says, “View Analytics,” or “Post Insights,” or “View Engagements.” What it's called depends on the app, but the outcome is about the same. Clicking this will allow you to see more information on the post. Such information could include, how many people have seen the post, along with how many people interacted with the post and who interacted. Using this feature can provide you insight on how well your promotions are doing per application, allowing you to refine your dissemination plan as it runs. 
 
 :::tip
 **Tip** 
@@ -170,7 +197,81 @@ Make sure to engage on social media as well. Reposting/retweeting, liking, and c
 
 Social media promotion is an effective way to ensure people know of your application, but it is only one form of promotion. If you want to maximize the number of individuals that know of your application, the best you can do is reach out to them directly! You can do this best by emailing them, or setting up MailChimp campaigns. 
 
-[Add process of Mail Chimp campaign] 
+## MailChimp Campaigns 
+
+As part of the launch, one of the best ways to get the word is through word of mouth! Social media promotions are great, but they are only one form of promotion. They rely solely on people finding you and your application, even if you’ve planned to promote on social media apps that will include your target audience. Email campaigns, however, allow you to directly reach out to your target audience and inform them that your application is ready for them to use! 
+
+We have found that MailChimp is an easy tool for sending email campaigns, and it allows for you to track the success of these campaigns. You can create a free account through their website, and immediately send emails to an audience of up to 1,000 individuals. They’re free account should be enough for most individuals and teams to promote their applications, but should you need they also include payment tears to reach more people.
+
+Here is a step-by-step process for creating a mailchimp campaign: 
+
+<details markdown='1'><summary>Build and import your contact list</summary>
+
+- The first step is to build your contact list. Your application has been in production for months now, and if you have incorporated human-centered design in your planning you should have a network of individuals who are ready to use your app! In addition to them, ask your network if they can share the emails of any other people that might be interested in your application. Finally, Google nearby community organizations and institutions whose goals align with your own! They will have a page dedicated to contacts that you can then add to your contact list.
+
+- After you have developed your contact list, import the list into the Audience section of your MailChimp, as seen below. 
+
+</br></br></details>
+
+<details markdown='1'><summary>Create a new campaign</summary>
+
+- In the left side of the screen, you will see a button that says “Create.” Select this and it will bring you to a new draft for your email campaign 
+
+- If you have completed step 1 correctly, your audience will automatically be selected as the recipients in the “To” section. 
+
+- Make sure to write a subject, indicate a time to send the email, and select a from email. 
+</br></br></details>
+
+<details markdown='1'><summary>Create your content</summary>
+
+- You can develop the complete content of your email from scratch or use a template.
+
+</br></br></details>
+
+:::pitfall
+
+**Caution: Address**
+
+Some state spam laws require that you include an address at the bottom of your email campaign. MailChimp will usually warn you if this is the case. 
+
+If you have to use an address, you can use the address of your institution or organization that you are affiliated with. 
+
+:::
+
+<details markdown='1'><summary>Review</summary>
+
+- Double Check that everything looks correct! 
+
+- You can send yourself test emails, and make sure you send yourself a bunch! What might look good in the preview might look horrible when its in an email format, so double-check!
+
+</br></br></details>
+
+<details markdown='1'><summary>Double-check tracking</summary>
+
+- This is the second most important part. Make sure you have set up tracking so that mailchimp tracks opens and clicks. This will tell you how many people you sent your campaign to opened your email, and how many of those clicked links to your application. 
+
+</br></br></details>
+
+<details markdown='1'><summary>Send it & Track Analytics</summary>
+
+- Send your email! If you have an idea for the best time to send it, make sure to schedule your email to send during that time. 
+
+- Afterwards, you can access a report of your email campaign in the “Campaigns” section of your MailChimp. Here you can see how successful your email was.
+
+</br></br></details>
+
+:::tip
+**Tip**
+
+People can mistake your email campaigns as spam emails if you’re not careful. If you feel like a large part of your audience might mistake an email campaign done through MailChimp as spam, you might want to personally send emails to those individuals. Otherwise, the best way to avoid coming off as spam is to ensure the following:
+
+- Make sure you use clear and concise language, free from any typos. 
+
+- Include no broken links, or links that are two long. Use hyperlinks whenever possible. 
+
+- Have someone else review your email campaign before sending. They could help improve the email and prevent coming off as spam. 
+
+:::
 
 
 ## Example of a Launch
@@ -179,15 +280,17 @@ With all of that in mind, let’s go through an example of a project Launch from
 
 ![](images/07-adila.png){width=80%}
 
-**Background**
+<details markdown='1'><summary> **Background** </summary>
 
 Adila is a healthy food advocate for her community, and currently volunteers at the local community center. To help improve food equity and increase knowledge of healthy food options in the area, Adila has created a resource map of healthy food resources in and around her town. She has spent months of hard work creating her map and is finally ready to release her project to the public for members of her community to use. 
 
-Adila, however is concerned that there might be some issues that went unnoticed up until now, and doesn’t want any bugs or issues with accessing the content to dissuade her audience from using the map all together. So, she begins a soft launch to a few members of her community and invites her stakeholders and a small group of community members to test the resource map before the official launch. 
+Adila, however is concerned that there might be some issues that went unnoticed up until now, and doesn’t want any bugs or issues with accessing the content to dissuade her audience from using the map all together. So, she begins a *soft launch* to a few members of her community and invites her stakeholders and a small group of community members to test the resource map before the official launch. 
 
-Two weeks pass, and the stakeholders and focus groups provide Adila with the feedback she has been hoping for: they love the resource map! There appears to be no major bugs or issues to address, and the community members she invited to test out the map are finding it easy to use and already very useful for finding healthy food options in their area. With this in mind, Adila can now begin the hard launch of her web application. 
+Two weeks pass, and the stakeholders and focus groups provide Adila with the feedback she has been hoping for: they love the resource map! There appears to be no major bugs or issues to address, and the community members she invited to test out the map are finding it easy to use and already very useful for finding healthy food options in their area. With this in mind, Adila can now begin the *hard launch* of her web application. 
 
-**Decide what websites and in-person sites to post marketing**
+</br></br></details>
+
+<details markdown='1'><summary> **Decide what websites and in-person sites to post marketing** </summary>
 
 To do this, she begins by identifying where her audience is most likely to find her promotions. The best way for her to do this is through social media promotions, flyers at the community center she works at, and a small mailchimp campaign sent out to other community centers and similar health organizations nearby. Before she alerts everyone she needs to set up social media accounts for the map, and to ensure that the landing page for the web application is presentable. 
 
@@ -199,7 +302,9 @@ With all that in mind she starts with a Dissemination plan. She decides to go wi
 
 [Screenshot here]
 
-**Social Media/Posting Schedule**
+</br></br></details>
+
+<details markdown='1'><summary> **Social Media/Posting Schedule** </summary>
 
 As we can see, as Facebook is her primary mode of social media promotion, she plans to post four days a week on Monday, Wednesday, Friday and on Saturday. As most of her audience works during the day, she has set the promotions to go out either during common lunch breaks on weekends (12:00 PM), or in the afternoon after work is completed: 5:00 PM. Saturday is the only day of the week where a majority of her audience might be waking up early to do a grocery run, or have the day to themselves, so she sets that to go out early in the morning at 9:00 AM. 
 
@@ -214,9 +319,21 @@ Adila has decided to follow through this dissemination plan for one month at whi
 With her social media up and running, at the same time she will begin posting flyers at her community center, and letting the other volunteers know to get the word out regarding her application. After all, this resource map was created in part to help members of her community. She should make sure everyone who visits the center knows about the map! 
 
 Her community center also hosts an email newsletter they send out to a list of people who have subscribed. She decides to ask the host of the newsletter to promote her application there, and sends them a small summary of the web application and a link to use it. 
+</br></br></details>
 
-**Consistent Marketing**
+<details markdown='1'><summary> **Consistent Marketing** </summary>
 
 Finally, she identifies nearby community organizations and other community centers in the area that align with the same goals she has of promoting healthy food equity in her area. She gathers up a list of contact emails and begins a MailChimp campaign to further get the word out about her web application. 
 
 With all this planned and in motion, she has completed her hard launch, and now monitors visitors to her web application, and the amount of traffic on her social media profiles. Eventually, as the months go by, the number of people visiting her web app might stabilize, and so she will shift gears and begin slowing down when she promotes her social media apps. However, for now, she can rest easy knowing her project is a success!
+
+</br></br></details>
+
+## Resources
+
+- Social Media Fact Sheet https://www.pewresearch.org/internet/fact-sheet/social-media/?tabItem=5b319c90-7363-4881-8e6f-f98925683a2f
+
+- Canva https://www.canva.com/
+
+- MailChimp https://mailchimp.com/
+

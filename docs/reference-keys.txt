@@ -104,3 +104,7 @@ server
 expand-your-prototype
 define-server-logic
 run-the-application
+web-analytics
+mailchimp-campaigns
+resource
+resources-5
