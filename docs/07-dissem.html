@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Sharing Your Prototype | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Sharing Your Prototype | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -480,25 +480,26 @@ If it does not accomplish what you set out to do, write down why, what else is n
 </div>
 <div id="web-analytics" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Web Analytics<a href="07-dissem.html#web-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One way to measure the impact of your project is with tracking analytics. Generally speaking, analytics services will log every visit to your webpage or application, and report this information to you, often through a dashboard, giving you insight to how people are using your site and which pages they are viewing. Analytics can provide answers to questions like:</p>
+<p>One way to measure the impact of your project is with web analytics. Generally speaking, analytics services will log every visit to your webpage or application, and report this information to you, often through an interactive dashboard. This data can give you insight into questions like:</p>
 <ul>
-<li>How many people are visiting my site?</li>
+<li>How many people are visiting my site? What pages are they viewing?</li>
 <li>Where are these people located?</li>
 <li>What time of day are they visiting?</li>
 <li>Are they using a mobile device or laptop/desktop?</li>
 </ul>
-<p>Getting the answers to these questions can help guide next steps and steer further development of your work and research. At HeRoP lab we use <a href="https://plausible.io/simple-web-analytics">Plausible Analytics</a>, though there are other options as well (you have probably heard of <a href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a>, for example).</p>
+<p>Getting the answers to these questions can help steer further development of your work and research. At HeRoP lab we use <a href="https://plausible.io/simple-web-analytics">Plausible Analytics</a>, though there are other options as well (you have probably heard of <a href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a>, for example). Keep in mind, if you are building an application on a hosted platform, such as ArcGIS Online, that platform may already collect some statistics for you, no need for a separate provider.</p>
 <div class="tip">
 <p><strong>Why Plausible?</strong></p>
-<p>We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also <a href="https://plausible.io/privacy-focused-web-analytics">privacy focused</a> and does not collect personal data or personally identifiable information (PII). Unfortunately, though it is open source software, Plausible is not free (unless you <a href="https://plausible.io/self-hosted-web-analytics">self-host it</a>), so it may not be a feasible solution for everyone. Google Analytics is, after all, a marketing platform.</p>
+<p>We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also <a href="https://plausible.io/privacy-focused-web-analytics">privacy-focused</a> and does not collect personal data or personally identifiable information (PII) about visitors to your site. Google Analytics (which is really a marketing platform), collects much more information than we really need.</p>
 </div>
-<p>Though the specific details may differ depending on your application and your analytics provider, what you typically need to do is add a small snippet of code into the top of your site. If you are building an application on a hosted platform, you may simply need to get a key from your provider and enter it into a setting for your application. These code snippets will be run anytime someone visits your site in a browser, and will send a message back to the analytics provider with information about the user.</p>
+<p>While the specific details may differ depending on your application and your analytics provider, adding web analytics to your site typically requires just the addition of a small code snippet to your markup. These code snippets will be run anytime someone visits your site in a browser, and will send a message back to the analytics provider with information about the user.</p>
 <p>Here are some privacy-focused web analytics providers that we recommend:</p>
 <ul>
 <li><p>Plausible: <a href="https://plausible.io/docs/" class="uri">https://plausible.io/docs/</a> - 14-day free trial, $9/month</p></li>
 <li><p>Matomo: <a href="https://matomo.org/" class="uri">https://matomo.org/</a> - 21-day free trial, $26/month</p></li>
 <li><p>Insights: <a href="https://getinsights.io/" class="uri">https://getinsights.io/</a> - Free tier available</p></li>
 </ul>
+<p>Keep in mind, different providers may track different information, so if you want to learn something specific, make sure you pick a provider that will get you the right information</p>
 <div class="tip">
 <p><strong>Tip</strong></p>
 <p>Remember: Adding web analytics tracking to your app is completely optional, and it may not be worth the extra effort and/or expense. Nevertheless, it is an important thing to consider before the launch.</p>

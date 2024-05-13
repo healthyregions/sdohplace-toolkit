@@ -86,22 +86,22 @@ A word of caution: it can be easy to fall into an endless loop of evaluation and
 
 ## Web Analytics
 
-One way to measure the impact of your project is with tracking analytics. Generally speaking, analytics services will log every visit to your webpage or application, and report this information to you, often through a dashboard, giving you insight to how people are using your site and which pages they are viewing. Analytics can provide answers to questions like:
+One way to measure the impact of your project is with web analytics. Generally speaking, analytics services will log every visit to your webpage or application, and report this information to you, often through an interactive dashboard. This data can give you insight into questions like:
 
-- How many people are visiting my site?
+- How many people are visiting my site? What pages are they viewing?
 - Where are these people located?
 - What time of day are they visiting?
 - Are they using a mobile device or laptop/desktop?
 
-Getting the answers to these questions can help guide next steps and steer further development of your work and research. At HeRoP lab we use [Plausible Analytics](https://plausible.io/simple-web-analytics), though there are other options as well (you have probably heard of [Google Analytics](https://marketingplatform.google.com/about/analytics/), for example).
+Getting the answers to these questions can help steer further development of your work and research. At HeRoP lab we use [Plausible Analytics](https://plausible.io/simple-web-analytics), though there are other options as well (you have probably heard of [Google Analytics](https://marketingplatform.google.com/about/analytics/), for example). Keep in mind, if you are building an application on a hosted platform, such as ArcGIS Online, that platform may already collect some statistics for you, no need for a separate provider.
 
 :::tip
 **Why Plausible?** 
 
-We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also [privacy focused](https://plausible.io/privacy-focused-web-analytics) and does not collect personal data or personally identifiable information (PII). Unfortunately, though it is open source software, Plausible is not free (unless you [self-host it](https://plausible.io/self-hosted-web-analytics)), so it may not be a feasible solution for everyone. Google Analytics is, after all, a marketing platform.
+We switched from Google Analytics to Plausible for two main reasons: simplicity and privacy. Plausible has a very simple and user-friendly dashboard, which makes it very accessible and easy to use. It is also [privacy-focused](https://plausible.io/privacy-focused-web-analytics) and does not collect personal data or personally identifiable information (PII) about visitors to your site. Google Analytics (which is really a marketing platform), collects much more information than we really need.
 :::
 
-Though the specific details may differ depending on your application and your analytics provider, what you typically need to do is add a small snippet of code into the top of your site. If you are building an application on a hosted platform, you may simply need to get a key from your provider and enter it into a setting for your application. These code snippets will be run anytime someone visits your site in a browser, and will send a message back to the analytics provider with information about the user.
+While the specific details may differ depending on your application and your analytics provider, adding web analytics to your site typically requires just the addition of a small code snippet to your markup. These code snippets will be run anytime someone visits your site in a browser, and will send a message back to the analytics provider with information about the user.
 
 Here are some privacy-focused web analytics providers that we recommend:
 
@@ -110,6 +110,8 @@ Here are some privacy-focused web analytics providers that we recommend:
 - Matomo: https://matomo.org/ - 21-day free trial, $26/month
 
 - Insights: https://getinsights.io/ - Free tier available
+
+Keep in mind, different providers may track different information, so if you want to learn something specific, make sure you pick a provider that will get you the right information
 
 :::tip
 **Tip**
