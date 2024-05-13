@@ -7,6 +7,7 @@ rmd_files: [
   "04-data.Rmd",
   "05-analysis.Rmd",
   "06-appdev.Rmd",
+  "07-dissem.Rmd",
   "04-dataR.Rmd",
   "05-analysisR.Rmd",
   "06-appdev-code.Rmd",

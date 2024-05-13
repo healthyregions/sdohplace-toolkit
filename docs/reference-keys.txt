@@ -46,6 +46,13 @@ asset-map-development
 thematic-map-app-development
 story-map-app-development
 data-dashboard-app-development
+sharing-your-prototype
+iteration-evaluationcontinuous-improvement
+web-analytics
+the-launch
+mailchimp-campaigns
+example-of-a-launch
+resources-5
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
