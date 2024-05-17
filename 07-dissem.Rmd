@@ -148,7 +148,7 @@ Here is a breakdown of typical audiences and where they are most likely to be:
 
 | Website   | Audience |
 |--------|-------------------|
-| Facebook | More mature audience (30+), family-oriented content. Not ideal for younger audiences (<25 years). |
+| Facebook | More mature audience (40+), family-oriented content. Not ideal for younger audiences (<25 years). |
 | LinkedIn | Typically mature audience (30+), professionals, academics, and career-focused individuals. Growing in popularity among younger audiences. |
 | X (Formerly Twitter) | Mainly 20-30 year olds with diverse interests. Audience predominantly identifies as male. |
 | Instagram | Younger audience (<25 years), mainly college age. Ideal for reaching students. |
