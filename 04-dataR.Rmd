@@ -73,8 +73,19 @@ We need to load the spatial data (shapefile). Remember, this type of data is act
 
 First, we need to read the shapefile data from where you save it.
 
-```{r load-spatial-data}
+```{r eval=FALSE}
 Chi_tracts = st_read("SDOHPlace-DataWrangling/chicagotracts.shp")
+```
+
+Your output will look something like:
+
+```
+## Reading layer `chicagotracts' from data source `./SDOHPlace-DataWrangling/chicagotracts.shp' using driver `ESRI Shapefile'
+## Simple feature collection with 801 features and 9 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -87.94025 ymin: 41.64429 xmax: -87.52366 ymax: 42.02392
+## Geodetic CRS:  WGS 84
 ```
 
 Always inspect data when loading in. Let's look at a non-spatial view.
@@ -411,8 +422,19 @@ covid_wide_clean <- covid_wide %>%
 
 Then, we need to load the zipcode data.
 
-```{r}
+```{r eval=FALSE}
 zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
+```
+
+Your output will look something like:
+
+```
+## Reading layer `ChiZipMaster1' from data source `./SDOHPlace-DataWrangling/ChiZipMaster1.geojson' using driver `GeoJSON'
+## Simple feature collection with 540 features and 31 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -87.87596 ymin: 41.64454 xmax: -87.52414 ymax: 42.02304
+## Geodetic CRS:  WGS 84
 ```
 
 You’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.

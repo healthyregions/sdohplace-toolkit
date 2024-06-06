@@ -39,10 +39,21 @@ Farmers' markets are vital for health and well-being, providing access to fresh,
 
 First, read in and inspect the shapefile file.
 
-```{r }
+```{r eval=FALSE}
 
 markets <- st_read("data/farmers_markets_2012.shp")
+```
 
+```
+## Reading layer `farmers_markets_2012' from data source `./data/farmers_markets_2012.shp' using driver `ESRI Shapefile'
+## Simple feature collection with 44 features and 10 fields
+## Geometry type: POINT
+## Dimension:     XY
+## Bounding box:  xmin: 1138319 ymin: 1831122 xmax: 1190755 ymax: 1946403
+## Projected CRS: NAD83 / Illinois East (ftUS)
+```
+
+```
 head(markets)
 
 ```
@@ -90,11 +101,22 @@ You'll need to zoom in a bit to see the buffers! Let's try plotting using a stan
 
 First, read in the zips:
 
-```{r }
+```{r eval=FALSE}
 
-zips <- st_read("data/chizips.geojson")
+zips <- st_read("SDOHPlace-ResearchDesignAnalysis/chizips.geojson")
+```
+
+Your output will look something like:
 
 ```
+## Reading layer `chizips' from data source `./SDOHPlace-ResearchDesignAnalysis/chizips.geojson' using driver `GeoJSON'
+## Simple feature collection with 58 features and 63 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 1108622 ymin: 1813892 xmax: 1205199 ymax: 1951669
+## Projected CRS: NAD83 / Illinois East (ftUS)
+```
+
 Next, let's overlay and add the buffers.
 
 ```{r }
