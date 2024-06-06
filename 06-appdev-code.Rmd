@@ -99,7 +99,7 @@ In our very simple application, we will use the basics of an html page: the head
 Learn more about the basics of HTML using free online educational tools like [W3 Schools](https://www.w3schools.com/html/html_basic.asp). For now, it's okay to just copy and paste the information below.
 
 <details markdown='1'><summary>Show HTML App Code</summary>
-```{r eval=FALSE}
+```html
 
 <!DOCTYPE html>
 <html>
@@ -124,10 +124,10 @@ Learn more about the basics of HTML using free online educational tools like [W3
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
-	<style> 
-		body { margin: 0; padding: 0; } 
-		#map { position: absolute; top: 0; bottom: 0; width: 100%; }; 
-	</style> 
+	<style>
+		body { margin: 0; padding: 0; }
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+	</style>
 
 </head>
 
@@ -155,10 +155,10 @@ Using the code snippet provided from Mapbox, we can add our basemap. (If you're 
 Use your own Mapbox token -- copy and paste to replace the text, "YOUR MAPBOX API TOKEN." 
 
 <details markdown='1'><summary>Show Mapbox Script </summary>
-```{r eval=FALSE}
+```html
 	<script> 
 
-        <!-- Temp -- Need to push to Github Environmental Secret -->
+        <!-- Temp -- Need to push to Github Environment Secret -->
         mapboxgl.accessToken = 'YOUR MAPBOX API TOKEN';
     
             var map = new mapboxgl.Map({ 
@@ -203,7 +203,7 @@ We're going to hack out a legend. Experienced coders, avert your eyes! The offic
 Generate a new file in your coding project called `main-style.css`. Copy and past the following code, and save.
 
 <details markdown='1'><summary>Show Custom CSS Code </summary>
-```{r eval=FALSE}
+```css
 
 .panel {
     position: absolute;
@@ -276,7 +276,7 @@ This is a prototype -- not a final project! The goal is to get something working
 In your main index file, you can now add more content to your panel. Give the map panel some additional helper text using the "text-muted" class, and add horizontal lines using the `<hr>` tag to keep it classy. Use the legend swatches, resized, and update the corresponding interval. 
 
 <details markdown='1'><summary>Show index.html Panel Code </summary>
-```{r eval=FALSE}
+```html
 
 	<div class="panel">
     	
@@ -316,7 +316,7 @@ Run the app in your browser as you go to ensure you can troubleshoot any bugs th
 ![](images/06-final-mapbox.png)
 
 <details markdown='1'><summary>Final index.html Code </summary>
-```{r eval=FALSE}
+```html
 
 <!DOCTYPE html>
 <html>
