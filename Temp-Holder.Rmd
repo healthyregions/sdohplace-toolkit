@@ -1,7 +1,0 @@
-# (PART) Coming Soon {-}
-
-# Data Wrangling
-
-# App Development
-
-# Evaluation
