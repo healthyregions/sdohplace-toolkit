@@ -557,10 +557,12 @@ library(leaflet)
 library(sf)
 library(plotly)
 library(dplyr)
+library(stringr)
 
 # Load data ----
 nyc_data <- st_read("NYC_nbrhd_data.geojson", quiet = TRUE)
 nyc_data <- st_make_valid(nyc_data)
+nyc_data_df <- st_drop_geometry(nyc_data)
 map_data <- st_transform(nyc_data, crs = 4326)
 
 # Define UI ----
