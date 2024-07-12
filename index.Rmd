@@ -13,7 +13,7 @@ description: "This is the beginning of the SDOH & Place Toolkit."
 
 ![](images/homepage-illustration.png)
 
-## Preface {-}
+# Preface {-}
 
 
 The [SDOH & Place Project Community Toolkit](https://sdohplace.org/) aims to increase the capacity for community and civic organizations in health to:
@@ -28,7 +28,7 @@ The SDOH & Place Project Community Toolkit connects equity principles with analy
 In order to identify and engage with the necessities of different social actors, the community toolkit is based on the principles of Human-Centered Design (HCD). HCD is a well-researched framework that ensures the potential users’ desires, abilities, and contexts are at the core of interactive systems and applications. HCD consists of four main steps: identifying users’ needs, designing for those needs, evaluating, and iterating. Inspired by HCD, the community toolkit is built upon an ongoing co-creation and evaluation process that leverages the collaborative efforts of various stakeholders, such as researchers, policymakers, and analysts.
 
 
-### Table of Contents {-}
+## Table of Contents {-}
 Currently, the community toolkit contains six modules. Depending on your project's objectives, you can opt to undertake either one module or several of them. We recommend starting with Modules 1-3 regardless, and choosing your own adventure in subsequent chapters.
 
  - [**Module 1**](https://toolkit.sdohplace.org/01-intro.html) explores SDOH, equity, and types of visualizations. (*Led by Kamaria Barronville, José Alavez, & Marynia Kolak*)
@@ -39,9 +39,9 @@ Currently, the community toolkit contains six modules. Depending on your project
  - [**Module 6**](https://toolkit.sdohplace.org/06-appdev.html) introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. (*Led by Catherine Discenza, Adam Cox, Yilin Lyn, & Marynia Kolak*)
  - **Module 7** addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. (*Led by Marc Astacio-Palmer*)
  
-### Author Team {-}
+## Author Team {-}
 
-#### Toolkit Editors {-}
+### Toolkit Editors {-}
 
 **Kamaria Barronville** *Instructional Designer*
 
@@ -49,7 +49,7 @@ Currently, the community toolkit contains six modules. Depending on your project
 
 **Marynia Kolak** *Principal Investigator*
 
-#### Toolkit Contributors {-}
+### Toolkit Contributors {-}
 
 **Shubham Kumar** *Product Designer*
 
@@ -65,10 +65,10 @@ Currently, the community toolkit contains six modules. Depending on your project
 
 **Mandela Gadri** *PhD Student*
 
-### Feedback {-}
+## Feedback {-}
 We welcome your input to make this toolkit better. Please submit via our [contact form](https://sdohplace.org/contact), or post an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) directly on the toolkit Github repository page.
 
-### Acknowledgements {-}
+## Acknowledgements {-}
 Support for this toolkit was provided in part by the Robert Wood Johnson Foundation. The views expressed here do not necessarily reflect the views of the Foundation.
 
 The toolkit team is housed at the [Healthy Regions & Policies Lab](https://www.healthyregions.org) at the [Department of Geography and Geographic Information Science](https://www.ggis.illinois.edu), at the University of Illinois at Urbana-Champaign.
