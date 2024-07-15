@@ -3,6 +3,8 @@
 
 # Research Design & Analysis
 
+![](images/banner-research.png){width=100%}
+
 :::objective
 **Objectives**
 

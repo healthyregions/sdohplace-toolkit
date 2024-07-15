@@ -1,5 +1,7 @@
 # Introduction
 
+![](images/homepage-illustration.png)
+
 :::objective
 **Objectives**
 

@@ -311,6 +311,46 @@ div.tools {
   background-image: url("./images/tools.png");
 }
 
+div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.share {
+  border: 0px;
+  border-style: dashed solid;
+  padding: 0rem;
+  margin: 4rem 0;
+  padding-left: 27rem;
+  background-size: 240px;
+  background-repeat: no-repeat;
+  background-position: 0rem;
+  color: #7E1CC4;
+}
+
+div.intro {
+  background-image: url("./images/homepage-illustration.png");
+}
+
+div.planning {
+  background-image: url("./images/banner-planning.png");
+}
+
+div.hcd {
+  background-image: url("./images/banner-hcd.png");
+}
+
+div.wrangling {
+  background-image: url("./images/banner-wrangling.png");
+}
+
+div.research {
+  background-image: url("./images/banner-research.png");
+}
+
+div.dev {
+  background-image: url("./images/banner-dev.png");
+}
+
+div.share {
+  background-image: url("./images/banner-share.png");
+}
+
 /*-------------------------------------------*/
 /*-------------------------------------------*/
 
