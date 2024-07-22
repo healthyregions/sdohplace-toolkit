@@ -3,6 +3,8 @@
 
 # Spatial Data Wrangling 
 
+![](images/banner-wrangling-800.png){width=100%}
+
 :::objective
 **Objectives**
 

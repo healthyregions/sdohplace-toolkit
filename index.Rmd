@@ -31,38 +31,64 @@ In order to identify and engage with the necessities of different social actors,
 ## Table of Contents {-}
 Currently, the community toolkit contains six modules. Depending on your project's objectives, you can opt to undertake either one module or several of them. We recommend starting with Modules 1-3 regardless, and choosing your own adventure in subsequent chapters.
 
- - [**Module 1**](https://toolkit.sdohplace.org/01-intro.html) explores SDOH, equity, and types of visualizations. (*Led by Kamaria Barronville, José Alavez, & Marynia Kolak*)
- - [**Module 2**](https://toolkit.sdohplace.org/02-scoping.html) guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. (*Led by Kamaria Barronville, José Alavez, & Marynia Kolak*)
- - [**Module 3**](https://toolkit.sdohplace.org/03-design.html) emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. (*Led by Shubham Kumar &  José Alavez*)
- - [**Module 4**](https://toolkit.sdohplace.org/04-data.html) focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. (*Led by Catherine Discenza, Yilin Lyu, Adam Cox, & Marynia Kolak*) 
- - [**Module 5**](https://toolkit.sdohplace.org/05-analysis.html) delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). (*Led by José Alavez & Mandela Gadri* )
- - [**Module 6**](https://toolkit.sdohplace.org/06-appdev.html) introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. (*Led by Catherine Discenza, Adam Cox, Yilin Lyn, & Marynia Kolak*)
- - **Module 7** addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. (*Led by Marc Astacio-Palmer*)
+:::intro
+[Module 1](01-intro.html)</br>
+[**Introduction**](01-intro.html)</br>
+Explores SDOH, equity, and types of visualizations. *Led by Kamaria Barronville, José Alavez, & Marynia Kolak*.
+:::
+
+:::planning
+[Module 2](02-scoping.html)</br>
+[**Project Planning**](02-scoping.html)</br>
+Guides users in identifying and formulating their visualization goals, recognizing potential stakeholders, and prioritizing health equity in their planning. *Led by Kamaria Barronville, José Alavez, & Marynia Kolak*.
+:::
+
+:::hcd
+[Module 3](03-design.html)</br>
+[**Human Centered Design**](03-design.html)</br>
+Emphasizes the importance of user-centered design principles in spatial visualization and evaluates various engagement strategies with stakeholders. *Led by Shubham Kumar &  José Alavez*.
+:::
+
+:::wrangling
+[Module 4](04-data.html)</br>
+[**Spatial Data Wrangling**](04-data.html)</br>
+Focuses on the integration of spatial data into projects, covering data-wrangling methods, technologies, and the role of coordinate reference systems (CRS) in spatial visualization. *Led by Catherine Discenza, Yilin Lyu, Adam Cox, & Marynia Kolak*.
+:::
+
+:::research
+[Module 5](05-analysis.html)</br>
+[**Research Design & Analysis**](05-analysis.html)</br>
+Delves into the fundamentals of exploratory data analysis in the context of social determinants of health (SDOH). *Led by José Alavez & Mandela Gadri*.
+:::
+
+:::dev
+[Module 6](06-appdev.html)</br>
+[**App Development**](06-appdev.html)</br>
+Introduces users to multiple low or no-code applications for creating mapping visualizations. These open-source applications concentrate on four cartographic approaches for mapping SDOH: story maps, asset maps, thematic maps, and data dashboards. *Led by Catherine Discenza, Adam Cox, Yilin Lyn, & Marynia Kolak*.
+:::
+
+:::share
+[Module 7](07-dissem.html)</br>
+[**Sharing Your Prototype**](07-dissem.html)</br>
+Addresses how users can evaluate and disseminate their SDOH mapping projects, underscoring the importance of ongoing stakeholder engagement. *Led by Marc Astacio-Palmer*.
+:::
  
 ## Author Team {-}
 
 ### Toolkit Editors {-}
 
-**Kamaria Barronville** *Instructional Designer*
-
-**José Alavez** *Postdoctoral Scholar*
-
+**Kamaria Barronville** *Instructional Designer*</br>
+**José Alavez** *Postdoctoral Scholar*</br>
 **Marynia Kolak** *Principal Investigator*
 
 ### Toolkit Contributors {-}
 
-**Shubham Kumar** *Product Designer*
-
-**Catherine Discenza** *Graduate Research Assistant*
-
-**Marc Astacio-Palmer** *Research Coordinator*
-
-**Adam Cox** *Software Engineer*
-
-**Andre Vines** *Illustrator*
-
-**Yilin Lyu** *Graduate Research Assistant*
-
+**Shubham Kumar** *Product Designer*</br>
+**Catherine Discenza** *Graduate Research Assistant*</br>
+**Marc Astacio-Palmer** *Research Coordinator*</br>
+**Adam Cox** *Software Engineer*</br>
+**Andre Vines** *Illustrator*</br>
+**Yilin Lyu** *Graduate Research Assistant*</br>
 **Mandela Gadri** *PhD Student*
 
 ## Feedback {-}
