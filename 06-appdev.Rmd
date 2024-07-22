@@ -3,7 +3,7 @@
 
 # App Development
 
-![](images/banner-dev.png){width=100%}
+![](images/banner-dev-800.png){width=100%}
 
 :::objective
 **Objectives**

@@ -3,7 +3,7 @@
 
 # Project Planning 
 
-![](images/banner-planning.png){width=100%}
+![](images/banner-planning-800.png){width=100%}
 
 :::objective
 **Objectives**

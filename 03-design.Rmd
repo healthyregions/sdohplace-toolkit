@@ -3,7 +3,7 @@
 
 # Human Centered Design
 
-![](images/banner-hcd.png){width=100%}
+![](images/banner-hcd-800.png){width=100%}
 
 :::objective
 **Objectives**

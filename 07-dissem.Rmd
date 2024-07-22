@@ -3,7 +3,7 @@
 
 # Sharing Your Prototype
 
-![](images/banner-share.png){width=100%}
+![](images/banner-share-800.png){width=100%}
 
 :::objective
 **Objectives**

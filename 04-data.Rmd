@@ -3,7 +3,7 @@
 
 # Spatial Data Wrangling 
 
-![](images/banner-wrangling.png){width=100%}
+![](images/banner-wrangling-800.png){width=100%}
 
 :::objective
 **Objectives**

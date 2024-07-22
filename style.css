@@ -328,27 +328,27 @@ div.intro {
 }
 
 div.planning {
-  background-image: url("./images/banner-planning.png");
+  background-image: url("./images/banner-planning-opt.png");
 }
 
 div.hcd {
-  background-image: url("./images/banner-hcd.png");
+  background-image: url("./images/banner-hcd-opt.png");
 }
 
 div.wrangling {
-  background-image: url("./images/banner-wrangling.png");
+  background-image: url("./images/banner-wrangling-opt.png");
 }
 
 div.research {
-  background-image: url("./images/banner-research.png");
+  background-image: url("./images/banner-research-opt.png");
 }
 
 div.dev {
-  background-image: url("./images/banner-dev.png");
+  background-image: url("./images/banner-dev-opt.png");
 }
 
 div.share {
-  background-image: url("./images/banner-share.png");
+  background-image: url("./images/banner-share-opt.png");
 }
 
 /*-------------------------------------------*/
