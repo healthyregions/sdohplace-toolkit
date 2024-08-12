@@ -85,7 +85,7 @@
 
 ## Module 4 {-}
 
-- https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding 
+- Open Geomatics. https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding 
 
 ## Module 5 {-}
 

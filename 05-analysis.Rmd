@@ -621,7 +621,8 @@ The [Munsell Color System](https://munsell.com/about-munsell-color/how-color-not
 This activity will enhance your understanding of applying the Munsell Color System in representing complex SDOH data, creating effective and meaningful maps that highlight community health risks or inequalities.
 :::
 
-## References {-}
+## Resources {-}
+For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
 
 - [GeoDa Documentation](https://geodacenter.github.io/documentation.html) remains an ESDA standard to uncover dozens of techniques for discovery.
 

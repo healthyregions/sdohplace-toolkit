@@ -683,5 +683,6 @@ In this module, we provided sample data to work with. When you're looking for yo
 When determining which data to include, consider using a conceptual model to guide your variable selection. The socio-ecological model of health or risk environment models, for example, identify specific indicators that you may want to fold in.
 
 ## Resources {-}
+For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
 
-- https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding 
+- [Open Geomatics](https://www.opengeomatics.ca/topology-and-geocoding.html#geocoding) 

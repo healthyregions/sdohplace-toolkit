@@ -106,3 +106,4 @@ server
 expand-your-prototype
 define-server-logic
 run-the-application
+resources-6

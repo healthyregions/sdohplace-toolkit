@@ -1027,7 +1027,8 @@ The final application will render as the following. Inspect the full code [here]
 
 This Shiny application offers an interactive exploration of demographic data across New York City neighborhoods. Users can interactively analyze racial and socioeconomic information through dynamically updated maps and charts. The application highlights how R and Shiny can be used to build engaging and informative data visualizations.
 
-### More Shiny Resources: {-}
+### Resources {-}
+For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
 
 - Once you're happy with your final application, it's time to serve it and share with the world! There are many deployment options; check out the official [Shiny hosting & deployment](https://shiny.posit.co/r/deploy.html) page, or google up some additional ideas.
 - Try out new themes with [Shiny Themes](https://rstudio.github.io/shinythemes/), or shift to using the [Shiny Dashboard](https://rstudio.github.io/shinydashboard/) library

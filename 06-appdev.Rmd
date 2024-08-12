@@ -668,13 +668,14 @@ Create a dashboard on maternal health and SDOH in Georgia using the data provide
 :::
 
 ## Resources {-}
+For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
 
-- uMap: https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help
+- [uMap](https://wiki.openstreetmap.org/wiki/UMap#Feedback_and_help)
 
-- ArcGIS Online: https://www.esri.com/en-us/arcgis/products/arcgis-online/resources
+- [ArcGIS Online](https://www.esri.com/en-us/arcgis/products/arcgis-online/resources)
 
-- Mapbox: https://docs.mapbox.com/
+- [Mapbox](https://docs.mapbox.com/)
 
-- StoryMapJS: https://storymap.knightlab.com/#help
+- [StoryMapJS](https://storymap.knightlab.com/#help)
 
-- Tableau Public: https://public.tableau.com/app/learn/how-to-videos
+- [Tableau Public](https://public.tableau.com/app/learn/how-to-videos)
