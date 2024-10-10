@@ -52,7 +52,6 @@ web-analytics
 the-launch
 mailchimp-campaigns
 example-of-a-launch
-resources-5
 data-wrangling-in-r
 environmental-setup
 intro-to-spatial-data-1
@@ -106,4 +105,3 @@ server
 expand-your-prototype
 define-server-logic
 run-the-application
-resources-6
