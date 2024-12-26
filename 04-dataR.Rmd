@@ -390,7 +390,7 @@ Those two issues are the most common errors.
 
 Here, we are trying to use the `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` dataset to practice how to convert long data to a wide data format.
 
-We subset to the first two columns, and the sixth column. That gives us the zip code, the reporting week, and cumalative cases of Covid-19. We want each zip code to be a unique row, with cases by week as a columns Choose whatever subset functioon you prefer best!
+We subset to the first two columns, and the sixth column. That gives us the zip code, the reporting week, and cumulative cases of Covid-19. We want each zip code to be a unique row, with cases by week as a columns. Choose whatever subset function you prefer best!
 
 ```{r}
 
@@ -413,14 +413,14 @@ head(covid_wide)
 
 Here, we’ll merge data sets with a common variable in R. Merging the cumulative case data set you created in the last section to zip code spatial data (`ChiZipMaster1.geojson`) will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.
 
-We've cleaned our covid case data already, but not all values under the zipcode column are valid. There is a row has a value of "unkown", so let's remove that.
+We've cleaned our covid case data already, but not all values under the zip code column are valid. There is a row has a value of "unknown", so let's remove that.
 
 ```{r}
 covid_wide_clean <- covid_wide %>%
   filter(ZIP.Code != "unknown" & !is.na(ZIP.Code))
 ```
 
-Then, we need to load the zipcode data.
+Then, we need to load the zip code data.
 
 ```{r eval=FALSE}
 zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
@@ -449,7 +449,7 @@ zipcode_unique <- zipcode %>%
   ungroup()
 ```
 
-Now, the two datasets are ready to join together by the zipcode. Make sure to check they have been joined successully.
+Now, the two datasets are ready to join together by the zip code. Make sure to check they have been joined successully.
 
 We'll have these joined datasets be called Chi_Zipsf, to denote a final zip code master dataset.
 
@@ -485,7 +485,7 @@ Don't forget to inspect the data. Uncomment to explore!
 #head(Housing.f)
 ```
 
-We could also flip things around, and try to count how many developments intersect each zip code We can use lengths() to find out how many items are present in a vector. Here,
+We could also flip things around, and try to count how many developments intersect each zip code. We can use lengths() to find out how many items are present in a vector. Here,
 
 ```{r}
 
@@ -533,18 +533,18 @@ tm_shape(Chi_Zipsf.3435) + tm_polygons("Case.Rate...Cumulative",
 
 ### Map Overlay
 
-#### Example 1. Afforfable Housing Developments & Zipcode Boundaries {-}
+#### Example 1. Afforfable Housing Developments & Zip Code Boundaries {-}
 
 We previously translated the housing dataset from a CSV to a spatial object. Let's take an attribute connect with each point, the total number of units per housing development, and visualize as a graduated symbology. Points with more units will be bigger, and not all places are weighted the same visually. 
 
-We use the "style" parameter to aadd a standard deviation data classification break. Check out tmap documentation for more options, like quantiles, natural jenks, or other options.
+We use the "style" parameter to add a standard deviation data classification break. Check out tmap documentation for more options, like quantiles, natural jenks, or other options.
 
 
 ```{r}
 tm_shape(housing.3435) + tm_bubbles("Units", col = "purple", style = "sd") 
 ```
 
-Then, let's overlay that layer to the zipcode boundary.
+Then, let's overlay that layer to the zip code boundary.
 
 ```{r}
 tm_shape(Chi_Zipsf.3435) + tm_polygons(col = "gray80") +
@@ -574,7 +574,7 @@ tm_basemap("Esri.WorldGrayCanvas") +
 
 #### Example 2. COVID-19 & Methadone {-}
 
-In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zipcode map.
+In the first example, let create a map showing both COVID-19 and methadone clinic data (used in A.3). First, let's add our zip code map.
 
 With this overlay, we'll add a "hack" to include the methadone clinic points in a legend.
 

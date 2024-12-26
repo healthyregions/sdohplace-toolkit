@@ -1,3 +1,252 @@
+--- 
+title: "The SDOH & Place Community Toolkit"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+favicon: images/favicon.png
+github-repo: healthyregions/sdhoplace-toolkit
+description: "This is the beginning of the SDOH & Place Toolkit."
+---
+
+# Preface {-}
+
+Placeholder
+
+
+## Table of Contents {-}
+## Author Team {-}
+### Toolkit Editors {-}
+### Toolkit Contributors {-}
+## Feedback {-}
+## Acknowledgements {-}
+
+<!--chapter:end:index.Rmd-->
+
+
+# Introduction
+
+Placeholder
+
+
+## SDOH & Place 
+## Centering Equity
+### Equity Orientation {-}
+#### Setting Parameters of Equity: {-}
+#### Focus on Equity: {-}
+#### Subject of Equity: {-}
+#### Content of Equity: {-}
+### Embracing a Trauma-Informed Mindset in Decision-Making {-}
+## Dynamic Spatial Visualizations 
+## Types of (Spatial) Applications 
+### Asset Maps {-}
+### Simple Thematic Maps {-}
+### Story Maps {-} 
+### Multivariate Data Dashboards {-}
+## Resources {-}
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Project Planning 
+
+Placeholder
+
+
+## What's the Point? 
+## Refining Goals for SDOH 
+### Integrate Equity Directly {-}
+## Defining Stakeholders 
+### Assess Your Team {-}
+### Motivations {-}
+### Finding a Community of Practice {-}
+## Project Assessment
+### Assess Your Strengths {-}
+### Assess Project Needs {-}
+### Is there an app for that? {-}
+## Finalize Approach
+### Define SMART Goals {-}
+### Define Requirements {-}
+### Break Down Details {-}
+### Enable Agile Processes {-}
+#### Iterative Development {-}
+#### User-Centered Design{-}
+## Resources {-}
+
+<!--chapter:end:02-scoping.Rmd-->
+
+
+# Human Centered Design
+
+Placeholder
+
+
+## Design Methods
+## Human-Centered Design
+### Identifying User Needs {-}
+### Designing to User Needs {-}
+#### Organize Functions {-}
+#### Design Aesthetics {-}
+#### Design Tools {-}
+### Evaluation and Iteration {-}
+#### Heuristic Evaluation {-}
+#### Interviews & Surveys {-}
+#### Iteration {-}
+## Good Design
+## Resources {-}
+
+<!--chapter:end:03-design.Rmd-->
+
+
+# Spatial Data Wrangling 
+
+Placeholder
+
+
+## Environment Setup
+### Installing & Working with Software {-}
+## Intro to Spatial Data 
+### Spatial Data Types {-}
+### More Types of Data {-}
+### Spatial Data Formats {-}
+## Coordinate Reference Systems
+#### Why use Projected Coordinate Reference Systems for Spatial Data? {-}
+#### Common Projected Coordinate Reference Systems {-}
+## Converting to Spatial Data
+### CSV to Spatial Data
+### Geocode Addresses
+#### Using Topologies {-}
+#### Data Preparation for Geocoding {-}
+## Merge data sets
+### Reshape Data {-} 
+### Join by Attribute {-}
+#### Geographic Identifiers {-}
+#### Merging to Spatial Data {-}
+### Join by Location {-}
+## Inspect Data 
+### Thematic Maps {-}
+### Map Overlay {-}
+## Finding Data
+## Resources {-}
+
+<!--chapter:end:04-data.Rmd-->
+
+
+# Research Design & Analysis
+
+Placeholder
+
+
+## Research Design
+## Defining your Position
+### Reflective Mapping
+## Calculating Spatial Variables
+### Buffers
+### Nearest Resource
+## Exploratory Data Analysis 
+### Univariate and Bivariate Analyses
+#### Scatter Plots
+### Statistical Mapping
+#### Data Classification
+#### Choropleth Maps
+#### Cartograms 
+### Multivariate Data Analysis
+## Cartographic Principles 
+### Effective SDOH map design entails several critical elements
+#### Audience Consideration {-}
+#### Visual Hierarchy {-}
+#### Balance and Visual Arrangement {-}
+#### Simplicity {-}
+### Key Elements of Spatial Data Visualizations {-}
+#### Title {-}
+#### Legend {-}
+#### Scale Bar {-}
+#### Data Source and Projection Information  {-}
+#### North Arrow {-}
+#### The Munsell Color System:
+## Resources {-}
+
+<!--chapter:end:05-analysis.Rmd-->
+
+
+# App Development
+
+Placeholder
+
+
+## Asset Map Development 
+### uMap {-}
+## Thematic Map App Development
+### ArcGIS Online {-}
+### Mapbox GL {-}
+#### Simple Basemap {-}
+### Interactive Thematic Map {-}
+## Story Map App Development
+### ArcGIS Online {-}
+#### Create a Traditional Story Map {-}
+### Knight Lab StoryMapJS {-}
+## Data Dashboard App Development
+### Tableau Public {-}
+## Resources {-}
+
+<!--chapter:end:06-appdev.Rmd-->
+
+
+# Sharing Your Prototype
+
+Placeholder
+
+
+## Iteration & Evaluation—Continuous Improvement 
+### Iterate & Evaluate {-}
+## Web Analytics
+## The Launch
+### Social Media & Dissemination Plan {-}
+## MailChimp Campaigns 
+## Example of a Launch
+## Resources {-}
+
+<!--chapter:end:07-dissem.Rmd-->
+
+
+# (APPENDIX) Appendix {-} 
+
+Placeholder
+
+
+### Getting Started {-}
+### Tutorials for R {-}
+## Environmental Setup
+### Setting Up the Working Directory {-}
+### Installing & Working with R Libraries {-}
+## Intro to Spatial Data
+### Load Spatial Data {-}
+### Adding a Basemap
+## Coordinate Reference Systems
+### Refine Basic Map {-}
+## Converting to Spatial Data
+### Convert CSVs to Spatial Data
+#### Write Spatial Data
+### Geocode Addresses
+## Convert to Spatial Data
+### Basic Map of Points {-}
+## Merge Data sets
+### Reshape Data {-}
+### Join by Attribute {-}
+### Join by Location {-}
+## Inspect Data
+### Thematic Maps
+#### Example 1. Number of Affordable Housing Developments per Zip Code {-}
+#### Example 2. Number of COVID-19 Cases per Zip Code {-}
+### Map Overlay
+#### Example 1. Afforfable Housing Developments & Zip Code Boundaries {-}
+#### Example 2. COVID-19 & Methadone {-}
+## Resources {-}
+
+<!--chapter:end:04-dataR.Rmd-->
+
 ---
 ---
 
@@ -470,4 +719,62 @@ tm_shape(zips_final) + tm_polygons() +
 ```
 
 How does this view of the data shape your understanding? 
+
+
+<!--chapter:end:05-analysisR.Rmd-->
+
+
+# Coding for app development
+
+Placeholder
+
+
+## Getting Started with Github and Github Pages
+### What is a Repository?
+### Understanding Github's URL Structure - Naming is important!
+### Creating an Account
+## Leaflet Map with CSV and GeoJSON data
+## Thematic Map with HTML & CSS
+### Getting Started {-}
+#### Start a New Repository  {-}
+### Start Coding
+### Basics of an HTML page
+#### Add your Mapbox Map {-}
+### Add a Panel Legend 
+#### Add custom CSS {-}
+#### "Hack" a Legend {-}
+#### Add to your Panel {-}
+### Finalize and Push 
+### Resources {-}
+## Dashboards with R Shiny
+### Getting Started {-}
+### User Interface
+### Server
+### Expand Your Prototype
+#### Updated User Interface {-}
+##### Tab 1: Map & Racial Demographics {-}
+##### Tab 2: Socioeconomic Demographics {-}
+##### Tab 3: Severe Maternal Morbidity & Preterm Birth Rates {-}
+##### Tab 4: About {-}
+#### Define Server Logic
+##### Server Logic for Tabs {-}
+#### Run the Application 
+### Resources {-}
+
+<!--chapter:end:06-appdev-code.Rmd-->
+
+
+# References {-} 
+
+Placeholder
+
+
+## Module 1 {-}
+## Module 2 {-}
+## Module 3 {-}
+## Module 4 {-}
+## Module 5 {-}
+## Module 6 {-}
+
+<!--chapter:end:08-references.Rmd-->
 

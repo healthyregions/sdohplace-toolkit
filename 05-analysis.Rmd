@@ -10,7 +10,7 @@
 
 In this module, you will: 
 
-- Gain insight into the different spatial analysis techniques applicable to SDOOH research
+- Gain insight into the different spatial analysis techniques applicable to SDOH research
 - Delve into potential pitfalls and limitations in spatial analysis of SDOH data
 - Identify cartographic design principles for effective communication
 
@@ -120,7 +120,7 @@ For example, spatial access to a resource can be calculated using multiple appro
 
 Which one is best? It will depend the data available, your skills and interest in calculations, and more importantly, the underlying phenomenon of interest. How often do persons access the resource? What travel behavior is used? 
 
-For density based measures (like total number of resources per area), use the spatial join function froom the last module, and summarize by area. This is also termed as a "point in polygon" operation. For additional proximity-based metrics like buffer and distance calculations, read on. For more complex access modeling techniques, check out the advanced metric resources at the end of the module.
+For density based measures (like total number of resources per area), use the spatial join function from the last module, and summarize by area. This is also termed as a "point in polygon" operation. For additional proximity-based metrics like buffer and distance calculations, read on. For more complex access modeling techniques, check out the advanced metric resources at the end of the module.
 
 ### Buffers
 

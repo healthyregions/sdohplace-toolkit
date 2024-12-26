@@ -291,7 +291,7 @@ If you have spatial data that uses a geographic CRS, like a GeoJSON file, then y
 
 ## Converting to Spatial Data
 
-A common goal in SDOH research is to work address-level data, known as *points* or *events* (when considering time) in spatial analysis research. This could refer to resources in a community, . Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
+A common goal in SDOH research is to work address-level data, known as *points* or *events* (when considering time) in spatial analysis research. This could refer to resources in a community. Before we can run any analytics on the resource location data, we need to convert resource addresses to spatial data points, which can be then used to calculate access metrics.
 
 Locations, when measured as points, can include things like:
 
