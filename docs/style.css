@@ -287,6 +287,10 @@ div.tip, div.pitfall, div.objective, div.activity, div.tools {
   background-color: #FFE5C4;
 }
 
+div.tip ::selection, div.pitfall ::selection, div.objective ::selection, div.activity ::selection, div.tools ::selection {
+  background: #ff9c77;
+}
+
 .color-theme-2 div.tip *, .color-theme-2 div.pitfall *, .color-theme-2 div.objective *, .color-theme-2 div.activity *, .color-theme-2 div.tools * {
   color: #1E1E1E;
 }

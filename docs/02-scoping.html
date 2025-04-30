@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Project Planning | The SDOH &amp; Place Community Toolkit</title>
   <meta name="description" content="This is the beginning of the SDOH &amp; Place Toolkit." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Project Planning | The SDOH &amp; Place Community Toolkit" />
   <meta property="og:type" content="book" />
@@ -60,12 +60,16 @@
 <script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPoints.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPolygons.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPolylines.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/glify-browser.js"></script>
 <script defer data-domain="toolkit.sdohplace.org" src="https://plausible.io/js/script.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +79,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -202,6 +206,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#break-down-details"><i class="fa fa-check"></i>Break Down Details</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#enable-agile-processes"><i class="fa fa-check"></i>Enable Agile Processes</a></li>
 </ul></li>
+<li class="chapter" data-level="2.6" data-path="02-scoping.html"><a href="02-scoping.html#video-walkthrough"><i class="fa fa-check"></i><b>2.6</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="02-scoping.html"><a href="02-scoping.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="03-design.html"><a href="03-design.html"><i class="fa fa-check"></i><b>3</b> Human Centered Design</a>
@@ -214,6 +219,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#evaluation-and-iteration"><i class="fa fa-check"></i>Evaluation and Iteration</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="03-design.html"><a href="03-design.html#good-design"><i class="fa fa-check"></i><b>3.3</b> Good Design</a></li>
+<li class="chapter" data-level="3.4" data-path="03-design.html"><a href="03-design.html#video-walkthrough-1"><i class="fa fa-check"></i><b>3.4</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="03-design.html"><a href="03-design.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="04-data.html"><a href="04-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data Wrangling</a>
@@ -246,6 +252,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#map-overlay"><i class="fa fa-check"></i>Map Overlay</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="04-data.html"><a href="04-data.html#finding-data"><i class="fa fa-check"></i><b>4.7</b> Finding Data</a></li>
+<li class="chapter" data-level="4.8" data-path="04-data.html"><a href="04-data.html#video-walkthrough-2"><i class="fa fa-check"></i><b>4.8</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="04-data.html"><a href="04-data.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="05-analysis.html"><a href="05-analysis.html"><i class="fa fa-check"></i><b>5</b> Research Design &amp; Analysis</a>
@@ -271,6 +278,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5.1" data-path="05-analysis.html"><a href="05-analysis.html#effective-sdoh-map-design-entails-several-critical-elements"><i class="fa fa-check"></i><b>5.5.1</b> Effective SDOH map design entails several critical elements</a></li>
 <li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#key-elements-of-spatial-data-visualizations"><i class="fa fa-check"></i>Key Elements of Spatial Data Visualizations</a></li>
 </ul></li>
+<li class="chapter" data-level="5.6" data-path="05-analysis.html"><a href="05-analysis.html#video-walkthrough-3"><i class="fa fa-check"></i><b>5.6</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="05-analysis.html"><a href="05-analysis.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="06-appdev.html"><a href="06-appdev.html"><i class="fa fa-check"></i><b>6</b> App Development</a>
@@ -294,6 +302,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#tableau-public"><i class="fa fa-check"></i>Tableau Public</a></li>
 </ul></li>
+<li class="chapter" data-level="6.5" data-path="06-appdev.html"><a href="06-appdev.html#video-walkthrough-4"><i class="fa fa-check"></i><b>6.5</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="06-appdev.html"><a href="06-appdev.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="07-dissem.html"><a href="07-dissem.html"><i class="fa fa-check"></i><b>7</b> Sharing Your Prototype</a>
@@ -309,6 +318,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="07-dissem.html"><a href="07-dissem.html#mailchimp-campaigns"><i class="fa fa-check"></i><b>7.4</b> MailChimp Campaigns</a></li>
 <li class="chapter" data-level="7.5" data-path="07-dissem.html"><a href="07-dissem.html#example-of-a-launch"><i class="fa fa-check"></i><b>7.5</b> Example of a Launch</a></li>
+<li class="chapter" data-level="7.6" data-path="07-dissem.html"><a href="07-dissem.html#video-walkthrough-5"><i class="fa fa-check"></i><b>7.6</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="07-dissem.html"><a href="07-dissem.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -350,6 +360,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.7.1" data-path="04-dataR.html"><a href="04-dataR.html#thematic-maps-1"><i class="fa fa-check"></i><b>A.7.1</b> Thematic Maps</a></li>
 <li class="chapter" data-level="A.7.2" data-path="04-dataR.html"><a href="04-dataR.html#map-overlay-1"><i class="fa fa-check"></i><b>A.7.2</b> Map Overlay</a></li>
 </ul></li>
+<li class="chapter" data-level="A.8" data-path="04-dataR.html"><a href="04-dataR.html#video-walkthrough-6"><i class="fa fa-check"></i><b>A.8</b> Video Walkthrough</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
@@ -390,6 +401,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="C.4.1" data-path="06-appdev-code.html"><a href="06-appdev-code.html#user-interface"><i class="fa fa-check"></i><b>C.4.1</b> User Interface</a></li>
 <li class="chapter" data-level="C.4.2" data-path="06-appdev-code.html"><a href="06-appdev-code.html#server"><i class="fa fa-check"></i><b>C.4.2</b> Server</a></li>
 <li class="chapter" data-level="C.4.3" data-path="06-appdev-code.html"><a href="06-appdev-code.html#expand-your-prototype"><i class="fa fa-check"></i><b>C.4.3</b> Expand Your Prototype</a></li>
+</ul></li>
+<li class="chapter" data-level="C.5" data-path="06-appdev-code.html"><a href="06-appdev-code.html#video-walkthrough-7"><i class="fa fa-check"></i><b>C.5</b> Video Walkthrough</a>
+<ul>
 <li class="chapter" data-level="" data-path="06-appdev-code.html"><a href="06-appdev-code.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 </ul></li>
@@ -839,6 +853,12 @@ Analyze the cost implications and licensing requirements of using existing tools
 </div>
 </div>
 </div>
+<div id="video-walkthrough" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Video Walkthrough<a href="02-scoping.html#video-walkthrough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here is a walkthrough of the module in video format. This presentation is provided by the author(s) of the module for your thorough understanding, so grab a cup of coffee and follow along.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e_KSYxJojG8?si=8g3IeI7kdUENLvGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
 <div id="resources-1" class="section level2 unnumbered hasAnchor">
 <h2>Resources<a href="02-scoping.html#resources-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an <a href="https://github.com/healthyregions/sdhoplace-toolkit/issues">issue</a> to our toolkit repository.</p>
@@ -872,43 +892,43 @@ Analyze the cost implications and licensing requirements of using existing tools
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"float": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "float": true
+  }
 });
 });
 </script>
