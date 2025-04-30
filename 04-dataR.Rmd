@@ -597,9 +597,11 @@ tm_shape(Chi_Zipsf) + tm_polygons("Case.Rate...Cumulative",
 
 ## Video Walkthrough
 
-Here is a walkthrough of the module in video format. This presentation is provided by the author(s) of the module for your thorough understanding, so grab a cup of coffee and follow along.
+Here is a walkthrough of the module in video format. This presentation is provided by the author(s) of the module for your thorough understanding, so grab a cup of coffee and follow along:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Qy0_l3Bc2V4?si=aROI6QQd0YIz87KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="responsive-iframe-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/Qy0_l3Bc2V4?si=aROI6QQd0YIz87KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## Resources {-}
 For a deeper dive on topics discussed in this chapter, please check out the following. If you have a resource to add, feel free to suggest one by submitting an [issue](https://github.com/healthyregions/sdhoplace-toolkit/issues) to our toolkit repository.
