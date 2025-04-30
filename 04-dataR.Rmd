@@ -320,7 +320,7 @@ head(methadoneClinics)
 Let's geocode one address first, just to make sure our system is working. We'll use the "cascade" method which use the US Census and OpenStreetMap geocoders. These two services are the main options with `tidygeocoder`.
 
 ```{r}
-sample <- geo("2260 N. Elston Ave. Chicago, IL", lat = latitude, long = longitude, method = 'cascade')
+sample <- geo("2260 N. Elston Ave. Chicago, IL", lat = latitude, long = longitude, method = 'osm')
 head(sample)
 ```
 
@@ -343,7 +343,7 @@ We're ready to go! Batch geocode with one function, and inspect:
 
 ```{r}
 geoCodedClinics <-  geocode(methadoneClinics,
-address = 'fullAdd', lat = latitude, long = longitude, method = 'cascade')
+address = 'fullAdd', lat = latitude, long = longitude, method="osm")
 
 head(geoCodedClinics)
 ```
