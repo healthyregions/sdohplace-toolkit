@@ -326,7 +326,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#tutorials-for-r"><i class="fa fa-check"></i>Tutorials for R</a></li>
-<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environmental-setup"><i class="fa fa-check"></i><b>A.1</b> Environmental Setup</a>
+<li class="chapter" data-level="A.1" data-path="04-dataR.html"><a href="04-dataR.html#environment-setup-1"><i class="fa fa-check"></i><b>A.1</b> Environment Setup</a>
 <ul>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#setting-up-the-working-directory"><i class="fa fa-check"></i>Setting Up the Working Directory</a></li>
 <li class="chapter" data-level="" data-path="04-dataR.html"><a href="04-dataR.html#installing-working-with-r-libraries"><i class="fa fa-check"></i>Installing &amp; Working with R Libraries</a></li>
@@ -365,7 +365,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="B" data-path="05-analysisR.html"><a href="05-analysisR.html"><i class="fa fa-check"></i><b>B</b> Research Design &amp; Analysis in R</a>
 <ul>
-<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-1"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
+<li class="chapter" data-level="B.1" data-path="05-analysisR.html"><a href="05-analysisR.html#environment-setup-2"><i class="fa fa-check"></i><b>B.1</b> Environment Setup</a></li>
 <li class="chapter" data-level="B.2" data-path="05-analysisR.html"><a href="05-analysisR.html#variable-calculations"><i class="fa fa-check"></i><b>B.2</b> Variable Calculations</a>
 <ul>
 <li class="chapter" data-level="B.2.1" data-path="05-analysisR.html"><a href="05-analysisR.html#buffers-1"><i class="fa fa-check"></i><b>B.2.1</b> Buffers</a></li>
@@ -994,7 +994,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <div class="pitfall">
 <p><strong>Pitfall</strong></p>
 <p><em>Invalid Geometries</em></p>
-<p>In the example above, Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.</p>
+<p>In some cases, QGIS may struggle to read the geometries of your data. This can cause spatially dependent tools, like the Join function, to not be able to run properly. Depending on the scale of this issue, and your goals, you may want to move past this problem instead of fixing it. If this is the case, you can set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to Skip Features with Invalid Geometries and complete the rest of the run.</p>
 </div>
 </div>
 </div>

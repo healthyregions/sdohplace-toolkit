@@ -59,7 +59,10 @@ mailchimp-campaigns
 example-of-a-launch
 video-walkthrough-5
 data-wrangling-in-r
-environmental-setup
+environment-setup-1
+example-local-directory-on-windows
+example-local-directory-on-macos-or-linux
+example-posit-cloud
 intro-to-spatial-data-1
 adding-a-basemap
 coordinate-reference-systems-1
@@ -74,7 +77,7 @@ thematic-maps-1
 map-overlay-1
 video-walkthrough-6
 research-design-analysis-in-r
-environment-setup-1
+environment-setup-2
 variable-calculations
 buffers-1
 add-dataset
