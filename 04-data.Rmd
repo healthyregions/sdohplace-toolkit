@@ -602,7 +602,7 @@ Try changing the color ramp, mode, and number of classes. The resulting joined l
 
 *Invalid Geometries*
 
-In the example above, Zip code 60655 has an enclave not included in the Chicago city limits, and you may have a technical issue with that enclave when moving between GeoDa and QGIS with the newly cleaned Chicago zip code data that causes an Invalid Geometry error when conducting a spatial join. Since the zip code in question has no affiliated affordable housing developments, in this case we’ll set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to skip features with invalid geometries.
+In some cases, QGIS may struggle to read the geometries of your data. This can cause spatially dependent tools, like the Join function, to not be able to run properly. Depending on the scale of this issue, and your goals, you may want to move past this problem instead of fixing it. If this is the case, you can set the Invalid feature filter, found under the layer’s Advanced Options when creating the spatial join, to Skip Features with Invalid Geometries and complete the rest of the run.
 :::
 
 ## Inspect Data 
