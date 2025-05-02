@@ -31,7 +31,47 @@ Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip
 
 ### Setting Up the Working Directory {-}
 
-Setting up a working directory in R is crucial as it defines the location on your computer where your files and scripts will be saved and accessed. You can set the working directory to any folder on your system where you plan to store your datasets and R scripts. To set your working directory, use the `setwd("/path/to/your/directory")` and specify the path to your desired directory. 
+Setting up a working directory in R is crucial as it defines the location on your computer where your files and scripts will be saved and accessed. You can set the working directory to any folder on your system where you plan to store your datasets and R scripts. To set your working directory, use
+
+```{r eval=FALSE}
+setwd("/path/to/your/directory")
+```
+
+#### Example: Local directory on Windows
+
+You can use forward slashes for directory paths:
+
+```{r eval=FALSE}
+setwd("C:/Users/susan/RWork")
+```
+
+or you can use double backslashes:
+
+```{r eval=FALSE}
+setwd("C:\\Users\\susan\\RWork")
+```
+
+#### Example: Local directory on macOS or Linux
+
+Use forward slashes:
+
+```{r eval=FALSE}
+setwd("/home/susan/RWork")
+```
+
+You can also use `~` as an abbreviation for your own home directory:
+
+```{r eval=FALSE}
+setwd("~/RWork")
+```
+
+#### Example: Posit Cloud
+
+[Posit Cloud](https://posit.cloud) is a web environment that allows you to create R projects online. In a Posit project, you need to set the working directory like this:
+
+```{r eval=FALSE}
+setwd("/cloud/project")
+```
 
 ### Installing & Working with R Libraries {-}
 
@@ -42,10 +82,13 @@ Before starting operations related to spatial data, we need to complete an envir
 - `dplyr`: facilitates data manipulation
 - `tidygeocoder`: converts addresses to coordinates easily
 
-Uncomment to install packages with code snippet below. You only need to install packages once in an R environment.
+You only need to install packages once in an R environment. Use these commands to install the packages needed for this tutorial.
 
 ```{r eval=FALSE}
-#install.packages("sf", "tmap", "tidygeocoder", "dplyr")
+install.packages("sf")
+install.packages("tmap")
+install.packages("tidygeocoder")
+install.packages("dplyr")
 ```
 
 :::tip
@@ -98,7 +141,6 @@ Check out the data structure of this file.
 
 ```{r data-structure}
 str(Chi_tracts)
-
 ```
 
 The data is no longer a shapefile but an `sf` object, comprised of polygons. The `plot()` command in R help to quickly visualizes the geometric shapes of Chicago's census tracts. The output includes multiple maps because the `sf` framework enables previews of each attribute in our spatial file. 
@@ -166,19 +208,17 @@ Chi_tracts.3435 <- st_transform(Chi_tracts, "EPSG:3435")
 st_crs(Chi_tracts.3435)
 ```
 
-After change the projection, we can plot the map. We'll swith to the static version of tmap, using the `plot` mode.
+After change the projection, we can plot the map. We'll switch to the static version of tmap, using the `plot` mode.
 
 ```{r}
-
 tmap_mode("plot")
 
 tm_shape(Chi_tracts.3435) + tm_borders(alpha=0.5) + 
   tm_layout(main.title ="EPSG:3435 (ft)",
              main.title.position = "center")
- 
 ```
 
-What if we had used the wrong EPSG code, referencing the wrong projection? Here we'll transform and plot EPSG Code 3561, a coordinate reference system in Haw'aii. 
+What if we had used the wrong EPSG code, referencing the wrong projection? Here we'll transform and plot EPSG Code 3561, a coordinate reference system in Hawai'i.
 
 
 ```{r transform-3561}
@@ -210,7 +250,7 @@ Next we fill the tracts with a light gray, and adjust the color and transparency
 
 ```{r }
 tm_shape(Chi_tracts) + tm_fill(col = "gray90") + tm_borders(alpha=0.2, col = "gray10") +
-  tm_scale_bar(position = ("left"), lwd = 0.8) +
+  tm_scale_bar(position = ("bottom"), lwd = 0.8) +
   tm_layout(frame = F)
 ```
 
@@ -275,41 +315,35 @@ We'll reproject to `EPSG:3435`, our system standard
 
 ```{r }
 housing.3435 <- st_transform(points_housing, "EPSG:3435")
-
 ```
 
 #### Write Spatial Data
 
 Finally, we can save our points as a spatial dataset. Use 'st_write' to write your spatial object in R to a data format of your choice. Here, we'll write to a geojson file. 
 
-Uncomment to run this line.
-
-```{r }
-
-#st_write(housing.3435, "housing.geojson", driver = "GeoJSON")
-
+```{r eval=FALSE}
+st_write(housing.3435, "housing.geojson", driver = "GeoJSON")
 ```
 
-You could also save as a "housing.shapefile" to get a shapefile format, however you'll get an error noting that some column names are too long and must be shortened. Shapefile formats have a limit of 10 characters for field names. 
+You could also save as a "housing.shapefile" to get a shapefile format, however you'll get an error noting that some column names are too long and must be shortened. Shapefiles have a limit of 10 characters for field names.
 
-```{r }
-
-#st_write(housing.3435, "housing.shp", driver = "ESRI Shapefile")
-
+```{r eval=FALSE}
+st_write(housing.3435, "housing.shp", driver = "ESRI Shapefile")
 ```
+
 The file may still write, but the column names that were too long may be shortened automatically. 
 
-To change column or field names in R objects, there are dozens of options. Try searching and "googling" different search terms to identify solutions on your own. 
+To change column or field names in R objects, there are dozens of options. Try searching and "Googling" different search terms to identify solutions on your own.
 
 ### Geocode Addresses
 
-Here, we will use `chicago_methadone_nogeometry.csv` for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` to get our geocoding done. 
+Here, we will use `chicago_methadone_nogeometry.csv` for practice, which includes methadone centers in Chicago (center names and addresses). First we load the `tidygeocoder` library to get our geocoding done.
 
 ```{r warning=FALSE}
 library(tidygeocoder)
 ```
 
-Let's read in and inspect data for methadone maintenance providers. Note, these addresses were made available by SAMSHA, and are known as publicly available information. An additional analysis could call each service to check on access to medication during COVID in Septmber 2020, and the list would be updated further.
+Let's read in and inspect data for methadone maintenance providers. Note, these addresses were made available by SAMHSA, and are known as publicly available information. An additional analysis could call each service to check on access to medication during COVID in September 2020, and the list would be updated further.
 
 ```{r}
 methadoneClinics <- read.csv("SDOHPlace-DataWrangling/chicago_methadone_nogeometry.csv")
@@ -317,7 +351,7 @@ methadoneClinics <- read.csv("SDOHPlace-DataWrangling/chicago_methadone_nogeomet
 head(methadoneClinics)
 ```
 
-Let's geocode one address first, just to make sure our system is working. We'll use the "cascade" method which use the US Census and OpenStreetMap geocoders. These two services are the main options with `tidygeocoder`.
+Let's geocode one address first, just to make sure our system is working. We'll use the "osm" method to use the OpenStreetMap geocoder.
 
 ```{r}
 sample <- geo("2260 N. Elston Ave. Chicago, IL", lat = latitude, long = longitude, method = 'osm')
@@ -325,7 +359,6 @@ head(sample)
 ```
 
 As we prepare for geocoding, check out the structure of the dataset. The data should be a character to be read properly. 
-
 ```{r}
 str(methadoneClinics)
 ```
@@ -348,7 +381,7 @@ address = 'fullAdd', lat = latitude, long = longitude, method="osm")
 head(geoCodedClinics)
 ```
 
-There were two that didn't geocode correctly. You can inspect further. This could involve a quick check for spelling issues; or, searching the address and pulling the lat/long using Google Maps and inputting manually. Or, if we are concerned it's a human or unknown error, we could omit. For this exercise we'll just omit the two clinics that didn't geocode correctly.
+In some cases you may find that an address does not geocode correctly. You can inspect further. This could involve a quick check for spelling issues or searching the address and pulling the lat/long using Google Maps and inputting manually. Or, if we are concerned it's a human or unknown error, we could omit. For this exercise we'll just omit the two clinics that didn't geocode correctly.
 
 ```{r}
 geoCodedClinics2 <- na.omit(geoCodedClinics)
@@ -359,7 +392,6 @@ geoCodedClinics2 <- na.omit(geoCodedClinics)
 This is not spatial data yet! To convert a static file to spatial data, we use the powerful `st_as_sf` function from `sf`. Indicate the x,y parameters (=longitude, latitude) and the coordinate reference system used. Our geocoding service used the standard **EPSG:4326**, so we input that here.
 
 ```{r warning = FALSE}
-
 methadoneSf <- st_as_sf(geoCodedClinics2, 
                         coords = c( "longitude", "latitude"),
                         crs = 4326)
@@ -370,7 +402,6 @@ methadoneSf <- st_as_sf(geoCodedClinics2,
 For a really simple map of points -- to ensure they were geocoded and converted to spatial data correctly, we use `tmap`. We'll use the interactive version to view.
 
 ```{r warning = FALSE, message=FALSE}
-
 tmap_mode("view")
 
 tm_shape(methadoneSf) + tm_dots() 
@@ -383,14 +414,13 @@ If your points didn't plot correctly:
 
 Those two issues are the most common errors.
 
-
 ## Merge Data sets
 
 ### Reshape Data {-}
 
 Here, we are trying to use the `COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv` dataset to practice how to convert long data to a wide data format.
 
-We subset to the first two columns, and the sixth column. That gives us the zip code, the reporting week, and cumulative cases of Covid-19. We want each zip code to be a unique row, with cases by week as a columns. Choose whatever subset function you prefer best!
+We subset to the first two columns, and the sixth column. That gives us the zip code, the reporting week, and cumulative cases of Covid-19. Choose whatever subset function you prefer best!
 
 ```{r}
 
@@ -401,7 +431,7 @@ covid_clean = covid[,c(1:2, 6)]
 head(covid_clean) 
 ```
 
-Now, we are trying to create a wide data set with the cumulative cases for each week for each zip code. Enter the code and you will see the new wide data format.
+Now, we want each zip code to be a unique row, with cases by week as a columns because we are trying to create a wide data set with the cumulative cases for each week for each zip code. Enter the code and you will see the new wide data format.
 
 ```{r}
 covid_wide <- reshape(covid_clean, direction = "wide",
@@ -429,32 +459,20 @@ zipcode <- st_read("SDOHPlace-DataWrangling/ChiZipMaster1.geojson")
 Your output will look something like:
 
 ```
-## Reading layer `ChiZipMaster1' from data source `./SDOHPlace-DataWrangling/ChiZipMaster1.geojson' using driver `GeoJSON'
-## Simple feature collection with 540 features and 31 fields
-## Geometry type: MULTIPOLYGON
-## Dimension:     XY
-## Bounding box:  xmin: -87.87596 ymin: 41.64454 xmax: -87.52414 ymax: 42.02304
-## Geodetic CRS:  WGS 84
-```
-
-You’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.
-
-```{r}
-
-zipcode_unique <- distinct(zipcode)
-
-zipcode_unique <- zipcode %>%
-  group_by(zip) %>%
-  slice(1) %>%
-  ungroup()
+Reading layer `ChiZipMaster1' from data source `./SDOHPlace-DataWrangling/ChiZipMaster1.geojson' using driver `GeoJSON'
+Simple feature collection with 59 features and 30 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -87.94011 ymin: 41.64454 xmax: -87.52414 ymax: 42.02304
+Geodetic CRS:  WGS 84
 ```
 
 Now, the two datasets are ready to join together by the zip code. Make sure to check they have been joined successully.
 
-We'll have these joined datasets be called Chi_Zipsf, to denote a final zip code master dataset.
+We call the these joined datasets `Chi_Zipsf`, to denote a final zip code master dataset.
 
 ```{r}
-Chi_Zipsf <- zipcode_unique %>%
+Chi_Zipsf <- zipcode %>%
   left_join(covid_wide_clean, by = c("zip" = "ZIP.Code"))
 ```
 
@@ -470,30 +488,27 @@ We’ll create a spatial join with the housing and zip code data we've brought i
 
 In this example, we want to join zip-level data to the Rental Housing Developments, so we can identify which zips they are within.
 
-First, let's try "sticking" all the zip code data too the housing points, intersecting zip codes with housing developments.
+First, let's try "sticking" all the zip code data to the housing points, essentially intersecting zip codes with housing developments.
 
 To do this, both datasets will need to be in the same CRS. We have already standardized both using EPSG:3435.
 
 ```{r}
-
 Housing.f <- st_join(housing.3435, Chi_Zipsf.3435, join = st_intersects)
 ```
 
-Don't forget to inspect the data. Uncomment to explore!
+Don't forget to inspect the data.
 
 ```{r}
-#head(Housing.f)
+head(Housing.f)
 ```
 
-We could also flip things around, and try to count how many developments intersect each zip code. We can use lengths() to find out how many items are present in a vector. Here,
+We could also flip things around, and try to count how many developments intersect each zip code. We can use lengths() to find out how many items are present in a vector.
 
 ```{r}
 
 Chi_Zipsf.3435$TotHousing <- lengths(st_intersects(Chi_Zipsf.3435, housing.3435))
 
 head(Chi_Zipsf.3435)
-
-
 ```
 
 
@@ -507,7 +522,8 @@ To inspect data from a spatial perspective, we can create a series of choropleth
 
 #### Example 1. Number of Affordable Housing Developments per Zip Code {-}
 
-Choose the variable "TotHousing" to map total developments per zip coode, as we calculated previously. Here we'll map using Jenks data breaks, with a Blue to Purple palette, and four bins (or groups of data to be plotted). A histogram of the data is plotted, visualizing where breaks occured in the data to generate the map.
+Choose the variable "TotHousing" to map total developments per zip code, as we calculated previously. Here we'll map using Jenks data breaks, with a Blue to Purple palette, and four bins (or groups of data to be plotted). A histogram of the data is plotted, visualizing where breaks occured in the data to generate the map.
+
 
 ```{r, message=FALSE, warning=FALSE}
 
@@ -518,12 +534,17 @@ tm_shape(Chi_Zipsf.3435) + tm_polygons("TotHousing", legend.hist = TRUE, style="
   tm_layout(legend.outside = TRUE, legend.outside.position = "right")
 ```
 
+Note: You may get an error about missing the package `ggplot2`. To address this, just install that package and then rerun the command above.
+
+```{r eval=FALSE}
+install.packages("ggplot2")
+```
+
 #### Example 2. Number of COVID-19 Cases per Zip Code {-}
 
 Let's do the same, but plut a different variable. Select a different variable name as your parameter in the 'tm_fill' parameter.
 
 ```{r, message=FALSE, warning=FALSE}
-
 tm_shape(Chi_Zipsf.3435) + tm_polygons("Case.Rate...Cumulative",
               legend.hist = TRUE, style="jenks", 
               pal="BuPu", n=4, title = "COVID Case Rate") + 
@@ -533,7 +554,7 @@ tm_shape(Chi_Zipsf.3435) + tm_polygons("Case.Rate...Cumulative",
 
 ### Map Overlay
 
-#### Example 1. Afforfable Housing Developments & Zip Code Boundaries {-}
+#### Example 1. Affordable Housing Developments & Zip Code Boundaries {-}
 
 We previously translated the housing dataset from a CSV to a spatial object. Let's take an attribute connect with each point, the total number of units per housing development, and visualize as a graduated symbology. Points with more units will be bigger, and not all places are weighted the same visually. 
 
