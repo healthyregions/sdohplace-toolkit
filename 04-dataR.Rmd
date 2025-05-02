@@ -31,11 +31,15 @@ Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip
 
 ### Setting Up the Working Directory {-}
 
-Setting up a working directory in R is crucial as it defines the location on your computer where your files and scripts will be saved and accessed. You can set the working directory to any folder on your system where you plan to store your datasets and R scripts. To set your working directory, use
+Setting up a working directory in R is crucial--any file paths you use in your code, like the names of files to read data from, will be treated at relative to your current working directly. You should set the working directory to any folder on your system where you plan to store your datasets and R scripts.
+
+To set your working directory, use
 
 ```{r eval=FALSE}
 setwd("/path/to/your/directory")
 ```
+
+To see what your working directory is currently set to, use `getwd()`.
 
 #### Example: Local directory on Windows
 
@@ -67,10 +71,11 @@ setwd("~/RWork")
 
 #### Example: Posit Cloud
 
-[Posit Cloud](https://posit.cloud) is a web environment that allows you to create R projects online. In a Posit project, you need to set the working directory like this:
+[Posit Cloud](https://posit.cloud) is a web environment that allows you to create R projects online. In a Posit project, your working directory will already be set to your project. You can confirm this like so:
 
 ```{r eval=FALSE}
-setwd("/cloud/project")
+getwd()
+[1] "/cloud/project"
 ```
 
 ### Installing & Working with R Libraries {-}
