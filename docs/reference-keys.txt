@@ -116,3 +116,7 @@ expand-your-prototype
 define-server-logic
 run-the-application
 video-walkthrough-7
+determining-when-to-disseminate
+planning
+hard-launch-vs.-soft-launch
+dissemination-set-up
