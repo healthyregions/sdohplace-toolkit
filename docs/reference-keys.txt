@@ -52,10 +52,9 @@ story-map-app-development
 data-dashboard-app-development
 video-walkthrough-4
 sharing-your-prototype
-iteration-evaluationcontinuous-improvement
-web-analytics
-the-launch
-mailchimp-campaigns
+determining-when-to-disseminate
+planning
+dissemination-set-up
 example-of-a-launch
 video-walkthrough-5
 data-wrangling-in-r
