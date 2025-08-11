@@ -151,7 +151,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>← Project Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a>
@@ -515,26 +516,26 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>We mainly use vector data for our purpose. For example, a group of clinics can be geocoded and converted to points, whereas zip code boundaries are represented as polygons. Note that spatial data is not just locations and shapes, but also attributes. So points on a map correspond to associated details for each clinic provider, and may also include fields like “name”, “services”, and more.</p>
 <p>For example, a park can be represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.</p>
-<p><img src="images/data-diagram.png" style="width:95.0%" /></p>
+<p><img src="images/04-data-diagram.png" style="width:95.0%" /></p>
 </div>
 <div id="more-types-of-data" class="section level3 unnumbered hasAnchor">
 <h3>More Types of Data<a href="04-data.html#more-types-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>While we focus on tabular spatial data in this introductory module, you may work with multiple types of data in your SDOH project that is linked to place. Another of thinking about this is considering spatial data as primary, secondary, or tertiary. In the following section, we will provide a brief description of each of these types of data.</p>
 <details>
 <summary>
-<strong>Primary Spatial Data</strong>
+Primary Spatial Data
 </summary>
 Primary spatial data refers to the data that you can collect either personally or through a sensor/machine which you or your stakeholders have previously installed. There are several examples of spatial visualizations of SDOH made with primary data. Some researchers have used online interviews or questionnaires to analyze their experiences in their neighborhood. Other researchers have placed sensors to map air quality in cities. The use of Global Positioning Systems (GPS) or smartphones is another way to generate primary data.</br></br>
 </details>
 <details>
 <summary>
-<strong>Secondary Spatial Data</strong>
+Secondary Spatial Data
 </summary>
 You may encounter challenges when gathering SDOH primary spatial data, as it can be a time-consuming and costly endeavor. As a result, SDOH researchers, mapmakers, and advocates frequently turn to various secondary resources, such as spatial databases and census records, to inform their spatial representations. Typically, these files consist of digital layers that are prepared for seamless incorporation into a GIS or web mapping application. However, you can also work and manipulate non-spatial data in your project. Notable sources for such data include both profit and non-profit databases, government census information, and even digitized or scanned paper maps.</br></br>
 </details>
 <details>
 <summary>
-<strong>Tertiary Spatial Data</strong>
+Tertiary Spatial Data
 </summary>
 In the realm of SDOH spatial visualizations, there exists a third option–your map(s) may access other maps’ spatial data. Tertiary spatial data are spatial layers that have been previously or currently utilized in other cartographies and are readily accessible for integration into a Geographic Information System (GIS) or web mapping applications. When engaging with stakeholders experienced in health mapping, it’s worth inquiring whether they possess any spatial layers that could prove beneficial for your project. </br></br>
 </details>
@@ -555,35 +556,30 @@ In the realm of SDOH spatial visualizations, there exists a third option–your 
 <p>We will also use a format called <strong>GeoJSON</strong>, <code>.geojson</code> or sometimes just <code>.json</code>, and you may also hear about GeoPackages, <code>.gpkg</code>, though we won’t be using that format in this module.</p>
 <table>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Format</th>
-<th>Extension</th>
 <th>Pros</th>
 <th>Cons</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>CSV</td>
-<td><code>.csv</code></td>
+<tr>
+<td>CSV - <code>.csv</code></td>
 <td>Human-readable data<br/>Edit in MS Excel or text editor</td>
 <td>Inefficient for large datasets</td>
 </tr>
-<tr class="even">
-<td>Shapefile</td>
-<td><code>.shp</code><br/><code>.shx</code><br/><code>.dbf</code><br/>etc.</td>
+<tr>
+<td>Shapefile - <code>.shp</code>, <code>.shx</code>, <code>.dbf</code>, etc.</td>
 <td>Robust and performant<br/>Can use any CRS</td>
 <td>10-character attribute name limit<br/>Sidecar files can be confusing!</td>
 </tr>
-<tr class="odd">
-<td>GeoJSON</td>
-<td><code>.geojson</code></td>
+<tr>
+<td>GeoJSON - <code>.geojson</code></td>
 <td>Human-readable data<br/>Edit in text editor</td>
 <td>Inefficient for large datasets</td>
 </tr>
@@ -632,7 +628,7 @@ In the realm of SDOH spatial visualizations, there exists a third option–your 
 <h2><span class="header-section-number">4.3</span> Coordinate Reference Systems<a href="04-data.html#coordinate-reference-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The “spatial” part of spatial data is coordinates. For example, you may have a dataset of hospitals: the location of each feature will be represented by a latitude/longitude coordinate pair. If you have a dataset of county boundaries, each corner, or “vertex” of every shape will be represented by a coordinate as well. The fact that spatial data stores coordinates is the only thing that makes it “special.”</p>
 <p>However, there are many different ways of storing coordinates (not only latitude/longitude as you may assume) which is what brings us to the concept of a “coordinate reference system” (CRS), which is exactly what it sounds like: a reference system for interpreting coordinates.</p>
-<p><img src="images/crs-image.png" style="width:95.0%" /></p>
+<p><img src="images/04-crs.png" style="width:95.0%" /></p>
 <div class="tip">
 <p><strong>Tip</strong></p>
 <p><em>EPSG Codes</em>
@@ -745,7 +741,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p><em>Convert CSV to Spatial Data Format in QGIS</em></p>
 <details>
 <summary>
-<strong>Step 1: Open a CSV File</strong>
+Step 1: Open a CSV File
 </summary>
 <ul>
 <li>Open your CSV file via Layer -&gt; Add Layer -&gt; Add Delimited Text Layer. We’ll use <code>Affordable_Rental_Housing_Developments.csv</code> for this exercise.</li>
@@ -762,14 +758,14 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 2: Add a Basemap</strong>
+Step 2: Add a Basemap
 </summary>
 <p>Add a basemap to inspect that your data has loaded properly. If you’ve mixed up longitude and latitude, your data points may be on the other side of the world!</p>
 <br/>
 </details>
 <details>
 <summary>
-<strong>Step 3: Save in a Spatial Data Format</strong>
+Step 3: Save in a Spatial Data Format
 </summary>
 <p>Right click the layer and go to Export -&gt; Save Features As. When you select a file path, you will be prompted to select a file format. Select GeoJSON and the appropriate file path. Once you save, you should have a new GeoJSON file. You could have saved this file using any other spatial format, too!</p>
 <div class="float">
@@ -806,7 +802,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>For this exercise, download <code>chicago_methadone_nogeometry.csv</code>, a data set of methadone centers in Chicago that only includes center names and addresses.</p>
 <details>
 <summary>
-<strong>Step 1: Geocode with MMQGIS</strong>
+Step 1: Geocode with MMQGIS
 </summary>
 <p>To geocode addresses in QGIS, first you will need to install the plugin MMQGIS. Go to Plugins -&gt; Manage and Install Plugins. Search MMQGIS, and install it.</p>
 <div class="float">
@@ -827,7 +823,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 2: Inspect your Data</strong>
+Step 2: Inspect your Data
 </summary>
 <p>Once all your addresses are appearing, inspect them to ensure that everything has geocoded properly. Add a basemap to quickly visually inspect your data points. From the layers sidebar, right click your geocoded spatial data file and select Zoom to Layer(s). If any data points lie outside your expected spatial extent, this will quickly alert you to that issue.</p>
 <p>Inspect the layer attribute table to determine the source of any issues. Right click your geocoded layer and select Open Attribute Table. In addition to the information from your CSV, QGIS will have generated a few more pieces of information, including the full address and lat/long. Taking a look at this information for any points that did not properly geocode can help you discover where the issue may be in your original CSV.</p>
@@ -856,7 +852,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>To create a wide data set with the cumulative cases for each week for each zip code, create a pivot table in Excel.</p>
 <details>
 <summary>
-<strong>Step 1: Create a Pivot Table</strong>
+Step 1: Create a Pivot Table
 </summary>
 <ul>
 <li>Open the CSV as an excel file, and open a new sheet.</li>
@@ -868,7 +864,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 2: Add Your Data</strong>
+Step 2: Add Your Data
 </summary>
 <p>The pivot table will open with the selected data, which can be sorted into rows, columns, values, and filters.
 - In this example, the zip codes should be our rows, so choose Zip Code from the selection and drag it into Rows.
@@ -879,7 +875,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 3: Clean Up Your Table</strong>
+Step 3: Clean Up Your Table
 </summary>
 <p>Pivot tables often generate columns and rows that are unnecessary for our purposes. These extra columns and rows could make it difficult for spatial software to read your CSV later.</p>
 <ul>
@@ -918,7 +914,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>Here, we’ll merge data sets with a common variable using GeoDa. Merging the cumulative case data set you created in the last section to zip code spatial data will allow you to map the case data. You’ll be merging the case data and spatial data using the zip codes field of each dataset.</p>
 <details>
 <summary>
-<strong>Step 1: Clean Zip Code Data</strong>
+Step 1: Clean Zip Code Data
 </summary>
 <p>We’ve cleaned our covid case data already, but you’ll notice that the zip codes are repeated in the zip code data set, and needs to be cleaned before we can continue with merging the data.</p>
 <ul>
@@ -929,7 +925,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 2: Merge Data</strong>
+Step 2: Merge Data
 </summary>
 <ul>
 <li>Open ChiZipCleaned.geojson.</li>
@@ -967,7 +963,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p>We’ll create a spatial join with affordable housing development data and ChiZipCleaned.geojson. In this case, we’ll add the number of affordable housing developments in each zip code to the zip code data set.</p>
 <details>
 <summary>
-<strong>Step 1: Join Attributes</strong>
+Step 1: Join Attributes
 </summary>
 <p>Go to Processing -&gt; Toolbox and search for Join Attributes. For this exercise, select Join attributes by location (summary). Set the following parameters:</p>
 <div class="float">
@@ -979,7 +975,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Step 2: Map the Joined Data</strong>
+Step 2: Map the Joined Data
 </summary>
 <p>The new layer generated by the spatial join will default to a single symbol map, not providing any useful visual information about the spatial join.</p>
 <ul>
@@ -1018,7 +1014,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 <p><strong>Inspect Data with Different Methods</strong></p>
 <details>
 <summary>
-<strong>Generate Choropleth Maps in GeoDa</strong>
+Generate Choropleth Maps in GeoDa
 </summary>
 <p>Open ChiZipCleaned.geojson. From the Map option on the toolbar, you can select a variety of choropleth map options using different variables or breaks for your data.</p>
 <p>Select a mapping method and a variable to map. Inspect your data by comparing how different data break methods present the same variables, and how the spatial patterns of different variables compare.</p>
@@ -1030,7 +1026,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Overlay Data in GeoDa</strong>
+Overlay Data in GeoDa
 </summary>
 <p>With the Chicago zip code data already loaded in GeoDa, add a layer of point data with Affordable_Rental_Housing_Developments.csv.</p>
 <ul>
@@ -1048,7 +1044,7 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </details>
 <details>
 <summary>
-<strong>Overlay Data in QGIS</strong>
+Overlay Data in QGIS
 </summary>
 <p>Let’s overlay zip code boundary data with affordable housing point data.</p>
 <ul>
@@ -1096,6 +1092,25 @@ Generally, a dataset will properly reports its CRS and no action is needed. Howe
 </div>
 </div>
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+  
+  // find the project website link and hijack its href
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (link.innerText == "← Project Website") {
+      link.setAttribute("href", "https://sdohplace.org")
+    }
+  }
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>
             </section>
 
           </div>

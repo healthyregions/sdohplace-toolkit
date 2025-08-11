@@ -151,7 +151,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>← Project Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a>
@@ -444,7 +445,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">The SDOH &amp; Place Community Toolkit</h1>
 </div>
-<p><img src="images/homepage-illustration.png" /></p>
+<p><img src="images/preface-street.png" /></p>
+<div id="project-website" class="section level1 unnumbered hasAnchor" style="display:none;">
+<h1><a href="https://sdohplace.org">← Project Website</a><a href="index.html#project-website" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+</div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The <a href="https://sdohplace.org/">SDOH &amp; Place Project Community Toolkit</a> aims to increase the capacity for community and civic organizations in health to:</p>
@@ -527,6 +531,25 @@ Addresses how users can evaluate and disseminate their SDOH mapping projects, un
 </div>
 </div>
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+  
+  // find the project website link and hijack its href
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (link.innerText == "← Project Website") {
+      link.setAttribute("href", "https://sdohplace.org")
+    }
+  }
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>
             </section>
 
           </div>
