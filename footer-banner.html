@@ -1,1 +1,12 @@
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>
