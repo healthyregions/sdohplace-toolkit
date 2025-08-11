@@ -14,7 +14,7 @@ One especially useful tool that the platform provides is called Github Pages, a 
 
 ### What is a Repository?
 
-A repository is any collection of code or data that is stored together as a unit. For example, the entire code base for [Moodle](https://github.com/moodle/moodle), or [covid-19-data] downloads from the NY Times.
+A repository is any collection of code or data that is stored together as a unit. For example, the entire code base for [Moodle](https://github.com/moodle/moodle), or [covid-19-data](https://github.com/nytimes/covid-19-data) downloads from the NY Times.
 
 ### Understanding Github's URL Structure - Naming is important!
 
