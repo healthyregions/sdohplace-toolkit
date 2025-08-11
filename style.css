@@ -111,10 +111,6 @@ summary::marker {
   color: #FF9C77;
 }
 
-summary strong {
-  font-weight: 400 !important;
-}
-
 ul {
   font-family: 'Nunito', sans-serif;
   color: #1E1E1E;
