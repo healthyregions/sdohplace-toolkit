@@ -11,7 +11,7 @@ github-repo: healthyregions/sdhoplace-toolkit
 description: "This is the beginning of the SDOH & Place Toolkit."
 ---
 
-![](images/preface-street.png)
+![](images/preface-street.png){style="margin-bottom:2rem;margin-top:6rem;"}
 
 ```{r, results='asis', echo=F, eval=T}
 # adapted from: https://stackoverflow.com/a/70260471/3873885
