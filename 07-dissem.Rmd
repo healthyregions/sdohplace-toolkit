@@ -310,7 +310,7 @@ Consider having two versions of the schedule, one that includes the individual d
 
 Having images accompany your social media posts can help them grab people’s attention when someone is scrolling, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through [Canva](www.Canva.com). Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:
 
-![](images/07-socialexample.png){width=30%}
+![](images/07-socialexample.png){width=50%}
 
 :::tip
 **Tip**
