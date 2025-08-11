@@ -1,6 +1,6 @@
 # Introduction
 
-![](images/homepage-illustration.png)
+![](images/intro-inner.png)
 
 :::objective
 **Objectives**

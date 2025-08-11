@@ -329,7 +329,7 @@ div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.shar
 }
 
 div.intro {
-  background-image: url("./images/homepage-illustration.png");
+  background-image: url("./images/intro-outer.png");
 }
 
 div.planning {

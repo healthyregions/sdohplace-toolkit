@@ -74,11 +74,11 @@ In Github (the website), create a *New Repository*. Give it a name, a descriptio
 
 Next, click on the big green button, "Code", and select "Open in Github Desktop.
 
-![](images/06-github-clone.png){width=95%}
+![](images/06-github-clone.png){width=60%}
 
 You are *cloning the repository* you just made, and adding a copy to your own computer. Select the right path to access your coding project.
 
-![](images/06-clone.png){width=35%}
+![](images/06-clone.png)
 
 ### Start Coding
 

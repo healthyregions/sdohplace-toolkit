@@ -99,7 +99,7 @@ We mainly use vector data for our purpose. For example, a group of clinics can b
 
 For example, a park can be represented as a polygon or a point. Linked with each park, we can have information regarding their names, sizes, types of plants, open hours, and other various features. These attributes can be stored in a data table, along with their spatial inforamtion, in a shapefile, or a spatial file loaded in your R environment.
 
-![](images/data-diagram.png){width=95%}
+![](images/04-data-diagram.png){width=95%}
 
 ### More Types of Data {-}
 
@@ -194,7 +194,7 @@ The “spatial” part of spatial data is coordinates. For example, you may have
 
 However, there are many different ways of storing coordinates (not only latitude/longitude as you may assume) which is what brings us to the concept of a “coordinate reference system” (CRS), which is exactly what it sounds like: a reference system for interpreting coordinates.
 
-![](images/crs-image.png){width=95%}
+![](images/04-crs.png){width=95%}
 
 :::tip
 **Tip**
