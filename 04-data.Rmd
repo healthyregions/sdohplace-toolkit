@@ -136,11 +136,11 @@ Another common spatial data format is the **shapefile**. A shapefile is actually
 
 We will also use a format called **GeoJSON**, `.geojson` or sometimes just `.json`, and you may also hear about GeoPackages, `.gpkg`, though we won't be using that format in this module.
 
-|Format|Extension|Pros|Cons|
-|---|---|---|---|
-|CSV|`.csv`|Human-readable data<br/>Edit in MS Excel or text editor|Inefficient for large datasets|
-|Shapefile|`.shp`<br/>`.shx`<br/>`.dbf`<br/>etc.|Robust and performant<br/>Can use any CRS|10-character attribute name limit<br/>Sidecar files can be confusing!|
-|GeoJSON|`.geojson`|Human-readable data<br/>Edit in text editor|Inefficient for large datasets|
+|Format|Pros|Cons|
+|---|---|---|
+|CSV - `.csv`|Human-readable data<br/>Edit in MS Excel or text editor|Inefficient for large datasets|
+|Shapefile - `.shp`, `.shx`, `.dbf`, etc.|Robust and performant<br/>Can use any CRS|10-character attribute name limit<br/>Sidecar files can be confusing!|
+|GeoJSON - `.geojson`|Human-readable data<br/>Edit in text editor|Inefficient for large datasets|
 
 :::activity 
 

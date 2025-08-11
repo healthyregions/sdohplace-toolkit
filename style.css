@@ -187,11 +187,17 @@ table tbody {
 }
 
 td:first-child {
-  min-width: 200px !important;
+  min-width: 200px;
 }
 
 td {
   text-align: left;
+}
+
+@media (max-width: 480px) {
+  td:first-child {
+    min-width: 0;
+  }
 }
 
 /*---------------------------------------------*/
