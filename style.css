@@ -103,8 +103,13 @@ details, details summary {
   size: 18px;
 }
 
+details {
+    padding-left: 1.5em;
+}
+
 details summary {
   margin-bottom: 1rem;
+  margin-left: -1.5em;
 }
 
 summary::marker {
