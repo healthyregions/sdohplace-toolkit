@@ -10,4 +10,4 @@ bookdown::gitbook:
       toc:
         float : true
         collapse : section
-        before: <li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+        before: <li class="toc-logo"><a href="/"><img src="images/logo.png" width = '150px'></a></li>

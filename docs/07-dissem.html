@@ -149,9 +149,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="toc-logo"><a href="/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>← Project Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a>
@@ -568,29 +569,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <col width="70%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Social Media Platform</th>
 <th>Audience</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Facebook</td>
 <td>More mature audience (25-44), even split between male and female audiences. Usage is family oriented.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>LinkedIn</td>
 <td>Typically a more mature audience (25-34), younger audience is a large secondary audience (18-24). Similar even split between male and female audiences. Usage is career and professional focused.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>X (Formerly Twitter)</td>
 <td>Audience is mainly aged 18-34 and predominantly male identifying (60%). Majority of users access this site for entertainment and news.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Instagram</td>
 <td>Younger audience (18-29) and even split between male and female audiences. Usage is mainly sharing photos and entertainment.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>BlueSky</td>
 <td>Similar audience to that of X, including predominantly male. Usage is mainly entertainment focused.</td>
 </tr>
@@ -650,7 +651,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h5>Creating Accounts<a href="07-dissem.html#creating-accounts" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Once you know where you will be directing your audience to, decide what platforms you are most likely to use, and where most of your audience is. If you, or your team, don’t have one already, create a social media profile on each platform you intend to use for your project.</p>
 <p>Here’s an example of the US Covid Atlas X page:</p>
-<p><img src="images/07-covid.png" style="width:40.0%" /></p>
+<p><img src="images/07-covid.png" style="width:60.0%" /></p>
 <p>As you can see, the username is as close to the name of the project as possible, without any numbers or special characters, making it easy to search. The description includes a short summary of what the project is about, and includes a link to take people to view the project. The profile image and banner are also both set up to convey more information about the project, including the project’s logo.</p>
 <div class="tip">
 <p><strong>Tip</strong></p>
@@ -671,14 +672,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Where the promotion will be posted.</p></li>
 </ul>
 <p><strong>See below for an example:</strong></p>
-<p><img src="images/07-plan.png" style="width:75.0%" /></p>
+<p><img src="images/07-plan.png" /></p>
 <p>In short, someone should be able to look at your social media schedule and see all the relevant information needed for each post. This way you can be sure that your posts are consistent over time, and you can easily plan out posts in advance. Making a schedule like this also cuts down time, and eases communication when drafting and posting to your social media. Remember to always have someone review posts before they go out to ensure that the post is free of any spelling/grammatical errors, and that the post represents the project well.</p>
 <div class="tip">
 <p><strong>Tip</strong></p>
 <p>Consider having two versions of the schedule, one that includes the individual details of each post, and a calendar view that shows exactly when each post will go out on a more macro scale. This way you can better plan and organize when posts go out, and you don’t end up crowding too many posts on a single day.</p>
 </div>
 <p>Having images accompany your social media posts can help them grab people’s attention when someone is scrolling, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through <a href="www.Canva.com">Canva</a>. Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:</p>
-<p><img src="images/07-socialexample.png" style="width:30.0%" /></p>
+<p><img src="images/07-socialexample.png" style="width:50.0%" /></p>
 <div class="tip">
 <p><strong>Tip</strong></p>
 <p>Be sure to include relevant hashtags in your post’s text! This can expand your reach by making posts more discoverable by new users. You can make certain words in your text hashtags, or include them as a small paragraph at the very bottom of your post.</p>
@@ -913,6 +914,25 @@ Send it &amp; Track Analytics
 
 
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+  
+  // find the project website link and hijack its href
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (link.innerText == "← Project Website") {
+      link.setAttribute("href", "https://sdohplace.org")
+    }
+  }
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>
             </section>
 
           </div>

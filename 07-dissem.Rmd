@@ -262,7 +262,7 @@ Once you know where you will be directing your audience to, decide what platform
 
 Here’s an example of the US Covid Atlas X page: 
 
-![](images/07-covid.png){width=40%}
+![](images/07-covid.png){width=60%}
 
 
 As you can see, the username is as close to the name of the project as possible, without any numbers or special characters, making it easy to search. The description includes a short summary of what the project is about, and includes a link to take people to view the project. The profile image and banner are also both set up to convey more information about the project, including the project’s logo.
@@ -297,7 +297,7 @@ Some things to include in the dissemination plan are:
 **See below for an example:**
 
 
-![](images/07-plan.png){width=75%}
+![](images/07-plan.png)
 
 In short, someone should be able to look at your social media schedule and see all the relevant information needed for each post. This way you can be sure that your posts are consistent over time, and you can easily plan out posts in advance. Making a schedule like this also cuts down time, and eases communication when drafting and posting to your social media. Remember to always have someone review posts before they go out to ensure that the post is free of any spelling/grammatical errors, and that the post represents the project well. 
 
@@ -310,7 +310,7 @@ Consider having two versions of the schedule, one that includes the individual d
 
 Having images accompany your social media posts can help them grab people’s attention when someone is scrolling, thus making your promotions more effective in the long run. You can use screenshots of your web application, or you can create promotional images yourself! The best way to do this is through [Canva](www.Canva.com). Canva is a mostly free tool that allow users to create promotional images from templates or scratch. Here’s an example of a social media promotion using Canva:
 
-![](images/07-socialexample.png){width=30%}
+![](images/07-socialexample.png){width=50%}
 
 :::tip
 **Tip**

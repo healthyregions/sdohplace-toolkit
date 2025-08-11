@@ -149,9 +149,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="https://sdohplace.org/"><img src="images/logo.png" width = '150px'></a></li>
+<li class="toc-logo"><a href="/"><img src="images/logo.png" width = '150px'></a></li>
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>← Project Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#table-of-contents"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author-team"><i class="fa fa-check"></i>Author Team</a>
@@ -448,6 +449,25 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 the table of contents to find the page you are looking for.</p>
 </div>
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+  
+  // find the project website link and hijack its href
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (link.innerText == "← Project Website") {
+      link.setAttribute("href", "https://sdohplace.org")
+    }
+  }
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>
             </section>
 
           </div>

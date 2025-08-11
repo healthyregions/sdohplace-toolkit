@@ -361,19 +361,19 @@ Check out these examples below:
 
 *ArcGIS Online* 
 
-- [Example 1](https://arcg.is/1bPHeK0) 
+- [Example 1: Word on the Street](https://arcg.is/1bPHeK0)
 
-- [Example 2](https://arcg.is/0KTDX4) 
+- [Example 2: Segregation is Killing us...](https://arcg.is/0KTDX4)
 
-- [Example 3](https://arcg.is/0HDezC) 
+- [Example 3: Mapping the Spread of COVID-19](https://arcg.is/0HDezC)
 
 *KnightLab* 
 
-- [Example 1](https://www.georgiahumanities.org/southern-literary-trail-story-map/) 
+- [Example 1: Southern Literary Trail](https://www.georgiahumanities.org/southern-literary-trail-story-map/)
 
-- [Example 1](https://publications.newberry.org/time-machine/blackHawk/) 
+- [Example 2: Black Hawk in the Midwest, 1767-1812](https://publications.newberry.org/time-machine/blackHawk/)
 
-- [Example 1](https://www.justempower.org/coronadiaries) *best example but stamen basemap :(*
+- [Example 3: Corona Diaries of the Urban Poor](https://www.justempower.org/coronadiaries) *best example but stamen basemap :(*
 
 Over the next few sections, you’ll be introduced to two softwares that can be used for story mapping: ArcGIS Online StoryMaps, and Knight Lab StoryMapJS. Neither requires coding, but StoryMapJS does allow for some basic coding. By the end of this section, you’ll be able to create a compelling story map while applying what you’ve learned thus far about data selection, cartographic principles, and human-centered design. 
 

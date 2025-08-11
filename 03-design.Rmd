@@ -46,27 +46,27 @@ Let's dive into the world of design methodologies, where each approach brings so
 <!-- ``` -->
 <!-- </br> -->
 
-<details markdown='1'><summary>**Human-Centered Design**</summary>
+<details markdown='1'><summary>Human-Centered Design</summary>
 Type: User-focused design approach</br/>
 An approach to problem-solving that starts with people and ends with solutions tailored to suit their needs. It involves understanding the perspective of the users for whom you're designing, generating a range of ideas, and iteratively testing and refining solutions.
 <br/><br/></details>
 
-<details markdown='1'><summary>**Participatory Design**</summary>
+<details markdown='1'><summary>Participatory Design</summary>
 Type: Collaborative design approach<br/>
 A process that involves all stakeholders, especially users, in the design process. The aim is to ensure that the designed product meets the needs and expectations of the users. It often involves workshops, user interviews, and collaborative sessions where users actively contribute ideas and feedback.
 <br/><br/></details>
 
-<details markdown='1'><summary>**Design Thinking**</summary>
+<details markdown='1'><summary>Design Thinking</summary>
 Type: Problem-solving framework<br/>
 A non-linear, iterative process used to understand users, challenge assumptions, redefine problems, and create innovative solutions to prototype and test. It comprises five phases: Empathize, Define, Ideate, Prototype, and Test. This approach encourages questioning, experimentation, observation, and innovation.
 <br/><br/></details>
 
-<details markdown='1'><summary>**Universal Design**</summary>
+<details markdown='1'><summary>Universal Design</summary>
 Type: Accessibility-focused design approach<br/>
 Involves creating products and environments that are accessible and usable by all people, to the greatest extent possible, without the need for adaptation or specialized design. It emphasizes simplicity, intuitiveness, and accommodating a wide range of individual preferences and abilities.
 <br/><br/></details>
 
-<details markdown='1'><summary>**Experience Design**</summary>
+<details markdown='1'><summary>Experience Design</summary>
 Type: User experience-focused design approach<br/>
 Focused on the quality of the user experience and culturally relevant solutions. It goes beyond the product itself to include all aspects of the user's interaction with an organization, its services, and its products.
 <br/><br/></details>
@@ -91,11 +91,11 @@ Establishing common terminology with workshop participants is necessary as they 
 
 Workshops can be organized in a way that is feasible and comfortable for all:
 
-<details markdown='1'><summary>**Virtual workshop**</summary>
+<details markdown='1'><summary>Virtual workshop</summary>
 Virtual meetings (over Zoom, for example) are an effective way to hold these workshops. Virtual meetings allow for a broader spectrum of users to participate. In these meetings, it is recommended to include multimodal communication, such as a mix of presentations, live discussions, polling, and a chat function. This ensures that participants with varying levels and preferences of engagement get an opportunity to speak their minds.
 <br/><br/></details>
 
-<details markdown='1'><summary>**In-person workshop**</summary>
+<details markdown='1'><summary>In-person workshop</summary>
 If you’re lucky that all your users are available for an in-person workshop, then using a whiteboard, sticky notes, and other stationery is recommended.
 <br/><br/></details>
 
@@ -110,7 +110,7 @@ One of the most effective ways to get started with identifying user needs is to 
 
 During the exercise, personas are looked at from a more humanized lens that helps build empathy as it is easier to relate to a fictional character representing a real user than to an abstract persona. We recommend using the User Persona FigJam template to collaborate and build a meaningful set of user personas, for which steps are provided:
 
-<details markdown='1'><summary>**Step 1: Accessing FigJam and load the User Persona FigJam template**</summary>
+<details markdown='1'><summary>Step 1: Accessing FigJam and load the User Persona FigJam template</summary>
 
 1. Go to the [Figma website](https://www.figma.com/) and sign in or create a new account. - If you don't have an account, click on "Sign Up" to create a new account. Follow the on-screen instructions to complete the registration process. You can choose a free account, but if you have the chance, pick the academic account since it provides more perks. 
 
@@ -122,7 +122,7 @@ During the exercise, personas are looked at from a more humanized lens that help
 
 <br/></details>
 
-<details markdown='1'><summary>**Step 2: Edit the User Persona Template**</summary>
+<details markdown='1'><summary>Step 2: Edit the User Persona Template</summary>
 
 1. Once the template is open, you'll see a canvas with predefined sections for different aspects of a user persona (e.g., demographics, goals, frustrations). Take a few minutes to explore this template. You can zoom into specific sections. 
 
@@ -147,7 +147,7 @@ During the exercise, personas are looked at from a more humanized lens that help
 
 </br></details>
 
-<details markdown='1'><summary>**Step 3: Collaborate with Others**</summary>
+<details markdown='1'><summary>Step 3: Collaborate with Others</summary>
 
 1. FigJam is designed for collaboration. Click on the "Share" button in the top-right corner to invite some of your colleagues of the Place Project Fellowship to provide you feedback in real-time. You can use their emails or provide them with a link to your canvas. 
 
@@ -157,13 +157,13 @@ During the exercise, personas are looked at from a more humanized lens that help
 
 </br></details>
 
-<details markdown='1'><summary>**Step 4: Save and Export**</summary>
+<details markdown='1'><summary>Step 4: Save and Export</summary>
 
 If you need to share the user personas outside of FigJam, you can export the file by clicking on the “Main Menu" icon, selecting "File" and "Export as" to choose your desired format (PDF, JPG. PNG etc).
 
 </br></details>
 
-<details markdown='1'><summary>**Step 5: Iterate and Refine**</summary>
+<details markdown='1'><summary>Step 5: Iterate and Refine</summary>
 
 1. User personas are dynamic, and your project may evolve. Use FigJam to iterate and refine your user personas as needed.
 
@@ -243,7 +243,7 @@ The next step of the HCD process is to evaluate how usable, accessible, and sati
 Before bringing the users back in the loop, there is plenty of testing you can do yourself to ensure usability of your application. Heuristic evaluation is often considered as a fast and inexpensive method to highlight usability issues early on. The analysis can also be optionally done with users that may involve observing and taking more granular feedback. Following are 10 usability heuristics that can help you to quickly evaluate your application:
 
 ![](images/heuristics.png){width=100%} 
-<details markdown='1'><summary>**More details on each Heuristic**</summary>
+<details markdown='1'><summary>More details on each Heuristic</summary>
 ```{r table-simple, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 require(pander)
 panderOptions('table.split.table', Inf)
@@ -293,7 +293,7 @@ The best form of feedback is the one coming straight from your users. Evaluation
 
 Across evaluations, it is important to administer a set of background questions to understand users' demographics, their roles or occupations, and their overall goals to understand how individuals across different contexts differ in how usable they find the web application. The questions users are asked should allow you to evaluate the extent to which the application meets established user needs and the extent to which the application is usable.
 
-<details markdown='1'><summary>**Interviews**</summary>
+<details markdown='1'><summary>Interviews</summary>
 
 Interviews demand thorough planning and execution, whether conducted face-to-face or remotely.
 
@@ -313,7 +313,7 @@ Furthermore, incentives can be essential for securing interview sign-ups. Consid
 
 </br></details>
 
-<details markdown='1'><summary>**Surveys**</summary>
+<details markdown='1'><summary>Surveys</summary>
 
 Surveys are generally the least resource-intensive method of evaluation. When designing a usability survey, it is crucial to ask questions that will shed light on how usable, enjoyable, and effective individuals find the tool. These surveys can include a mix of multiple-choice, ratings, and open-response questions. Examples include:
 

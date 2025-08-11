@@ -53,15 +53,17 @@ pre code {
 /*--------------------------------------------*/
 /*---------------- Text ----------------------*/
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+}
+
 h1 {
-  font-family: 'Fredoka', sans-serif;
   color: #7E1CC4;
   font-weight: 700;
   size: 48px;
 }
 
 h2 {
-  font-family: 'Fredoka', sans-serif;
   color: #1E1E1E;
   font-weight: 400;
   size: 36px;
@@ -71,7 +73,6 @@ h2 {
 }
 
 h3 {
-  font-family: 'Fredoka', sans-serif;
   color: #1E1E1E;
   font-weight: 400;
   size: 24px;
@@ -102,16 +103,17 @@ details, details summary {
   size: 18px;
 }
 
+details {
+    padding-left: 1.5em;
+}
+
 details summary {
   margin-bottom: 1rem;
+  margin-left: -1.5em;
 }
 
 summary::marker {
   color: #FF9C77;
-}
-
-summary strong {
-  font-weight: 400 !important;
 }
 
 ul {
@@ -190,11 +192,17 @@ table tbody {
 }
 
 td:first-child {
-  min-width: 200px !important;
+  min-width: 200px;
 }
 
 td {
   text-align: left;
+}
+
+@media (max-width: 480px) {
+  td:first-child {
+    min-width: 0;
+  }
 }
 
 /*---------------------------------------------*/
@@ -327,8 +335,15 @@ div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.shar
   color: #7E1CC4;
 }
 
+@media (max-width: 480px) {
+  div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.share {
+    padding-left: 20rem;
+    background-size: 140px;
+  }
+}
+
 div.intro {
-  background-image: url("./images/homepage-illustration.png");
+  background-image: url("./images/intro-outer.png");
 }
 
 div.planning {

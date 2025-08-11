@@ -1,1 +1,20 @@
 <hr class="footer-line">
+<script>
+  var links = document.getElementsByTagName("a");
+  
+  // find the project website link and hijack its href
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (link.innerText == "← Project Website") {
+      link.setAttribute("href", "https://sdohplace.org")
+    }
+  }
+
+  // set all external links to open in new tab
+  for (var i=0, max=links.length; i < max; i++) {
+    var link = links[i]
+    if (!["localhost", "toolkit.sdohplace.org"].includes(link.hostname)) {
+      link.setAttribute("target", "_blank")
+    }
+  }
+</script>

@@ -11,7 +11,23 @@ github-repo: healthyregions/sdhoplace-toolkit
 description: "This is the beginning of the SDOH & Place Toolkit."
 ---
 
-![](images/homepage-illustration.png)
+![](images/preface-street.png){style="margin-bottom:2rem;margin-top:6rem;"}
+
+```{r, results='asis', echo=F, eval=T}
+# adapted from: https://stackoverflow.com/a/70260471/3873885
+block_toc <- function(title, level, output) {
+  if(output == "html") {
+    title <- paste(paste(rep("#", level), collapse = ""), title, "{-}")
+    cat('<div style="display:none;">', title,'</div>', sep = "\n")
+  }
+}
+
+block_toc(
+    title = "[← Project Website](https://sdohplace.org)",
+    level = 1,
+    output = knitr::opts_knit$get("rmarkdown.pandoc.to")
+)
+```
 
 # Preface {-}
 
