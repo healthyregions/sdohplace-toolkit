@@ -335,6 +335,13 @@ div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.shar
   color: #7E1CC4;
 }
 
+@media (max-width: 480px) {
+  div.intro, div.planning, div.hcd, div.wrangling, div.research, div.dev, div.share {
+    padding-left: 20rem;
+    background-size: 140px;
+  }
+}
+
 div.intro {
   background-image: url("./images/intro-outer.png");
 }
