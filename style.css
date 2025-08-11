@@ -53,15 +53,17 @@ pre code {
 /*--------------------------------------------*/
 /*---------------- Text ----------------------*/
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+}
+
 h1 {
-  font-family: 'Fredoka', sans-serif;
   color: #7E1CC4;
   font-weight: 700;
   size: 48px;
 }
 
 h2 {
-  font-family: 'Fredoka', sans-serif;
   color: #1E1E1E;
   font-weight: 400;
   size: 36px;
@@ -71,7 +73,6 @@ h2 {
 }
 
 h3 {
-  font-family: 'Fredoka', sans-serif;
   color: #1E1E1E;
   font-weight: 400;
   size: 24px;
