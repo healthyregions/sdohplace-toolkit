@@ -279,7 +279,7 @@ First let's explore scatter plots as a classic approach, and then dive into spat
 
 #### Scatter Plots
 
-Scatter plots are invaluable for visualizing relationships between Scatter plots can uncover possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.
+Scatter plots are invaluable for visualizing relationships and uncovering possible correlations (both positive and negative) or patterns between socioeconomic factors and health indicators.
 
 **Understanding Correlations in Scatter Plots**
 
