@@ -38,7 +38,7 @@ Because we're working with place-based SDOH data, that means learning how to han
 While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-DataWrangling.zip](https://github.com/healthyregions/sdohplace-toolkit/raw/main/data/SDOHPlace-DataWrangling.zip)
 :::
 
-Which computing environment should you work with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* In the Appendix, you'll find the same activities using *R programming* scripts.
+Which computing environment should you use when working with spatial data? It's up to you — there are many options to choose from today. Our toolkit focuses on free and opensource tools, and/or tools that are widely available with low cost. In this chapter, we'll work with *QGIS*, *Excel*, and *GeoDa.* In the Appendix, you'll find the same activities using *R programming* scripts.
 
 :::tools
 
