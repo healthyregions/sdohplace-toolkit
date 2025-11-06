@@ -166,7 +166,7 @@ my.data <- "  Responsibilities        | Description
   Design, Research Use Cases | Core Team, Designer
   Develop, Deploy, & Monitor Project | Core Team, Engineer
   Use the application in way that was expected | Expected Users
-  Use the application in way that was uexpected  | Unexpected Users
+  Use the application in way that was unexpected  | Unexpected Users
 "
 df <- read.delim(textConnection(my.data),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
 names(df) <- unname(as.list(df[1,])) # put headers on
