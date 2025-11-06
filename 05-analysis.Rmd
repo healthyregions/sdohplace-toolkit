@@ -275,7 +275,7 @@ A solid EDA/ESDA approach starts with one (univariate) or two (bivariate) variab
 - **Visualize your data**: It goes without saying, but we must -- visualize your data! Examine histograms, scatter plots, thematic maps, and more and explore relationships. Software like *GeoDa* was designed for brushing and linking to explore trends further.
 - **Models at the End**: Avoid working with biased data and mis-specified models by waiting to run your regression & other anlaytical models. Ensure your data is high quality and at least understand the limitations and biases. In traditional EDA, a confirmatory analysis follows.
 
-First let's explore scatter plots as a classic approach, and then dive into spatial data with statistical mapping techniques. 
+First, let's explore scatter plots as a classic approach, and then dive into spatial data with statistical mapping techniques. 
 
 #### Scatter Plots
 
