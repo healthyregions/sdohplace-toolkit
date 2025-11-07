@@ -64,7 +64,7 @@ Correlation is not causation. A good exploratory data analysis, however, can hel
 
 - **New Variable Calculations:** Do you need to generate new measures that may be more precise? 
 
-- **Data Limitations:** How was the data you have collected? Are there any biases or issued you need to consider when interpreting findings? What's missing?  
+- **Data Limitations:** How was the data you have collected? Are there any biases or issues you need to consider when interpreting findings? What's missing?  
 
 - **Methodologies Used:** Most methods will return some result -- that doesn't make them the correct or useful. Are you using the right methods for your data, and that also address data limitations?
 
