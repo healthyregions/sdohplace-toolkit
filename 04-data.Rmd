@@ -48,7 +48,7 @@ For this module, you need the following installed on your machine. A recent, sta
 
 - **QGIS**: QGIS is a free, opensource geographic information system that can be used to create, map, and analyze geospatial data. Download QGIS [here](https://qgis.org/en/site/).
 - **Excel**: Excel is a spreadsheet software that can store, organize, and analyze data sets. Use a free online version [here](https://www.microsoft.com/en-us/microsoft-365/free-productivity-apps#free-benefits).
-- **GeoDa**: GeoDa is a free, opensource GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa [here](https://geodacenter.github.io/).
+- **GeoDa**: GeoDa is a free, open-source GIS tool, designed to be an introductory tool for spatial data science. Download GeoDa [here](https://geodacenter.github.io/).
 
 If you prefer to code, or want to practice coding, go to the [Appendix](https://toolkit.sdohplace.org/04-dataR.html) to learn the same materials using the R Programming Language. 
 :::
