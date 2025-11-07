@@ -195,7 +195,7 @@ Through this activity, you will understand the spatial distribution of farmers' 
 ::: 
 
 ### Nearest Resource
-Calculating distances involves measuring straight-line (Euclidean) or network (along paths or roads) distances between features.In health geographies, this might include assessing accessibility to healthcare facilities or analyzing the spatial distribution of disease cases relative to risk factors. Examples include calculating the Euclidean distance from residential locations to the nearest healthcare facility or measuring the network distance along roads to determine travel time to hospitals. 
+Calculating distances involves measuring straight-line (Euclidean) or network (along paths or roads) distances between features. In health geographies, this might include assessing accessibility to healthcare facilities or analyzing the spatial distribution of disease cases relative to risk factors. Examples include calculating the Euclidean distance from residential locations to the nearest healthcare facility or measuring the network distance along roads to determine travel time to hospitals. 
 
 It’s important to choose the right measurement method (Euclidean or network) based on the research question and the nature of the features.
 
