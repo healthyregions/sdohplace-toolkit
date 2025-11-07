@@ -338,7 +338,7 @@ At the heart of statistical mapping lies data breaks classification, a fundament
 <details markdown='1'><summary>Equal Intervals</summary> 
 - Organizes observations into categories that divide the range of the variable into equal interval bins.
 - This classification divides the data into segments of equal range, such as intervals of 10. The user defines the number of intervals (20, 30, 40, etc), and the data is segmented accordingly. 
-- Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present, as 
+- Equal intervals are easy to read and understand; but it can be misleading in that no information is given on the distribution of the data within each distinct class. Thus, this method may not be ideal for skewed distributions or when outliers are present.
 
 </br></br></details>
 
