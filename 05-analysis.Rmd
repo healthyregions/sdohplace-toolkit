@@ -23,7 +23,7 @@ Finally, the module will focus on cartographic design principles, stressing the 
 :::tools
 **Tools**
 
-*Download the Activity Datasets*
+*Download the Activity Datasets and Set Up Your Environment [See Module 4](https://toolkit.sdohplace.org/04-data.html)*
 
 While you will use your own data for your project, practice with ours. Please download and unzip this file to get started: [SDOHPlace-ResearchDesignAnalysis.zip](https://github.com/healthyregions/sdohplace-toolkit/blob/main/data/SDOHPlace-ResearchDesignAnalysis.zip)
 
