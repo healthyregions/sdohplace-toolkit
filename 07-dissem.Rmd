@@ -200,55 +200,95 @@ Social media can be a wonderful tool for connecting with your audience and with 
 
 ##### What is social media harassment? {-}
 
-Social Media Harassment can take multiple forms, but are usually grouped into three main forms: cyberbullying, trolling, and doxxing. 
+Social Media Harassment can take multiple forms, but are usually grouped into three main forms:  
 
-**Cyberbullying** is typically defined as the willful and repeated harm of someone through electronic devices. This is typically things like name-calling or using derogatory terms toward the owner of the account, foul language, and belittling. Here the person committing the harassment means to put down their victim through public humiliation, and may even urge others to harass the account owner as well. This can be a short term issue limited to a single post, or this can become a long-term problem. 
+<details markdown='1'><summary>**Cyberbullying**</summary> 
 
-**Trolling** can be similar to cyberbullying, but the motivations are different. Trolling is when someone is deliberately attempting to offend you or cause you some form of distress purely for their own, or others', online entertainment. Here, the individual's actions are mainly attention seeking.
+Typically defined as the willful and repeated harm of someone through electronic devices. This is typically things like name-calling or using derogatory terms toward the owner of the account, foul language, and belittling. Here the person committing the harassment means to put down their victim through public humiliation, and may even urge others to harass the account owner as well. This can be a short term issue limited to a single post, or this can become a long-term problem. 
 
-**Doxxing** is a very serious form of social media harassment, and should not be taken lightly. Doxxing is when someone, or a group of people, publish your own personal information online with the intention of silencing you, or encouraging harm toward you. This can include the public posting of your account passwords, personal contact information, and/or even your home address. The goal here is to frighten the target into silencing themselves, but some may also intend to cause real-world harm to their targets. 
+</br></br></details>
 
-##### Creating a Plan, Preventing Harassment & Steps to Take {-} 
+<details markdown='1'><summary>**Trolling**</summary> 
 
-With these definitions out of the way, **the best way to deal with harassment is to be prepared**. Before you create a social media account or make a post, create a plan for how to handle social media harassment if it should occur to you. If you are using social media as part of a team, meet with them and make a plan together or go through the plan you create. Additionally, make sure to completely write out the plan in a step by step format, and make sure that everyone on your team knows where they can find it should they need it. Depending on the type of harassment, emotions may be high and the target might find themselves in a crisis situation. Having a plan outlined in advance will help guide the target’s next steps so that they can focus on taking action.
+This can be similar to cyberbullying, but the motivations are different. Trolling is when someone is deliberately attempting to offend you or cause you some form of distress purely for their own, or others', online entertainment. Here, the individual's actions are mainly attention seeking.
 
-**Your plan should involve the following basic steps:**
+</br></br></details>
 
-1. **Assess the Threat:** What form of harassment are you currently experiencing and how extreme is this case? Assessing the threat can then guide how you, or someone on your team, moves forward with the rest of your plan. 
+<details markdown='1'><summary>**Doxxing**</summary> This is a very serious form of social media harassment, and should not be taken lightly. Doxxing is when someone, or a group of people, publish your own personal information online with the intention of silencing you, or encouraging harm toward you. This can include the public posting of your account passwords, personal contact information, and/or even your home address. The goal here is to frighten the target into silencing themselves, but some may also intend to cause real-world harm to their targets. 
 
-2. **Steps to take in immediate danger:** Outline actions to take should someone find themselves in immediate danger, prioritizing getting to a safe location first. Situations like this can result in high emotions and confusion if not planned ahead of time. Make sure that these steps are broken down into simple and easy to read and understand steps, that way should you, or someone on your team, ever have to use them they can go through each step quickly and efficiently. When crafting these steps, **imagine only having access to this information and nothing else to save time in looking up information later.** 
+</br></br></details>
 
-3. **Setting accounts to private:** Once everyone is confirmed to be physically safe, immediately set your account to private to limit the spread of harassment or completely stop it in its tracks. This will prevent new people from following the account or seeing comments so you can focus on the current bad actors. 
+##### Creating a Social Media Harassment Plan {-} 
 
-4. **Record all evidence and details around the incident:** Have someone screenshot and record all the evidence of harassment or doxxing. If you have been doxxed, save all emails, texts, voicemails, or letters you may receive. Your first instinct might be to delete everything, but the best thing to do is record and store every instance of harassment or doxxing should you need it as evidence later. Write-up a report outlining the who, what, when, and where of the entire situation, sticking to just the facts so you know exactly what happened for later reference. 
+With these definitions out of the way, **the best way to deal with harassment is to be prepared**. Before you create a social media account or make a post, create a plan for how to handle social media harassment if it should occur to you. If you are using social media as part of a team, meet with them and make a plan together or go through the plan you create. 
 
-5. **State/Organization Specific Steps:** Every state and organization has different laws and policies for dealing with social media harassment and doxxing. Make sure you know what those policies are, and implement them into your social media harassment plan. 
+Make sure to completely write out the plan in a step by step format, and make sure that everyone on your team knows where they can find it should they need it. Depending on the type of harassment, emotions may be high and the target might find themselves in a crisis situation. Having a plan outlined in advance will help guide the target’s next steps so that they can focus on taking action.
 
-6. **Steps to take once the storm passes:** If you experience an incident of social media harassment, but have completed all necessary steps in your plan, outline final steps on what to do afterward. This can include providing mental health resources, when and how to monitor accounts for further harassment, when you might delete your social media account, or when you might re-open your account to the public. 
+**Your plan should involve the following basic actions:**
 
-These steps are not a copy-and-paste ready to use social media harassment plan, and every person/team will be different. Use the above steps as a guide for creating your own, personalized, social media harassment plan **before** you begin to set up social media promotions. In writing out a plan, make sure that anyone following it can access all the information they need while going through each step of the plan. Pretend that someone viewing the plan only has access to that document and nothing else: what information (i.e., website links, phone numbers, etc.) should be added to it to make carrying out the plan take as little time as possible? 
+<details markdown='1'><summary>**Assessing the Threat.**</summary> 
+What form of harassment are you currently experiencing and how extreme is this case? Assessing the threat can then guide how you, or someone on your team, move forward with the rest of your plan. 
+</br></br></details>
+
+<details markdown='1'><summary>**Steps to take in immediate danger.**</summary>
+Outline actions to take should someone find themselves in **immediate danger**, prioritizing getting to a safe location first. Situations like this can result in high emotions and confusion if not planned ahead of time. Make sure that these steps are broken down into simple and easy to read and understand steps, that way should you, or someone on your team, ever have to use them they can go through each step quickly and efficiently. When crafting these steps, **imagine only having access to this information and nothing else to save time in looking up information later.** 
+</br></br></details>
+
+<details markdown='1'><summary>**Setting accounts to private.**</summary> 
+Once everyone is confirmed to be physically safe, immediately set your account to private to limit the spread of harassment or completely stop it in its tracks. This will prevent new people from following the account or seeing comments so you can focus on the current bad actors. 
+</br></br></details>
+
+<details markdown='1'><summary>**Record all evidence and details around the incident.**</summary> 
+Ensure you screenshot and record all the evidence of harassment or doxxing. If you have been doxxed, save all emails, texts, voicemails, or letters you may receive. Your first instinct might be to delete everything, but the best thing to do is record and store every instance of harassment or doxxing should you need it as evidence later. Write-up a report outlining the who, what, when, and where of the entire situation, sticking to just the facts so you know exactly what happened for later reference. 
+</br></br></details>
+
+<details markdown='1'><summary>**Include State/Organization Specific Steps.**</summary> 
+Every state and organization has different laws and policies for dealing with social media harassment and doxxing. Make sure you know what those policies are, and implement them into your social media harassment plan. 
+</br></br></details>
+
+<details markdown='1'><summary>**Steps to take once the storm passes.**</summary> 
+If you experience an incident of social media harassment, but have completed all necessary steps in your plan, outline final steps on what to do afterward. This can include providing mental health resources, when and how to monitor accounts for further harassment, when you might delete your social media account, or when you might re-open your account to the public. 
+</br></br></details>
+
+These actions are not a copy-and-paste ready to use social media harassment plan, and every person/team will be different. Use the above actions as a guide for creating your own, personalized, social media harassment plan **before** you begin to set up social media promotions. In writing out a plan, make sure that anyone following it can access all the information they need while going through each step of the plan. Pretend that someone viewing the plan only has access to that document and nothing else: what information (i.e., website links, phone numbers, etc.) should be added to it to make carrying out the plan take as little time as possible? 
 
 Once you’ve outlined a plan for what to do in the event the worst happens, there are a few steps you can take to prevent harassment and doxxing. 
 
-**Steps to take to limit harassment & doxxing**
+##### Preventing Social Media Harassment {-} 
 
 Here are some actions you can take beforehand to ensure that your risk for harassment and doxxing is limited:
 
-- **Have multiple accounts.** Make sure that you keep your personal life separate from your public life. Make sure that your personal account cannot be connected to your public account, and that your personal account is set to private with preferably a profile picture that is not a photo of you to prevent bad actors from matching the two accounts. 
+<details markdown='1'><summary>**Have multiple accounts.**</summary> 
+Make sure that you keep your **personal life** separate from your **public life**. Make sure that your personal account cannot be connected to your public account, and that your personal account is set to private with preferably a profile picture that is not a photo of you to prevent bad actors from matching the two accounts. 
+</br></br></details>
 
-- **Safeguard Passwords.** Create strong and unique passwords for each social media account connected to your project and your personal accounts. Store these passwords in a secure location, or online under a password protected and secure location. This will prevent bad actors from hacking into multiple accounts and seeking personal information.
+<details markdown='1'><summary>**Safeguard Passwords.**</summary> 
+Create strong and unique passwords for each social media account connected to your project and your personal accounts. Store these passwords in a secure location, or online under a password protected and secure location. This will prevent bad actors from hacking into multiple accounts and seeking personal information.
+</br></br></details>
 
-- **Avoid responding.** If you are experiencing harassment, the best thing to do is ignore the bad actor(s), and screenshot every comment as evidence for the future. As mentioned previously, some individuals such as Trolls harass others for attention as their motivation, responding to harassment online might result in an increase in the harassment. 
+<details markdown='1'><summary>**Avoid responding.**</summary> 
+If you are experiencing harassment, the best thing to do is ignore the bad actor(s), and screenshot every comment as evidence for the future. As mentioned previously, some individuals such as Trolls harass others for attention as their motivation, responding to harassment online might result in an increase in the harassment. 
+</br></br></details>
 
-- **Review posts and profiles before going public.** When creating your social media account, set the account to private as your first step once you create a username and password. Avoid adding friends or following others until you have completed your account and you have reviewed it to be sure that no personal or identifiable information can be found on the account (we will cover creating accounts later in this module). For every post on your account, carefully review each post to make sure no personal or identifiable information can be found and traced back to you or anyone on your team. 
+<details markdown='1'><summary>**Review posts and profiles before going public.**</summary> 
+When creating your social media account, set the account to private as your first step once you create a username and password. Avoid adding friends or following others until you have completed your account and you have reviewed it to be sure that no personal or identifiable information can be found on the account (we will cover creating accounts later in this module). For every post on your account, carefully review each post to make sure no personal or identifiable information can be found and traced back to you or anyone on your team. 
+</br></br></details>
 
-- **Pretend to dox yourself.** Audit yourself for how easily you are to find online. Pretend to be someone who wishes to dox you and see what you can find. You can google yourself, reverse image search your most used profile picture, check website bios, personal websites, resumes, and current social media accounts for personal/private information that could harm you should you experience harassment or doxxing. 
+<details markdown='1'><summary>**Pretend to dox yourself.**</summary> 
+Audit yourself for how easily you are to find online. Pretend to be someone who wishes to dox you and see what you can find. You can google yourself, reverse image search your most used profile picture, check website bios, personal websites, resumes, and current social media accounts for personal/private information that could harm you should you experience harassment or doxxing. 
+</br></br></details>
 
-- **Alert public facing team members.** If you are working with a team to promote your project (which we highly recommend) make sure that everyone on your team knows the risks of creating posts on social media. Walk through your harassment plan and all steps they should take before joining the team to limit their risk as well. This is crucial in ensuring that everyone on your team can be as protected as possible while making social media posts. 
+<details markdown='1'><summary>**Alert public facing team members.**</summary> 
+If you are working with a team to promote your project (which we highly recommend) make sure that everyone on your team knows the risks of creating posts on social media. Walk through your harassment plan and all steps they should take before joining the team to limit their risk as well. This is crucial in ensuring that everyone on your team can be as protected as possible while making social media posts. 
+</br></br></details>
 
-- **Avoid public messages of support.** If someone you know experiences harassment or doxxing, avoid public comments of support. Commenting supportively or in someone else's defense is an easy way of turning the harassment or doxxing onto you and putting yourself in danger, or making the harassment worse for the victim. If you would like to support someone else through an incident of harassment, consider doing so privately such as in-person, over the phone, or via a secure email. Do not isolate yourself from the victim, but avoid public support online.
+<details markdown='1'><summary>**Avoid public messages of support.**</summary>
+If someone you know experiences harassment or doxxing, avoid public comments of support. Commenting supportively or in someone else's defense is an easy way of turning the harassment or doxxing onto you and putting yourself in danger, or making the harassment worse for the victim. If you would like to support someone else through an incident of harassment, consider doing so privately such as in-person, over the phone, or via a secure email. Do not isolate yourself from the victim, but avoid public support online.
+</br></br></details>
 
-- **Regularly review your Social Media Harassment plan.** Once you have created a social media harassment plan, do not just store it somewhere and forget it. Make sure you and your team review the plan periodically so that everyone knows where to find it, and what the steps involve. This way, if the worst happens, everyone can act quickly. 
+<details markdown='1'><summary>**Regularly review your Social Media Harassment plan.**</summary> 
+Once you have created a social media harassment plan, do not just store it somewhere and forget it. Make sure you and your team review the plan periodically so that everyone knows where to find it, and what the steps involve. This way, if the worst happens, everyone can act quickly. 
+</br></br></details>
 
 In the end, the best thing you can do to avoid harassment or doxxing is to be prepared. Once you have created a plan, and reduced your risks of being doxxed as much as possible, you’re ready to begin setting up your social media accounts and continuing your dissemination preparations. 
 
@@ -324,7 +364,7 @@ Finally, consider creating a social media team and promoting with a group of col
 
 ##### Tracking Engagement {-}
 
-When you begin to promote your application on social media, remember to also track post engagement. At the bottom of every social media post you can find clickable text that says, “View Analytics,” or “Post Insights,” or “View Engagements.” What it’s called depends on the app, but the outcome is about the same. Clicking this will allow you to see more information on the post. Such information could include, how many people have seen the post, along with how many people interacted with the post and (depending on the platform) who interacted. Using this feature can provide insight on how well your promotions are doing per application, allowing you to refine your dissemination plan as you promote.
+When you begin to promote your application on social media, remember to also track post engagement. At the bottom of every social media post you can find clickable text that says, “View Analytics,” or “Post Insights,” or “View Engagements.” What it’s called depends on the app, but the outcome is about the same. Clicking this will allow you to see more information on the post. Such information could include: how many people have seen the post, how many people interacted with the post, and/or (depending on the platform) who interacted. Using this feature can provide insight on how well your promotions are doing per application, allowing you to refine your dissemination plan as you promote.
 
 If you are able, pay particular attention to the **engagement rate** of your posts. This allows you to see how well each post is doing. Each platform will calculate a different engagement rate, but the formula is typically: 
 
